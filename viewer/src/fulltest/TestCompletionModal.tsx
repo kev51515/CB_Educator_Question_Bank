@@ -10,10 +10,10 @@
  * release + Review (ResultView, including eliminated choices).
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { useEscapeKey, useFocusTrap } from "../hooks";
-import { SkeletonRows } from "../components/Skeleton";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { SkeletonRows } from "@/components/Skeleton";
 import { getResult } from "./api";
 import { ResultView } from "./ResultView";
 import type { TestResult } from "./types";

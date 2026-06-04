@@ -11,9 +11,9 @@
  * a refresh doesn't fan out to 8 separate round-trips.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { Skeleton } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
+import { supabase } from "@/lib/supabase";
+import { Skeleton } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 
 interface UsersByRole {
   student: number;

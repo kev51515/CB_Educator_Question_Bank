@@ -8,7 +8,7 @@
  * the "Focus weak skills" filter pill in the question bank.
  */
 import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface WeakSkillsResult {
   weakSkills: Set<string>;

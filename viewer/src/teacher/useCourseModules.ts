@@ -10,7 +10,7 @@
  * them (the staff-only INSERT/UPDATE/DELETE policies enforce that).
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export type ModuleItemType =
   | "assignment"

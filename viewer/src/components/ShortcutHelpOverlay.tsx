@@ -16,7 +16,7 @@
  *  - `<kbd>` styling matches the spec in CLAUDE.md
  */
 import { useEffect, useRef, type ReactNode } from "react";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 export interface ShortcutHelpOverlayProps {
   open: boolean;

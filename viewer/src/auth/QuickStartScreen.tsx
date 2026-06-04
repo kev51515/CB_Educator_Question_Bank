@@ -22,7 +22,7 @@
  * so a QR-scanned deeplink lands with the code already filled.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 interface QuickStartScreenProps {
   prefillCode?: string;

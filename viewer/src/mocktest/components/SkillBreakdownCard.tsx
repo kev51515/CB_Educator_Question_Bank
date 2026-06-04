@@ -1,7 +1,7 @@
 /**
  * SkillBreakdownCard — per-skill correct/total card with accuracy bars.
  */
-import type { SkillBreakdown } from "../types";
+import type { SkillBreakdown } from "@/mocktest/types";
 
 interface SkillBreakdownCardProps {
   bySkill: SkillBreakdown[];

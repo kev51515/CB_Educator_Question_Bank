@@ -22,11 +22,11 @@
  *     slow network on submit can't lose the user's work.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { MarkdownEditor } from "../components/MarkdownEditor";
+import { supabase } from "@/lib/supabase";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
 import { useToast } from "@/components";
 import type { DiscussionTopic } from "./useDiscussions";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 export type TopicFormMode = "create" | "edit";
 

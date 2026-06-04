@@ -31,11 +31,11 @@ import {
   MockTestApp,
   clearAssignmentDraft,
   type MockTestAssignmentContext,
-} from "../mocktest";
-import { loadSource } from "../mocktest/sources";
-import type { TestConfig, TestQuestion } from "../mocktest";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components";
+} from "@/mocktest";
+import { loadSource } from "@/mocktest/sources";
+import type { TestConfig, TestQuestion } from "@/mocktest";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components";
 import type { StudentAssignment } from "./useStudentAssignments";
 import { QBankAssignmentRunner } from "./QBankAssignmentRunner";
 

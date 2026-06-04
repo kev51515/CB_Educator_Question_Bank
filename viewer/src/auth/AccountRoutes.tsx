@@ -16,7 +16,7 @@
  * (thin wrappers around the existing data views).
  */
 import { NavLink, Navigate, Route, Routes } from "react-router-dom";
-import type { Profile, ProfileRole } from "../lib/profile";
+import type { Profile, ProfileRole } from "@/lib/profile";
 import type { AuthResult } from "./session";
 import { AccountSettings } from "./AccountSettings";
 import { NotificationPreferencesPage } from "./NotificationPreferencesPage";
@@ -25,7 +25,7 @@ import {
   AdminInvitesPage,
   AdminStatsPage,
   AdminUsersPage,
-} from "../admin";
+} from "@/admin";
 
 export interface AccountRoutesProps {
   profile: Profile;

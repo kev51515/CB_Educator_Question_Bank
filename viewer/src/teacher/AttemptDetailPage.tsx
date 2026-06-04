@@ -11,7 +11,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
 import { TeacherAttemptDetailView } from "./TeacherAttemptDetailView";
-import { classAssignmentPath } from "../lib/routes";
+import { classAssignmentPath } from "@/lib/routes";
 
 export function AttemptDetailPage() {
   const { assignmentId, attemptId } = useParams<{

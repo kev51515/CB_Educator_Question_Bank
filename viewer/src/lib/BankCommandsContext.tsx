@@ -24,7 +24,7 @@
  * single producer.
  */
 import { useEffect, useSyncExternalStore } from "react";
-import type { Command } from "../components/CommandPalette";
+import type { Command } from "@/components/CommandPalette";
 
 type Listener = () => void;
 

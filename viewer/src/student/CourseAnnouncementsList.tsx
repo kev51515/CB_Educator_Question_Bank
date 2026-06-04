@@ -19,8 +19,8 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useStudentAnnouncements } from "./useStudentAnnouncements";
-import { useStudentSession } from "../auth/session";
-import { SkeletonRows } from "../components/Skeleton";
+import { useStudentSession } from "@/auth/session";
+import { SkeletonRows } from "@/components/Skeleton";
 
 const LAST_VISIT_PREFIX = "student.announcements.lastVisit:";
 

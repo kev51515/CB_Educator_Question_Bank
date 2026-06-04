@@ -21,10 +21,10 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { classPath } from "../lib/routes";
-import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
+import { supabase } from "@/lib/supabase";
+import { classPath } from "@/lib/routes";
+import { useToast } from "@/components/Toast";
+import { useFocusTrap } from "@/hooks";
 
 const STORAGE_BUCKET = "course-materials";
 

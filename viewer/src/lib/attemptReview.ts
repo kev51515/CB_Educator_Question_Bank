@@ -16,7 +16,7 @@ import type {
   Letter,
   TestQuestion,
   TestResult,
-} from "../mocktest/types";
+} from "@/mocktest/types";
 
 export interface AttemptReviewData {
   attemptId: string;

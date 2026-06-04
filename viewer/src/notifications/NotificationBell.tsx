@@ -16,7 +16,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotifications, type NotificationRow } from "./useNotifications";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 
 /**
  * Notification `link` values are stored server-side as bare, role-agnostic

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { IndexEntry } from "@/types";
-import { useLmsCommands } from "../lib/lmsCommands";
+import { useLmsCommands } from "@/lib/lmsCommands";
 
 export interface Command {
   id: string;

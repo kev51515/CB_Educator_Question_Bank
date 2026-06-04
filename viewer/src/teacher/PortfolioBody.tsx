@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { SkeletonRows } from "../components/Skeleton";
-import { coursePortfolioPath } from "../lib/routes";
+import { SkeletonRows } from "@/components/Skeleton";
+import { coursePortfolioPath } from "@/lib/routes";
 import type { StudentPortfolioSubmissionRow } from "./useStudentProfile";
 import { formatRelative } from "./studentProfileHelpers";
 

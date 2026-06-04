@@ -4,7 +4,7 @@
  * Each option corresponds to a `TestSourceId` (`cb`, `sat`, `mixed`). Selection
  * is a single-pick radio-style grid.
  */
-import type { TestSourceId } from "../types";
+import type { TestSourceId } from "@/mocktest/types";
 
 interface TestTypeOption {
   id: TestSourceId;

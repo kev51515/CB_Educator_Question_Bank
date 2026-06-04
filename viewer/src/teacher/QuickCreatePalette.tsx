@@ -26,15 +26,15 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useProfile } from "../lib/profile";
-import { useFocusTrap } from "../hooks/useFocusTrap";
+import { useProfile } from "@/lib/profile";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { useClassContext } from "./classLayoutContext";
 import {
   courseAssignmentsPath,
   courseAnnouncementsPath,
   courseDiscussionsPath,
   courseMaterialsPath,
-} from "../lib/routes";
+} from "@/lib/routes";
 
 type CardId = "assignment" | "announcement" | "discussion" | "material";
 

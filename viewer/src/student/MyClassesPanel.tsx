@@ -9,12 +9,12 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useStudentClasses, type StudentClass } from "./useStudentClasses";
-import { SkeletonRows } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
-import { studentCoursePath } from "../lib/routes";
-import { useFocusTrap } from "../hooks";
+import { SkeletonRows } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
+import { studentCoursePath } from "@/lib/routes";
+import { useFocusTrap } from "@/hooks";
 import { JoinClassModal } from "./JoinClassModal";
 
 type SortKey = "recent" | "oldest" | "name";

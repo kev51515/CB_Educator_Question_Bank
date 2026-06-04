@@ -23,7 +23,7 @@ import {
   courseAssignmentAttemptPath,
   courseAssignmentPath,
   courseDiscussionPath,
-} from "../lib/routes";
+} from "@/lib/routes";
 import {
   type CollapseState,
   initialOf,

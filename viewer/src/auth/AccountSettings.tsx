@@ -29,9 +29,9 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components";
-import type { Profile } from "../lib/profile";
+import type { Profile } from "@/lib/profile";
 import type { AuthResult } from "./session";
 
 interface AccountSettingsProps {

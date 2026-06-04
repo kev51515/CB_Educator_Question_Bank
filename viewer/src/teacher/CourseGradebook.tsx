@@ -10,18 +10,18 @@
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useClassContext } from "./classLayoutContext";
-import { Skeleton, SkeletonRows } from "../components/Skeleton";
-import { EmptyState } from "../components/EmptyState";
-import { useToast } from "../components/Toast";
+import { Skeleton, SkeletonRows } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
+import { useToast } from "@/components/Toast";
 import {
   courseAssignmentAttemptPath,
   coursePeoplePath,
   courseAssignmentsPath,
   courseStudentProfilePath,
   ROUTES,
-} from "../lib/routes";
+} from "@/lib/routes";
 import {
   type RosterRow,
   type AssignmentRow,

@@ -23,10 +23,10 @@
  */
 import { useCallback, useMemo, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { useEscapeKey, useFocusTrap } from "../hooks";
-import { studentCodePrefillUrl, studentLoginUrl } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { studentCodePrefillUrl, studentLoginUrl } from "@/lib/routes";
 
 export interface PrintableLogin {
   id: string;

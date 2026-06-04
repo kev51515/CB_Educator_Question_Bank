@@ -7,8 +7,8 @@
  * rows read.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components";
 import {
   isKindEnabled,
   loadPrefs,

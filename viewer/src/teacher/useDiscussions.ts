@@ -8,7 +8,7 @@
  * and public.is_staff() — see the migration for the recursion-safe pattern.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface DiscussionTopic {
   id: string;

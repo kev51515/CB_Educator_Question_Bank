@@ -37,7 +37,7 @@ import {
   ShuffleIcon,
 } from "@/components/DetailIcons";
 import type { Annotation } from "@/components/Annotations";
-import { IDENTITY } from "../lib/designTokens";
+import { IDENTITY } from "@/lib/designTokens";
 
 function difficultyChipClass(d: string): string {
   switch (d) {

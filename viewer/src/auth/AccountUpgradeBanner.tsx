@@ -22,7 +22,7 @@
  */
 import { useEffect, useState } from "react";
 import type { AuthChangeEvent, Session as SupabaseAuthSession } from "@supabase/supabase-js";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type { AuthResult } from "./session";
 import { UpgradeAccountModal } from "./UpgradeAccountModal";
 

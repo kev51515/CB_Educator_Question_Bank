@@ -20,7 +20,7 @@ import { useCallback, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
 import { useCourseOverview, type RecentPost } from "./useCourseOverview";
-import { Skeleton, SkeletonCard } from "../components/Skeleton";
+import { Skeleton, SkeletonCard } from "@/components/Skeleton";
 import {
   courseAnnouncementsPath,
   courseAssignmentsPath,
@@ -28,7 +28,7 @@ import {
   courseDiscussionsPath,
   courseGradesPath,
   coursePeoplePath,
-} from "../lib/routes";
+} from "@/lib/routes";
 
 const REFRESH_DEBOUNCE_MS = 600;
 

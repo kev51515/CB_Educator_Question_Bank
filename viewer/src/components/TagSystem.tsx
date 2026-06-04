@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { IDENTITY } from "../lib/designTokens";
+import { IDENTITY } from "@/lib/designTokens";
 
 /* ─── Types ─── */
 

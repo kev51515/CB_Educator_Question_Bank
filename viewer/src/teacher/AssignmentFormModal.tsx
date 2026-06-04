@@ -26,15 +26,15 @@
  * kept so existing call-sites keep working.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type {
   Assignment,
   AssignmentDifficultyMix,
   AssignmentSourceId,
 } from "./useAssignments";
 import { SmartDatePicker, useToast } from "@/components";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { useFocusTrap } from "../hooks";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { useFocusTrap } from "@/hooks";
 
 export type AssignmentFormMode = "create" | "edit";
 

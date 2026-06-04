@@ -18,9 +18,9 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useToast } from "@/components";
-import { useFocusTrap } from "../hooks";
-import { SkeletonRows } from "../components/Skeleton";
-import { EmptyState } from "../components/EmptyState";
+import { useFocusTrap } from "@/hooks";
+import { SkeletonRows } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
 import {
   buildSourceTree,
   collectSubtreeIds,

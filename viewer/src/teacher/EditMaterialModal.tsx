@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { type CourseMaterial } from "./useMaterials";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { useFocusTrap } from "../hooks";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { useFocusTrap } from "@/hooks";
 
 interface EditModalProps {
   material: CourseMaterial;

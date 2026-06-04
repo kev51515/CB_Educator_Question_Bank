@@ -19,8 +19,8 @@
  */
 import { useNavigate } from "react-router-dom";
 import { useRecentFeedback, type RecentFeedbackItem } from "./useRecentFeedback";
-import { SkeletonRows } from "../components/Skeleton";
-import { ROUTES, assignmentReviewPath } from "../lib/routes";
+import { SkeletonRows } from "@/components/Skeleton";
+import { ROUTES, assignmentReviewPath } from "@/lib/routes";
 
 interface RecentFeedbackWidgetProps {
   studentId: string | null;

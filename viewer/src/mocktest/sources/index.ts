@@ -4,7 +4,7 @@
  * `mixed` interleaves CB and SAT samples roughly evenly. If one source has
  * fewer questions than requested, the other source fills the gap.
  */
-import type { TestConfig, TestDifficulty, TestQuestion } from "../types";
+import type { TestConfig, TestDifficulty, TestQuestion } from "@/mocktest/types";
 import { loadCbQuestions } from "./cbSource";
 import { loadSatQuestions } from "./satSource";
 

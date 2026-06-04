@@ -9,7 +9,7 @@
  *
  * These helpers ensure both representations stay in sync.
  */
-import type { Filters, IndexEntry, StatusFilter } from "../types";
+import type { Filters, IndexEntry, StatusFilter } from "@/types";
 import { applyFacets, type FacetState } from "./facets";
 import { FILTERS } from "./filterRegistry";
 

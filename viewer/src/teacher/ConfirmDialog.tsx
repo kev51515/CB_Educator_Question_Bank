@@ -9,7 +9,7 @@
  * Deliberately not exported from the barrel — internal helper.
  */
 import { useEffect, useRef, type ReactNode } from "react";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 interface ConfirmDialogProps {
   title: string;

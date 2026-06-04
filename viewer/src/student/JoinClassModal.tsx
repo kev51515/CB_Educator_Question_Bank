@@ -13,10 +13,10 @@
  * chars (stripping spaces, hyphens, or anything outside the alphabet).
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
-import { studentCoursePath } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { useFocusTrap } from "@/hooks";
+import { studentCoursePath } from "@/lib/routes";
 
 interface JoinedClass {
   id: string;

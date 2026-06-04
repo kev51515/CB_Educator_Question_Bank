@@ -6,7 +6,7 @@
  * alongside the student's response (`get_test_result`).
  */
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../lib/routes";
+import { ROUTES } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
 import { scaledFromSectionScores } from "./satScore";
 import type { ResultQuestion, TestResult } from "./types";

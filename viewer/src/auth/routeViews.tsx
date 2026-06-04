@@ -13,16 +13,16 @@
  */
 import { useEffect, useState, type ReactNode } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components";
-import { ROUTES, assignmentReviewPath } from "../lib/routes";
-import { AssignmentRunner } from "../student/AssignmentRunner";
-import { StudentAttemptReview } from "../student/StudentAttemptReview";
+import { ROUTES, assignmentReviewPath } from "@/lib/routes";
+import { AssignmentRunner } from "@/student/AssignmentRunner";
+import { StudentAttemptReview } from "@/student/StudentAttemptReview";
 import type {
   StudentAssignment,
   StudentAssignmentAttempt,
-} from "../student";
-import type { AssignmentDifficultyMix, AssignmentSourceId } from "../teacher/useAssignments";
+} from "@/student";
+import type { AssignmentDifficultyMix, AssignmentSourceId } from "@/teacher/useAssignments";
 
 // --- Shared bits ----------------------------------------------------------
 
@@ -339,4 +339,4 @@ export function AssignmentReviewRoute() {
  * Settings) plus the per-assignment + per-attempt drilldowns. We re-export
  * here so AuthGate's existing import keeps working without churn.
  */
-export { ClassLayout } from "../teacher/ClassLayout";
+export { ClassLayout } from "@/teacher/ClassLayout";

@@ -16,12 +16,12 @@
  */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { useProfile } from "../lib/profile";
+import { supabase } from "@/lib/supabase";
+import { useProfile } from "@/lib/profile";
 import { useClassContext } from "./classLayoutContext";
 import { ClassFormModal, type EditableClass } from "./ClassFormModal";
 import { ConfirmDialog } from "./ConfirmDialog";
-import { ROUTES } from "../lib/routes";
+import { ROUTES } from "@/lib/routes";
 
 interface RegeneratedClassRow {
   id: string;

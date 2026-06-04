@@ -17,10 +17,10 @@
  * are filtered out — assigning into an archive is almost always a bug.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { MarkdownEditor, SmartDatePicker, useToast } from "@/components";
 import { useTeacherClasses } from "./useTeacherClasses";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 import {
   catalogEntryUid,
   type CatalogEntry,

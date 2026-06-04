@@ -31,15 +31,15 @@
  *     the kebab acts as a touch / a11y fallback for users who can't drag.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useClassContext } from "./classLayoutContext";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 import { AddMaterialModal, type AddMaterialMode } from "./AddMaterialModal";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { useMaterials, type CourseMaterial } from "./useMaterials";
-import { useToast } from "../components/Toast";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows } from "../components/Skeleton";
+import { useToast } from "@/components/Toast";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows } from "@/components/Skeleton";
 import { getErrorMessage } from "./materialsHelpers";
 import { MaterialCard } from "./MaterialCard";
 import { EditMaterialModal } from "./EditMaterialModal";

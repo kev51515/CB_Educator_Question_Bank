@@ -10,7 +10,7 @@
  * denies access). The layout uses that to redirect back to /classes.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type { TeacherClass } from "./useTeacherClasses";
 
 export interface UseClass {

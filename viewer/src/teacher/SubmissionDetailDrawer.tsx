@@ -8,13 +8,13 @@
  * append optimistically; the realtime story is intentionally out of scope.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type { PortfolioItem } from "./usePortfolio";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { EmptyState } from "../components/EmptyState";
-import { Skeleton } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { EmptyState } from "@/components/EmptyState";
+import { Skeleton } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
+import { useFocusTrap } from "@/hooks";
 
 const STORAGE_BUCKET = "portfolio-files";
 const SIGNED_URL_TTL_SECONDS = 60 * 60;

@@ -8,7 +8,7 @@
  *
  * Avoid:
  *   import { Detail } from "@/components/Detail"
- *   import Detail from "../components/Detail"
+ *   import Detail from "@/components/Detail"
  *
  * When you add a new component file in this directory, add it to this barrel
  * so it's discoverable at one well-known location.

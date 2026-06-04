@@ -14,17 +14,17 @@ import {
   fetchAttemptReview,
   formatAttemptTimestamp,
   type AttemptReviewData,
-} from "../lib/attemptReview";
-import { SafeHtml } from "../components/SafeHtml";
-import { supabase } from "../lib/supabase";
-import { useStudentSession } from "../auth/session";
-import { ModuleBreakdownTable } from "../mocktest/components/ModuleBreakdownTable";
-import { RichText } from "../mocktest/components/RichText";
-import { ScoreHero } from "../mocktest/components/ScoreHero";
-import { SectionBreakdownCards } from "../mocktest/components/SectionBreakdownCards";
-import { SkillBreakdownCard } from "../mocktest/components/SkillBreakdownCard";
-import { truncate } from "../mocktest/components/resultsHelpers";
-import type { Letter, TestQuestion } from "../mocktest/types";
+} from "@/lib/attemptReview";
+import { SafeHtml } from "@/components/SafeHtml";
+import { supabase } from "@/lib/supabase";
+import { useStudentSession } from "@/auth/session";
+import { ModuleBreakdownTable } from "@/mocktest/components/ModuleBreakdownTable";
+import { RichText } from "@/mocktest/components/RichText";
+import { ScoreHero } from "@/mocktest/components/ScoreHero";
+import { SectionBreakdownCards } from "@/mocktest/components/SectionBreakdownCards";
+import { SkillBreakdownCard } from "@/mocktest/components/SkillBreakdownCard";
+import { truncate } from "@/mocktest/components/resultsHelpers";
+import type { Letter, TestQuestion } from "@/mocktest/types";
 
 // Local relative-time formatter — mirrors the dashboard's `timeAgo` so the
 // student sees the same phrasing as teachers/staff elsewhere ("3h ago",

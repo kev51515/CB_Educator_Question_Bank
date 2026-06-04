@@ -13,27 +13,27 @@
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useProfile } from "../lib/profile";
-import { useTeacherClasses, type TeacherClass } from "../teacher/useTeacherClasses";
+import { useProfile } from "@/lib/profile";
+import { useTeacherClasses, type TeacherClass } from "@/teacher/useTeacherClasses";
 import {
   coursePath,
   courseAssignmentsPath,
   coursePeoplePath,
   courseAnnouncementsPath,
   ROUTES,
-} from "../lib/routes";
-import { supabase } from "../lib/supabase";
-import { SkeletonCard } from "../components/Skeleton";
-import { EmptyState } from "../components/EmptyState";
-import { CourseCard, CardActionIcon } from "../components/CourseCard";
-import { useOptimistic, useToast, type KebabMenuOption } from "../components";
-import { ClassFormModal, type EditableClass } from "../teacher/ClassFormModal";
-import { ConfirmDialog } from "../teacher/ConfirmDialog";
-import { DuplicateCourseModal } from "../teacher/DuplicateCourseModal";
+} from "@/lib/routes";
+import { supabase } from "@/lib/supabase";
+import { SkeletonCard } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
+import { CourseCard, CardActionIcon } from "@/components/CourseCard";
+import { useOptimistic, useToast, type KebabMenuOption } from "@/components";
+import { ClassFormModal, type EditableClass } from "@/teacher/ClassFormModal";
+import { ConfirmDialog } from "@/teacher/ConfirmDialog";
+import { DuplicateCourseModal } from "@/teacher/DuplicateCourseModal";
 import {
   AnnouncementFormModal,
   type AnnouncementTargetCourse,
-} from "../teacher/AnnouncementFormModal";
+} from "@/teacher/AnnouncementFormModal";
 import { NeedsAttentionPanel } from "./NeedsAttentionPanel";
 import { TestReleaseNudge } from "./TestReleaseNudge";
 import { CohortSummaryWidget } from "./CohortSummaryWidget";

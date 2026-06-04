@@ -7,7 +7,7 @@
  * enrolled in / staff for the topic's course (see migration 0025).
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type { DiscussionTopic } from "./useDiscussions";
 
 export interface DiscussionPost {

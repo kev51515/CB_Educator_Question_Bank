@@ -31,7 +31,7 @@
  *    courses showing up on screen as a wall.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export const MAX_COHORT_ROWS = 12;
 

@@ -6,7 +6,7 @@
  * guarantees only the owning teacher (or admin) can see these rows.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface RosterStudent {
   membership_id: string;

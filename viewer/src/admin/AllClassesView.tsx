@@ -12,20 +12,20 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { DuplicateCourseModal } from "../teacher/DuplicateCourseModal";
-import { ClassFormModal, type EditableClass } from "../teacher/ClassFormModal";
-import { ConfirmDialog } from "../teacher/ConfirmDialog";
+import { supabase } from "@/lib/supabase";
+import { DuplicateCourseModal } from "@/teacher/DuplicateCourseModal";
+import { ClassFormModal, type EditableClass } from "@/teacher/ClassFormModal";
+import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import {
   CourseCard,
   EmptyState,
   useToast,
   useOptimistic,
   type KebabMenuOption,
-} from "../components";
-import { SkeletonCard } from "../components/Skeleton";
-import { useProfile } from "../lib/profile";
-import { coursePath, courseModulesPath } from "../lib/routes";
+} from "@/components";
+import { SkeletonCard } from "@/components/Skeleton";
+import { useProfile } from "@/lib/profile";
+import { coursePath, courseModulesPath } from "@/lib/routes";
 
 // Join code generator (same as TeacherConsole's). 8 chars from a confusable-
 // excluding alphabet, dash-split for legibility. DB has a unique constraint;

@@ -25,9 +25,9 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { assignmentReviewPath } from "../lib/routes";
-import { useToast } from "../components";
+import { supabase } from "@/lib/supabase";
+import { assignmentReviewPath } from "@/lib/routes";
+import { useToast } from "@/components";
 import {
   listStagedSubmissions,
   submitWithRetry,

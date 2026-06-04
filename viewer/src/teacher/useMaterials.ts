@@ -12,7 +12,7 @@
  * same UI session — see updates without a manual refresh.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export type MaterialKind = "file" | "link";
 

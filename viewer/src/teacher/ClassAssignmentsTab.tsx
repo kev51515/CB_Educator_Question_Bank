@@ -12,9 +12,9 @@
  */
 import { useNavigate } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 import { AssignmentsPage } from "./AssignmentsPage";
-import { classPath, classAssignmentPath } from "../lib/routes";
+import { classPath, classAssignmentPath } from "@/lib/routes";
 
 export function ClassAssignmentsTab() {
   const { cls } = useClassContext();

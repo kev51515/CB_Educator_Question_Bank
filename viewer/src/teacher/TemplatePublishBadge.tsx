@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useOptimistic } from "../components/useOptimistic";
+import { supabase } from "@/lib/supabase";
+import { useOptimistic } from "@/components/useOptimistic";
 
 // -----------------------------------------------------------------------------
 // Template publish badge — one-click optimistic toggle (mirrors ModulesPage).

@@ -5,7 +5,7 @@
  * letter and, when available, the rationale supplied by the question source.
  */
 import { useState } from "react";
-import type { Letter, TestQuestion } from "../types";
+import type { Letter, TestQuestion } from "@/mocktest/types";
 import { RichText } from "./RichText";
 import { truncate } from "./resultsHelpers";
 

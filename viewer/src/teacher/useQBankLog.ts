@@ -25,7 +25,7 @@
  * without an extra round-trip to `qbank_attempts`.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface QBankLogEntry {
   id: number;

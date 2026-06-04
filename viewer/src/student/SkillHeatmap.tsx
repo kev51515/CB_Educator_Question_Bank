@@ -31,9 +31,9 @@
  * caller via the RPC (which uses auth.uid()).
  */
 import { useEffect, useMemo, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { Skeleton } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
+import { supabase } from "@/lib/supabase";
+import { Skeleton } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 
 interface SkillMasteryRow {
   domain: string;

@@ -10,8 +10,8 @@
  * so a fully-released test drops off the nudge.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { TestCompletionModal } from "../fulltest/TestCompletionModal";
+import { supabase } from "@/lib/supabase";
+import { TestCompletionModal } from "@/fulltest/TestCompletionModal";
 
 interface AwaitingRow {
   slug: string;

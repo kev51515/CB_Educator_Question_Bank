@@ -14,15 +14,15 @@
  */
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
-import { ROUTES } from "../lib/routes";
+import { ROUTES } from "@/lib/routes";
 import { StudentBadge } from "./StudentBadge";
-import { NotificationBell } from "../notifications";
+import { NotificationBell } from "@/notifications";
 import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
-import { useProfile } from "../lib/profile";
-import { CommandPalette, type Command } from "../components/CommandPalette";
-import { ShortcutsHelp } from "../components/ShortcutsHelp";
-import { useLmsCommands } from "../lib/lmsCommands";
+import { useProfile } from "@/lib/profile";
+import { CommandPalette, type Command } from "@/components/CommandPalette";
+import { ShortcutsHelp } from "@/components/ShortcutsHelp";
+import { useLmsCommands } from "@/lib/lmsCommands";
 
 /**
  * localStorage key for the staff-level ⌘K palette "recent commands" stack.

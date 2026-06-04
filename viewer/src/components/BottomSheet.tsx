@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 interface BottomSheetProps {
   open: boolean;

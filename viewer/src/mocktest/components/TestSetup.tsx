@@ -6,7 +6,7 @@
  * `TestConfig` for the orchestrator to load questions.
  */
 import { useState } from "react";
-import type { TestConfig, TestSourceId } from "../types";
+import type { TestConfig, TestSourceId } from "@/mocktest/types";
 import { TestTypeSelector, type TestTypeOption } from "./TestTypeSelector";
 
 interface TestSetupProps {

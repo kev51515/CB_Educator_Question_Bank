@@ -18,24 +18,24 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { useProfile } from "../lib/profile";
+import { supabase } from "@/lib/supabase";
+import { useProfile } from "@/lib/profile";
 import {
   fetchAttemptReview,
   formatAttemptTimestamp,
   formatDurationSeconds,
   type AttemptReviewData,
-} from "../lib/attemptReview";
-import { AnswerReview } from "../mocktest/components/AnswerReview";
-import { ModuleBreakdownTable } from "../mocktest/components/ModuleBreakdownTable";
-import { ScoreHero } from "../mocktest/components/ScoreHero";
-import { SectionBreakdownCards } from "../mocktest/components/SectionBreakdownCards";
-import { SkillBreakdownCard } from "../mocktest/components/SkillBreakdownCard";
-import { SkeletonRows } from "../components/Skeleton";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { useToast } from "../components/Toast";
+} from "@/lib/attemptReview";
+import { AnswerReview } from "@/mocktest/components/AnswerReview";
+import { ModuleBreakdownTable } from "@/mocktest/components/ModuleBreakdownTable";
+import { ScoreHero } from "@/mocktest/components/ScoreHero";
+import { SectionBreakdownCards } from "@/mocktest/components/SectionBreakdownCards";
+import { SkillBreakdownCard } from "@/mocktest/components/SkillBreakdownCard";
+import { SkeletonRows } from "@/components/Skeleton";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { useToast } from "@/components/Toast";
 import { useClassContext } from "./classLayoutContext";
-import { classAssignmentAttemptPath } from "../lib/routes";
+import { classAssignmentAttemptPath } from "@/lib/routes";
 import {
   FEEDBACK_DEBOUNCE_MS,
   FEEDBACK_MAX_LEN,

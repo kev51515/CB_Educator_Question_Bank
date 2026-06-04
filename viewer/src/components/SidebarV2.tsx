@@ -1,17 +1,17 @@
 import { useEffect, useMemo, useState } from "react";
 import type { JSX } from "react";
-import { useLocalStorageJSON } from "../hooks";
+import { useLocalStorageJSON } from "@/hooks";
 import {
   applyFacets,
   facetCounts,
   isFacetActive,
   type FacetDef,
   type FacetState,
-} from "../lib/facets";
-import { FILTERS, visibleFilters } from "../lib/filterRegistry";
-import { IDENTITY } from "../lib/designTokens";
+} from "@/lib/facets";
+import { FILTERS, visibleFilters } from "@/lib/filterRegistry";
+import { IDENTITY } from "@/lib/designTokens";
 import { loadAspectCatalog } from "@/lib/aspects";
-import type { AspectCatalogEntry, IndexEntry } from "../types";
+import type { AspectCatalogEntry, IndexEntry } from "@/types";
 import {
   BooleanFilter,
   DateRangeFilter,

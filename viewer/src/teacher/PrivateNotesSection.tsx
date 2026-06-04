@@ -12,9 +12,9 @@
 // label flips to "Add a private note about this student" so the
 // affordance stays discoverable.
 import { useCallback, useEffect, useRef, useState } from "react";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { Skeleton } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { Skeleton } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 import { useStudentNotes } from "./useStudentNotes";
 import { formatRelative } from "./studentProfileHelpers";
 

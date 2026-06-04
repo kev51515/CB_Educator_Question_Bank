@@ -3,7 +3,7 @@
  * a collapse/expand toggle. Resets to "expanded" when the question changes.
  */
 import { useEffect, useState } from "react";
-import type { TestQuestion } from "../types";
+import type { TestQuestion } from "@/mocktest/types";
 import { RichText } from "./RichText";
 
 interface QuestionPassageProps {

@@ -19,7 +19,7 @@
  * `course_id=eq.{id}` to keep the query small.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export type StudentMaterialKind = "file" | "link";
 

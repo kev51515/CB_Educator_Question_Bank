@@ -20,12 +20,12 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { useEscapeKey, useFocusTrap } from "../hooks";
-import { Skeleton } from "../components/Skeleton";
-import { EmptyState } from "../components/EmptyState";
-import { ROUTES, testPreviewPath, testReviewPath } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { Skeleton } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
+import { ROUTES, testPreviewPath, testReviewPath } from "@/lib/routes";
 import { getResult } from "./api";
 import { ResultView } from "./ResultView";
 import { AssignTestModal } from "./AssignTestModal";

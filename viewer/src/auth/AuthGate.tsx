@@ -40,7 +40,7 @@
  * differences (e.g. who can mint invite codes) live below this layer.
  */
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { CommandPalette } from "../components/CommandPalette";
+import { CommandPalette } from "@/components/CommandPalette";
 import {
   Navigate,
   Route,
@@ -50,7 +50,7 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { useStudentSession } from "./session";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 import { AuthScreen } from "./AuthScreen";
 import { QuickStartScreen } from "./QuickStartScreen";
 import { AreaSelector } from "./AreaSelector";
@@ -64,26 +64,26 @@ import {
   ClassLayout,
   StudentTestRunGuard,
 } from "./routeViews";
-import { AllClassesView } from "../admin";
+import { AllClassesView } from "@/admin";
 import {
   FullTestApp,
   TestsAdminPage,
   TestReviewPage,
   TestOverviewPage,
-} from "../fulltest";
-import { testOverviewPath, studentHomePath } from "../lib/routes";
-import { CalendarPage } from "../calendar";
-import { DashboardPage } from "../dashboard";
-import { InboxPage, ThreadView } from "../inbox";
-import { QuestionBankPage } from "../teacher/QuestionBankPage";
-import { QBankSubmissionLogPage } from "../teacher/QBankSubmissionLogPage";
-import { StudentProfilePage } from "../teacher/StudentProfilePage";
-import { StudentCourseView } from "../student/StudentCourseView";
-import { StudentCoursesPage } from "../student/StudentCoursesPage";
-import { MyFeedbackPage } from "../student/MyFeedbackPage";
-import { ROUTES } from "../lib/routes";
-import { supabase } from "../lib/supabase";
-import type { Profile } from "../lib/profile";
+} from "@/fulltest";
+import { testOverviewPath, studentHomePath } from "@/lib/routes";
+import { CalendarPage } from "@/calendar";
+import { DashboardPage } from "@/dashboard";
+import { InboxPage, ThreadView } from "@/inbox";
+import { QuestionBankPage } from "@/teacher/QuestionBankPage";
+import { QBankSubmissionLogPage } from "@/teacher/QBankSubmissionLogPage";
+import { StudentProfilePage } from "@/teacher/StudentProfilePage";
+import { StudentCourseView } from "@/student/StudentCourseView";
+import { StudentCoursesPage } from "@/student/StudentCoursesPage";
+import { MyFeedbackPage } from "@/student/MyFeedbackPage";
+import { ROUTES } from "@/lib/routes";
+import { supabase } from "@/lib/supabase";
+import type { Profile } from "@/lib/profile";
 import type { AuthResult } from "./session";
 
 /**

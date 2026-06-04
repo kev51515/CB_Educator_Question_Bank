@@ -26,11 +26,11 @@ import {
   useAssignmentAttempts,
   type AssignmentAttempt,
 } from "./useAssignmentAttempts";
-import { SkeletonRows } from "../components/Skeleton";
+import { SkeletonRows } from "@/components/Skeleton";
 import { BulkGradeModal, type BulkGradePatch } from "./BulkGradeModal";
-import { useToast } from "../components/Toast";
-import { useProfile } from "../lib/profile";
-import { supabase } from "../lib/supabase";
+import { useToast } from "@/components/Toast";
+import { useProfile } from "@/lib/profile";
+import { supabase } from "@/lib/supabase";
 import {
   type AttemptFilter,
   type AttemptSort,

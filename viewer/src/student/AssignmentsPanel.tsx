@@ -20,13 +20,13 @@
  *   preserved.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import {
   useStudentAssignments,
   type StudentAssignment,
   type StudentAssignmentAttempt,
 } from "./useStudentAssignments";
-import { SkeletonRows } from "../components/Skeleton";
+import { SkeletonRows } from "@/components/Skeleton";
 import { AssignmentRow } from "./AssignmentRow";
 import {
   DEFAULT_VIEW,

@@ -27,12 +27,12 @@
  * usePortfolioDrag.ts, PortfolioTreeView.tsx, PortfolioOverviewGrid.tsx).
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows, SkeletonTable } from "../components/Skeleton";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows, SkeletonTable } from "@/components/Skeleton";
 import { useClassContext } from "./classLayoutContext";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 import { useClassRoster, type RosterStudent } from "./useClassRoster";
 import { ConfirmDialog } from "./ConfirmDialog";
 import {
@@ -45,7 +45,7 @@ import {
 } from "./usePortfolio";
 import { PortfolioItemFormModal } from "./PortfolioItemFormModal";
 import { SubmissionDetailDrawer } from "./SubmissionDetailDrawer";
-import { StudentPortfolio } from "../student/StudentPortfolio";
+import { StudentPortfolio } from "@/student/StudentPortfolio";
 import {
   collapseKey,
   readCollapseState,

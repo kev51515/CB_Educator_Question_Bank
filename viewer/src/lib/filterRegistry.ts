@@ -1,4 +1,4 @@
-import type { IndexEntry } from "../types";
+import type { IndexEntry } from "@/types";
 import { ciIncludes, type FacetDef } from "./facets";
 
 /**

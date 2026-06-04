@@ -6,7 +6,7 @@
  * compose box can re-pull after an insert without a websocket subscription.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface InboxMessage {
   id: string;

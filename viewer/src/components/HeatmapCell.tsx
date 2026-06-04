@@ -1,4 +1,4 @@
-import { CONFIDENCE } from "../lib/designSystem";
+import { CONFIDENCE } from "@/lib/designSystem";
 
 interface HeatmapCellProps {
   cell: { total: number; confSum: number; confCount: number; doneOnly: number } | null;

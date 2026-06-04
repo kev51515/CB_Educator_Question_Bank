@@ -25,7 +25,7 @@
  * pagination is overkill at the volumes a single student sees here.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface RecentFeedbackItem {
   attemptId: string;

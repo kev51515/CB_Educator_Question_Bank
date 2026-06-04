@@ -37,7 +37,7 @@
  * events to rows Maya could SELECT anyway.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 const FLASH_DURATION_MS = 1200;
 

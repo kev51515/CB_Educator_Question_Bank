@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { JSX } from "react";
-import type { FacetDef, FacetState } from "../lib/facets";
-import type { IndexEntry } from "../types";
+import type { FacetDef, FacetState } from "@/lib/facets";
+import type { IndexEntry } from "@/types";
 import { asStringArray, ciHas, omitKey } from "./sidebarHelpers";
 
 /* ───────────────────────────── Chevron ────────────────────────────────── */

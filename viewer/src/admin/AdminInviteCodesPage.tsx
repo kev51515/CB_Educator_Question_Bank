@@ -12,12 +12,12 @@
  * console's nav for profile.role === 'admin'.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { SmartDatePicker } from "../components/SmartDatePicker";
-import { useToast } from "../components/Toast";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows } from "../components/Skeleton";
-import { ConfirmDialog } from "../teacher/ConfirmDialog";
+import { supabase } from "@/lib/supabase";
+import { SmartDatePicker } from "@/components/SmartDatePicker";
+import { useToast } from "@/components/Toast";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows } from "@/components/Skeleton";
+import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 
 // ----- Filter + sort persistence -----
 type FilterKey = "all" | "active" | "expired" | "revoked";

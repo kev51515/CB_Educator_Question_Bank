@@ -15,8 +15,8 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { matchPath, useLocation, useNavigate } from "react-router-dom";
-import type { Command } from "../components/CommandPalette";
-import { useToast } from "../components/Toast";
+import type { Command } from "@/components/CommandPalette";
+import { useToast } from "@/components/Toast";
 import { useBankCommands } from "./BankCommandsContext";
 import { useProfile, type ProfileRole } from "./profile";
 import { supabase } from "./supabase";

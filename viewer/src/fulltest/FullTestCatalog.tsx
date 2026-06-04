@@ -12,8 +12,8 @@
  */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { testRunPath, testReviewPath, testOverviewPath } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { testRunPath, testReviewPath, testOverviewPath } from "@/lib/routes";
 import { TestCompletionModal } from "./TestCompletionModal";
 import { TestMonitorModal } from "./TestMonitorModal";
 import { AssignTestModal } from "./AssignTestModal";

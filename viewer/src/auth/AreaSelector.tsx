@@ -20,7 +20,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStudentSession } from "./session";
-import { ShortcutHelpOverlay } from "../components/ShortcutHelpOverlay";
+import { ShortcutHelpOverlay } from "@/components/ShortcutHelpOverlay";
 
 /**
  * Returns true when focus is currently in an editable surface (input,
@@ -34,7 +34,7 @@ function isEditableTarget(target: EventTarget | null): boolean {
   if (target.isContentEditable) return true;
   return false;
 }
-import { StudentTestResultsPanel } from "../student/StudentTestResultsPanel";
+import { StudentTestResultsPanel } from "@/student/StudentTestResultsPanel";
 import {
   AssignmentsPanel,
   CourseAnnouncementsList,
@@ -42,12 +42,12 @@ import {
   MyClassesPanel,
   RecentFeedbackWidget,
   SkillHeatmap,
-} from "../student";
+} from "@/student";
 import type {
   StudentAssignment,
   StudentAssignmentAttempt,
-} from "../student";
-import { assignmentReviewPath, assignmentTakePath } from "../lib/routes";
+} from "@/student";
+import { assignmentReviewPath, assignmentTakePath } from "@/lib/routes";
 
 export function AreaSelector() {
   const navigate = useNavigate();

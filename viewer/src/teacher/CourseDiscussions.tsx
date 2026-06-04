@@ -12,17 +12,17 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useClassContext } from "./classLayoutContext";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { TopicFormModal } from "./TopicFormModal";
 import { useDiscussions, type DiscussionTopic } from "./useDiscussions";
-import { courseDiscussionPath } from "../lib/routes";
-import { SafeHtml } from "../components/SafeHtml";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
+import { courseDiscussionPath } from "@/lib/routes";
+import { SafeHtml } from "@/components/SafeHtml";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 import { KebabMenu, useOptimistic, type KebabMenuOption } from "@/components";
 
 function getErrorMessage(error: unknown, fallback: string): string {

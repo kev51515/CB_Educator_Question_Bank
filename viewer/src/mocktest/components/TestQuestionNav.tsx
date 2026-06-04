@@ -4,7 +4,7 @@
  * Buttons reflect three states: unanswered, answered, flagged. Current is
  * shown with a ring.
  */
-import type { Letter, TestQuestion } from "../types";
+import type { Letter, TestQuestion } from "@/mocktest/types";
 
 interface TestQuestionNavProps {
   questions: TestQuestion[];

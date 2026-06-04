@@ -10,7 +10,7 @@
  *   • a small retry on the grading submit, since losing a module submission is
  *     the most costly failure.
  */
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type {
   GetModuleResult,
   StartTestResult,

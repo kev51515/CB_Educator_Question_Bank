@@ -4,7 +4,7 @@
  * full-length tests without duplicating the query.
  */
 import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type { TestCatalogEntry } from "./types";
 
 export function useFullTests(enabled = true): {

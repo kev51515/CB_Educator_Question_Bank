@@ -12,7 +12,7 @@
  * source listing.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface PortfolioImportSource {
   courseId: string;

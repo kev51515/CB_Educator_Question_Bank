@@ -4,7 +4,7 @@
  * On first pass the "section" concept is replaced by "domain" since the
  * unified `TestQuestion` does not split into R&W vs Math.
  */
-import type { DomainBreakdown, DifficultyBreakdown } from "../types";
+import type { DomainBreakdown, DifficultyBreakdown } from "@/mocktest/types";
 import { pct } from "./resultsHelpers";
 
 interface SectionBreakdownCardsProps {

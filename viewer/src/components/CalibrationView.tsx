@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import type { IndexEntry } from "@/types";
-import { IDENTITY } from "../lib/designTokens";
-import { useFocusTrap } from "../hooks";
+import { IDENTITY } from "@/lib/designTokens";
+import { useFocusTrap } from "@/hooks";
 
 interface CalibrationViewProps {
   open: boolean;

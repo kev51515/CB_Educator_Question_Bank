@@ -7,8 +7,8 @@
  * full-length test.
  */
 import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { scaledFromSectionScores, type ScaledReport } from "../fulltest/satScore";
+import { supabase } from "@/lib/supabase";
+import { scaledFromSectionScores, type ScaledReport } from "@/fulltest/satScore";
 
 interface RunRow {
   run_id: string;

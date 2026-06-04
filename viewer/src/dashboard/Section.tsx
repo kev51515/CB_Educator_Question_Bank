@@ -1,5 +1,5 @@
 import { ChevronIcon } from "./needsAttentionIcons";
-import { Skeleton } from "../components/Skeleton";
+import { Skeleton } from "@/components/Skeleton";
 
 function SectionSkeleton() {
   return (

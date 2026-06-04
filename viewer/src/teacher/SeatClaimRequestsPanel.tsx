@@ -9,7 +9,7 @@
  * 0095 + useSeatClaimRequests.
  */
 import { useState } from "react";
-import { useToast } from "../components/Toast";
+import { useToast } from "@/components/Toast";
 import { useSeatClaimRequests } from "./useSeatClaimRequests";
 
 interface SeatClaimRequestsPanelProps {

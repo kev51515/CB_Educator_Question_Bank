@@ -19,8 +19,8 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import type { AuthChangeEvent, Session as SupabaseAuthSession, User } from "@supabase/supabase-js";
-import { supabase } from "../lib/supabase";
-import { clearUser, identifyUser } from "../lib/telemetry";
+import { supabase } from "@/lib/supabase";
+import { clearUser, identifyUser } from "@/lib/telemetry";
 
 export type StudentArea = "bank" | "mock";
 export type SignUpRole = "student" | "teacher";

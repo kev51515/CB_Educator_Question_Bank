@@ -29,13 +29,13 @@
  * patterns so behaviour stays consistent across the create surfaces.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useCourseTemplates } from "./useCourseTemplates";
 import { DuplicateCourseModal } from "./DuplicateCourseModal";
-import { MarkdownEditor } from "../components/MarkdownEditor";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
 import { useToast } from "@/components";
-import { SkeletonRows } from "../components/Skeleton";
-import { useFocusTrap } from "../hooks";
+import { SkeletonRows } from "@/components/Skeleton";
+import { useFocusTrap } from "@/hooks";
 
 export type ClassFormMode = "create" | "edit";
 

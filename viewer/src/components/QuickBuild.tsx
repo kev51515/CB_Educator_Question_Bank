@@ -24,8 +24,8 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { IndexEntry } from "@/types";
-import { IDENTITY } from "../lib/designTokens";
-import { useFocusTrap } from "../hooks";
+import { IDENTITY } from "@/lib/designTokens";
+import { useFocusTrap } from "@/hooks";
 import { QuickBuildConfigureStep } from "@/components/QuickBuildConfigureStep";
 import { QuickBuildPreviewStep } from "@/components/QuickBuildPreviewStep";
 import { QuickBuildSaveTemplatePrompt } from "@/components/QuickBuildSaveTemplatePrompt";

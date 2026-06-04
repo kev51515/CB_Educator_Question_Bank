@@ -12,9 +12,9 @@
  * sharing a position — the reorder UI fixes it on the next drag.
  */
 import { useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { SmartDatePicker } from "@/components";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 interface AddModuleModalProps {
   open: boolean;

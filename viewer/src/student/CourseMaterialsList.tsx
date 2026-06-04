@@ -28,8 +28,8 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { useStudentMaterials, type StudentMaterial, type StudentMaterialKind } from "./useStudentMaterials";
-import { SkeletonRows } from "../components/Skeleton";
-import { supabase } from "../lib/supabase";
+import { SkeletonRows } from "@/components/Skeleton";
+import { supabase } from "@/lib/supabase";
 
 interface CourseMaterialsListProps {
   courseId: string;

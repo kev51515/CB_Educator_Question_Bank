@@ -14,14 +14,14 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
-import { useProfile } from "../lib/profile";
-import { supabase } from "../lib/supabase";
+import { useProfile } from "@/lib/profile";
+import { supabase } from "@/lib/supabase";
 import { useThreadMessages, type InboxMessage } from "./useThreadMessages";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { SafeHtml } from "../components/SafeHtml";
-import { EmptyState } from "../components/EmptyState";
-import { Skeleton } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { SafeHtml } from "@/components/SafeHtml";
+import { EmptyState } from "@/components/EmptyState";
+import { Skeleton } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 
 interface ThreadOutletContext {
   onMessageSent?: () => void | Promise<void>;

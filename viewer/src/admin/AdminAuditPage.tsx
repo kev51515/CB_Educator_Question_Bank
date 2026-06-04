@@ -30,8 +30,8 @@ import {
   useMemo,
   useState,
 } from "react";
-import { supabase } from "../lib/supabase";
-import { EmptyState, Skeleton } from "../components";
+import { supabase } from "@/lib/supabase";
+import { EmptyState, Skeleton } from "@/components";
 
 interface AuditEvent {
   id: number;

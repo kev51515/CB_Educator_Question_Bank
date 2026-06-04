@@ -11,11 +11,11 @@
  * already-loaded items list.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
 import { useAssignments } from "./useAssignments";
 import type { CourseModule, ModuleItemType } from "./useCourseModules";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 interface AddItemModalProps {
   open: boolean;

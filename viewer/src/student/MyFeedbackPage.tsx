@@ -26,9 +26,9 @@
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { EmptyState, Skeleton, useToast } from "../components";
-import { useStudentSession } from "../auth/session";
-import { ROUTES, assignmentReviewPath } from "../lib/routes";
+import { EmptyState, Skeleton, useToast } from "@/components";
+import { useStudentSession } from "@/auth/session";
+import { ROUTES, assignmentReviewPath } from "@/lib/routes";
 import {
   useRecentFeedback,
   type RecentFeedbackItem,

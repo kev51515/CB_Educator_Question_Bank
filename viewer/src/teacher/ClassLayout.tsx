@@ -32,8 +32,8 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { useProfile } from "../lib/profile";
+import { supabase } from "@/lib/supabase";
+import { useProfile } from "@/lib/profile";
 import { useClass } from "./useClass";
 import {
   ClassLayoutContext,
@@ -56,9 +56,9 @@ import { DiscussionTopicView } from "./DiscussionTopicView";
 import { CourseSettings } from "./CourseSettings";
 import { ModulesPage } from "./ModulesPage";
 import { QuickCreatePalette } from "./QuickCreatePalette";
-import { ROUTES, classPath, coursePath } from "../lib/routes";
-import { SkeletonRows } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
+import { ROUTES, classPath, coursePath } from "@/lib/routes";
+import { SkeletonRows } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 
 interface RegeneratedClassRow {
   id: string;

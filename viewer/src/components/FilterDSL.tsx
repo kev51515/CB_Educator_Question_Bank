@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import type { Filters, IndexEntry } from "@/types";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 // ─────────────────────────────── types ───────────────────────────────
 

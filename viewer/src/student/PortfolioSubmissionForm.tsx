@@ -12,16 +12,16 @@
  * orphaned object before surfacing the error.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type {
   StudentPortfolioItem,
   StudentPortfolioSubmission,
 } from "./useStudentPortfolio";
-import { FileDropzone } from "../components/FileDropzone";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { SmartDatePicker } from "../components/SmartDatePicker";
-import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
+import { FileDropzone } from "@/components/FileDropzone";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { SmartDatePicker } from "@/components/SmartDatePicker";
+import { useToast } from "@/components/Toast";
+import { useFocusTrap } from "@/hooks";
 
 const STORAGE_BUCKET = "portfolio-files";
 const MAX_FILE_BYTES = 50 * 1024 * 1024;

@@ -20,8 +20,8 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import type { Command } from "../components/CommandPalette";
-import { useToast } from "../components/Toast";
+import type { Command } from "@/components/CommandPalette";
+import { useToast } from "@/components/Toast";
 import { useProfile } from "./profile";
 import { supabase } from "./supabase";
 import { ROUTES, assignmentTakePath, studentCoursePath } from "./routes";

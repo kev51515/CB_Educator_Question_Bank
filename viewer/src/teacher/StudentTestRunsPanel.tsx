@@ -12,13 +12,13 @@
  *     staff-readable), including the student's eliminated choices.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { SkeletonRows } from "../components/Skeleton";
-import { getResult } from "../fulltest/api";
-import { ResultView } from "../fulltest/ResultView";
-import { useEscapeKey } from "../hooks";
-import type { TestResult } from "../fulltest/types";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { SkeletonRows } from "@/components/Skeleton";
+import { getResult } from "@/fulltest/api";
+import { ResultView } from "@/fulltest/ResultView";
+import { useEscapeKey } from "@/hooks";
+import type { TestResult } from "@/fulltest/types";
 
 interface TestRunRow {
   run_id: string;

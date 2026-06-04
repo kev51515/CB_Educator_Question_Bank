@@ -22,9 +22,9 @@
  * out client-side.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { useFocusTrap } from "@/hooks";
 
 export interface NewThreadModalProps {
   currentUserId: string;

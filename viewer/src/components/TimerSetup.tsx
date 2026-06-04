@@ -5,8 +5,8 @@
  * INEFFECTIVE_DYNAMIC_IMPORT). Lazy-loaded via `LazyTimerSetup` in lazy.ts.
  */
 import { useEffect, useRef, useState } from "react";
-import { IDENTITY } from "../lib/designTokens";
-import { useFocusTrap } from "../hooks";
+import { IDENTITY } from "@/lib/designTokens";
+import { useFocusTrap } from "@/hooks";
 
 interface TimerSetupProps {
   open: boolean;

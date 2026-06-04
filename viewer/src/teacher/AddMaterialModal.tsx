@@ -24,11 +24,11 @@
  * and the shared FileDropzone component.
  */
 import { useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { FileDropzone } from "../components/FileDropzone";
-import { MarkdownEditor } from "../components/MarkdownEditor";
+import { supabase } from "@/lib/supabase";
+import { FileDropzone } from "@/components/FileDropzone";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
 import { useToast } from "@/components";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 export type AddMaterialMode = "file" | "link";
 

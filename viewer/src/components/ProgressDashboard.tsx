@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import type { IndexEntry } from "@/types";
-import { CONFIDENCE } from "../lib/designSystem";
-import { useFocusTrap } from "../hooks";
+import { CONFIDENCE } from "@/lib/designSystem";
+import { useFocusTrap } from "@/hooks";
 import {
   DIFFICULTY_ORDER,
   SECTIONS,

@@ -6,7 +6,7 @@
  * `hidden sm:inline` made the Submit text disappear on phones until the
  * last question, leaving Sophia without a Submit affordance.
  */
-import type { TestQuestion } from "../types";
+import type { TestQuestion } from "@/mocktest/types";
 
 interface TestPhaseFooterProps {
   currentQuestion: TestQuestion;

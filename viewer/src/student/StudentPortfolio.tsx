@@ -15,8 +15,8 @@
  * all their leaf descendants. A polite live region announces filter changes.
  */
 import { useEffect, useMemo, useState } from "react";
-import { useClassContext } from "../teacher/classLayoutContext";
-import { useProfile } from "../lib/profile";
+import { useClassContext } from "@/teacher/classLayoutContext";
+import { useProfile } from "@/lib/profile";
 import {
   buildStudentPortfolioTree,
   useStudentPortfolio,
@@ -26,7 +26,7 @@ import {
   type StudentPortfolioSubmission,
 } from "./useStudentPortfolio";
 import { PortfolioSubmissionForm } from "./PortfolioSubmissionForm";
-import { SkeletonRows } from "../components/Skeleton";
+import { SkeletonRows } from "@/components/Skeleton";
 
 const TYPE_ICON: Record<StudentPortfolioItemType, string> = {
   short_text: "✏️",

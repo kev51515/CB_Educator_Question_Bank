@@ -18,10 +18,10 @@
  */
 import { useCallback, useMemo, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { useEscapeKey, useFocusTrap } from "../hooks";
-import { studentLoginUrl } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { studentLoginUrl } from "@/lib/routes";
 
 /** Stable DOM id for the credential QR canvas (read back for print). */
 const QR_CANVAS_ID = "add-student-qr-canvas";

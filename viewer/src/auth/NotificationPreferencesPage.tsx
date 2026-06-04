@@ -12,7 +12,7 @@
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components";
 import {
   NOTIFICATION_KINDS,
@@ -22,7 +22,7 @@ import {
   savePrefs,
   togglePref,
   type NotificationPrefs,
-} from "../notifications/preferences";
+} from "@/notifications/preferences";
 
 /**
  * Recent notification row used by the preview list. A minimal shape — we

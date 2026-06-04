@@ -35,8 +35,8 @@ import {
   useState,
 } from "react";
 import { useCohortSummary, type CohortRow } from "./useCohortSummary";
-import { Skeleton } from "../components/Skeleton";
-import { useToast } from "../components";
+import { Skeleton } from "@/components/Skeleton";
+import { useToast } from "@/components";
 import {
   loadCollapsed,
   saveCollapsed,

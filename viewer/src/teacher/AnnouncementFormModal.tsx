@@ -22,11 +22,11 @@
  * cohort-specific copy independently if she wants per-cohort tweaks).
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { SmartDatePicker, useToast } from "../components";
+import { supabase } from "@/lib/supabase";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { SmartDatePicker, useToast } from "@/components";
 import type { Announcement } from "./useAnnouncements";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 import {
   SCHEDULE_PRESETS,
   matchSchedulePreset,

@@ -13,7 +13,7 @@
  */
 import { useEffect, useRef, useState } from "react";
 import type { AuthResult } from "./session";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 interface UpgradeAccountModalProps {
   upgradeAnonymousAccount: (email: string, password: string) => Promise<AuthResult>;

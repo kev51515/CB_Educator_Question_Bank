@@ -10,7 +10,7 @@
  * parent `MockTestApp` so the localStorage snapshot stays accurate.
  */
 import { useCallback, useEffect, useState } from "react";
-import type { Letter, TestQuestion } from "../types";
+import type { Letter, TestQuestion } from "@/mocktest/types";
 import { AnswerChoices } from "./AnswerChoices";
 import { QuestionPassage } from "./QuestionPassage";
 import { RichText } from "./RichText";

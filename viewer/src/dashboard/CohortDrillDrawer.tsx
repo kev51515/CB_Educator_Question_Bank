@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { type CohortRow } from "./useCohortSummary";
-import { courseStudentProfilePath } from "../lib/routes";
-import { SkeletonRows } from "../components/Skeleton";
-import { useFocusTrap } from "../hooks/useFocusTrap";
+import { courseStudentProfilePath } from "@/lib/routes";
+import { SkeletonRows } from "@/components/Skeleton";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 import {
   useCohortDrill,
   fmtPct,

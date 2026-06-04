@@ -15,7 +15,7 @@
  * later is cheap if a multi-tab UX justifies it.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type {
   AssignmentDifficultyMix,
   AssignmentSourceId,

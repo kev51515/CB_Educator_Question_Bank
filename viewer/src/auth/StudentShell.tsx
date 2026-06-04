@@ -18,19 +18,19 @@
  */
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { ROUTES, studentHomePath } from "../lib/routes";
+import { ROUTES, studentHomePath } from "@/lib/routes";
 import { StudentBadge } from "./StudentBadge";
 import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
-import { useProfile } from "../lib/profile";
-import { CommandPalette, type Command } from "../components/CommandPalette";
-import { ShortcutsHelp } from "../components/ShortcutsHelp";
+import { useProfile } from "@/lib/profile";
+import { CommandPalette, type Command } from "@/components/CommandPalette";
+import { ShortcutsHelp } from "@/components/ShortcutsHelp";
 import {
   STUDENT_RECENT_COMMANDS_CAP,
   readStudentRecentCommandIds,
   useStudentCommands,
   writeStudentRecentCommandIds,
-} from "../lib/studentCommands";
+} from "@/lib/studentCommands";
 
 /**
  * Per-user localStorage key prefix for the Linear-style desktop sidebar

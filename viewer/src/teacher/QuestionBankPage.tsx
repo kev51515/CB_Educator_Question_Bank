@@ -40,10 +40,10 @@ import {
   useToast,
   type KebabMenuOption,
 } from "@/components";
-import { useProfile } from "../lib/profile";
-import { courseAssignmentPath, courseAssignmentsPath } from "../lib/routes";
-import { supabase } from "../lib/supabase";
-import { FullTestCatalog } from "../fulltest";
+import { useProfile } from "@/lib/profile";
+import { courseAssignmentPath, courseAssignmentsPath } from "@/lib/routes";
+import { supabase } from "@/lib/supabase";
+import { FullTestCatalog } from "@/fulltest";
 import { AddSetToCourseModal } from "./AddSetToCourseModal";
 import { AssignmentFormModal } from "./AssignmentFormModal";
 import { ConfirmDialog } from "./ConfirmDialog";

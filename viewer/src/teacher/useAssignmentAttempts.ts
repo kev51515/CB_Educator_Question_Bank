@@ -9,7 +9,7 @@
  * RLS guarantees only the owning teacher (or admin) can read these rows.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface AssignmentAttempt {
   id: string;

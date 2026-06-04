@@ -7,7 +7,7 @@
  * mutate; the student-facing surface uses `useStudentPortfolio` instead.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export type PortfolioItemType =
   | "short_text"

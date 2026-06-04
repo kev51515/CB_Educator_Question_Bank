@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import { useToast } from "../components/Toast";
-import { assignmentTakePath } from "../lib/routes";
+import { useToast } from "@/components/Toast";
+import { assignmentTakePath } from "@/lib/routes";
 import { ItemIcon } from "./ItemIcon";
 import {
   type AssignmentMeta,

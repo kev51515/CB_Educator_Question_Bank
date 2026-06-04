@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Question, IndexEntry } from "@/types";
-import { IDENTITY } from "../lib/designTokens";
-import { useFocusTrap } from "../hooks";
+import { IDENTITY } from "@/lib/designTokens";
+import { useFocusTrap } from "@/hooks";
 
 // ─────────────────────────── types ───────────────────────────────
 

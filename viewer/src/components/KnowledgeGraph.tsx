@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { IndexEntry } from "@/types";
-import { IDENTITY } from "../lib/designTokens";
-import { CONFIDENCE } from "../lib/designSystem";
-import { useFocusTrap } from "../hooks";
+import { IDENTITY } from "@/lib/designTokens";
+import { CONFIDENCE } from "@/lib/designSystem";
+import { useFocusTrap } from "@/hooks";
 
 // ─────────────────────────── types ───────────────────────────────
 

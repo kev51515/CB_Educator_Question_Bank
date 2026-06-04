@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { IDENTITY } from "../lib/designTokens";
-import { useFocusTrap } from "../hooks";
+import { IDENTITY } from "@/lib/designTokens";
+import { useFocusTrap } from "@/hooks";
 
 export interface A11yPrefs {
   dyslexiaMode: boolean;

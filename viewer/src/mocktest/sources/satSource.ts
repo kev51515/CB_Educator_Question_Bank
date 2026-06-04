@@ -5,8 +5,8 @@
  * (originally from the sibling `sat_questions` project) and adapts each
  * record into the unified `TestQuestion` shape used by the mock-test UI.
  */
-import { fetchJson } from "../../lib/fetch";
-import type { Letter, TestDifficulty, TestQuestion } from "../types";
+import { fetchJson } from "@/lib/fetch";
+import type { Letter, TestDifficulty, TestQuestion } from "@/mocktest/types";
 
 interface SatRawChoices {
   A?: string;

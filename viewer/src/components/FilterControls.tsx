@@ -1,6 +1,6 @@
 import { useState } from "react";
-import type { FacetDef } from "../lib/facets";
-import { IDENTITY, groupIdentity } from "../lib/designTokens";
+import type { FacetDef } from "@/lib/facets";
+import { IDENTITY, groupIdentity } from "@/lib/designTokens";
 
 /* ─────────────────────────────────────────── MultiFilter ───────────── */
 

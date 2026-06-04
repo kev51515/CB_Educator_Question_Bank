@@ -29,11 +29,11 @@
  * page.
  */
 import { useMemo, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { courseAssignmentAttemptPath } from "../lib/routes";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
+import { supabase } from "@/lib/supabase";
+import { courseAssignmentAttemptPath } from "@/lib/routes";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { useQBankLog, type QBankLogEntry } from "./useQBankLog";
 

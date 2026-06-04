@@ -13,7 +13,7 @@
  * still show at the bottom rather than disappearing.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface InboxOtherParticipant {
   id: string;

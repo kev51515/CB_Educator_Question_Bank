@@ -8,7 +8,7 @@
  * requested email + password — same student, same name, same work.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface SeatClaimRequest {
   id: string;

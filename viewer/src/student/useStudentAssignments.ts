@@ -10,11 +10,11 @@
  * implicitly filtered without an extra where clause.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type {
   AssignmentDifficultyMix,
   AssignmentSourceId,
-} from "../teacher/useAssignments";
+} from "@/teacher/useAssignments";
 
 export interface StudentAssignmentAttempt {
   id: string;

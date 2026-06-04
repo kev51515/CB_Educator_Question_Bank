@@ -1,4 +1,4 @@
-import type { IndexEntry } from "../types";
+import type { IndexEntry } from "@/types";
 
 /** A control type determines how the filter is rendered AND what shape its
  *  value takes in the filter state. */

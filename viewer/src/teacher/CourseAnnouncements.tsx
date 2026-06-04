@@ -19,17 +19,17 @@
  * in one tab appears in another with no manual reload.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useClassContext } from "./classLayoutContext";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 import { AnnouncementFormModal } from "./AnnouncementFormModal";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { useAnnouncements, type Announcement } from "./useAnnouncements";
-import { SafeHtml } from "../components/SafeHtml";
+import { SafeHtml } from "@/components/SafeHtml";
 import { KebabMenu, useOptimistic, type KebabMenuOption } from "@/components";
-import { useToast } from "../components/Toast";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows } from "../components/Skeleton";
+import { useToast } from "@/components/Toast";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows } from "@/components/Skeleton";
 
 function getErrorMessage(error: unknown, fallback: string): string {
   if (error instanceof Error) return error.message;

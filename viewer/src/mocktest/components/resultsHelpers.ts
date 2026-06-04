@@ -1,7 +1,7 @@
 /**
  * Shared formatters used by the results screen.
  */
-import type { Letter, TestQuestion, TestResult } from "../types";
+import type { Letter, TestQuestion, TestResult } from "@/mocktest/types";
 
 export function formatDuration(seconds: number): string {
   if (!Number.isFinite(seconds) || seconds <= 0) return "—";

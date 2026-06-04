@@ -20,8 +20,8 @@
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Assignment } from "./useAssignments";
-import { KebabMenu, useOptimistic, type KebabMenuOption } from "../components";
-import { useToast } from "../components/Toast";
+import { KebabMenu, useOptimistic, type KebabMenuOption } from "@/components";
+import { useToast } from "@/components/Toast";
 
 export interface AssignmentCardProps {
   assignment: Assignment;

@@ -11,8 +11,8 @@
  */
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { ROUTES } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { ROUTES } from "@/lib/routes";
 import type { Letter, QType, Section } from "./types";
 
 interface QRow {

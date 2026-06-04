@@ -22,8 +22,8 @@
  * "still resolving the page" path.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useProfile } from "../lib/profile";
+import { supabase } from "@/lib/supabase";
+import { useProfile } from "@/lib/profile";
 
 // --- Public types ----------------------------------------------------------
 

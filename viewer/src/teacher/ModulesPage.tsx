@@ -25,15 +25,15 @@
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
-import { supabase } from "../lib/supabase";
-import { useProfile } from "../lib/profile";
+import { supabase } from "@/lib/supabase";
+import { useProfile } from "@/lib/profile";
 import {
   ROUTES,
   courseAssignmentPath,
   testRunPath,
   testOverviewPath,
-} from "../lib/routes";
-import { useFullTests } from "../fulltest/useFullTests";
+} from "@/lib/routes";
+import { useFullTests } from "@/fulltest/useFullTests";
 import {
   buildTree,
   useCourseModules,
@@ -78,9 +78,9 @@ import {
   useQuestionBankCatalog,
 } from "./useQuestionBankCatalog";
 import { KebabMenu, SmartDatePicker, type KebabMenuOption } from "@/components";
-import { useToast } from "../components/Toast";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows } from "../components/Skeleton";
+import { useToast } from "@/components/Toast";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "./ConfirmDialog";
 
 // -----------------------------------------------------------------------------

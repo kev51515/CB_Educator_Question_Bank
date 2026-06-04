@@ -9,10 +9,10 @@
  * while the tab is hidden.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useEscapeKey, useFocusTrap } from "../hooks";
-import { useToast } from "../components/Toast";
-import { SkeletonRows } from "../components/Skeleton";
+import { supabase } from "@/lib/supabase";
+import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { useToast } from "@/components/Toast";
+import { SkeletonRows } from "@/components/Skeleton";
 
 interface LiveRow {
   student_id: string;

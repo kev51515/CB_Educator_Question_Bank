@@ -9,8 +9,8 @@
  * setter in App).
  */
 import { useRef } from "react";
-import { IDENTITY } from "../lib/designTokens";
-import { useFocusTrap } from "../hooks";
+import { IDENTITY } from "@/lib/designTokens";
+import { useFocusTrap } from "@/hooks";
 
 interface HelpOverlayProps {
   /** Callback invoked when user dismisses the dialog (ESC, click outside, X button). */

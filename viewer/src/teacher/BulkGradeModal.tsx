@@ -24,10 +24,10 @@
  * focus rings, ≥40px tap targets.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
-import { useProfile } from "../lib/profile";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { useToast } from "@/components/Toast";
+import { useFocusTrap } from "@/hooks";
+import { useProfile } from "@/lib/profile";
 import { ConfirmDialog } from "./ConfirmDialog";
 import {
   type FeedbackTemplate,

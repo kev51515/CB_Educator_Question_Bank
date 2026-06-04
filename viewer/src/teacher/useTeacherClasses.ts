@@ -9,7 +9,7 @@
  * trying to do delta merges, just stay current.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface TeacherClass {
   id: string;

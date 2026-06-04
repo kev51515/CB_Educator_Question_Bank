@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { type CohortRow } from "./useCohortSummary";
-import { courseModulesPath } from "../lib/routes";
+import { courseModulesPath } from "@/lib/routes";
 
 // ─── Score pill ───────────────────────────────────────────────────────────
 

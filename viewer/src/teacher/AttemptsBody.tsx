@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { SkeletonRows } from "../components/Skeleton";
-import { courseAssignmentAttemptPath } from "../lib/routes";
+import { SkeletonRows } from "@/components/Skeleton";
+import { courseAssignmentAttemptPath } from "@/lib/routes";
 import type { StudentAttemptRow } from "./useStudentProfile";
 import {
   attemptStatusLabel,

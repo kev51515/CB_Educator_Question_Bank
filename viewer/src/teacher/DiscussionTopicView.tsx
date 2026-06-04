@@ -12,18 +12,18 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useClassContext } from "./classLayoutContext";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { TopicFormModal } from "./TopicFormModal";
 import { useTopicPosts, type DiscussionPost } from "./useTopicPosts";
-import { courseDiscussionsPath } from "../lib/routes";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { SafeHtml } from "../components/SafeHtml";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
+import { courseDiscussionsPath } from "@/lib/routes";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { SafeHtml } from "@/components/SafeHtml";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 
 const MAX_POST_LEN = 10000;
 

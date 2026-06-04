@@ -9,7 +9,7 @@
  * the one under the cursor.
  */
 import { useCallback } from "react";
-import { useLocalStorageJSON } from "../hooks";
+import { useLocalStorageJSON } from "@/hooks";
 
 export type AnnotField = "passage" | "stem";
 

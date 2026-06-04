@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { type CohortRow } from "./useCohortSummary";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export const COLLAPSE_KEY = "dashboard.cohortSummary.collapsed";
 export const REFRESH_DEBOUNCE_MS = 1000;

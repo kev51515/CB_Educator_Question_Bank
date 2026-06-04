@@ -15,9 +15,9 @@
  *   - Assignments table (title, source, question count, due_at).
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type { AdminClass } from "./AllClassesView";
-import { SkeletonRows } from "../components/Skeleton";
+import { SkeletonRows } from "@/components/Skeleton";
 
 interface AdminClassDetailProps {
   cls: AdminClass;

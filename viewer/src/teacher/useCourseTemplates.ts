@@ -7,7 +7,7 @@
  * so we simply add the is_template filter here.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface CourseTemplate {
   id: string;

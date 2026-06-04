@@ -6,10 +6,10 @@
  * familiar.
  */
 import { useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type { CourseModule } from "./useCourseModules";
 import { SmartDatePicker } from "@/components";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 interface EditModuleModalProps {
   open: boolean;

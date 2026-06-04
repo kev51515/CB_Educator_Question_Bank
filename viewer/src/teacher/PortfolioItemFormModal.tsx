@@ -13,15 +13,15 @@
  * that.
  */
 import { useEffect, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type {
   PortfolioItem,
   PortfolioItemSettings,
   PortfolioItemType,
 } from "./usePortfolio";
 import { SmartDatePicker, TagInput, useToast } from "@/components";
-import { MarkdownEditor } from "../components/MarkdownEditor";
-import { useFocusTrap } from "../hooks";
+import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { useFocusTrap } from "@/hooks";
 
 interface PortfolioItemFormModalProps {
   open: boolean;

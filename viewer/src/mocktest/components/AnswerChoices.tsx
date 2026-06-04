@@ -11,7 +11,7 @@
  * (1-4 / A-D) in TestPhase keep working alongside this.
  */
 import { useRef } from "react";
-import type { Letter, TestQuestion } from "../types";
+import type { Letter, TestQuestion } from "@/mocktest/types";
 import { RichText } from "./RichText";
 
 interface AnswerChoicesProps {

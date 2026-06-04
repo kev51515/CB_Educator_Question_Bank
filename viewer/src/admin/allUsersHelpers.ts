@@ -4,7 +4,7 @@
  * Pure helpers, constants, and types extracted from AllUsersView. No React,
  * no JSX — value/type definitions and side-effect-free utilities only.
  */
-import type { ProfileRole } from "../lib/profile";
+import type { ProfileRole } from "@/lib/profile";
 
 export interface AdminUser {
   id: string;

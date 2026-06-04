@@ -21,7 +21,7 @@
  *   - Dark mode parity
  */
 import { useEffect, useRef, type ReactNode } from "react";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 export type ShortcutsHelpRole = "student" | "teacher" | "admin";
 

@@ -8,8 +8,8 @@
  */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { testRunPath } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { testRunPath } from "@/lib/routes";
 import type { TestCatalogEntry } from "./types";
 
 interface RunRow {

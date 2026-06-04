@@ -24,11 +24,11 @@
  *   triage shape.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import type { ProfileRole } from "../lib/profile";
-import { SkeletonRows } from "../components/Skeleton";
-import { ConfirmDialog } from "../teacher/ConfirmDialog";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import type { ProfileRole } from "@/lib/profile";
+import { SkeletonRows } from "@/components/Skeleton";
+import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import {
   DEFAULT_FILTER,
   DEFAULT_SORT,

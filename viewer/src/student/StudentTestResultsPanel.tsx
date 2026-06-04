@@ -10,12 +10,12 @@
  * Renders nothing when the student has no submitted tests (silence > clutter).
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { getResult } from "../fulltest/api";
-import { ResultView } from "../fulltest/ResultView";
-import { useEscapeKey } from "../hooks";
-import type { TestResult } from "../fulltest/types";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { getResult } from "@/fulltest/api";
+import { ResultView } from "@/fulltest/ResultView";
+import { useEscapeKey } from "@/hooks";
+import type { TestResult } from "@/fulltest/types";
 
 interface MyRunRow {
   run_id: string;

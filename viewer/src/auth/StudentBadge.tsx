@@ -7,7 +7,7 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../lib/routes";
+import { ROUTES } from "@/lib/routes";
 
 interface StudentBadgeProps {
   studentName: string;

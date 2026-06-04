@@ -13,9 +13,9 @@
  *   - Stem / choices retain their CB HTML so the renderer can preserve
  *     SVG figures and MathML. `isHtml` is true for every CB question.
  */
-import { fetchJson } from "../../lib/fetch";
-import type { IndexEntry } from "../../types";
-import type { Letter, TestDifficulty, TestQuestion } from "../types";
+import { fetchJson } from "@/lib/fetch";
+import type { IndexEntry } from "@/types";
+import type { Letter, TestDifficulty, TestQuestion } from "@/mocktest/types";
 
 interface CbAnswerOption {
   id: string;

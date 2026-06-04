@@ -5,7 +5,7 @@
  * raw answers map so this component can render the per-question review.
  */
 import { useMemo, useState } from "react";
-import type { Letter, TestQuestion, TestResult } from "../types";
+import type { Letter, TestQuestion, TestResult } from "@/mocktest/types";
 import { AnswerReview } from "./AnswerReview";
 import { ModuleBreakdownTable } from "./ModuleBreakdownTable";
 import { ResultsActions } from "./ResultsActions";

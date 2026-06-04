@@ -9,7 +9,7 @@
  * by `course_id` so the query plan can use the composite index.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface Announcement {
   id: string;

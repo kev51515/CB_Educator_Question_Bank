@@ -26,9 +26,9 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { Skeleton, SkeletonRows } from "../components/Skeleton";
-import { ROUTES } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { Skeleton, SkeletonRows } from "@/components/Skeleton";
+import { ROUTES } from "@/lib/routes";
 import {
   type AssignmentMeta,
   type CourseRow,

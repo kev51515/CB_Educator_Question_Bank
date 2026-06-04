@@ -14,10 +14,10 @@
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useToast } from "../components";
-import { ROUTES } from "../lib/routes";
-import { useProfile } from "../lib/profile";
-import { ConfirmDialog } from "../teacher/ConfirmDialog";
+import { useToast } from "@/components";
+import { ROUTES } from "@/lib/routes";
+import { useProfile } from "@/lib/profile";
+import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
 import { captureSelectionHighlight, useRunnerAnnotations, type Highlight } from "./annotations";

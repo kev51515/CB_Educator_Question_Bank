@@ -13,9 +13,9 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useClassContext } from "./classLayoutContext";
-import { useProfile } from "../lib/profile";
+import { useProfile } from "@/lib/profile";
 import { AssignmentAttemptsView } from "./AssignmentAttemptsView";
 import { AssignmentFormModal } from "./AssignmentFormModal";
 import { ConfirmDialog } from "./ConfirmDialog";
@@ -24,8 +24,8 @@ import {
   type AssignmentSourceId,
   type AssignmentDifficultyMix,
 } from "./useAssignments";
-import { classAssignmentsPath } from "../lib/routes";
-import { SkeletonRows } from "../components/Skeleton";
+import { classAssignmentsPath } from "@/lib/routes";
+import { SkeletonRows } from "@/components/Skeleton";
 
 const SOURCE_LABELS: Record<AssignmentSourceId, string> = {
   cb: "CB Question Bank",

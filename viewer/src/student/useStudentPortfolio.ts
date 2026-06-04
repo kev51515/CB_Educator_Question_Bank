@@ -4,7 +4,7 @@
  * (if any) so the UI can render status pills per item.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export type StudentPortfolioItemType =
   | "short_text"

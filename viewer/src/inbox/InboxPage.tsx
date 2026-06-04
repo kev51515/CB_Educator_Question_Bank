@@ -18,15 +18,15 @@ import {
   useParams,
   useSearchParams,
 } from "react-router-dom";
-import { useProfile } from "../lib/profile";
-import { ROUTES, inboxThreadPath, studentInboxThreadPath } from "../lib/routes";
+import { useProfile } from "@/lib/profile";
+import { ROUTES, inboxThreadPath, studentInboxThreadPath } from "@/lib/routes";
 import { NewThreadModal } from "./NewThreadModal";
 import { useThreads } from "./useThreads";
-import { EmptyState } from "../components/EmptyState";
-import { SkeletonRows } from "../components/Skeleton";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
-import { KebabMenu } from "../components/KebabMenu";
+import { EmptyState } from "@/components/EmptyState";
+import { SkeletonRows } from "@/components/Skeleton";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
+import { KebabMenu } from "@/components/KebabMenu";
 
 // Per-user localStorage key for muted thread IDs.
 const mutedThreadsKey = (userId: string): string =>

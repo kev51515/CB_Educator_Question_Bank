@@ -19,10 +19,10 @@
  */
 import { useEffect, useMemo, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { EmptyState } from "../components/EmptyState";
-import { Skeleton } from "../components/Skeleton";
-import { useToast } from "../components/Toast";
-import { coursePeoplePath, ROUTES } from "../lib/routes";
+import { EmptyState } from "@/components/EmptyState";
+import { Skeleton } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
+import { coursePeoplePath, ROUTES } from "@/lib/routes";
 import { useStudentProfile } from "./useStudentProfile";
 import type { StudentAttemptRow } from "./useStudentProfile";
 import { getInitials, type TrajectoryPoint } from "./studentProfileHelpers";

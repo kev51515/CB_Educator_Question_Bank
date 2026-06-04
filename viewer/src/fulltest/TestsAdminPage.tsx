@@ -7,8 +7,8 @@
  */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
-import { testReviewPath, testRunPath } from "../lib/routes";
+import { supabase } from "@/lib/supabase";
+import { testReviewPath, testRunPath } from "@/lib/routes";
 import type { TestCatalogEntry } from "./types";
 
 export function TestsAdminPage() {

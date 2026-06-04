@@ -22,7 +22,7 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useClassContext } from "./classLayoutContext";
 import { useClassRoster, type RosterStudent } from "./useClassRoster";
 import { ConfirmDialog } from "./ConfirmDialog";
@@ -32,11 +32,11 @@ import { ResetStudentPasswordModal } from "./ResetStudentPasswordModal";
 import { PrintLoginsModal, type PrintableLogin } from "./PrintLoginsModal";
 import { SeatClaimRequestsPanel } from "./SeatClaimRequestsPanel";
 import { CodeActivityPanel } from "./CodeActivityPanel";
-import { SkeletonRows } from "../components/Skeleton";
-import { EmptyState } from "../components/EmptyState";
-import { useToast } from "../components/Toast";
-import { useProfile } from "../lib/profile";
-import { courseStudentProfilePath } from "../lib/routes";
+import { SkeletonRows } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
+import { useToast } from "@/components/Toast";
+import { useProfile } from "@/lib/profile";
+import { courseStudentProfilePath } from "@/lib/routes";
 
 // -----------------------------------------------------------------------------
 // Sort

@@ -65,8 +65,8 @@ interface DetailProps {
   onToggleTag?: (tagId: string) => void;
   onCreateTag?: (name: string, color: string) => Tag;
   similarPanelData?: {
-    current: import("../types").IndexEntry | null;
-    similar: import("../types").IndexEntry[];
+    current: import("@/types").IndexEntry | null;
+    similar: import("@/types").IndexEntry[];
   };
   onPickSimilar?: (id: string) => void;
   onOpenReading?: () => void;

@@ -22,11 +22,11 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CreateClassModal, type CreatedClass } from "./ClassFormModal";
 import { useTeacherClasses, type TeacherClass } from "./useTeacherClasses";
-import { courseModulesPath } from "../lib/routes";
-import { classPath } from "../lib/routes";
-import { EmptyState, SkeletonRows } from "../components";
-import { supabase } from "../lib/supabase";
-import { useToast } from "../components/Toast";
+import { courseModulesPath } from "@/lib/routes";
+import { classPath } from "@/lib/routes";
+import { EmptyState, SkeletonRows } from "@/components";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/components/Toast";
 
 // Same alphabet + format as ClassFormModal's generateJoinCode. Kept inline
 // rather than exported to avoid widening that module's public surface for a

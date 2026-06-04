@@ -29,11 +29,11 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { AssignmentFormModal } from "./AssignmentFormModal";
-import { supabase } from "../lib/supabase";
-import { useProfile } from "../lib/profile";
+import { supabase } from "@/lib/supabase";
+import { useProfile } from "@/lib/profile";
 import { useAssignments, type Assignment } from "./useAssignments";
-import { EmptyState, SkeletonRows } from "../components";
-import { useToast } from "../components/Toast";
+import { EmptyState, SkeletonRows } from "@/components";
+import { useToast } from "@/components/Toast";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { AssignmentCard } from "./AssignmentCard";
 import { AssignmentsToolbar } from "./AssignmentsToolbar";

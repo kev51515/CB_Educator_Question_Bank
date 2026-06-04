@@ -11,7 +11,7 @@
  * device "same teacher, two tabs" UX justifies it.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { recentGradingCutoffIso } from "./assignmentsFilter";
 
 export type AssignmentSourceId = "cb" | "sat" | "mixed";

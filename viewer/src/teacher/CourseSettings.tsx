@@ -20,11 +20,11 @@
  */
 import { useEffect, useState, useTransition, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import { useToast, MarkdownEditor, useOptimistic } from "@/components";
 import { useClassContext } from "./classLayoutContext";
 import { ConfirmDialog } from "./ConfirmDialog";
-import { ROUTES } from "../lib/routes";
+import { ROUTES } from "@/lib/routes";
 
 interface RegeneratedClassRow {
   id: string;

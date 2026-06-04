@@ -36,7 +36,7 @@ import { TestResults } from "./components/TestResults";
 import { TestSetup } from "./components/TestSetup";
 import { computeTestResult } from "./components/resultsHelpers";
 import { loadSource } from "./sources";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type {
   Letter,
   TestConfig,

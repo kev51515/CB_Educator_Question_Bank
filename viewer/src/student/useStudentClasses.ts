@@ -8,7 +8,7 @@
  * auth context, and the policy does the rest.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export interface StudentClass {
   /** Membership row id — needed when the student leaves the course. */

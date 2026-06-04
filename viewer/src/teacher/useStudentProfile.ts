@@ -27,7 +27,7 @@
  * the page renders the graceful "no activity yet" path.
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 // --- Public types ----------------------------------------------------------
 

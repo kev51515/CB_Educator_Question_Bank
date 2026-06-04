@@ -8,7 +8,7 @@
  * RLS restricts rows to the course's teacher (or admins).
  */
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export type RedemptionMethod = "join" | "quick_start";
 

@@ -29,10 +29,10 @@
  * knows who still needs to sign up via the course join code.
  */
 import { useMemo, useRef, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { FileDropzone } from "../components/FileDropzone";
+import { supabase } from "@/lib/supabase";
+import { FileDropzone } from "@/components/FileDropzone";
 import { useToast } from "@/components";
-import { useFocusTrap } from "../hooks";
+import { useFocusTrap } from "@/hooks";
 
 export interface BulkRosterReport {
   enrolled: string[];
