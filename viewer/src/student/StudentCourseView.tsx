@@ -24,16 +24,18 @@
  * drag-and-drop, inline edit, lock-until, bulk select, etc. We only need
  * the read shape.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { Skeleton, SkeletonRows } from "../components/Skeleton";
 import { ROUTES } from "../lib/routes";
 import {
+  type AssignmentMeta,
   type CourseRow,
   type CourseStats,
   type AssignmentDueRow,
   type EffectiveAttemptRow,
+  type ModuleItemRow,
   type ModuleRow,
   THIRTY_DAYS_MS,
   teacherName,
@@ -44,6 +46,9 @@ import {
 } from "./studentCourseHelpers";
 import { ModuleItemRowView } from "./ModuleItemRowView";
 import { StatCard } from "./StatCard";
+
+const collapseKey = (courseId: string): string =>
+  `student.courseModules.collapsed:${courseId}`;
 
 export function StudentCourseView(): JSX.Element {
   const params = useParams<{ short: string }>();
@@ -60,9 +65,16 @@ export function StudentCourseView(): JSX.Element {
     myAverageSampleSize: 0,
   });
   const [statsLoading, setStatsLoading] = useState(true);
+  // Per-assignment metadata (kind, due, my completion) keyed by assignment id.
+  const [assignmentMeta, setAssignmentMeta] = useState<Map<string, AssignmentMeta>>(
+    () => new Map(),
+  );
+  // Collapsed module ids (persisted per course).
+  const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
 
   // Guard against stale-response races when `short` changes mid-flight.
   const tokenRef = useRef(0);
+  const metaTokenRef = useRef(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -218,6 +230,111 @@ export function StudentCourseView(): JSX.Element {
     })();
   }, [course?.id]);
 
+  // Assignment ids referenced by published assignment items.
+  const assignmentIds = useMemo(() => {
+    const ids = new Set<string>();
+    for (const m of modules) {
+      for (const it of m.module_items) {
+        if (it.published && it.item_type === "assignment" && it.item_ref_id) {
+          ids.add(it.item_ref_id);
+        }
+      }
+    }
+    return [...ids];
+  }, [modules]);
+
+  // Enrich assignment items with kind / due / my completion. Degrades silently:
+  // a failure just means rows render without badges, not a broken view.
+  useEffect(() => {
+    if (assignmentIds.length === 0) {
+      setAssignmentMeta(new Map());
+      return;
+    }
+    const token = ++metaTokenRef.current;
+    void (async () => {
+      const [aRes, bRes] = await Promise.all([
+        supabase
+          .from("assignments")
+          .select("id, kind, due_at, short_code, question_count, time_limit_minutes")
+          .in("id", assignmentIds),
+        supabase
+          .from("assignment_best_attempts")
+          .select("assignment_id, effective_score, submitted_at")
+          .in("assignment_id", assignmentIds),
+      ]);
+      if (metaTokenRef.current !== token) return;
+
+      const best = new Map<string, { score: number | null; submitted: boolean }>();
+      if (!bRes.error) {
+        for (const r of (bRes.data ?? []) as Array<{
+          assignment_id: string;
+          effective_score: number | string | null;
+          submitted_at: string | null;
+        }>) {
+          best.set(r.assignment_id, {
+            score: toNumber(r.effective_score),
+            submitted: r.submitted_at != null,
+          });
+        }
+      }
+      const map = new Map<string, AssignmentMeta>();
+      if (!aRes.error) {
+        for (const a of (aRes.data ?? []) as Array<{
+          id: string;
+          kind: string;
+          due_at: string | null;
+          short_code: string | null;
+          question_count: number | null;
+          time_limit_minutes: number | null;
+        }>) {
+          const b = best.get(a.id);
+          map.set(a.id, {
+            kind: a.kind,
+            due_at: a.due_at,
+            shortCode: a.short_code,
+            questionCount: a.question_count,
+            timeLimitMinutes: a.time_limit_minutes,
+            bestScore: b?.score ?? null,
+            submitted: b?.submitted ?? false,
+          });
+        }
+      }
+      if (metaTokenRef.current !== token) return;
+      setAssignmentMeta(map);
+    })();
+  }, [assignmentIds]);
+
+  // Restore collapsed-module state for this course.
+  useEffect(() => {
+    const courseId = course?.id;
+    if (!courseId) return;
+    try {
+      const raw = window.localStorage.getItem(collapseKey(courseId));
+      setCollapsed(new Set(raw ? (JSON.parse(raw) as string[]) : []));
+    } catch {
+      setCollapsed(new Set());
+    }
+  }, [course?.id]);
+
+  const toggleCollapse = (moduleId: string): void => {
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (next.has(moduleId)) next.delete(moduleId);
+      else next.add(moduleId);
+      if (course?.id) {
+        try {
+          window.localStorage.setItem(
+            collapseKey(course.id),
+            JSON.stringify([...next]),
+          );
+        } catch {
+          // ignore (private mode / quota)
+        }
+      }
+      return next;
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
       <div className="mx-auto max-w-3xl space-y-6">
@@ -343,33 +460,80 @@ export function StudentCourseView(): JSX.Element {
             {modules.length === 0 ? (
               <div className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 p-8 text-center space-y-2">
                 <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                  No modules yet
+                  Nothing published yet
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Your teacher hasn't published any modules in this course.
+                  Your teacher hasn't published any modules in this course. Check
+                  back soon — new assignments and tests will appear here.
                 </p>
               </div>
             ) : (
               <div className="space-y-4">
                 {modules.map((m) => {
                   const locked = isLocked(m.opens_at);
+                  const items: ModuleItemRow[] = m.module_items.filter(
+                    (it) => it.published,
+                  );
+                  const assignmentItems = items.filter(
+                    (it) => it.item_type === "assignment" && it.item_ref_id,
+                  );
+                  const total = assignmentItems.length;
+                  const done = assignmentItems.filter(
+                    (it) => assignmentMeta.get(it.item_ref_id ?? "")?.submitted,
+                  ).length;
+                  const isCollapsed = collapsed.has(m.id);
+                  const bodyId = `mod-${m.id}-body`;
                   return (
                     <section
                       key={m.id}
-                      className="rounded-2xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 p-4"
+                      className="rounded-2xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"
                     >
-                      <header className="flex items-center justify-between gap-3 mb-2 px-2">
-                        <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+                      <button
+                        type="button"
+                        onClick={() => toggleCollapse(m.id)}
+                        aria-expanded={!isCollapsed}
+                        aria-controls={bodyId}
+                        className="w-full flex items-center gap-3 px-4 py-3 text-left motion-safe:transition-colors hover:bg-slate-50/80 dark:hover:bg-slate-800/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500"
+                      >
+                        <svg
+                          aria-hidden
+                          width={16}
+                          height={16}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className={`flex-none text-slate-400 motion-safe:transition-transform ${
+                            isCollapsed ? "" : "rotate-90"
+                          }`}
+                        >
+                          <polyline points="9 6 15 12 9 18" />
+                        </svg>
+                        <h2 className="flex-1 min-w-0 truncate text-base font-semibold text-slate-900 dark:text-slate-100">
                           {m.name}
                         </h2>
+                        {total > 0 && (
+                          <span
+                            className={`flex-none inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${
+                              done >= total
+                                ? "bg-emerald-50 text-emerald-700 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900"
+                                : "bg-slate-100 text-slate-600 ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700"
+                            }`}
+                          >
+                            {done >= total ? "✓ " : ""}
+                            {done}/{total} done
+                          </span>
+                        )}
                         {locked && m.opens_at && (
                           <span
-                            className="inline-flex items-center gap-1 text-xs font-medium text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 rounded-full px-2 py-0.5"
-                            aria-label={`Locked until ${formatDate(m.opens_at)}`}
+                            className="flex-none inline-flex items-center gap-1 text-[11px] font-medium text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 ring-1 ring-amber-200 dark:ring-amber-900 rounded-full px-2 py-0.5"
+                            aria-label={`Unlocks ${formatDate(m.opens_at)}`}
                           >
                             <svg
-                              width={12}
-                              height={12}
+                              width={11}
+                              height={11}
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
@@ -384,19 +548,31 @@ export function StudentCourseView(): JSX.Element {
                             Unlocks {formatDate(m.opens_at)}
                           </span>
                         )}
-                      </header>
-                      {m.module_items.length === 0 ? (
-                        <p className="px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
-                          No items in this module.
-                        </p>
-                      ) : (
-                        <ul className="space-y-0.5">
-                          {m.module_items.map((it) => (
-                            <li key={it.id}>
-                              <ModuleItemRowView item={it} locked={locked} />
-                            </li>
-                          ))}
-                        </ul>
+                      </button>
+                      {!isCollapsed && (
+                        <div id={bodyId} className="px-2 pb-2">
+                          {items.length === 0 ? (
+                            <p className="px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
+                              No items in this module yet.
+                            </p>
+                          ) : (
+                            <ul className="space-y-0.5">
+                              {items.map((it) => (
+                                <li key={it.id}>
+                                  <ModuleItemRowView
+                                    item={it}
+                                    locked={locked}
+                                    meta={
+                                      it.item_ref_id
+                                        ? assignmentMeta.get(it.item_ref_id)
+                                        : undefined
+                                    }
+                                  />
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
                       )}
                     </section>
                   );

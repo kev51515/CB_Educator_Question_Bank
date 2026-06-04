@@ -95,6 +95,52 @@ export function isLocked(opens_at: string | null): boolean {
   return new Date(opens_at).getTime() > Date.now();
 }
 
+/**
+ * Per-assignment metadata fetched for assignment-type module items so the
+ * student row can show a kind badge, due date, and their own completion.
+ */
+export interface AssignmentMeta {
+  kind: string; // 'mocktest' | 'qbank_set'
+  due_at: string | null;
+  shortCode: string | null;
+  questionCount: number | null;
+  timeLimitMinutes: number | null;
+  /** Best effective_score (0–100) across my attempts, or null. */
+  bestScore: number | null;
+  /** True once I have a submitted attempt. */
+  submitted: boolean;
+}
+
+/** UI label for an assignment kind (vocabulary canon — see CLAUDE.md). */
+export function kindLabel(kind: string | null | undefined): string {
+  if (kind === "mocktest") return "Practice Test";
+  if (kind === "qbank_set") return "Question Set";
+  return "Assignment";
+}
+
+export type DueTone = "past" | "soon" | "normal";
+
+/** Relative due-date label + urgency tone, or null when there's no due date. */
+export function formatDue(iso: string | null): { text: string; tone: DueTone } | null {
+  if (!iso) return null;
+  const due = new Date(iso).getTime();
+  if (!Number.isFinite(due)) return null;
+  const diff = due - Date.now();
+  const DAY = 86_400_000;
+  if (diff < 0) {
+    const d = Math.round(-diff / DAY);
+    return { text: d <= 0 ? "Past due" : `Past due ${d}d`, tone: "past" };
+  }
+  if (diff < 60 * 60 * 1000) return { text: "Due within the hour", tone: "soon" };
+  if (diff < DAY) return { text: "Due today", tone: "soon" };
+  if (diff < 2 * DAY) return { text: "Due tomorrow", tone: "soon" };
+  if (diff < 7 * DAY) return { text: `Due in ${Math.round(diff / DAY)}d`, tone: "normal" };
+  return {
+    text: `Due ${new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
+    tone: "normal",
+  };
+}
+
 export function formatDate(iso: string): string {
   try {
     return new Date(iso).toLocaleString(undefined, {
