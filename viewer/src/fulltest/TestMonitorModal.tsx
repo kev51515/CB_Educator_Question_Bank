@@ -8,9 +8,10 @@
  * Opened from the Full-Test catalog ("Monitor"). Auto-refreshes; pauses polling
  * while the tab is hidden.
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { useEscapeKey, useFocusTrap } from "../hooks";
+import { useToast } from "../components/Toast";
 import { SkeletonRows } from "../components/Skeleton";
 
 interface LiveRow {
@@ -24,9 +25,11 @@ interface LiveRow {
   module_questions: number | null;
   seconds_remaining: number | null;
   marked: number | null;
+  away_count: number | null;
   last_seen_at: string | null;
   started_at: string | null;
   submitted_at: string | null;
+  run_id: string | null;
 }
 
 interface TestMonitorModalProps {
@@ -68,11 +71,13 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, true);
   useEscapeKey(onClose);
+  const toast = useToast();
 
   const [rows, setRows] = useState<LiveRow[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [tick, setTick] = useState(0); // forces idle-time recompute between polls
+  const [busyRun, setBusyRun] = useState<string | null>(null);
 
   const refresh = useCallback(async (): Promise<void> => {
     try {
@@ -91,6 +96,27 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
     }
   }, [slug]);
 
+  const addTime = useCallback(
+    async (runId: string | null, seconds: number, who: string): Promise<void> => {
+      if (!runId) return;
+      setBusyRun(runId);
+      try {
+        const { error: rpcError } = await supabase.rpc("proctor_add_time", {
+          p_run_id: runId,
+          p_seconds: seconds,
+        });
+        if (rpcError) toast.error("Couldn't add time", rpcError.message);
+        else {
+          toast.success(`+${Math.round(seconds / 60)} min for ${who}`);
+          void refresh();
+        }
+      } finally {
+        setBusyRun(null);
+      }
+    },
+    [toast, refresh],
+  );
+
   useEffect(() => {
     void refresh();
     const poll = window.setInterval(() => {
@@ -107,7 +133,32 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
   const taking = rows.filter((r) => r.state === "in_progress").length;
   const done = rows.filter((r) => r.state === "submitted").length;
   const notStarted = rows.filter((r) => r.state === "not_started").length;
-  void tick; // referenced so the 1s tick re-renders idle/time computations
+
+  // Triage: bubble in-progress students who need attention (left the tab, idle,
+  // or low on time) to the top. `tick` is in the deps so idle/low-time recompute
+  // each second between polls.
+  const { sorted, flagged } = useMemo(() => {
+    void tick;
+    const attention = (r: LiveRow): number => {
+      if (r.state !== "in_progress") return 0;
+      let s = 0;
+      if ((r.away_count ?? 0) > 0) s += 100 + (r.away_count ?? 0);
+      const idleFor = secsAgo(r.last_seen_at);
+      if (idleFor != null && idleFor * 1000 > IDLE_MS) s += 50;
+      if ((r.seconds_remaining ?? 99999) < 120) s += 30;
+      return s;
+    };
+    const rank = (st: LiveRow["state"]) =>
+      st === "in_progress" ? 0 : st === "submitted" ? 1 : 2;
+    const next = [...rows].sort((a, b) => {
+      const r = rank(a.state) - rank(b.state);
+      if (r !== 0) return r;
+      const at = attention(b) - attention(a);
+      if (at !== 0) return at;
+      return (a.student_name ?? "").localeCompare(b.student_name ?? "");
+    });
+    return { sorted: next, flagged: rows.filter((r) => attention(r) > 0).length };
+  }, [rows, tick]);
 
   return (
     <div
@@ -135,6 +186,11 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
             </div>
             <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
               {taking} taking · {done} done · {notStarted} not started
+              {flagged > 0 && (
+                <span className="ml-1 font-medium text-amber-600 dark:text-amber-400">
+                  · ⚠ {flagged} need{flagged === 1 ? "s" : ""} attention
+                </span>
+              )}
             </p>
           </div>
           <button
@@ -157,10 +213,11 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
           </p>
         ) : (
           <ul className="divide-y divide-slate-100 dark:divide-slate-800 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
-            {rows.map((r) => {
+            {sorted.map((r) => {
               const idleFor = r.state === "in_progress" ? secsAgo(r.last_seen_at) : null;
               const idle = idleFor != null && idleFor * 1000 > IDLE_MS;
               const lowTime = (r.seconds_remaining ?? 999) < 120;
+              const away = r.away_count ?? 0;
               return (
                 <li
                   key={r.student_id}
@@ -197,6 +254,23 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
                           idle {idleFor}s
                         </span>
                       )}
+                      {away > 0 && (
+                        <span
+                          title="Times the student left the test tab"
+                          className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-medium text-rose-700 ring-1 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
+                        >
+                          ⚠ left tab {away}×
+                        </span>
+                      )}
+                      <button
+                        type="button"
+                        disabled={busyRun === r.run_id}
+                        onClick={() => void addTime(r.run_id, 300, r.student_name ?? "student")}
+                        title="Give this student 5 more minutes on the current section"
+                        className="ml-auto rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                      >
+                        {busyRun === r.run_id ? "…" : "+5 min"}
+                      </button>
                     </>
                   ) : r.state === "submitted" ? (
                     <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">

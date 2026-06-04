@@ -27,6 +27,7 @@ import {
   getModule,
   getResult,
   heartbeat,
+  reportAway,
   loadCachedAnswers,
   saveCachedAnswers,
   saveProgress,
@@ -334,6 +335,30 @@ export function FullTestApp() {
     return () => window.clearInterval(id);
   }, [phase, deadline, doSubmitModule, toast]);
 
+  // Extend-only re-sync: pick up a proctor's added time even while the student
+  // is actively working. Polls the server every 30s and only ever pushes the
+  // deadline LATER (server has more time than we do) — never earlier, so a
+  // slightly-stale read can't cut a student short.
+  useEffect(() => {
+    if (phase !== "module" || !runId || !moduleMeta) return;
+    const id = window.setInterval(() => {
+      void (async () => {
+        try {
+          const data = await getModule(runId, moduleMeta.position);
+          const localLeft = deadline ? Math.round((deadline - Date.now()) / 1000) : 0;
+          if (data.seconds_remaining > localLeft + 5) {
+            setDeadline(Date.now() + data.seconds_remaining * 1000);
+            setRemaining(data.seconds_remaining);
+            toast.info("Your teacher added time to this section.");
+          }
+        } catch {
+          /* non-fatal: keep the existing deadline */
+        }
+      })();
+    }, 30000);
+    return () => window.clearInterval(id);
+  }, [phase, runId, moduleMeta, deadline, toast]);
+
   // --- sleep/wake resync ----------------------------------------------------
   // After a laptop sleep or long tab-hide, Date.now() jumps forward and the
   // local deadline could already be in the past — silently auto-submitting.
@@ -349,6 +374,8 @@ export function FullTestApp() {
         return;
       }
       const hiddenMs = Date.now() - lastVisibleAt.current;
+      // Integrity: count a real "left the tab" (>2s) for the proctor view.
+      if (hiddenMs > 2000) void reportAway(runId);
       if (hiddenMs <= 5000) return;
       void (async () => {
         try {

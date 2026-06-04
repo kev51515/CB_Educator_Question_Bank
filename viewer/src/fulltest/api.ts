@@ -143,6 +143,15 @@ export async function heartbeat(runId: string, questionNumber: number): Promise<
   }
 }
 
+/** Integrity telemetry: the student left the test tab. Best-effort, never throws. */
+export async function reportAway(runId: string): Promise<void> {
+  try {
+    await supabase.rpc("test_report_away", { p_run_id: runId });
+  } catch {
+    /* non-fatal */
+  }
+}
+
 export async function getResult(runId: string): Promise<TestResult> {
   const { data, error } = await supabase.rpc("get_test_result", {
     p_run_id: runId,
