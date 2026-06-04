@@ -106,6 +106,8 @@ export function FullTestApp() {
   const [phase, setPhase] = useState<Phase>("loading");
   const [errorMsg, setErrorMsg] = useState<string>("");
   const [start, setStart] = useState<StartTestResult | null>(null);
+  // Set when a proctor force-submits this run out from under the student.
+  const [endedByProctor, setEndedByProctor] = useState(false);
 
   // Active module state
   const [moduleMeta, setModuleMeta] = useState<ModuleMeta | null>(null);
@@ -351,8 +353,12 @@ export function FullTestApp() {
             setRemaining(data.seconds_remaining);
             toast.info("Your teacher added time to this section.");
           }
-        } catch {
-          /* non-fatal: keep the existing deadline */
+        } catch (e) {
+          // A proctor force-submitted this run — surface a clean "ended" screen.
+          if (String((e as Error)?.message ?? "").includes("run_already_submitted")) {
+            setEndedByProctor(true);
+          }
+          /* else non-fatal: keep the existing deadline */
         }
       })();
     }, 30000);
@@ -387,8 +393,12 @@ export function FullTestApp() {
           }
           setDeadline(Date.now() + data.seconds_remaining * 1000);
           setRemaining(data.seconds_remaining);
-        } catch {
-          /* non-fatal: keep the existing deadline */
+        } catch (e) {
+          // A proctor force-submitted this run — surface a clean "ended" screen.
+          if (String((e as Error)?.message ?? "").includes("run_already_submitted")) {
+            setEndedByProctor(true);
+          }
+          /* else non-fatal: keep the existing deadline */
         }
       })();
     };
@@ -477,6 +487,35 @@ export function FullTestApp() {
   );
 
   // --- render ---------------------------------------------------------------
+  if (endedByProctor) {
+    return (
+      <CenterCard wide>
+        <div
+          aria-hidden
+          className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-300"
+        >
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+        </div>
+        <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+          Your teacher ended this test
+        </h1>
+        <p className="mt-2 text-slate-600 dark:text-slate-400">
+          Your answers were saved and submitted. Results appear once your teacher releases them.
+        </p>
+        <button
+          type="button"
+          onClick={() => navigate(ROUTES.HOME)}
+          className="mt-5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+        >
+          Back to home
+        </button>
+      </CenterCard>
+    );
+  }
+
   if (phase === "loading") {
     return <CenterCard><Spinner label="Loading…" /></CenterCard>;
   }
