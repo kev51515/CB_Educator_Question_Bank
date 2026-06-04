@@ -6,7 +6,7 @@
  * step 3); only `useOptimistic` is needed beyond React.
  */
 import { useOptimistic } from "@/components";
-import { DEPTH_INDENT_PX } from "./modulesDnd";
+import { DEPTH_INDENT_PX } from "./dnd";
 
 /** Six-dot Canvas-style drag handle. */
 export function DragHandle({

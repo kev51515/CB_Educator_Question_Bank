@@ -47,8 +47,6 @@ import {
   resolveItemDropTarget,
   type DropTarget,
   type ItemDropTarget,
-} from "./modulesDnd";
-import {
   collapseKey,
   readCollapseState,
   writeCollapseState,
@@ -63,19 +61,15 @@ import {
   type PracticeTestSourceFilter,
   type QbankSectionFilter,
   type QbankDifficultyFilter,
-} from "./modulesPagePersistence";
-import {
   DragHandle,
   InsertionBar,
   OptimisticPublishToggle,
   PublishBadge,
-} from "./ModulesPageParts";
-import {
   InlineRename,
   LockUntilPicker,
   MoveItemPicker,
   MoveModulePicker,
-} from "./ModulesPageEditors";
+} from "@/teacher/modules-page";
 import { EditModuleModal } from "./EditModuleModal";
 import { useAssignments } from "./useAssignments";
 import { useTeacherMockTests, type TeacherMockTest } from "./useTeacherMockTests";

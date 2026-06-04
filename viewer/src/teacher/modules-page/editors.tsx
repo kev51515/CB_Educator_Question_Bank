@@ -8,7 +8,7 @@
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SmartDatePicker } from "@/components";
-import type { CourseModule, ModuleItem, ModuleNode } from "./useCourseModules";
+import type { CourseModule, ModuleItem, ModuleNode } from "@/teacher/useCourseModules";
 
 interface InlineRenameProps {
   value: string;

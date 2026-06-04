@@ -6,7 +6,7 @@
  * verbatim from ModulesPage (modularization step 1) so the page file shrinks and
  * this logic becomes independently testable.
  */
-import type { ModuleItem, ModuleNode } from "./useCourseModules";
+import type { ModuleItem, ModuleNode } from "@/teacher/useCourseModules";
 
 export interface DropTarget {
   anchorId: string;
