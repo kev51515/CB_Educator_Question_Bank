@@ -23,11 +23,16 @@
  * UI continues to function for everything else.
  */
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
 import { supabase } from "../lib/supabase";
 import { useProfile } from "../lib/profile";
-import { ROUTES, courseAssignmentPath, testRunPath } from "../lib/routes";
+import {
+  ROUTES,
+  courseAssignmentPath,
+  testRunPath,
+  testOverviewPath,
+} from "../lib/routes";
 import { useFullTests } from "../fulltest/useFullTests";
 import {
   buildTree,
@@ -1572,6 +1577,16 @@ function ModuleCard({
                   >
                     {item.title}
                   </button>
+                ) : isFullTestLink && item.url ? (
+                  // Teachers proctor, they don't sit the test — a test link opens
+                  // the per-test OVERVIEW (results + live status), same tab.
+                  <Link
+                    to={testOverviewPath(item.url.slice(6).split("/")[0])}
+                    title="Open the proctor view — results & live status"
+                    className="flex-1 text-sm text-indigo-600 dark:text-indigo-400 hover:underline truncate"
+                  >
+                    {item.title}
+                  </Link>
                 ) : item.item_type === "link" && item.url ? (
                   <a
                     href={item.url}

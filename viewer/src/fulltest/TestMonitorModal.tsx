@@ -25,6 +25,7 @@ interface LiveRow {
   seconds_remaining: number | null;
   marked: number | null;
   last_seen_at: string | null;
+  started_at: string | null;
   submitted_at: string | null;
 }
 
@@ -48,6 +49,19 @@ function secsAgo(iso: string | null): number | null {
   const t = new Date(iso).getTime();
   if (Number.isNaN(t)) return null;
   return Math.round((Date.now() - t) / 1000);
+}
+
+/** Wall-clock time of day (e.g. "1:42 PM") — what a proctor wants for start/submit. */
+function fmtTime(iso: string | null): string {
+  if (!iso) return "—";
+  try {
+    return new Date(iso).toLocaleTimeString(undefined, {
+      hour: "numeric",
+      minute: "2-digit",
+    });
+  } catch {
+    return "—";
+  }
 }
 
 export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps) {
@@ -173,6 +187,11 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
                       >
                         ⏱ {fmtClock(r.seconds_remaining)}
                       </span>
+                      {r.started_at && (
+                        <span className="text-[11px] tabular-nums text-slate-400 dark:text-slate-500">
+                          started {fmtTime(r.started_at)}
+                        </span>
+                      )}
                       {idle && (
                         <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900">
                           idle {idleFor}s
@@ -181,7 +200,7 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
                     </>
                   ) : r.state === "submitted" ? (
                     <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
-                      Submitted
+                      Submitted {fmtTime(r.submitted_at)}
                     </span>
                   ) : (
                     <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500 ring-1 ring-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:ring-slate-700">

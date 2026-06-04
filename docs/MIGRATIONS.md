@@ -143,13 +143,16 @@ silent, hard-to-diagnose bug (see the 0086 collision, June 2026).
 | 0096 | `fix_claim_seat_status_ambiguity` | Fix `column reference "status" is ambiguous` in `claim_student_seat` (caught by `clickthrough-claim-seat.mjs` before the re-claim path shipped): the `RETURNS TABLE(status …)` OUT column collided with `seat_claim_requests.status` in the `ON CONFLICT … WHERE status='pending'` predicate. Replaced the upsert with a table-qualified UPDATE-then-INSERT (race-safe via `unique_violation` fallback). **Lesson: an OUT column name that matches a table column referenced in the body is ambiguous inside plpgsql — qualify the column or rename the OUT.** |
 | 0097 | `code_redemptions_log` | Durable, cumulative log of SHARED class-code redemptions so a teacher sees how many times the course code has been used, by whom, when, and via which path — surviving student removal. New `code_redemptions` table (`student_id` ON DELETE SET NULL + `name`/`email` snapshots; RLS course-staff read). `join_course_by_code` + `quick_start_with_code` (0070 bodies verbatim) now append a redemption row, gated on `FOUND` after `ON CONFLICT DO NOTHING` so idempotent re-calls don't inflate the count (`method` = `'join'` \| `'quick_start'`). Per-seat personal codes stay tracked by `profiles.claimed_at`, not here. |
 | 0098 | `claim_seat_review_fixes` | Review follow-ups for 0095/0096 (multi-agent review): (1) `claim_student_seat` re-claim path now notifies the teacher ONLY on a genuinely new pending request, not on every re-submit/refresh; (2) the `auth.users` email swap in claim + approve stamps `email_confirmed_at = now()` (defensive); (3) that UPDATE is wrapped in a `unique_violation`→`email_in_use` handler so a race raises the stable code, not a raw error; (4) `seat_claim_requests.decided_by` FK gains `ON DELETE SET NULL`. Verified: claim clickthrough 9/9 + a notify-once check (re-submit stays at 1 notification) against Remote. |
+| 0099 | `live_progress_started_at` | Add `started_at` to `test_live_progress` (proctor live monitor) so a teacher sees WHEN each student began — alongside current-question / answered / time-left / submitted. DROP+CREATE (return-type change); body otherwise identical to 0087; `COALESCE(ip.started_at, sub.started_at)`. Verified against Remote (live_progress returns started_at for an in-progress sitting). |
 
 ---
 
-_Last updated: 2026-06-04 (through 0098; 0092–0098 applied to Remote. 0095/0096/0098
-verified by `clickthrough-claim-seat.mjs` 9/9 + notify-once check; 0097 verified by a
-redemption clickthrough (log + dedupe + RLS read + survives removal, 13/13) against
-Remote; smoke-e2e 14/14, features/cascade/grading green. smoke-modules/qbank still
-red on a pre-existing seed-account gap — `demo-teacher@example.com` not provisioned
-on Remote — unrelated to these migrations.). When you add a migration, append a row
-here and bump the "verified" line once `migration list` shows Local == Remote._
+_Last updated: 2026-06-04 (through 0099; 0092–0099 applied to Remote. 0095/0096/0098
+verified by `clickthrough-claim-seat.mjs` 9/9 + notify-once; 0097 by a redemption
+clickthrough (13/13); 0099 by a live-proctor check. **Full student journey verified by
+`clickthrough-register-and-test.mjs`: class-code registration → take DSAT Nov-2023
+(98 Qs) → every answer + every elimination round-trips on resume AND in the released
+result (98/98).** smoke-e2e 14/14, features/cascade/grading green. smoke-modules/qbank
+still red on a pre-existing seed-account gap unrelated to these migrations.). When you
+add a migration, append a row here and bump the "verified" line once `migration list`
+shows Local == Remote._
