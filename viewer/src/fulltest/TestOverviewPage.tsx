@@ -67,6 +67,7 @@ interface LiveInfo {
   answered: number | null;
   module_questions: number | null;
   away_count: number | null;
+  paused: boolean | null;
   started_at: string | null;
   submitted_at: string | null;
   run_id: string | null;
@@ -268,6 +269,26 @@ export function TestOverviewPage(): JSX.Element {
       toast.error("Couldn't update", errMsg(e, "Try again."));
     } finally {
       setRowBusy(null);
+    }
+  };
+
+  // Pause / resume a student's live sitting (freezes their timer).
+  const [pauseBusy, setPauseBusy] = useState<string | null>(null);
+  const onSetPause = async (runId: string, paused: boolean, name: string): Promise<void> => {
+    setPauseBusy(runId);
+    try {
+      const { error } = await supabase.rpc("proctor_set_pause", {
+        p_run_id: runId,
+        p_paused: paused,
+      });
+      if (error) {
+        toast.error(paused ? "Couldn't pause" : "Couldn't resume", error.message);
+        return;
+      }
+      toast.success(paused ? `Paused ${name}` : `Resumed ${name}`);
+      await refreshRoster();
+    } finally {
+      setPauseBusy(null);
     }
   };
 
@@ -650,9 +671,32 @@ export function TestOverviewPage(): JSX.Element {
                     </>
                   ) : row.has_in_progress ? (
                     <>
-                      <span className="inline-flex items-center rounded-full bg-blue-50 text-blue-700 ring-1 ring-blue-200 px-2 py-0.5 text-[11px] font-medium dark:bg-blue-950/30 dark:text-blue-300 dark:ring-blue-900">
-                        In progress
+                      <span
+                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${
+                          lr?.paused
+                            ? "bg-indigo-50 text-indigo-700 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900"
+                            : "bg-blue-50 text-blue-700 ring-blue-200 dark:bg-blue-950/30 dark:text-blue-300 dark:ring-blue-900"
+                        }`}
+                      >
+                        {lr?.paused ? "⏸ Paused" : "In progress"}
                       </span>
+                      {lr?.run_id && (
+                        <button
+                          type="button"
+                          disabled={pauseBusy === lr.run_id}
+                          onClick={() =>
+                            void onSetPause(
+                              lr.run_id ?? "",
+                              !lr.paused,
+                              row.student_name ?? "student",
+                            )
+                          }
+                          title={lr.paused ? "Resume this student's timer" : "Freeze this student's timer"}
+                          className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-60"
+                        >
+                          {pauseBusy === lr.run_id ? "…" : lr.paused ? "Resume" : "Pause"}
+                        </button>
+                      )}
                       {away > 0 && (
                         <span
                           title="Times the student left the test tab"

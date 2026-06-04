@@ -26,6 +26,7 @@ import {
   clearCachedAnswers,
   getModule,
   getResult,
+  getRunState,
   heartbeat,
   reportAway,
   loadCachedAnswers,
@@ -108,6 +109,9 @@ export function FullTestApp() {
   const [start, setStart] = useState<StartTestResult | null>(null);
   // Set when a proctor force-submits this run out from under the student.
   const [endedByProctor, setEndedByProctor] = useState(false);
+  // Set while a proctor has paused this sitting.
+  const [paused, setPaused] = useState(false);
+  const wasPausedRef = useRef(false);
 
   // Active module state
   const [moduleMeta, setModuleMeta] = useState<ModuleMeta | null>(null);
@@ -320,7 +324,7 @@ export function FullTestApp() {
 
   // --- timer ----------------------------------------------------------------
   useEffect(() => {
-    if (phase !== "module" || deadline === null) return;
+    if (phase !== "module" || deadline === null || paused) return;
     const tick = () => {
       const left = Math.round((deadline - Date.now()) / 1000);
       setRemaining(left);
@@ -335,35 +339,38 @@ export function FullTestApp() {
     tick();
     const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
-  }, [phase, deadline, doSubmitModule, toast]);
+  }, [phase, deadline, doSubmitModule, toast, paused]);
 
-  // Extend-only re-sync: pick up a proctor's added time even while the student
-  // is actively working. Polls the server every 30s and only ever pushes the
-  // deadline LATER (server has more time than we do) — never earlier, so a
-  // slightly-stale read can't cut a student short.
+  // Light proctor-state poll (every 8s): drives PAUSE/resume, picks up added
+  // time, and detects a force-end — all in one cheap call (no question payload).
   useEffect(() => {
-    if (phase !== "module" || !runId || !moduleMeta) return;
+    if (phase !== "module" || !runId) return;
     const id = window.setInterval(() => {
       void (async () => {
-        try {
-          const data = await getModule(runId, moduleMeta.position);
+        const st = await getRunState(runId);
+        if (!st) return;
+        if (st.status === "submitted") {
+          setEndedByProctor(true);
+          return;
+        }
+        const resuming = wasPausedRef.current && !st.paused;
+        wasPausedRef.current = st.paused;
+        setPaused(st.paused);
+        if (st.paused) return; // timer is frozen server-side; nothing to sync
+        if (st.seconds_remaining != null) {
           const localLeft = deadline ? Math.round((deadline - Date.now()) / 1000) : 0;
-          if (data.seconds_remaining > localLeft + 5) {
-            setDeadline(Date.now() + data.seconds_remaining * 1000);
-            setRemaining(data.seconds_remaining);
-            toast.info("Your teacher added time to this section.");
+          // On resume, re-anchor the deadline; otherwise only ever EXTEND (added
+          // time) — never shorten on a stale read.
+          if (resuming || st.seconds_remaining > localLeft + 5) {
+            setDeadline(Date.now() + st.seconds_remaining * 1000);
+            setRemaining(st.seconds_remaining);
+            if (!resuming) toast.info("Your teacher added time to this section.");
           }
-        } catch (e) {
-          // A proctor force-submitted this run — surface a clean "ended" screen.
-          if (String((e as Error)?.message ?? "").includes("run_already_submitted")) {
-            setEndedByProctor(true);
-          }
-          /* else non-fatal: keep the existing deadline */
         }
       })();
-    }, 30000);
+    }, 8000);
     return () => window.clearInterval(id);
-  }, [phase, runId, moduleMeta, deadline, toast]);
+  }, [phase, runId, deadline, toast]);
 
   // --- sleep/wake resync ----------------------------------------------------
   // After a laptop sleep or long tab-hide, Date.now() jumps forward and the
@@ -512,6 +519,32 @@ export function FullTestApp() {
         >
           Back to home
         </button>
+      </CenterCard>
+    );
+  }
+
+  if (paused && phase === "module") {
+    return (
+      <CenterCard wide>
+        <div
+          aria-hidden
+          className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300"
+        >
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="6" y="5" width="4" height="14" rx="1" />
+            <rect x="14" y="5" width="4" height="14" rx="1" />
+          </svg>
+        </div>
+        <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+          Paused by your teacher
+        </h1>
+        <p className="mt-2 text-slate-600 dark:text-slate-400">
+          Your timer is frozen and your answers are saved. The test will continue
+          right where you left off when your teacher resumes it.
+        </p>
+        <p className="mt-4 text-xs text-slate-400 dark:text-slate-500" aria-live="polite">
+          Waiting to resume…
+        </p>
       </CenterCard>
     );
   }

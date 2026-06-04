@@ -152,6 +152,24 @@ export async function reportAway(runId: string): Promise<void> {
   }
 }
 
+export interface RunState {
+  status: string; // 'in_progress' | 'submitted' | 'abandoned'
+  paused: boolean;
+  current_module: number;
+  seconds_remaining: number | null;
+}
+
+/** Light owner poll for status / paused / remaining (drives pause + add-time + end). */
+export async function getRunState(runId: string): Promise<RunState | null> {
+  try {
+    const { data, error } = await supabase.rpc("test_run_state", { p_run_id: runId });
+    if (error || !data) return null;
+    return data as RunState;
+  } catch {
+    return null;
+  }
+}
+
 export async function getResult(runId: string): Promise<TestResult> {
   const { data, error } = await supabase.rpc("get_test_result", {
     p_run_id: runId,

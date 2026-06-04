@@ -26,6 +26,7 @@ interface LiveRow {
   seconds_remaining: number | null;
   marked: number | null;
   away_count: number | null;
+  paused: boolean | null;
   last_seen_at: string | null;
   started_at: string | null;
   submitted_at: string | null;
@@ -108,6 +109,27 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
         if (rpcError) toast.error("Couldn't add time", rpcError.message);
         else {
           toast.success(`+${Math.round(seconds / 60)} min for ${who}`);
+          void refresh();
+        }
+      } finally {
+        setBusyRun(null);
+      }
+    },
+    [toast, refresh],
+  );
+
+  const setPause = useCallback(
+    async (runId: string | null, pause: boolean, who: string): Promise<void> => {
+      if (!runId) return;
+      setBusyRun(runId);
+      try {
+        const { error: rpcError } = await supabase.rpc("proctor_set_pause", {
+          p_run_id: runId,
+          p_paused: pause,
+        });
+        if (rpcError) toast.error(pause ? "Couldn't pause" : "Couldn't resume", rpcError.message);
+        else {
+          toast.success(pause ? `Paused ${who}` : `Resumed ${who}`);
           void refresh();
         }
       } finally {
@@ -262,12 +284,28 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
                           ⚠ left tab {away}×
                         </span>
                       )}
+                      {r.paused && (
+                        <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-[11px] font-medium text-indigo-700 ring-1 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900">
+                          ⏸ paused
+                        </span>
+                      )}
+                      <button
+                        type="button"
+                        disabled={busyRun === r.run_id}
+                        onClick={() =>
+                          void setPause(r.run_id, !r.paused, r.student_name ?? "student")
+                        }
+                        title={r.paused ? "Resume this student's timer" : "Freeze this student's timer"}
+                        className="ml-auto rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                      >
+                        {busyRun === r.run_id ? "…" : r.paused ? "Resume" : "Pause"}
+                      </button>
                       <button
                         type="button"
                         disabled={busyRun === r.run_id}
                         onClick={() => void addTime(r.run_id, 300, r.student_name ?? "student")}
                         title="Give this student 5 more minutes on the current section"
-                        className="ml-auto rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                        className="rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
                       >
                         {busyRun === r.run_id ? "…" : "+5 min"}
                       </button>
