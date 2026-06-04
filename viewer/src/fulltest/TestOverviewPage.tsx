@@ -18,11 +18,10 @@
  * release_test_results[/_for_teacher] + reset_test_attempt (0083/0090) and the
  * inline ResultView, the same RPCs the completion modal uses.
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
-import { useEscapeKey, useFocusTrap } from "@/hooks";
 import { Skeleton } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { ROUTES, testPreviewPath, testReviewPath } from "@/lib/routes";
@@ -31,85 +30,19 @@ import { ResultView } from "./ResultView";
 import { AssignTestModal } from "./AssignTestModal";
 import { TestMonitorModal } from "./TestMonitorModal";
 import type { TestResult } from "./types";
-
-// --- types -----------------------------------------------------------------
-
-interface TestRow {
-  id: string;
-  slug: string;
-  title: string;
-  short_title: string | null;
-  total_questions: number | null;
-}
-interface ModuleRow {
-  position: number;
-  section: "reading-writing" | "math";
-  label: string;
-  time_limit_seconds: number;
-  question_count: number;
-}
-interface RosterRow {
-  student_id: string;
-  student_name: string | null;
-  run_id: string | null;
-  score: number | null;
-  total: number | null;
-  submitted_at: string | null;
-  results_released_at: string | null;
-  has_in_progress: boolean;
-}
-/** Live snapshot per student (test_live_progress) merged into the roster. */
-interface LiveInfo {
-  state: "in_progress" | "submitted" | "not_started";
-  module_position: number | null;
-  module_label: string | null;
-  current_question: number | null;
-  answered: number | null;
-  module_questions: number | null;
-  away_count: number | null;
-  paused: boolean | null;
-  integrity: Record<string, number> | null;
-  started_at: string | null;
-  submitted_at: string | null;
-  run_id: string | null;
-}
-
-/** "paste 2 · left FS 1" from the integrity counter bag, or null if clean. */
-function fmtIntegrity(i: Record<string, number> | null | undefined): string | null {
-  if (!i) return null;
-  const labels: Array<[string, string]> = [
-    ["paste", "paste"],
-    ["copy", "copy"],
-    ["fullscreen_exit", "left FS"],
-  ];
-  const parts = labels
-    .filter(([k]) => (i[k] ?? 0) > 0)
-    .map(([k, label]) => `${label} ${i[k]}×`);
-  return parts.length ? parts.join(" · ") : null;
-}
-
-// --- helpers ---------------------------------------------------------------
-
-function errMsg(e: unknown, fallback: string): string {
-  if (e instanceof Error) return e.message;
-  if (typeof e === "string") return e;
-  return fallback;
-}
-function fmtTime(iso: string | null): string {
-  if (!iso) return "—";
-  try {
-    return new Date(iso).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
-  } catch {
-    return "—";
-  }
-}
-function pctOf(score: number | null, total: number | null): number | null {
-  if (score == null || total == null || total <= 0) return null;
-  return Math.round((score / total) * 100);
-}
-function fmtMins(seconds: number): string {
-  return `${Math.round(seconds / 60)} min`;
-}
+import {
+  errMsg,
+  fmtIntegrity,
+  fmtMins,
+  fmtTime,
+  pctOf,
+  InterventionModal,
+  StatCard,
+  type LiveInfo,
+  type ModuleRow,
+  type RosterRow,
+  type TestRow,
+} from "@/fulltest/test-overview";
 
 // --- page ------------------------------------------------------------------
 
@@ -812,139 +745,4 @@ export function TestOverviewPage(): JSX.Element {
   );
 }
 
-// --- stat card -------------------------------------------------------------
 
-function StatCard({
-  label,
-  value,
-  loading = false,
-  sub,
-  suffix,
-  tone = "slate",
-}: {
-  label: string;
-  value: number | null;
-  loading?: boolean;
-  sub?: string;
-  suffix?: string;
-  tone?: "slate" | "indigo" | "emerald" | "blue" | "muted";
-}): JSX.Element {
-  const toneCls: Record<string, string> = {
-    slate: "text-slate-900 dark:text-slate-100",
-    indigo: "text-indigo-600 dark:text-indigo-300",
-    emerald: "text-emerald-600 dark:text-emerald-300",
-    blue: "text-blue-600 dark:text-blue-300",
-    muted: "text-slate-400 dark:text-slate-500",
-  };
-  return (
-    <div className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-4">
-      <p className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
-        {label}
-      </p>
-      {loading ? (
-        <Skeleton className="mt-1.5 h-8 w-16 rounded" />
-      ) : value === null ? (
-        <p className="mt-1 text-3xl font-bold tabular-nums text-slate-300 dark:text-slate-600">—</p>
-      ) : (
-        <p className={`mt-1 text-3xl font-bold tabular-nums ${toneCls[tone]}`}>
-          {value}
-          {suffix && <span className="text-lg font-semibold">{suffix}</span>}
-        </p>
-      )}
-      {sub && <p className="mt-0.5 text-xs text-slate-400 dark:text-slate-500">{sub}</p>}
-    </div>
-  );
-}
-
-// --- intervention modal (End now / locked Reset) ---------------------------
-
-interface InterventionModalProps {
-  action: { kind: "end" | "reset"; row: RosterRow; runId?: string };
-  text: string;
-  onText: (v: string) => void;
-  busy: boolean;
-  onConfirm: () => void;
-  onCancel: () => void;
-}
-
-function InterventionModal({
-  action,
-  text,
-  onText,
-  busy,
-  onConfirm,
-  onCancel,
-}: InterventionModalProps): JSX.Element {
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
-  useEscapeKey(() => {
-    if (!busy) onCancel();
-  });
-  const isReset = action.kind === "reset";
-  const name = action.row.student_name ?? "Student";
-  const canConfirm = !isReset || text.trim() === name.trim();
-
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="intervention-title"
-      className="fixed inset-0 z-[70] flex items-center justify-center px-4 bg-slate-900/50 backdrop-blur-sm"
-      onClick={onCancel}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h2
-          id="intervention-title"
-          className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-        >
-          {isReset ? `Reset ${name}'s attempt?` : `End ${name}'s test now?`}
-        </h2>
-        <p className="text-sm text-slate-600 dark:text-slate-400">
-          {isReset
-            ? "This permanently discards their current attempt so they can start over from the beginning — any answers they've entered are lost. This can't be undone."
-            : "Their test is submitted immediately and graded on whatever they've answered so far. Questions they didn't reach count as incorrect."}
-        </p>
-        {isReset && (
-          <label className="block">
-            <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
-              Type <span className="font-semibold text-slate-900 dark:text-slate-100">{name}</span>{" "}
-              to confirm
-            </span>
-            <input
-              data-autofocus
-              value={text}
-              onChange={(e) => onText(e.target.value)}
-              autoComplete="off"
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
-              placeholder={name}
-            />
-          </label>
-        )}
-        <div className="flex items-center justify-end gap-2 pt-1">
-          <button
-            type="button"
-            onClick={onCancel}
-            disabled={busy}
-            className="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-60"
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={onConfirm}
-            disabled={!canConfirm || busy}
-            className={`rounded-lg px-4 py-2 text-sm font-semibold text-white disabled:opacity-50 disabled:cursor-not-allowed ${
-              isReset ? "bg-rose-600 hover:bg-rose-700" : "bg-amber-600 hover:bg-amber-700"
-            }`}
-          >
-            {busy ? "Working…" : isReset ? "Reset attempt" : "End test"}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
