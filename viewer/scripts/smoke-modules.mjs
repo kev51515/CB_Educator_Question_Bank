@@ -36,18 +36,41 @@ if (!url || !anon || !service) {
 const sb = createClient(url, anon, { auth: { persistSession: false } });
 const admin = createClient(url, service, { auth: { persistSession: false } });
 
-async function signIn() {
-  const { data, error } = await sb.auth.signInWithPassword({
-    email: "demo-teacher@example.com",
-    password: "demoteacher123",
-  });
-  if (error) throw new Error(`signin failed: ${error.message}`);
-  return data.user?.id;
-}
-
 let total = 0, pass = 0, fail = 0;
 const createdIds = [];   // track for cleanup
 const createdItemIds = [];
+let teacherUid = null;     // disposable teacher (deleted on teardown)
+let createdCourseId = null;
+
+// Self-bootstrap a disposable teacher + course so the suite needs no pre-seeded
+// accounts on the remote DB (the demo seed was intentionally removed).
+async function bootstrapTeacher() {
+  const email = `smoke-modules-${Date.now()}@example.com`;
+  const password = "SmokeTest!" + Math.random().toString(16).slice(2, 10);
+  const { data: created, error } = await admin.auth.admin.createUser({
+    email, password, email_confirm: true,
+    user_metadata: { display_name: "Smoke Modules Teacher" },
+  });
+  if (error) throw new Error(`createUser: ${error.message}`);
+  teacherUid = created.user.id;
+  const { error: roleErr } = await admin
+    .from("profiles").update({ role: "teacher" }).eq("id", teacherUid);
+  if (roleErr) throw new Error(`promote teacher: ${roleErr.message}`);
+  const { error: siErr } = await sb.auth.signInWithPassword({ email, password });
+  if (siErr) throw new Error(`signin: ${siErr.message}`);
+  return teacherUid;
+}
+
+async function createCourse(teacherId) {
+  const { data, error } = await admin
+    .from("courses")
+    .insert({ teacher_id: teacherId, name: `Smoke Modules ${Date.now()}` })
+    .select("id, name, short_code")
+    .single();
+  if (error) throw new Error(`create course: ${error.message}`);
+  createdCourseId = data.id;
+  return data;
+}
 
 function ok(name, cond, detail = "") {
   total += 1;
@@ -58,16 +81,6 @@ function ok(name, cond, detail = "") {
     fail += 1;
     console.log(`  ✗ ${name}${detail ? " — " + detail : ""}`);
   }
-}
-
-async function pickDemoCourse() {
-  const { data, error } = await sb
-    .from("courses")
-    .select("id, name, short_code")
-    .eq("short_code", "69WAJ3")
-    .maybeSingle();
-  if (error || !data) throw new Error("Demo course 69WAJ3 not found");
-  return data;
 }
 
 async function createModule(courseId, name, parentId = null, position = 0) {
@@ -111,9 +124,9 @@ async function cleanup() {
   console.log("=== smoke-modules.mjs ===");
   let course;
   try {
-    const uid = await signIn();
-    console.log(`signed in as demo teacher (uid=${uid?.slice(0, 8)}…)`);
-    course = await pickDemoCourse();
+    const uid = await bootstrapTeacher();
+    console.log(`bootstrapped disposable teacher (uid=${uid?.slice(0, 8)}…)`);
+    course = await createCourse(uid);
     console.log(`course: ${course.name} (${course.short_code}, ${course.id})`);
   } catch (e) {
     console.error(e.message);
@@ -306,6 +319,13 @@ async function cleanup() {
   } finally {
     // Belt-and-suspenders cleanup if any test path bailed early.
     await cleanup();
+    // Tear down the disposable course (cascades modules/items) + teacher.
+    if (createdCourseId) {
+      try { await admin.from("courses").delete().eq("id", createdCourseId); } catch {/* ignore */}
+    }
+    if (teacherUid) {
+      try { await admin.auth.admin.deleteUser(teacherUid); } catch {/* ignore */}
+    }
   }
 
   console.log("\n----------------------------------");

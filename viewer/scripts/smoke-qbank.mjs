@@ -51,10 +51,9 @@ if (!url || !anon || !service) {
 const sb = createClient(url, anon, { auth: { persistSession: false } });
 const admin = createClient(url, service, { auth: { persistSession: false } });
 
-const DEMO_COURSE_ID = "339fac02-c4b3-4cb5-a00f-5672616a4512"; // 69WAJ3
-const DEMO_TEACHER_EMAIL = "demo-teacher@example.com";
-const DEMO_TEACHER_PW = "demoteacher123";
 const TAG = `smoke-qbank-${Date.now()}`;
+let courseId = null;          // disposable course (deleted on teardown)
+let teacherProfileId = null;  // disposable teacher
 
 let total = 0, pass = 0, fail = 0;
 const created = {
@@ -76,28 +75,38 @@ function ok(name, cond, detail = "") {
 }
 
 async function signInTeacher() {
-  const { data, error } = await sb.auth.signInWithPassword({
-    email: DEMO_TEACHER_EMAIL,
-    password: DEMO_TEACHER_PW,
+  // Self-bootstrap a disposable teacher + course (no pre-seeded accounts needed).
+  const email = `${TAG}-teacher@example.com`;
+  const password = "SmokeTest!" + randomUUID().slice(0, 8);
+  const { data: created, error } = await admin.auth.admin.createUser({
+    email, password, email_confirm: true,
+    user_metadata: { display_name: "Smoke Qbank Teacher" },
   });
-  if (error) throw new Error(`signin failed: ${error.message}`);
-  return data.user?.id;
+  if (error) throw new Error(`createUser: ${error.message}`);
+  teacherProfileId = created.user.id;
+  const { error: roleErr } = await admin
+    .from("profiles").update({ role: "teacher" }).eq("id", teacherProfileId);
+  if (roleErr) throw new Error(`promote teacher: ${roleErr.message}`);
+  const { error: siErr } = await sb.auth.signInWithPassword({ email, password });
+  if (siErr) throw new Error(`signin: ${siErr.message}`);
+  const { data: course, error: cErr } = await admin
+    .from("courses")
+    .insert({ teacher_id: teacherProfileId, name: `Smoke Qbank ${Date.now()}` })
+    .select("id").single();
+  if (cErr) throw new Error(`create course: ${cErr.message}`);
+  courseId = course.id;
+  return teacherProfileId;
 }
 
 async function getTeacherId() {
-  const { data } = await admin
-    .from("profiles")
-    .select("id")
-    .eq("email", DEMO_TEACHER_EMAIL)
-    .maybeSingle();
-  return data?.id;
+  return teacherProfileId;
 }
 
 async function createQbankAssignment(teacherId, maxAttempts = 2) {
   const { data, error } = await admin
     .from("assignments")
     .insert({
-      course_id: DEMO_COURSE_ID,
+      course_id: courseId,
       created_by: teacherId,
       title: `${TAG} qbank`,
       kind: "qbank_set",
@@ -121,7 +130,7 @@ async function createMocktestAssignment(teacherId) {
   const { data, error } = await admin
     .from("assignments")
     .insert({
-      course_id: DEMO_COURSE_ID,
+      course_id: courseId,
       created_by: teacherId,
       title: `${TAG} mocktest`,
       kind: "mocktest",
@@ -223,6 +232,13 @@ async function cleanup() {
     try {
       await admin.auth.admin.deleteUser(uid);
     } catch {/* ignore */}
+  }
+  // Disposable course (cascades assignments/attempts) + teacher.
+  if (courseId) {
+    try { await admin.from("courses").delete().eq("id", courseId); } catch {/* ignore */}
+  }
+  if (teacherProfileId) {
+    try { await admin.auth.admin.deleteUser(teacherProfileId); } catch {/* ignore */}
   }
 }
 
