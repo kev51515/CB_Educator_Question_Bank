@@ -4,7 +4,7 @@
  *
  * Why realtime: a teacher creating a course in one tab should see it in
  * another tab without a hard refresh. We subscribe to `postgres_changes`
- * on `public.classes` filtered to this teacher_id and refetch on any
+ * on `public.courses` filtered to this teacher_id and refetch on any
  * change (INSERT / UPDATE / DELETE). Cheap and sufficient — we're not
  * trying to do delta merges, just stay current.
  */

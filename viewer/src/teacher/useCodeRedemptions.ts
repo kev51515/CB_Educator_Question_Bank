@@ -57,19 +57,23 @@ function getErrorMessage(error: unknown): string {
 
 function computeStats(rows: CodeRedemption[]): CodeRedemptionStats {
   if (rows.length === 0) return EMPTY_STATS;
+  // Distinct redeemers: key by student_id, falling back to the snapshotted
+  // email for removed students (so one removed student who used the code twice
+  // isn't double-counted), and only then to the row id as a last resort.
   const distinct = new Set<string>();
-  let nullStudents = 0;
   let joinCount = 0;
   let quickStartCount = 0;
   for (const r of rows) {
-    if (r.student_id) distinct.add(r.student_id);
-    else nullStudents += 1;
+    const key =
+      r.student_id ??
+      (r.email_snapshot ? `email:${r.email_snapshot.toLowerCase()}` : `row:${r.id}`);
+    distinct.add(key);
     if (r.method === "join") joinCount += 1;
     else if (r.method === "quick_start") quickStartCount += 1;
   }
   return {
     total: rows.length,
-    students: distinct.size + nullStudents,
+    students: distinct.size,
     lastUsed: rows[0]?.created_at ?? null, // rows arrive newest-first
     joinCount,
     quickStartCount,

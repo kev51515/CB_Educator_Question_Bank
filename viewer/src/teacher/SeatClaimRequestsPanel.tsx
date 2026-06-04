@@ -31,11 +31,22 @@ export function SeatClaimRequestsPanel({
   courseId,
   onChange,
 }: SeatClaimRequestsPanelProps): JSX.Element | null {
-  const { requests, decide } = useSeatClaimRequests(courseId);
+  const { requests, error, decide } = useSeatClaimRequests(courseId);
   const toast = useToast();
   const [busyId, setBusyId] = useState<string | null>(null);
 
-  if (requests.length === 0) return null;
+  // Nothing to show, and no error → render nothing.
+  if (requests.length === 0 && !error) return null;
+
+  if (requests.length === 0 && error) {
+    return (
+      <div className="px-6 py-3 border-b border-rose-200 dark:border-rose-900 bg-rose-50/60 dark:bg-rose-950/20">
+        <p role="alert" className="text-xs text-rose-700 dark:text-rose-300">
+          Couldn't load login requests. Refresh to try again.
+        </p>
+      </div>
+    );
+  }
 
   const handle = async (id: string, approve: boolean, who: string): Promise<void> => {
     setBusyId(id);

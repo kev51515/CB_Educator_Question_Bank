@@ -17,7 +17,10 @@ import { supabase } from "../lib/supabase";
 import {
   courseAssignmentPath,
   coursePortfolioPath,
+  assignmentTakePath,
+  studentCoursePath,
 } from "../lib/routes";
+import { useProfile } from "../lib/profile";
 import { Skeleton, SkeletonRows } from "../components/Skeleton";
 import { useMediaQuery } from "../hooks";
 import { useFocusTrap } from "../hooks/useFocusTrap";
@@ -849,6 +852,11 @@ function isTypingTarget(el: Element | null): boolean {
 
 export function CalendarPage() {
   const navigate = useNavigate();
+  const { profile } = useProfile();
+  // CalendarPage renders under both /educator/calendar and /student/calendar.
+  // The due-date data is RLS-scoped per role; only the click-through target
+  // differs (students don't have the educator course-management routes).
+  const isStudent = profile?.role === "student";
   const [view, setView] = useState<ViewMode>(() => readCalendarView());
   useEffect(() => {
     writeCalendarView(view);
@@ -1024,9 +1032,19 @@ export function CalendarPage() {
 
   const handleEventClick = (event: CalendarEvent) => {
     if (event.kind === "assignment") {
-      navigate(courseAssignmentPath(event.courseId, event.id));
+      navigate(
+        isStudent
+          ? assignmentTakePath(event.id)
+          : courseAssignmentPath(event.courseId, event.id),
+      );
     } else {
-      navigate(coursePortfolioPath(event.courseId));
+      // No student portfolio route; land them on the course (the `:short` route
+      // accepts a course UUID too).
+      navigate(
+        isStudent
+          ? studentCoursePath(event.courseId)
+          : coursePortfolioPath(event.courseId),
+      );
     }
   };
 

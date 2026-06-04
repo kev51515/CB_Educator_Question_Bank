@@ -1,9 +1,9 @@
 /**
  * useStudentClasses — lists the courses the signed-in student belongs to.
  *
- * Reads from `class_memberships` joined to `classes` (and the teacher's
+ * Reads from `course_memberships` joined to `courses` (and the teacher's
  * profile so we can show the teacher name). The RLS policy on
- * class_memberships limits the result to the caller's own rows, so we don't
+ * course_memberships limits the result to the caller's own rows, so we don't
  * need to filter by student_id manually — supabase-js will still send the
  * auth context, and the policy does the rest.
  */

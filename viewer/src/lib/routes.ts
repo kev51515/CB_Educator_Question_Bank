@@ -54,6 +54,8 @@ export const ROUTES = {
   STUDENT_COURSES: "/student/courses",
   STUDENT_COURSE: "/student/courses/:short",
   STUDENT_COURSE_MODULES: "/student/courses/:short/modules",
+  // Student calendar (role-prefixed; renders the shared CalendarPage).
+  STUDENT_CALENDAR: "/student/calendar",
   // Student inbox + account (role-prefixed; mirror the educator equivalents).
   STUDENT_INBOX: "/student/inbox",
   STUDENT_INBOX_THREAD: "/student/inbox/:threadId",

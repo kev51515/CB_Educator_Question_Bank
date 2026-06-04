@@ -1,7 +1,7 @@
 /**
  * useClassRoster — lists the students enrolled in a given course.
  *
- * Used by the ClassRoster / ClassOverview tabs. Joins class_memberships →
+ * Used by the ClassRoster / ClassOverview tabs. Joins course_memberships →
  * profiles so the table has display_name + email + joined_at. RLS
  * guarantees only the owning teacher (or admin) can see these rows.
  */

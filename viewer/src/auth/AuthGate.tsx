@@ -291,6 +291,7 @@ function StudentRoutesTree({
         </Route>
         {/* Student per-course view. `:short` is the course `short_code`
             (also accepts a UUID — RLS enforces enrollment either way). */}
+        <Route path={ROUTES.STUDENT_CALENDAR} element={<CalendarPage />} />
         <Route path={ROUTES.STUDENT_COURSES} element={<StudentCoursesPage />} />
         <Route path={ROUTES.STUDENT_COURSE} element={<StudentCourseView />} />
         <Route path={ROUTES.STUDENT_COURSE_MODULES} element={<StudentCourseView />} />

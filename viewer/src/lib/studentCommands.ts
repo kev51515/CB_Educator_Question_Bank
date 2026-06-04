@@ -277,7 +277,7 @@ export function useStudentCommands(): Command[] {
       label: "Open your calendar",
       keywords: "schedule due dates events",
       group: "Command",
-      run: () => navigate(ROUTES.CALENDAR),
+      run: () => navigate(ROUTES.STUDENT_CALENDAR),
     });
 
     // 6. Account settings.

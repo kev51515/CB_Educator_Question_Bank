@@ -11,7 +11,7 @@
  * What we show:
  *   - Class header (name, description, owner, archived flag, join code R/O)
  *   - Roster (display_name + email + joined_at) via direct PostgREST query.
- *     RLS allows admins to read class_memberships, so no special RPC.
+ *     RLS allows admins to read course_memberships, so no special RPC.
  *   - Assignments table (title, source, question count, due_at).
  */
 import { useCallback, useEffect, useState } from "react";

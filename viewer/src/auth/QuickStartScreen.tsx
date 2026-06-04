@@ -37,7 +37,10 @@ interface QuickStartScreenProps {
  */
 const CODE_LENGTH = 6;
 const COURSE_RE = /^[A-HJ-NP-Z2-9]{6}$/;
-const SEAT_RE = /^([A-HJ-NP-Z2-9]{6})-?([0-9]{1,3})$/;
+// Require the dash so a 6-char course code with an accidental trailing digit
+// (e.g. "AB23CD1") isn't misread as a seat code — seat codes are always
+// distributed with the dash ("Y8M3KP-01").
+const SEAT_RE = /^([A-HJ-NP-Z2-9]{6})-([0-9]{1,3})$/;
 /** Keep letters, digits and a dash while typing; uppercase; cap length. */
 const ENTRY_SCRUB = /[^A-Z0-9-]/g;
 
@@ -133,21 +136,40 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
   const [code, setCode] = useState<string>(() => scrubEntry(prefillCode ?? ""));
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [confirmEmail, setConfirmEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [busy, setBusy] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [succeeded, setSucceeded] = useState<boolean>(false);
 
+  // Guards setState after an await if the component unmounts mid-flight (the
+  // screen unmounts once AuthGate re-routes on success). House pattern (21I/J).
+  const aliveRef = useRef(true);
+  useEffect(() => {
+    aliveRef.current = true;
+    return () => {
+      aliveRef.current = false;
+    };
+  }, []);
+
   const parsed = useMemo(() => parseEntry(code), [code]);
   const isSeat = parsed.mode === "seat";
   const codeValid = parsed.mode !== "empty";
+  const emailsMatch =
+    email.trim().toLowerCase() === confirmEmail.trim().toLowerCase();
 
   const canSubmit = useMemo(() => {
     if (busy || succeeded || !codeValid) return false;
-    if (isSeat) return email.trim().length > 0 && password.length >= 6;
+    if (isSeat)
+      return (
+        email.trim().length > 0 &&
+        confirmEmail.trim().length > 0 &&
+        emailsMatch &&
+        password.length >= 6
+      );
     return name.trim().length > 0 && email.trim().length > 0;
-  }, [busy, succeeded, codeValid, isSeat, name, email, password]);
+  }, [busy, succeeded, codeValid, isSeat, name, email, confirmEmail, emailsMatch, password]);
 
   const codeRef = useRef<HTMLInputElement | null>(null);
   const nameRef = useRef<HTMLInputElement | null>(null);
@@ -165,60 +187,73 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
     }
   }, [prefillCode]);
 
+  /**
+   * Each submit returns whether the anonymous session should be KEPT — true only
+   * when it was converted into a real signed-in state (quick-start success, or a
+   * claim that signed in as the seat). Otherwise the caller signs the throwaway
+   * anon session out so the student is never stranded half-authenticated.
+   */
+
   /** Quick-start a brand-new self-serve enrolment from a 6-char course code. */
-  const submitCourse = async (courseCode: string): Promise<void> => {
+  const submitCourse = async (courseCode: string): Promise<boolean> => {
     const { error: rpcError } = await supabase.rpc("quick_start_with_code", {
       p_code: courseCode,
       p_name: name.trim(),
       p_email: email.trim(),
     });
+    if (!aliveRef.current) return true; // unmounted; leave session as-is
     if (rpcError) {
       setError(mapRpcError(rpcError.message));
-      return;
+      return false;
     }
     setSucceeded(true);
+    return true; // the anon session IS this student now
   };
 
   /** Claim (or request) a pre-created managed seat from a "-NN" seat code. */
-  const submitSeat = async (seatCode: string): Promise<void> => {
+  const submitSeat = async (seatCode: string): Promise<boolean> => {
     const trimmedEmail = email.trim();
     const { data, error: rpcError } = await supabase.rpc("claim_student_seat", {
       p_code: seatCode,
       p_email: trimmedEmail,
       p_password: password,
     });
+    if (!aliveRef.current) return false;
     if (rpcError) {
       setError(mapRpcError(rpcError.message));
-      return;
+      return false;
     }
     const row = (Array.isArray(data) ? data[0] : data) as ClaimSeatRow | null;
 
     if (row?.status === "claimed") {
-      // The seat now logs in with the real email + chosen password. Replace the
-      // throwaway anonymous session by signing in as the seat; AuthGate routes.
+      // The seat now logs in with the real email + chosen password. Sign in as
+      // the seat — this REPLACES the anon session, so keep it. AuthGate routes.
       const loginEmail = row.login_email || trimmedEmail;
       const { error: signInError } = await supabase.auth.signInWithPassword({
         email: loginEmail,
         password,
       });
+      if (!aliveRef.current) return true; // signed in; leave the seat session
       if (signInError) {
         setError(
           "Your login is set up — please sign in with your email and password.",
         );
-        return;
+        return false;
       }
       setSucceeded(true);
-      return;
+      return true;
     }
 
-    // status === 'pending' → teacher must approve. Drop the anon session so the
-    // student isn't stranded in a half-signed-in state, and show a notice.
-    await supabase.auth.signOut();
-    setNotice(
-      "That spot is already in use, so we've asked your teacher to approve this login. " +
-        "You'll be able to sign in once they do.",
-    );
-    setPassword("");
+    // status === 'pending' → teacher must approve. The anon session is dropped
+    // by the caller's cleanup; just surface the notice.
+    if (aliveRef.current) {
+      setNotice(
+        "That spot is already in use, so we've asked your teacher to approve this login. " +
+          "You'll be able to sign in once they do.",
+      );
+      setPassword("");
+    }
+    return false;
   };
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -233,6 +268,10 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
     if (p.mode === "seat") {
       if (!email.trim()) {
         setError("Please enter your email.");
+        return;
+      }
+      if (!emailsMatch) {
+        setError("The two emails don't match.");
         return;
       }
       if (password.length < 6) {
@@ -251,6 +290,8 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
     }
 
     setBusy(true);
+    let anonStarted = false;
+    let keepSession = false;
     try {
       // Both flows run against an authenticated context. Mint an anonymous
       // session first; by the time signInAnonymously resolves the JWT is on
@@ -259,22 +300,33 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
       if (anonError) {
         const anonCode =
           (anonError as unknown as { code?: string | null }).code ?? null;
-        if (isAnonymousDisabled(anonError.message, anonCode)) {
-          setError(
-            "Quick-start is disabled. Ask your administrator to enable anonymous sign-in, or use Sign In above.",
-          );
-        } else {
-          setError(mapRpcError(anonError.message));
+        if (aliveRef.current) {
+          if (isAnonymousDisabled(anonError.message, anonCode)) {
+            setError(
+              "Quick-start is disabled. Ask your administrator to enable anonymous sign-in, or use Sign In above.",
+            );
+          } else {
+            setError(mapRpcError(anonError.message));
+          }
         }
         return;
       }
+      anonStarted = true;
 
-      if (p.mode === "seat") await submitSeat(p.seatCode);
-      else await submitCourse(p.courseCode);
+      keepSession =
+        p.mode === "seat"
+          ? await submitSeat(p.seatCode)
+          : await submitCourse(p.courseCode);
     } catch (err: unknown) {
-      setError(getErrorMessage(err));
+      if (aliveRef.current) setError(getErrorMessage(err));
     } finally {
-      setBusy(false);
+      // If we minted an anon session but never converted it into a real
+      // signed-in state (error / pending), drop it so the student isn't
+      // stranded as an anonymous user with no course.
+      if (anonStarted && !keepSession) {
+        await supabase.auth.signOut().catch(() => undefined);
+      }
+      if (aliveRef.current) setBusy(false);
     }
   };
 
@@ -409,6 +461,29 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
               placeholder="you@example.com"
             />
           </label>
+
+          {isSeat && (
+            <label className="block">
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                Confirm email
+              </span>
+              <input
+                type="email"
+                value={confirmEmail}
+                onChange={(e) => setConfirmEmail(e.target.value)}
+                autoComplete="email"
+                disabled={succeeded}
+                aria-invalid={confirmEmail.length > 0 && !emailsMatch}
+                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
+                placeholder="Re-type your email"
+              />
+              {confirmEmail.length > 0 && !emailsMatch && (
+                <span className="mt-1 block text-xs text-rose-600 dark:text-rose-400">
+                  The two emails don't match.
+                </span>
+              )}
+            </label>
+          )}
 
           {isSeat && (
             <label className="block">

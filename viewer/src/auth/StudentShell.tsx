@@ -326,7 +326,7 @@ export function StudentShell() {
           </NavLink>
 
           <NavLink
-            to={ROUTES.CALENDAR}
+            to={ROUTES.STUDENT_CALENDAR}
             className={railLinkClass}
             title="Calendar"
           >
@@ -527,9 +527,9 @@ const STUDENT_TABS: TabSpec[] = [
     ),
   },
   {
-    to: ROUTES.CALENDAR,
+    to: ROUTES.STUDENT_CALENDAR,
     label: "Calendar",
-    match: (p) => p.startsWith("/calendar"),
+    match: (p) => p.startsWith(ROUTES.STUDENT_CALENDAR),
     icon: (
       <svg
         viewBox="0 0 24 24"

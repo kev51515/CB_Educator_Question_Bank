@@ -223,7 +223,7 @@ export function StudentCourseView(): JSX.Element {
       <div className="mx-auto max-w-3xl space-y-6">
         <button
           type="button"
-          onClick={() => navigate(ROUTES.HOME)}
+          onClick={() => navigate(ROUTES.STUDENT_COURSES)}
           className="min-h-[40px] inline-flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
         >
           <span aria-hidden>←</span> Back

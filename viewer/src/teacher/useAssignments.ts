@@ -4,7 +4,7 @@
  * Returns archived rows as well so the teacher can see / manage them
  * (rendered with a muted style + archived badge). RLS already restricts
  * visibility to the owning teacher (or admin); we still constrain by
- * class_id so the query plan is index-only.
+ * course_id so the query plan is index-only.
  *
  * No realtime subscription yet — the teacher console refreshes after create
  * via the `refresh` callback. We can add postgres_changes later if a multi-
