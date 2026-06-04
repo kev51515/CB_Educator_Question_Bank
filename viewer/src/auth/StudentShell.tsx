@@ -121,11 +121,23 @@ function isAccountRouteActive(pathname: string): boolean {
  * managed accounts), with `/` redirecting there. Treat all three as "Home"
  * for nav highlight so the rail/tab Home item stays lit on the landing.
  */
+/** Reserved sub-route segments under `/student/*` that are their own nav
+ *  destinations — NOT the managed-student coded home `/student/<code>`. */
+const STUDENT_RESERVED_SEGMENTS = ["courses", "inbox", "account"];
+
 function isStudentHomeActive(pathname: string): boolean {
+  if (pathname === "/" || pathname === ROUTES.STUDENT_HOME) return true;
+  const m = pathname.match(/^\/student\/([^/]+)/);
+  if (!m) return false;
+  // `/student/<code>` is the coded landing → Home; reserved segments are their
+  // own destinations and must not also light up Home (so a click reads clearly).
+  return !STUDENT_RESERVED_SEGMENTS.includes(m[1]);
+}
+
+function isStudentCoursesActive(pathname: string): boolean {
   return (
-    pathname === "/" ||
-    pathname === ROUTES.STUDENT_HOME ||
-    pathname.startsWith(`${ROUTES.STUDENT_HOME}/`)
+    pathname === ROUTES.STUDENT_COURSES ||
+    pathname.startsWith(`${ROUTES.STUDENT_COURSES}/`)
   );
 }
 
@@ -286,6 +298,31 @@ export function StudentShell() {
               </svg>
             </RailIcon>
             <span className={collapsed ? "lg:hidden" : undefined}>Home</span>
+          </NavLink>
+
+          <NavLink
+            to={ROUTES.STUDENT_COURSES}
+            title="Courses"
+            className={() =>
+              railLinkClass({ isActive: isStudentCoursesActive(location.pathname) })
+            }
+          >
+            <RailIcon>
+              <svg
+                width={20}
+                height={20}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+            </RailIcon>
+            <span className={collapsed ? "lg:hidden" : undefined}>Courses</span>
           </NavLink>
 
           <NavLink
@@ -452,8 +489,7 @@ const STUDENT_TABS: TabSpec[] = [
   {
     to: ROUTES.STUDENT_HOME,
     label: "Home",
-    match: (p) =>
-      p === "/" || p === "" || p === ROUTES.STUDENT_HOME || p.startsWith(`${ROUTES.STUDENT_HOME}/`),
+    match: (p) => isStudentHomeActive(p),
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -467,6 +503,26 @@ const STUDENT_TABS: TabSpec[] = [
       >
         <path d="M3 12 12 3l9 9" />
         <path d="M5 10v10h14V10" />
+      </svg>
+    ),
+  },
+  {
+    to: ROUTES.STUDENT_COURSES,
+    label: "Courses",
+    match: isStudentCoursesActive,
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        className="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
       </svg>
     ),
   },

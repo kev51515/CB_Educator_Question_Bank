@@ -96,7 +96,7 @@ export function StudentCourseView(): JSX.Element {
           .select(
             "id, name, position, published, opens_at, module_items(id, position, item_type, item_ref_id, title, url, indent, published)",
           )
-          .eq("class_id", courseRow.id)
+          .eq("course_id", courseRow.id)
           .eq("published", true)
           .order("position", { ascending: true });
         if (cancelled) return;

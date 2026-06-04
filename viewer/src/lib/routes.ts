@@ -50,7 +50,8 @@ export const ROUTES = {
   MOCK_TEST_REVIEW: "/student/mock-test/history/:attemptId",
   ASSIGNMENT_TAKE: "/student/assignment/:assignmentId/take",
   ASSIGNMENT_REVIEW: "/student/assignment/:assignmentId/review/:attemptId",
-  // Student per-course view (`:short` = course short_code or UUID).
+  // Student courses list + per-course view (`:short` = course short_code or UUID).
+  STUDENT_COURSES: "/student/courses",
   STUDENT_COURSE: "/student/courses/:short",
   STUDENT_COURSE_MODULES: "/student/courses/:short/modules",
   // Student inbox + account (role-prefixed; mirror the educator equivalents).
@@ -324,6 +325,10 @@ export function inboxThreadPath(threadId: string): string {
 // Account + inbox are shared *components* but render under a role-specific
 // prefix. Educator contexts use the ROUTES.ACCOUNT / ROUTES.INBOX constants
 // (already `/educator/*`); student contexts use these.
+
+export function studentCoursesPath(): string {
+  return ROUTES.STUDENT_COURSES;
+}
 
 export function studentCoursePath(short: string): string {
   return buildPath(ROUTES.STUDENT_COURSE, { short });

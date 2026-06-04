@@ -75,7 +75,7 @@ interface AttemptRow {
     id: string;
     short_code: string | null;
     title: string;
-    class_id: string;
+    course_id: string;
     course: {
       short_code: string | null;
       name: string;
@@ -140,8 +140,8 @@ export function useRecentFeedback(
             `
               id, score_percent, score_override, feedback_text, graded_at, grader_id,
               assignment:assignments!inner(
-                id, short_code, title, class_id,
-                course:courses!class_id(short_code, name)
+                id, short_code, title, course_id,
+                course:courses!course_id(short_code, name)
               )
             `,
           )

@@ -79,6 +79,7 @@ import { QuestionBankPage } from "../teacher/QuestionBankPage";
 import { QBankSubmissionLogPage } from "../teacher/QBankSubmissionLogPage";
 import { StudentProfilePage } from "../teacher/StudentProfilePage";
 import { StudentCourseView } from "../student/StudentCourseView";
+import { StudentCoursesPage } from "../student/StudentCoursesPage";
 import { MyFeedbackPage } from "../student/MyFeedbackPage";
 import { ROUTES } from "../lib/routes";
 import { supabase } from "../lib/supabase";
@@ -290,6 +291,7 @@ function StudentRoutesTree({
         </Route>
         {/* Student per-course view. `:short` is the course `short_code`
             (also accepts a UUID — RLS enforces enrollment either way). */}
+        <Route path={ROUTES.STUDENT_COURSES} element={<StudentCoursesPage />} />
         <Route path={ROUTES.STUDENT_COURSE} element={<StudentCourseView />} />
         <Route path={ROUTES.STUDENT_COURSE_MODULES} element={<StudentCourseView />} />
         {/* Catch-all so unknown URLs bounce back to the area selector
