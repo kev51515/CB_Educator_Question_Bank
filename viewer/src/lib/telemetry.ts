@@ -52,14 +52,17 @@ export async function initTelemetry(): Promise<void> {
           replaysOnErrorSampleRate: 1.0,
           integrations: [S.browserTracingIntegration(), S.replayIntegration()],
         });
-        sentry = S;
         if (userCleared) S.setUser(null);
         else if (pendingUser)
           S.setUser({ id: pendingUser.userId, email: pendingUser.email, role: pendingUser.role });
-        for (const { error, context } of pendingErrors) {
+        // Drain the queue BEFORE iterating + expose the live ref LAST, so a
+        // throwing captureException can't strand the queue and a concurrent
+        // captureError during flush goes straight to the live SDK (no double-send).
+        const queuedErrors = pendingErrors.splice(0);
+        sentry = S;
+        for (const { error, context } of queuedErrors) {
           S.captureException(error, context ? { extra: context } : undefined);
         }
-        pendingErrors.length = 0;
       }),
     );
   }
@@ -75,15 +78,15 @@ export async function initTelemetry(): Promise<void> {
           capture_pageleave: true,
           person_profiles: "identified_only",
         });
-        posthog = ph;
         if (userCleared) ph.reset();
         else if (pendingUser)
           ph.identify(pendingUser.userId, {
             email: pendingUser.email,
             role: pendingUser.role,
           });
-        for (const { name, properties } of pendingEvents) ph.capture(name, properties);
-        pendingEvents.length = 0;
+        const queuedEvents = pendingEvents.splice(0);
+        posthog = ph;
+        for (const { name, properties } of queuedEvents) ph.capture(name, properties);
       }),
     );
   }
