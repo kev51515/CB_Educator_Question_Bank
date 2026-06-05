@@ -111,7 +111,7 @@ export function AreaSelector() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-12">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-5xl">
         <header className="mb-10 flex items-start justify-between gap-4">
           <div>
             <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
@@ -133,36 +133,45 @@ export function AreaSelector() {
           </button>
         </header>
 
-        <div className="mt-2 space-y-6">
-          {/* Assignments lead the fold — in the controlled-access model this
-              (plus each course's modules) is the student's entire workload.
-              No free question bank / free mock test / all-tests browser. */}
-          <AssignmentsPanel
-            refreshToken={assignmentsRefreshToken}
-            onStart={handleStart}
-            onReview={handleReview}
-          />
-          {/* Full-length test results — released by the teacher (hidden until
-              then). Renders nothing when the student has no submitted tests. */}
-          <StudentTestResultsPanel />
-          {/* Recent feedback: surface freshly-graded attempts right above
-              the progress section so a teacher's comment lands next to the
-              student's mastery trends. Renders nothing when there are no
-              recent items — silence > nag. */}
-          <RecentFeedbackWidget studentId={session?.userId ?? null} />
-          <section aria-labelledby="your-progress-title" className="space-y-3">
-            <h2
-              id="your-progress-title"
-              className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
-            >
-              Your progress
-            </h2>
-            <div className="grid gap-4">
-              <SkillHeatmap />
-            </div>
-          </section>
-          <CourseAnnouncementsList />
-          <div className="space-y-3">
+        {/* Two-column on desktop: the workload stack stays in the main (left)
+            column with Assignments leading the fold, while "My courses" lives
+            in a right rail pinned to the top. On mobile the grid collapses to a
+            single column (main first, courses after) so Assignments still lead
+            the fold there. */}
+        <div className="mt-2 grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+          <div className="space-y-6">
+            {/* Assignments lead the fold — in the controlled-access model this
+                (plus each course's modules) is the student's entire workload.
+                No free question bank / free mock test / all-tests browser. */}
+            <AssignmentsPanel
+              refreshToken={assignmentsRefreshToken}
+              onStart={handleStart}
+              onReview={handleReview}
+            />
+            {/* Full-length test results — released by the teacher (hidden until
+                then). Renders nothing when the student has no submitted tests. */}
+            <StudentTestResultsPanel />
+            {/* Recent feedback: surface freshly-graded attempts right above
+                the progress section so a teacher's comment lands next to the
+                student's mastery trends. Renders nothing when there are no
+                recent items — silence > nag. */}
+            <RecentFeedbackWidget studentId={session?.userId ?? null} />
+            <section aria-labelledby="your-progress-title" className="space-y-3">
+              <h2
+                id="your-progress-title"
+                className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
+              >
+                Your progress
+              </h2>
+              <div className="grid gap-4">
+                <SkillHeatmap />
+              </div>
+            </section>
+            <CourseAnnouncementsList />
+          </div>
+
+          {/* Right rail — "My courses" pinned to the top of the column. */}
+          <aside className="space-y-3 lg:sticky lg:top-6">
             <MyClassesPanel refreshToken={classesRefreshToken} />
             <div className="flex justify-end">
               <button
@@ -173,7 +182,7 @@ export function AreaSelector() {
                 Join a course
               </button>
             </div>
-          </div>
+          </aside>
         </div>
 
         <p className="mt-10 text-center text-xs text-slate-500 dark:text-slate-400">
