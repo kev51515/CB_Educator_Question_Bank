@@ -44,6 +44,9 @@ import {
   toLiveInfo,
   InterventionModal,
   StatCard,
+  StatusPill,
+  RowAction,
+  ActionGroup,
   type LiveInfo,
   type ModuleRow,
   type RosterRow,
@@ -641,6 +644,15 @@ export function TestOverviewPage(): JSX.Element {
                 {stats.taken} of {stats.assigned} submitted · {stats.released} released
               </p>
             )}
+            {!rosterLoading && stats.taken > 0 && (
+              <p className="mt-1 max-w-md text-xs text-slate-500 dark:text-slate-400">
+                <span className="font-medium text-slate-600 dark:text-slate-300">
+                  Releasing
+                </span>{" "}
+                lets a student open their score and answer review. Until you do, they
+                only see that they finished.
+              </p>
+            )}
             {!isAdmin && (
               <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                 View only — only the lead teacher (admin) can control live tests.
@@ -653,14 +665,16 @@ export function TestOverviewPage(): JSX.Element {
                 type="button"
                 onClick={() => void onBulk(true)}
                 disabled={bulkBusy || allReleased}
+                title="Let every submitted student see their score and answer review"
                 className="rounded-lg bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
               >
-                {bulkBusy ? "Working…" : "Release all"}
+                {bulkBusy ? "Working…" : "Release all results"}
               </button>
               <button
                 type="button"
                 onClick={() => void onBulk(false)}
                 disabled={bulkBusy || stats.released === 0}
+                title="Hide results again from every student"
                 className="rounded-lg px-3.5 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50"
               >
                 Hide all
@@ -692,17 +706,18 @@ export function TestOverviewPage(): JSX.Element {
               const awaySecs = lr?.away_total_seconds ?? 0;
               const flagged = lr?.flagged ?? false;
               const flagReasons = lr?.flag_reasons ?? [];
+              const integrity = fmtIntegrity(lr?.integrity);
               return (
                 <li
                   key={row.student_id}
-                  className="flex flex-wrap items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-900"
+                  className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3 bg-white dark:bg-slate-900 transition-colors hover:bg-slate-50/70 dark:hover:bg-slate-800/40"
                 >
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
                       {row.student_name ?? "Student"}
                     </p>
                     {taken ? (
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                      <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                         started {fmtTime(lr?.started_at ?? null)} → submitted{" "}
                         {fmtTime(row.submitted_at)}
                         {row.score != null &&
@@ -710,7 +725,7 @@ export function TestOverviewPage(): JSX.Element {
                           ` · ${row.score}/${row.total}${pct != null ? ` (${pct}%)` : ""}`}
                       </p>
                     ) : row.has_in_progress ? (
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                      <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                         {lr?.module_label ?? "In progress"}
                         {lr?.current_question != null && ` · Q${lr.current_question}`}
                         {lr?.answered != null &&
@@ -719,142 +734,150 @@ export function TestOverviewPage(): JSX.Element {
                         {lr?.started_at && ` · started ${fmtTime(lr.started_at)}`}
                       </p>
                     ) : (
-                      <p className="text-xs text-slate-400 dark:text-slate-500">
-                        Not started
+                      <p className="mt-0.5 text-xs text-slate-400 dark:text-slate-500">
+                        Hasn't opened the test yet
                       </p>
                     )}
                   </div>
 
-                  {taken ? (
-                    <>
-                      {flagged && (
-                        <span
-                          title={
-                            flagReasons.length
-                              ? flagReasons.map(flagLabel).join(" · ")
-                              : "Flagged for review — open Review to see the proctoring timeline"
-                          }
-                          className="inline-flex items-center rounded-full bg-rose-100 text-rose-700 ring-1 ring-rose-300 px-2 py-0.5 text-[11px] font-semibold dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800"
-                        >
-                          ⚑ Needs review
-                        </span>
-                      )}
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${
-                          released
-                            ? "bg-emerald-50 text-emerald-700 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900"
-                            : "bg-slate-100 text-slate-600 ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700"
-                        }`}
-                      >
-                        {released ? "Released" : "Hidden"}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => void onReview(row)}
-                        disabled={reviewLoadingId === row.run_id}
-                        className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-60"
-                      >
-                        {reviewLoadingId === row.run_id ? "…" : "Review"}
-                      </button>
-                      {isAdmin && (
-                        <button
-                          type="button"
-                          onClick={() => void onToggleRow(row)}
-                          disabled={rowBusy === row.run_id}
-                          className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-60"
-                        >
-                          {rowBusy === row.run_id ? "…" : released ? "Hide" : "Release"}
-                        </button>
-                      )}
-                    </>
-                  ) : row.has_in_progress ? (
-                    <>
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${
-                          lr?.paused
-                            ? "bg-indigo-50 text-indigo-700 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900"
-                            : "bg-blue-50 text-blue-700 ring-blue-200 dark:bg-blue-950/30 dark:text-blue-300 dark:ring-blue-900"
-                        }`}
-                      >
-                        {lr?.paused ? "⏸ Paused" : "In progress"}
-                      </span>
-                      {isAdmin && lr?.run_id && (
-                        <button
-                          type="button"
-                          disabled={pauseBusy === lr.run_id}
-                          onClick={() =>
-                            void onSetPause(
-                              lr.run_id ?? "",
-                              !lr.paused,
-                              row.student_name ?? "student",
-                            )
-                          }
-                          title={lr.paused ? "Resume this student's timer" : "Freeze this student's timer"}
-                          className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-60"
-                        >
-                          {pauseBusy === lr.run_id ? "…" : lr.paused ? "Resume" : "Pause"}
-                        </button>
-                      )}
-                      {flagged && (
-                        <span
-                          title={
-                            flagReasons.length
-                              ? flagReasons.map(flagLabel).join(" · ")
-                              : "Flagged for review"
-                          }
-                          className="inline-flex items-center rounded-full bg-rose-100 text-rose-700 ring-1 ring-rose-300 px-2 py-0.5 text-[11px] font-semibold dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800"
-                        >
-                          ⚑ Needs review
-                        </span>
-                      )}
-                      {away > 0 && (
-                        <span
-                          title="Times the student left the test tab"
-                          className="inline-flex items-center rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200 px-2 py-0.5 text-[11px] font-medium dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900"
-                        >
-                          ↗ left tab {away}×
-                          {awaySecs > 0 && ` · ${fmtAwaySecs(awaySecs)}`}
-                        </span>
-                      )}
-                      {fmtIntegrity(lr?.integrity) && (
-                        <span
-                          title="Integrity signals during the test"
-                          className="inline-flex items-center rounded-full bg-rose-50 text-rose-700 ring-1 ring-rose-200 px-2 py-0.5 text-[11px] font-medium dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
-                        >
-                          ⚑ {fmtIntegrity(lr?.integrity)}
-                        </span>
-                      )}
-                      {isAdmin && lr?.run_id && (
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setConfirmAction({ kind: "end", row, runId: lr.run_id ?? undefined })
-                          }
-                          title="End this student's test now — grades their answers as-is"
-                          className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-amber-700 dark:text-amber-300 ring-1 ring-amber-300 dark:ring-amber-800 hover:bg-amber-50 dark:hover:bg-amber-950/40"
-                        >
-                          End
-                        </button>
-                      )}
-                      {isAdmin && (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setConfirmText("");
-                            setConfirmAction({ kind: "reset", row });
-                          }}
-                          title="Wipe their attempt so they can start fresh (requires confirmation)"
-                          className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 ring-1 ring-rose-300 dark:ring-rose-800 hover:bg-rose-50 dark:hover:bg-rose-950/40"
-                        >
-                          Reset
-                        </button>
-                      )}
-                    </>
-                  ) : (
-                    <span className="inline-flex items-center rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200 px-2 py-0.5 text-[11px] font-medium dark:bg-amber-950/30 dark:text-amber-300 dark:ring-amber-900">
-                      Not started
-                    </span>
-                  )}
+                  <div className="ml-auto flex flex-wrap items-center justify-end gap-2">
+                    {taken ? (
+                      <>
+                        <StatusPill
+                          tone={released ? "released" : "hidden"}
+                          label={released ? "Released" : "Hidden"}
+                        />
+                        {flagged && (
+                          <StatusPill
+                            tone="alert"
+                            icon="⚑"
+                            label="Needs review"
+                            title={
+                              flagReasons.length
+                                ? flagReasons.map(flagLabel).join(" · ")
+                                : "Flagged for review — open Review to see the proctoring timeline"
+                            }
+                          />
+                        )}
+                        <div className="inline-flex items-center gap-1">
+                          <RowAction
+                            tone="primary"
+                            onClick={() => void onReview(row)}
+                            disabled={reviewLoadingId === row.run_id}
+                          >
+                            {reviewLoadingId === row.run_id ? "…" : "Review"}
+                          </RowAction>
+                          {isAdmin && (
+                            <RowAction
+                              onClick={() => void onToggleRow(row)}
+                              disabled={rowBusy === row.run_id}
+                              title={
+                                released
+                                  ? "Hide this student's results again"
+                                  : "Let this student see their score and answer review"
+                              }
+                            >
+                              {rowBusy === row.run_id
+                                ? "…"
+                                : released
+                                  ? "Hide results"
+                                  : "Release to student"}
+                            </RowAction>
+                          )}
+                        </div>
+                      </>
+                    ) : row.has_in_progress ? (
+                      <>
+                        <StatusPill
+                          tone={lr?.paused ? "paused" : "live"}
+                          pulse={!lr?.paused}
+                          icon={lr?.paused ? "⏸" : undefined}
+                          label={lr?.paused ? "Paused" : "In progress"}
+                        />
+                        {flagged && (
+                          <StatusPill
+                            tone="alert"
+                            icon="⚑"
+                            label="Needs review"
+                            title={
+                              flagReasons.length
+                                ? flagReasons.map(flagLabel).join(" · ")
+                                : "Flagged for review"
+                            }
+                          />
+                        )}
+                        {away > 0 && (
+                          <StatusPill
+                            tone="warn"
+                            icon="↗"
+                            label={`Left tab ${away}×${awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}`}
+                            title="Times the student left the test tab"
+                          />
+                        )}
+                        {integrity && (
+                          <StatusPill
+                            tone="alert"
+                            icon="⚑"
+                            label={integrity}
+                            title="Integrity signals during the test"
+                          />
+                        )}
+                        {isAdmin && (
+                          <ActionGroup>
+                            {lr?.run_id && (
+                              <RowAction
+                                className="rounded-none"
+                                disabled={pauseBusy === lr.run_id}
+                                onClick={() =>
+                                  void onSetPause(
+                                    lr.run_id ?? "",
+                                    !lr.paused,
+                                    row.student_name ?? "student",
+                                  )
+                                }
+                                title={
+                                  lr.paused
+                                    ? "Resume this student's timer"
+                                    : "Freeze this student's timer"
+                                }
+                              >
+                                {pauseBusy === lr.run_id ? "…" : lr.paused ? "Resume" : "Pause"}
+                              </RowAction>
+                            )}
+                            {lr?.run_id && (
+                              <RowAction
+                                tone="warn"
+                                className="rounded-none"
+                                onClick={() =>
+                                  setConfirmAction({
+                                    kind: "end",
+                                    row,
+                                    runId: lr.run_id ?? undefined,
+                                  })
+                                }
+                                title="End this student's test now — grades their answers as-is"
+                              >
+                                End
+                              </RowAction>
+                            )}
+                            <RowAction
+                              tone="danger"
+                              className="rounded-none"
+                              onClick={() => {
+                                setConfirmText("");
+                                setConfirmAction({ kind: "reset", row });
+                              }}
+                              title="Wipe their attempt so they can start fresh (requires confirmation)"
+                            >
+                              Reset
+                            </RowAction>
+                          </ActionGroup>
+                        )}
+                      </>
+                    ) : (
+                      <StatusPill tone="idle" label="Not started" />
+                    )}
+                  </div>
                 </li>
               );
             })}

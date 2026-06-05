@@ -4,4 +4,5 @@
  */
 export * from "./helpers";
 export * from "./StatCard";
+export * from "./StatusPill";
 export * from "./InterventionModal";
