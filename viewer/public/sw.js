@@ -1,9 +1,20 @@
- 
-const CACHE_NAME = 'sat-bank-v1';
-const PRECACHE = ['/', '/index.html'];
 
-self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE_NAME).then((c) => c.addAll(PRECACHE)));
+// Bump this on any change to the SW's caching behavior. The `activate` handler
+// deletes every cache whose key !== CACHE_NAME, so bumping the version is what
+// purges stale entries from a prior deploy. (v1 → v2: drop the index.html
+// precache + force a one-time clear of the old immortal cache that was pinning
+// stale assets across deploys — a contributor to "Failed to fetch dynamically
+// imported module" crashes. See ErrorBoundary.tsx for the client-side recovery
+// half of this fix.)
+const CACHE_NAME = 'sat-bank-v2';
+// NB: deliberately do NOT precache '/' or '/index.html'. Caching the app shell
+// risks pinning an index.html that references chunk hashes a newer deploy has
+// already removed. The HTML shell is always fetched network-first (it falls
+// through the fetch handler below to the browser default). Only content-hashed
+// /assets/ files — safe to cache because a new build means a new filename —
+// get cached.
+
+self.addEventListener('install', () => {
   self.skipWaiting();
 });
 
