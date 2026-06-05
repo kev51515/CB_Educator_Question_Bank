@@ -39,65 +39,23 @@
  * Per migration 0009, teacher and admin share the same surface — privilege
  * differences (e.g. who can mint invite codes) live below this layer.
  */
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { lazy, Suspense, useCallback, useEffect, useState, type ReactNode } from "react";
 import { CommandPalette } from "@/components/CommandPalette";
-import {
-  Navigate,
-  Route,
-  Routes,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { useStudentSession } from "./session";
 import { useProfile } from "@/lib/profile";
 import { AuthScreen } from "./AuthScreen";
 import { QuickStartScreen } from "./QuickStartScreen";
-import { AreaSelector } from "./AreaSelector";
 import { PasswordResetScreen } from "./PasswordResetScreen";
-import { StaffShell } from "./StaffShell";
-import { StudentShell } from "./StudentShell";
-import { AccountRoutes } from "./AccountRoutes";
-import {
-  AssignmentReviewRoute,
-  AssignmentTakeRoute,
-  ClassLayout,
-  StudentTestRunGuard,
-} from "./routeViews";
-import { AllClassesView } from "@/admin";
-import {
-  FullTestApp,
-  TestsAdminPage,
-  TestReviewPage,
-  TestOverviewPage,
-} from "@/fulltest";
-import { testOverviewPath, studentHomePath } from "@/lib/routes";
-import { CalendarPage } from "@/calendar";
-import { DashboardPage } from "@/dashboard";
-import { InboxPage, ThreadView } from "@/inbox";
-import { QuestionBankPage } from "@/teacher/QuestionBankPage";
-import { QBankSubmissionLogPage } from "@/teacher/QBankSubmissionLogPage";
-import { StudentProfilePage } from "@/teacher/StudentProfilePage";
-import { StudentCourseView } from "@/student/StudentCourseView";
-import { StudentCoursesPage } from "@/student/StudentCoursesPage";
-import { MyFeedbackPage } from "@/student/MyFeedbackPage";
 import { ROUTES } from "@/lib/routes";
 import { supabase } from "@/lib/supabase";
-import type { Profile } from "@/lib/profile";
-import type { AuthResult } from "./session";
+import type { AccountContext } from "./routeTreeTypes";
 
-/**
- * Bundled mutations + identity that any route needing account context
- * (AccountRoutes) requires. Threaded through StudentRoutesTree /
- * StaffRoutesTree so route definitions can stay declarative.
- */
-interface AccountContext {
-  profile: Profile;
-  email: string;
-  updateDisplayName: (name: string) => Promise<AuthResult>;
-  updatePassword: (newPassword: string) => Promise<AuthResult>;
-  onSignOut: () => Promise<void> | void;
-}
+// Code-split surface trees: the teacher console (StaffRoutesTree) and the
+// student surfaces + test runner (StudentRoutesTree) each load as their own
+// async chunk, so a session only downloads the role it actually uses.
+const StaffRoutesTree = lazy(() => import("./StaffRoutesTree"));
+const StudentRoutesTree = lazy(() => import("./StudentRoutesTree"));
 
 interface AuthGateProps {
   children: ReactNode;
@@ -213,181 +171,6 @@ function PublicRoutes({
   );
 }
 
-/**
- * Authenticated routes for a student.
- *
- * Controlled-access model (decided 2026-06-02): students see ONLY what the
- * teacher assigns. The free-roam surfaces — the question bank (/practice),
- * the free mock test (/mock-test) and its history — are no longer reachable
- * from a student session; their routes redirect home. The legacy bank App
- * (passed to AuthGate as `children`) is therefore not mounted for students.
- * Full-length tests stay reachable at /test/:slug but are gated by
- * StudentTestRunGuard so a student can only open a test their teacher has
- * placed in one of their courses.
- */
-function StudentRoutesTree({
-  studentId,
-  account,
-}: {
-  studentId: string;
-  account: AccountContext;
-}) {
-  return (
-    <Routes>
-      {/* Full-length test runner lives OUTSIDE the shell so it's a true
-          distraction-free, full-viewport takeover (like Bluebook) — no left
-          rail / mobile tab bar behind its intro, loading, or running states. */}
-      <Route
-        path={`${ROUTES.TEST_RUN}/*`}
-        element={
-          <StudentTestRunGuard>
-            <FullTestApp />
-          </StudentTestRunGuard>
-        }
-      />
-      <Route element={<StudentShell />}>
-        {/* `/` redirects to the prefixed landing so the URL bar shows the
-            role (and the personal code, when the account has one). The
-            dashboard itself renders at /student and /student/:code; the
-            `:code` segment is display-only (auth/RLS enforce access). */}
-        <Route
-          path={ROUTES.HOME}
-          element={
-            <Navigate to={studentHomePath(account.profile.login_code)} replace />
-          }
-        />
-        <Route path={ROUTES.STUDENT_HOME} element={<AreaSelector />} />
-        <Route path={ROUTES.STUDENT_HOME_CODED} element={<AreaSelector />} />
-        {/* Locked: free question bank + free mock test are off-limits to
-            students. Redirect any lingering links/bookmarks back home. */}
-        <Route path={ROUTES.PRACTICE} element={<Navigate to={ROUTES.HOME} replace />} />
-        <Route path={ROUTES.MOCK_TEST} element={<Navigate to={ROUTES.HOME} replace />} />
-        <Route path={ROUTES.MOCK_TEST_HISTORY} element={<Navigate to={ROUTES.HOME} replace />} />
-        <Route path={ROUTES.MOCK_TEST_REVIEW} element={<Navigate to={ROUTES.HOME} replace />} />
-        <Route path={ROUTES.MY_FEEDBACK} element={<MyFeedbackPage />} />
-        <Route
-          path={ROUTES.ASSIGNMENT_TAKE}
-          element={<AssignmentTakeRoute studentId={studentId} />}
-        />
-        <Route
-          path={ROUTES.ASSIGNMENT_REVIEW}
-          element={<AssignmentReviewRoute />}
-        />
-        <Route
-          path={`${ROUTES.STUDENT_ACCOUNT}/*`}
-          element={
-            <AccountRoutes
-              profile={account.profile}
-              email={account.email}
-              updateDisplayName={account.updateDisplayName}
-              updatePassword={account.updatePassword}
-              onSignOut={account.onSignOut}
-              basePath={ROUTES.STUDENT_ACCOUNT}
-            />
-          }
-        />
-        <Route path={ROUTES.STUDENT_INBOX} element={<InboxPage />}>
-          <Route path=":threadId" element={<ThreadView />} />
-        </Route>
-        {/* Student per-course view. `:short` is the course `short_code`
-            (also accepts a UUID — RLS enforces enrollment either way). */}
-        <Route path={ROUTES.STUDENT_CALENDAR} element={<CalendarPage />} />
-        <Route path={ROUTES.STUDENT_COURSES} element={<StudentCoursesPage />} />
-        <Route path={ROUTES.STUDENT_COURSE} element={<StudentCourseView />} />
-        <Route path={ROUTES.STUDENT_COURSE_MODULES} element={<StudentCourseView />} />
-        {/* Catch-all so unknown URLs bounce back to the area selector
-            instead of rendering a blank screen. */}
-        <Route path="*" element={<Navigate to={ROUTES.HOME} replace />} />
-      </Route>
-    </Routes>
-  );
-}
-
-/**
- * Staff gate for the shared `/test/:slug/*` Modules link. Teachers manage, they
- * don't sit the test — so the BARE link redirects to the per-test overview.
- * The QA preview path (`?preview=1`) renders the runner instead.
- *
- * Crucially this gate lives on the SAME splat route as the runner, so when
- * FullTestApp navigates the preview from the bare path to a `/section/...`
- * deep link the element tree is unchanged and FullTestApp keeps its state —
- * a separate exact route would unmount/remount it and bounce the preview back
- * to the intro on every "Begin". The deep-link splat is non-empty once a
- * preview is underway, which is how we tell "in progress" from "bare".
- */
-function StaffTestGate() {
-  const params = useParams();
-  const slug = params.slug ?? "";
-  const splat = params["*"] ?? "";
-  const [search] = useSearchParams();
-  const bare = splat === "";
-  if (bare && search.get("preview") !== "1") {
-    return <Navigate to={testOverviewPath(slug)} replace />;
-  }
-  return <FullTestApp />;
-}
-
-/**
- * Authenticated routes for staff (teacher / admin).
- */
-function StaffRoutesTree({ account }: { account: AccountContext }) {
-  return (
-    <Routes>
-      {/* When staff open a test (the shared Modules /test/<slug> link), the
-          BARE link redirects to the per-test OVERVIEW — info, cohort stats,
-          student data — while "Preview" (?preview=1) and in-progress preview
-          deep-links (…/section/n/q/m) render the runner. One splat route +
-          internal gate so the runner keeps its state across the
-          bare→deep-link transition (a separate exact route would remount it
-          and bounce every "Begin"). Students never reach here (separate
-          tree). Runner renders OUTSIDE the shell — distraction-free takeover. */}
-      <Route path={`${ROUTES.TEST_RUN}/*`} element={<StaffTestGate />} />
-      <Route element={<StaffShell />}>
-        <Route
-          path={ROUTES.HOME}
-          element={<Navigate to={ROUTES.DASHBOARD} replace />}
-        />
-        <Route path={ROUTES.DASHBOARD} element={<DashboardPage />} />
-        <Route path={ROUTES.CALENDAR} element={<CalendarPage />} />
-        <Route path={ROUTES.COURSES} element={<AllClassesView />} />
-        <Route path={ROUTES.QUESTION_BANK} element={<QuestionBankPage />} />
-        <Route path={ROUTES.QBANK_LOG} element={<QBankSubmissionLogPage />} />
-        <Route path={ROUTES.TESTS_ADMIN} element={<TestsAdminPage />} />
-        <Route path={ROUTES.TEST_OVERVIEW} element={<TestOverviewPage />} />
-        <Route path={ROUTES.TEST_REVIEW} element={<TestReviewPage />} />
-        {/* Per-student profile inside a course. Registered BEFORE the
-            ClassLayout wildcard below so React Router matches the more
-            specific path first. Lives outside ClassLayout's tab strip
-            because it's a deep-link surface, not a tab. */}
-        <Route
-          path={ROUTES.COURSE_STUDENT_PROFILE}
-          element={<StudentProfilePage />}
-        />
-        {/* Per-course detail lives under /courses/:courseId/* — owned by a
-            parallel agent. ClassLayout dispatches its own nested routes. */}
-        <Route path={`${ROUTES.COURSE}/*`} element={<ClassLayout />} />
-        <Route path={ROUTES.COURSE} element={<ClassLayout />} />
-        <Route
-          path={`${ROUTES.ACCOUNT}/*`}
-          element={
-            <AccountRoutes
-              profile={account.profile}
-              email={account.email}
-              updateDisplayName={account.updateDisplayName}
-              updatePassword={account.updatePassword}
-              onSignOut={account.onSignOut}
-              basePath={ROUTES.ACCOUNT}
-            />
-          }
-        />
-        <Route path={ROUTES.INBOX} element={<InboxPage />}>
-          <Route path=":threadId" element={<ThreadView />} />
-        </Route>
-        <Route path="*" element={<Navigate to={ROUTES.DASHBOARD} replace />} />
-      </Route>
-    </Routes>
-  );
-}
 
 /**
  * E2E shell used only when `VITE_E2E_BYPASS_AUTH=1`. Mirrors the small subset
@@ -526,9 +309,13 @@ function AuthGateImpl() {
     onSignOut: signOut,
   };
 
-  return isStaff ? (
-    <StaffRoutesTree account={account} />
-  ) : (
-    <StudentRoutesTree studentId={session.userId} account={account} />
+  return (
+    <Suspense fallback={<LoadingScreen />}>
+      {isStaff ? (
+        <StaffRoutesTree account={account} />
+      ) : (
+        <StudentRoutesTree studentId={session.userId} account={account} />
+      )}
+    </Suspense>
   );
 }
