@@ -151,7 +151,7 @@ export function Breadcrumbs() {
   if (crumbs.length === 0) return null;
 
   return (
-    <div className="sticky top-0 z-40 flex h-12 shrink-0 items-center gap-1.5 border-b border-slate-200/70 bg-white/80 px-3 backdrop-blur-md motion-reduce:backdrop-blur-none dark:border-slate-800/70 dark:bg-slate-900/80 sm:px-5 lg:px-7 print:hidden">
+    <div className="sticky top-0 z-40 flex h-12 shrink-0 items-center gap-1.5 border-b border-slate-200/70 bg-white/80 px-4 backdrop-blur-md motion-reduce:backdrop-blur-none dark:border-slate-800/70 dark:bg-slate-900/80 sm:px-6 lg:px-8 print:hidden">
       <button
         type="button"
         aria-label="Go back"

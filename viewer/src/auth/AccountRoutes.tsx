@@ -107,7 +107,7 @@ export function AccountRoutes({
   const notifPath = `${basePath}/notification-preferences`;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-slate-50 dark:bg-slate-950">
       <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
         {/* Page header */}
         <header className="flex flex-wrap items-center justify-between gap-3">

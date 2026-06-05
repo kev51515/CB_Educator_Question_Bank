@@ -49,6 +49,12 @@ import {
 interface TeacherAttemptDetailViewProps {
   attemptId: string;
   onBack: () => void;
+  /**
+   * Fired with the loaded assignment title (and null while loading / on
+   * failure) so a route wrapper can surface it to the breadcrumb. Optional —
+   * the view stays route-agnostic and renders identically without it.
+   */
+  onAssignmentTitle?: (title: string | null) => void;
 }
 
 interface SiblingAttempt {
@@ -60,6 +66,7 @@ interface SiblingAttempt {
 export function TeacherAttemptDetailView({
   attemptId,
   onBack,
+  onAssignmentTitle,
 }: TeacherAttemptDetailViewProps) {
   const navigate = useNavigate();
   const toast = useToast();
@@ -150,6 +157,13 @@ export function TeacherAttemptDetailView({
       }
     };
   }, [attemptId]);
+
+  // Surface the assignment title to an optional listener (route wrapper →
+  // breadcrumb). Fires null while loading so the crumb never shows a stale
+  // title from a previous attempt.
+  useEffect(() => {
+    onAssignmentTitle?.(data?.assignmentTitle ?? null);
+  }, [data?.assignmentTitle, onAssignmentTitle]);
 
   // ---------------------------------------------------------------------------
   // Drain legacy localStorage drafts → DB (one-shot per attempt).
