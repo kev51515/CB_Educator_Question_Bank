@@ -1,6 +1,67 @@
 # Session Recap
 
-## Latest (2026-06-03) — student seat claiming, code-usage tracking, claim-aware logins
+## Latest (2026-06-05) — launch-prep: login fixes, single-proctor lock, backups, bundle split, modularization
+
+**Auth / login (the student deployment path):**
+- **Fixed the quick-start seat-claim bounce.** A managed-seat student (e.g. "BBB")
+  entering their per-seat code on `/quick-start` was bounced back to `/quick-start`.
+  Root cause: `signInAnonymously()` (minted so the claim RPC carries auth) makes
+  AuthGate leave PublicRoutes and **unmount QuickStartScreen mid-flow**; `submitSeat`
+  then bailed on `!aliveRef` AFTER `claim_student_seat` succeeded but BEFORE signing
+  in as the seat, and the `finally`'s blind `signOut()` dropped the shared session
+  (anon + seat share ONE supabase session) → stranded on `/quick-start` with the seat
+  already claimed. Fix: complete the claim + seat sign-in regardless of unmount
+  (`aliveRef` guards only `setState`); sign out only if the session is still anonymous
+  (`getUser().is_anonymous`). Guarded by a NEW real-browser test
+  `e2e/quick-start-seat.spec.ts`.
+- **Claimed seat → straight into the invited course** (better UX). `claim_student_seat`
+  (0098) returns `course_id`; QuickStartScreen hands it off via `sessionStorage` and
+  AreaSelector redirects to `/student/courses/<id>` on landing.
+- **`/quick-start` now offers explicit Student + Educator sign-in cards** (each
+  preselects the role via `?role`), alongside the featured quick code entry.
+
+**Proctoring — single designated proctor (migration 0104):**
+- All 7 proctor MUTATION RPCs (`release_test_results[_for_teacher]`, `allow_test_retake`,
+  `reset_test_attempt`, `proctor_add_time` / `proctor_force_submit` / `proctor_set_pause`)
+  now gate on `is_admin` instead of `is_staff` — only the first auth line changed per
+  function (mechanically diff-verified; course-scope blocks kept, harmless). Non-admin
+  staff stay READ-ONLY (the live monitor / roster RPCs are unchanged); the UI hides the
+  action controls for non-admins. Verified: `clickthrough-practice-test` 42/42 (admin
+  proctor works; non-admin teacher → `not_authorized`) + full smoke all-green.
+
+**Test runner:**
+- **Type-to-confirm before submitting a section** — students must type "submit" to end
+  a section (modules are one-way). Reusable `confirmPhrase` prop on `ConfirmDialog`.
+- Manual section-submit now flushes the 2.5s draft (highlights/notes/marks) first.
+
+**Backups (don't-lose-data):**
+- `npm run backup:live` — **5-minute snapshots** of live `test_runs` + `test_run_answers`
+  to a private `db-backups` bucket while a test is in session (service-key + REST, no
+  `pg_dump`; cheap no-op when no test is live). On top of Supabase Pro's managed daily
+  backups + PITR.
+- `npm run backup:db` — full schema+data backup → bucket. **Dump-tool fix:** the hang was
+  `which pg_dump` resolving to PG15 (refuses the PG17 server) + `supabase db dump`
+  stalling over the pooler; resolved by calling native **pg_dump 17.5** (Homebrew libpq)
+  directly against the session pooler.
+
+**Performance — bundle code-splitting:** first-paint/login JS cut **716 → ~247 KB gzip**
+via lazy role trees (`StaffRoutesTree` / `StudentRoutesTree` behind Suspense), lazy TipTap
+MarkdownEditor (~103 KB on demand), deferred Sentry/PostHog (after first paint), and
+react/supabase vendor chunks (cached across deploys). Guarded by real-auth E2E
+(`role-routing`, `practice-test-runner`) under `playwright.role.config.ts` (no auth
+bypass — `npm run test:e2e:roles`).
+
+**Maintainability — modularization + `@`-alias convention:** repo-wide `@/` alias for
+cross-folder imports (535 across 199 files) + split the largest files into barreled
+folders toward ~500 LOC (ModulesPage 3806→1330, QuestionBankPage 1397→222, AdminAuditPage
+1794→933, CalendarPage, DiscussionTopicView, CourseDiscussions/Announcements, …).
+
+Migrations: **0104** (proctor admin-only). New E2E specs: `role-routing`,
+`practice-test-runner`, `quick-start-seat` (real-auth, no bypass).
+
+---
+
+## (2026-06-03) — student seat claiming, code-usage tracking, claim-aware logins
 
 - **Claim a pre-created seat** (migrations 0095/0096). A per-student login code
   (`Y8M3KP-01`) typed into Quick Start now **claims the existing managed seat**

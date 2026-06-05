@@ -153,7 +153,10 @@ Dashboard → Settings → Database → Reset database password. Then locally:
 supabase link --project-ref <prod-ref> -p <new-password>
 ```
 
-Update any backup scripts that hard-code the connection string. **There are none in the repo today**, but your local `pg_dump` cron will need it.
+Update the backup scripts' connection source. They read `SUPABASE_DB_PASSWORD` from
+the repo-root `.env` and the pooler host from `supabase/.temp/pooler-url` (or
+`SUPABASE_DB_URL`) — so after a password rotation just update `.env` (see Section 6,
+`npm run backup:db` / `backup:live`).
 
 ### Supabase service-role key
 
@@ -179,24 +182,49 @@ Run the smoke test (Section 7). A botched rotation is the easiest way to break p
 
 ## 6. Backup + restore
 
-### If you're on Supabase Pro
+**Three layers** (as of 2026-06-05):
 
-Daily automated backups, 7-day retention. Verify they exist at Dashboard → Database → Backups. Test a restore quarterly (Section 12). PITR is an optional add-on; skip until you cross 500 students.
+1. **Supabase Pro managed backups + PITR** — daily backups (7-day retention) and
+   point-in-time recovery (restore to any second). Verify at Dashboard → Database →
+   Backups. This is the baseline disaster-recovery net.
+2. **Independent full-DB copy** — `npm run backup:db` (in `viewer/`). A full
+   schema+data `pg_dump`, gzipped, uploaded to a **private `db-backups` Storage
+   bucket** (`full/<date>/`) with 30-day retention. Run from cron daily, or before
+   any risky migration.
+3. **Live test-session snapshots** — `npm run backup:live`. While a test is in
+   session, snapshots `test_runs` + `test_run_answers` every **5 minutes** to
+   `db-backups/live-tests/<date>/` (lightweight; service-key + REST, no `pg_dump`; a
+   cheap no-op when no test is live). **Run this during every live test window** —
+   you're at the machine proctoring anyway. `npm run backup:live:once` is the
+   single-shot form for a 5-minute cron.
 
-### If you're still on free
+Both scripts read `SUPABASE_URL` / `SUPABASE_SERVICE_KEY` (+ `SUPABASE_DB_PASSWORD`
+for the full dump) from the repo-root `.env`.
 
-There are no automated backups. Run `pg_dump` weekly:
+> **Dump-tool gotchas (these cost real debugging — don't repeat them):**
+> - The server is **PostgreSQL 17**. A PG15 `pg_dump` *refuses* to dump it
+>   (`server version mismatch`). `which pg_dump` may point at an old PG15 — the repo
+>   script resolves a `pg_dump >= 17` (Homebrew **libpq** ships 17.x at
+>   `/opt/homebrew/opt/libpq/bin/pg_dump`). `brew install libpq` if missing.
+> - The **direct host** `db.<ref>.supabase.co` is IPv6-only and won't resolve on a
+>   typical IPv4 network — use the **session pooler**
+>   (`aws-1-<region>.pooler.supabase.com:5432`, user `postgres.<ref>`). The script
+>   reads the pooler host from `supabase/.temp/pooler-url` (linked project), or set
+>   `SUPABASE_DB_URL`.
+> - `supabase db dump` **hangs** at "Dumping schemas" over the pooler — call native
+>   `pg_dump` directly (the script does).
+
+Manual full dump (if you ever need it by hand):
 
 ```bash
-pg_dump "postgresql://postgres:<password>@db.<prod-ref>.supabase.co:5432/postgres" \
-  --no-owner --no-acl \
-  > backup-$(date +%Y%m%d).sql
-gzip backup-$(date +%Y%m%d).sql
+pg_dump "postgresql://postgres.<ref>:<password>@aws-1-<region>.pooler.supabase.com:5432/postgres" \
+  --no-owner --no-privileges > backup-$(date +%Y%m%d).sql && gzip backup-$(date +%Y%m%d).sql
 ```
 
-Store the gzipped dump in a **separate** location — S3, Backblaze B2, or even a Google Drive folder. The point is: if Supabase is down or your account is locked, you still have the data. A backup on the same provider as the primary is not a backup.
-
-Automate this with a local cron or a GitHub Actions scheduled workflow. Don't trust yourself to remember.
+The `db-backups` bucket lives in the same Supabase project — for true off-provider
+safety also mirror periodic dumps to a **separate** place (S3, Backblaze B2, Google
+Drive). A backup on the same provider as the primary is only half a backup.
+Automate the daily full dump with a local cron or a GitHub Actions scheduled workflow.
 
 ### Restore drill
 
