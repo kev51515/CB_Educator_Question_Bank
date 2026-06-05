@@ -55,12 +55,12 @@ export function StudentBadge({
   const ref = useRef<HTMLDivElement | null>(null);
   const firstName = studentName.split(" ")[0] || studentName;
   const initial = (firstName[0] || "?").toUpperCase();
-  // "Student · KQAZNP-01" when a code exists; just "Student" otherwise.
-  const roleLine = roleLabel
-    ? personalCode
-      ? `${roleLabel} · ${personalCode}`
-      : roleLabel
-    : null;
+  // Just the role label, e.g. "Student". The teacher-assigned join code is
+  // intentionally NOT shown here — it's a one-time course-join code, not an
+  // identity the student needs surfaced in their account menu. The
+  // `personalCode` prop is retained for source-compat but no longer rendered.
+  void personalCode;
+  const roleLine = roleLabel ?? null;
 
   useEffect(() => {
     if (!open) return;
