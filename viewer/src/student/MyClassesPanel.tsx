@@ -3,18 +3,17 @@
  * ==============
  * Compact panel listing the courses a student belongs to. Rendered inside
  * AreaSelector. Stays out of the way when the student has no courses yet
- * (shows a soft empty state instead of nothing). Each row exposes a small
- * "Leave" action so the student can drop a course they accidentally joined
- * or no longer need.
+ * (shows a soft empty state instead of nothing). Rows are read-only +
+ * tappable to open the course: students CANNOT leave a course themselves
+ * (too many accidental drops). Enrolment is managed by the teacher — to
+ * remove a student, the teacher uses the roster.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useStudentClasses, type StudentClass } from "./useStudentClasses";
 import { SkeletonRows } from "@/components/Skeleton";
-import { useToast } from "@/components/Toast";
 import { studentCoursePath } from "@/lib/routes";
-import { useFocusTrap } from "@/hooks";
 import { JoinClassModal } from "./JoinClassModal";
 
 type SortKey = "recent" | "oldest" | "name";
@@ -96,11 +95,10 @@ interface MyClassesPanelProps {
 
 interface ClassRowProps {
   cls: StudentClass;
-  onLeave: () => void;
   onOpen: () => void;
 }
 
-function ClassRow({ cls, onLeave, onOpen }: ClassRowProps) {
+function ClassRow({ cls, onOpen }: ClassRowProps) {
   return (
     <li className="rounded-xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 flex items-stretch justify-between gap-1 overflow-hidden">
       <button
@@ -118,37 +116,23 @@ function ClassRow({ cls, onLeave, onOpen }: ClassRowProps) {
           </p>
         )}
       </button>
-      <div className="flex items-center gap-2 shrink-0 px-3">
+      {/* Read-only status. Students can't leave a course themselves — the
+          teacher manages enrolment from the roster. */}
+      <div className="flex items-center shrink-0 px-4">
         <span className="text-[10px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
           Enrolled
         </span>
-        <button
-          type="button"
-          onClick={onLeave}
-          className="min-h-[40px] rounded-md px-2 text-[11px] font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40"
-        >
-          Leave
-        </button>
       </div>
     </li>
   );
 }
 
-function getErrorMessage(error: unknown, fallback: string): string {
-  if (error instanceof Error) return error.message;
-  if (typeof error === "string") return error;
-  return fallback;
-}
-
 export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
   const { classes, loading, error, refresh } = useStudentClasses();
-  const [confirmLeave, setConfirmLeave] = useState<StudentClass | null>(null);
-  const [actionBusy, setActionBusy] = useState(false);
   const [userId, setUserId] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>("recent");
   const [showJoinModal, setShowJoinModal] = useState(false);
   const hydratedRef = useRef(false);
-  const toast = useToast();
   const navigate = useNavigate();
 
   // Why: react only to the refresh token, not to the `refresh` callback's
@@ -186,30 +170,6 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
   }, [userId, sort]);
 
   const sortedClasses = useMemo(() => sortClasses(classes, sort), [classes, sort]);
-
-  const onLeave = async (target: StudentClass) => {
-    setActionBusy(true);
-    try {
-      const { error: delError } = await supabase
-        .from("course_memberships")
-        .delete()
-        .eq("id", target.membership_id);
-      if (delError) {
-        toast.error("Couldn't leave course", delError.message);
-        return;
-      }
-      setConfirmLeave(null);
-      toast.success(`Left ${target.name}`);
-      void refresh();
-    } catch (err: unknown) {
-      toast.error(
-        "Couldn't leave course",
-        getErrorMessage(err, "Failed to leave course."),
-      );
-    } finally {
-      setActionBusy(false);
-    }
-  };
 
   return (
     <>
@@ -250,7 +210,6 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
               <ClassRow
                 key={cls.id}
                 cls={cls}
-                onLeave={() => setConfirmLeave(cls)}
                 onOpen={() => navigate(studentCoursePath(cls.short_code ?? cls.id))}
               />
             ))}
@@ -266,18 +225,6 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
           void refresh();
         }}
       />
-
-      {confirmLeave && (
-        <ConfirmLeaveDialog
-          cls={confirmLeave}
-          busy={actionBusy}
-          onConfirm={() => {
-            const target = confirmLeave;
-            if (target) void onLeave(target);
-          }}
-          onCancel={() => setConfirmLeave(null)}
-        />
-      )}
     </>
   );
 }
@@ -359,63 +306,6 @@ function EmptyClassesState({ onJoin }: EmptyClassesStateProps) {
       >
         Join class
       </button>
-    </div>
-  );
-}
-
-interface ConfirmLeaveDialogProps {
-  cls: StudentClass;
-  busy: boolean;
-  onConfirm: () => void;
-  onCancel: () => void;
-}
-
-function ConfirmLeaveDialog({
-  cls,
-  busy,
-  onConfirm,
-  onCancel,
-}: ConfirmLeaveDialogProps) {
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Leave course"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onCancel}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-          Leave {cls.name}?
-        </h2>
-        <p className="text-sm text-slate-600 dark:text-slate-300">
-          You'll lose access to assignments and the roster for this course. You
-          can rejoin later with the course code.
-        </p>
-        <div className="flex items-center gap-2 pt-2">
-          <button
-            type="button"
-            onClick={onCancel}
-            className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={onConfirm}
-            disabled={busy}
-            className="flex-1 rounded-lg bg-rose-600 hover:bg-rose-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5"
-          >
-            {busy ? "Leaving…" : "Leave course"}
-          </button>
-        </div>
-      </div>
     </div>
   );
 }
