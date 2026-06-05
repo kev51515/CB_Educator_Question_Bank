@@ -143,22 +143,100 @@ export async function heartbeat(runId: string, questionNumber: number): Promise<
   }
 }
 
-/** Integrity telemetry: the student left the test tab. Best-effort, never throws. */
-export async function reportAway(runId: string): Promise<void> {
+/**
+ * Proctoring level a run was started under (migration 0108 — `start_test` now
+ * returns it). 'off' disables all client telemetry/enforcement; 'soft' is
+ * telemetry-only (no blocking, no fullscreen requirement); 'strict' adds
+ * lockdown (fullscreen requirement + copy/paste/contextmenu blocking).
+ */
+export type ProctoringLevel = "off" | "soft" | "strict";
+
+/** The 10 proctor-event types accepted by `test_log_proctor_event`. */
+export type ProctorEventType =
+  | "away"
+  | "focus_loss"
+  | "fullscreen_exit"
+  | "fullscreen_enter"
+  | "copy"
+  | "paste"
+  | "copy_blocked"
+  | "paste_blocked"
+  | "contextmenu_blocked"
+  | "devtools";
+
+/** One row of a run's proctoring timeline (from `get_test_run_timeline`). */
+export interface ProctorEvent {
+  at: string;
+  type: ProctorEventType;
+  module: number | null;
+  question: number | null;
+  durationSeconds: number | null;
+  meta: unknown | null;
+}
+
+/**
+ * Record a single proctoring event (away / focus-loss / fullscreen / copy /
+ * paste / blocked attempt / devtools). Best-effort: telemetry must NEVER
+ * disrupt the test, so every error — including a thrown one — is swallowed.
+ */
+export async function logProctorEvent(
+  runId: string,
+  type: ProctorEventType,
+  opts: { durationSeconds?: number; module?: number; question?: number } = {},
+): Promise<void> {
   try {
-    await supabase.rpc("test_report_away", { p_run_id: runId });
+    await supabase.rpc("test_log_proctor_event", {
+      p_run_id: runId,
+      p_type: type,
+      p_duration_seconds: opts.durationSeconds ?? null,
+      p_module: opts.module ?? null,
+      p_question: opts.question ?? null,
+    });
   } catch {
-    /* non-fatal */
+    /* non-fatal — proctoring telemetry is observational only */
   }
 }
 
-/** Integrity telemetry (paste / copy / fullscreen exit). Best-effort, never throws. */
-export async function reportIntegrity(runId: string, event: string): Promise<void> {
+/**
+ * Fetch a run's full proctoring timeline for a teacher/monitor view. Returns
+ * [] on any error (best-effort, never throws). Rows map the DB's snake_case
+ * `duration_seconds` onto the camelCase `durationSeconds` field.
+ */
+export async function getRunTimeline(runId: string): Promise<ProctorEvent[]> {
   try {
-    await supabase.rpc("test_report_integrity", { p_run_id: runId, p_event: event });
+    const { data, error } = await supabase.rpc("get_test_run_timeline", {
+      p_run_id: runId,
+    });
+    if (error || !data) return [];
+    return (data as Array<Record<string, unknown>>).map((row) => ({
+      at: row.at as string,
+      type: row.type as ProctorEventType,
+      module: (row.module as number | null) ?? null,
+      question: (row.question as number | null) ?? null,
+      durationSeconds: (row.duration_seconds as number | null) ?? null,
+      meta: (row.meta as unknown) ?? null,
+    }));
   } catch {
-    /* non-fatal */
+    return [];
   }
+}
+
+/**
+ * Set a test's proctoring level (teacher-only). Unlike the telemetry helpers
+ * this is a deliberate teacher action, so it THROWS on failure — the caller
+ * does optimistic UI with rollback. Backed by the `set_test_proctoring_level`
+ * RPC, which raises stable codes (`not_authorized`, `invalid_level`,
+ * `test_not_found`, `not_authenticated`).
+ */
+export async function setProctoringLevel(
+  slug: string,
+  level: ProctoringLevel,
+): Promise<void> {
+  const { error } = await supabase.rpc("set_test_proctoring_level", {
+    p_slug: slug,
+    p_level: level,
+  });
+  if (error) throw error;
 }
 
 export interface RunState {

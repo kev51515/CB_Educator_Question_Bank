@@ -43,6 +43,61 @@ export interface LiveInfo {
   started_at: string | null;
   submitted_at: string | null;
   run_id: string | null;
+  // Proctoring roll-up (migration 0108). Nullable for runs that predate it.
+  away_total_seconds: number | null;
+  focus_loss_count: number | null;
+  focus_loss_seconds: number | null;
+  flagged: boolean;
+  flag_reasons: string[];
+}
+
+/**
+ * Coerce a raw `test_live_progress` row into LiveInfo, defaulting the 0108
+ * proctoring fields so older runs (and any RPC that hasn't been migrated)
+ * degrade cleanly instead of surfacing `undefined`.
+ */
+export function toLiveInfo(raw: Record<string, unknown>): LiveInfo {
+  const num = (v: unknown): number | null =>
+    typeof v === "number" && Number.isFinite(v) ? v : null;
+  return {
+    state: (raw.state as LiveInfo["state"]) ?? "not_started",
+    module_position: num(raw.module_position),
+    module_label: (raw.module_label as string | null) ?? null,
+    current_question: num(raw.current_question),
+    answered: num(raw.answered),
+    module_questions: num(raw.module_questions),
+    away_count: num(raw.away_count),
+    paused: (raw.paused as boolean | null) ?? null,
+    integrity: (raw.integrity as Record<string, number> | null) ?? null,
+    started_at: (raw.started_at as string | null) ?? null,
+    submitted_at: (raw.submitted_at as string | null) ?? null,
+    run_id: (raw.run_id as string | null) ?? null,
+    away_total_seconds: num(raw.away_total_seconds),
+    focus_loss_count: num(raw.focus_loss_count),
+    focus_loss_seconds: num(raw.focus_loss_seconds),
+    flagged: Boolean(raw.flagged),
+    flag_reasons: Array.isArray(raw.flag_reasons)
+      ? (raw.flag_reasons as unknown[]).filter((x): x is string => typeof x === "string")
+      : [],
+  };
+}
+
+/** Reason-code → human label for the integrity flag badges (migration 0108). */
+export function flagLabel(code: string): string {
+  switch (code) {
+    case "away_60s":
+      return "Left tab >1 min";
+    case "away_3x":
+      return "Left tab 3+ times";
+    case "fs_exit":
+      return "Exited full screen";
+    case "paste":
+      return "Pasted content";
+    case "focus_3x":
+      return "Lost focus 3+ times";
+    default:
+      return code;
+  }
 }
 
 /** "paste 2 · left FS 1" from the integrity counter bag, or null if clean. */

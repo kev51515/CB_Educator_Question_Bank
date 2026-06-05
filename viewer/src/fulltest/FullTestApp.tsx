@@ -18,6 +18,7 @@ import { useToast } from "@/components";
 import { ROUTES } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
 import { captureError, trackEvent } from "@/lib/telemetry";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
@@ -29,14 +30,14 @@ import {
   getResult,
   getRunState,
   heartbeat,
-  reportAway,
-  reportIntegrity,
+  logProctorEvent,
   loadCachedAnswers,
   saveCachedAnswers,
   saveProgress,
   startTest,
   submitModule,
   TestApiError,
+  type ProctoringLevel,
 } from "./api";
 import type {
   Letter,
@@ -49,20 +50,36 @@ import type {
 type Phase = "loading" | "intro" | "module" | "break" | "submitting" | "result" | "error";
 
 /**
+ * Recover the runner's mount base from the path it was opened with, so the
+ * deep-link URLs below stay under whatever role-prefixed route mounted the
+ * runner — `/student/test/:slug` (student) or `/educator/tests/:slug/run`
+ * (staff preview), and the legacy bare `/test/:slug` — instead of a hardcoded
+ * prefix. We strip the descriptive phase suffix runnerPath() appends so the
+ * base survives even when the opening URL is a deep link.
+ */
+function runnerBaseFromPath(pathname: string): string {
+  const stripped = pathname.replace(
+    /\/(?:section\/\d+\/q\/\d+|break|done)\/?$/,
+    "",
+  );
+  return stripped.replace(/\/$/, "");
+}
+
+/**
  * Build a descriptive URL for the runner's current state so the address bar is
- * meaningful and deep-linkable instead of a static /test/:slug on every screen:
- *   intro/loading → /test/:slug
- *   a question     → /test/:slug/section/:position/q/:number
- *   break          → /test/:slug/break
- *   finished       → /test/:slug/done
+ * meaningful and deep-linkable instead of a static base on every screen:
+ *   intro/loading → <base>
+ *   a question     → <base>/section/:position/q/:number
+ *   break          → <base>/break
+ *   finished       → <base>/done
+ * `base` is the role-prefixed mount path (see runnerBaseFromPath).
  */
 function runnerPath(
-  slug: string,
+  base: string,
   phase: Phase,
   position: number | undefined,
   qNumber: number | undefined,
 ): string {
-  const base = `/test/${encodeURIComponent(slug)}`;
   if (phase === "module" && position != null && qNumber != null) {
     return `${base}/section/${position}/q/${qNumber}`;
   }
@@ -99,6 +116,11 @@ export function FullTestApp() {
   // enough for loadModule to restore that question.
   const openedPathRef = useRef<string>(
     typeof window !== "undefined" ? window.location.pathname : "",
+  );
+  // The role-prefixed mount base (e.g. /student/test/<slug>), captured once
+  // from the opening path so URL-sync keeps the runner under its own route.
+  const runnerBaseRef = useRef<string>(
+    runnerBaseFromPath(openedPathRef.current),
   );
   // Role gates the end-of-test screen: staff (teacher previewing / reviewing)
   // see the full result; students see only a neutral "submitted" confirmation —
@@ -146,6 +168,36 @@ export function FullTestApp() {
   } | null>(null);
 
   const runId = start?.run_id ?? null;
+
+  // --- proctoring ------------------------------------------------------------
+  // `start_test` (migration 0108) returns proctoring_level on the run/start
+  // payload. It isn't on the shared StartTestResult type (owned elsewhere), so
+  // read it through a narrow cast and default to 'off' (no telemetry / no
+  // enforcement) when absent — fail-open so a payload change can't lock anyone
+  // out of a test.
+  const proctoringLevel: ProctoringLevel =
+    ((start as { proctoring_level?: ProctoringLevel } | null)?.proctoring_level) ?? "off";
+  const proctorOn = proctoringLevel !== "off";
+  const strict = proctoringLevel === "strict";
+
+  // Element fullscreen support — iOS Safari on iPhone has no element-level
+  // requestFullscreen, so strict lockdown can't be enforced there. We detect
+  // once and fall back to telemetry-only with a small non-blocking notice.
+  const supportsFullscreen =
+    typeof document !== "undefined" &&
+    !!document.documentElement.requestFullscreen &&
+    !(typeof navigator !== "undefined" && /iPhone|iPod/.test(navigator.userAgent));
+  // Strict mode but the device can't lock down → render the inline notice.
+  const lockdownUnsupported = strict && !supportsFullscreen;
+
+  // Blocking overlay shown when a strict-mode student exits fullscreen mid-test.
+  const [fsLockout, setFsLockout] = useState(false);
+  // Stamp when fullscreen was exited so we can log the duration outside on return.
+  const fsExitedAtRef = useRef<number | null>(null);
+
+  // Helpers to read the current module/question for proctor-event context.
+  const currentModuleRef = useRef<number | null>(null);
+  const currentQuestionRef = useRef<number | null>(null);
 
   // --- bootstrap ------------------------------------------------------------
   useEffect(() => {
@@ -336,30 +388,155 @@ export function FullTestApp() {
   // source of truth (the server still authorises which module you may enter).
   useEffect(() => {
     const qNumber = questions[index]?.number;
-    const target = runnerPath(slug, phase, moduleMeta?.position, qNumber);
+    const target = runnerPath(
+      runnerBaseRef.current,
+      phase,
+      moduleMeta?.position,
+      qNumber,
+    );
     if (location.pathname !== target) {
       navigate(target, { replace: true });
     }
   }, [slug, phase, moduleMeta, index, questions, location.pathname, navigate]);
 
-  // Integrity telemetry while taking a module: paste / copy / leaving fullscreen.
-  // Best-effort counters the proctor sees live — detection, not blocking.
+  // Keep the current module/question in refs so window-level proctor handlers
+  // (blur/focus/visibility, which depend only on stable values) always read the
+  // freshest position without re-binding their listeners on every navigation.
   useEffect(() => {
-    if (phase !== "module" || !runId) return;
-    const onPaste = () => void reportIntegrity(runId, "paste");
-    const onCopy = () => void reportIntegrity(runId, "copy");
-    const onFsChange = () => {
-      if (!document.fullscreenElement) void reportIntegrity(runId, "fullscreen_exit");
+    currentModuleRef.current = moduleMeta?.position ?? null;
+    currentQuestionRef.current = questions[index]?.number ?? null;
+  }, [moduleMeta, questions, index]);
+
+  // Integrity telemetry while taking a module: paste / copy / leaving fullscreen.
+  // In 'soft' mode this is detection-only (the proctor sees live counts, nothing
+  // is blocked). In 'strict' mode the same events are blocked (preventDefault)
+  // and logged as `*_blocked`, and a fullscreen exit raises the lockout overlay.
+  // 'off' mode wires nothing.
+  useEffect(() => {
+    if (phase !== "module" || !runId || !proctorOn) return;
+    const ctx = () => ({
+      module: currentModuleRef.current ?? undefined,
+      question: currentQuestionRef.current ?? undefined,
+    });
+    const onCopy = (e: Event) => {
+      if (strict) {
+        e.preventDefault();
+        void logProctorEvent(runId, "copy_blocked", ctx());
+      } else {
+        void logProctorEvent(runId, "copy", ctx());
+      }
     };
-    document.addEventListener("paste", onPaste);
+    const onCut = (e: Event) => {
+      // cut is a copy + delete; in strict mode block it as a copy attempt.
+      if (strict) {
+        e.preventDefault();
+        void logProctorEvent(runId, "copy_blocked", ctx());
+      } else {
+        void logProctorEvent(runId, "copy", ctx());
+      }
+    };
+    const onPaste = (e: Event) => {
+      if (strict) {
+        e.preventDefault();
+        void logProctorEvent(runId, "paste_blocked", ctx());
+      } else {
+        void logProctorEvent(runId, "paste", ctx());
+      }
+    };
+    const onContextMenu = (e: Event) => {
+      if (strict) {
+        e.preventDefault();
+        void logProctorEvent(runId, "contextmenu_blocked", ctx());
+      }
+    };
+    // selectstart is blocked silently in strict mode (no log — too noisy).
+    const onSelectStart = (e: Event) => {
+      if (strict) e.preventDefault();
+    };
+    const onFsChange = () => {
+      // Only meaningful when we're enforcing lockdown on a capable device.
+      if (!strict || !supportsFullscreen) return;
+      if (!document.fullscreenElement) {
+        // Exited fullscreen mid-test → raise the blocking overlay and stamp the
+        // time so we can log how long they were outside on return.
+        fsExitedAtRef.current = Date.now();
+        setFsLockout(true);
+        void logProctorEvent(runId, "fullscreen_exit", ctx());
+      } else {
+        // Returned to fullscreen → drop the overlay and log the re-entry with
+        // the duration spent outside.
+        const exitedAt = fsExitedAtRef.current;
+        const durationSeconds = exitedAt
+          ? Math.round((Date.now() - exitedAt) / 1000)
+          : undefined;
+        fsExitedAtRef.current = null;
+        setFsLockout(false);
+        void logProctorEvent(runId, "fullscreen_enter", { ...ctx(), durationSeconds });
+      }
+    };
     document.addEventListener("copy", onCopy);
+    document.addEventListener("cut", onCut);
+    document.addEventListener("paste", onPaste);
+    document.addEventListener("contextmenu", onContextMenu);
+    document.addEventListener("selectstart", onSelectStart);
     document.addEventListener("fullscreenchange", onFsChange);
     return () => {
-      document.removeEventListener("paste", onPaste);
       document.removeEventListener("copy", onCopy);
+      document.removeEventListener("cut", onCut);
+      document.removeEventListener("paste", onPaste);
+      document.removeEventListener("contextmenu", onContextMenu);
+      document.removeEventListener("selectstart", onSelectStart);
       document.removeEventListener("fullscreenchange", onFsChange);
     };
-  }, [phase, runId]);
+  }, [phase, runId, proctorOn, strict, supportsFullscreen]);
+
+  // FOCUS-LOSS telemetry (the second-monitor signal). A window 'blur' without a
+  // matching visibilitychange→hidden means the student clicked another window
+  // while the test tab stayed visible — distinct from a tab-switch (which logs
+  // 'away' via the visibility effect). Dedupe so a real tab-switch logs ONLY
+  // 'away': if a hidden event fires during the blur, suppress the focus_loss.
+  const blurAtRef = useRef<number | null>(null);
+  const blurCtxRef = useRef<{ module?: number; question?: number }>({});
+  const wasHiddenDuringBlurRef = useRef(false);
+  useEffect(() => {
+    if (phase !== "module" || !runId || !proctorOn) return;
+    const onBlur = () => {
+      blurAtRef.current = Date.now();
+      wasHiddenDuringBlurRef.current = false;
+      blurCtxRef.current = {
+        module: currentModuleRef.current ?? undefined,
+        question: currentQuestionRef.current ?? undefined,
+      };
+    };
+    const onHidden = () => {
+      // A tab-switch/minimize while blurred → let the 'away' path own it.
+      if (document.hidden && blurAtRef.current != null) {
+        wasHiddenDuringBlurRef.current = true;
+      }
+    };
+    const onFocus = () => {
+      const at = blurAtRef.current;
+      blurAtRef.current = null;
+      if (at == null) return;
+      const elapsed = Date.now() - at;
+      // Only a *visible* focus loss (no hidden event) of ≥2s is a focus_loss.
+      if (!wasHiddenDuringBlurRef.current && elapsed >= 2000) {
+        void logProctorEvent(runId, "focus_loss", {
+          durationSeconds: Math.round(elapsed / 1000),
+          module: blurCtxRef.current.module,
+          question: blurCtxRef.current.question,
+        });
+      }
+    };
+    window.addEventListener("blur", onBlur);
+    document.addEventListener("visibilitychange", onHidden);
+    window.addEventListener("focus", onFocus);
+    return () => {
+      window.removeEventListener("blur", onBlur);
+      document.removeEventListener("visibilitychange", onHidden);
+      window.removeEventListener("focus", onFocus);
+    };
+  }, [phase, runId, proctorOn]);
 
   // --- timer ----------------------------------------------------------------
   useEffect(() => {
@@ -418,16 +595,31 @@ export function FullTestApp() {
   // remaining time and recompute the deadline; if the server says 0, warn the
   // student before the auto-submit fires.
   const lastVisibleAt = useRef(Date.now());
+  // Proctor context captured at the moment the tab was hidden, so the 'away'
+  // event reports the module/question the student left from (not where they
+  // happen to land after returning).
+  const awayCtxRef = useRef<{ module?: number; question?: number }>({});
   useEffect(() => {
     if (phase !== "module" || !runId || !moduleMeta) return;
     const onVisibility = () => {
       if (document.hidden) {
         lastVisibleAt.current = Date.now();
+        awayCtxRef.current = {
+          module: currentModuleRef.current ?? undefined,
+          question: currentQuestionRef.current ?? undefined,
+        };
         return;
       }
       const hiddenMs = Date.now() - lastVisibleAt.current;
-      // Integrity: count a real "left the tab" (>2s) for the proctor view.
-      if (hiddenMs > 2000) void reportAway(runId);
+      // Integrity: a real "left the tab" (≥2s) → log an 'away' event with the
+      // duration away + the position the student left from (proctorOn gates it).
+      if (proctorOn && hiddenMs >= 2000) {
+        void logProctorEvent(runId, "away", {
+          durationSeconds: Math.round(hiddenMs / 1000),
+          module: awayCtxRef.current.module,
+          question: awayCtxRef.current.question,
+        });
+      }
       if (hiddenMs <= 5000) return;
       void (async () => {
         try {
@@ -454,7 +646,7 @@ export function FullTestApp() {
       document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("pageshow", onVisibility);
     };
-  }, [phase, runId, moduleMeta, toast]);
+  }, [phase, runId, moduleMeta, toast, proctorOn]);
 
   // P2: debounced server-side draft autosave. Each answer change resets a
   // 2.5s timer; on idle we persist the active module's drafts so a device
@@ -520,6 +712,31 @@ export function FullTestApp() {
       saveDraftRef.current();
     }
   }, [index, phase]);
+
+  // Strict-mode lockdown: request element fullscreen. MUST run inside the user
+  // gesture that starts/resumes a module (Begin / Resume / Start next section)
+  // or the overlay's "Return to full screen" button — browsers reject
+  // requestFullscreen() outside a transient activation. Best-effort: a rejected
+  // promise (already fullscreen, denied) is swallowed; the fullscreenchange
+  // listener is the source of truth for the lockout overlay.
+  const enterFullscreen = useCallback(() => {
+    if (!strict || !supportsFullscreen) return;
+    try {
+      void document.documentElement.requestFullscreen?.().catch(() => {});
+    } catch {
+      /* non-fatal — telemetry still records the exit */
+    }
+  }, [strict, supportsFullscreen]);
+
+  // Wrap a module-entry handler so strict mode enters fullscreen on the same
+  // click that loads the module (keeps the call inside the user gesture).
+  const beginModule = useCallback(
+    (position: number) => {
+      enterFullscreen();
+      void loadModule(position);
+    },
+    [enterFullscreen, loadModule],
+  );
 
   const setAnswer = useCallback(
     (qid: string, value: string | null) => {
@@ -677,9 +894,10 @@ export function FullTestApp() {
             </li>
           ))}
         </ol>
+        {lockdownUnsupported && <LockdownNotice className="mt-5" />}
         <button
           type="button"
-          onClick={() => void loadModule(start.current_module)}
+          onClick={() => beginModule(start.current_module)}
           className="mt-6 w-full rounded-xl bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-700"
         >
           {resuming ? `Resume — Module ${start.current_module}` : "Begin test"}
@@ -704,9 +922,10 @@ export function FullTestApp() {
             </div>
           </div>
         )}
+        {lockdownUnsupported && <LockdownNotice className="mt-5" />}
         <button
           type="button"
-          onClick={() => void loadModule(start.current_module)}
+          onClick={() => beginModule(start.current_module)}
           className="mt-6 w-full rounded-xl bg-indigo-600 px-5 py-3 text-base font-semibold text-white hover:bg-indigo-700"
         >
           Start next section
@@ -1094,6 +1313,24 @@ export function FullTestApp() {
           onCancel={() => setConfirmExit(false)}
         />
       )}
+
+      {/* Strict-mode lockdown notice: device can't enforce fullscreen, but we
+          still record activity. Non-blocking — sits above the question header. */}
+      {lockdownUnsupported && (
+        <div className="shrink-0 border-b border-amber-200 bg-amber-50 px-5 py-2 text-xs font-medium text-amber-800 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-300">
+          Lockdown isn't supported on this device; your activity is still
+          recorded.
+        </div>
+      )}
+
+      {/* Strict-mode fullscreen lockout: a BLOCKING overlay shown when the
+          student exits fullscreen mid-test. The only way out is back into
+          fullscreen — the button calls requestFullscreen() inside its click
+          handler (required for a transient activation). The timer is NOT
+          paused; the section clock keeps running behind the overlay. */}
+      {fsLockout && (
+        <FullscreenLockout onReturn={enterFullscreen} />
+      )}
     </div>
   );
 }
@@ -1119,6 +1356,72 @@ function Spinner({ label }: { label: string }) {
     <div className="flex flex-col items-center gap-3">
       <div className="h-8 w-8 animate-spin rounded-full border-2 border-indigo-500 border-t-transparent" />
       <p className="text-sm text-slate-600 dark:text-slate-400">{label}</p>
+    </div>
+  );
+}
+
+/** Inline, non-blocking notice for strict mode on a device that can't lock
+ *  down (e.g. iPhone). Telemetry still records the student's activity. */
+function LockdownNotice({ className = "" }: { className?: string }) {
+  return (
+    <div
+      role="note"
+      className={[
+        "flex items-start gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-left text-xs text-amber-800 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-300",
+        className,
+      ].join(" ")}
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="mt-0.5 shrink-0">
+        <path d="M12 9v4M12 17h.01" />
+        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+      </svg>
+      <span>
+        Lockdown isn't supported on this device; your activity is still recorded.
+      </span>
+    </div>
+  );
+}
+
+/** Strict-mode blocking overlay: covers the questions when the student leaves
+ *  fullscreen mid-test. Dismissible ONLY by returning to fullscreen (the button
+ *  calls requestFullscreen() inside its own click handler). Traps interaction
+ *  via a fixed, top-most layer; the section timer keeps running behind it. */
+function FullscreenLockout({ onReturn }: { onReturn: () => void }) {
+  const panelRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(panelRef, true);
+  return (
+    <div
+      ref={panelRef}
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="fs-lockout-title"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/80 px-4 backdrop-blur-sm"
+    >
+      <div className="w-full max-w-md rounded-2xl bg-white p-7 text-center shadow-2xl ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
+        <div
+          aria-hidden
+          className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-rose-100 text-rose-600 dark:bg-rose-900/50 dark:text-rose-300"
+        >
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3" />
+          </svg>
+        </div>
+        <h1 id="fs-lockout-title" className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+          Return to full screen to continue your test
+        </h1>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+          This test runs in full screen. Your section timer is still running —
+          return to full screen now to keep going.
+        </p>
+        <button
+          type="button"
+          onClick={onReturn}
+          autoFocus
+          className="mt-6 inline-flex min-h-[44px] w-full items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
+        >
+          Return to full screen
+        </button>
+      </div>
     </div>
   );
 }

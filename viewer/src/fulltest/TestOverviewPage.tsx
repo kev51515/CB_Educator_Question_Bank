@@ -27,17 +27,21 @@ import { Skeleton } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { useBreadcrumbLabel } from "@/components";
 import { ROUTES, testPreviewPath, testReviewPath } from "@/lib/routes";
-import { getResult } from "./api";
+import { getResult, getRunTimeline } from "./api";
+import type { ProctorEvent } from "./api";
 import { ResultView } from "./ResultView";
 import { AssignTestModal } from "./AssignTestModal";
 import { TestMonitorModal } from "./TestMonitorModal";
+import ProctorTimeline from "./ProctorTimeline";
 import type { TestResult } from "./types";
 import {
   errMsg,
+  flagLabel,
   fmtIntegrity,
   fmtMins,
   fmtTime,
   pctOf,
+  toLiveInfo,
   InterventionModal,
   StatCard,
   type LiveInfo,
@@ -45,6 +49,31 @@ import {
   type RosterRow,
   type TestRow,
 } from "@/fulltest/test-overview";
+
+// --- local formatters ------------------------------------------------------
+
+/** "0:42" / "3:05" from a second count — compact away-time for roster badges. */
+function fmtAwaySecs(sec: number): string {
+  const s = Math.max(0, Math.round(sec));
+  const m = Math.floor(s / 60);
+  return `${m}:${String(s % 60).padStart(2, "0")}`;
+}
+
+/**
+ * UI-facing proctoring levels. Maps onto api.ts's `ProctoringLevel`
+ * ("off" | "soft" | "strict") — Standard → soft, Lockdown → strict.
+ */
+type ProctoringUiLevel = "off" | "standard" | "lockdown";
+const PROCTORING_API_LEVEL: Record<ProctoringUiLevel, "off" | "soft" | "strict"> = {
+  off: "off",
+  standard: "soft",
+  lockdown: "strict",
+};
+const PROCTORING_OPTIONS: Array<{ value: ProctoringUiLevel; label: string; hint: string }> = [
+  { value: "off", label: "Off", hint: "No tab/focus tracking" },
+  { value: "standard", label: "Standard", hint: "Track tab switches & focus loss" },
+  { value: "lockdown", label: "Lockdown", hint: "Require full screen; block copy/paste" },
+];
 
 // --- page ------------------------------------------------------------------
 
@@ -74,8 +103,15 @@ export function TestOverviewPage(): JSX.Element {
   const [confirmBusy, setConfirmBusy] = useState(false);
   const [reviewLoadingId, setReviewLoadingId] = useState<string | null>(null);
   const [reviewing, setReviewing] = useState<{ row: RosterRow; result: TestResult } | null>(null);
+  // Proctoring timeline for the open review overlay — lazy-loaded on open.
+  const [reviewTimeline, setReviewTimeline] = useState<ProctorEvent[]>([]);
+  const [timelineLoading, setTimelineLoading] = useState(false);
   const [assignOpen, setAssignOpen] = useState(false);
   const [monitorOpen, setMonitorOpen] = useState(false);
+  // Proctoring level control (Off / Standard / Lockdown). Optimistic; the
+  // backing api (`setProctoringLevel`) may not exist yet — see onSetProctoring.
+  const [proctoringLevel, setProctoringLevel] = useState<ProctoringUiLevel>("standard");
+  const [proctoringBusy, setProctoringBusy] = useState(false);
 
   // Register the real test name with the global breadcrumb bar (no-ops until
   // both the slug and title are known; cleans up on unmount).
@@ -135,8 +171,9 @@ export function TestOverviewPage(): JSX.Element {
       // silently — the roster still renders if this RPC fails.
       const map = new Map<string, LiveInfo>();
       if (!liveRes.error) {
-        for (const r of (liveRes.data ?? []) as Array<LiveInfo & { student_id: string }>) {
-          map.set(r.student_id, r);
+        for (const r of (liveRes.data ?? []) as Array<Record<string, unknown>>) {
+          const sid = r.student_id as string | undefined;
+          if (sid) map.set(sid, toLiveInfo(r));
         }
       }
       setLive(map);
@@ -294,14 +331,56 @@ export function TestOverviewPage(): JSX.Element {
 
   const onReview = async (row: RosterRow): Promise<void> => {
     if (!row.run_id) return;
-    setReviewLoadingId(row.run_id);
+    const runId = row.run_id;
+    setReviewLoadingId(runId);
     try {
-      const result = await getResult(row.run_id);
+      const result = await getResult(runId);
       setReviewing({ row, result });
+      // Lazy-load the proctoring timeline alongside the result. getRunTimeline
+      // is best-effort (returns [] on any error) so this never blocks review.
+      setReviewTimeline([]);
+      setTimelineLoading(true);
+      void getRunTimeline(runId)
+        .then((events) => setReviewTimeline(events))
+        .finally(() => setTimelineLoading(false));
     } catch (e: unknown) {
       toast.error("Couldn't load result", errMsg(e, "Try again."));
     } finally {
       setReviewLoadingId(null);
+    }
+  };
+
+  // Change the test's proctoring level. Optimistic UI with rollback.
+  //
+  // NOTE: this calls `setProctoringLevel(slug, level)` which is expected to be
+  // exported from ./api by migration 0108's parallel agent. To keep the build
+  // green if that export doesn't exist yet, we resolve it dynamically and treat
+  // a missing function as a no-op (toast + rollback). When api.ts gains the
+  // export, swap this for a direct `import { setProctoringLevel } from "./api"`.
+  // TODO(0108): replace dynamic guard with a static import once api.setProctoringLevel ships.
+  const onSetProctoring = async (next: ProctoringUiLevel): Promise<void> => {
+    const prev = proctoringLevel;
+    if (next === prev) return;
+    setProctoringLevel(next); // optimistic
+    setProctoringBusy(true);
+    try {
+      const api = (await import("./api")) as unknown as {
+        setProctoringLevel?: (slug: string, level: "off" | "soft" | "strict") => Promise<unknown>;
+      };
+      if (typeof api.setProctoringLevel !== "function") {
+        // Backend not wired yet — surface honestly and roll back.
+        setProctoringLevel(prev);
+        toast.info("Proctoring level isn't available yet", "This control will work once the backend ships.");
+        return;
+      }
+      await api.setProctoringLevel(slug, PROCTORING_API_LEVEL[next]);
+      const label = PROCTORING_OPTIONS.find((o) => o.value === next)?.label ?? next;
+      toast.success(`Proctoring set to ${label}`);
+    } catch (e: unknown) {
+      setProctoringLevel(prev); // rollback
+      toast.error("Couldn't update proctoring", errMsg(e, "Try again."));
+    } finally {
+      setProctoringBusy(false);
     }
   };
 
@@ -344,6 +423,51 @@ export function TestOverviewPage(): JSX.Element {
               {modules.length > 0 &&
                 ` · ${fmtMins(modules.reduce((a, m) => a + m.time_limit_seconds, 0))} total`}
             </p>
+
+            {isAdmin && (
+              <div className="mt-3">
+                <div
+                  role="radiogroup"
+                  aria-label="Proctoring level"
+                  className="inline-flex items-stretch rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-slate-50 dark:bg-slate-800/60 p-0.5"
+                >
+                  {PROCTORING_OPTIONS.map((opt) => {
+                    const active = proctoringLevel === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        role="radio"
+                        aria-checked={active}
+                        title={opt.hint}
+                        disabled={proctoringBusy}
+                        onClick={() => void onSetProctoring(opt.value)}
+                        className={`min-h-[36px] rounded-md px-3 text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-60 ${
+                          active
+                            ? opt.value === "lockdown"
+                              ? "bg-rose-600 text-white shadow-sm"
+                              : opt.value === "off"
+                                ? "bg-white text-slate-700 shadow-sm dark:bg-slate-900 dark:text-slate-200"
+                                : "bg-indigo-600 text-white shadow-sm"
+                            : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                        }`}
+                      >
+                        {opt.value === "lockdown" && (
+                          <span aria-hidden className="mr-1">
+                            🔒
+                          </span>
+                        )}
+                        {opt.label}
+                      </button>
+                    );
+                  })}
+                </div>
+                <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-500">
+                  Proctoring:{" "}
+                  {PROCTORING_OPTIONS.find((o) => o.value === proctoringLevel)?.hint}
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -565,6 +689,9 @@ export function TestOverviewPage(): JSX.Element {
               const pct = pctOf(row.score, row.total);
               const lr = live.get(row.student_id);
               const away = lr?.away_count ?? 0;
+              const awaySecs = lr?.away_total_seconds ?? 0;
+              const flagged = lr?.flagged ?? false;
+              const flagReasons = lr?.flag_reasons ?? [];
               return (
                 <li
                   key={row.student_id}
@@ -600,6 +727,18 @@ export function TestOverviewPage(): JSX.Element {
 
                   {taken ? (
                     <>
+                      {flagged && (
+                        <span
+                          title={
+                            flagReasons.length
+                              ? flagReasons.map(flagLabel).join(" · ")
+                              : "Flagged for review — open Review to see the proctoring timeline"
+                          }
+                          className="inline-flex items-center rounded-full bg-rose-100 text-rose-700 ring-1 ring-rose-300 px-2 py-0.5 text-[11px] font-semibold dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800"
+                        >
+                          ⚑ Needs review
+                        </span>
+                      )}
                       <span
                         className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${
                           released
@@ -656,12 +795,25 @@ export function TestOverviewPage(): JSX.Element {
                           {pauseBusy === lr.run_id ? "…" : lr.paused ? "Resume" : "Pause"}
                         </button>
                       )}
+                      {flagged && (
+                        <span
+                          title={
+                            flagReasons.length
+                              ? flagReasons.map(flagLabel).join(" · ")
+                              : "Flagged for review"
+                          }
+                          className="inline-flex items-center rounded-full bg-rose-100 text-rose-700 ring-1 ring-rose-300 px-2 py-0.5 text-[11px] font-semibold dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800"
+                        >
+                          ⚑ Needs review
+                        </span>
+                      )}
                       {away > 0 && (
                         <span
                           title="Times the student left the test tab"
-                          className="inline-flex items-center rounded-full bg-rose-50 text-rose-700 ring-1 ring-rose-200 px-2 py-0.5 text-[11px] font-medium dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
+                          className="inline-flex items-center rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200 px-2 py-0.5 text-[11px] font-medium dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900"
                         >
-                          ⚠ left tab {away}×
+                          ↗ left tab {away}×
+                          {awaySecs > 0 && ` · ${fmtAwaySecs(awaySecs)}`}
                         </span>
                       )}
                       {fmtIntegrity(lr?.integrity) && (
@@ -742,7 +894,10 @@ export function TestOverviewPage(): JSX.Element {
             </p>
             <button
               type="button"
-              onClick={() => setReviewing(null)}
+              onClick={() => {
+                setReviewing(null);
+                setReviewTimeline([]);
+              }}
               aria-label="Close review"
               className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
             >
@@ -750,6 +905,19 @@ export function TestOverviewPage(): JSX.Element {
             </button>
           </div>
           <div className="flex-1 overflow-y-auto">
+            {/* Proctoring timeline for this run — lazy-loaded; collapses to a
+                reassuring "stayed focused" card when there are no flags. */}
+            <section className="mx-auto max-w-3xl px-4 sm:px-6 pt-5">
+              <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+                Proctoring timeline
+              </h2>
+              <ProctorTimeline
+                events={reviewTimeline}
+                startedAt={reviewing.row.run_id ? (live.get(reviewing.row.student_id)?.started_at ?? null) : null}
+                submittedAt={reviewing.row.submitted_at}
+                loading={timelineLoading}
+              />
+            </section>
             <ResultView result={reviewing.result} testTitle={title} />
           </div>
         </div>

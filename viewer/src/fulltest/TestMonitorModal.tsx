@@ -13,6 +13,10 @@ import { supabase } from "@/lib/supabase";
 import { useEscapeKey, useFocusTrap } from "@/hooks";
 import { useToast } from "@/components/Toast";
 import { SkeletonRows } from "@/components/Skeleton";
+import { getRunTimeline } from "./api";
+import type { ProctorEvent } from "./api";
+import ProctorTimeline from "./ProctorTimeline";
+import { flagLabel } from "./test-overview/helpers";
 
 interface LiveRow {
   student_id: string;
@@ -32,6 +36,12 @@ interface LiveRow {
   started_at: string | null;
   submitted_at: string | null;
   run_id: string | null;
+  // Proctoring roll-up (migration 0108). Nullable for runs that predate it.
+  away_total_seconds: number | null;
+  focus_loss_count: number | null;
+  focus_loss_seconds: number | null;
+  flagged: boolean | null;
+  flag_reasons: string[] | null;
 }
 
 function fmtIntegrity(i: Record<string, number> | null | undefined): string | null {
@@ -68,6 +78,12 @@ function secsAgo(iso: string | null): number | null {
   return Math.round((Date.now() - t) / 1000);
 }
 
+/** "0:42" / "3:05" from a second count — compact away-time badge. */
+function fmtAwaySecs(sec: number): string {
+  const s = Math.max(0, Math.round(sec));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
 /** Wall-clock time of day (e.g. "1:42 PM") — what a proctor wants for start/submit. */
 function fmtTime(iso: string | null): string {
   if (!iso) return "—";
@@ -92,6 +108,27 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
   const [error, setError] = useState<string | null>(null);
   const [tick, setTick] = useState(0); // forces idle-time recompute between polls
   const [busyRun, setBusyRun] = useState<string | null>(null);
+  // Per-student row expansion → full proctoring timeline (lazy-loaded by run_id).
+  const [expanded, setExpanded] = useState<string | null>(null); // student_id
+  const [timelines, setTimelines] = useState<Record<string, ProctorEvent[]>>({}); // by run_id
+  const [timelineLoading, setTimelineLoading] = useState<string | null>(null); // run_id
+
+  // Toggle a row open/closed; lazy-fetch its timeline the first time it opens.
+  // Side-effects live outside the state updater so StrictMode's double-invoke
+  // of the updater can't double-fire the fetch.
+  const toggleExpand = useCallback(
+    (studentId: string, runId: string | null): void => {
+      const willOpen = expanded !== studentId;
+      setExpanded(willOpen ? studentId : null);
+      if (willOpen && runId && !(runId in timelines)) {
+        setTimelineLoading(runId);
+        void getRunTimeline(runId)
+          .then((events) => setTimelines((m) => ({ ...m, [runId]: events })))
+          .finally(() => setTimelineLoading((c) => (c === runId ? null : c)));
+      }
+    },
+    [expanded, timelines],
+  );
 
   const refresh = useCallback(async (): Promise<void> => {
     try {
@@ -174,10 +211,21 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
   // each second between polls.
   const { sorted, flagged } = useMemo(() => {
     void tick;
+    // Higher score = needs the proctor's eyes sooner. The server's `flagged`
+    // bit dominates; raw signals (away count + total away time + full-screen
+    // exits + idle + low time) layer on so the ordering stays meaningful even
+    // before a hard flag trips. Only live sittings score.
     const attention = (r: LiveRow): number => {
       if (r.state !== "in_progress") return 0;
       let s = 0;
+      if (r.flagged) s += 1000; // server-decided flag → top of the list
       if ((r.away_count ?? 0) > 0) s += 100 + (r.away_count ?? 0);
+      // Weight cumulative away time: +1 per 10s away, capped so one long
+      // absence doesn't drown out everything else.
+      s += Math.min(80, Math.floor((r.away_total_seconds ?? 0) / 10));
+      const fsExits = r.integrity?.fullscreen_exit ?? 0;
+      if (fsExits > 0) s += 40 + fsExits * 5;
+      if ((r.focus_loss_count ?? 0) > 0) s += 15 + (r.focus_loss_count ?? 0);
       const idleFor = secsAgo(r.last_seen_at);
       if (idleFor != null && idleFor * 1000 > IDLE_MS) s += 50;
       if ((r.seconds_remaining ?? 99999) < 120) s += 30;
@@ -253,14 +301,42 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
               const idle = idleFor != null && idleFor * 1000 > IDLE_MS;
               const lowTime = (r.seconds_remaining ?? 999) < 120;
               const away = r.away_count ?? 0;
+              const awaySecs = r.away_total_seconds ?? 0;
+              const flaggedRow = r.flagged === true;
+              const flagReasons = r.flag_reasons ?? [];
+              // Expandable only when there's a run to pull a timeline for.
+              const canExpand = !!r.run_id && r.state !== "not_started";
+              const isOpen = expanded === r.student_id;
+              const panelId = `proctor-panel-${r.student_id}`;
               return (
-                <li
-                  key={r.student_id}
-                  className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 bg-white dark:bg-slate-900"
-                >
-                  <span className="min-w-0 flex-1 truncate text-sm font-medium text-slate-900 dark:text-slate-100">
-                    {r.student_name ?? "Student"}
-                  </span>
+                <li key={r.student_id} className="bg-white dark:bg-slate-900">
+                  <div
+                    className={`flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 ${
+                      flaggedRow ? "bg-rose-50/60 dark:bg-rose-950/20" : ""
+                    }`}
+                  >
+                    {canExpand ? (
+                      <button
+                        type="button"
+                        aria-expanded={isOpen}
+                        aria-controls={panelId}
+                        onClick={() => toggleExpand(r.student_id, r.run_id)}
+                        title={isOpen ? "Hide proctoring timeline" : "Show proctoring timeline"}
+                        className="-ml-1 flex h-7 w-7 flex-none items-center justify-center rounded-md text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                      >
+                        <span
+                          aria-hidden
+                          className={`inline-block transition-transform ${isOpen ? "rotate-90" : ""}`}
+                        >
+                          ▸
+                        </span>
+                      </button>
+                    ) : (
+                      <span className="-ml-1 h-7 w-7 flex-none" aria-hidden />
+                    )}
+                    <span className="min-w-0 flex-1 truncate text-sm font-medium text-slate-900 dark:text-slate-100">
+                      {r.student_name ?? "Student"}
+                    </span>
 
                   {r.state === "in_progress" ? (
                     <>
@@ -289,12 +365,24 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
                           idle {idleFor}s
                         </span>
                       )}
+                      {flaggedRow && (
+                        <span
+                          title={
+                            flagReasons.length
+                              ? flagReasons.map(flagLabel).join(" · ")
+                              : "Flagged for review"
+                          }
+                          className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-semibold text-rose-700 ring-1 ring-rose-300 dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800"
+                        >
+                          ⚑ Needs review
+                        </span>
+                      )}
                       {away > 0 && (
                         <span
-                          title="Times the student left the test tab"
-                          className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-medium text-rose-700 ring-1 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
+                          title="Times the student left the test tab (total time away)"
+                          className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900"
                         >
-                          ⚠ left tab {away}×
+                          ↗ left tab {away}×{awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}
                         </span>
                       )}
                       {fmtIntegrity(r.integrity) && (
@@ -336,13 +424,43 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
                       )}
                     </>
                   ) : r.state === "submitted" ? (
-                    <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
-                      Submitted {fmtTime(r.submitted_at)}
-                    </span>
+                    <>
+                      {flaggedRow && (
+                        <span
+                          title={
+                            flagReasons.length
+                              ? flagReasons.map(flagLabel).join(" · ")
+                              : "Flagged for review"
+                          }
+                          className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-semibold text-rose-700 ring-1 ring-rose-300 dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800"
+                        >
+                          ⚑ Needs review
+                        </span>
+                      )}
+                      <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
+                        Submitted {fmtTime(r.submitted_at)}
+                      </span>
+                    </>
                   ) : (
                     <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500 ring-1 ring-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:ring-slate-700">
                       Not started
                     </span>
+                  )}
+                  </div>
+
+                  {/* Expanded: full proctoring timeline for this run (lazy). */}
+                  {isOpen && canExpand && (
+                    <div
+                      id={panelId}
+                      className="border-t border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/30 px-4 py-3"
+                    >
+                      <ProctorTimeline
+                        events={r.run_id ? (timelines[r.run_id] ?? []) : []}
+                        startedAt={r.started_at}
+                        submittedAt={r.submitted_at}
+                        loading={!!r.run_id && timelineLoading === r.run_id && !(r.run_id in timelines)}
+                      />
+                    </div>
                   )}
                 </li>
               );
