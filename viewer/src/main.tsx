@@ -18,7 +18,20 @@ import App from "./App.tsx";
 import { ErrorBoundary, ToastProvider } from "@/components";
 import { AuthGate } from "@/auth";
 import { registerServiceWorker } from "./registerSW";
-import { initTelemetry } from "@/lib/telemetry";
+import { captureError, initTelemetry } from "@/lib/telemetry";
+
+// Global safety net for async failures. The ErrorBoundary only catches errors
+// thrown during React render; awaited promise rejections (the bulk of this
+// app's failures — RPC calls, fetches) escape it entirely. Forward both
+// unhandled rejections and uncaught errors to Sentry so they stop being a
+// monitoring blind spot. Registered before paint so nothing slips through the
+// gap before telemetry boots (captureError queues until the SDK loads).
+window.addEventListener("unhandledrejection", (event) => {
+  captureError(event.reason, { source: "unhandledrejection" });
+});
+window.addEventListener("error", (event) => {
+  captureError(event.error ?? event.message, { source: "window.onerror" });
+});
 
 // Defer telemetry init so the Sentry/PostHog SDK chunks load AFTER first paint
 // instead of competing with app hydration. captureError/trackEvent calls made

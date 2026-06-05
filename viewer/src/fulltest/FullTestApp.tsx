@@ -17,6 +17,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useToast } from "@/components";
 import { ROUTES } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
+import { captureError, trackEvent } from "@/lib/telemetry";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
@@ -276,6 +277,24 @@ export function FullTestApp() {
     } catch (e) {
       const msg = e instanceof TestApiError ? e.message : "Could not submit this section.";
       toast.error(msg);
+      // A submit failure here means a student's section work is at risk (all
+      // in-API retries are already exhausted by submitModule). This is the one
+      // failure that silently loses graded work, so it MUST reach monitoring —
+      // page on `test_submit_failed` in PostHog. Answers stay cached locally so
+      // the student can retry via the Submit button.
+      const code = e instanceof TestApiError ? e.code : undefined;
+      trackEvent("test_submit_failed", {
+        run_id: runId,
+        module_position: moduleMeta.position,
+        error_code: code,
+        message: msg,
+      });
+      captureError(e, {
+        feature: "fulltest_submit",
+        run_id: runId,
+        module_position: moduleMeta.position,
+        error_code: code,
+      });
       // Keep the student in the module so answers (cached) aren't lost; let
       // them retry via the Submit button.
       setPhase("module");

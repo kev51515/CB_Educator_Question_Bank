@@ -209,6 +209,13 @@ or service-key path, so these can't be migrated):
    "Insufficient MFA Options".
 3. **Auth → Sessions/Email → set OTP / magic-link expiry ≤ 1 hour** if the
    advisor flags "OTP expiry exceeds recommended threshold".
+4. **Auth → Rate Limits → RAISE the sign-in / token rate limit** before a class
+   sits a test. **This is a launch blocker, not a nicety** — see §7b: the load
+   test proved the DB engine handles 40 concurrent test-takers, but GoTrue's
+   default per-IP auth rate limit rejected sign-ins past ~30 simultaneous. A
+   whole classroom shares one NAT'd school IP, so they will hit this exactly at
+   "everyone log in now." Raise "Sign in / Sign up" (token endpoint) to comfortably
+   above your largest class size, or stagger logins.
 
 After toggling, re-run the Security Advisor — the panel should be clean except
 the two accepted items above.
@@ -296,6 +303,78 @@ Common failures:
 - "Unauthorized" → wrong anon key, or RLS policy got broken by a recent migration.
 - "Email confirmation timeout" → SMTP is broken; check Resend dashboard.
 - "Cannot reach Supabase URL" → wrong URL, trailing slash, or project paused (free tier).
+
+---
+
+## 7b. Load, restore, break-glass, alerting (launch de-risking)
+
+### Concurrency load test — `npm run loadtest`
+
+`viewer/scripts/concurrent-test-load.mjs` provisions N disposable students (each
+with their own course + enrolment + test link), fires all N through the full
+DSAT module flow **concurrently**, verifies every answer persisted to
+`test_run_answers`, and tears everything down in a `finally`. Runs against prod;
+self-cleaning.
+
+```bash
+cd viewer
+npm run loadtest -- --n=25 --questions=8      # realistic class burst
+npm run loadtest -- --n=40 --questions=6      # find the ceiling
+```
+
+**Results (2026-06-05, Pro plan):**
+- **25 concurrent** full flows → **25/25 pass**, p95 **3.7s**, all answers round-trip. The test engine + DB + 0107 indexes scale fine.
+- **40 concurrent** → 30 pass / **10 fail, ALL at `signIn: Request rate limit reached`**. The failures are **GoTrue auth rate limiting**, NOT the DB or runner. Every student who got *past* sign-in succeeded with answers intact.
+- **Takeaway:** the bottleneck for a same-IP classroom is the **auth sign-in rate limit**, not throughput. Mitigate via §5b item 4 (raise the limit) and/or stagger logins. Re-run `loadtest` at your real class size after raising the limit to confirm green.
+
+### Restore drill — `npm run restore-drill`
+
+A backup you've never restored is a hope, not a backup. `restore-drill.mjs`
+finds the newest full dump, restores it into a **separate** Postgres, and asserts
+core tables came back with rows.
+
+```bash
+# Local docker target (default) — start local Supabase/postgres first.
+npm run restore-drill
+# Or point at any non-prod Postgres:
+RESTORE_TARGET_URL=postgresql://user:pw@host:5432/postgres npm run restore-drill
+```
+
+**Prod-safety guard (`assertNotProd`, fail-closed):** refuses to run if the
+target host contains `pooler.supabase.com`, matches the prod `SUPABASE_URL`
+host, or is any hosted-looking `supabase.co/.com` host that isn't private/local.
+It only ever `CREATE DATABASE`s a fresh `restore_drill_<ts>` scratch DB — never
+DROPs or overwrites. Fully provisioning a throwaway Supabase *project* needs a
+management token this script doesn't have, so the realistic target is a local
+Postgres/docker — which still proves the dump is valid + restorable.
+
+### Break-glass: the single proctor (0104)
+
+Proctor mutations (add-time / force-submit / release / retake) are **admin-only**
+by design. The failure mode: if the one admin is offline mid-test, no one can
+intervene for a stuck student. Mitigations, in order:
+1. Keep a **second admin** account (a co-teacher promoted to `admin`) reachable
+   on test days. Promote via `account/admin/users` or an `UPDATE profiles SET
+   role='admin'`-equivalent RPC.
+2. The admin should be **logged in before** the session starts (don't rely on a
+   cold login during an incident — see the auth rate limit above).
+3. If truly locked out: students' answers autosave every 2.5s + the 5-min
+   `backup:live` snapshot means work is recoverable even without live proctor
+   action; worst case is finishing the section late, not losing it.
+
+### The one alert that matters: `test_submit_failed`
+
+The runner now emits a PostHog `test_submit_failed` event **and** a Sentry
+`captureError` whenever a student's section submit fails after all in-API
+retries (instrumented in `FullTestApp.tsx` `doSubmitModule` catch; global
+`unhandledrejection`/`error` handlers added in `main.tsx` so async failures stop
+being invisible). This is the one failure that silently loses graded work.
+
+**Configure (after `VITE_SENTRY_DSN` / `VITE_POSTHOG_KEY` are set on Vercel at
+build time):** a **PostHog alert** that pages on **`test_submit_failed` count ≥ 1
+over 5 minutes** — a single occurrence = a real student losing work in real time,
+so alert on *any* occurrence, not a threshold. (Sentry will also raise the
+captured exception from `feature: fulltest_submit`.)
 
 ---
 

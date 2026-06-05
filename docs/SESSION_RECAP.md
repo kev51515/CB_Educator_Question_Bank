@@ -2,6 +2,39 @@
 
 ## Latest (2026-06-05) — launch-prep: login fixes, single-proctor lock, backups, bundle split, modularization, breadcrumb nav
 
+**Supabase advisor cleanup + perf + launch de-risking (migrations 0105–0107):**
+- **0105 `security_invoker_views`** — flipped the 3 CRITICAL "Security Definer
+  View" advisor warnings (`module_tree`, `portfolio_item_tree`,
+  `student_skill_stats`) to `security_invoker = on`. The two tree views were
+  `GRANT`ed to `authenticated` with no per-user filter → a direct `/rest/v1`
+  read leaked every course's rows cross-tenant. Now RLS-scoped per caller. Safe:
+  the tree views have no consumers; skill-stats is read only inside the
+  `my_skill_mastery()` definer RPC (still runs as owner there).
+- **0106 `function_search_path`** — pinned `search_path = ''` on the 7 remaining
+  "Function Search Path Mutable" functions (all already fully-qualify their refs,
+  so behavior-preserving). 0 mutable public functions remain.
+- **0107 `hot_fk_indexes`** — surgical indexes on the live-test/modules hot-path
+  FKs (`test_runs.test_id`, `test_run_answers.question_id`,
+  `module_item_completion.module_item_id`, `course_modules.parent_module_id`,
+  `portfolio_items.parent_item_id`). Skipped the ~17 authorship FKs (needless
+  write overhead).
+- **Intentionally NOT fixed:** 3 RLS-enabled-no-policy internal tables
+  (deliberate lockdown — adding policies would *open* them) + `pg_net` in public
+  (relocating a platform-managed extension the 0058 cron needs is too risky
+  pre-launch). Documented in PRODUCTION_RUNBOOK §5b.
+- **Telemetry blind-spot closed:** `FullTestApp.doSubmitModule` now emits
+  `test_submit_failed` (PostHog) + `captureError` (Sentry) when a section submit
+  fails after all retries — the one failure that silently loses graded work.
+  Added global `unhandledrejection`/`error` handlers in `main.tsx` (async
+  rejections were previously invisible to Sentry). Alert recipe in §7b.
+- **New launch scripts:** `npm run loadtest` (concurrent test-load harness,
+  self-cleaning) + `npm run restore-drill` (backup-restore verifier with a
+  fail-closed prod-write guard).
+- **Load-test finding (de-risking):** 25 concurrent full DSAT flows → 25/25 pass,
+  p95 3.7s, all answers round-trip — the DB engine scales. Ceiling at n=40 is
+  **GoTrue auth rate-limiting on sign-in** (a same-IP classroom risk), NOT the
+  DB. → raise Auth rate limits before a class sits (PRODUCTION_RUNBOOK §5b#4/§7b).
+
 **Navigation — global breadcrumb bar across every educator surface:**
 - A single sticky breadcrumb bar mounts ONCE in `StaffShell`'s `<main>` (above the
   `<Outlet/>`), so every `/educator/*` page + subpage gets a consistent trail + an
