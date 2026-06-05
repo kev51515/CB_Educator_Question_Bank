@@ -319,12 +319,18 @@ test.describe("full-test runner — real browser interaction (real Supabase logi
     await expect(submitBtn).toBeVisible({ timeout: 10_000 });
     await submitBtn.click();
 
-    // 11. The ConfirmDialog opens (FullTestApp.tsx lines 1018–1049 →
-    //     teacher/ConfirmDialog.tsx): role="dialog", title "Submit this
-    //     section?", confirm button labelled "Submit section" (line 1037).
+    // 11. The ConfirmDialog opens (FullTestApp → teacher/ConfirmDialog), titled
+    //     "Submit this section?". Submitting a section is one-way, so it's gated
+    //     behind a type-to-confirm: the "Submit section" button stays DISABLED
+    //     until the student types "submit". Assert that gate, then confirm.
     const dialog = page.getByRole("dialog", { name: "Submit this section?" });
     await expect(dialog).toBeVisible({ timeout: 10_000 });
-    await dialog.getByRole("button", { name: "Submit section" }).click();
+    const confirmBtn = dialog.getByRole("button", { name: "Submit section" });
+    await expect(confirmBtn).toBeDisabled();
+    await dialog.getByLabel(/Type\s+submit\s+to confirm/i).fill("submit");
+    await expect(confirmBtn).toBeEnabled();
+    await page.screenshot({ path: "test-results/submit-confirm-dialog.png" });
+    await confirmBtn.click();
 
     // 12. The module submitted and advanced. submit_test_module returns
     //     finished=false + next_module for a non-final module, so the runner

@@ -2,13 +2,19 @@
  * ConfirmDialog
  * =============
  * Minimal confirmation dialog shared across the course-detail surfaces
- * (Overview, Roster, Settings). Lifted out of the old ClassDetailView so
- * the now-split tabs can render the same destructive / regen / remove
- * confirmations without each file owning its own copy.
+ * (Overview, Roster, Settings) and the test runner. Lifted out of the old
+ * ClassDetailView so the now-split tabs can render the same destructive /
+ * regen / remove confirmations without each file owning its own copy.
+ *
+ * `confirmPhrase` adds a type-to-confirm gate for IRREVERSIBLE actions (e.g.
+ * submitting a test section you can't return to): the user must type the phrase
+ * (case-insensitive) before Confirm enables. The input auto-focuses and Enter
+ * confirms once it matches — deliberate friction that prevents an accidental
+ * one-way action.
  *
  * Deliberately not exported from the barrel — internal helper.
  */
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useFocusTrap } from "@/hooks";
 
 interface ConfirmDialogProps {
@@ -18,6 +24,8 @@ interface ConfirmDialogProps {
   destructive?: boolean;
   busy?: boolean;
   confirmDisabled?: boolean;
+  /** When set, the user must type this exact phrase (case-insensitive) to enable Confirm. */
+  confirmPhrase?: string;
   onConfirm: () => void;
   onCancel: () => void;
 }
@@ -29,12 +37,20 @@ export function ConfirmDialog({
   destructive,
   busy,
   confirmDisabled,
+  confirmPhrase,
   onConfirm,
   onCancel,
 }: ConfirmDialogProps) {
   const cancelRef = useRef<HTMLButtonElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, true);
+
+  const [typed, setTyped] = useState("");
+  const phraseOk =
+    !confirmPhrase ||
+    typed.trim().toLowerCase() === confirmPhrase.trim().toLowerCase();
+  const canConfirm = !busy && !confirmDisabled && phraseOk;
 
   // Esc-to-close — match the standard modal a11y contract.
   useEffect(() => {
@@ -45,15 +61,21 @@ export function ConfirmDialog({
     return () => document.removeEventListener("keydown", onKey);
   }, [onCancel]);
 
-  // Focus management: auto-focus Cancel (safe default — user must click
-  // Confirm deliberately for destructive flows); restore focus on close.
+  // Focus management: the type-to-confirm input when present (so the user can
+  // start typing immediately), else Cancel (safe default — they must click
+  // Confirm deliberately for plain destructive flows). Restore focus on close.
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
-    cancelRef.current?.focus();
+    if (confirmPhrase) inputRef.current?.focus();
+    else cancelRef.current?.focus();
     return () => {
       previouslyFocused?.focus?.();
     };
-  }, []);
+  }, [confirmPhrase]);
+
+  const doConfirm = (): void => {
+    if (canConfirm) onConfirm();
+  };
 
   return (
     <div
@@ -93,10 +115,47 @@ export function ConfirmDialog({
           {title}
         </h2>
         <div className="text-sm text-slate-600 dark:text-slate-300">{body}</div>
+
+        {confirmPhrase && (
+          <div className="space-y-1.5">
+            <label
+              htmlFor="confirm-phrase-input"
+              className="block text-sm text-slate-600 dark:text-slate-300"
+            >
+              Type{" "}
+              <span className="font-semibold text-slate-900 dark:text-slate-100">
+                {confirmPhrase}
+              </span>{" "}
+              to confirm
+            </label>
+            <input
+              id="confirm-phrase-input"
+              ref={inputRef}
+              data-autofocus
+              type="text"
+              value={typed}
+              onChange={(e) => setTyped(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  doConfirm();
+                }
+              }}
+              autoComplete="off"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck={false}
+              aria-label={`Type ${confirmPhrase} to confirm`}
+              placeholder={confirmPhrase}
+              className="w-full min-h-[44px] rounded-lg px-3 py-2.5 text-sm bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 ring-1 ring-slate-300 dark:ring-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 placeholder:text-slate-400 dark:placeholder:text-slate-600"
+            />
+          </div>
+        )}
+
         <div className="flex items-center gap-2 pt-2">
           <button
             ref={cancelRef}
-            data-autofocus
+            data-autofocus={confirmPhrase ? undefined : true}
             type="button"
             onClick={onCancel}
             className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
@@ -105,8 +164,8 @@ export function ConfirmDialog({
           </button>
           <button
             type="button"
-            onClick={onConfirm}
-            disabled={busy || confirmDisabled}
+            onClick={doConfirm}
+            disabled={!canConfirm}
             className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-white disabled:opacity-60 disabled:cursor-not-allowed ${
               destructive
                 ? "bg-rose-600 hover:bg-rose-700"

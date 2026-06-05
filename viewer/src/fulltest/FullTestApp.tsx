@@ -1029,11 +1029,17 @@ export function FullTestApp() {
                   {pendingSectionSubmit.blanks === 1 ? "" : "s"} still blank.{" "}
                 </>
               ) : null}
+              Once you submit, this section is{" "}
               <span className="font-semibold text-rose-700 dark:text-rose-300">
-                You can't return to this section once submitted.
-              </span>
+                final
+              </span>{" "}
+              — you can't return to it or change your answers, and you'll move on
+              to the next section.
             </p>
           }
+          // One-way action: require a typed confirmation so a section can't be
+          // ended by an accidental click (students can't go back to a module).
+          confirmPhrase="submit"
           confirmLabel="Submit section"
           destructive
           onConfirm={async () => {
