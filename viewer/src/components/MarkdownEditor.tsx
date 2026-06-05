@@ -1,122 +1,38 @@
 /**
- * MarkdownEditor
- * ==============
- * Shared rich-text editor based on TipTap. Renders a toolbar (bold, italic,
- * heading, list, link, code) over a contentEditable area. Outputs HTML (the
- * caller stores it as a string — DB columns we use are plain text, so they
- * accept HTML transparently). Reads/writes via `value` / `onChange` like a
- * controlled component.
+ * MarkdownEditor (lazy wrapper)
+ * ============================
+ * The TipTap-based editor (@tiptap/* + prosemirror, ~67 KB gzip) is heavy and
+ * only needed when an editor actually mounts — most surfaces never show one.
+ * This wrapper React.lazy-loads the implementation (MarkdownEditorImpl) so those
+ * deps land in their own async chunk instead of the main bundle. A lightweight
+ * skeleton renders while the chunk loads.
+ *
+ * The Suspense boundary is co-located here so the ~22 call sites keep using
+ * `<MarkdownEditor … />` with no changes. The props type is re-exported as a
+ * type-only import (erased — does not pull the impl into the main chunk).
  */
-import { useEditor, EditorContent, type Editor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import Link from "@tiptap/extension-link";
-import { useEffect } from "react";
+import { lazy, Suspense } from "react";
+import type { MarkdownEditorProps } from "./MarkdownEditorImpl";
 
-interface MarkdownEditorProps {
-  value: string;
-  onChange: (html: string) => void;
-  placeholder?: string;
-  minHeight?: number;        // px, default 160
-  disabled?: boolean;
-  showToolbar?: boolean;     // default true
-  characterLimit?: number;   // optional cap
-}
+export type { MarkdownEditorProps };
 
-export function MarkdownEditor({
-  value,
-  onChange,
-  placeholder,
-  minHeight = 160,
-  disabled = false,
-  showToolbar = true,
-  characterLimit,
-}: MarkdownEditorProps) {
-  const editor = useEditor({
-    extensions: [
-      StarterKit,
-      Link.configure({ openOnClick: false, HTMLAttributes: { rel: "noopener noreferrer", target: "_blank" } }),
-    ],
-    content: value,
-    editable: !disabled,
-    editorProps: {
-      attributes: {
-        class: `prose prose-sm dark:prose-invert max-w-none focus:outline-none px-3 py-2 ${
-          characterLimit ? "" : ""
-        }`,
-        style: `min-height: ${minHeight}px;`,
-      },
-    },
-    onUpdate: ({ editor }: { editor: Editor }) => {
-      onChange(editor.getHTML());
-    },
-  });
+const MarkdownEditorImpl = lazy(() =>
+  import("./MarkdownEditorImpl").then((m) => ({ default: m.MarkdownEditor })),
+);
 
-  // Sync external value changes (e.g. reset)
-  useEffect(() => {
-    if (editor && editor.getHTML() !== value) {
-      editor.commands.setContent(value, false);
-    }
-  }, [value, editor]);
-
-  if (!editor) return null;
-
-  const count = editor.getText().length;
-  const overLimit = characterLimit !== undefined && count > characterLimit;
-
-  // M30: contentEditable strips its outline; lift focus indication to the
-  // wrapper via focus-within so keyboard users still see where focus is.
+export function MarkdownEditor(props: MarkdownEditorProps): JSX.Element {
+  const minHeight = props.minHeight ?? 160;
   return (
-    <div className={`rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 focus-within:ring-2 focus-within:ring-indigo-500 ${overLimit ? "ring-rose-400" : ""}`}>
-      {showToolbar && !disabled && (
-        <div className="flex items-center gap-1 flex-wrap px-2 py-1 border-b border-slate-100 dark:border-slate-800">
-          <ToolbarButton onClick={() => editor.chain().focus().toggleBold().run()} active={editor.isActive("bold")} label="B" className="font-bold" />
-          <ToolbarButton onClick={() => editor.chain().focus().toggleItalic().run()} active={editor.isActive("italic")} label="I" className="italic" />
-          <ToolbarButton onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()} active={editor.isActive("heading", { level: 2 })} label="H" />
-          <ToolbarButton onClick={() => editor.chain().focus().toggleBulletList().run()} active={editor.isActive("bulletList")} label="• List" />
-          <ToolbarButton onClick={() => editor.chain().focus().toggleOrderedList().run()} active={editor.isActive("orderedList")} label="1. List" />
-          <ToolbarButton onClick={() => editor.chain().focus().toggleCode().run()} active={editor.isActive("code")} label="<>" />
-          <ToolbarButton
-            onClick={() => {
-              const url = window.prompt("URL");
-              if (url) editor.chain().focus().setLink({ href: url }).run();
-            }}
-            active={editor.isActive("link")}
-            label="🔗"
-          />
-        </div>
-      )}
-      <EditorContent editor={editor} />
-      {placeholder && count === 0 && (
-        <div className="px-3 -mt-8 pointer-events-none text-sm text-slate-500 dark:text-slate-400">{placeholder}</div>
-      )}
-      {characterLimit !== undefined && (
-        <div className={`px-3 py-1 text-xs ${overLimit ? "text-rose-600" : "text-slate-500 dark:text-slate-400"}`}>
-          {count} / {characterLimit}
-        </div>
-      )}
-    </div>
-  );
-}
-
-interface ToolbarButtonProps {
-  onClick: () => void;
-  active: boolean;
-  label: string;
-  className?: string;
-}
-
-function ToolbarButton({ onClick, active, label, className = "" }: ToolbarButtonProps) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`px-2 py-1 text-sm rounded transition ${
-        active
-          ? "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300"
-          : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-      } ${className}`}
+    <Suspense
+      fallback={
+        <div
+          aria-busy="true"
+          className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 animate-pulse"
+          style={{ minHeight }}
+        />
+      }
     >
-      {label}
-    </button>
+      <MarkdownEditorImpl {...props} />
+    </Suspense>
   );
 }
