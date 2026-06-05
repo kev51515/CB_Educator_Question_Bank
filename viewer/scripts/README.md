@@ -152,6 +152,32 @@ following the pattern in `smoke-modules.mjs`:
 - Report `ok(name, cond, detail?)` for each scenario; print `TOTAL: N  PASS: N  FAIL: N` at the end.
 - Add the suite to `SUITES` in `smoke-all.mjs` + a script alias to `package.json`.
 
+---
+
+## Clickthrough / hardening harnesses (one-off, not in smoke-all)
+
+These provision **fresh disposable accounts per run** and self-clean on the way
+out, so — like `loadtest` and `restore-drill` — they live as their own npm
+scripts rather than in `smoke-all` (a dozen rapid sign-ins per run would risk
+tripping the GoTrue per-IP sign-in rate limit and make `npm run smoke` flaky).
+
+| Script | npm | What it covers |
+|---|---|---|
+| `clickthrough-two-students.mjs` | `npm run clickthrough` | Full real-world path for 2 students: teacher invites seats → each claims → each takes `dsat-nov-2023` end-to-end (all 98 Q across 4 modules). One answers from the key (expect full marks), one answers naively, proving the scoring engine discriminates. Then release + result read-back. 34 checks. |
+| `clickthrough-practice-test.mjs` | — | Single-student deep happy-path (resume round-trip, eliminations, results gating, one-attempt lock, retake). 41 checks. |
+| `clickthrough-practice-test-edges.mjs` | `npm run clickthrough:edges` | Linear negatives: out-of-order, double-submit, post-submit lockout, bogus run_id. 10 checks. |
+| `clickthrough-edge-hardening.mjs` | `npm run harden` | Adversarial hardening across 7 groups: A cross-tenant access · B invite/claim abuse · C proctor authz (0104) · D retake idempotency · E input validation · F concurrency races · G **RLS direct-table bypass** (attacker hits tables directly via PostgREST — runs/answers/PII/answer-key must all be unreadable). 27 checks. |
+
+```bash
+npm run clickthrough        # 2-student invite → claim → full test
+npm run harden              # adversarial edge-case + RLS hardening suite
+npm run clickthrough:edges  # linear negative paths
+```
+
+Each exits non-zero on any failure and prints a per-defect summary. Run
+`npm run harden` after any change to the test-runner RPCs, RLS policies, or the
+claim/invite flow.
+
 ### CI
 
 `.github/workflows/ci.yml` runs the pipeline on every push to `main` and

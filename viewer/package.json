@@ -24,7 +24,10 @@
     "backup:live:once": "node --env-file-if-exists=../.env scripts/live-test-backup.mjs --once",
     "backup:db": "node --env-file-if-exists=../.env scripts/db-backup.mjs",
     "loadtest": "node --env-file-if-exists=../.env scripts/concurrent-test-load.mjs",
-    "restore-drill": "node --env-file-if-exists=../.env scripts/restore-drill.mjs"
+    "restore-drill": "node --env-file-if-exists=../.env scripts/restore-drill.mjs",
+    "clickthrough": "node --env-file-if-exists=../.env scripts/clickthrough-two-students.mjs",
+    "clickthrough:edges": "node --env-file-if-exists=../.env scripts/clickthrough-practice-test-edges.mjs",
+    "harden": "node --env-file-if-exists=../.env scripts/clickthrough-edge-hardening.mjs"
   },
   "dependencies": {
     "@sentry/react": "^9.0.0",
