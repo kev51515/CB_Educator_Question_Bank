@@ -20,9 +20,24 @@
  *
  * Optional `prefillCode` is supplied by AuthGate when the URL carries `?code=…`
  * so a QR-scanned deeplink lands with the code already filled.
+ *
+ * Visual system: shares the editorial two-pane treatment with AuthScreen — the
+ * dark "ink" BrandPanel on the left (lg+), the warm-stone card on the right,
+ * Fraunces/Hanken type, and the shared inputCls / primaryBtn primitives — so
+ * sign-in and class-code entry feel like one continuous product.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import {
+  SANS,
+  serif,
+  Wordmark,
+  AuthKeyframes,
+  BrandPanel,
+  inputCls,
+  labelCls,
+  primaryBtn,
+} from "./authScreenHelpers";
 
 interface QuickStartScreenProps {
   prefillCode?: string;
@@ -43,6 +58,16 @@ const COURSE_RE = /^[A-HJ-NP-Z2-9]{6}$/;
 const SEAT_RE = /^([A-HJ-NP-Z2-9]{6})-([0-9]{1,3})$/;
 /** Keep letters, digits and a dash while typing; uppercase; cap length. */
 const ENTRY_SCRUB = /[^A-Z0-9-]/g;
+
+/**
+ * The hero code field — the shared stone/soft-ring input treatment, but larger,
+ * monospaced and letter-spaced so the code reads as a code. Includes the
+ * disabled dimming used while the success spinner is up.
+ */
+const codeInputCls =
+  "mt-1.5 w-full rounded-xl border border-stone-300/80 bg-white/70 px-3.5 py-3 font-mono text-xl tracking-[0.3em] text-stone-900 placeholder:text-stone-300 placeholder:tracking-[0.3em] shadow-sm transition focus:border-stone-900 focus:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] disabled:opacity-60 dark:border-white/10 dark:bg-white/[0.04] dark:text-stone-100 dark:placeholder:text-stone-600 dark:focus:border-white/40 dark:focus:ring-white/10";
+/** The shared input + the disabled dimming the success state needs. */
+const fieldCls = `${inputCls} disabled:opacity-60`;
 
 function scrubEntry(raw: string): string {
   return raw.toUpperCase().replace(ENTRY_SCRUB, "").slice(0, 12);
@@ -331,219 +356,283 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-sky-100 dark:from-slate-900 dark:via-slate-950 dark:to-indigo-950 px-4">
-      <div
-        className="w-full max-w-md rounded-2xl bg-white/90 dark:bg-slate-900/80 backdrop-blur shadow-xl ring-1 ring-slate-200 dark:ring-slate-800 p-8 space-y-6"
-        aria-labelledby="quickstart-title"
-      >
-        <header className="space-y-1 text-center">
-          <h1
-            id="quickstart-title"
-            className="text-2xl font-semibold text-slate-900 dark:text-slate-100"
-          >
-            Start with a code
-          </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            {isSeat
-              ? "This is a personal login code — set your email & password to finish."
-              : "Type the code your teacher gave you — no password needed."}
-          </p>
-        </header>
+    <div
+      className="relative min-h-screen w-full bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 lg:grid lg:grid-cols-[1.1fr_1fr]"
+      style={{ fontFamily: SANS }}
+    >
+      <AuthKeyframes />
 
-        {error && !succeeded && (
-          <div
-            id="quickstart-error"
-            role="alert"
-            className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
-          >
-            {error}
+      {/* ───────── LEFT · brand panel (lg+) — same ink treatment as sign-in,
+          copy tuned to the "join with a code" moment ───────── */}
+      <BrandPanel
+        eyebrow="Join your class"
+        title="You're one"
+        titleAccent="code away."
+        lead="No account to create, nothing to install. Enter the code your teacher gave you and you're practicing in under a minute."
+        steps={[
+          { n: "01", title: "Enter your code", blurb: "The course or personal login code from your teacher." },
+          { n: "02", title: "Add your details", blurb: "Your name — or an email & password for a personal seat." },
+          { n: "03", title: "Start practicing", blurb: "Jump straight into your class and assignments." },
+        ]}
+      />
+
+      {/* ───────── RIGHT · quick-start card ───────── */}
+      <main className="relative flex min-h-screen items-center justify-center px-5 py-10 sm:px-8">
+        <div
+          className="w-full max-w-[26rem] auth-reveal"
+          aria-labelledby="quickstart-title"
+          style={{ animationDelay: "60ms" }}
+        >
+          {/* compact wordmark for mobile (brand panel hidden) */}
+          <div className="mb-8 lg:hidden">
+            <Wordmark tone="light" />
           </div>
-        )}
 
-        {notice && !succeeded && (
-          <div
-            role="status"
-            aria-live="polite"
-            className="rounded-md bg-amber-50 dark:bg-amber-950/40 px-3 py-2 text-sm text-amber-800 dark:text-amber-200 ring-1 ring-amber-200 dark:ring-amber-900"
-          >
-            {notice}
-          </div>
-        )}
-
-        {succeeded && (
-          <div
-            role="status"
-            aria-live="polite"
-            className="flex items-center gap-3 rounded-md bg-emerald-50 dark:bg-emerald-950/40 px-3 py-3 text-sm text-emerald-800 dark:text-emerald-200 ring-1 ring-emerald-200 dark:ring-emerald-900"
-          >
-            <span
-              aria-hidden="true"
-              className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-emerald-400 border-t-transparent"
-            />
-            <span>Setting up your course…</span>
-          </div>
-        )}
-
-        <form onSubmit={onSubmit} className="space-y-4">
-          <label className="block">
-            <span className="flex items-baseline justify-between text-sm font-medium text-slate-700 dark:text-slate-300">
-              <span>{isSeat ? "Your login code" : "Course code"}</span>
-              <span
-                aria-live="polite"
-                className={`text-xs font-normal tabular-nums ${
-                  codeValid
-                    ? "text-emerald-600 dark:text-emerald-400"
-                    : "text-slate-400 dark:text-slate-500"
-                }`}
-              >
-                {isSeat ? "personal code" : `${code.length} / ${CODE_LENGTH}`}
-              </span>
-            </span>
-            <input
-              ref={codeRef}
-              type="text"
-              value={code}
-              onChange={(e) => setCode(scrubEntry(e.target.value))}
-              onPaste={(e) => {
-                e.preventDefault();
-                setCode(scrubEntry(e.clipboardData.getData("text")));
-              }}
-              autoComplete="one-time-code"
-              spellCheck={false}
-              inputMode="text"
-              maxLength={12}
-              aria-describedby="quickstart-code-hint quickstart-error"
-              aria-invalid={code.length > 0 && !codeValid}
-              disabled={succeeded}
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 font-mono tracking-widest text-xl text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
-              placeholder="ABC234"
-            />
-            <span
-              id="quickstart-code-hint"
-              className="mt-1 block text-xs text-slate-500 dark:text-slate-400"
+          <header className="mb-7">
+            <h1
+              id="quickstart-title"
+              className="text-[1.95rem] font-medium leading-tight tracking-tight text-stone-900 dark:text-stone-100"
+              style={serif}
             >
+              {isSeat ? "Finish your login" : "Start with a code"}
+            </h1>
+            <p className="mt-1.5 text-sm text-stone-500 dark:text-stone-400">
               {isSeat
-                ? "Your teacher already set your name — you just need email & password."
-                : "6 characters — letters and numbers (no O, 0, I, 1, or L)."}
-            </span>
-          </label>
+                ? "This is a personal login code — set your email and password to finish."
+                : "Type the code your teacher gave you — no password needed."}
+            </p>
+          </header>
 
-          {!isSeat && (
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Full name
-              </span>
-              <input
-                ref={nameRef}
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                autoComplete="name"
-                disabled={succeeded}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
-                placeholder="e.g. Alex Chen"
-              />
-            </label>
+          {error && !succeeded && (
+            <div
+              id="quickstart-error"
+              role="alert"
+              className="mb-5 rounded-xl border border-rose-200 bg-rose-50 px-3.5 py-2.5 text-sm text-rose-700 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300"
+            >
+              {error}
+            </div>
           )}
 
-          <label className="block">
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-              Email
-            </span>
-            <input
-              ref={emailRef}
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              autoComplete="email"
-              disabled={succeeded}
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
-              placeholder="you@example.com"
-            />
-          </label>
+          {notice && !succeeded && (
+            <div
+              role="status"
+              aria-live="polite"
+              className="mb-5 rounded-xl border border-amber-200 bg-amber-50 px-3.5 py-2.5 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200"
+            >
+              {notice}
+            </div>
+          )}
 
-          {isSeat && (
+          {succeeded && (
+            <div
+              role="status"
+              aria-live="polite"
+              className="mb-5 flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-3 text-sm text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300"
+            >
+              <span
+                aria-hidden="true"
+                className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-emerald-400 border-t-transparent"
+              />
+              <span>Setting up your course…</span>
+            </div>
+          )}
+
+          <form onSubmit={onSubmit} className="space-y-4">
             <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Confirm email
+              <span className="flex items-baseline justify-between">
+                <span className={labelCls}>{isSeat ? "Your login code" : "Course code"}</span>
+                <span
+                  aria-live="polite"
+                  className={`text-xs font-medium tabular-nums ${
+                    codeValid
+                      ? "text-emerald-600 dark:text-emerald-400"
+                      : "text-stone-400 dark:text-stone-500"
+                  }`}
+                >
+                  {isSeat ? "personal code" : `${code.length} / ${CODE_LENGTH}`}
+                </span>
               </span>
               <input
+                ref={codeRef}
+                type="text"
+                value={code}
+                onChange={(e) => setCode(scrubEntry(e.target.value))}
+                onPaste={(e) => {
+                  e.preventDefault();
+                  setCode(scrubEntry(e.clipboardData.getData("text")));
+                }}
+                autoComplete="one-time-code"
+                spellCheck={false}
+                inputMode="text"
+                maxLength={12}
+                aria-describedby="quickstart-code-hint quickstart-error"
+                aria-invalid={code.length > 0 && !codeValid}
+                disabled={succeeded}
+                className={codeInputCls}
+                placeholder="ABC234"
+              />
+              <span
+                id="quickstart-code-hint"
+                className="mt-1 block text-xs text-stone-500 dark:text-stone-400"
+              >
+                {isSeat
+                  ? "Your teacher already set your name — you just need email & password."
+                  : "6 characters — letters and numbers (no O, 0, I, 1, or L)."}
+              </span>
+            </label>
+
+            {!isSeat && (
+              <label className="block">
+                <span className={labelCls}>Full name</span>
+                <input
+                  ref={nameRef}
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  autoComplete="name"
+                  disabled={succeeded}
+                  className={fieldCls}
+                  placeholder="e.g. Alex Chen"
+                />
+              </label>
+            )}
+
+            <label className="block">
+              <span className={labelCls}>Email</span>
+              <input
+                ref={emailRef}
                 type="email"
-                value={confirmEmail}
-                onChange={(e) => setConfirmEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
                 disabled={succeeded}
-                aria-invalid={confirmEmail.length > 0 && !emailsMatch}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
-                placeholder="Re-type your email"
+                className={fieldCls}
+                placeholder="you@example.com"
               />
-              {confirmEmail.length > 0 && !emailsMatch && (
-                <span className="mt-1 block text-xs text-rose-600 dark:text-rose-400">
-                  The two emails don't match.
+            </label>
+
+            {isSeat && (
+              <label className="block">
+                <span className={labelCls}>Confirm email</span>
+                <input
+                  type="email"
+                  value={confirmEmail}
+                  onChange={(e) => setConfirmEmail(e.target.value)}
+                  autoComplete="email"
+                  disabled={succeeded}
+                  aria-invalid={confirmEmail.length > 0 && !emailsMatch}
+                  className={fieldCls}
+                  placeholder="Re-type your email"
+                />
+                {confirmEmail.length > 0 && !emailsMatch && (
+                  <span className="mt-1 block text-xs text-rose-600 dark:text-rose-400">
+                    The two emails don't match.
+                  </span>
+                )}
+              </label>
+            )}
+
+            {isSeat && (
+              <label className="block">
+                <span className={labelCls}>Password</span>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="new-password"
+                  minLength={6}
+                  disabled={succeeded}
+                  className={fieldCls}
+                  placeholder="At least 6 characters"
+                />
+                <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
+                  You'll use this email and password to sign in from now on.
                 </span>
-              )}
-            </label>
-          )}
+              </label>
+            )}
 
-          {isSeat && (
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Password
+            <button
+              type="submit"
+              disabled={!canSubmit}
+              title={!codeValid ? "Enter the code your teacher gave you" : undefined}
+              className={primaryBtn}
+            >
+              {busy
+                ? isSeat
+                  ? "Finishing…"
+                  : "Starting…"
+                : succeeded
+                  ? "Started ✓"
+                  : isSeat
+                    ? "Claim my login"
+                    : "Start practicing"}
+            </button>
+          </form>
+
+          {/* switch to password sign-in — mirrors the sign-in screen's
+              "Join with a class code" card so the two surfaces are symmetric */}
+          <div className="mt-6">
+            <div className="mb-4 flex items-center gap-3" aria-hidden>
+              <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500">
+                or
               </span>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                autoComplete="new-password"
-                minLength={6}
-                disabled={succeeded}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
-                placeholder="At least 6 characters"
-              />
-              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                You'll use this email and password to sign in from now on.
+              <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
+            </div>
+            <button
+              type="button"
+              onClick={onSwitchToSignIn}
+              className="group flex w-full items-center gap-3.5 rounded-2xl border border-stone-300/80 bg-white/60 px-4 py-3.5 text-left shadow-sm transition hover:border-stone-900/30 hover:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/30 dark:hover:bg-white/[0.07]"
+            >
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
               </span>
-            </label>
-          )}
-
-          <button
-            type="submit"
-            disabled={!canSubmit}
-            title={!codeValid ? "Enter the code your teacher gave you" : undefined}
-            className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            {busy
-              ? isSeat
-                ? "Finishing…"
-                : "Starting…"
-              : succeeded
-                ? "Started ✓"
-                : isSeat
-                  ? "Claim my login"
-                  : "Start"}
-          </button>
-        </form>
-
-        <div className="pt-2">
-          <div className="mb-3 flex items-center gap-3" aria-hidden>
-            <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">
-              or
-            </span>
-            <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
+              <span className="min-w-0 flex-1">
+                <span className="block text-sm font-semibold text-stone-900 dark:text-stone-100">
+                  Sign in with email &amp; password
+                </span>
+                <span className="mt-0.5 block text-xs leading-snug text-stone-500 dark:text-stone-400">
+                  Educators and returning students — use your email and password.
+                </span>
+              </span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="shrink-0 text-stone-400 transition group-hover:translate-x-0.5 group-hover:text-stone-700 dark:text-stone-500 dark:group-hover:text-stone-200"
+                aria-hidden
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
           </div>
-          <button
-            type="button"
-            onClick={onSwitchToSignIn}
-            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-800/60 px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Sign in with email & password
-          </button>
-          <p className="mt-2 text-center text-xs text-slate-400 dark:text-slate-500">
-            Educators and returning students.
-          </p>
+
+          {/* footer */}
+          <div className="mt-8 border-t border-stone-200 pt-5 text-center dark:border-white/10">
+            <p className="text-xs text-stone-400 dark:text-stone-500">
+              Don't have a code? Ask your teacher to share one.
+            </p>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
