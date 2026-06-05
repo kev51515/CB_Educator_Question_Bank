@@ -104,6 +104,40 @@ Per-test integrity monitoring. See `docs/PROCTORING.md` for the full design.
 - **Phase 3 (Safe Exam Browser)** is design-only for now — see
   `docs/PROCTORING.md`.
 
+## 4b. Exporting a test for another LMS (Canvas QTI)
+
+`viewer/scripts/export-test-qti.mjs` packages a full test as a **QTI 1.2**
+content package that imports straight into **Canvas LMS** (Settings → Import
+Course Content → "QTI .zip file") and, since QTI 1.2 is the cross-LMS standard,
+also into Blackboard / Moodle / Brightspace / Schoology.
+
+- **Why a script (not a UI surface).** `test_questions` holds the stem AND the
+  answer key and is deliberately NOT student-selectable (0048). The exporter
+  runs with the **service-role key** (RLS-bypassing) so it can read both, then
+  emits a self-contained zip a teacher can hand to another teacher.
+- **Run** (from `viewer/`, reads creds from root `../.env`):
+  ```bash
+  node --env-file-if-exists=../.env scripts/export-test-qti.mjs --slug=dsat-nov-2023
+  node --env-file-if-exists=../.env scripts/export-test-qti.mjs --single      # one combined quiz
+  node --env-file-if-exists=../.env scripts/export-test-qti.mjs --out=/tmp/x.zip
+  ```
+  It reads live from the remote DB, so **re-run it after any answer-key edit**
+  (e.g. migration 0110) to regenerate a corrected package.
+- **Output:** `<slug>-canvas-qti.zip` at repo root — `imsmanifest.xml`, a
+  `README.txt` (import steps + grid-in caveat), one QTI assessment + Canvas
+  `assessment_meta.xml` **per module** (default; `--single` merges them), and
+  bundled figure PNGs referenced via the Canvas `$IMS-CC-FILEBASE$` token so
+  images survive import with no manual re-upload.
+- **Question-type mapping:** `mcq` → `multiple_choice_question` (correct
+  `correct_answer` flagged); `grid` → `short_answer_question` (the `accepted`
+  array becomes the OR of correct text forms, preserving `45/8` alongside
+  `5.625`). Per-module time limits carry into each quiz's settings.
+- **Grid-in caveat:** Canvas fill-in-blank matches accepted forms as **exact
+  text** (case-insensitive) — review grid-in keys after import and add forms as
+  needed (the `README.txt` in the zip says the same).
+- **Not committed:** the `*-canvas-qti.zip` artifact is gitignored (regenerate
+  on demand); the script itself is the versioned source of truth.
+
 ## 5. Migration ledger (this build)
 
 | # | Purpose |
