@@ -119,9 +119,11 @@ test("managed-seat student claims their seat on /quick-start and lands in the ap
   await page.getByPlaceholder("At least 6 characters").fill(studentPw);
   await page.getByRole("button", { name: "Claim my login" }).click();
 
-  // FIX assertion: the student lands on their home (AreaSelector "Hi, BBB"),
-  // NOT bounced back to /quick-start. Before the fix the shared-session signOut
-  // stranded the just-claimed seat here.
-  await expect(page.getByRole("heading", { name: /^Hi,/ })).toBeVisible({ timeout: 30_000 });
+  // The claimed student is taken STRAIGHT into the course they were invited to
+  // (better UX) — not stranded on /quick-start (the original bug) and not left on
+  // the student hub. Reaching /student/courses/<id> requires the whole chain to
+  // work: anon→seat sign-in, AuthGate routing to the student app, and the
+  // AreaSelector handoff redirect.
+  await expect(page).toHaveURL(/\/student\/courses\//, { timeout: 30_000 });
   await expect(page).not.toHaveURL(/\/quick-start/);
 });

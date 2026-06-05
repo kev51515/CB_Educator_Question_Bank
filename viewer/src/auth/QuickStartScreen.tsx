@@ -154,6 +154,7 @@ function getErrorMessage(error: unknown): string {
 
 interface ClaimSeatRow {
   status: "claimed" | "pending";
+  course_id: string;
   login_email: string;
 }
 
@@ -263,6 +264,14 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
         if (aliveRef.current)
           setError("Your login is set up — please sign in with your email and password.");
         return false;
+      }
+      // Better UX: hand off the invited course so the student lands straight in
+      // it (AreaSelector consumes this). sessionStorage survives the unmount that
+      // the seat sign-in triggers. Best-effort — falls back to the student hub.
+      try {
+        if (row.course_id) sessionStorage.setItem("qs.goToCourse", row.course_id);
+      } catch {
+        /* sessionStorage unavailable */
       }
       if (aliveRef.current) setSucceeded(true);
       return true; // seat session established — keep it

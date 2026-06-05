@@ -47,7 +47,7 @@ import type {
   StudentAssignment,
   StudentAssignmentAttempt,
 } from "@/student";
-import { assignmentReviewPath, assignmentTakePath } from "@/lib/routes";
+import { assignmentReviewPath, assignmentTakePath, studentCoursePath } from "@/lib/routes";
 
 export function AreaSelector() {
   const navigate = useNavigate();
@@ -76,6 +76,22 @@ export function AreaSelector() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
+
+  // Just claimed a managed seat in QuickStart? Drop the student straight into the
+  // course they were invited to (better UX than landing on this hub). The target
+  // course id is handed off via sessionStorage because QuickStartScreen unmounts
+  // when the seat sign-in routes AuthGate here. Consume it once so a later home
+  // visit doesn't re-redirect.
+  useEffect(() => {
+    let target: string | null = null;
+    try {
+      target = sessionStorage.getItem("qs.goToCourse");
+      if (target) sessionStorage.removeItem("qs.goToCourse");
+    } catch {
+      /* sessionStorage unavailable — stay on the hub */
+    }
+    if (target) navigate(studentCoursePath(target), { replace: true });
+  }, [navigate]);
   // Why a counter: bumping this prompts MyClassesPanel / AssignmentsPanel
   // to refetch after a successful join, without us having to thread a
   // callback through props.
