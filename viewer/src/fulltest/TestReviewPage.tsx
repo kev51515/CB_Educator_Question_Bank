@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { ROUTES } from "@/lib/routes";
+import { useBreadcrumbLabel } from "@/components";
 import type { Letter, QType, Section } from "./types";
 
 interface QRow {
@@ -48,6 +49,10 @@ export function TestReviewPage() {
   const [test, setTest] = useState<TRow | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+
+  // Register the real test name with the global breadcrumb bar (no-ops until
+  // both the slug and title are known; cleans up on unmount).
+  useBreadcrumbLabel(slug, test?.title);
 
   useEffect(() => {
     let alive = true;
@@ -104,7 +109,7 @@ export function TestReviewPage() {
         const qs = [...m.test_questions].sort((a, b) => a.position - b.position);
         return (
           <section key={m.position} className="mb-8">
-            <h2 className="sticky top-0 z-10 mb-3 bg-slate-50/95 py-2 text-sm font-semibold uppercase tracking-wide text-slate-600 backdrop-blur dark:bg-slate-950/95 dark:text-slate-300">
+            <h2 className="sticky top-[var(--app-chrome-top,0px)] z-10 mb-3 bg-slate-50/95 py-2 text-sm font-semibold uppercase tracking-wide text-slate-600 backdrop-blur dark:bg-slate-950/95 dark:text-slate-300">
               {m.label} · {qs.length} questions
             </h2>
             <div className="space-y-3">

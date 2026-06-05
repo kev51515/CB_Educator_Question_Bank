@@ -25,6 +25,7 @@ import { useProfile } from "@/lib/profile";
 import { useToast } from "@/components/Toast";
 import { Skeleton } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
+import { useBreadcrumbLabel } from "@/components";
 import { ROUTES, testPreviewPath, testReviewPath } from "@/lib/routes";
 import { getResult } from "./api";
 import { ResultView } from "./ResultView";
@@ -75,6 +76,10 @@ export function TestOverviewPage(): JSX.Element {
   const [reviewing, setReviewing] = useState<{ row: RosterRow; result: TestResult } | null>(null);
   const [assignOpen, setAssignOpen] = useState(false);
   const [monitorOpen, setMonitorOpen] = useState(false);
+
+  // Register the real test name with the global breadcrumb bar (no-ops until
+  // both the slug and title are known; cleans up on unmount).
+  useBreadcrumbLabel(slug, test?.title);
 
   // --- fetch test meta + module structure ---
   useEffect(() => {
@@ -319,17 +324,6 @@ export function TestOverviewPage(): JSX.Element {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 space-y-5">
-      {/* breadcrumb */}
-      <nav className="text-sm">
-        <Link
-          to={ROUTES.TESTS_ADMIN}
-          className="inline-flex items-center gap-1 rounded-md min-h-[36px] px-2 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-        >
-          <span aria-hidden>←</span>
-          <span>All tests</span>
-        </Link>
-      </nav>
-
       {/* header card */}
       <header className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-4">

@@ -19,6 +19,7 @@
  */
 import { useEffect, useMemo, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useBreadcrumbLabel } from "@/components";
 import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
 import { useToast } from "@/components/Toast";
@@ -60,6 +61,13 @@ export function StudentProfilePage(): JSX.Element {
     portfolioError,
     lastActivityAt,
   } = useStudentProfile(courseRef, studentId);
+
+  // Register breadcrumb labels for both dynamic URL segments. This page is not
+  // wrapped by the course shell, so the course crumb would read "Course"
+  // without our help. Hook no-ops until the name resolves, then cleans up on
+  // unmount.
+  useBreadcrumbLabel(studentId, header?.display_name);
+  useBreadcrumbLabel(courseRef, course?.name);
 
   // Route back to the roster — prefer the short_code in the URL once we
   // know it, else fall back to the raw URL param.

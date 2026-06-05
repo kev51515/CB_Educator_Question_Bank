@@ -19,6 +19,7 @@ import { ConfirmDialog } from "./ConfirmDialog";
 import { TopicFormModal } from "./TopicFormModal";
 import { useTopicPosts, type DiscussionPost } from "./useTopicPosts";
 import { courseDiscussionsPath } from "@/lib/routes";
+import { useBreadcrumbLabel } from "@/components";
 import { SafeHtml } from "@/components/SafeHtml";
 import { EmptyState } from "@/components/EmptyState";
 import { SkeletonRows } from "@/components/Skeleton";
@@ -46,6 +47,11 @@ export function DiscussionTopicView() {
     topicId ?? null,
   );
   const toast = useToast();
+
+  // Register the topic title for the global breadcrumb bar. The course crumb is
+  // already supplied by the course shell, so only the topic segment is needed.
+  // No-ops until the title resolves; cleans up on unmount.
+  useBreadcrumbLabel(topicId, topic?.title);
 
   const [editingTopic, setEditingTopic] = useState(false);
   const [confirmDeleteTopic, setConfirmDeleteTopic] = useState(false);

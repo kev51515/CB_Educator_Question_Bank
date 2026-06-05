@@ -109,7 +109,7 @@ export function QuestionBankPage(): JSX.Element {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
+      <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
         <div className="mx-auto max-w-6xl space-y-6">
           <header className="space-y-1">
             <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
@@ -127,7 +127,7 @@ export function QuestionBankPage(): JSX.Element {
           <div
             role="tablist"
             aria-label="Question bank sections"
-            className="sticky top-0 z-10 -mx-2 px-2 pt-2 bg-gradient-to-b from-slate-50/95 via-indigo-50/90 to-transparent dark:from-slate-950/95 dark:via-slate-900/90 backdrop-blur-sm"
+            className="sticky top-[var(--app-chrome-top,0px)] z-10 -mx-2 px-2 pt-2 bg-gradient-to-b from-slate-50/95 via-indigo-50/90 to-transparent dark:from-slate-950/95 dark:via-slate-900/90 backdrop-blur-sm"
           >
             <div className="flex items-center gap-1 border-b border-slate-200 dark:border-slate-800 overflow-x-auto">
               <SectionTab

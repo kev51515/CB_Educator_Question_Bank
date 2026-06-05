@@ -13,7 +13,15 @@
  * so the student/staff shells stay DRY.
  */
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
+import { Breadcrumbs, BreadcrumbProvider } from "@/components";
 import { ROUTES } from "@/lib/routes";
 import { StudentBadge } from "./StudentBadge";
 import { NotificationBell } from "@/notifications";
@@ -250,7 +258,15 @@ export function StaffShell() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [toggleCollapsed]);
 
+  // Publish the breadcrumb bar's height to descendants so page-level sticky
+  // headers + full-height panes can offset themselves beneath it
+  // (`top-[var(--app-chrome-top,0px)]` / `h-[calc(100vh-var(--app-chrome-top,0px))]`).
+  const contentStyle = {
+    "--app-chrome-top": "3rem",
+  } as CSSProperties;
+
   return (
+    <BreadcrumbProvider>
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
       <AccountUpgradeBanner upgradeAnonymousAccount={upgradeAnonymousAccount} />
 
@@ -491,8 +507,11 @@ export function StaffShell() {
         </nav>
 
         {/* Right pane */}
-        <main className="flex-1 min-w-0">
-          <Outlet />
+        <main className="flex-1 min-w-0 flex flex-col" style={contentStyle}>
+          <Breadcrumbs />
+          <div className="flex-1 min-w-0">
+            <Outlet />
+          </div>
         </main>
       </div>
 
@@ -541,5 +560,6 @@ export function StaffShell() {
         userRole={profile?.role ?? null}
       />
     </div>
+    </BreadcrumbProvider>
   );
 }

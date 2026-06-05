@@ -661,19 +661,19 @@ export function CourseGradebook() {
             <table className="min-w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="sticky top-0 left-0 z-30 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-r border-slate-200 dark:border-slate-800">
+                  <th className="sticky top-[var(--app-chrome-top,0px)] left-0 z-30 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-r border-slate-200 dark:border-slate-800">
                     Student
                   </th>
                   {orderedAssignments.map((a) => (
                     <th
                       key={a.id}
-                      className="sticky top-0 z-20 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800"
+                      className="sticky top-[var(--app-chrome-top,0px)] z-20 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800"
                       title={a.title}
                     >
                       {truncateTitle(a.title)}
                     </th>
                   ))}
-                  <th className="sticky top-0 z-20 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800">
+                  <th className="sticky top-[var(--app-chrome-top,0px)] z-20 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800">
                     Average
                   </th>
                 </tr>

@@ -25,6 +25,7 @@ import {
 } from "./useAssignments";
 import { classAssignmentsPath } from "@/lib/routes";
 import { SkeletonRows } from "@/components/Skeleton";
+import { useBreadcrumbLabel } from "@/components";
 import {
   SOURCE_LABELS,
   DIFFICULTY_LABELS,
@@ -79,6 +80,11 @@ export function AssignmentDetailPage() {
   const navigate = useNavigate();
 
   const [assignment, setAssignment] = useState<FetchedAssignment | null>(null);
+
+  // Register the real assignment title for the global breadcrumb bar, keyed by
+  // the URL param value. No-ops until the title loads; cleans up on unmount.
+  useBreadcrumbLabel(assignmentId, assignment?.title);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [actionBusy, setActionBusy] = useState(false);
@@ -299,7 +305,7 @@ export function AssignmentDetailPage() {
 
         <header
           role="banner"
-          className={`sticky top-0 z-20 rounded-2xl bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm ring-1 ring-slate-200 dark:ring-slate-800 border-b border-slate-200/60 dark:border-slate-800/60 motion-safe:transition-all ${
+          className={`sticky top-[var(--app-chrome-top,0px)] z-20 rounded-2xl bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm ring-1 ring-slate-200 dark:ring-slate-800 border-b border-slate-200/60 dark:border-slate-800/60 motion-safe:transition-all ${
             scrolled ? "p-3 sm:p-4 space-y-2" : "p-6 space-y-4"
           }`}
         >

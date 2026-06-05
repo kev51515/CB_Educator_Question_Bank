@@ -24,6 +24,11 @@
 // render-time code path.
 export { useA11yPrefs } from "./A11yPreferences";
 export { A11yToggle } from "./A11yPreferences";
+export {
+  Breadcrumbs,
+  BreadcrumbProvider,
+  useBreadcrumbLabel,
+} from "./Breadcrumbs";
 export * from "./ActivityCalendar";
 export * from "./AdaptiveLayout";
 export * from "./Annotations";

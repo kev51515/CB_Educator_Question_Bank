@@ -23,7 +23,7 @@
  * stub is wired, and means no AuthGate changes are needed.
  */
 import { useMemo, useState } from "react";
-import { KebabMenu, type KebabMenuOption } from "@/components";
+import { KebabMenu, type KebabMenuOption, useBreadcrumbLabel } from "@/components";
 import {
   NavLink,
   Navigate,
@@ -118,6 +118,11 @@ export function ClassLayout() {
   const toast = useToast();
 
   const { cls, loading, error, notFound, refresh, patch } = useClass(classId);
+
+  // Publish the real course name to the global breadcrumb bar. NO-OPs until
+  // both key + label are truthy, so calling it unconditionally before the
+  // early returns below is safe.
+  useBreadcrumbLabel(classId, cls?.name);
 
   const [showEdit, setShowEdit] = useState(false);
   const [showDuplicate, setShowDuplicate] = useState(false);
@@ -254,7 +259,7 @@ export function ClassLayout() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 px-4 py-6">
+      <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-slate-50 dark:bg-slate-950 px-4 py-6">
         <div className="mx-auto max-w-5xl">
           <SkeletonRows count={6} rowClassName="h-12" />
         </div>
@@ -270,7 +275,7 @@ export function ClassLayout() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 px-4">
+      <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] flex items-center justify-center bg-slate-50 dark:bg-slate-950 px-4">
         <div className="max-w-md w-full rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-4 text-center">
           <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
             Couldn't load this course
@@ -290,17 +295,10 @@ export function ClassLayout() {
 
   return (
     <ClassLayoutContext.Provider value={contextValue}>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
+      <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
         {/* Persistent header: course name + back link + kebab actions */}
         <div className="border-b border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur">
           <div className="mx-auto max-w-5xl px-4 pt-6 pb-2 space-y-3">
-            <button
-              type="button"
-              onClick={() => navigate(ROUTES.CLASSES)}
-              className="inline-flex items-center gap-1.5 rounded-lg min-h-[40px] md:min-h-0 -ml-2 md:ml-0 px-2 md:px-0 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
-            >
-              <span aria-hidden>←</span> Back to courses
-            </button>
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">

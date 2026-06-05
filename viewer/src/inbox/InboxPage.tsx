@@ -225,6 +225,15 @@ export function InboxPage() {
     return [...pinned, ...rest];
   }, [threads, query, pinnedThreads]);
 
+  // Human label for the open thread (other participant's name/email), passed
+  // to ThreadView via the Outlet context so it can register a breadcrumb label.
+  const activeThreadLabel = useMemo<string | undefined>(() => {
+    if (!threadId) return undefined;
+    const t = threads.find((thread) => thread.id === threadId);
+    if (!t) return undefined;
+    return t.other.display_name ?? t.other.email ?? undefined;
+  }, [threads, threadId]);
+
   // Index of the first unpinned row (used to render the slate group divider).
   // -1 when divider shouldn't show (no pinned, or no unpinned).
   const firstUnpinnedIndex = useMemo(() => {
@@ -428,7 +437,7 @@ export function InboxPage() {
   }, [searchParams, setSearchParams, currentUserId, navigate, refresh, toast]);
 
   return (
-    <div className="flex h-screen bg-white dark:bg-slate-950">
+    <div className="flex h-[calc(100vh-var(--app-chrome-top,0px))] bg-white dark:bg-slate-950">
       {/* Left rail — on mobile, hidden when a thread is open */}
       <aside
         className={`${threadId ? "hidden sm:flex" : "flex"} w-full sm:w-72 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 flex-col`}
@@ -739,7 +748,7 @@ export function InboxPage() {
                 ← Back to inbox
               </Link>
             </div>
-            <Outlet context={{ onMessageSent: refresh }} />
+            <Outlet context={{ onMessageSent: refresh, threadLabel: activeThreadLabel }} />
           </>
         ) : composing ? (
           <div

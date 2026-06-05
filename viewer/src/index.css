@@ -35,6 +35,11 @@ body {
   --text-secondary: #3e3f47;
   --text-tertiary: #65676f;
   --text-muted: #80828a;
+  /* Height of any fixed chrome (e.g. the staff breadcrumb bar) at the top of
+     the content pane. The staff shell overrides this to its bar height so
+     page-level sticky headers and full-height panes can offset beneath it;
+     defaults to 0 everywhere else (e.g. the student shell). */
+  --app-chrome-top: 0px;
 }
 .dark {
   --bg-primary: #111113;
@@ -46,6 +51,17 @@ body {
   --text-secondary: #cfd0d6;
   --text-tertiary: #9b9da5;
   --text-muted: #80828a;
+}
+
+/* Hide the scrollbar while keeping the element scrollable — used by the
+   breadcrumb trail so a long trail can scroll horizontally without an ugly
+   scrollbar eating into the 48px bar. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* ─── Dark mode color overrides ─── */

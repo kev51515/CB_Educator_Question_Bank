@@ -22,9 +22,12 @@ import { SafeHtml } from "@/components/SafeHtml";
 import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
 import { useToast } from "@/components/Toast";
+import { useBreadcrumbLabel } from "@/components";
 
 interface ThreadOutletContext {
   onMessageSent?: () => void | Promise<void>;
+  /** Display label for the open thread (other participant's name/email). */
+  threadLabel?: string;
 }
 
 function getErrorMessage(error: unknown): string {
@@ -51,6 +54,9 @@ interface OptimisticMessage extends InboxMessage {
 export function ThreadView() {
   const { threadId } = useParams<{ threadId: string }>();
   const ctx = useOutletContext<ThreadOutletContext | undefined>();
+  // Register a breadcrumb label for this thread (no-ops until both args are
+  // truthy, and no-ops entirely in the student shell where no provider exists).
+  useBreadcrumbLabel(threadId, ctx?.threadLabel);
   const { profile } = useProfile();
   const currentUserId = profile?.id ?? null;
   const { messages, loading, error, refresh } = useThreadMessages(threadId ?? null);
