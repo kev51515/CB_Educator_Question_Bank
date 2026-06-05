@@ -56,6 +56,16 @@ indicator. Round 6 then dropped the now-redundant CourseGradebook
 second-round-trip (derives `score_override` from `effective_score !==
 score_percent` instead). See `docs/SESSION_RECAP.md` Wave 21B section.
 
+**Full-test proctoring SHIPPED (Jun 2026, migrations 0108–0109)** —
+duration-tracked tab-away + second-monitor focus detection on the full-test
+runner, written to a forgery-proof per-event timeline (`test_run_events`,
+append-only) so a window-switch can't be silently scrubbed. Teacher-facing
+`ProctorTimeline` UI replays the run with auto-flagging on suspicious events.
+Each test carries an off/soft/strict proctoring level; **strict** enforces
+fullscreen and blocks copy/paste. This is deterrence + a human-reviewed record,
+not prevention — see `docs/PROCTORING.md` for the honest ceiling and the
+SEB hard-lockdown design (Phase 3, §5).
+
 - **Auth, roles, class enrollment — ~98%.** Email/password, anonymous quick-start, role-based routing, profile auto-mint, classes/roster, RLS helpers, **password reset flow, anonymous → real account upgrade, teacher invite codes, managed-seat claiming (student takes over a pre-created seat with their own email+password; teacher approve/deny re-claims — 0095/0096), class-code usage tracking (`code_redemptions` — 0097)** are all live. Account settings UI shipped. The only remaining gap is co-teachers / TAs as a first-class concept (cross-staff parity gives ~80% of the value already).
 - **Assignment loop — ~95%.** Fully wired end-to-end. `AssignmentRunner` mounts `MockTestApp` with assignment config, `start_assignment_attempt` RPC snapshots questions server-side into `assignment_attempt_questions` (mig 0014), multiple attempts + late penalty (mig 0020), per-attempt review with proper snapshot rendering. Wave 7 fixed the snapshot-snippet ↔ items mismatches.
 - **Mock test runner — ~95%.** Unchanged; now also rendering KaTeX math in stems/answers/explanations.
@@ -184,6 +194,7 @@ Most of the original tier 1 has shipped. What remains here is short and specific
 - **Mobile native via Capacitor** — PWA already covers ~80%; native wrapper is ~2 weeks for App Store distribution. Skip unless schools require it.
 - **Multi-tenant SaaS** — `organizations` root table + `organization_id` on `classes`. Required only when selling to schools-as-accounts. Cheap now (<100 classes); expensive later.
 - **LTI tool provider** — Still out of scope. We're the destination, not an embedded widget.
+- **Proctoring Phase 3 — Safe Exam Browser (SEB) hard lockdown — designed, not built** (`docs/PROCTORING.md`). The strict tier (shipped above) is the deterrence floor; SEB adds OS-level kiosk lockdown for high-stakes mock-test-day. The clean fit on our static-SPA + Supabase stack: verify SEB's Config-Key header *inside* the `get_test_module` RPC — no new server to stand up. **The hard constraint that gates it:** SEB runs on Windows/macOS/iPad **only** — no Chromebooks or Android. So the real blocker isn't the integration; it's a device-fleet survey + the student install/support burden. Worth it only for high-stakes mock-test-day; strict tier stays the floor for everyone else. **Honest ceiling:** no browser-level control stops a second phone, a second person, or a screenshot — proctoring is deterrence + a human-reviewed record, never prevention. **M engineering (the RPC check), L logistics (the device fleet).**
 
 ## 6. Production-readiness — current state
 

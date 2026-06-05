@@ -279,6 +279,18 @@ When adding a new scheduled task: write the function under `supabase/functions/<
 - **Unified `TestQuestion` shape** (`mocktest/types.ts`): `{ id, source, domain, skill?, difficulty, passage?, stem, choices: Record<'A'|'B'|'C'|'D', string>, correctAnswer, correctRationale?, wrongRationales?, isHtml }`. Anything else is filtered at the adapter layer.
 - **Assignment `source_id` mirrors `TestSourceId`**: CHECK in `0004_assignments.sql` enforces `source_id IN ('cb','sat','mixed')` to match the TS union exactly.
 
+### 7x Proctoring & test-security telemetry (full-test runner, 0108–0109)
+
+Scoped to the `/test/:slug` full-test runner (`viewer/src/fulltest/`), not the legacy `MockTestApp`. See `docs/PROCTORING.md` for the full stack + the SEB Phase-3 plan.
+
+- **Tiered model** — `tests.proctoring_level` is a CHECK-constrained enum `('off'|'soft'|'strict')`, default `'soft'`, set via the audited `set_test_proctoring_level(slug, level)` RPC (teacher-of-test/admin). **soft** = telemetry only, all devices incl. iPhone. **strict** = soft + enforced fullscreen + copy/cut/paste/contextmenu blocking; it **fails open on iPhone** (no element fullscreen → enforcement skipped, telemetry still records, student sees an honest notice). A 4th **lockdown**/SEB tier is design-only — the CHECK does *not* yet allow `'lockdown'` (PROCTORING.md §3).
+- **Forgery-proof event log** — `test_run_events` has owner-READ RLS and **no INSERT/UPDATE/DELETE policy**; every write goes through the SECURITY DEFINER logger `test_log_proctor_event(run, type, [duration], [module], [question])` (the same write-only pattern as `test_run_answers`). A tampered client can neither forge nor erase its trail, and the logger's `p_type` allowlist means only known signal types land.
+- **Best-effort contract** — the logger ends in `EXCEPTION WHEN OTHERS THEN RETURN` so it **never throws**, and the client telemetry calls are fire-and-forget. Proctoring can never break a student's test.
+- **Duration, not just counts** — the client tracks tab-away *duration* via `visibilitychange` (stamp on hidden, log `away` with elapsed seconds on return) and second-monitor focus loss via window `blur`/`focus`, de-duped against `away`. Each event records the module + question the student was on.
+- **Server-authoritative flags** — `test_live_progress` derives `flagged` + `flag_reasons` (`away_60s`, `away_3x`, `fs_exit`, `paste`, `focus_3x`) in the view, not the client. The teacher live monitor and post-test review render `ProctorTimeline` from `get_test_run_timeline(run)` (owner OR teacher-of-test via the `is_teacher_of_test` helper).
+
+> **0109 lesson (CREATE-OR-REPLACE rebuild gotcha):** 0108 rebuilt `start_test` by diffing against the **0082** body, which pre-dated 0083's `results_released` key — so 0108 silently dropped it and broke the score-release gate (caught by `clickthrough-practice-test.mjs`). A CREATE-OR-REPLACE rebuild must diff against the **latest** prior definition, not an arbitrary earlier one. (`start_test` had been touched by 0048, 0061, 0066, 0081, 0082, 0083 before 0108.)
+
 ---
 
 ## 8. Naming + file conventions

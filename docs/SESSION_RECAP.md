@@ -1,6 +1,37 @@
 # Session Recap
 
-## Latest (2026-06-05) — launch-prep: login fixes, single-proctor lock, backups, bundle split, modularization, breadcrumb nav
+## Latest (2026-06-05) — test-runner proctoring: complete timeline + duration tracking + fullscreen lockdown (0108–0109)
+
+**Forgery-proof proctor timeline + duration tracking + strict lockdown (migrations 0108–0109, commit 2168c1e):**
+- **0108 `proctor_timeline`** — new `test_run_events` timeline table: one
+  forgery-proof row per signal (`away` / `focus_loss` / `fullscreen_exit` /
+  `copy` / `paste` / `blocked` / `devtools`), each with duration + module +
+  question. RPC-only writes, owner-read RLS. Denormalized
+  `away_total_seconds` / `focus_loss_*` rollups onto `test_runs`.
+- A single best-effort logger `test_log_proctor_event` (never throws) fronts
+  every event write. `get_test_run_timeline` reads it for owner OR teacher (new
+  `is_teacher_of_test` helper). Per-test `tests.proctoring_level` (off / soft /
+  strict) + `set_test_proctoring_level`; `test_live_progress` gains
+  `flagged` / `flag_reasons`; `start_test` returns `proctoring_level`.
+- **0109 hotfix** — 0108's `start_test` rebuild was diffed against the **0082**
+  body and silently DROPPED the `results_released` key added by 0083; caught
+  live within minutes by `clickthrough-practice-test.mjs` and restored.
+  **Lesson: rebuild a CREATE-OR-REPLACE fn against the LATEST prior definition,
+  not whichever one you happen to remember** (`start_test` was touched by
+  0048 / 0061 / 0066 / 0081 / 0082 / 0083).
+- **Client:** tab-away is now duration-tracked (not just a count); blur/focus
+  second-monitor detection is de-duped against away. Strict mode enforces
+  fullscreen + copy/paste blocking behind a blocking overlay, **failing open on
+  iPhone** (no fullscreen API). New `ProctorTimeline` component (time-scaled
+  track + tooltips + chips + skeleton/empty state) renders in the live monitor
+  (flagged runs sorted to top) and in post-test review.
+- **Tiers:** soft (all devices) / strict (laptop + iPad) / lockdown = SEB
+  (Phase 3, **design-only** for now). See `docs/PROCTORING.md` for the deep-dive.
+- **Verified Remote:** migration list Local==Remote through 0109; clickthrough
+  42/42, edge 10/10, full smoke all-green. Applied to the live DB then verified
+  — the 0109 regression was caught post-apply by the clickthrough harness.
+
+## 2026-06-05 — launch-prep: login fixes, single-proctor lock, backups, bundle split, modularization, breadcrumb nav
 
 **Supabase advisor cleanup + perf + launch de-risking (migrations 0105–0107):**
 - **0105 `security_invoker_views`** — flipped the 3 CRITICAL "Security Definer

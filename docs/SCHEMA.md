@@ -51,6 +51,7 @@ Other naming traps:
 | `is_teacher_of_course` | `(uid uuid, p_course_id uuid) → bool` | teacher owns that course |
 | `is_student_in_course` | `(uid uuid, p_course_id uuid) → bool` | enrolled student |
 | `is_student_in_class` | `(uid uuid, p_class_id uuid) → bool` | legacy name, course-backed body |
+| `is_teacher_of_test` | `(uid uuid, p_test_id uuid) → bool` | teacher of a course whose `module_items` slug-links the test (factored out of the proctor RPCs — 0108) |
 
 Pass `(SELECT auth.uid())` (subselect form) so the planner caches it per query.
 
@@ -118,8 +119,10 @@ Proctored, server-graded full tests (e.g. the Nov-2023 DSAT, slug
 students cannot SELECT `test_questions`; content is delivered per-module via
 SECURITY DEFINER RPCs with the key stripped.
 
-**tests** — `id, slug, ordinal, title, short_title, source, total_questions, created_at`
-*(SELECT: any authenticated)*
+**tests** — `id, slug, ordinal, title, short_title, source, total_questions,
+created_at, proctoring_level` *(SELECT: any authenticated)*
+(`proctoring_level` (0108) text NOT NULL default `'soft'`, CHECK ∈
+off|soft|strict.)
 
 **test_modules** — `id, test_id, position, section ('reading-writing'|'math'),
 label, time_limit_seconds, question_count` *(SELECT: any authenticated)*
@@ -133,25 +136,50 @@ passage, passage_alt, stem, choices (jsonb), figure, correct_answer, accepted
 **test_runs** — `id, user_id, test_id, status ('in_progress'|'submitted'|
 'abandoned'), current_module, current_module_started_at, started_at,
 submitted_at, score, total, section_scores (jsonb), duration_seconds,
-module_timing (jsonb)` *(RLS: owner only; partial unique index = one active run
-per (user,test).)*
+module_timing (jsonb), away_count, integrity (jsonb), last_seen_at,
+current_question, away_total_seconds, focus_loss_count, focus_loss_seconds`
+*(RLS: owner only; partial unique index = one active run per (user,test).
+Proctoring aggregates `away_total_seconds`/`focus_loss_count`/
+`focus_loss_seconds` (0108) all int NOT NULL default 0, bumped by
+`test_log_proctor_event`.)*
 
 **test_run_answers** — `run_id, question_id, module_position, chosen,
 is_correct, time_ms, answered_at` *(owner SELECT only; written only by DEFINER
 RPCs, so `is_correct` can't be forged. A draft = `is_correct IS NULL`.)*
 
+**test_run_events** (0108) — `id (bigint identity PK), run_id (FK→test_runs(id)
+ON DELETE CASCADE), at (timestamptz default now()), type, module (int),
+question (int), duration_seconds (int), meta (jsonb)`. Proctoring event log;
+`type` CHECK ∈ away|focus_loss|fullscreen_exit|fullscreen_enter|copy|paste|
+copy_blocked|paste_blocked|contextmenu_blocked|devtools. Index `(run_id, at)`.
+*(RLS: owner-READ only, **NO write policy** — written only by the SECURITY
+DEFINER logger `test_log_proctor_event`, so events can't be forged; mirrors
+`test_run_answers`.)*
+
 ### RPCs (all SECURITY DEFINER, `SET search_path = public, auth`)
 | RPC | Args | Returns |
 |---|---|---|
-| `start_test` | `(p_slug text)` | run + module metadata (no questions) + `answered` (count of recorded answers; drives the resume label — 0061) |
+| `start_test` | `(p_slug text)` | run + module metadata (no questions) + `answered` (count of recorded answers; drives the resume label — 0061) + top-level `proctoring_level` + `results_released` (0109 restored after 0108 dropped it) |
 | `get_test_module` | `(p_run_id uuid, p_position int)` | module questions (**no key**) + `seconds_remaining` + `saved_answers` (drafts) |
 | `save_test_progress` | `(p_run_id uuid, p_position int, p_answers jsonb)` | persists ungraded drafts |
 | `submit_test_module` | `(p_run_id uuid, p_position int, p_answers jsonb)` | grades server-side, advances; records `module_timing`/`timed_out` |
 | `get_test_result` | `(p_run_id uuid)` | full review **with** key (only once submitted) |
+| `test_log_proctor_event` (0108) | `(p_run_id uuid, p_type text, p_duration_seconds int default null, p_module int default null, p_question int default null)` | void; unified best-effort proctor logger (**NEVER throws**); owner + type-allowlist gated; inserts one `test_run_events` row + bumps the matching `test_runs` aggregate |
+| `get_test_run_timeline` (0108) | `(p_run_id uuid)` | table(`at, type, module, question, duration_seconds, meta`) ordered `at asc`; auth = owner OR `is_teacher_of_test` |
+| `set_test_proctoring_level` (0108) | `(p_slug text, p_level text)` | void; teacher-of-course/admin; audited `proctor.set_level` |
 
 Stable error codes raised: `not_authenticated`, `test_not_found`,
 `run_not_found`, `not_authorized`, `run_already_submitted`,
-`run_not_submitted`, `module_out_of_order`.
+`run_not_submitted`, `module_out_of_order`. `set_test_proctoring_level` adds:
+`not_authenticated`, `invalid_level`, `test_not_found`, `not_authorized`.
+
+`test_live_progress(p_slug text)` (teacher monitor) appends columns IN ORDER:
+`away_total_seconds`, `focus_loss_count`, `focus_loss_seconds`, `flagged`
+(boolean), `flag_reasons` (text[], codes away_60s/away_3x/fs_exit/paste/
+focus_3x) — 0108.
+
+> **Proctoring deep-dive:** see `docs/PROCTORING.md` for the full subsystem
+> (event taxonomy, client logger, soft/strict levels, monitor flags).
 
 Grading helpers: `_spr_numeric(text) → numeric` (parses `a/b` & decimals),
 `_grade_answer(type, correct, accepted, chosen) → bool` (mcq = case-insensitive

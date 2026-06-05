@@ -3,7 +3,8 @@
 The 2026-06 build turned the SAT-prep LMS into a **controlled-process** product:
 the teacher creates student logins, assigns work, and dispenses test results —
 students only ever see what they've been given. This doc is the reference for
-that system (surfaces, data model, RPCs, migrations 0067–0091).
+that system (surfaces, data model, RPCs, migrations 0067–0091, plus proctoring
+0108–0109).
 
 ---
 
@@ -78,6 +79,31 @@ Students see ONLY assigned work — no free question bank / free mock test:
 - Desmos calculator (math modules) opens 2× centered, viewport-clamped. Timer is
   server-authoritative — leaving via Save & exit does NOT pause it.
 
+## 4a. Proctoring (0108–0109)
+
+Per-test integrity monitoring. See `docs/PROCTORING.md` for the full design.
+
+- **Level (per test).** `tests.proctoring_level` ∈ `off` / `soft` / `strict`, set
+  by `set_test_proctoring_level(slug, level)` (teacher/admin, audited).
+- **Event log.** `test_run_events` — one row per signal. Owner-read RLS, **writes
+  only via RPC** (no client INSERT grant) so the log is forgery-proof. Hot
+  aggregates are denormalized onto `test_runs`: `away_count`,
+  `away_total_seconds`, `focus_loss_count`/`focus_loss_seconds`, and an
+  `integrity` jsonb roll-up.
+- **Logger** `test_log_proctor_event(run, type, [duration], [module], [question])`
+  — best-effort, **never throws** (a failed log must not break the runner).
+- **Reader** `get_test_run_timeline(run)` — owner OR teacher (via
+  `is_teacher_of_test`).
+- **Signals.** Duration-tracked tab-away, second-monitor focus loss (blur/focus,
+  de-duped against away), copy/paste, fullscreen exit. **Strict** mode also
+  enforces fullscreen + blocks copy/paste — and **fails open on iPhone** (no
+  fullscreen API) so students aren't locked out.
+- **Teacher surfaces.** Live monitor (`test_live_progress` now returns `flagged`
+  + `flag_reasons`; flagged students sort to the top) and post-test review, both
+  rendering the shared `ProctorTimeline` component.
+- **Phase 3 (Safe Exam Browser)** is design-only for now — see
+  `docs/PROCTORING.md`.
+
 ## 5. Migration ledger (this build)
 
 | # | Purpose |
@@ -102,10 +128,13 @@ Students see ONLY assigned work — no free question bank / free mock test:
 | 0086 | persist marks/highlights/notes (`save_test_progress.p_annot`, `get_test_module.saved_*`) |
 | 0090 | course-scope `release_test_results` / `allow_test_retake` / `reset_test_attempt` (was `is_staff`-only); `allow_test_retake` idempotency (`retake_already_granted`) |
 | 0091 | hotfix to 0090: `release_test_results` scope check switched from `SELECT … LIMIT 1` to EXISTS (multi-course test links) |
+| 0108 | proctoring data model: `tests.proctoring_level` + `set_test_proctoring_level`; `test_run_events` log (owner-read RLS, RPC-only writes); denormalized aggregates on `test_runs` (`away_*`, `focus_loss_*`, `integrity` jsonb) |
+| 0109 | proctoring RPCs + surfaces: `test_log_proctor_event` (best-effort), `get_test_run_timeline` (owner OR teacher); `test_live_progress` returns `flagged`/`flag_reasons` |
 
 (0069 = parallel session's announcement fanout, not part of this build.
  0087/0088/0089 = live proctoring / per-student report / one-click assign,
- logged in `docs/MIGRATIONS.md`.)
+ logged in `docs/MIGRATIONS.md`. Proctoring (0108–0109) is detailed in §4a and
+ `docs/PROCTORING.md`.)
 
 ## 6. Verification
 

@@ -111,6 +111,22 @@ Effort tags: **S** (hours), **M** (days), **L** (week-plus), **XL** (multi-week)
 | Reference sheet (formulas) | ○ Not built | S; static panel toggle in runner |
 | Highlight + strike-out on question text | ◐ Partial | Bank viewer has `Highlight.tsx`; mock-test runner does not reuse it |
 
+### E2. Proctoring + test security
+
+See `docs/PROCTORING.md` for the full stack + SEB integration plan. Shipped in commit `2168c1e` (migrations `0108`–`0109`, 2026-06-05). Honest ceiling: browser-based proctoring can't stop a second device, a second person, or a screenshot — it's deterrence + a human-reviewed record (see section 5).
+
+| Feature | Status | Notes |
+|---|---|---|
+| Per-test proctoring level (Off / Standard / Lockdown) | ✓ Built | `tests.proctoring_level` — `off` / `soft` (Standard, telemetry) / `strict` (Lockdown); per-test selector |
+| Duration-tracked tab-away telemetry | ✓ Built | Logs *how long* the student was away, not just a count; each event tied to the question they were on |
+| Second-monitor / focus-loss detection | ✓ Built | `focus_loss` signal captures focus leaving the window (second display, app switch) |
+| Copy / paste / fullscreen-exit logging | ✓ Built | `copy` / `paste` / `fullscreen_exit` events, each tied to the active question |
+| Forgery-proof per-event timeline | ✓ Built | `test_run_events` written only via `SECURITY DEFINER` logger `test_log_proctor_event` (RLS owner-READ, no client write) — `0108` |
+| `ProctorTimeline` teacher UI (live + review) | ✓ Built | Time-scaled track + summary chips in the live monitor and post-test review |
+| Auto-flagging ("⚑ Needs review") | ✓ Built | Suspicious attempts auto-flag and sort to the top of the teacher list |
+| Strict mode (enforced fullscreen + copy/paste blocking) | ✓ Built | Fails open gracefully on iPhone (no element fullscreen) with telemetry still recording |
+| Hard lockdown via Safe Exam Browser (SEB) | ○ Not built | L; design-only (`docs/PROCTORING.md` §3). Win/macOS/iPad only (no Chromebook/Android); gated on a device-fleet survey. For high-stakes mock-test-day |
+
 ### F. Question bank (legacy viewer)
 
 | Feature | Status | Notes |
