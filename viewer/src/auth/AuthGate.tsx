@@ -162,7 +162,9 @@ function PublicRoutes({
         element={
           <QuickStartScreen
             prefillCode={getPrefillCode()}
-            onSwitchToSignIn={() => navigate(ROUTES.SIGN_IN)}
+            onSwitchToSignIn={(role) =>
+              navigate(role ? `${ROUTES.SIGN_IN}?role=${role}` : ROUTES.SIGN_IN)
+            }
           />
         }
       />

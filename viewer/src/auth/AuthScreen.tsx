@@ -65,8 +65,14 @@ export function AuthScreen({
   const [tab, setTab] = useState<Tab>("signin");
   const [signInMode, setSignInMode] = useState<SignInMode>("password");
 
-  // Sign-in fields
-  const [signInRole, setSignInRole] = useState<SignInRole>("student");
+  // Sign-in fields. Initial role honours a `?role=student|educator` hint from
+  // the QuickStart "Student / Educator sign-in" cards (defaults to student).
+  const [signInRole, setSignInRole] = useState<SignInRole>(() => {
+    if (typeof window === "undefined") return "student";
+    return new URLSearchParams(window.location.search).get("role") === "educator"
+      ? "educator"
+      : "student";
+  });
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
 

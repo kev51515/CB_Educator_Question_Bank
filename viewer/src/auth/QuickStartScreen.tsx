@@ -41,7 +41,7 @@ import {
 
 interface QuickStartScreenProps {
   prefillCode?: string;
-  onSwitchToSignIn: () => void;
+  onSwitchToSignIn: (role?: "student" | "educator") => void;
 }
 
 /**
@@ -579,50 +579,78 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
               </span>
               <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
             </div>
-            <button
-              type="button"
-              onClick={onSwitchToSignIn}
-              className="group flex w-full items-center gap-3.5 rounded-2xl border border-stone-300/80 bg-white/60 px-4 py-3.5 text-left shadow-sm transition hover:border-stone-900/30 hover:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/30 dark:hover:bg-white/[0.07]"
-            >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden
+            {/* Normal email + password sign-in, offered for BOTH roles so a
+                returning student or an educator can always log in here. Each
+                lands on the sign-in screen pre-set to that role (?role=…). */}
+            <div className="space-y-2.5">
+              {([
+                {
+                  role: "student" as const,
+                  title: "Student sign-in",
+                  sub: "Returning students — use your email & password.",
+                },
+                {
+                  role: "educator" as const,
+                  title: "Educator sign-in",
+                  sub: "Teachers & admins.",
+                },
+              ]).map((opt) => (
+                <button
+                  key={opt.role}
+                  type="button"
+                  onClick={() => onSwitchToSignIn(opt.role)}
+                  className="group flex w-full items-center gap-3.5 rounded-2xl border border-stone-300/80 bg-white/60 px-4 py-3.5 text-left shadow-sm transition hover:border-stone-900/30 hover:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/30 dark:hover:bg-white/[0.07]"
                 >
-                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-semibold text-stone-900 dark:text-stone-100">
-                  Sign in with email &amp; password
-                </span>
-                <span className="mt-0.5 block text-xs leading-snug text-stone-500 dark:text-stone-400">
-                  Educators and returning students — use your email and password.
-                </span>
-              </span>
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="shrink-0 text-stone-400 transition group-hover:translate-x-0.5 group-hover:text-stone-700 dark:text-stone-500 dark:group-hover:text-stone-200"
-                aria-hidden
-              >
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </button>
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900">
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden
+                    >
+                      {opt.role === "educator" ? (
+                        <>
+                          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                          <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </>
+                      ) : (
+                        <>
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </>
+                      )}
+                    </svg>
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-semibold text-stone-900 dark:text-stone-100">
+                      {opt.title}
+                    </span>
+                    <span className="mt-0.5 block text-xs leading-snug text-stone-500 dark:text-stone-400">
+                      {opt.sub}
+                    </span>
+                  </span>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="shrink-0 text-stone-400 transition group-hover:translate-x-0.5 group-hover:text-stone-700 dark:text-stone-500 dark:group-hover:text-stone-200"
+                    aria-hidden
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* footer */}
