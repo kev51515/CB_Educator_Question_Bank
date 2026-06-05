@@ -50,6 +50,18 @@ import { StatCard } from "./StatCard";
 const collapseKey = (courseId: string): string =>
   `student.courseModules.collapsed:${courseId}`;
 
+/**
+ * `:short` is normally a 6-char course short_code, but several flows deep-link
+ * by raw course UUID instead — most importantly the managed-seat claim, which
+ * redirects to `studentCoursePath(course_id)` (a UUID) after a student claims
+ * their seat. Detect that shape so we look the course up by `id` rather than
+ * `short_code` (an uppercased UUID would never match a short_code → the course
+ * would render "not found" even for a freshly-enrolled student). Postgres
+ * parses uuid input case-insensitively, so the uppercased value still matches.
+ */
+const UUID_RE =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 export function StudentCourseView(): JSX.Element {
   const params = useParams<{ short: string }>();
   const navigate = useNavigate();
@@ -82,13 +94,16 @@ export function StudentCourseView(): JSX.Element {
       setLoading(true);
       setError(null);
       try {
-        const { data: courseData, error: courseError } = await supabase
+        const courseQuery = supabase
           .from("courses")
           .select(
             "id, short_code, name, description, teacher:profiles!courses_teacher_id_fkey(display_name)",
-          )
-          .eq("short_code", short)
-          .maybeSingle();
+          );
+        const { data: courseData, error: courseError } = await (
+          UUID_RE.test(short)
+            ? courseQuery.eq("id", short)
+            : courseQuery.eq("short_code", short)
+        ).maybeSingle();
         if (cancelled) return;
         if (courseError) {
           setError(courseError.message);
