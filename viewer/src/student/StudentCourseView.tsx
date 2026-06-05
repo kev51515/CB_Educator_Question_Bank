@@ -62,6 +62,24 @@ const collapseKey = (courseId: string): string =>
 const UUID_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
+const COURSE_SELECT =
+  "id, short_code, name, description, teacher:profiles!courses_teacher_id_fkey(display_name)";
+
+/**
+ * Bounded retry budget for the initial course lookup. This surface most often
+ * mounts immediately after a navigation — including the moment a student lands
+ * here straight after claiming a managed seat, when their session was just
+ * established. Rather than pad the happy path with a fixed "joining…" delay (a
+ * guess that's both too slow when things are ready and too short when they
+ * aren't), we let the existing skeleton cover a few quick re-attempts: a
+ * transient network/auth blip self-heals, and a genuine "no access" still
+ * surfaces within ~1s once the budget is spent.
+ */
+const COURSE_FETCH_ATTEMPTS = 3;
+const COURSE_RETRY_MS = 350;
+const sleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
 export function StudentCourseView(): JSX.Element {
   const params = useParams<{ short: string }>();
   const navigate = useNavigate();
@@ -94,28 +112,33 @@ export function StudentCourseView(): JSX.Element {
       setLoading(true);
       setError(null);
       try {
-        const courseQuery = supabase
-          .from("courses")
-          .select(
-            "id, short_code, name, description, teacher:profiles!courses_teacher_id_fkey(display_name)",
-          );
-        const { data: courseData, error: courseError } = await (
-          UUID_RE.test(short)
-            ? courseQuery.eq("id", short)
-            : courseQuery.eq("short_code", short)
-        ).maybeSingle();
-        if (cancelled) return;
-        if (courseError) {
-          setError(courseError.message);
-          setLoading(false);
-          return;
+        let courseData: CourseRow | null = null;
+        let courseError: { message: string } | null = null;
+        for (let attempt = 0; attempt < COURSE_FETCH_ATTEMPTS; attempt++) {
+          const lookup = supabase.from("courses").select(COURSE_SELECT);
+          const res = await (
+            UUID_RE.test(short)
+              ? lookup.eq("id", short)
+              : lookup.eq("short_code", short)
+          ).maybeSingle();
+          if (cancelled) return;
+          courseError = res.error ?? null;
+          courseData = (res.data as CourseRow | null) ?? null;
+          if (courseData) break;
+          if (attempt < COURSE_FETCH_ATTEMPTS - 1) {
+            await sleep(COURSE_RETRY_MS);
+            if (cancelled) return;
+          }
         }
         if (!courseData) {
-          setError("Course not found or you don't have access.");
+          setError(
+            courseError?.message ??
+              "Course not found or you don't have access.",
+          );
           setLoading(false);
           return;
         }
-        const courseRow = courseData as CourseRow;
+        const courseRow = courseData;
         setCourse(courseRow);
 
         const { data: moduleData, error: moduleError } = await supabase
