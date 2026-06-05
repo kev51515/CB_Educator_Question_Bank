@@ -180,6 +180,41 @@ Run the smoke test (Section 7). A botched rotation is the easiest way to break p
 
 ---
 
+## 5b. Database advisor (Supabase → Advisors)
+
+Run the **Security Advisor** before every launch and after any migration that
+adds a view or function. Status as of 2026-06-05 (post-0106):
+
+**Fixed in migrations (no further action):**
+- *Security Definer View* ×3 (`module_tree`, `portfolio_item_tree`,
+  `student_skill_stats`) → `0105` set `security_invoker = on`. These were a real
+  cross-tenant leak (a direct `/rest/v1/module_tree` read returned every
+  course's rows); now RLS-scoped per caller.
+- *Function Search Path Mutable* ×7 → `0106` pinned `search_path = ''`.
+
+**Expected residual warnings — these are intentional / accepted, do NOT "fix":**
+- *RLS Enabled No Policy* on `rate_limit_attempts`, `reminder_log`,
+  `test_retake_grants` — deliberate full lockdown. These are written only by
+  `SECURITY DEFINER` RPCs; adding a policy would **open** them. Leave alone.
+- *Extension in Public* (`pg_net`) — relocating a platform-managed extension the
+  `0058` announcement-fanout cron depends on is riskier than the warning.
+  Deferred until there's a maintenance window to test `ALTER EXTENSION pg_net
+  SET SCHEMA extensions` against the cron job.
+
+**Manual toggles you must click in the dashboard** (GoTrue auth config — no SQL
+or service-key path, so these can't be migrated):
+1. **Auth → Providers → Email → Enable "Leaked password protection"**
+   (checks new passwords against HaveIBeenPwned). One checkbox.
+2. **Auth → Providers → add an MFA option** (enable TOTP) to clear
+   "Insufficient MFA Options".
+3. **Auth → Sessions/Email → set OTP / magic-link expiry ≤ 1 hour** if the
+   advisor flags "OTP expiry exceeds recommended threshold".
+
+After toggling, re-run the Security Advisor — the panel should be clean except
+the two accepted items above.
+
+---
+
 ## 6. Backup + restore
 
 **Three layers** (as of 2026-06-05):
