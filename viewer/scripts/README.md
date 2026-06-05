@@ -167,6 +167,7 @@ tripping the GoTrue per-IP sign-in rate limit and make `npm run smoke` flaky).
 | `clickthrough-practice-test.mjs` | — | Single-student deep happy-path (resume round-trip, eliminations, results gating, one-attempt lock, retake). 41 checks. |
 | `clickthrough-practice-test-edges.mjs` | `npm run clickthrough:edges` | Linear negatives: out-of-order, double-submit, post-submit lockout, bogus run_id. 10 checks. |
 | `clickthrough-edge-hardening.mjs` | `npm run harden` | Adversarial hardening across 7 groups: A cross-tenant access · B invite/claim abuse · C proctor authz (0104) · D retake idempotency · E input validation · F concurrency races · G **RLS direct-table bypass** (attacker hits tables directly via PostgREST — runs/answers/PII/answer-key must all be unreadable). 27 checks. |
+| `grid-grading-check.mjs` | `npm run grid:check` | Regression guard for grid (student-produced response) grading: runs 29 (key, student-entry, expected) cases against the live `_grade_answer` via psql — trailing zeros (`2.7`≡`2.70`), fraction↔decimal, negatives, and the College Board **repeating-decimal** rule (`2/3` accepts `.6666`/`.6667`/`0.667`; rejects under-precise `0.67`). Needs `SUPABASE_DB_PASSWORD` (psql, like the backup scripts). Run after any change to grid grading (migration 0055/0111). |
 
 ```bash
 npm run clickthrough        # 2-student invite → claim → full test

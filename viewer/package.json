@@ -27,7 +27,8 @@
     "restore-drill": "node --env-file-if-exists=../.env scripts/restore-drill.mjs",
     "clickthrough": "node --env-file-if-exists=../.env scripts/clickthrough-two-students.mjs",
     "clickthrough:edges": "node --env-file-if-exists=../.env scripts/clickthrough-practice-test-edges.mjs",
-    "harden": "node --env-file-if-exists=../.env scripts/clickthrough-edge-hardening.mjs"
+    "harden": "node --env-file-if-exists=../.env scripts/clickthrough-edge-hardening.mjs",
+    "grid:check": "node --env-file-if-exists=../.env scripts/grid-grading-check.mjs"
   },
   "dependencies": {
     "@sentry/react": "^9.0.0",

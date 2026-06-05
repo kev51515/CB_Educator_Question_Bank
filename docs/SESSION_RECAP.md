@@ -1,6 +1,42 @@
 # Session Recap
 
-## Latest (2026-06-05) — verification harnesses: 2-student clickthrough + adversarial edge-hardening (commit 752dd74)
+## Latest (2026-06-05) — grid-in grading: repeating-decimal acceptance (migration 0111)
+
+**Hardened the grid (student-produced response) grader for repeating-decimal
+answers — `_grade_answer` now follows the College Board SPR rule.**
+
+- **The gap:** for a repeating answer like `2/3`, the SAT accepts any
+  rounded/truncated decimal that fills the grid (`.6666`, `.6667`, `0.667`).
+  The 0055 grader only accepted a literal `accepted[]` form or a value within
+  `1e-9` of the key, so `.6667` (off by 3.3e-5) was marked **wrong** unless
+  every truncation was hand-enumerated in the seed data. Surfaced by a
+  26-case grid-grading battery run directly against `_grade_answer`. The user's
+  example (`2.7` vs `2.70`) already worked — that's exact numeric equivalence;
+  the repeating case was the real defect.
+- **Not affecting the live test:** all 12 grid answers in DSAT-Nov-2023 are
+  *terminating* (`343, 17, 8, 45, 4.75, 26, 192.1, -23, 4700, 2025, 45/8,
+  1/8`), so the gap was latent — but the grader is general and future tests
+  will hit it.
+- **0111 fix:** added an approximation branch to `_grade_answer`, gated so it
+  can't over-accept — (1) key non-terminating in grid space
+  (`round(kv,4)<>round(kv,10)`, so terminating `0.125` still rejects `0.1249`);
+  (2) a DECIMAL entry with enough places to fill the grid
+  (`places >= greatest(1, 4 - <int digits>)`, so `0.67`/`0.7` for `2/3` are
+  rejected); (3) value equals key TRUNCATED or ROUNDED to those places.
+  `CREATE OR REPLACE`, same signature → `submit_test_module` picks it up;
+  preserves the 0106 `search_path=''` pin.
+- **Applied to Remote** via `supabase db push` (also recorded **0110**, which
+  had been applied data-only and was untracked — `migration list` is now
+  Local==Remote through 0111). Verified: extended 28-case battery all-green,
+  `smoke-grading` 12/12.
+- **Regression guard:** new `grid-grading-check.mjs` (`npm run grid:check`) —
+  29 (key, entry, expected) cases run against the live `_grade_answer` via
+  psql, exits non-zero on any mismatch. Run it after any change to grid
+  grading. **Lesson recorded in the migration ledger:** a numeric-equality
+  grader is wrong for SPR — repeating answers need round/truncate-to-grid
+  matching, not an epsilon.
+
+## 2026-06-05 — verification harnesses: 2-student clickthrough + adversarial edge-hardening (commit 752dd74)
 
 **Two new one-off verification harnesses for the invite → claim → take-test
 pipeline (no migrations; disposable accounts, self-cleaning). Both run green
