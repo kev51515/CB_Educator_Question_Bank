@@ -21,6 +21,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
+import { useProfile } from "@/lib/profile";
 import { useToast } from "@/components/Toast";
 import { Skeleton } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
@@ -50,6 +51,9 @@ export function TestOverviewPage(): JSX.Element {
   const { slug = "" } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const toast = useToast();
+  const { profile } = useProfile();
+  // Only the lead teacher (admin) may act on live tests; non-admins are read-only.
+  const isAdmin = profile?.role === "admin";
 
   const [test, setTest] = useState<TestRow | null>(null);
   const [modules, setModules] = useState<ModuleRow[]>([]);
@@ -519,8 +523,13 @@ export function TestOverviewPage(): JSX.Element {
                 {stats.taken} of {stats.assigned} submitted · {stats.released} released
               </p>
             )}
+            {!isAdmin && (
+              <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+                View only — only the lead teacher (admin) can control live tests.
+              </p>
+            )}
           </div>
-          {stats.taken > 0 && (
+          {isAdmin && stats.taken > 0 && (
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
@@ -614,14 +623,16 @@ export function TestOverviewPage(): JSX.Element {
                       >
                         {reviewLoadingId === row.run_id ? "…" : "Review"}
                       </button>
-                      <button
-                        type="button"
-                        onClick={() => void onToggleRow(row)}
-                        disabled={rowBusy === row.run_id}
-                        className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-60"
-                      >
-                        {rowBusy === row.run_id ? "…" : released ? "Hide" : "Release"}
-                      </button>
+                      {isAdmin && (
+                        <button
+                          type="button"
+                          onClick={() => void onToggleRow(row)}
+                          disabled={rowBusy === row.run_id}
+                          className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-60"
+                        >
+                          {rowBusy === row.run_id ? "…" : released ? "Hide" : "Release"}
+                        </button>
+                      )}
                     </>
                   ) : row.has_in_progress ? (
                     <>
@@ -634,7 +645,7 @@ export function TestOverviewPage(): JSX.Element {
                       >
                         {lr?.paused ? "⏸ Paused" : "In progress"}
                       </span>
-                      {lr?.run_id && (
+                      {isAdmin && lr?.run_id && (
                         <button
                           type="button"
                           disabled={pauseBusy === lr.run_id}
@@ -667,7 +678,7 @@ export function TestOverviewPage(): JSX.Element {
                           ⚑ {fmtIntegrity(lr?.integrity)}
                         </span>
                       )}
-                      {lr?.run_id && (
+                      {isAdmin && lr?.run_id && (
                         <button
                           type="button"
                           onClick={() =>
@@ -679,17 +690,19 @@ export function TestOverviewPage(): JSX.Element {
                           End
                         </button>
                       )}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setConfirmText("");
-                          setConfirmAction({ kind: "reset", row });
-                        }}
-                        title="Wipe their attempt so they can start fresh (requires confirmation)"
-                        className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 ring-1 ring-rose-300 dark:ring-rose-800 hover:bg-rose-50 dark:hover:bg-rose-950/40"
-                      >
-                        Reset
-                      </button>
+                      {isAdmin && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setConfirmText("");
+                            setConfirmAction({ kind: "reset", row });
+                          }}
+                          title="Wipe their attempt so they can start fresh (requires confirmation)"
+                          className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 ring-1 ring-rose-300 dark:ring-rose-800 hover:bg-rose-50 dark:hover:bg-rose-950/40"
+                        >
+                          Reset
+                        </button>
+                      )}
                     </>
                   ) : (
                     <span className="inline-flex items-center rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200 px-2 py-0.5 text-[11px] font-medium dark:bg-amber-950/30 dark:text-amber-300 dark:ring-amber-900">
@@ -708,7 +721,7 @@ export function TestOverviewPage(): JSX.Element {
         <AssignTestModal slug={slug} title={title} onClose={() => setAssignOpen(false)} />
       )}
       {monitorOpen && (
-        <TestMonitorModal slug={slug} title={title} onClose={() => setMonitorOpen(false)} />
+        <TestMonitorModal slug={slug} title={title} isAdmin={isAdmin} onClose={() => setMonitorOpen(false)} />
       )}
 
       {confirmAction && (

@@ -13,6 +13,7 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { useProfile } from "@/lib/profile";
 import { useToast } from "@/components/Toast";
 import { SkeletonRows } from "@/components/Skeleton";
 import { getResult } from "@/fulltest/api";
@@ -55,6 +56,9 @@ function formatDuration(seconds: number | null): string {
 
 export function StudentTestRunsPanel({ studentId }: StudentTestRunsPanelProps) {
   const toast = useToast();
+  const { profile } = useProfile();
+  // Only the lead teacher (admin) may release results or grant retakes.
+  const isAdmin = profile?.role === "admin";
   const [rows, setRows] = useState<TestRunRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -177,6 +181,11 @@ export function StudentTestRunsPanel({ studentId }: StudentTestRunsPanelProps) {
         <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
           Students don't see results until you release them.
         </p>
+        {!isAdmin && (
+          <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+            View only — only the lead teacher (admin) can release results or grant retakes.
+          </p>
+        )}
       </header>
 
       {loading ? (
@@ -237,37 +246,40 @@ export function StudentTestRunsPanel({ studentId }: StudentTestRunsPanelProps) {
                   {reviewLoadingId === row.run_id ? "Loading…" : "Review"}
                 </button>
 
-                <button
-                  type="button"
-                  onClick={() => void onToggleRelease(row)}
-                  disabled={busyId === row.run_id}
-                  className={`rounded-md min-h-[36px] px-3 py-1.5 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 ${
-                    released
-                      ? "text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus-visible:ring-slate-400"
-                      : "bg-indigo-600 text-white hover:bg-indigo-700 focus-visible:ring-indigo-500"
-                  }`}
-                >
-                  {busyId === row.run_id
-                    ? "Working…"
-                    : released
-                      ? "Hide"
-                      : "Release to student"}
-                </button>
-                {grantedSlugs.has(row.test_slug) ? (
-                  <span className="inline-flex items-center rounded-md px-3 py-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">
-                    Retake allowed
-                  </span>
-                ) : (
+                {isAdmin && (
                   <button
                     type="button"
-                    onClick={() => void onAllowRetake(row)}
-                    disabled={retakeBusyId === row.run_id}
-                    title="Tests are one attempt by default. Grant one more."
-                    className="rounded-md min-h-[36px] px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-60"
+                    onClick={() => void onToggleRelease(row)}
+                    disabled={busyId === row.run_id}
+                    className={`rounded-md min-h-[36px] px-3 py-1.5 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 ${
+                      released
+                        ? "text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus-visible:ring-slate-400"
+                        : "bg-indigo-600 text-white hover:bg-indigo-700 focus-visible:ring-indigo-500"
+                    }`}
                   >
-                    {retakeBusyId === row.run_id ? "…" : "Allow retake"}
+                    {busyId === row.run_id
+                      ? "Working…"
+                      : released
+                        ? "Hide"
+                        : "Release to student"}
                   </button>
                 )}
+                {isAdmin &&
+                  (grantedSlugs.has(row.test_slug) ? (
+                    <span className="inline-flex items-center rounded-md px-3 py-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">
+                      Retake allowed
+                    </span>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => void onAllowRetake(row)}
+                      disabled={retakeBusyId === row.run_id}
+                      title="Tests are one attempt by default. Grant one more."
+                      className="rounded-md min-h-[36px] px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-60"
+                    >
+                      {retakeBusyId === row.run_id ? "…" : "Allow retake"}
+                    </button>
+                  ))}
               </li>
             );
           })}

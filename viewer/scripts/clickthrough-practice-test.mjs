@@ -420,13 +420,16 @@ async function main() {
   step("Provision");
   const studentId = await createUser(studentEmail, "student");
   info("student", `${studentEmail} id=${studentId}`);
-  const teacherId = await createUser(teacherEmail, "teacher");
-  info("teacher", `${teacherEmail} id=${teacherId}`);
+  // The proctor actor must be an ADMIN: migration 0104 locked the proctor
+  // mutation RPCs (release_test_results / allow_test_retake / reset / pause /
+  // force-submit / add-time) to admin-only. A plain teacher is now rejected
+  // (asserted by the negative check near the end).
+  const teacherId = await createUser(teacherEmail, "admin");
+  info("admin (proctor)", `${teacherEmail} id=${teacherId}`);
 
-  // Create a course owned by the teacher, enroll the student, and add a
-  // module_items link to /test/dsat-nov-2023.  This is required so that
-  // release_test_results and allow_test_retake pass the new course-scope check
-  // introduced in migration 0086.
+  // Create a course owned by the admin, enroll the student, and add a
+  // module_items link to /test/dsat-nov-2023. (Admin bypasses course scope, but
+  // we keep the realistic course setup the student runner itself relies on.)
   const { data: courseRow, error: courseErr } = await service
     .from("courses")
     .insert({ name: `Clickthrough-${TAG}`, teacher_id: teacherId })
@@ -514,6 +517,24 @@ async function main() {
   await verifyResultsGating(studentClient, staffClient, runId,
     lastSubmit.score, lastSubmit.total);
   await verifyOneAttemptLock(studentClient, staffClient, runId);
+
+  // 0104 lock: a NON-admin teacher must be rejected from a proctor mutation.
+  step("Proctor lock (0104) — non-admin teacher rejected");
+  const nonAdminEmail = `t-nonadmin-${TAG}@gmail.com`;
+  const nonAdminId = await createUser(nonAdminEmail, "teacher");
+  const nonAdminClient = await signIn(nonAdminEmail);
+  const denied = await nonAdminClient.rpc("release_test_results", {
+    p_run_id: runId,
+    p_released: true,
+  });
+  if (denied.error && /not_authorized/.test(denied.error.message)) {
+    ok("non-admin teacher → not_authorized on release_test_results");
+  } else if (denied.error) {
+    bad("non-admin teacher proctor call", `unexpected error: ${denied.error.message}`);
+  } else {
+    bad("non-admin teacher proctor call", "expected not_authorized but it SUCCEEDED");
+  }
+  await service.auth.admin.deleteUser(nonAdminId).catch(() => {});
 
   // Cleanup — delete the disposable accounts (audit will still have the run).
   step("Cleanup");

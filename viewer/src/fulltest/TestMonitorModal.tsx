@@ -47,6 +47,8 @@ function fmtIntegrity(i: Record<string, number> | null | undefined): string | nu
 interface TestMonitorModalProps {
   slug: string;
   title: string;
+  /** Only the lead teacher (admin) may act on a live sitting; others are read-only. */
+  isAdmin?: boolean;
   onClose: () => void;
 }
 
@@ -79,7 +81,7 @@ function fmtTime(iso: string | null): string {
   }
 }
 
-export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps) {
+export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: TestMonitorModalProps) {
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, true);
   useEscapeKey(onClose);
@@ -308,26 +310,30 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
                           ⏸ paused
                         </span>
                       )}
-                      <button
-                        type="button"
-                        disabled={busyRun === r.run_id}
-                        onClick={() =>
-                          void setPause(r.run_id, !r.paused, r.student_name ?? "student")
-                        }
-                        title={r.paused ? "Resume this student's timer" : "Freeze this student's timer"}
-                        className="ml-auto rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                      >
-                        {busyRun === r.run_id ? "…" : r.paused ? "Resume" : "Pause"}
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busyRun === r.run_id}
-                        onClick={() => void addTime(r.run_id, 300, r.student_name ?? "student")}
-                        title="Give this student 5 more minutes on the current section"
-                        className="rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                      >
-                        {busyRun === r.run_id ? "…" : "+5 min"}
-                      </button>
+                      {isAdmin && (
+                        <>
+                          <button
+                            type="button"
+                            disabled={busyRun === r.run_id}
+                            onClick={() =>
+                              void setPause(r.run_id, !r.paused, r.student_name ?? "student")
+                            }
+                            title={r.paused ? "Resume this student's timer" : "Freeze this student's timer"}
+                            className="ml-auto rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                          >
+                            {busyRun === r.run_id ? "…" : r.paused ? "Resume" : "Pause"}
+                          </button>
+                          <button
+                            type="button"
+                            disabled={busyRun === r.run_id}
+                            onClick={() => void addTime(r.run_id, 300, r.student_name ?? "student")}
+                            title="Give this student 5 more minutes on the current section"
+                            className="rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                          >
+                            {busyRun === r.run_id ? "…" : "+5 min"}
+                          </button>
+                        </>
+                      )}
                     </>
                   ) : r.state === "submitted" ? (
                     <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
