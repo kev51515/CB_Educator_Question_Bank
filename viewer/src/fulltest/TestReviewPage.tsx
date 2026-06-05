@@ -75,11 +75,11 @@ export function TestReviewPage() {
   }, [slug]);
 
   if (loading) {
-    return <div className="mx-auto max-w-4xl px-4 py-10 text-sm text-slate-500">Loading…</div>;
+    return <div className="max-w-4xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-slate-500">Loading…</div>;
   }
   if (error || !test) {
     return (
-      <div className="mx-auto max-w-4xl px-4 py-10">
+      <div className="max-w-4xl px-4 sm:px-6 lg:px-8 py-10">
         <p className="text-sm text-rose-600">Couldn't load test: {error ?? "not found"}</p>
       </div>
     );
@@ -88,7 +88,7 @@ export function TestReviewPage() {
   const modules = [...test.test_modules].sort((a, b) => a.position - b.position);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8">
+    <div className="max-w-4xl px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-6 flex items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{test.title}</h1>

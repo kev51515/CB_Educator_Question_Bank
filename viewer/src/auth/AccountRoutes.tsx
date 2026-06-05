@@ -108,7 +108,7 @@ export function AccountRoutes({
 
   return (
     <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-slate-50 dark:bg-slate-950">
-      <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
+      <div className="max-w-5xl px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         {/* Page header */}
         <header className="flex flex-wrap items-center justify-between gap-3">
           <div className="space-y-1">

@@ -109,8 +109,8 @@ export function QuestionBankPage(): JSX.Element {
 
   return (
     <>
-      <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
-        <div className="mx-auto max-w-6xl space-y-6">
+      <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-6xl space-y-6">
           <header className="space-y-1">
             <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
               Question Bank

@@ -242,7 +242,7 @@ export function CalendarPage() {
   };
 
   return (
-    <div className="px-4 md:px-8 py-6 space-y-4">
+    <div className="px-4 sm:px-6 lg:px-8 py-6 space-y-4">
       <div className="flex items-center gap-3 flex-wrap">
         <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
           Calendar

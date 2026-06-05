@@ -308,7 +308,7 @@ export function TestOverviewPage(): JSX.Element {
   // --- not-found / loading shells ---
   if (notFound) {
     return (
-      <div className="mx-auto max-w-5xl px-4 py-6">
+      <div className="max-w-5xl px-4 sm:px-6 lg:px-8 py-6">
         <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">
           <EmptyState
             title="Test not found"
@@ -323,7 +323,7 @@ export function TestOverviewPage(): JSX.Element {
   const title = test?.title ?? "Full-length test";
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 space-y-5">
+    <div className="max-w-5xl px-4 sm:px-6 lg:px-8 py-6 space-y-5">
       {/* header card */}
       <header className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
