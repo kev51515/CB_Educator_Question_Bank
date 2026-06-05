@@ -21,7 +21,8 @@
     "smoke:announcements": "node --env-file-if-exists=../.env scripts/smoke-announcements.mjs",
     "db:push": "node --env-file-if-exists=../.env scripts/db-push.mjs",
     "backup:live": "node --env-file-if-exists=../.env scripts/live-test-backup.mjs",
-    "backup:live:once": "node --env-file-if-exists=../.env scripts/live-test-backup.mjs --once"
+    "backup:live:once": "node --env-file-if-exists=../.env scripts/live-test-backup.mjs --once",
+    "backup:db": "node --env-file-if-exists=../.env scripts/db-backup.mjs"
   },
   "dependencies": {
     "@sentry/react": "^9.0.0",
