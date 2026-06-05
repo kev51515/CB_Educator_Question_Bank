@@ -1,6 +1,61 @@
 # Session Recap
 
-## Latest (2026-06-05) — test-runner proctoring: complete timeline + duration tracking + fullscreen lockdown (0108–0109)
+## Latest (2026-06-05) — verification harnesses: 2-student clickthrough + adversarial edge-hardening (commit 752dd74)
+
+**Two new one-off verification harnesses for the invite → claim → take-test
+pipeline (no migrations; disposable accounts, self-cleaning). Both run green
+against the live Remote.**
+
+- **`clickthrough-two-students.mjs`** (`npm run clickthrough`) — full
+  real-world path for 2 students: teacher invites seats via
+  `admin_create_student` → each claims its seat (anon → `claim_student_seat`)
+  → each takes `dsat-nov-2023` end-to-end (all 98 Q across 4 modules). One
+  student answers from the real key (**scored a clean 98/98** — confirms the
+  seeded DSAT-Nov-2023 answer key is internally consistent and grading is
+  exact), the other answers naively (21/98), proving the scoring engine
+  discriminates. Then results gating + admin release + student read-back.
+  **34 checks, all green.**
+
+- **`clickthrough-edge-hardening.mjs`** (`npm run harden`) — **27 adversarial
+  checks across 7 groups**, all green:
+  - **A. Cross-tenant** — a 2nd student is rejected (`not_authorized`) from
+    `get_test_module` / `submit_test_module` / `save_test_progress` on a
+    foreign run, and can't read a foreign released result.
+  - **B. Invite/claim abuse** — bad code → `seat_not_found`, bad email →
+    `invalid_email`, weak pw → `weak_password`; a 2nd claim of an
+    already-claimed seat → `pending` (no silent takeover; original login
+    stays valid).
+  - **C. Proctor authz (0104)** — a non-admin teacher is rejected from
+    `release_test_results` / `allow_test_retake` / `reset_test_attempt`.
+  - **D. Retake idempotency (0090)** — a 2nd un-consumed grant →
+    `retake_already_granted`.
+  - **E. Input validation** — bad slug → `test_not_found`; garbage question
+    ids + invalid answer values (`"Z"`, `"abc"`) are tolerated/ignored (only
+    the 27 real answers stored, run still advances).
+  - **F. Concurrency** — two parallel submits of the same module serialize via
+    `FOR UPDATE` (one advance, 27 answers not 54, loser gets
+    `module_out_of_order`); two parallel `start_test` mint exactly one run.
+  - **G. RLS direct-table bypass** — bypassing the RPCs and hitting tables
+    directly via PostgREST, the attacker reads **0 rows** of victim
+    `test_runs` / `test_run_answers`, can't read victim `profiles.email`
+    (PII), and **can't read `test_questions.correct_answer`** (the answer key
+    is not student-exposable). This is the deepest check: it confirms the
+    guarantees hold at the RLS layer, not just behind the RPCs.
+
+- **Deliberately kept out of `smoke-all`** — a dozen rapid sign-ins per run
+  would risk the GoTrue per-IP sign-in rate limit and make `npm run smoke`
+  flaky. Same rationale as `loadtest` / `restore-drill`: standalone,
+  self-cleaning npm scripts. New scripts: `npm run clickthrough`,
+  `npm run clickthrough:edges`, `npm run harden`. Documented in
+  `viewer/scripts/README.md`.
+
+- **Result: no defects found** — the invite/claim/take-test pipeline is
+  well-hardened, including the two highest-risk concerns (cross-student data
+  access and answer-key exposure), both locked at the RLS layer. Run
+  `npm run harden` after any change to the test-runner RPCs, RLS policies, or
+  the claim/invite flow.
+
+## 2026-06-05 — test-runner proctoring: complete timeline + duration tracking + fullscreen lockdown (0108–0109)
 
 **Forgery-proof proctor timeline + duration tracking + strict lockdown (migrations 0108–0109, commit 2168c1e):**
 - **0108 `proctor_timeline`** — new `test_run_events` timeline table: one
