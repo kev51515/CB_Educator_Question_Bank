@@ -247,7 +247,13 @@ export function TestOverviewPage(): JSX.Element {
     const name = confirmAction.row.student_name ?? "Student";
     setConfirmBusy(true);
     try {
-      if (confirmAction.kind === "end" && confirmAction.runId) {
+      if (confirmAction.kind === "end") {
+        if (!confirmAction.runId) {
+          // The live row lost its run_id between render and click (stale poll).
+          // Don't silently close — tell the proctor so they can retry.
+          toast.error("Couldn't end the test", "No active run for this student right now.");
+          return;
+        }
         const { error } = await supabase.rpc("proctor_force_submit", {
           p_run_id: confirmAction.runId,
         });

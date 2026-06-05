@@ -1038,6 +1038,10 @@ export function FullTestApp() {
           destructive
           onConfirm={async () => {
             setPendingSectionSubmit(null);
+            // Flush the 2.5s-debounced draft (highlights / notes / mark-for-
+            // review) BEFORE submitting, same as the time-up path (F4), so a
+            // voluntary submit right after an annotation edit doesn't drop it.
+            saveDraftRef.current();
             await doSubmitModule();
           }}
           onCancel={() => setPendingSectionSubmit(null)}
