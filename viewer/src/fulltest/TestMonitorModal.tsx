@@ -17,6 +17,7 @@ import { getRunTimeline } from "./api";
 import type { ProctorEvent } from "./api";
 import ProctorTimeline from "./ProctorTimeline";
 import { flagLabel } from "./test-overview/helpers";
+import { StatusPill, RowAction, ActionGroup } from "./test-overview";
 
 interface LiveRow {
   student_id: string;
@@ -361,90 +362,93 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
                         </span>
                       )}
                       {idle && (
-                        <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900">
-                          idle {idleFor}s
-                        </span>
+                        <StatusPill
+                          tone="warn"
+                          label={`Idle ${idleFor}s`}
+                          title="No activity heartbeat recently"
+                        />
                       )}
                       {flaggedRow && (
-                        <span
+                        <StatusPill
+                          tone="alert"
+                          icon="⚑"
+                          label="Needs review"
                           title={
                             flagReasons.length
                               ? flagReasons.map(flagLabel).join(" · ")
                               : "Flagged for review"
                           }
-                          className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-semibold text-rose-700 ring-1 ring-rose-300 dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800"
-                        >
-                          ⚑ Needs review
-                        </span>
+                        />
                       )}
                       {away > 0 && (
-                        <span
+                        <StatusPill
+                          tone="warn"
+                          icon="↗"
+                          label={`Left tab ${away}×${awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}`}
                           title="Times the student left the test tab (total time away)"
-                          className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900"
-                        >
-                          ↗ left tab {away}×{awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}
-                        </span>
+                        />
                       )}
                       {fmtIntegrity(r.integrity) && (
-                        <span
+                        <StatusPill
+                          tone="alert"
+                          icon="⚑"
+                          label={fmtIntegrity(r.integrity) ?? ""}
                           title="Integrity signals"
-                          className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-medium text-rose-700 ring-1 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
-                        >
-                          ⚑ {fmtIntegrity(r.integrity)}
-                        </span>
+                        />
                       )}
-                      {r.paused && (
-                        <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-[11px] font-medium text-indigo-700 ring-1 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900">
-                          ⏸ paused
-                        </span>
-                      )}
+                      {r.paused && <StatusPill tone="paused" icon="⏸" label="Paused" />}
                       {isAdmin && (
-                        <>
-                          <button
-                            type="button"
-                            disabled={busyRun === r.run_id}
-                            onClick={() =>
-                              void setPause(r.run_id, !r.paused, r.student_name ?? "student")
-                            }
-                            title={r.paused ? "Resume this student's timer" : "Freeze this student's timer"}
-                            className="ml-auto rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                          >
-                            {busyRun === r.run_id ? "…" : r.paused ? "Resume" : "Pause"}
-                          </button>
-                          <button
-                            type="button"
-                            disabled={busyRun === r.run_id}
-                            onClick={() => void addTime(r.run_id, 300, r.student_name ?? "student")}
-                            title="Give this student 5 more minutes on the current section"
-                            className="rounded-md px-2 py-1 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                          >
-                            {busyRun === r.run_id ? "…" : "+5 min"}
-                          </button>
-                        </>
+                        <div className="ml-auto">
+                          <ActionGroup>
+                            <RowAction
+                              className="rounded-none"
+                              disabled={busyRun === r.run_id}
+                              onClick={() =>
+                                void setPause(r.run_id, !r.paused, r.student_name ?? "student")
+                              }
+                              title={
+                                r.paused
+                                  ? "Resume this student's timer"
+                                  : "Freeze this student's timer"
+                              }
+                            >
+                              {busyRun === r.run_id ? "…" : r.paused ? "Resume" : "Pause"}
+                            </RowAction>
+                            <RowAction
+                              className="rounded-none"
+                              disabled={busyRun === r.run_id}
+                              onClick={() =>
+                                void addTime(r.run_id, 300, r.student_name ?? "student")
+                              }
+                              title="Give this student 5 more minutes on the current section"
+                            >
+                              {busyRun === r.run_id ? "…" : "+5 min"}
+                            </RowAction>
+                          </ActionGroup>
+                        </div>
                       )}
                     </>
                   ) : r.state === "submitted" ? (
                     <>
                       {flaggedRow && (
-                        <span
+                        <StatusPill
+                          tone="alert"
+                          icon="⚑"
+                          label="Needs review"
                           title={
                             flagReasons.length
                               ? flagReasons.map(flagLabel).join(" · ")
                               : "Flagged for review"
                           }
-                          className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-semibold text-rose-700 ring-1 ring-rose-300 dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800"
-                        >
-                          ⚑ Needs review
-                        </span>
+                        />
                       )}
-                      <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
-                        Submitted {fmtTime(r.submitted_at)}
-                      </span>
+                      <StatusPill
+                        tone="released"
+                        label={`Submitted ${fmtTime(r.submitted_at)}`}
+                      />
                     </>
                   ) : (
-                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500 ring-1 ring-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:ring-slate-700">
-                      Not started
-                    </span>
+                    <StatusPill tone="idle" label="Not started" />
                   )}
                   </div>
 
