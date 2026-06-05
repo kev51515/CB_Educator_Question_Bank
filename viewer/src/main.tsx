@@ -20,7 +20,18 @@ import { AuthGate } from "@/auth";
 import { registerServiceWorker } from "./registerSW";
 import { initTelemetry } from "@/lib/telemetry";
 
-initTelemetry();
+// Defer telemetry init so the Sentry/PostHog SDK chunks load AFTER first paint
+// instead of competing with app hydration. captureError/trackEvent calls made
+// before the SDKs finish loading are queued + flushed (see telemetry.ts).
+const bootTelemetry = (): void => {
+  void initTelemetry();
+};
+const ric = window.requestIdleCallback;
+if (typeof ric === "function") {
+  ric(bootTelemetry, { timeout: 3000 });
+} else {
+  window.setTimeout(bootTelemetry, 1500);
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

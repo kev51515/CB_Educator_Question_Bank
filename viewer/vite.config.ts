@@ -10,6 +10,29 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Split the always-needed, rarely-changing core libs into stable vendor
+        // chunks so returning users keep them cached across app deploys (the
+        // app chunk changes every deploy; these don't). Heavy optional libs
+        // (Sentry, PostHog, TipTap, KaTeX) are code-split at their usage sites
+        // instead, so they're intentionally NOT grouped here.
+        manualChunks(id: string) {
+          if (!id.includes("node_modules")) return undefined;
+          if (
+            /[\\/]node_modules[\\/](react|react-dom|scheduler|react-router|react-router-dom)[\\/]/.test(
+              id,
+            )
+          ) {
+            return "vendor-react";
+          }
+          if (id.includes("/node_modules/@supabase/")) return "vendor-supabase";
+          return undefined;
+        },
+      },
+    },
+  },
   server: {
     // Fixed, easy-to-remember dev port. strictPort = fail loudly if 9000 is
     // taken rather than silently hopping to 9001 (so the URL is always the same).
