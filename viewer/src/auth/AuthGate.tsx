@@ -125,10 +125,12 @@ function ProfileError({ message, onRetry, onSignOut }: ProfileErrorProps) {
 }
 
 /**
- * Public (unauthenticated) routes. We honor a one-time mode default —
- * if the URL carries a `?code=`, we land on /quick-start instead of
- * /signin so a QR-scanned link drops the student straight into the
- * friction-free path.
+ * Public (unauthenticated) routes. Code-entry is the primary path: any
+ * unmatched URL lands on /quick-start so first-time students don't have
+ * to know what an email + password is. The /signin tab is still one
+ * click away from QuickStartScreen for returning users (and for
+ * educators, who do need email+password). `hasCodeInUrl()` is retained
+ * (and still relevant in QuickStartScreen for the QR-deeplink prefill).
  */
 function PublicRoutes({
   signInWithPassword,
@@ -140,9 +142,7 @@ function PublicRoutes({
   requestPasswordReset: ReturnType<typeof useStudentSession>["requestPasswordReset"];
 }) {
   const navigate = useNavigate();
-  const [defaultPath] = useState(() =>
-    hasCodeInUrl() ? ROUTES.QUICK_START : ROUTES.SIGN_IN,
-  );
+  const [defaultPath] = useState(() => ROUTES.QUICK_START);
 
   return (
     <Routes>
