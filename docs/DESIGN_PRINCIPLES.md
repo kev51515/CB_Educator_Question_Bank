@@ -411,6 +411,48 @@ should mirror this pattern.
 
 ---
 
+## 8j. Page chrome — the global breadcrumb + content alignment
+
+Every educator (`/educator/*`) surface sits under ONE global breadcrumb bar,
+mounted once in `StaffShell`'s `<main>` (above the `<Outlet/>`). You don't add
+a breadcrumb per page — the bar already covers every page + subpage. Rules:
+
+1. **Don't hand-roll a breadcrumb or an inline "← Back to X" link** on an
+   educator surface. The bar's clickable ancestors + its "up one level" back
+   control already provide that. (Local back links were removed from
+   ClassLayout / TestOverviewPage when the bar landed.)
+2. **The trail is derived from the URL** by `lib/breadcrumbs.ts` (pure,
+   table-driven). Static segments are mapped there; if you add a new educator
+   route, add its segment label to `STATIC_LABELS`.
+3. **Dynamic segments resolve to real names.** A page that owns a dynamic id
+   segment (`:courseId`, `:assignmentId`, `:slug`, `:studentId`, `:topicId`,
+   `:threadId`) MUST call `useBreadcrumbLabel(urlValue, entityName)` from
+   `@/components` — keyed by the **URL param value** (the short_code/uuid in the
+   address bar), with the human name. Call it unconditionally, before any early
+   `return`; it no-ops until both are truthy and on the student shell (no
+   provider). Without it the crumb shows a generic fallback ("Course").
+4. **Constant height = no layout shift.** The bar is a fixed `h-12` on every
+   route. Its height is published as the `--app-chrome-top` CSS var (`3rem` in
+   the staff shell, `0px` everywhere else). Any page-level chrome must respect
+   it:
+   - A `sticky top-0` header that pins to the page scroll → use
+     `top-[var(--app-chrome-top,0px)]` so it sits *below* the bar, not behind
+     it. (See QuestionBank, AssignmentDetail, CourseGradebook, TestReview.)
+   - A full-viewport pane (`h-screen`) → use
+     `h-[calc(100vh-var(--app-chrome-top,0px))]` so it fits beneath the bar in
+     both shells. (See InboxPage.)
+5. **Content left-aligns flush with the bar.** The bar's gutter is
+   `px-4 sm:px-6 lg:px-8`, flush-left. A page's outer content container must
+   match — **no `mx-auto` centering** (it pushes the left edge off the bar and
+   reads as misaligned). Keep `max-w-Nxl` as a right-edge cap, but left-align:
+   `max-w-Nxl px-4 sm:px-6 lg:px-8`. This is the standard for every educator
+   surface.
+
+Reference: `viewer/src/components/Breadcrumbs.tsx` + `viewer/src/lib/breadcrumbs.ts`,
+wired in `viewer/src/auth/StaffShell.tsx`.
+
+---
+
 ## 9. Patterns to introduce next (not yet shipped)
 
 These belong on the roadmap but are explicitly *intended* for future waves:

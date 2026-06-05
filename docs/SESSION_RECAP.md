@@ -1,6 +1,46 @@
 # Session Recap
 
-## Latest (2026-06-05) — launch-prep: login fixes, single-proctor lock, backups, bundle split, modularization
+## Latest (2026-06-05) — launch-prep: login fixes, single-proctor lock, backups, bundle split, modularization, breadcrumb nav
+
+**Navigation — global breadcrumb bar across every educator surface:**
+- A single sticky breadcrumb bar mounts ONCE in `StaffShell`'s `<main>` (above the
+  `<Outlet/>`), so every `/educator/*` page + subpage gets a consistent trail + an
+  "up one level" back control with zero per-page wiring. The trail is derived
+  synchronously from the URL by `lib/breadcrumbs.ts` (pure, table-driven), so the
+  static portion never flickers and the bar is a constant 48px on every route (no
+  layout shift). Dynamic segments (course / assignment / test / student / topic /
+  thread / attempt) resolve to real entity names — pages register them via
+  `useBreadcrumbLabel(urlValue, name)` (`components/Breadcrumbs.tsx`), falling back
+  to a generic word ("Course") until the owning page loads. Removed the now-redundant
+  inline back-links (ClassLayout "← Back to courses", TestOverview "← All tests").
+- **`--app-chrome-top` CSS var** (3rem in the staff shell, 0px elsewhere) publishes
+  the bar height so page chrome offsets beneath it: sticky headers use
+  `top-[var(--app-chrome-top,0px)]` (QuestionBank / AssignmentDetail / CourseGradebook
+  / TestReview) and the full-height Inbox two-pane uses
+  `h-[calc(100vh-var(--app-chrome-top,0px))]`. Shell-agnostic — reduces to the
+  originals on the student shell.
+- **Educator content now left-aligns flush with the bar.** Page containers were
+  centered (`mx-auto max-w-Nxl`), so their left edge sat right of the flush-left bar
+  (looked messy). Dropped `mx-auto` + normalized the gutter to `px-4 sm:px-6 lg:px-8`
+  across all educator surfaces (ClassLayout + course tabs, AllClassesView, Dashboard,
+  QuestionBank, Account, Calendar, Tests overview/review/admin, StudentProfile);
+  `max-w-Nxl` stays as a right-edge cap. New convention documented in
+  DESIGN_PRINCIPLES §8j.
+
+**Student course access (the just-joined path):**
+- **Fixed "Couldn't open this course" after claiming a seat.** `claim_student_seat`
+  returns the course UUID and the app deep-links to `/student/courses/<uuid>`, but
+  `StudentCourseView` looked the course up ONLY by `short_code` (uppercased) — a UUID
+  never matches → hard "not found", even for a genuinely-enrolled seat (its
+  `course_memberships` row grants the `courses` RLS read). Fix: detect the UUID shape
+  and look up by `id` (Postgres parses uuid input case-insensitively, so the
+  uppercased value still matches); `short_code` links are unaffected.
+- **Bounded retry on the initial course load** (post-join resilience). Rather than pad
+  the happy path with a fixed "joining…" delay, the existing skeleton now covers up to
+  3 quick re-attempts (350ms backoff): a transient network/auth blip self-heals, a
+  genuine no-access still surfaces within ~1s. No race needs masking — the seat claim
+  awaits sign-in before navigating and rebinds an already-enrolled seat (membership +
+  course pre-exist the claim, so RLS passes the instant the query runs).
 
 **Auth / login (the student deployment path):**
 - **Fixed the quick-start seat-claim bounce.** A managed-seat student (e.g. "BBB")

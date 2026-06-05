@@ -29,6 +29,14 @@ For the underlying design language (color, typography, spacing), see
   `DetailContent` parts, `AnswerActions.tsx`, etc.) — Right pane. Question
   header, stimulus, stem, choices, rationale, actions.
 - **MobileTabBar** (`components/MobileTabBar.tsx`) — Bottom nav for mobile.
+- **Breadcrumbs** (`components/Breadcrumbs.tsx`) — The global breadcrumb bar for
+  the educator shell. Three exports: `BreadcrumbProvider` (label registry, wraps
+  `StaffShell`), `useBreadcrumbLabel(urlValue, name)` (a page registers a dynamic
+  segment's real name; no-ops without a provider / until both args truthy), and
+  `Breadcrumbs` (the sticky `h-12` bar — back control + trail). The trail itself is
+  computed by the pure `lib/breadcrumbs.ts` (`buildEducatorTrail` / `backTargetOf`).
+  Mounted once above the `<Outlet/>`; publishes its height as the `--app-chrome-top`
+  CSS var. See DESIGN_PRINCIPLES §8j for the full chrome/offset/alignment contract.
 
 ## Foundations (lib/)
 
