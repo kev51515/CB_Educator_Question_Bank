@@ -226,13 +226,12 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
       p_name: name.trim(),
       p_email: email.trim(),
     });
-    if (!aliveRef.current) return true; // unmounted; leave session as-is
     if (rpcError) {
-      setError(mapRpcError(rpcError.message));
+      if (aliveRef.current) setError(mapRpcError(rpcError.message));
       return false;
     }
-    setSucceeded(true);
-    return true; // the anon session IS this student now
+    if (aliveRef.current) setSucceeded(true);
+    return true; // the anon session IS this student now — keep it
   };
 
   /** Claim (or request) a pre-created managed seat from a "-NN" seat code. */
@@ -243,30 +242,30 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
       p_email: trimmedEmail,
       p_password: password,
     });
-    if (!aliveRef.current) return false;
     if (rpcError) {
-      setError(mapRpcError(rpcError.message));
+      if (aliveRef.current) setError(mapRpcError(rpcError.message));
       return false;
     }
     const row = (Array.isArray(data) ? data[0] : data) as ClaimSeatRow | null;
 
     if (row?.status === "claimed") {
       // The seat now logs in with the real email + chosen password. Sign in as
-      // the seat — this REPLACES the anon session, so keep it. AuthGate routes.
+      // the seat — this REPLACES the shared anon session. We MUST complete this
+      // even if signInAnonymously already routed AuthGate off /quick-start and
+      // unmounted us: bailing here on `!aliveRef` would leave the seat CLAIMED
+      // but the student signed out → bounced back to /quick-start (the bug).
       const loginEmail = row.login_email || trimmedEmail;
       const { error: signInError } = await supabase.auth.signInWithPassword({
         email: loginEmail,
         password,
       });
-      if (!aliveRef.current) return true; // signed in; leave the seat session
       if (signInError) {
-        setError(
-          "Your login is set up — please sign in with your email and password.",
-        );
+        if (aliveRef.current)
+          setError("Your login is set up — please sign in with your email and password.");
         return false;
       }
-      setSucceeded(true);
-      return true;
+      if (aliveRef.current) setSucceeded(true);
+      return true; // seat session established — keep it
     }
 
     // status === 'pending' → teacher must approve. The anon session is dropped
@@ -345,11 +344,15 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
     } catch (err: unknown) {
       if (aliveRef.current) setError(getErrorMessage(err));
     } finally {
-      // If we minted an anon session but never converted it into a real
-      // signed-in state (error / pending), drop it so the student isn't
-      // stranded as an anonymous user with no course.
+      // Drop the throwaway anon session ONLY if it's still anonymous — i.e. the
+      // flow errored before converting it. signInAnonymously + signInWithPassword
+      // (seat claim) share ONE supabase session, so a blind signOut here would
+      // strand a just-signed-in seat student and bounce them to /quick-start.
       if (anonStarted && !keepSession) {
-        await supabase.auth.signOut().catch(() => undefined);
+        const { data: who } = await supabase.auth.getUser();
+        const stillAnon =
+          (who?.user as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+        if (stillAnon) await supabase.auth.signOut().catch(() => undefined);
       }
       if (aliveRef.current) setBusy(false);
     }

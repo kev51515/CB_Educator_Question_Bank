@@ -69,7 +69,7 @@ export default defineConfig({
   testDir: "./e2e",
   // ONLY the real-auth specs (role routing + the practice-test runner) — every
   // other e2e spec assumes VITE_E2E_BYPASS_AUTH and would skip AuthGate.
-  testMatch: /(role-routing|practice-test-runner)\.spec\.ts$/,
+  testMatch: /(role-routing|practice-test-runner|quick-start-seat)\.spec\.ts$/,
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
