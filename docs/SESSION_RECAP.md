@@ -1,6 +1,53 @@
 # Session Recap
 
-## Latest (2026-06-05) — grid-in grading: repeating-decimal acceptance (migration 0111)
+## Latest (2026-06-07) — live test-monitor roster polish + release/hide clarity (3 commits, no migrations)
+
+**Reworked the teacher-facing test-monitoring roster into one calm, scannable
+visual language across all three surfaces that render it, and made the
+"Release / Hide" control self-explanatory.** UI-only; build verified
+(`tsc -b`) and pushed each commit.
+
+- **The problem (user-flagged):** the STUDENTS roster on the per-test overview
+  read as a wall of competing outlined controls — status chips (gray "Hidden",
+  blue "In progress") looked like buttons, and the live-control trio
+  (Pause/End/Reset) each carried a different colored border, so every row was a
+  christmas tree. Separately, "Release"/"Hide" never said *release what, to
+  whom*.
+
+- **New shared primitives** — `viewer/src/fulltest/test-overview/StatusPill.tsx`
+  (barrel-exported from `@/fulltest/test-overview`):
+  - **`StatusPill`** — one pill family (tinted fill + leading colored dot,
+    optional live `pulse`) so color alone carries state: idle / live / paused /
+    released / hidden / alert / warn. Replaces every outlined status/signal
+    chip.
+  - **`RowAction`** — one ghost button (no ring, hover-tint) so actions sit
+    visually below row content; semantic tone (warn/danger) survives in text
+    color only.
+  - **`ActionGroup`** — segmented container collecting a live-control trio into
+    a single control instead of N floating bordered buttons.
+
+- **Surfaces updated (commits `c7d0523`, `78ba6cf`, `70a0295`):**
+  1. **`TestOverviewPage`** roster (`/educator/tests/:slug`) — the flagged
+     screen. Right-aligned `[status][signals][actions]` cluster, live-pulse
+     on in-progress, Pause·End·Reset in one `ActionGroup`, subtle row hover,
+     dropped the redundant "Not started" subtitle.
+  2. **`StudentTestRunsPanel`** (student profile → "Full-length tests") — same
+     primitives; Released/Hidden + "Retake allowed" → `StatusPill`; Review /
+     release / allow-retake → `RowAction`.
+  3. **`TestMonitorModal`** (live proctoring) — idle / needs-review / left-tab /
+     integrity / paused / submitted / not-started → `StatusPill`;
+     Pause/Resume + "+5 min" → `ActionGroup`. Live telemetry (module/Q chip,
+     answered count, timer, started-at) left as informational text — it's data,
+     not status.
+
+- **Release/hide clarity** — students see nothing after finishing a test until
+  the teacher releases; that's now explicit: header explainer ("*Releasing*
+  lets a student open their score and answer review. Until you do, they only
+  see that they finished."), audience-explicit labels ("Release to student" /
+  "Hide results" / "Release all results"), and tooltips on every release/hide
+  control (per-row and bulk).
+
+## 2026-06-05 — grid-in grading: repeating-decimal acceptance (migration 0111)
 
 **Hardened the grid (student-produced response) grader for repeating-decimal
 answers — `_grade_answer` now follows the College Board SPR rule.**
