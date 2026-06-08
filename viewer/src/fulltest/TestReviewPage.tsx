@@ -310,6 +310,16 @@ export function TestReviewPage(): JSX.Element {
               <span aria-hidden className={`transition-transform ${navOpen ? "rotate-180" : ""}`}>▾</span>
             </button>
 
+            {/* current question's SAT domain — context while reviewing */}
+            {question.domain && (
+              <span
+                className="hidden items-center rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 sm:inline-flex dark:bg-indigo-950/40 dark:text-indigo-300"
+                title={`SAT skill domain: ${question.domain}`}
+              >
+                {question.domain}
+              </span>
+            )}
+
             <button
               type="button"
               onMouseDown={(e) => e.preventDefault()}
