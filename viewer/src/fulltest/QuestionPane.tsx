@@ -139,7 +139,7 @@ function QHeader({
   containerClassName?: string;
 }) {
   return (
-    <div className={`items-center justify-between gap-3 border-b border-slate-200 pb-2 dark:border-slate-700 ${containerClassName}`}>
+    <div className={`items-center justify-between gap-3 pb-2 ${containerClassName}`}>
       <div className="flex items-center gap-3">
         <span className={`h-6 min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900 ${numberClassName}`}>
           {number}
