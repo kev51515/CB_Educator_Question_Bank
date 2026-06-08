@@ -10,21 +10,73 @@
  * cards. Each card links to the staff answer-key review (`/tests/:slug/review`)
  * and a student-style preview (`/test/:slug`).
  */
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { testRunPath, testReviewPath, testOverviewPath } from "@/lib/routes";
 import { TestCompletionModal } from "./TestCompletionModal";
 import { TestMonitorModal } from "./TestMonitorModal";
 import { AssignTestModal } from "./AssignTestModal";
 import { useFullTests } from "./useFullTests";
-import { SectionBadge, formatTestDuration } from "./testSections";
+import {
+  SectionBadge,
+  formatTestDuration,
+  sectionKind,
+  SECTION_KIND_LABEL,
+  type SectionKind,
+} from "./testSections";
 import type { TestCatalogEntry } from "./types";
+
+type CatalogFilter = "all" | SectionKind;
+const FILTER_KEY = "staff.fulltest.catalog.filter";
+const KIND_ORDER: SectionKind[] = ["full", "rw", "math"];
+
+function readFilter(): CatalogFilter {
+  try {
+    const v = localStorage.getItem(FILTER_KEY);
+    if (v === "all" || v === "full" || v === "rw" || v === "math") return v;
+  } catch {
+    /* ignore */
+  }
+  return "all";
+}
 
 export function FullTestCatalog() {
   const { tests, loading } = useFullTests();
   const [resultsFor, setResultsFor] = useState<TestCatalogEntry | null>(null);
   const [monitorFor, setMonitorFor] = useState<TestCatalogEntry | null>(null);
   const [assignFor, setAssignFor] = useState<TestCatalogEntry | null>(null);
+  const [filter, setFilterState] = useState<CatalogFilter>(readFilter);
+
+  const setFilter = (f: CatalogFilter): void => {
+    setFilterState(f);
+    try {
+      localStorage.setItem(FILTER_KEY, f);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  // Which composition kinds actually exist — drives whether (and which) filter
+  // chips render. A homogeneous catalog (all full) shows no filter row.
+  const kindsPresent = useMemo(() => {
+    const set = new Set<SectionKind>();
+    for (const t of tests) {
+      const k = sectionKind(t.sections);
+      if (k) set.add(k);
+    }
+    return KIND_ORDER.filter((k) => set.has(k));
+  }, [tests]);
+
+  const effectiveFilter: CatalogFilter =
+    filter !== "all" && !kindsPresent.includes(filter) ? "all" : filter;
+
+  const filtered = useMemo(
+    () =>
+      effectiveFilter === "all"
+        ? tests
+        : tests.filter((t) => sectionKind(t.sections) === effectiveFilter),
+    [tests, effectiveFilter],
+  );
 
   if (loading) {
     return (
@@ -60,8 +112,55 @@ export function FullTestCatalog() {
         Full-length, proctored, Bluebook-style tests — timed modules, server-graded,
         with an estimated SAT score. Review the answer key before assigning.
       </p>
+
+      {kindsPresent.length > 1 && (
+        <div
+          role="group"
+          aria-label="Filter tests by section"
+          className="flex flex-wrap items-center gap-1.5"
+        >
+          {(["all", ...kindsPresent] as CatalogFilter[]).map((f) => {
+            const active = effectiveFilter === f;
+            const label = f === "all" ? "All" : SECTION_KIND_LABEL[f];
+            return (
+              <button
+                key={f}
+                type="button"
+                onClick={() => setFilter(f)}
+                aria-pressed={active}
+                className={
+                  "rounded-full px-3 py-1 text-xs font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
+                  (active
+                    ? "bg-indigo-600 text-white ring-1 ring-indigo-600"
+                    : "bg-white text-slate-600 ring-1 ring-slate-300 hover:bg-indigo-50 hover:text-indigo-700 dark:bg-slate-900 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-indigo-950/40 dark:hover:text-indigo-200")
+                }
+              >
+                {label}
+              </button>
+            );
+          })}
+          <span className="ml-auto text-xs tabular-nums text-slate-400 dark:text-slate-500">
+            {filtered.length} of {tests.length}
+          </span>
+        </div>
+      )}
+
+      {filtered.length === 0 ? (
+        <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center dark:border-slate-700 dark:bg-slate-900/40">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            No tests match this filter.
+          </p>
+          <button
+            type="button"
+            onClick={() => setFilter("all")}
+            className="mt-1.5 text-xs font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+          >
+            Show all tests
+          </button>
+        </div>
+      ) : (
       <div className="grid gap-4 sm:grid-cols-2">
-        {tests.map((t) => (
+        {filtered.map((t) => (
           <article
             key={t.slug}
             className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
@@ -133,6 +232,7 @@ export function FullTestCatalog() {
           </article>
         ))}
       </div>
+      )}
 
       {resultsFor && (
         <TestCompletionModal

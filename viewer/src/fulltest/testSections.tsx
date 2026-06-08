@@ -74,6 +74,27 @@ const MATH_ONLY: SectionSummary = {
   tone: "bg-amber-50 text-amber-800 ring-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:ring-amber-900",
 };
 
+/** Coarse composition kind, for filtering. Empty → null. */
+export type SectionKind = "full" | "rw" | "math";
+
+export function sectionKind(
+  sections: ReadonlyArray<Section> | null | undefined,
+): SectionKind | null {
+  const hasRW = !!sections?.includes("reading-writing");
+  const hasMath = !!sections?.includes("math");
+  if (hasRW && hasMath) return "full";
+  if (hasMath) return "math";
+  if (hasRW) return "rw";
+  return null;
+}
+
+/** Short pill label per kind, for filter chips. */
+export const SECTION_KIND_LABEL: Record<SectionKind, string> = {
+  full: "Full (R&W + Math)",
+  rw: "R&W only",
+  math: "Math only",
+};
+
 /** Map a test's sections to a human label + tone. Empty → null (caller hides the badge). */
 export function sectionSummary(
   sections: ReadonlyArray<Section> | null | undefined,
