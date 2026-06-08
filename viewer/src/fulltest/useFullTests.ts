@@ -5,7 +5,17 @@
  */
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import type { TestCatalogEntry } from "./types";
+import type { Section, TestCatalogEntry } from "./types";
+import { CATALOG_SELECT, deriveSections } from "./testSections";
+
+interface RawCatalogRow {
+  slug: string;
+  ordinal: number;
+  title: string;
+  short_title: string | null;
+  total_questions: number;
+  test_modules: { section: Section }[] | null;
+}
 
 export function useFullTests(enabled = true): {
   tests: TestCatalogEntry[];
@@ -20,10 +30,20 @@ export function useFullTests(enabled = true): {
     (async () => {
       const { data } = await supabase
         .from("tests")
-        .select("slug,ordinal,title,short_title,total_questions")
+        .select(CATALOG_SELECT)
         .order("ordinal", { ascending: true });
       if (!alive) return;
-      setTests((data ?? []) as TestCatalogEntry[]);
+      setTests(
+        ((data ?? []) as unknown as RawCatalogRow[]).map((r) => ({
+          slug: r.slug,
+          ordinal: r.ordinal,
+          title: r.title,
+          short_title: r.short_title,
+          total_questions: r.total_questions,
+          sections: deriveSections(r.test_modules),
+          module_count: r.test_modules?.length ?? 0,
+        })),
+      );
       setLoading(false);
     })();
     return () => {

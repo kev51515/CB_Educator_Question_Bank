@@ -10,6 +10,8 @@ import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
 import { useEscapeKey, useFocusTrap } from "@/hooks";
 import { SkeletonRows } from "@/components/Skeleton";
+import { SectionBadge } from "./testSections";
+import type { Section } from "./types";
 
 interface CourseRow {
   id: string;
@@ -20,6 +22,8 @@ interface CourseRow {
 interface AssignTestModalProps {
   slug: string;
   title: string;
+  /** Section composition (RW / Math / both) so the teacher sets expectations. */
+  sections?: Section[];
   onClose: () => void;
 }
 
@@ -29,7 +33,7 @@ function getErrorMessage(error: unknown, fallback: string): string {
   return fallback;
 }
 
-export function AssignTestModal({ slug, title, onClose }: AssignTestModalProps) {
+export function AssignTestModal({ slug, title, sections, onClose }: AssignTestModalProps) {
   const toast = useToast();
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, true);
@@ -108,6 +112,9 @@ export function AssignTestModal({ slug, title, onClose }: AssignTestModalProps) 
               Assign to a course
             </h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{title}</p>
+            <div className="mt-1.5">
+              <SectionBadge sections={sections} />
+            </div>
           </div>
           <button
             type="button"

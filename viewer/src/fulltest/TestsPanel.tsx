@@ -10,7 +10,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { testRunPath } from "@/lib/routes";
-import type { TestCatalogEntry } from "./types";
+import { CATALOG_SELECT, deriveSections, SectionBadge } from "./testSections";
+import type { Section, TestCatalogEntry } from "./types";
 
 interface RunRow {
   test_id: string;
@@ -21,6 +22,16 @@ interface RunRow {
 
 interface CatalogRow extends TestCatalogEntry {
   id: string;
+}
+
+interface RawTestRow {
+  id: string;
+  slug: string;
+  ordinal: number;
+  title: string;
+  short_title: string | null;
+  total_questions: number;
+  test_modules: { section: Section }[] | null;
 }
 
 export function TestsPanel() {
@@ -34,10 +45,19 @@ export function TestsPanel() {
     (async () => {
       const { data: testRows } = await supabase
         .from("tests")
-        .select("id,slug,ordinal,title,short_title,total_questions")
+        .select(`id,${CATALOG_SELECT}`)
         .order("ordinal", { ascending: true });
       if (!alive) return;
-      const list = (testRows ?? []) as CatalogRow[];
+      const list = ((testRows ?? []) as unknown as RawTestRow[]).map((r) => ({
+        id: r.id,
+        slug: r.slug,
+        ordinal: r.ordinal,
+        title: r.title,
+        short_title: r.short_title,
+        total_questions: r.total_questions,
+        sections: deriveSections(r.test_modules),
+        module_count: r.test_modules?.length ?? 0,
+      })) as CatalogRow[];
       setTests(list);
 
       // Best run per test for the current user (in-progress wins for "Resume",
@@ -87,10 +107,16 @@ export function TestsPanel() {
                 onClick={() => navigate(testRunPath(t.slug))}
                 className="flex w-full items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white px-4 py-3 text-left transition hover:border-indigo-300 hover:bg-indigo-50/40 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
               >
-                <div>
-                  <div className="font-semibold text-slate-900 dark:text-slate-100">{t.title}</div>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-semibold text-slate-900 dark:text-slate-100">
+                      {t.title}
+                    </span>
+                    <SectionBadge sections={t.sections} />
+                  </div>
                   <div className="text-sm text-slate-500 dark:text-slate-400">
-                    {t.total_questions} questions · 4 timed modules
+                    {t.total_questions} questions · {t.module_count ?? "—"} timed{" "}
+                    {t.module_count === 1 ? "module" : "modules"}
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

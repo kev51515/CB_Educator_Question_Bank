@@ -126,4 +126,13 @@ export interface TestCatalogEntry {
   title: string;
   short_title: string | null;
   total_questions: number;
+  /**
+   * Sections this test actually covers, derived from its `test_modules`
+   * (canonical order: reading-writing, then math). Optional because some
+   * catalog queries don't embed the modules; surfaces that show composition
+   * should select with `CATALOG_SELECT` (see testSections).
+   */
+  sections?: Section[];
+  /** Number of timed modules (e.g. 2 for an RW-only test, 4 for a full SAT). */
+  module_count?: number;
 }

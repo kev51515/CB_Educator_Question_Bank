@@ -10,37 +10,21 @@
  * cards. Each card links to the staff answer-key review (`/tests/:slug/review`)
  * and a student-style preview (`/test/:slug`).
  */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "@/lib/supabase";
 import { testRunPath, testReviewPath, testOverviewPath } from "@/lib/routes";
 import { TestCompletionModal } from "./TestCompletionModal";
 import { TestMonitorModal } from "./TestMonitorModal";
 import { AssignTestModal } from "./AssignTestModal";
+import { useFullTests } from "./useFullTests";
+import { SectionBadge } from "./testSections";
 import type { TestCatalogEntry } from "./types";
 
 export function FullTestCatalog() {
-  const [tests, setTests] = useState<TestCatalogEntry[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { tests, loading } = useFullTests();
   const [resultsFor, setResultsFor] = useState<TestCatalogEntry | null>(null);
   const [monitorFor, setMonitorFor] = useState<TestCatalogEntry | null>(null);
   const [assignFor, setAssignFor] = useState<TestCatalogEntry | null>(null);
-
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      const { data } = await supabase
-        .from("tests")
-        .select("slug,ordinal,title,short_title,total_questions")
-        .order("ordinal", { ascending: true });
-      if (!alive) return;
-      setTests((data ?? []) as TestCatalogEntry[]);
-      setLoading(false);
-    })();
-    return () => {
-      alive = false;
-    };
-  }, []);
 
   if (loading) {
     return (
@@ -84,9 +68,12 @@ export function FullTestCatalog() {
           >
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
-                <span className="inline-flex items-center rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">
-                  Full-length test
-                </span>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="inline-flex items-center rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">
+                    Full-length test
+                  </span>
+                  <SectionBadge sections={t.sections} />
+                </div>
                 <h3 className="mt-2 truncate text-base font-semibold text-slate-900 dark:text-slate-100">
                   <Link
                     to={testOverviewPath(t.slug)}
@@ -98,7 +85,8 @@ export function FullTestCatalog() {
               </div>
             </div>
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              {t.total_questions} questions · 4 timed modules
+              {t.total_questions} questions · {t.module_count ?? "—"} timed{" "}
+              {t.module_count === 1 ? "module" : "modules"}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Link
@@ -161,6 +149,7 @@ export function FullTestCatalog() {
         <AssignTestModal
           slug={assignFor.slug}
           title={assignFor.title}
+          sections={assignFor.sections}
           onClose={() => setAssignFor(null)}
         />
       )}

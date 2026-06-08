@@ -31,6 +31,7 @@ import { getResult, getRunTimeline } from "./api";
 import type { ProctorEvent } from "./api";
 import { ResultView } from "./ResultView";
 import { AssignTestModal } from "./AssignTestModal";
+import { SectionBadge, deriveSections } from "./testSections";
 import { TestMonitorModal } from "./TestMonitorModal";
 import { ProctorChatModal } from "./ProctorChatModal";
 import ProctorTimeline from "./ProctorTimeline";
@@ -453,8 +454,11 @@ export function TestOverviewPage(): JSX.Element {
       <header className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="min-w-0">
-            <span className="inline-flex items-center rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">
-              Full-length test
+            <span className="inline-flex flex-wrap items-center gap-1.5">
+              <span className="inline-flex items-center rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">
+                Full-length test
+              </span>
+              <SectionBadge sections={deriveSections(modules)} />
             </span>
             {metaLoading ? (
               <Skeleton className="mt-2 h-7 w-72 rounded" />
@@ -770,7 +774,12 @@ export function TestOverviewPage(): JSX.Element {
 
       {/* modals */}
       {assignOpen && (
-        <AssignTestModal slug={slug} title={title} onClose={() => setAssignOpen(false)} />
+        <AssignTestModal
+          slug={slug}
+          title={title}
+          sections={deriveSections(modules)}
+          onClose={() => setAssignOpen(false)}
+        />
       )}
       {monitorOpen && (
         <TestMonitorModal

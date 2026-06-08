@@ -18,6 +18,7 @@ import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/lib/profile";
 import { ROUTES, testRunPath } from "@/lib/routes";
 import { useFullTests } from "@/fulltest/useFullTests";
+import { sectionSummary } from "@/fulltest/testSections";
 import { SmartDatePicker } from "@/components";
 import { useToast } from "@/components/Toast";
 import { EmptyState } from "@/components/EmptyState";
@@ -783,11 +784,15 @@ export function InlineAddItemRow({
             <option value="">
               {fullTests.length === 0 ? "No full-length tests yet" : "Pick a full-length test…"}
             </option>
-            {fullTests.map((t) => (
-              <option key={t.slug} value={t.slug}>
-                {t.title}
-              </option>
-            ))}
+            {fullTests.map((t) => {
+              const sum = sectionSummary(t.sections);
+              return (
+                <option key={t.slug} value={t.slug}>
+                  {t.title}
+                  {sum ? ` — ${sum.short}` : ""}
+                </option>
+              );
+            })}
           </select>
           <input
             type="text"
@@ -797,10 +802,44 @@ export function InlineAddItemRow({
             disabled={busy}
             className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
-          <p className="text-[11px] text-slate-500 dark:text-slate-400">
-            Adds the full-length, Bluebook-style test. Enrolled students open it
-            straight from this module.
-          </p>
+          {(() => {
+            // Show the chosen test's section composition so the teacher knows
+            // whether it's RW-only, Math-only, or a full SAT before adding it.
+            const chosen = fullTests.find((t) => t.slug === fullTestSlug);
+            if (!chosen) {
+              return (
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                  Adds the full-length, Bluebook-style test. Enrolled students open
+                  it straight from this module.
+                </p>
+              );
+            }
+            const sum = sectionSummary(chosen.sections);
+            return (
+              <div
+                className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-[11px] text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700"
+                aria-label="Test composition"
+              >
+                <span className="font-medium text-slate-700 dark:text-slate-200">
+                  {sum?.label ?? "Full-length test"}
+                </span>
+                <span className="text-slate-400">·</span>
+                <span className="tabular-nums">
+                  {chosen.total_questions} question
+                  {chosen.total_questions === 1 ? "" : "s"}
+                </span>
+                {chosen.module_count != null && (
+                  <>
+                    <span className="text-slate-400">·</span>
+                    <span className="tabular-nums">
+                      {chosen.module_count} timed module
+                      {chosen.module_count === 1 ? "" : "s"}
+                    </span>
+                  </>
+                )}
+              </div>
+            );
+          })()}
         </div>
       )}
 
