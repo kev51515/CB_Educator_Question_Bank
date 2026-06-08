@@ -22,6 +22,7 @@ import { useBreadcrumbLabel } from "@/components";
 import { Skeleton } from "@/components/Skeleton";
 import { testOverviewPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
+import { ReviewHeatmap } from "./ReviewHeatmap";
 import { ModuleTabs } from "./ModuleTabs";
 import { useTestNavigation } from "./useTestNavigation";
 import {
@@ -77,6 +78,8 @@ export function TestReviewPage(): JSX.Element {
   const [forceStacked, setForceStacked] = useState(false);
   // "Explain" toggle: reveal per-choice rationale (which word is wrong + why).
   const [showRationale, setShowRationale] = useState(false);
+  // Whole-test class heatmap overlay (% correct per question, click to jump).
+  const [heatmapOpen, setHeatmapOpen] = useState(false);
 
   // class results
   const [courses, setCourses] = useState<ReviewCourse[]>([]);
@@ -355,6 +358,24 @@ export function TestReviewPage(): JSX.Element {
               Explain
             </button>
 
+            {/* Whole-test class heatmap (% correct per question, click to jump). */}
+            {hasClassData && (
+              <button
+                type="button"
+                onClick={() => setHeatmapOpen(true)}
+                title="Class heatmap — % correct per question across the whole test"
+                className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-slate-600 hover:bg-slate-200/60 dark:text-slate-300 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <rect x="3" y="3" width="7" height="7" rx="1" />
+                  <rect x="14" y="3" width="7" height="7" rx="1" />
+                  <rect x="3" y="14" width="7" height="7" rx="1" />
+                  <rect x="14" y="14" width="7" height="7" rx="1" />
+                </svg>
+                Heatmap
+              </button>
+            )}
+
             <div className="ml-auto flex items-center gap-1">
               <button
                 type="button"
@@ -578,6 +599,22 @@ export function TestReviewPage(): JSX.Element {
           )}
         </main>
       </div>
+
+      {heatmapOpen && (
+        <ReviewHeatmap
+          modules={modules}
+          statOf={qStat}
+          mi={mi}
+          qi={qi}
+          onJump={(m, q) => {
+            goModule(m);
+            setQi(q);
+          }}
+          onClose={() => setHeatmapOpen(false)}
+          courseTitle={selectedCourse?.title ?? null}
+          taken={selectedCourse?.taken}
+        />
+      )}
     </div>
   );
 }
