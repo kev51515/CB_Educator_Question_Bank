@@ -17,6 +17,7 @@
  */
 import type { Letter, TestQuestion } from "./types";
 import { mergeRanges, type AnnotField, type Highlight } from "./annotations";
+import { PassageBody } from "./passageRender";
 
 const LETTERS: Letter[] = ["A", "B", "C", "D"];
 
@@ -137,13 +138,17 @@ function Stimulus({
         />
       )}
       {question.passage && (
-        <p
-          data-annot-field="passage"
-          className="whitespace-pre-wrap text-[17px] leading-relaxed text-slate-800 dark:text-slate-200"
-          style={SERIF}
-        >
-          {renderField(question.passage, "passage", passageRanges, onRemoveHighlight)}
-        </p>
+        // Set the source text apart from the question with a subtle card +
+        // left accent rule. The block renderer handles prose vs. tables and
+        // keeps the highlight character-offset model intact.
+        <div className="rounded-xl border border-slate-200/80 border-l-2 border-l-slate-300 bg-slate-50/50 px-5 py-4 dark:border-slate-700/70 dark:border-l-slate-600 dark:bg-slate-800/20">
+          <PassageBody
+            passage={question.passage}
+            ranges={passageRanges}
+            serif={SERIF}
+            onRemoveHighlight={onRemoveHighlight}
+          />
+        </div>
       )}
     </div>
   );

@@ -1,6 +1,40 @@
 # Session Recap
 
-## Latest (2026-06-08) — loaded the real DSAT-Nov-2023 cohort + roster polish
+## Latest (2026-06-08) — full-test passage: set-apart card + real tables
+
+The reader rendered passages as one flat `whitespace-pre-wrap` paragraph, so
+embedded pipe-delimited tables looked like raw text and literary excerpts didn't
+stand out. New `viewer/src/fulltest/passageRender.tsx` block-parses the passage
+into prose + table blocks and `QuestionPane`'s `Stimulus` wraps it in a subtle
+"source card" (left accent rule + faint tint). Shared by runner/review/preview,
+so all 6 tests are fixed at once.
+- **Tables.** Two encodings handled: multi-line (≥2 consecutive `|` rows) and
+  single-line (`table: x | y; 0 | 8; …`, `;`-joined rows). Header row inferred
+  when row 0 is non-numeric; columns right-aligned when their body cells are
+  numeric; zebra striping; a stray `table:` marker line is dropped. Validated
+  against all 456 passages — **21 tables across the 6 tests, 0 false
+  positives / ragged-column anomalies**.
+- **Offset-safe highlighting.** Highlights store absolute char offsets into raw
+  passage text and `annotations.offsetWithin` summed `textContent` — so
+  rendering tables (which drop the `|`/newline separators) would corrupt
+  offsets. Fixed the model: each prose block carries `data-annot-offset` (its
+  absolute start); `offsetWithin` resolves via the nearest block ancestor (base
+  + local). Tables carry `data-annot-skip` + `user-select:none` → selections in
+  them return -1 (non-highlightable). Prose offsets still map 1:1; the stem
+  (no blocks) falls back to the old whole-field walk. `tsc -b` green.
+- **Math typesetting (researched, not yet built).** The `f(x)=(1/9)(x−6)²+3`
+  style stems look amateur — stored as bare Unicode, no `$` delimiters. KaTeX is
+  already a dep and `mocktest/RichText.tsx` has a proven `$…$` parser. Plan:
+  make `renderText`/stem segment-aware (math → KaTeX in a `data-annot-skip`
+  span, plain → existing offset-preserving marks) + a careful per-test pass to
+  wrap math in `$…$`. Deferred — it touches 456 questions' content.
+- **"Browser force-refreshes when I return" is not an app bug** — the SW is
+  disabled in DEV (`registerSW` bails on `import.meta.env.DEV`) and nothing in
+  the app calls `location.reload` on focus/visibility (only the ErrorBoundary).
+  It's Vite HMR doing a full reload after the bundle changed while the tab was
+  backgrounded — dev-only.
+
+## 2026-06-08 — loaded the real DSAT-Nov-2023 cohort + roster polish
 
 Backfilled a real class's mock-test answers and stood up the two summer cohorts.
 Data-only against the remote DB (no migration); plus one roster UI change.

@@ -50,18 +50,18 @@ export function mergeRanges(ranges: Range[]): Range[] {
   return out;
 }
 
-/** Character offset of (node, nodeOffset) within `fieldEl`'s text content. */
-function offsetWithin(fieldEl: HTMLElement, node: Node, nodeOffset: number): number {
-  if (node === fieldEl) {
+/** Local character offset of (node, nodeOffset) within `el`'s text content. */
+function localTextOffset(el: HTMLElement, node: Node, nodeOffset: number): number {
+  if (node === el) {
     // Element-anchored selection: sum the text length of children before the index.
     let acc = 0;
-    for (let i = 0; i < nodeOffset && i < fieldEl.childNodes.length; i++) {
-      acc += fieldEl.childNodes[i].textContent?.length ?? 0;
+    for (let i = 0; i < nodeOffset && i < el.childNodes.length; i++) {
+      acc += el.childNodes[i].textContent?.length ?? 0;
     }
     return acc;
   }
   let offset = 0;
-  const walker = document.createTreeWalker(fieldEl, NodeFilter.SHOW_TEXT);
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
   let n = walker.nextNode();
   while (n) {
     if (n === node) return offset + nodeOffset;
@@ -69,6 +69,30 @@ function offsetWithin(fieldEl: HTMLElement, node: Node, nodeOffset: number): num
     n = walker.nextNode();
   }
   return offset;
+}
+
+/**
+ * Absolute character offset of (node, nodeOffset) within the raw field text.
+ *
+ * Supports two render layouts:
+ *  - Block layout (passage with tables, see passageRender): each prose block
+ *    carries `data-annot-offset` (its absolute start in the raw passage); the
+ *    offset is that base + the local text offset inside the block. Tables carry
+ *    `data-annot-skip`; a selection inside one returns -1 (non-highlightable),
+ *    because table cells intentionally drop the raw `|`/newline separators.
+ *  - Flat layout (stem, or a single-block passage): walk the whole field.
+ */
+function offsetWithin(fieldEl: HTMLElement, node: Node, nodeOffset: number): number {
+  const anchor =
+    node.nodeType === Node.TEXT_NODE ? node.parentElement : (node as Element);
+  const skip = anchor?.closest("[data-annot-skip]");
+  if (skip && fieldEl.contains(skip)) return -1;
+  const block = anchor?.closest("[data-annot-offset]") as HTMLElement | null;
+  if (block && fieldEl.contains(block)) {
+    const base = Number(block.dataset.annotOffset ?? "0");
+    return base + localTextOffset(block, node, nodeOffset);
+  }
+  return localTextOffset(fieldEl, node, nodeOffset);
 }
 
 function fieldElementOf(container: Node): HTMLElement | null {
@@ -99,7 +123,8 @@ export function captureSelectionHighlight(): Highlight | null {
 
   const start = offsetWithin(startField, range.startContainer, range.startOffset);
   const end = offsetWithin(startField, range.endContainer, range.endOffset);
-  if (end <= start) return null;
+  // -1 marks a selection anchored inside a non-highlightable block (e.g. a table).
+  if (start < 0 || end < 0 || end <= start) return null;
   return { field, start, end };
 }
 
