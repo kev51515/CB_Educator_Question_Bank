@@ -36,13 +36,54 @@ import { InlineAddItemRow } from "./inline-add";
 // Module card
 // -----------------------------------------------------------------------------
 
-const ITEM_TYPE_ICON: Record<ModuleItem["item_type"], string> = {
-  assignment: "📝",
-  header: "▸",
-  link: "🔗",
-  page: "📄",
-  file: "📎",
-};
+/**
+ * Clean line icons per item type (replaces the old emoji map). Stroke-based,
+ * 16px, calm slate — reads as a tidy Canvas-style row rather than mixed-weight
+ * emoji that render differently per OS.
+ */
+function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element {
+  const paths: Record<ModuleItem["item_type"], JSX.Element> = {
+    assignment: (
+      <>
+        <path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" />
+        <path d="M14 2v5h5" />
+        <path d="M9 13h6M9 16.5h4" />
+      </>
+    ),
+    link: (
+      <>
+        <path d="M10 13a5 5 0 0 0 7.07 0l1.93-1.93a5 5 0 0 0-7.07-7.07L11 5" />
+        <path d="M14 11a5 5 0 0 0-7.07 0L5 12.93a5 5 0 0 0 7.07 7.07L13 19" />
+      </>
+    ),
+    page: (
+      <>
+        <path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" />
+        <path d="M14 2v5h5" />
+      </>
+    ),
+    file: (
+      <path d="M21.44 11.05 12.25 20.24a4 4 0 0 1-5.66-5.66l8.49-8.49a2.5 2.5 0 0 1 3.54 3.54l-8.49 8.49a1 1 0 0 1-1.41-1.41l7.78-7.78" />
+    ),
+    header: <path d="M4 7h16M4 12h10M4 17h7" />,
+  };
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className="h-4 w-4 flex-none text-slate-400 dark:text-slate-500"
+    >
+      {paths[type]}
+    </svg>
+  );
+}
 
 /**
  * Notion/Linear-style drop target. A single anchor row + relative position +
@@ -267,6 +308,26 @@ function ModuleCard({
         return;
       }
       toast.success("Item deleted", item.title);
+      await onRefresh();
+    },
+    [onRefresh, toast],
+  );
+
+  // Canvas-style item indent (0–5). Persists directly to module_items.indent
+  // (RLS-guarded, like the publish/delete paths); the row already renders the
+  // left-padding from `item.indent`.
+  const onSetItemIndent = useCallback(
+    async (item: ModuleItem, delta: number): Promise<void> => {
+      const next = Math.max(0, Math.min(5, item.indent + delta));
+      if (next === item.indent) return;
+      const { error } = await supabase
+        .from("module_items")
+        .update({ indent: next })
+        .eq("id", item.id);
+      if (error) {
+        toast.error("Couldn't change indent", error.message);
+        return;
+      }
       await onRefresh();
     },
     [onRefresh, toast],
@@ -685,6 +746,22 @@ function ModuleCard({
             // Inline rename is the canvas equivalent for "Edit" — kebab only
             // surfaces actions that are actually wired up.
             const itemKebab: KebabMenuOption[] = [
+              {
+                label: "Indent",
+                disabled: item.indent >= 5,
+                hint: item.indent >= 5 ? "Already at the deepest level" : "Nest one level deeper",
+                onSelect: () => {
+                  void onSetItemIndent(item, 1);
+                },
+              },
+              {
+                label: "Outdent",
+                disabled: item.indent <= 0,
+                hint: item.indent <= 0 ? "Already at the left margin" : "Move one level left",
+                onSelect: () => {
+                  void onSetItemIndent(item, -1);
+                },
+              },
               { label: "Move to…", onSelect: () => onMoveItem(item) },
               {
                 label: "Delete",
@@ -776,9 +853,7 @@ function ModuleCard({
                     Test
                   </span>
                 ) : (
-                  <span aria-hidden className="text-sm flex-none">
-                    {ITEM_TYPE_ICON[item.item_type]}
-                  </span>
+                  <ItemTypeIcon type={item.item_type} />
                 )}
                 {isAssignment ? (
                   <button
