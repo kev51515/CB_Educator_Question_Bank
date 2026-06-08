@@ -7,12 +7,17 @@
  * a class struggled with without paging through one at a time. Click any cell
  * to jump straight to that question (and close).
  *
- * Near-fullscreen so a long test breathes. A summary band surfaces the overall
- * class average + the "most missed" questions as quick-jump chips; each module
- * is its own card with an average pill. Difficulty is encoded by BOTH colour and
- * the printed % (never colour alone), and each cell's title spells out the exact
- * count. Modal contract per CLAUDE.md: role="dialog", focus trap, Esc + backdrop
- * close, ≥40px close target.
+ * Near-fullscreen so a long test breathes. The summary band surfaces the overall
+ * class average, a mastered/shaky/struggled triage bar, and the genuinely-missed
+ * questions as quick-jump chips. Each module is its own card with an average
+ * pill. For a missed question the tooltip + aria-label name the distractor the
+ * class fell for ("most chose B"), which is the actionable bit in review.
+ *
+ * Difficulty is encoded by BOTH colour and the printed % (never colour alone);
+ * cells carry an aria-label spelling out the exact count (not just a hover
+ * title). Modal contract per CLAUDE.md: role="dialog", focus trap, Esc +
+ * backdrop close, ≥40px close target. Arrow keys are swallowed so they don't
+ * leak to the question navigation behind the modal.
  */
 import { useMemo, useRef } from "react";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
@@ -21,6 +26,8 @@ import type { TestContentModule } from "./testContent";
 export interface QStat {
   total: number;
   correct: number;
+  /** most-common incorrect answer (letter for mcq, typed value for grid) */
+  topWrong?: { value: string; count: number } | null;
 }
 
 interface Props {
@@ -50,9 +57,9 @@ interface Cell {
  * for legibility on the fill — dark on amber, white on green/red.
  */
 const BANDS = {
-  good: { bg: "#10b981", fg: "#ffffff" }, // emerald-500
-  mid: { bg: "#f59e0b", fg: "#1f2937" }, // amber-500 + slate-800 text
-  bad: { bg: "#f43f5e", fg: "#ffffff" }, // rose-500
+  good: { bg: "#10b981", fg: "#ffffff", label: "Mastered" }, // emerald-500
+  mid: { bg: "#f59e0b", fg: "#1f2937", label: "Shaky" }, // amber-500 + slate-800 text
+  bad: { bg: "#f43f5e", fg: "#ffffff", label: "Struggled" }, // rose-500
 } as const;
 type Band = (typeof BANDS)[keyof typeof BANDS];
 
@@ -61,6 +68,14 @@ function band(pct: number): Band {
 }
 
 const LEGEND_GRADIENT = `linear-gradient(to right, ${BANDS.bad.bg}, ${BANDS.mid.bg}, ${BANDS.good.bg})`;
+
+/** "3/8 correct (38%) · most chose B" — shared by tooltip + aria-label. */
+function describe(c: Cell): string {
+  if (!c.st) return `Q${c.number}: no responses`;
+  let s = `Q${c.number}: ${c.st.correct} of ${c.st.total} correct (${c.pct}%)`;
+  if (c.pct! < 100 && c.st.topWrong) s += ` · most chose ${c.st.topWrong.value}`;
+  return s;
+}
 
 export function ReviewHeatmap({
   modules,
@@ -115,13 +130,27 @@ export function ReviewHeatmap({
     return total ? Math.round((correct / total) * 100) : null;
   }, [flat]);
 
-  // Hardest few questions (lowest %-correct) → quick-jump chips.
+  // Triage: how many questions landed in each band (only those with responses).
+  const dist = useMemo(() => {
+    let good = 0;
+    let mid = 0;
+    let bad = 0;
+    for (const c of flat) {
+      if (c.pct == null) continue;
+      if (c.pct >= 70) good++;
+      else if (c.pct >= 40) mid++;
+      else bad++;
+    }
+    return { good, mid, bad, scored: good + mid + bad };
+  }, [flat]);
+
+  // Genuinely-missed questions (below the "mastered" line), hardest first.
   const mostMissed = useMemo(
     () =>
       flat
-        .filter((c) => c.pct != null)
-        .sort((a, b) => (a.pct! - b.pct!) || a.number - b.number)
-        .slice(0, 5),
+        .filter((c) => c.pct != null && c.pct < 70)
+        .sort((a, b) => a.pct! - b.pct! || a.number - b.number)
+        .slice(0, 6),
     [flat],
   );
 
@@ -133,6 +162,8 @@ export function ReviewHeatmap({
       onClick={onClose}
       onKeyDown={(e) => {
         if (e.key === "Escape") onClose();
+        // Don't let ←/→/↑/↓ leak to the question nav behind the modal.
+        else if (e.key.startsWith("Arrow")) e.stopPropagation();
       }}
     >
       <div
@@ -187,10 +218,50 @@ export function ReviewHeatmap({
           </div>
 
           {anyData && (
-            <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-2">
-              {/* most-missed quick jumps */}
+            <div className="mt-3.5 flex flex-wrap items-center gap-x-6 gap-y-3">
+              {/* triage distribution */}
+              {dist.scored > 0 && (
+                <div className="flex items-center gap-3">
+                  <span
+                    className="flex h-2.5 w-44 overflow-hidden rounded-full"
+                    role="img"
+                    aria-label={`${dist.good} mastered, ${dist.mid} shaky, ${dist.bad} struggled`}
+                  >
+                    {dist.bad > 0 && (
+                      <span style={{ width: `${(dist.bad / dist.scored) * 100}%`, backgroundColor: BANDS.bad.bg }} />
+                    )}
+                    {dist.mid > 0 && (
+                      <span style={{ width: `${(dist.mid / dist.scored) * 100}%`, backgroundColor: BANDS.mid.bg }} />
+                    )}
+                    {dist.good > 0 && (
+                      <span style={{ width: `${(dist.good / dist.scored) * 100}%`, backgroundColor: BANDS.good.bg }} />
+                    )}
+                  </span>
+                  <div className="flex items-center gap-3 text-[11px] text-slate-500 dark:text-slate-400">
+                    <Tally color={BANDS.good.bg} n={dist.good} label="mastered" />
+                    <Tally color={BANDS.mid.bg} n={dist.mid} label="shaky" />
+                    <Tally color={BANDS.bad.bg} n={dist.bad} label="struggled" />
+                  </div>
+                </div>
+              )}
+
+              {/* legend */}
+              <div className="ml-auto flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+                <span>Hardest</span>
+                <span aria-hidden className="h-2 w-28 rounded-full" style={{ background: LEGEND_GRADIENT }} />
+                <span>Easiest</span>
+                <span className="ml-2 inline-flex items-center gap-1">
+                  <span
+                    aria-hidden
+                    className="h-3 w-3 rounded-sm bg-slate-200 ring-1 ring-inset ring-slate-300 dark:bg-slate-700 dark:ring-slate-600"
+                  />
+                  No data
+                </span>
+              </div>
+
+              {/* most-missed quick jumps (only questions actually below mastered) */}
               {mostMissed.length > 0 && (
-                <div className="flex flex-wrap items-center gap-1.5">
+                <div className="flex w-full flex-wrap items-center gap-1.5">
                   <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
                     Most missed
                   </span>
@@ -202,7 +273,8 @@ export function ReviewHeatmap({
                         onJump(c.mIdx, c.qIdx);
                         onClose();
                       }}
-                      title={`${c.label} · Q${c.number} · ${c.st!.correct}/${c.st!.total} correct (${c.pct}%)`}
+                      aria-label={`Go to ${describe(c)}`}
+                      title={`${c.label} · ${describe(c)}`}
                       className="inline-flex items-center gap-1.5 rounded-full py-0.5 pl-1.5 pr-2.5 text-[11px] font-semibold shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 dark:focus-visible:ring-offset-slate-900"
                       style={{ backgroundColor: band(c.pct!).bg, color: band(c.pct!).fg }}
                     >
@@ -214,24 +286,6 @@ export function ReviewHeatmap({
                   ))}
                 </div>
               )}
-
-              {/* legend */}
-              <div className="ml-auto flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400">
-                <span>Hardest</span>
-                <span
-                  aria-hidden
-                  className="h-2 w-32 rounded-full"
-                  style={{ background: LEGEND_GRADIENT }}
-                />
-                <span>Easiest</span>
-                <span className="ml-2 inline-flex items-center gap-1">
-                  <span
-                    aria-hidden
-                    className="h-3 w-3 rounded-sm bg-slate-200 ring-1 ring-inset ring-slate-300 dark:bg-slate-700 dark:ring-slate-600"
-                  />
-                  No data
-                </span>
-              </div>
             </div>
           )}
         </div>
@@ -282,11 +336,9 @@ export function ReviewHeatmap({
                               onJump(c.mIdx, c.qIdx);
                               onClose();
                             }}
-                            title={
-                              c.st
-                                ? `Q${c.number} · ${c.st.correct}/${c.st.total} correct (${c.pct}%)`
-                                : `Q${c.number} · no responses`
-                            }
+                            aria-label={`Go to ${describe(c)}`}
+                            aria-current={isCurrent ? "true" : undefined}
+                            title={describe(c)}
                             style={b ? { backgroundColor: b.bg, color: b.fg } : undefined}
                             className={`group grid aspect-square place-items-center rounded-lg text-center leading-none shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 ${
                               b == null
@@ -310,5 +362,15 @@ export function ReviewHeatmap({
         </div>
       </div>
     </div>
+  );
+}
+
+function Tally({ color, n, label }: { color: string; n: number; label: string }): JSX.Element {
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span aria-hidden className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: color }} />
+      <span className="tabular-nums font-semibold text-slate-700 dark:text-slate-200">{n}</span>
+      {label}
+    </span>
   );
 }

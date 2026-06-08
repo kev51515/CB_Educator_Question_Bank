@@ -185,12 +185,27 @@ export function TestReviewPage(): JSX.Element {
     }
   };
 
-  // --- per-question stats for the section overview list ---
+  // --- per-question stats for the section overview list + heatmap ---
+  // Includes the most-common INCORRECT answer (the distractor the class fell
+  // for) — the actionable bit when reviewing a missed question.
   const qStat = useCallback(
-    (qid: string): { total: number; correct: number } | null => {
+    (
+      qid: string,
+    ): { total: number; correct: number; topWrong: { value: string; count: number } | null } | null => {
       const rows = byQ.get(qid);
       if (!rows || rows.length === 0) return null;
-      return { total: rows.length, correct: rows.filter((r) => r.is_correct).length };
+      const wrong = new Map<string, number>();
+      for (const r of rows) {
+        if (r.is_correct) continue;
+        const v = (r.chosen ?? "").trim();
+        if (!v) continue;
+        wrong.set(v, (wrong.get(v) ?? 0) + 1);
+      }
+      let topWrong: { value: string; count: number } | null = null;
+      for (const [value, count] of wrong) {
+        if (!topWrong || count > topWrong.count) topWrong = { value, count };
+      }
+      return { total: rows.length, correct: rows.filter((r) => r.is_correct).length, topWrong };
     },
     [byQ],
   );
