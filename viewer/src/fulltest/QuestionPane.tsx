@@ -43,6 +43,9 @@ interface QuestionPaneProps {
   highlights?: Highlight[];
   /** Remove the highlight covering `offset` in `field` (click-to-remove). */
   onRemoveHighlight?: (field: AnnotField, offset: number) => void;
+  /** Review/answer-key mode: when set, marks the correct choice (mcq) or shows
+   *  the canonical answer (grid). Purely additive — the runner never passes it. */
+  correctAnswer?: string | null;
 }
 
 /**
@@ -212,9 +215,10 @@ function Prompt({
   onToggleEliminate,
   highlights,
   onRemoveHighlight,
+  correctAnswer,
 }: Pick<
   QuestionPaneProps,
-  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights" | "onRemoveHighlight"
+  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights" | "onRemoveHighlight" | "correctAnswer"
 >) {
   return (
     <div className="space-y-5">
@@ -238,6 +242,7 @@ function Prompt({
             if (text === undefined) return null;
             const selected = value === letter;
             const struck = eliminated?.has(letter) ?? false;
+            const isKey = correctAnswer != null && correctAnswer === letter;
             return (
               <li key={letter} className="flex items-center gap-2">
                 <button
@@ -246,9 +251,11 @@ function Prompt({
                   onClick={() => onChange(selected ? null : letter)}
                   className={[
                     "flex flex-1 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left transition",
-                    selected && !struck
-                      ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
-                      : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
+                    isKey
+                      ? "border-emerald-500 bg-emerald-50/70 dark:border-emerald-500 dark:bg-emerald-950/30"
+                      : selected && !struck
+                        ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
+                        : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
                     struck ? "opacity-50" : "",
                     disabled ? "cursor-default" : "",
                   ].join(" ")}
@@ -258,9 +265,11 @@ function Prompt({
                       "grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 text-sm font-bold",
                       struck
                         ? "border-slate-400 text-slate-400 line-through dark:border-slate-600 dark:text-slate-500"
-                        : selected
-                          ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
-                          : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
+                        : isKey
+                          ? "border-emerald-500 bg-emerald-500 text-white"
+                          : selected
+                            ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
+                            : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
                     ].join(" ")}
                   >
                     {letter}
@@ -276,6 +285,11 @@ function Prompt({
                   >
                     {text}
                   </span>
+                  {isKey && (
+                    <span className="ml-auto inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-300">
+                      ✓ Correct
+                    </span>
+                  )}
                 </button>
 
                 {strikeMode && onToggleEliminate && !disabled && (
@@ -331,6 +345,11 @@ function Prompt({
             Student-produced response. Enter a number; fractions (3/5) and
             decimals (4.75) are accepted. Negative values are allowed.
           </p>
+          {correctAnswer != null && (
+            <p className="inline-flex items-center gap-1.5 rounded-md bg-emerald-50 px-2.5 py-1 text-sm font-medium text-emerald-800 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
+              <span className="font-semibold">✓ Answer:</span> {correctAnswer}
+            </p>
+          )}
         </div>
       )}
     </div>
@@ -351,6 +370,7 @@ export function QuestionPane({
   onToggleEliminate,
   highlights,
   onRemoveHighlight,
+  correctAnswer,
 }: QuestionPaneProps) {
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
@@ -375,6 +395,7 @@ export function QuestionPane({
           onToggleEliminate={onToggleEliminate}
           highlights={highlights}
           onRemoveHighlight={onRemoveHighlight}
+          correctAnswer={correctAnswer}
         />
       </div>
     </>

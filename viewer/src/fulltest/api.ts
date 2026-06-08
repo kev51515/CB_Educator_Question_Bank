@@ -300,3 +300,43 @@ export function clearCachedAnswers(runId: string, position: number): void {
     /* non-fatal */
   }
 }
+
+// --- staff review: per-course answer breakdown (migration 0112) -------------
+
+/** A class the caller may review for a test, with how many students submitted. */
+export interface ReviewCourse {
+  course_id: string;
+  title: string;
+  taken: number;
+}
+
+/** One student's recorded answer to one question (latest submitted run). */
+export interface BreakdownRow {
+  question_id: string;
+  chosen: string | null;
+  is_correct: boolean | null;
+  student_id: string;
+  student_name: string | null;
+}
+
+/** Classes (the caller teaches; admins: all) whose Modules link this test. */
+export async function listReviewCourses(slug: string): Promise<ReviewCourse[]> {
+  const { data, error } = await supabase.rpc("list_test_review_courses", {
+    p_slug: slug,
+  });
+  if (error) throw mapError(error);
+  return (data ?? []) as ReviewCourse[];
+}
+
+/** Per-(question, student) answers for one class — aggregated client-side. */
+export async function getAnswerBreakdown(
+  slug: string,
+  courseId: string,
+): Promise<BreakdownRow[]> {
+  const { data, error } = await supabase.rpc("get_test_answer_breakdown", {
+    p_slug: slug,
+    p_course_id: courseId,
+  });
+  if (error) throw mapError(error);
+  return (data ?? []) as BreakdownRow[];
+}

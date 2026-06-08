@@ -1,6 +1,42 @@
 # Session Recap
 
-## Latest (2026-06-08) — educator "Preview test" → free-roam previewer (no migrations)
+## Latest (2026-06-08) — teacher "Review" surface: answer key + per-class results + highlighting (migration 0112)
+
+**Rebuilt the full-test "Review" (answer key) page into a preview-style,
+one-question-at-a-time review surface for going over a test WITH a class.**
+`tsc -b` green; migration applied to Remote; full smoke all-green (215).
+
+- **The ask:** answer-key view should look like the new Preview but with the
+  correct answer marked; when students have taken it, show how many + which
+  students chose each option; highlighting for class review; a collapsible left
+  bar; good on tablets and desktops.
+- **Migration 0112** — two staff-gated `SECURITY DEFINER` read RPCs (no schema/
+  data change): `list_test_review_courses(slug)` (classes the caller teaches
+  that link the test + submitter counts) and `get_test_answer_breakdown(slug,
+  course_id)` (one row per question×student for each student's latest submitted
+  run — `chosen`, `is_correct`, name). Needed because `test_run_answers` RLS is
+  owner-read only. Mirrors the 0078 roster CTE; gated `is_staff` +
+  (`is_admin` OR `is_teacher_of_course`).
+- **`TestReviewPage` rewritten** (same export → no route change) into a
+  full-screen review runner:
+  - Correct answer marked on every question (new additive `correctAnswer` prop
+    on the shared `QuestionPane` — emerald ✓ on the MCQ key / grid answer chip;
+    runner unaffected).
+  - **Class picker** (per-course) in the top bar; defaults to the class with
+    the most submitters.
+  - **Collapsible left "Class results" sidebar**: per-question option breakdown
+    (bar + count + the student names who picked each, key marked) and a section
+    overview list with %-correct per question (color-graded). Collapses to give
+    the question full width on tablets; reopen via a "☰ Results" button.
+  - **Highlighting** for live review, saved per teacher (localStorage via the
+    runner's `useRunnerAnnotations`), with Highlight/Clear in the nav strip.
+  - Same module tabs + question navigator (prev/next, jump grid, ←/→ keys) as
+    Preview. Degrades to a clean answer-key walkthrough when no class data.
+- New client API: `listReviewCourses` / `getAnswerBreakdown` in `fulltest/api.ts`.
+- Follow-up worth adding: a smoke check for the two 0112 RPCs (currently
+  covered only by compile-time validation + the live build).
+
+## 2026-06-08 — educator "Preview test" → free-roam previewer (no migrations)
 
 **Staff "Preview test" no longer drops the educator into the proctored,
 linear student runner — it opens a free-roam previewer where they can jump
