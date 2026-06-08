@@ -44,11 +44,23 @@ interface Cell {
   st: QStat | null;
 }
 
-/** Continuous red→amber→green shade for a 0–1 correctness ratio. */
-function shade(ratio: number, lightness = 42): string {
-  const hue = Math.round(ratio * 132); // 0 = red, 132 = green
-  return `hsl(${hue}, 64%, ${lightness}%)`;
+/**
+ * The app's standard 3-band performance palette (matches the Review sidebar
+ * bars): emerald ≥70%, amber ≥40%, rose below. Text colour per band is picked
+ * for legibility on the fill — dark on amber, white on green/red.
+ */
+const BANDS = {
+  good: { bg: "#10b981", fg: "#ffffff" }, // emerald-500
+  mid: { bg: "#f59e0b", fg: "#1f2937" }, // amber-500 + slate-800 text
+  bad: { bg: "#f43f5e", fg: "#ffffff" }, // rose-500
+} as const;
+type Band = (typeof BANDS)[keyof typeof BANDS];
+
+function band(pct: number): Band {
+  return pct >= 70 ? BANDS.good : pct >= 40 ? BANDS.mid : BANDS.bad;
 }
+
+const LEGEND_GRADIENT = `linear-gradient(to right, ${BANDS.bad.bg}, ${BANDS.mid.bg}, ${BANDS.good.bg})`;
 
 export function ReviewHeatmap({
   modules,
@@ -147,8 +159,8 @@ export function ReviewHeatmap({
               </div>
               {overall != null && (
                 <div
-                  className="flex shrink-0 items-center gap-2 rounded-xl px-3 py-1.5 text-white shadow-sm"
-                  style={{ backgroundColor: shade(overall / 100) }}
+                  className="flex shrink-0 items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm"
+                  style={{ backgroundColor: band(overall).bg, color: band(overall).fg }}
                   title={`Overall ${overall}% correct across the test`}
                 >
                   <span className="text-2xl font-bold leading-none tabular-nums">{overall}%</span>
@@ -191,10 +203,10 @@ export function ReviewHeatmap({
                         onClose();
                       }}
                       title={`${c.label} · Q${c.number} · ${c.st!.correct}/${c.st!.total} correct (${c.pct}%)`}
-                      className="inline-flex items-center gap-1.5 rounded-full py-0.5 pl-1.5 pr-2.5 text-[11px] font-semibold text-white shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 dark:focus-visible:ring-offset-slate-900"
-                      style={{ backgroundColor: shade(c.pct! / 100) }}
+                      className="inline-flex items-center gap-1.5 rounded-full py-0.5 pl-1.5 pr-2.5 text-[11px] font-semibold shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 dark:focus-visible:ring-offset-slate-900"
+                      style={{ backgroundColor: band(c.pct!).bg, color: band(c.pct!).fg }}
                     >
-                      <span className="grid h-4 min-w-4 place-items-center rounded-full bg-white/25 px-1 text-[10px] tabular-nums">
+                      <span className="grid h-4 min-w-4 place-items-center rounded-full bg-black/15 px-1 text-[10px] tabular-nums">
                         {c.number}
                       </span>
                       {c.pct}%
@@ -209,7 +221,7 @@ export function ReviewHeatmap({
                 <span
                   aria-hidden
                   className="h-2 w-32 rounded-full"
-                  style={{ background: `linear-gradient(to right, ${shade(0)}, ${shade(0.5)}, ${shade(1)})` }}
+                  style={{ background: LEGEND_GRADIENT }}
                 />
                 <span>Easiest</span>
                 <span className="ml-2 inline-flex items-center gap-1">
@@ -250,8 +262,8 @@ export function ReviewHeatmap({
                       </h3>
                       {avg != null && (
                         <span
-                          className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm"
-                          style={{ backgroundColor: shade(avg / 100) }}
+                          className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold shadow-sm"
+                          style={{ backgroundColor: band(avg).bg, color: band(avg).fg }}
                           title={`Module average ${avg}% correct`}
                         >
                           avg {avg}%
@@ -261,7 +273,7 @@ export function ReviewHeatmap({
                     <div className="grid grid-cols-[repeat(auto-fill,minmax(3.25rem,1fr))] gap-2">
                       {cells[mIdx].map((c) => {
                         const isCurrent = c.mIdx === mi && c.qIdx === qi;
-                        const bg = c.pct != null ? shade(c.pct / 100) : undefined;
+                        const b = c.pct != null ? band(c.pct) : null;
                         return (
                           <button
                             key={`${c.mIdx}-${c.qIdx}`}
@@ -275,11 +287,11 @@ export function ReviewHeatmap({
                                 ? `Q${c.number} · ${c.st.correct}/${c.st.total} correct (${c.pct}%)`
                                 : `Q${c.number} · no responses`
                             }
-                            style={bg ? { backgroundColor: bg } : undefined}
+                            style={b ? { backgroundColor: b.bg, color: b.fg } : undefined}
                             className={`group grid aspect-square place-items-center rounded-lg text-center leading-none shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 ${
-                              c.pct != null
-                                ? "text-white"
-                                : "bg-slate-100 text-slate-400 ring-1 ring-inset ring-slate-200 dark:bg-slate-800 dark:text-slate-500 dark:ring-slate-700"
+                              b == null
+                                ? "bg-slate-100 text-slate-400 ring-1 ring-inset ring-slate-200 dark:bg-slate-800 dark:text-slate-500 dark:ring-slate-700"
+                                : ""
                             } ${isCurrent ? "ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-slate-900" : ""}`}
                           >
                             <span className="text-sm font-bold tabular-nums">{c.number}</span>
