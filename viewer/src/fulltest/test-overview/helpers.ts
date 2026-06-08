@@ -136,4 +136,9 @@ export function pctOf(score: number | null, total: number | null): number | null
 export function fmtMins(seconds: number): string {
   return `${Math.round(seconds / 60)} min`;
 }
+/** "0:42" / "3:05" from a second count — compact away-time for roster badges. */
+export function fmtAwaySecs(sec: number): string {
+  const s = Math.max(0, Math.round(sec));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
 

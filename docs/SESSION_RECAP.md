@@ -14,8 +14,13 @@ extracting three shared pieces in `viewer/src/fulltest/`:
 `TestPreviewRunner` and `TestReviewPage` now consume these instead of each
 carrying their own copy (~100 lines of duplication gone; a schema change now
 touches one file). Behaviour-preserving; `tsc -b` + `vite build` green.
-Candidate for a future pass: `TestOverviewPage` is ~1000 lines and its roster
-row could be extracted into a component.
+
+Also extracted the live-monitor **roster row** into
+`test-overview/RosterRow.tsx` (exported as `RosterRowView` to avoid clashing
+with the `RosterRow` type) — a pure presentational component taking the row +
+live info + callbacks. `TestOverviewPage` dropped from ~1040 → **852 lines**;
+`fmtAwaySecs` moved into `test-overview/helpers`. Behaviour-preserving;
+`tsc -b` + `vite build` green.
 
 ## 2026-06-08 — proctor ⇄ student messaging on a paused test (migrations 0113–0114)
 
