@@ -320,6 +320,9 @@ function Prompt({
             const selected = value === letter;
             const struck = eliminated?.has(letter) ?? false;
             const isKey = correctAnswer != null && correctAnswer === letter;
+            // Review mode (correctAnswer set): every non-correct choice reads as
+            // a light-red "wrong" option.
+            const isWrong = correctAnswer != null && !isKey;
             return (
               <li key={letter} className="flex items-center gap-2">
                 <button
@@ -330,9 +333,11 @@ function Prompt({
                     "flex flex-1 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left transition",
                     isKey
                       ? "border-emerald-500 bg-emerald-50/70 dark:border-emerald-500 dark:bg-emerald-950/30"
-                      : selected && !struck
-                        ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
-                        : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
+                      : isWrong
+                        ? "border-rose-200 bg-rose-50/60 dark:border-rose-900/70 dark:bg-rose-950/20"
+                        : selected && !struck
+                          ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
+                          : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
                     struck ? "opacity-50" : "",
                     disabled ? "cursor-default" : "",
                   ].join(" ")}
@@ -344,9 +349,11 @@ function Prompt({
                         ? "border-slate-400 text-slate-400 line-through dark:border-slate-600 dark:text-slate-500"
                         : isKey
                           ? "border-emerald-500 bg-emerald-500 text-white"
-                          : selected
-                            ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
-                            : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
+                          : isWrong
+                            ? "border-rose-300 text-rose-500 dark:border-rose-800 dark:text-rose-400"
+                            : selected
+                              ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
+                              : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
                     ].join(" ")}
                   >
                     {letter}
@@ -356,7 +363,9 @@ function Prompt({
                       "text-[16px] leading-relaxed",
                       struck
                         ? "text-slate-400 line-through dark:text-slate-500"
-                        : "text-slate-800 dark:text-slate-200",
+                        : isWrong
+                          ? "text-rose-700 dark:text-rose-300"
+                          : "text-slate-800 dark:text-slate-200",
                     ].join(" ")}
                     style={SERIF}
                   >
