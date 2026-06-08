@@ -423,52 +423,50 @@ export function QuestionPane({
   // ── Runner mode ──────────────────────────────────────────────────────────
   if (fullHeight) {
     if (isRW && hasStimulus) {
-      // The split is driven by a CONTAINER query, not the viewport, so it
-      // responds to the actual space the pane has — e.g. on the Review page the
-      // class sidebar narrows this area, and we stack rather than cram two
-      // columns. Narrow container: ONE scroll column, passage flowing into the
-      // question+choices below it. Wide container (≥48rem): the Bluebook
-      // two-column split with each pane scrolling independently.
-      //
-      // `forceStacked` (a user toggle) drops the container context + split
-      // utilities entirely → always single-column. The `@[48rem]:` header
-      // classes then collapse to their base (hidden), which is the stacked
-      // behaviour we want, so no extra branching is needed below.
-      const split = !forceStacked;
-      return (
-        <div className={split ? "@container h-full" : "h-full"}>
-          <div
-            className={`h-full overflow-y-auto ${
-              split
-                ? "@[48rem]:grid @[48rem]:grid-cols-2 @[48rem]:divide-x @[48rem]:divide-slate-200 @[48rem]:overflow-hidden dark:@[48rem]:divide-slate-800"
-                : ""
-            }`}
-          >
-            <div
-              className={`border-b border-slate-200 px-6 py-7 lg:px-10 dark:border-slate-800 ${
-                split ? "@[48rem]:h-full @[48rem]:overflow-y-auto @[48rem]:border-b-0" : ""
-              }`}
-            >
-              {/* Question number atop the passage — always shown (both stacked
-                  and split), so the passage is always labelled. In the split the
-                  question column shows it again; when stacked, the in-column one
-                  is dropped (this badge is the single in-body number). */}
-              <div className="mb-3">
-                <span className="grid h-6 w-fit min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900">
-                  {question.number}
-                </span>
+      const numberBadge = (
+        <span className="grid h-6 w-fit min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900">
+          {question.number}
+        </span>
+      );
+
+      // User-forced stacked: ONE readable centred column (number → passage →
+      // question), so a wide screen doesn't get a full-width passage line with a
+      // centred question floating below it. Single in-body number (atop passage).
+      if (forceStacked) {
+        return (
+          <div className="h-full overflow-y-auto px-6 py-7 lg:px-8">
+            <div className="mx-auto max-w-2xl space-y-5">
+              <div>{numberBadge}</div>
+              <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
+              <div className="border-t border-slate-200 pt-5 dark:border-slate-800">
+                {questionSide({ numberClassName: "hidden", containerClassName: disabled ? "hidden" : "flex" })}
               </div>
+            </div>
+          </div>
+        );
+      }
+
+      // Auto: a CONTAINER query (not the viewport) drives the split, so it
+      // responds to the actual space the pane has — e.g. on the Review page the
+      // class sidebar narrows this area, so it stacks rather than cramming two
+      // columns. Narrow container: ONE scroll column, passage flowing into the
+      // question below it. Wide (≥48rem): the Bluebook two-column split, each
+      // pane scrolling independently.
+      return (
+        <div className="@container h-full">
+          <div className="h-full overflow-y-auto @[48rem]:grid @[48rem]:grid-cols-2 @[48rem]:divide-x @[48rem]:divide-slate-200 @[48rem]:overflow-hidden dark:@[48rem]:divide-slate-800">
+            <div className="border-b border-slate-200 px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto @[48rem]:border-b-0 lg:px-10 dark:border-slate-800">
+              {/* Number atop the passage — always shown so the passage is
+                  labelled. Split also shows it above the choices; stacked drops
+                  the in-column one (this is the single in-body number). */}
+              <div className="mb-3">{numberBadge}</div>
               <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
             </div>
-            <div className={`px-6 py-7 lg:px-10 ${split ? "@[48rem]:h-full @[48rem]:overflow-y-auto" : ""}`}>
+            <div className="px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto lg:px-10">
               <div className="mx-auto max-w-xl">
                 {questionSide({
-                  // Stacked: the nav strip already shows "Question N", so drop the
-                  // in-body number above the choices. Split: keep it (it pairs with
-                  // the number atop the passage). In review (disabled, no controls)
-                  // the header is otherwise empty when stacked, so hide it too.
-                  numberClassName: split ? "hidden @[48rem]:grid" : "hidden",
-                  containerClassName: disabled ? (split ? "hidden @[48rem]:flex" : "hidden") : "flex",
+                  numberClassName: "hidden @[48rem]:grid",
+                  containerClassName: disabled ? "hidden @[48rem]:flex" : "flex",
                 })}
               </div>
             </div>

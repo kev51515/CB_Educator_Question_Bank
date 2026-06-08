@@ -30,7 +30,8 @@
     "clickthrough": "node --env-file-if-exists=../.env scripts/clickthrough-two-students.mjs",
     "clickthrough:edges": "node --env-file-if-exists=../.env scripts/clickthrough-practice-test-edges.mjs",
     "harden": "node --env-file-if-exists=../.env scripts/clickthrough-edge-hardening.mjs",
-    "grid:check": "node --env-file-if-exists=../.env scripts/grid-grading-check.mjs"
+    "grid:check": "node --env-file-if-exists=../.env scripts/grid-grading-check.mjs",
+    "verify:stack": "node --env-file-if-exists=../.env scripts/verify-stack-toggle.mjs"
   },
   "dependencies": {
     "@sentry/react": "^9.0.0",
