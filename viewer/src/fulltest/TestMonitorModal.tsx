@@ -18,6 +18,7 @@ import type { ProctorEvent } from "./api";
 import ProctorTimeline from "./ProctorTimeline";
 import { flagLabel } from "./test-overview/helpers";
 import { StatusPill, RowAction, ActionGroup } from "./test-overview";
+import { ProctorChatModal } from "./ProctorChatModal";
 
 interface LiveRow {
   student_id: string;
@@ -170,7 +171,7 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
   );
 
   const setPause = useCallback(
-    async (runId: string | null, pause: boolean, who: string): Promise<void> => {
+    async (runId: string | null, pause: boolean, who: string, reason?: string): Promise<void> => {
       if (!runId) return;
       setBusyRun(runId);
       try {
@@ -178,17 +179,57 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
           p_run_id: runId,
           p_paused: pause,
         });
-        if (rpcError) toast.error(pause ? "Couldn't pause" : "Couldn't resume", rpcError.message);
-        else {
-          toast.success(pause ? `Paused ${who}` : `Resumed ${who}`);
-          void refresh();
+        if (rpcError) {
+          toast.error(pause ? "Couldn't pause" : "Couldn't resume", rpcError.message);
+          return;
         }
+        if (pause && reason && reason.trim()) {
+          await supabase
+            .rpc("proctor_send_message", { p_run_id: runId, p_kind: "pause", p_body: reason.trim() })
+            .then(({ error: e }) => {
+              if (e) toast.error("Paused, but the note didn't send", e.message);
+            });
+        }
+        toast.success(pause ? `Paused ${who}` : `Resumed ${who}`);
+        void refresh();
       } finally {
         setBusyRun(null);
       }
     },
     [toast, refresh],
   );
+
+  // Live proctor ⇄ student chat (0113): open thread + unread dots fed by a
+  // realtime subscription to proctor_messages inserts.
+  const [chatTarget, setChatTarget] = useState<{ runId: string; name: string } | null>(null);
+  const [newMsgRuns, setNewMsgRuns] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    const channel = supabase
+      .channel("proctor_messages:monitor")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "proctor_messages" },
+        (payload) => {
+          const m = payload.new as { run_id?: string; sender?: string };
+          if (m?.sender === "student" && m.run_id) {
+            const rid = m.run_id;
+            setNewMsgRuns((prev) => new Set(prev).add(rid));
+          }
+        },
+      )
+      .subscribe();
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, []);
+  const openChat = (runId: string, name: string): void => {
+    setChatTarget({ runId, name });
+    setNewMsgRuns((prev) => {
+      const n = new Set(prev);
+      n.delete(runId);
+      return n;
+    });
+  };
 
   useEffect(() => {
     void refresh();
@@ -245,6 +286,7 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
   }, [rows, tick]);
 
   return (
+    <>
     <div
       role="dialog"
       aria-modal="true"
@@ -398,7 +440,23 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
                       )}
                       {r.paused && <StatusPill tone="paused" icon="⏸" label="Paused" />}
                       {isAdmin && (
-                        <div className="ml-auto">
+                        <div className="ml-auto flex items-center gap-1.5">
+                          {r.run_id && (
+                            <RowAction
+                              tone="primary"
+                              className="relative"
+                              onClick={() => openChat(r.run_id ?? "", r.student_name ?? "Student")}
+                              title="Message this student (they can reply while paused)"
+                            >
+                              💬
+                              {newMsgRuns.has(r.run_id) && (
+                                <span
+                                  aria-label="new message"
+                                  className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white dark:ring-slate-900"
+                                />
+                              )}
+                            </RowAction>
+                          )}
                           <ActionGroup>
                             <RowAction
                               className="rounded-none"
@@ -477,5 +535,20 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
         </p>
       </div>
     </div>
+    {chatTarget &&
+      (() => {
+        const rNow = rows.find((x) => x.run_id === chatTarget.runId);
+        return (
+          <ProctorChatModal
+            runId={chatTarget.runId}
+            studentName={chatTarget.name}
+            paused={rNow?.paused ?? false}
+            pauseBusy={busyRun === chatTarget.runId}
+            onPause={(p, reason) => setPause(chatTarget.runId, p, chatTarget.name, reason)}
+            onClose={() => setChatTarget(null)}
+          />
+        );
+      })()}
+    </>
   );
 }

@@ -56,8 +56,11 @@ reason and reply from the live monitor. `tsc -b` green; applied to Remote;
   staff read access, RLS isolation (an unrelated student sees nothing), the
   3-message record + sender order, and that resume re-closes the student's
   window. **14/14.**
-- Follow-up: the chat is wired on `TestOverviewPage` (primary monitor); could
-  also be added to `TestMonitorModal` rows for parity.
+- Wired on **both** live-monitor surfaces: `TestOverviewPage` rows and
+  `TestMonitorModal` rows (a 💬 button per in-progress student, live unread dot
+  via a realtime subscription, opening the shared `ProctorChatModal`). The
+  monitor modal renders the chat modal as a fragment sibling so a chat-backdrop
+  click doesn't bubble up and close the monitor.
 
 ## 2026-06-08 — teacher "Review" surface: answer key + per-class results + highlighting (migration 0112)
 
