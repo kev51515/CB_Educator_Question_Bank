@@ -408,7 +408,7 @@ export function QuestionPane({
             <div className="mx-auto w-[95%] space-y-5">
               <div>{numberBadge}</div>
               <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
-              <div className="border-t border-slate-200 pt-5 dark:border-slate-800">
+              <div className="pt-5">
                 {questionSide({ numberClassName: "hidden", containerClassName: disabled ? "hidden" : "flex" })}
               </div>
             </div>
@@ -425,7 +425,7 @@ export function QuestionPane({
       return (
         <div className="@container h-full">
           <div className="h-full overflow-y-auto @[48rem]:grid @[48rem]:grid-cols-2 @[48rem]:divide-x @[48rem]:divide-slate-200 @[48rem]:overflow-hidden dark:@[48rem]:divide-slate-800">
-            <div className="border-b border-slate-200 px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto @[48rem]:border-b-0 lg:px-10 dark:border-slate-800">
+            <div className="px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto lg:px-10">
               {/* Number atop the passage — always shown so the passage is
                   labelled. Split also shows it above the choices; stacked drops
                   the in-column one (this is the single in-body number). */}
