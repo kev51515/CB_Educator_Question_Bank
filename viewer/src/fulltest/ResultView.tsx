@@ -25,13 +25,24 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
   const pct = result.total > 0 ? Math.round((result.score / result.total) * 100) : 0;
   const scaled = scaledFromSectionScores(result.section_scores);
 
+  // A single-section test (RW-only or Math-only) has no 1600 composite, but its
+  // one section's estimated 200–800 score is far more meaningful than raw, so
+  // surface that as the hero instead of the raw fallback.
+  const singleSection =
+    scaled.total === null && scaled.rw !== null
+      ? { label: SECTION_LABEL["reading-writing"], scaled: scaled.rw }
+      : scaled.total === null && scaled.math !== null
+        ? { label: SECTION_LABEL["math"], scaled: scaled.math }
+        : null;
+  const hasEstimate = scaled.total !== null || singleSection !== null;
+
   return (
     <div className="min-h-screen bg-slate-50 px-4 py-10 dark:bg-slate-950">
       <div className="mx-auto max-w-3xl">
         <header className="rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 p-7 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <p className="text-sm uppercase tracking-wide text-white/80">Results</p>
-            {scaled.total !== null && (
+            {hasEstimate && (
               <span
                 className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/90 ring-1 ring-white/20"
                 title={SCALED_NOTE}
@@ -64,6 +75,18 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
                 <ScoreChip label="Math" scaled={scaled.math} raw={result.section_scores?.["math"]} />
               </div>
             </>
+          ) : singleSection !== null ? (
+            <div className="mt-5 flex items-end gap-3">
+              <div className="text-[3.25rem] font-bold leading-none tabular-nums">
+                {singleSection.scaled}
+              </div>
+              <div className="pb-1">
+                <div className="text-lg font-medium text-white/70">/ 800</div>
+                <div className="text-xs uppercase tracking-wide text-white/70">
+                  estimated {singleSection.label} score
+                </div>
+              </div>
+            </div>
           ) : (
             <div className="mt-4 text-4xl font-bold tabular-nums">
               {result.score}
@@ -89,7 +112,7 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
             )}
           </div>
 
-          {scaled.total !== null && (
+          {hasEstimate && (
             <p className="mt-3 max-w-xl text-[11px] leading-snug text-white/60">{SCALED_NOTE}</p>
           )}
         </header>
