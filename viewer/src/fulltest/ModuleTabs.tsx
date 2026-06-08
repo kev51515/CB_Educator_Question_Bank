@@ -14,7 +14,7 @@ interface ModuleTabsProps {
 export function ModuleTabs({ modules, activeIndex, onSelect }: ModuleTabsProps): JSX.Element | null {
   if (modules.length === 0) return null;
   return (
-    <div className="flex items-center gap-1 overflow-x-auto px-3 pb-2">
+    <div className="flex items-center gap-1 overflow-x-auto px-3 pb-2" aria-label="Test modules">
       {modules.map((m, i) => {
         const active = i === activeIndex;
         return (

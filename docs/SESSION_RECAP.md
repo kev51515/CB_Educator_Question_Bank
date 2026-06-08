@@ -1,6 +1,29 @@
 # Session Recap
 
-## Latest (2026-06-08) — QuestionPane: container-query split + passage number + layout-shift-free highlight
+## Latest (2026-06-08) — code review + design polish of the fulltest review/proctor UI
+
+Two-lane review (correctness + design subagents) of the session's work, then
+applied the high-value fixes:
+- **Bug — dual realtime subscription.** `TestMonitorModal` (rendered inside
+  `TestOverviewPage` when the monitor's open) was opening its OWN
+  `proctor_messages` channel + unread-dot Set in addition to the page's, so
+  dots desynced (phantom unread). Lifted the subscription + `newMsgRuns` to the
+  page; the modal now takes `newMsgRuns` + `onSeenRun` props → exactly one
+  subscription.
+- **Design — skeletons not "Loading…".** Replaced the bare "Loading review…" /
+  "Loading preview…" / "Loading results…" text (the project's one forbidden
+  pattern) with `Skeleton` placeholders that mirror the question layout +
+  sidebar (`aria-busy`).
+- **Legibility.** Breakdown student-name lists bumped `text-slate-400` →
+  `text-slate-500 dark:text-slate-400`.
+- **A11y.** Double-send ref-guard in `ProctorChat.doSend`; `aria-label` on the
+  ModuleTabs strip; `aria-label`/`aria-expanded`/`aria-controls` on the Review
+  sidebar collapse/expand toggles (+ `id`/`aria-label` on the `<aside>`).
+- Deferred (noted, lower-leverage): unifying the top-bar badges through
+  `StatusPill`, bumping the dense desktop nav-strip tap targets to ≥40px, and
+  full `role="tablist"` semantics on ModuleTabs. `tsc -b` + `vite build` green.
+
+## 2026-06-08 — QuestionPane: container-query split + passage number + layout-shift-free highlight
 
 - **Passage/question split is now CONTAINER-query driven** (added the
   first-party `@tailwindcss/container-queries` plugin). The Reading-&-Writing

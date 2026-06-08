@@ -17,6 +17,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useBreadcrumbLabel } from "@/components";
+import { Skeleton } from "@/components/Skeleton";
 import { testOverviewPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
 import { ModuleTabs } from "./ModuleTabs";
@@ -202,8 +203,13 @@ export function TestPreviewRunner(): JSX.Element {
       {/* ---- the question ---- */}
       <main className="min-h-0 flex-1">
         {loading ? (
-          <div className="flex h-full items-center justify-center text-sm text-slate-400">
-            Loading preview…
+          <div className="mx-auto max-w-2xl space-y-4 px-6 py-8" aria-busy="true" aria-label="Loading preview">
+            <Skeleton className="h-6 w-40 rounded" />
+            <Skeleton className="h-32 w-full rounded-lg" />
+            <Skeleton className="h-5 w-3/4 rounded" />
+            <Skeleton className="h-12 w-full rounded-lg" />
+            <Skeleton className="h-12 w-full rounded-lg" />
+            <Skeleton className="h-12 w-full rounded-lg" />
           </div>
         ) : error ? (
           <div className="flex h-full items-center justify-center px-6 text-center text-sm text-rose-600 dark:text-rose-400">

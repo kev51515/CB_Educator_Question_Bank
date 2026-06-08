@@ -177,10 +177,15 @@ export function ProctorChat({
     if (el) el.scrollTop = el.scrollHeight;
   }, [messages.length]);
 
+  // Ref guard (not just the `sending` state) so a fast double-tap can't fire
+  // two sends before the state flips.
+  const sendingRef = useRef(false);
   const doSend = async (kind: "text" | "preset", body: string) => {
-    if (sending || disabled) return;
+    if (sendingRef.current || disabled) return;
+    sendingRef.current = true;
     setSending(true);
     const okSent = await send(kind, body);
+    sendingRef.current = false;
     setSending(false);
     if (okSent && kind === "text") setDraft("");
   };

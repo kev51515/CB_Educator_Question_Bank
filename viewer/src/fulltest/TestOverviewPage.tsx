@@ -773,7 +773,20 @@ export function TestOverviewPage(): JSX.Element {
         <AssignTestModal slug={slug} title={title} onClose={() => setAssignOpen(false)} />
       )}
       {monitorOpen && (
-        <TestMonitorModal slug={slug} title={title} isAdmin={isAdmin} onClose={() => setMonitorOpen(false)} />
+        <TestMonitorModal
+          slug={slug}
+          title={title}
+          isAdmin={isAdmin}
+          newMsgRuns={newMsgRuns}
+          onSeenRun={(rid) =>
+            setNewMsgRuns((prev) => {
+              const n = new Set(prev);
+              n.delete(rid);
+              return n;
+            })
+          }
+          onClose={() => setMonitorOpen(false)}
+        />
       )}
 
       {chatTarget &&

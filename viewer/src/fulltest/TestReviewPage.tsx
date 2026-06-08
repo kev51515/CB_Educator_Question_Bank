@@ -19,6 +19,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useBreadcrumbLabel } from "@/components";
+import { Skeleton } from "@/components/Skeleton";
 import { testOverviewPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
 import { ModuleTabs } from "./ModuleTabs";
@@ -251,6 +252,9 @@ export function TestReviewPage(): JSX.Element {
               <button
                 type="button"
                 onClick={() => setSidebarOpen(true)}
+                aria-label="Show class results"
+                aria-expanded={false}
+                aria-controls="review-class-results"
                 title="Show class results"
                 className="rounded-md px-2 py-1 text-xs font-medium text-slate-600 ring-1 ring-slate-300 hover:bg-white dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800"
               >
@@ -350,7 +354,7 @@ export function TestReviewPage(): JSX.Element {
       <div className="flex min-h-0 flex-1">
         {/* left sidebar: class results */}
         {sidebarOpen && (
-          <aside className="flex w-72 shrink-0 flex-col border-r border-slate-200 bg-slate-50/40 dark:border-slate-800 dark:bg-slate-900/30">
+          <aside id="review-class-results" aria-label="Class results" className="flex w-72 shrink-0 flex-col border-r border-slate-200 bg-slate-50/40 dark:border-slate-800 dark:bg-slate-900/30">
             <div className="flex items-start justify-between gap-2 px-3 py-2">
               <div className="min-w-0">
                 <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
@@ -365,6 +369,9 @@ export function TestReviewPage(): JSX.Element {
               <button
                 type="button"
                 onClick={() => setSidebarOpen(false)}
+                aria-label="Collapse class results"
+                aria-expanded
+                aria-controls="review-class-results"
                 title="Collapse"
                 className="shrink-0 rounded-md px-1.5 py-0.5 text-slate-400 hover:bg-slate-200/60 hover:text-slate-600 dark:hover:bg-slate-800"
               >
@@ -378,7 +385,11 @@ export function TestReviewPage(): JSX.Element {
                   No class is linked to this test yet — showing the answer key.
                 </p>
               ) : breakdownLoading ? (
-                <p className="text-xs text-slate-400">Loading results…</p>
+                <div className="space-y-2" aria-busy="true" aria-label="Loading class results">
+                  {[0, 1, 2, 3].map((i) => (
+                    <Skeleton key={i} className="h-9 rounded-lg" />
+                  ))}
+                </div>
               ) : !hasClassData ? (
                 <div className="rounded-lg bg-white px-3 py-3 text-xs ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
                   <p className="font-medium text-slate-700 dark:text-slate-200">No responses yet</p>
@@ -471,8 +482,13 @@ export function TestReviewPage(): JSX.Element {
         {/* the question */}
         <main className="min-h-0 flex-1">
           {loading ? (
-            <div className="flex h-full items-center justify-center text-sm text-slate-400">
-              Loading review…
+            <div className="mx-auto max-w-2xl space-y-4 px-6 py-8" aria-busy="true" aria-label="Loading review">
+              <Skeleton className="h-6 w-40 rounded" />
+              <Skeleton className="h-32 w-full rounded-lg" />
+              <Skeleton className="h-5 w-3/4 rounded" />
+              <Skeleton className="h-12 w-full rounded-lg" />
+              <Skeleton className="h-12 w-full rounded-lg" />
+              <Skeleton className="h-12 w-full rounded-lg" />
             </div>
           ) : error ? (
             <div className="flex h-full items-center justify-center px-6 text-center text-sm text-rose-600 dark:text-rose-400">
@@ -546,7 +562,7 @@ function BreakdownBody({
                 <span className="w-6 text-right tabular-nums text-slate-500 dark:text-slate-400">{n}</span>
               </div>
               {n > 0 && (
-                <p className="ml-5 mt-0.5 text-[11px] leading-snug text-slate-400 dark:text-slate-500">
+                <p className="ml-5 mt-0.5 text-[11px] leading-snug text-slate-500 dark:text-slate-400">
                   {names(picks)}
                 </p>
               )}
@@ -596,7 +612,7 @@ function BreakdownBody({
               {isKey && <span className="text-emerald-600 dark:text-emerald-400">✓</span>}
               <span className="w-6 text-right tabular-nums text-slate-500 dark:text-slate-400">{n}</span>
             </div>
-            <p className="ml-1 mt-0.5 text-[11px] leading-snug text-slate-400 dark:text-slate-500">
+            <p className="ml-1 mt-0.5 text-[11px] leading-snug text-slate-500 dark:text-slate-400">
               {names(rs)}
             </p>
           </div>

@@ -61,6 +61,10 @@ interface TestMonitorModalProps {
   title: string;
   /** Only the lead teacher (admin) may act on a live sitting; others are read-only. */
   isAdmin?: boolean;
+  /** Runs with an unread student message — owned by TestOverviewPage so the
+   *  page + this modal share ONE realtime subscription (no phantom dots). */
+  newMsgRuns?: Set<string>;
+  onSeenRun?: (runId: string) => void;
   onClose: () => void;
 }
 
@@ -99,7 +103,7 @@ function fmtTime(iso: string | null): string {
   }
 }
 
-export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: TestMonitorModalProps) {
+export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onSeenRun, onClose }: TestMonitorModalProps) {
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, true);
   useEscapeKey(onClose);
@@ -199,36 +203,13 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
     [toast, refresh],
   );
 
-  // Live proctor ⇄ student chat (0113): open thread + unread dots fed by a
-  // realtime subscription to proctor_messages inserts.
+  // Live proctor ⇄ student chat (0113). The unread-dot set + its realtime
+  // subscription live in TestOverviewPage (the parent) so there's exactly ONE
+  // subscription; this modal just reads `newMsgRuns` and reports "seen".
   const [chatTarget, setChatTarget] = useState<{ runId: string; name: string } | null>(null);
-  const [newMsgRuns, setNewMsgRuns] = useState<Set<string>>(new Set());
-  useEffect(() => {
-    const channel = supabase
-      .channel("proctor_messages:monitor")
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "proctor_messages" },
-        (payload) => {
-          const m = payload.new as { run_id?: string; sender?: string };
-          if (m?.sender === "student" && m.run_id) {
-            const rid = m.run_id;
-            setNewMsgRuns((prev) => new Set(prev).add(rid));
-          }
-        },
-      )
-      .subscribe();
-    return () => {
-      void supabase.removeChannel(channel);
-    };
-  }, []);
   const openChat = (runId: string, name: string): void => {
     setChatTarget({ runId, name });
-    setNewMsgRuns((prev) => {
-      const n = new Set(prev);
-      n.delete(runId);
-      return n;
-    });
+    onSeenRun?.(runId);
   };
 
   useEffect(() => {
@@ -449,7 +430,7 @@ export function TestMonitorModal({ slug, title, isAdmin = false, onClose }: Test
                               title="Message this student (they can reply while paused)"
                             >
                               💬
-                              {newMsgRuns.has(r.run_id) && (
+                              {newMsgRuns?.has(r.run_id) && (
                                 <span
                                   aria-label="new message"
                                   className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white dark:ring-slate-900"
