@@ -96,7 +96,6 @@ export function RosterRowView({
             {flagged && (
               <StatusPill
                 tone="alert"
-                icon="⚑"
                 label="Needs review"
                 title={
                   flagReasons.length
@@ -133,13 +132,11 @@ export function RosterRowView({
             <StatusPill
               tone={lr?.paused ? "paused" : "live"}
               pulse={!lr?.paused}
-              icon={lr?.paused ? "⏸" : undefined}
               label={lr?.paused ? "Paused" : "In progress"}
             />
             {flagged && (
               <StatusPill
                 tone="alert"
-                icon="⚑"
                 label="Needs review"
                 title={flagReasons.length ? flagReasons.map(flagLabel).join(" · ") : "Flagged for review"}
               />
@@ -147,13 +144,12 @@ export function RosterRowView({
             {away > 0 && (
               <StatusPill
                 tone="warn"
-                icon="↗"
                 label={`Left tab ${away}×${awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}`}
                 title="Times the student left the test tab"
               />
             )}
             {integrity && (
-              <StatusPill tone="alert" icon="⚑" label={integrity} title="Integrity signals during the test" />
+              <StatusPill tone="alert" label={integrity} title="Integrity signals during the test" />
             )}
             {isAdmin && lr?.run_id && (
               <RowAction
@@ -162,7 +158,10 @@ export function RosterRowView({
                 onClick={() => onOpenChat(lr.run_id ?? "", name)}
                 title="Message this student (they can reply while paused)"
               >
-                💬 Message
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="mr-1 h-3.5 w-3.5">
+                  <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z" />
+                </svg>
+                Message
                 {hasNewMessage && (
                   <span
                     aria-label="new message"

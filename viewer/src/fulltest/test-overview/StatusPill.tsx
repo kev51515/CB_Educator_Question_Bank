@@ -60,7 +60,7 @@ export function StatusPill({
   tone: PillTone;
   label: string;
   pulse?: boolean;
-  /** When set, replaces the leading dot (e.g. ⚑, ↗, ⏸). */
+  /** When set, replaces the leading dot with a custom node (e.g. an SVG icon). */
   icon?: ReactNode;
   title?: string;
 }): JSX.Element {

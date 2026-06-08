@@ -295,7 +295,7 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
               {taking} taking · {done} done · {notStarted} not started
               {flagged > 0 && (
                 <span className="ml-1 font-medium text-amber-600 dark:text-amber-400">
-                  · ⚠ {flagged} need{flagged === 1 ? "s" : ""} attention
+                  · {flagged} need{flagged === 1 ? "s" : ""} attention
                 </span>
               )}
             </p>
@@ -372,12 +372,16 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
                       </span>
                       <span className="text-xs tabular-nums text-slate-500 dark:text-slate-400">
                         {r.answered ?? 0}/{r.module_questions ?? "?"} answered
-                        {(r.marked ?? 0) > 0 ? ` · ${r.marked}🔖` : ""}
+                        {(r.marked ?? 0) > 0 ? ` · ${r.marked} marked` : ""}
                       </span>
                       <span
-                        className={`text-xs tabular-nums font-medium ${lowTime ? "text-rose-600 dark:text-rose-400" : "text-slate-600 dark:text-slate-300"}`}
+                        className={`inline-flex items-center gap-1 text-xs tabular-nums font-medium ${lowTime ? "text-rose-600 dark:text-rose-400" : "text-slate-600 dark:text-slate-300"}`}
                       >
-                        ⏱ {fmtClock(r.seconds_remaining)}
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                          <circle cx="12" cy="12" r="9" />
+                          <path d="M12 7.5V12l3 1.8" />
+                        </svg>
+                        {fmtClock(r.seconds_remaining)}
                       </span>
                       {r.started_at && (
                         <span className="text-[11px] tabular-nums text-slate-400 dark:text-slate-500">
@@ -394,7 +398,6 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
                       {flaggedRow && (
                         <StatusPill
                           tone="alert"
-                          icon="⚑"
                           label="Needs review"
                           title={
                             flagReasons.length
@@ -406,7 +409,6 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
                       {away > 0 && (
                         <StatusPill
                           tone="warn"
-                          icon="↗"
                           label={`Left tab ${away}×${awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}`}
                           title="Times the student left the test tab (total time away)"
                         />
@@ -414,12 +416,11 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
                       {fmtIntegrity(r.integrity) && (
                         <StatusPill
                           tone="alert"
-                          icon="⚑"
                           label={fmtIntegrity(r.integrity) ?? ""}
                           title="Integrity signals"
                         />
                       )}
-                      {r.paused && <StatusPill tone="paused" icon="⏸" label="Paused" />}
+                      {r.paused && <StatusPill tone="paused" label="Paused" />}
                       {isAdmin && (
                         <div className="ml-auto flex items-center gap-1.5">
                           {r.run_id && (
@@ -428,8 +429,11 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
                               className="relative"
                               onClick={() => openChat(r.run_id ?? "", r.student_name ?? "Student")}
                               title="Message this student (they can reply while paused)"
+                              aria-label="Message this student"
                             >
-                              💬
+                              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                                <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z" />
+                              </svg>
                               {newMsgRuns?.has(r.run_id) && (
                                 <span
                                   aria-label="new message"
@@ -472,7 +476,6 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
                       {flaggedRow && (
                         <StatusPill
                           tone="alert"
-                          icon="⚑"
                           label="Needs review"
                           title={
                             flagReasons.length

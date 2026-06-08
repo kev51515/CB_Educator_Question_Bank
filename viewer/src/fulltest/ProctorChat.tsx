@@ -24,11 +24,11 @@ export interface ProctorMessage {
 }
 
 export const STUDENT_PRESETS = [
-  "👍 Okay",
-  "🙋 I have a question",
-  "🚻 Restroom",
-  "⚠️ Technical issue",
-  "✅ Ready to resume",
+  "Okay",
+  "I have a question",
+  "Need the restroom",
+  "Technical issue",
+  "Ready to resume",
 ];
 
 export const STAFF_PRESETS = [

@@ -52,7 +52,7 @@ export function ProctorChatModal({
               {studentName}
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              {paused ? "⏸ Paused — they can message you" : "In progress"}
+              {paused ? "Paused — they can message you" : "In progress"}
             </p>
           </div>
           <button
