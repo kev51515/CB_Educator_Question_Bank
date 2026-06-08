@@ -403,9 +403,7 @@ function Prompt({
                           "text-[16px] leading-relaxed",
                           struck
                             ? "text-slate-400 line-through dark:text-slate-500"
-                            : isWrong
-                              ? "text-rose-700 dark:text-rose-300"
-                              : "text-slate-800 dark:text-slate-200",
+                            : "text-slate-800 dark:text-slate-200",
                         ].join(" ")}
                         style={SERIF}
                       >
