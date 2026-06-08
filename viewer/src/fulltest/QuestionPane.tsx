@@ -15,9 +15,13 @@
  * response input). Figures are served PNGs and size-constrained so graphs/tables
  * never overflow their pane.
  */
+import { useEffect, useRef, useState } from "react";
 import type { Letter, TestQuestion } from "./types";
 import type { AnnotField, Highlight } from "./annotations";
 import { PassageBody, RichInline, renderText } from "./passageRender";
+
+/** Per-choice class response stats for Review Mode (mcq). */
+export type ChoiceStats = Partial<Record<Letter, { count: number; names: string[] }>>;
 
 const LETTERS: Letter[] = ["A", "B", "C", "D"];
 
@@ -51,6 +55,9 @@ interface QuestionPaneProps {
    *  of available width — a user toggle in Review/Preview. Default: auto
    *  (container-query) split when there's room. */
   forceStacked?: boolean;
+  /** Review Mode: per-choice class response counts + names. When set, each mcq
+   *  choice shows a clickable count pill (click → who chose it). */
+  choiceStats?: ChoiceStats;
 }
 
 /**
@@ -189,6 +196,90 @@ function QHeader({
   );
 }
 
+/**
+ * Review Mode: a pill on a choice showing how many students picked it; click to
+ * reveal their names in a small popover (closes on outside-click / Esc). Count
+ * of 0 renders muted + non-interactive. The correct choice's pill is emerald.
+ */
+function ChoiceCountPill({
+  count,
+  names,
+  isKey,
+  letter,
+}: {
+  count: number;
+  names: string[];
+  isKey: boolean;
+  letter: Letter;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={ref} className="relative shrink-0">
+      <button
+        type="button"
+        disabled={count === 0}
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-label={
+          count === 0
+            ? `No students chose choice ${letter}`
+            : `${count} student${count === 1 ? "" : "s"} chose choice ${letter} — show names`
+        }
+        title={count === 0 ? "No one chose this" : "Show who chose this"}
+        className={[
+          "inline-flex min-w-[2.25rem] items-center justify-center rounded-full px-2.5 py-1 text-sm font-semibold tabular-nums transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-indigo-500",
+          isKey
+            ? "bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200 hover:bg-emerald-200 dark:bg-emerald-900/50 dark:text-emerald-300 dark:ring-emerald-800"
+            : count > 0
+              ? "bg-slate-100 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-700"
+              : "bg-transparent text-slate-300 ring-1 ring-slate-200 dark:text-slate-600 dark:ring-slate-800",
+          count === 0 ? "cursor-default" : "cursor-pointer",
+        ].join(" ")}
+      >
+        {count}
+      </button>
+      {open && count > 0 && (
+        <div
+          role="dialog"
+          aria-label={`Students who chose choice ${letter}`}
+          className="absolute right-0 top-full z-30 mt-1.5 max-h-60 w-56 overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 text-left shadow-xl dark:border-slate-700 dark:bg-slate-900"
+        >
+          <p className="px-1.5 pb-1 text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+            Chose {letter} · {count}
+          </p>
+          <ul className="space-y-0.5">
+            {names.map((n, i) => (
+              <li
+                key={`${n}-${i}`}
+                className="truncate rounded px-1.5 py-1 text-xs text-slate-700 dark:text-slate-200"
+              >
+                {n}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Prompt({
   question,
   value,
@@ -200,9 +291,10 @@ function Prompt({
   highlights,
   onRemoveHighlight,
   correctAnswer,
+  choiceStats,
 }: Pick<
   QuestionPaneProps,
-  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights" | "onRemoveHighlight" | "correctAnswer"
+  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights" | "onRemoveHighlight" | "correctAnswer" | "choiceStats"
 >) {
   return (
     <div className="space-y-5">
@@ -276,6 +368,15 @@ function Prompt({
                     </span>
                   )}
                 </button>
+
+                {choiceStats && (
+                  <ChoiceCountPill
+                    letter={letter}
+                    isKey={isKey}
+                    count={choiceStats[letter]?.count ?? 0}
+                    names={choiceStats[letter]?.names ?? []}
+                  />
+                )}
 
                 {strikeMode && onToggleEliminate && !disabled && (
                   <button
@@ -357,6 +458,7 @@ export function QuestionPane({
   onRemoveHighlight,
   correctAnswer,
   forceStacked,
+  choiceStats,
 }: QuestionPaneProps) {
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
@@ -384,6 +486,7 @@ export function QuestionPane({
           highlights={highlights}
           onRemoveHighlight={onRemoveHighlight}
           correctAnswer={correctAnswer}
+          choiceStats={choiceStats}
         />
       </div>
     </>

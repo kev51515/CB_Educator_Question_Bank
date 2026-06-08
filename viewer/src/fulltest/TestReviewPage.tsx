@@ -199,6 +199,17 @@ export function TestReviewPage(): JSX.Element {
   const hasClassData = breakdown.length > 0;
   const anotherClassHasData = courses.some((c) => c.course_id !== courseId && c.taken > 0);
 
+  // Per-choice counts + names for the inline pills on each mcq answer choice.
+  const choiceStats = useMemo(() => {
+    if (!hasClassData || !question || question.type !== "mcq") return undefined;
+    const out: Partial<Record<Letter, { count: number; names: string[] }>> = {};
+    for (const L of LETTERS) {
+      const picks = curRows.filter((r) => (r.chosen ?? "") === L);
+      out[L] = { count: picks.length, names: picks.map((r) => r.student_name ?? "Unknown") };
+    }
+    return out;
+  }, [hasClassData, question, curRows]);
+
   return (
     <div className="fixed inset-0 z-40 flex flex-col bg-white dark:bg-slate-950">
       {/* ---- top bar ---- */}
@@ -535,6 +546,7 @@ export function TestReviewPage(): JSX.Element {
               fullHeight
               forceStacked={forceStacked}
               correctAnswer={correctValue(question)}
+              choiceStats={choiceStats}
               highlights={annot.get(question.id).highlights}
               onRemoveHighlight={(field, offset) =>
                 annot.removeHighlightAt(question.id, field, offset)
