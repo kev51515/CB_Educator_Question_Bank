@@ -18,7 +18,136 @@
  * to raw offsets). Everything outside a table still maps 1:1.
  */
 import type { JSX } from "react";
+import katex from "katex";
+import "katex/dist/katex.min.css";
 import { mergeRanges, type AnnotField, type Highlight } from "./annotations";
+
+// --- inline math ($…$ / $$…$$) ----------------------------------------------
+// Math is stored as LaTeX inside `$…$` delimiters. We split a text run into
+// plain + math segments (tracking absolute source offsets so highlights still
+// map), KaTeX-render the math, and leave plain text to the offset-preserving
+// mark logic. The `looksLikeMath` guard keeps "$50"-style currency as text.
+
+interface MathSegment {
+  type: "text" | "inline" | "display";
+  content: string;
+  /** Absolute offset of this segment's source span within the parent string. */
+  srcStart: number;
+}
+
+/**
+ * Math content is delimited deliberately (`$…$`) in our data, so a span is math
+ * UNLESS it's prose trapped by a stray currency `$` pairing with a real math `$`
+ * (e.g. "…of $230 he earns each week … $x$"). Genuine math rarely contains two
+ * consecutive 3+ letter words; that signature rejects the mis-pair, after which
+ * the scanner re-pairs the real delimiter. This (unlike a positive math
+ * heuristic) still accepts single-variable / function spans like "$x$", "$f(x)$".
+ */
+function isMath(content: string): boolean {
+  if (content.trim().length === 0) return false;
+  const prose = content.replace(/\\[a-zA-Z]+/g, " ").replace(/[{}]/g, " ");
+  if (/[a-z]{3,}\s+[a-z]{3,}/.test(prose)) return false;
+  return true;
+}
+
+/**
+ * Split `input` into text/inline/display segments. Text segments are VERBATIM
+ * source slices (so `data-annot-offset + local` round-trips); math segments
+ * own their full `$…$` source span but render KaTeX (non-highlightable).
+ */
+function parseMathSegments(input: string): MathSegment[] {
+  const segs: MathSegment[] = [];
+  let i = 0;
+  let textStart = 0;
+  const flush = (end: number): void => {
+    if (end > textStart) {
+      segs.push({ type: "text", content: input.slice(textStart, end), srcStart: textStart });
+    }
+  };
+  while (i < input.length) {
+    if (input[i] === "$" && input[i + 1] === "$") {
+      const close = input.indexOf("$$", i + 2);
+      if (close !== -1 && close > i + 2) {
+        flush(i);
+        segs.push({ type: "display", content: input.slice(i + 2, close), srcStart: i });
+        i = close + 2;
+        textStart = i;
+        continue;
+      }
+      i += 2;
+      continue;
+    }
+    if (input[i] === "$") {
+      const close = input.indexOf("$", i + 1);
+      if (close !== -1) {
+        const content = input.slice(i + 1, close);
+        if (isMath(content)) {
+          flush(i);
+          segs.push({ type: "inline", content, srcStart: i });
+          i = close + 1;
+          textStart = i;
+          continue;
+        }
+      }
+      i += 1;
+      continue;
+    }
+    i += 1;
+  }
+  flush(input.length);
+  return segs;
+}
+
+function MathSpan({ latex, display }: { latex: string; display: boolean }): JSX.Element {
+  const html = katex.renderToString(latex, { throwOnError: false, displayMode: display });
+  return (
+    <span
+      data-annot-skip
+      style={{ userSelect: "none" }}
+      className={display ? "katex-display" : "inline-block align-middle"}
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
+}
+
+/** Render a verbatim text slice with its highlight <mark>s (offset-preserving). */
+function renderMarks(
+  text: string,
+  baseOffset: number,
+  field: AnnotField,
+  ranges: Highlight[],
+  onRemove?: (field: AnnotField, offset: number) => void,
+): JSX.Element {
+  const local = mergeRanges(
+    ranges
+      .map((r) => ({ start: r.start - baseOffset, end: r.end - baseOffset }))
+      .filter((r) => r.end > 0 && r.start < text.length),
+  );
+  if (local.length === 0 || !text) return <>{text}</>;
+  const out: JSX.Element[] = [];
+  let pos = 0;
+  local.forEach((r, idx) => {
+    const s = Math.max(0, Math.min(r.start, text.length));
+    const e = Math.max(s, Math.min(r.end, text.length));
+    if (s > pos) out.push(<span key={`t${idx}`}>{text.slice(pos, s)}</span>);
+    out.push(
+      <mark
+        key={`m${idx}`}
+        onClick={() => {
+          const sel = window.getSelection();
+          if (!sel || sel.isCollapsed) onRemove?.(field, baseOffset + s);
+        }}
+        title="Click to remove highlight"
+        className="cursor-pointer rounded-sm bg-amber-200/70 text-inherit box-decoration-clone dark:bg-amber-300/40 dark:text-inherit"
+      >
+        {text.slice(s, e)}
+      </mark>,
+    );
+    pos = e;
+  });
+  if (pos < text.length) out.push(<span key="tail">{text.slice(pos)}</span>);
+  return <>{out}</>;
+}
 
 interface TextBlock {
   type: "text";
@@ -160,9 +289,11 @@ export function parsePassageBlocks(passage: string): PassageBlock[] {
 }
 
 /**
- * Render a slice of raw text with its highlight <mark>s. `ranges` are ABSOLUTE
- * passage offsets; `baseOffset` is this slice's absolute start. The rendered
- * textContent equals `text` exactly (marks add no text), so offsets round-trip.
+ * Render a text run as highlightable prose + KaTeX math. `ranges` are ABSOLUTE
+ * field offsets; `baseOffset` is this run's absolute start. Each plain segment
+ * is wrapped in `data-annot-offset` (its absolute start) so the highlight layer
+ * maps DOM selections → raw offsets; math segments render KaTeX + `data-annot-skip`.
+ * Used for the passage prose blocks AND the question stem.
  */
 export function renderText(
   text: string,
@@ -171,36 +302,40 @@ export function renderText(
   ranges: Highlight[],
   onRemove?: (field: AnnotField, offset: number) => void,
 ): JSX.Element {
-  // Clip + localize ranges to this slice.
-  const local = mergeRanges(
-    ranges
-      .map((r) => ({ start: r.start - baseOffset, end: r.end - baseOffset }))
-      .filter((r) => r.end > 0 && r.start < text.length),
+  const segs = parseMathSegments(text);
+  return (
+    <>
+      {segs.map((seg, idx) =>
+        seg.type === "text" ? (
+          <span key={idx} data-annot-offset={baseOffset + seg.srcStart}>
+            {renderMarks(seg.content, baseOffset + seg.srcStart, field, ranges, onRemove)}
+          </span>
+        ) : (
+          <MathSpan key={idx} latex={seg.content} display={seg.type === "display"} />
+        ),
+      )}
+    </>
   );
-  if (local.length === 0 || !text) return <>{text}</>;
-  const out: JSX.Element[] = [];
-  let pos = 0;
-  local.forEach((r, idx) => {
-    const s = Math.max(0, Math.min(r.start, text.length));
-    const e = Math.max(s, Math.min(r.end, text.length));
-    if (s > pos) out.push(<span key={`t${idx}`}>{text.slice(pos, s)}</span>);
-    out.push(
-      <mark
-        key={`m${idx}`}
-        onClick={() => {
-          const sel = window.getSelection();
-          if (!sel || sel.isCollapsed) onRemove?.(field, baseOffset + s);
-        }}
-        title="Click to remove highlight"
-        className="cursor-pointer rounded-sm bg-amber-200/70 text-inherit box-decoration-clone dark:bg-amber-300/40 dark:text-inherit"
-      >
-        {text.slice(s, e)}
-      </mark>,
-    );
-    pos = e;
-  });
-  if (pos < text.length) out.push(<span key="tail">{text.slice(pos)}</span>);
-  return <>{out}</>;
+}
+
+/**
+ * Math-aware render for non-highlightable inline text (answer choices). Plain
+ * text passes through verbatim; `$…$` segments render KaTeX.
+ */
+export function RichInline({ text }: { text: string }): JSX.Element {
+  const segs = parseMathSegments(text);
+  if (segs.length === 1 && segs[0].type === "text") return <>{text}</>;
+  return (
+    <>
+      {segs.map((seg, idx) =>
+        seg.type === "text" ? (
+          <span key={idx}>{seg.content}</span>
+        ) : (
+          <MathSpan key={idx} latex={seg.content} display={seg.type === "display"} />
+        ),
+      )}
+    </>
+  );
 }
 
 function PassageTable({ block }: { block: TableBlock }): JSX.Element {
@@ -294,11 +429,7 @@ export function PassageBody({
         block.type === "table" ? (
           <PassageTable key={idx} block={block} />
         ) : (
-          <div
-            key={idx}
-            data-annot-offset={block.start}
-            className="whitespace-pre-wrap"
-          >
+          <div key={idx} className="whitespace-pre-wrap">
             {renderText(block.text, block.start, "passage", ranges, onRemoveHighlight)}
           </div>
         ),

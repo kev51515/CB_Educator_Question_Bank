@@ -22,12 +22,19 @@ so all 6 tests are fixed at once.
   + local). Tables carry `data-annot-skip` + `user-select:none` → selections in
   them return -1 (non-highlightable). Prose offsets still map 1:1; the stem
   (no blocks) falls back to the old whole-field walk. `tsc -b` green.
-- **Math typesetting (researched, not yet built).** The `f(x)=(1/9)(x−6)²+3`
-  style stems look amateur — stored as bare Unicode, no `$` delimiters. KaTeX is
-  already a dep and `mocktest/RichText.tsx` has a proven `$…$` parser. Plan:
-  make `renderText`/stem segment-aware (math → KaTeX in a `data-annot-skip`
-  span, plain → existing offset-preserving marks) + a careful per-test pass to
-  wrap math in `$…$`. Deferred — it touches 456 questions' content.
+- **Math typesetting — shipped (KaTeX).** `f(x)=(1/9)(x−6)²+3` now renders as
+  real math. `renderText` (stem + passage prose) and a new `RichInline` (choices)
+  are segment-aware: `$…$` LaTeX → KaTeX in a `data-annot-skip` span, plain text →
+  the offset-preserving marks. Key fix vs. the borrowed `mocktest/RichText`
+  heuristic: that `looksLikeMath` *rejected* single-variable spans (`$x$`,
+  `$f(x)$`), so we replaced it with `isMath` — accept any `$…$` UNLESS it's prose
+  trapped by a stray currency `$` (two consecutive 3+ letter words ⇒ reject, then
+  re-pair the real delimiter). Verified: "$583"/"$230" currency stays literal.
+  Data: bare Unicode math in **110 math questions** (the 3 tests with Math
+  sections) converted to `$…$` LaTeX by 3 parallel agents, then mechanically gated
+  before apply — every `$…$` KaTeX-valid, every number preserved (super/subscript
+  + `{,}`-thousands normalized), no invented prose words. Final DB sweep: **669
+  math spans, 0 KaTeX errors**. Originals backed up to `.work/.../math-backup.json`.
 - **"Browser force-refreshes when I return" is not an app bug** — the SW is
   disabled in DEV (`registerSW` bails on `import.meta.env.DEV`) and nothing in
   the app calls `location.reload` on focus/visibility (only the ErrorBoundary).

@@ -16,8 +16,8 @@
  * never overflow their pane.
  */
 import type { Letter, TestQuestion } from "./types";
-import { mergeRanges, type AnnotField, type Highlight } from "./annotations";
-import { PassageBody } from "./passageRender";
+import type { AnnotField, Highlight } from "./annotations";
+import { PassageBody, RichInline, renderText } from "./passageRender";
 
 const LETTERS: Letter[] = ["A", "B", "C", "D"];
 
@@ -59,43 +59,6 @@ interface QuestionPaneProps {
  * text-match) so a mock test never lights up other occurrences. A plain click
  * on a mark removes it; a drag-select that ends on a mark does not.
  */
-function renderField(
-  text: string,
-  field: AnnotField,
-  ranges: Highlight[],
-  onRemove?: (field: AnnotField, offset: number) => void,
-): JSX.Element {
-  const merged = mergeRanges(ranges.map((r) => ({ start: r.start, end: r.end })));
-  if (merged.length === 0 || !text) return <>{text}</>;
-  const out: JSX.Element[] = [];
-  let pos = 0;
-  merged.forEach((r, i) => {
-    const s = Math.max(0, Math.min(r.start, text.length));
-    const e = Math.max(s, Math.min(r.end, text.length));
-    if (s > pos) out.push(<span key={`t${i}`}>{text.slice(pos, s)}</span>);
-    out.push(
-      <mark
-        key={`m${i}`}
-        onClick={() => {
-          const sel = window.getSelection();
-          if (!sel || sel.isCollapsed) onRemove?.(field, s);
-        }}
-        title="Click to remove highlight"
-        // Background-only highlight: NO padding/margin so adding or removing it
-        // never changes text width → no reflow/re-wrap (layout-shift-free).
-        // box-decoration-clone keeps the rounded background tidy across line
-        // breaks (paint-only). See the highlight layout-shift audit (2026-06-08).
-        className="cursor-pointer rounded-sm bg-amber-200/70 text-inherit box-decoration-clone dark:bg-amber-300/40 dark:text-inherit"
-      >
-        {text.slice(s, e)}
-      </mark>,
-    );
-    pos = e;
-  });
-  if (pos < text.length) out.push(<span key="tail">{text.slice(pos)}</span>);
-  return <>{out}</>;
-}
-
 function Figure({
   src,
   alt,
@@ -248,8 +211,9 @@ function Prompt({
         className="whitespace-pre-wrap text-[17px] font-medium leading-relaxed text-slate-900 dark:text-slate-100"
         style={SERIF}
       >
-        {renderField(
+        {renderText(
           question.stem,
+          0,
           "stem",
           (highlights ?? []).filter((h) => h.field === "stem"),
           onRemoveHighlight,
@@ -304,7 +268,7 @@ function Prompt({
                     ].join(" ")}
                     style={SERIF}
                   >
-                    {text}
+                    <RichInline text={text} />
                   </span>
                   {isKey && (
                     <span className="ml-auto inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-300">
