@@ -1,6 +1,45 @@
 # Session Recap
 
-## Latest (2026-06-08) — manual "Stack" layout toggle (Review + Preview)
+## Latest (2026-06-08) — loaded the real DSAT-Nov-2023 cohort + roster polish
+
+Backfilled a real class's mock-test answers and stood up the two summer cohorts.
+Data-only against the remote DB (no migration); plus one roster UI change.
+
+- **Loaded 18 students' real answers** from an Excel export
+  (`DSAT Nov 2023 Mock Test`) into the `dsat-nov-2023` full test as **released**
+  `test_runs` + 1,764 `test_run_answers`. The export gives the chosen option as
+  *text*, not a letter, with no shared IDs — mapped by **question position**
+  within each module and resolved text→letter against `test_questions.choices`.
+  Validated alignment by confirming every chosen text resolves AND the export's
+  earned-points matches our answer key on **all 1,764 cells** (0 mismatches).
+  Two openpyxl gotchas handled: strip HTML tags *before* `html.unescape`, and
+  Excel coercing the fraction `1/8` into a date. Pipeline saved in memory
+  `backfill-cohort-results-from-excel`.
+- **Created two courses** — `'27 SAT A (Summer '26)` (9 students, 8 with
+  results) and `'27 SAT B (Summer '26)` (10, all with results) — enrolled all
+  via the `admin_create_student` contract (service-role replica), and linked the
+  test into each course's Modules (a "Practice Tests" `module_item` link to
+  `/test/dsat-nov-2023`) so the staff Review "who chose what per option"
+  breakdown works.
+- **Erased the 8 junk test courses** (dummy "SAT", clickthrough/MVT/Seat-E2E
+  harness courses) and 5 orphan `test_runs` left by old disposable takers — note
+  `test_runs` are user-scoped, so deleting courses does NOT remove them; clean
+  them by user-not-in-roster or they skew the per-test overview.
+- **Non-guessable login codes.** Replaced sequential `<short_code>-NN` seat codes
+  with random **6 distinct uppercase letters** (A–Z minus I/O/L). Because a
+  student's code IS their auth email (`resolveLoginEmail` → `<code>@students.local`),
+  re-keyed `auth.users.email` (GoTrue admin API) + `profiles.{email,login_code}`
+  + `course_memberships.roster_code` in lockstep; verified sign-in end-to-end.
+  **Starter password = the student's own code** (easy first login), to be changed
+  in Account Settings.
+- **Roster UI (`ClassRoster.tsx`).** Email now shows as a column for **every**
+  student (managed/unclaimed rows previously hid it behind a "Code not used yet"
+  badge — now show `…@students.local` + a "Managed · not activated yet" tag). The
+  three row actions (View profile / Reset password / Remove) are collected under
+  the shared `KebabMenu` ellipsis — "Remove from course" rendered destructive.
+  `tsc -b` green.
+
+## 2026-06-08 — manual "Stack" layout toggle (Review + Preview)
 
 The passage/question split is container-query automatic; added a user override
 so an educator can FORCE the single-column stacked layout even when there's room
