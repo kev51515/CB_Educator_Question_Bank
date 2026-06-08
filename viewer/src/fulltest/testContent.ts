@@ -19,6 +19,8 @@ export interface TestContentQuestion extends TestQuestion {
   correct_answer: string | null;
   accepted: string[] | null;
   rationale: ChoiceRationale | null;
+  /** official College Board domain (e.g. "Algebra"); null if unclassified */
+  domain: string | null;
 }
 export interface TestContentModule {
   position: number;
@@ -47,6 +49,7 @@ interface RawQuestion {
   correct_answer: string | null;
   accepted: string[] | null;
   rationale: ChoiceRationale | null;
+  domain: string | null;
 }
 interface RawModule {
   position: number;
@@ -62,7 +65,7 @@ interface RawTest {
 }
 
 const SELECT =
-  "slug,title,total_questions,test_modules(position,label,section,test_questions(id,ref,number,position,type,passage,passage_alt,stem,choices,figure,correct_answer,accepted,rationale))";
+  "slug,title,total_questions,test_modules(position,label,section,test_questions(id,ref,number,position,type,passage,passage_alt,stem,choices,figure,correct_answer,accepted,rationale,domain))";
 
 /** The canonical answer text for a question (grid folds in `accepted`). */
 export function answerKeyText(q: TestContentQuestion): string {
@@ -112,6 +115,7 @@ export async function fetchTestContent(slug: string): Promise<TestContent> {
           correct_answer: q.correct_answer,
           accepted: q.accepted,
           rationale: q.rationale ?? null,
+          domain: q.domain ?? null,
         })),
     }));
   return {

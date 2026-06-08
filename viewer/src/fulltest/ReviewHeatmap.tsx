@@ -1,25 +1,25 @@
 /**
  * ReviewHeatmap (staff Review Mode)
  * =================================
- * A whole-test, at-a-glance overlay for the teacher: every question across
- * every module laid out as a grid, each cell shaded by the class's percent-
- * correct (red = hardest → green = easiest). Lets a teacher spot the questions
- * a class struggled with without paging through one at a time. Click any cell
- * to jump straight to that question (and close).
+ * A whole-test, at-a-glance overlay for the teacher. Two views:
  *
- * Near-fullscreen so a long test breathes. The summary band surfaces the overall
- * class average, a mastered/shaky/struggled triage bar, and the genuinely-missed
- * questions as quick-jump chips. Each module is its own card with an average
- * pill. For a missed question the tooltip + aria-label name the distractor the
- * class fell for ("most chose B"), which is the actionable bit in review.
+ *   • By question — every question across every module as a grid cell, shaded
+ *     by the class's percent-correct (red = hardest → green = easiest).
+ *   • By skill — the same results rolled up into College Board's official SAT
+ *     domains (Algebra, Craft & Structure, …) so "Q13 was hard" becomes "this
+ *     class is weak in Advanced Math". Surfaces the weakest domain up top.
  *
- * Difficulty is encoded by BOTH colour and the printed % (never colour alone);
- * cells carry an aria-label spelling out the exact count (not just a hover
- * title). Modal contract per CLAUDE.md: role="dialog", focus trap, Esc +
- * backdrop close, ≥40px close target. Arrow keys are swallowed so they don't
- * leak to the question navigation behind the modal.
+ * Click any cell (either view) to jump straight to that question and close.
+ *
+ * The summary band surfaces overall %, a mastered/shaky/struggled triage bar,
+ * and the genuinely-missed questions as quick-jump chips. For a missed question
+ * the tooltip + aria-label name the distractor the class fell for ("most chose
+ * B"). Difficulty is encoded by BOTH colour and printed % (never colour alone);
+ * cells carry an aria-label with the exact count. Modal contract per CLAUDE.md:
+ * role="dialog", focus trap, Esc + backdrop close, ≥40px close target. Arrow
+ * keys are swallowed so they don't leak to the nav behind the modal.
  */
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import type { TestContentModule } from "./testContent";
 
@@ -47,6 +47,8 @@ interface Cell {
   qIdx: number;
   number: number;
   label: string;
+  section: string;
+  domain: string | null;
   pct: number | null;
   st: QStat | null;
 }
@@ -57,9 +59,9 @@ interface Cell {
  * for legibility on the fill — dark on amber, white on green/red.
  */
 const BANDS = {
-  good: { bg: "#10b981", fg: "#ffffff", label: "Mastered" }, // emerald-500
-  mid: { bg: "#f59e0b", fg: "#1f2937", label: "Shaky" }, // amber-500 + slate-800 text
-  bad: { bg: "#f43f5e", fg: "#ffffff", label: "Struggled" }, // rose-500
+  good: { bg: "#10b981", fg: "#ffffff" }, // emerald-500
+  mid: { bg: "#f59e0b", fg: "#1f2937" }, // amber-500 + slate-800 text
+  bad: { bg: "#f43f5e", fg: "#ffffff" }, // rose-500
 } as const;
 type Band = (typeof BANDS)[keyof typeof BANDS];
 
@@ -68,6 +70,20 @@ function band(pct: number): Band {
 }
 
 const LEGEND_GRADIENT = `linear-gradient(to right, ${BANDS.bad.bg}, ${BANDS.mid.bg}, ${BANDS.good.bg})`;
+
+// Canonical domain display order within each section.
+const DOMAIN_ORDER: Record<string, string[]> = {
+  "reading-writing": [
+    "Information and Ideas",
+    "Craft and Structure",
+    "Expression of Ideas",
+    "Standard English Conventions",
+  ],
+  math: ["Algebra", "Advanced Math", "Problem-Solving and Data Analysis", "Geometry and Trigonometry"],
+};
+const SECTION_ORDER = ["reading-writing", "math"];
+const sectionLabel = (s: string): string =>
+  s === "reading-writing" ? "Reading & Writing" : s === "math" ? "Math" : s;
 
 /** "3/8 correct (38%) · most chose B" — shared by tooltip + aria-label. */
 function describe(c: Cell): string {
@@ -90,6 +106,11 @@ export function ReviewHeatmap({
   const dialogRef = useRef<HTMLDivElement>(null);
   useFocusTrap(dialogRef, true);
 
+  const jump = (c: Cell) => {
+    onJump(c.mIdx, c.qIdx);
+    onClose();
+  };
+
   // Flatten every question with its module coordinates + class stat.
   const cells = useMemo<Cell[][]>(
     () =>
@@ -97,44 +118,18 @@ export function ReviewHeatmap({
         m.questions.map((q, qIdx) => {
           const st = statOf(q.id);
           const pct = st && st.total ? Math.round((st.correct / st.total) * 100) : null;
-          return { mIdx, qIdx, number: q.number, label: m.label, pct, st };
+          return { mIdx, qIdx, number: q.number, label: m.label, section: m.section, domain: q.domain, pct, st };
         }),
       ),
     [modules, statOf],
   );
-
-  const moduleAvg = useMemo(
-    () =>
-      cells.map((row) => {
-        let total = 0;
-        let correct = 0;
-        for (const c of row)
-          if (c.st && c.st.total) {
-            total += c.st.total;
-            correct += c.st.correct;
-          }
-        return total ? Math.round((correct / total) * 100) : null;
-      }),
-    [cells],
-  );
-
   const flat = useMemo(() => cells.flat(), [cells]);
-  const overall = useMemo(() => {
-    let total = 0;
-    let correct = 0;
-    for (const c of flat)
-      if (c.st && c.st.total) {
-        total += c.st.total;
-        correct += c.st.correct;
-      }
-    return total ? Math.round((correct / total) * 100) : null;
-  }, [flat]);
 
-  // Triage: how many questions landed in each band (only those with responses).
+  const moduleAvg = useMemo(() => cells.map((row) => aggregate(row)), [cells]);
+  const overall = useMemo(() => aggregate(flat), [flat]);
+
   const dist = useMemo(() => {
-    let good = 0;
-    let mid = 0;
-    let bad = 0;
+    let good = 0, mid = 0, bad = 0;
     for (const c of flat) {
       if (c.pct == null) continue;
       if (c.pct >= 70) good++;
@@ -144,7 +139,6 @@ export function ReviewHeatmap({
     return { good, mid, bad, scored: good + mid + bad };
   }, [flat]);
 
-  // Genuinely-missed questions (below the "mastered" line), hardest first.
   const mostMissed = useMemo(
     () =>
       flat
@@ -154,6 +148,44 @@ export function ReviewHeatmap({
     [flat],
   );
 
+  // Roll questions up into SAT domains, grouped by section, weakest-domain first.
+  const skill = useMemo(() => {
+    const bySection = new Map<string, Map<string, Cell[]>>();
+    for (const c of flat) {
+      if (!c.domain) continue;
+      if (!bySection.has(c.section)) bySection.set(c.section, new Map());
+      const dm = bySection.get(c.section)!;
+      (dm.get(c.domain) ?? dm.set(c.domain, []).get(c.domain)!).push(c);
+    }
+    const sections = SECTION_ORDER.filter((s) => bySection.has(s)).concat(
+      [...bySection.keys()].filter((s) => !SECTION_ORDER.includes(s)),
+    );
+    return sections.map((sec) => {
+      const dm = bySection.get(sec)!;
+      const order = DOMAIN_ORDER[sec] ?? [];
+      const domains = [...dm.keys()].sort(
+        (a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99),
+      );
+      return {
+        section: sec,
+        domains: domains.map((d) => {
+          const qs = dm.get(d)!.slice().sort((a, b) => a.number - b.number);
+          return { domain: d, pct: aggregate(qs), cells: qs };
+        }),
+      };
+    });
+  }, [flat]);
+
+  const hasDomains = useMemo(() => flat.some((c) => c.domain), [flat]);
+  const weakest = useMemo(() => {
+    let w: { domain: string; pct: number } | null = null;
+    for (const s of skill)
+      for (const d of s.domains)
+        if (d.pct != null && (!w || d.pct < w.pct)) w = { domain: d.domain, pct: d.pct };
+    return w;
+  }, [skill]);
+
+  const [view, setView] = useState<"question" | "skill">(hasDomains ? "skill" : "question");
   const anyData = overall != null;
 
   return (
@@ -162,7 +194,6 @@ export function ReviewHeatmap({
       onClick={onClose}
       onKeyDown={(e) => {
         if (e.key === "Escape") onClose();
-        // Don't let ←/→/↑/↓ leak to the question nav behind the modal.
         else if (e.key.startsWith("Arrow")) e.stopPropagation();
       }}
     >
@@ -204,22 +235,43 @@ export function ReviewHeatmap({
               )}
             </div>
 
-            <button
-              type="button"
-              data-autofocus
-              onClick={onClose}
-              aria-label="Close heatmap"
-              className="grid h-10 w-10 shrink-0 place-items-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-slate-800"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-                <path d="M18 6 6 18M6 6l12 12" />
-              </svg>
-            </button>
+            <div className="flex shrink-0 items-center gap-2">
+              {hasDomains && anyData && (
+                <div className="flex rounded-lg bg-slate-100 p-0.5 text-xs font-medium dark:bg-slate-800" role="tablist" aria-label="Heatmap grouping">
+                  {(["skill", "question"] as const).map((v) => (
+                    <button
+                      key={v}
+                      type="button"
+                      role="tab"
+                      aria-selected={view === v}
+                      onClick={() => setView(v)}
+                      className={`rounded-md px-3 py-1 transition-colors ${
+                        view === v
+                          ? "bg-white text-slate-900 shadow-sm dark:bg-slate-700 dark:text-slate-100"
+                          : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                      }`}
+                    >
+                      {v === "skill" ? "By skill" : "By question"}
+                    </button>
+                  ))}
+                </div>
+              )}
+              <button
+                type="button"
+                data-autofocus
+                onClick={onClose}
+                aria-label="Close heatmap"
+                className="grid h-10 w-10 place-items-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-slate-800"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           {anyData && (
             <div className="mt-3.5 flex flex-wrap items-center gap-x-6 gap-y-3">
-              {/* triage distribution */}
               {dist.scored > 0 && (
                 <div className="flex items-center gap-3">
                   <span
@@ -227,15 +279,9 @@ export function ReviewHeatmap({
                     role="img"
                     aria-label={`${dist.good} mastered, ${dist.mid} shaky, ${dist.bad} struggled`}
                   >
-                    {dist.bad > 0 && (
-                      <span style={{ width: `${(dist.bad / dist.scored) * 100}%`, backgroundColor: BANDS.bad.bg }} />
-                    )}
-                    {dist.mid > 0 && (
-                      <span style={{ width: `${(dist.mid / dist.scored) * 100}%`, backgroundColor: BANDS.mid.bg }} />
-                    )}
-                    {dist.good > 0 && (
-                      <span style={{ width: `${(dist.good / dist.scored) * 100}%`, backgroundColor: BANDS.good.bg }} />
-                    )}
+                    {dist.bad > 0 && <span style={{ width: `${(dist.bad / dist.scored) * 100}%`, backgroundColor: BANDS.bad.bg }} />}
+                    {dist.mid > 0 && <span style={{ width: `${(dist.mid / dist.scored) * 100}%`, backgroundColor: BANDS.mid.bg }} />}
+                    {dist.good > 0 && <span style={{ width: `${(dist.good / dist.scored) * 100}%`, backgroundColor: BANDS.good.bg }} />}
                   </span>
                   <div className="flex items-center gap-3 text-[11px] text-slate-500 dark:text-slate-400">
                     <Tally color={BANDS.good.bg} n={dist.good} label="mastered" />
@@ -245,21 +291,16 @@ export function ReviewHeatmap({
                 </div>
               )}
 
-              {/* legend */}
               <div className="ml-auto flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400">
                 <span>Hardest</span>
                 <span aria-hidden className="h-2 w-28 rounded-full" style={{ background: LEGEND_GRADIENT }} />
                 <span>Easiest</span>
                 <span className="ml-2 inline-flex items-center gap-1">
-                  <span
-                    aria-hidden
-                    className="h-3 w-3 rounded-sm bg-slate-200 ring-1 ring-inset ring-slate-300 dark:bg-slate-700 dark:ring-slate-600"
-                  />
+                  <span aria-hidden className="h-3 w-3 rounded-sm bg-slate-200 ring-1 ring-inset ring-slate-300 dark:bg-slate-700 dark:ring-slate-600" />
                   No data
                 </span>
               </div>
 
-              {/* most-missed quick jumps (only questions actually below mastered) */}
               {mostMissed.length > 0 && (
                 <div className="flex w-full flex-wrap items-center gap-1.5">
                   <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
@@ -269,10 +310,7 @@ export function ReviewHeatmap({
                     <button
                       key={`${c.mIdx}-${c.qIdx}`}
                       type="button"
-                      onClick={() => {
-                        onJump(c.mIdx, c.qIdx);
-                        onClose();
-                      }}
+                      onClick={() => jump(c)}
                       aria-label={`Go to ${describe(c)}`}
                       title={`${c.label} · ${describe(c)}`}
                       className="inline-flex items-center gap-1.5 rounded-full py-0.5 pl-1.5 pr-2.5 text-[11px] font-semibold shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 dark:focus-visible:ring-offset-slate-900"
@@ -297,6 +335,54 @@ export function ReviewHeatmap({
               <p className="max-w-sm rounded-xl bg-slate-50 px-6 py-8 text-center text-sm text-slate-500 ring-1 ring-slate-200 dark:bg-slate-800/40 dark:text-slate-400 dark:ring-slate-800">
                 No responses yet — the heatmap fills in once students submit this test.
               </p>
+            </div>
+          ) : view === "skill" ? (
+            <div className="space-y-5">
+              {weakest && (
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Weakest skill:{" "}
+                  <span
+                    className="rounded-md px-1.5 py-0.5 font-semibold"
+                    style={{ backgroundColor: band(weakest.pct).bg, color: band(weakest.pct).fg }}
+                  >
+                    {weakest.domain} · {weakest.pct}%
+                  </span>
+                </p>
+              )}
+              {skill.map((s) => (
+                <section
+                  key={s.section}
+                  className="rounded-xl border border-slate-200 bg-slate-50/50 p-4 dark:border-slate-800 dark:bg-slate-900/40"
+                >
+                  <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+                    {sectionLabel(s.section)}
+                  </h3>
+                  <div className="space-y-4">
+                    {s.domains.map((d) => (
+                      <div key={d.domain}>
+                        <div className="mb-1.5 flex items-center gap-3">
+                          <span className="w-56 shrink-0 text-sm font-medium text-slate-700 dark:text-slate-200">
+                            {d.domain}
+                          </span>
+                          <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                            {d.pct != null && (
+                              <span className="block h-full rounded-full" style={{ width: `${d.pct}%`, backgroundColor: band(d.pct).bg }} />
+                            )}
+                          </span>
+                          <span className="w-28 shrink-0 text-right text-xs tabular-nums text-slate-500 dark:text-slate-400">
+                            {d.pct != null ? `${d.pct}%` : "—"} · {d.cells.length}q
+                          </span>
+                        </div>
+                        <div className="ml-0 grid grid-cols-[repeat(auto-fill,minmax(3.25rem,1fr))] gap-2 sm:ml-[15rem]">
+                          {d.cells.map((c) => (
+                            <QCell key={`${c.mIdx}-${c.qIdx}`} c={c} current={c.mIdx === mi && c.qIdx === qi} onJump={jump} />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
             </div>
           ) : (
             <div className="space-y-5">
@@ -325,34 +411,9 @@ export function ReviewHeatmap({
                       )}
                     </div>
                     <div className="grid grid-cols-[repeat(auto-fill,minmax(3.25rem,1fr))] gap-2">
-                      {cells[mIdx].map((c) => {
-                        const isCurrent = c.mIdx === mi && c.qIdx === qi;
-                        const b = c.pct != null ? band(c.pct) : null;
-                        return (
-                          <button
-                            key={`${c.mIdx}-${c.qIdx}`}
-                            type="button"
-                            onClick={() => {
-                              onJump(c.mIdx, c.qIdx);
-                              onClose();
-                            }}
-                            aria-label={`Go to ${describe(c)}`}
-                            aria-current={isCurrent ? "true" : undefined}
-                            title={describe(c)}
-                            style={b ? { backgroundColor: b.bg, color: b.fg } : undefined}
-                            className={`group grid aspect-square place-items-center rounded-lg text-center leading-none shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 ${
-                              b == null
-                                ? "bg-slate-100 text-slate-400 ring-1 ring-inset ring-slate-200 dark:bg-slate-800 dark:text-slate-500 dark:ring-slate-700"
-                                : ""
-                            } ${isCurrent ? "ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-slate-900" : ""}`}
-                          >
-                            <span className="text-sm font-bold tabular-nums">{c.number}</span>
-                            <span className="mt-0.5 text-[10px] font-medium tabular-nums opacity-90">
-                              {c.pct != null ? `${c.pct}%` : "—"}
-                            </span>
-                          </button>
-                        );
-                      })}
+                      {cells[mIdx].map((c) => (
+                        <QCell key={`${c.mIdx}-${c.qIdx}`} c={c} current={c.mIdx === mi && c.qIdx === qi} onJump={jump} />
+                      ))}
                     </div>
                   </section>
                 );
@@ -362,6 +423,39 @@ export function ReviewHeatmap({
         </div>
       </div>
     </div>
+  );
+}
+
+/** sum(correct)/sum(total) → rounded %, or null when nothing answered. */
+function aggregate(cells: Cell[]): number | null {
+  let total = 0, correct = 0;
+  for (const c of cells)
+    if (c.st && c.st.total) {
+      total += c.st.total;
+      correct += c.st.correct;
+    }
+  return total ? Math.round((correct / total) * 100) : null;
+}
+
+function QCell({ c, current, onJump }: { c: Cell; current: boolean; onJump: (c: Cell) => void }): JSX.Element {
+  const b = c.pct != null ? band(c.pct) : null;
+  return (
+    <button
+      type="button"
+      onClick={() => onJump(c)}
+      aria-label={`Go to ${describe(c)}`}
+      aria-current={current ? "true" : undefined}
+      title={describe(c)}
+      style={b ? { backgroundColor: b.bg, color: b.fg } : undefined}
+      className={`grid aspect-square place-items-center rounded-lg text-center leading-none shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 ${
+        b == null
+          ? "bg-slate-100 text-slate-400 ring-1 ring-inset ring-slate-200 dark:bg-slate-800 dark:text-slate-500 dark:ring-slate-700"
+          : ""
+      } ${current ? "ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-slate-900" : ""}`}
+    >
+      <span className="text-sm font-bold tabular-nums">{c.number}</span>
+      <span className="mt-0.5 text-[10px] font-medium tabular-nums opacity-90">{c.pct != null ? `${c.pct}%` : "—"}</span>
+    </button>
   );
 }
 
