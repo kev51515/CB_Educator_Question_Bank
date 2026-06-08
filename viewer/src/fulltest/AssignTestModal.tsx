@@ -48,13 +48,20 @@ export function AssignTestModal({ slug, title, sections, onClose }: AssignTestMo
     let alive = true;
     void (async () => {
       try {
-        // RLS scopes courses to the teacher's own (admins see all).
-        const { data } = await supabase
-          .from("courses")
-          .select("id, name, short_code")
-          .eq("archived", false)
-          .order("name");
-        if (alive) setCourses((data ?? []) as CourseRow[]);
+        // RLS scopes courses to the teacher's own (admins see all). In parallel,
+        // ask which of those courses already link this test (Modules → /test/<slug>)
+        // so we can mark them "Assigned" up front instead of only after a click.
+        const [coursesRes, assignedRes] = await Promise.all([
+          supabase.from("courses").select("id, name, short_code").eq("archived", false).order("name"),
+          supabase.rpc("list_test_review_courses", { p_slug: slug }),
+        ]);
+        if (!alive) return;
+        setCourses((coursesRes.data ?? []) as CourseRow[]);
+        if (!assignedRes.error && Array.isArray(assignedRes.data)) {
+          setAssignedIds(
+            new Set((assignedRes.data as { course_id: string }[]).map((r) => r.course_id)),
+          );
+        }
       } catch {
         /* non-fatal */
       } finally {
@@ -64,7 +71,7 @@ export function AssignTestModal({ slug, title, sections, onClose }: AssignTestMo
     return () => {
       alive = false;
     };
-  }, []);
+  }, [slug]);
 
   const onAssign = useCallback(
     async (course: CourseRow): Promise<void> => {
