@@ -33,8 +33,13 @@ one-question-at-a-time review surface for going over a test WITH a class.**
   - Same module tabs + question navigator (prev/next, jump grid, ←/→ keys) as
     Preview. Degrades to a clean answer-key walkthrough when no class data.
 - New client API: `listReviewCourses` / `getAnswerBreakdown` in `fulltest/api.ts`.
-- Follow-up worth adding: a smoke check for the two 0112 RPCs (currently
-  covered only by compile-time validation + the live build).
+- **Integration test:** `viewer/scripts/smoke-review.mjs` (`npm run smoke:review`)
+  — disposable, self-cleaning: provisions a teacher + 2 students + a course
+  linking the test, drives two real deterministic submissions (A picks 'A'
+  everywhere, B picks 'B'), then asserts `list_test_review_courses` (taken=2)
+  and `get_test_answer_breakdown` (per-option chosen + names + `is_correct`)
+  plus three authorization rejections (student not staff; non-owner teacher).
+  **14/14 green.** Full smoke suite still all-green.
 
 ## 2026-06-08 — educator "Preview test" → free-roam previewer (no migrations)
 

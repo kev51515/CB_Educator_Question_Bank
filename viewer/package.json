@@ -18,6 +18,7 @@
     "smoke:qbank": "node --env-file-if-exists=../.env scripts/smoke-qbank.mjs",
     "smoke:cascade": "node --env-file-if-exists=../.env scripts/smoke-cascade.mjs",
     "smoke:grading": "node --env-file-if-exists=../.env scripts/smoke-grading.mjs",
+    "smoke:review": "node --env-file-if-exists=../.env scripts/smoke-review.mjs",
     "smoke:announcements": "node --env-file-if-exists=../.env scripts/smoke-announcements.mjs",
     "db:push": "node --env-file-if-exists=../.env scripts/db-push.mjs",
     "backup:live": "node --env-file-if-exists=../.env scripts/live-test-backup.mjs",
