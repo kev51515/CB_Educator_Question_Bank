@@ -24,7 +24,7 @@
  * so the next open auto-highlights the most-recent choice. Single string
  * (not an ordered list) — this is a 4-card picker, not a fuzzy search.
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProfile } from "@/lib/profile";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
@@ -42,8 +42,27 @@ interface CardDef {
   id: CardId;
   label: string;
   hint: string;
-  icon: string; // single emoji glyph — keeps deps to zero
+  icon: ReactNode; // inline line-SVG glyph — keeps deps to zero
   build: (shortCode: string) => string;
+}
+
+/** Shared wrapper so every card icon renders at a consistent stroke + size. */
+function CardIcon({ children }: { children: ReactNode }): JSX.Element {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      {children}
+    </svg>
+  );
 }
 
 // 2x2 grid order: top-left, top-right, bottom-left, bottom-right.
@@ -52,28 +71,47 @@ const CARDS: ReadonlyArray<CardDef> = [
     id: "assignment",
     label: "Assignment",
     hint: "Question Set, Practice Test, or upload",
-    icon: "✏️",
+    icon: (
+      <CardIcon>
+        <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-9.9 9.9-3.56.486.486-3.56 9.414-9.886Z" />
+        <path d="M14 4l3 3" />
+      </CardIcon>
+    ),
     build: courseAssignmentsPath,
   },
   {
     id: "announcement",
     label: "Announcement",
     hint: "Post to your students",
-    icon: "📣",
+    icon: (
+      <CardIcon>
+        <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V7L6 11H4a1 1 0 0 0-1 0Z" />
+        <path d="M14 8a4 4 0 0 1 0 8" />
+        <path d="M18 5a8 8 0 0 1 0 14" />
+      </CardIcon>
+    ),
     build: courseAnnouncementsPath,
   },
   {
     id: "discussion",
     label: "Discussion topic",
     hint: "Open a thread",
-    icon: "💬",
+    icon: (
+      <CardIcon>
+        <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8A8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5Z" />
+      </CardIcon>
+    ),
     build: courseDiscussionsPath,
   },
   {
     id: "material",
     label: "Material",
     hint: "Add a link, file, or note",
-    icon: "📁",
+    icon: (
+      <CardIcon>
+        <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+      </CardIcon>
+    ),
     build: courseMaterialsPath,
   },
 ];

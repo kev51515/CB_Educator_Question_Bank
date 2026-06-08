@@ -102,11 +102,63 @@ export function useQuestionFlags(storageKey: string): {
 
 /* ─── Flag options config ──────────────────────────────────────────────────── */
 
-const FLAG_OPTIONS: { type: FlagType; emoji: string; label: string }[] = [
-  { type: "confusing", emoji: "\u{1F914}", label: "Confusing wording" },
-  { type: "great", emoji: "⭐", label: "Great for teaching" },
-  { type: "too-easy", emoji: "\u{1F4C9}", label: "Too easy for difficulty" },
-  { type: "similar", emoji: "\u{1F504}", label: "Similar to another question" },
+const FLAG_ICON_PROPS = {
+  viewBox: "0 0 24 24",
+  className: "w-3.5 h-3.5",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.8,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  "aria-hidden": true,
+};
+
+const FLAG_OPTIONS: { type: FlagType; icon: JSX.Element; label: string }[] = [
+  {
+    type: "confusing",
+    // Question mark in circle
+    icon: (
+      <svg {...FLAG_ICON_PROPS}>
+        <circle cx="12" cy="12" r="10" />
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+        <line x1="12" y1="17" x2="12.01" y2="17" />
+      </svg>
+    ),
+    label: "Confusing wording",
+  },
+  {
+    type: "great",
+    // Star
+    icon: (
+      <svg {...FLAG_ICON_PROPS}>
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    ),
+    label: "Great for teaching",
+  },
+  {
+    type: "too-easy",
+    // Downward trend
+    icon: (
+      <svg {...FLAG_ICON_PROPS}>
+        <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
+        <polyline points="17 18 23 18 23 12" />
+      </svg>
+    ),
+    label: "Too easy for difficulty",
+  },
+  {
+    type: "similar",
+    // Refresh / cycle
+    icon: (
+      <svg {...FLAG_ICON_PROPS}>
+        <polyline points="23 4 23 10 17 10" />
+        <polyline points="1 20 1 14 7 14" />
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+      </svg>
+    ),
+    label: "Similar to another question",
+  },
 ];
 
 /* ─── FlagButton component ─────────────────────────────────────────────────── */
@@ -191,7 +243,7 @@ export function FlagButton({
                 }}
                 className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-md text-[12.5px] text-ink-700 hover:bg-ink-50 transition-colors text-left"
               >
-                <span className="w-4 text-center text-[13px]">{opt.emoji}</span>
+                <span className="w-4 inline-flex items-center justify-center">{opt.icon}</span>
                 <span className="flex-1">{opt.label}</span>
                 {isActive && (
                   <svg

@@ -30,11 +30,21 @@ export function SubmitConfirmDialog({
     >
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl w-full max-w-sm p-6 flex flex-col gap-4">
         <div className="flex items-start gap-3">
-          <span
-            className="text-amber-700 dark:text-amber-300 text-lg leading-none"
-            aria-hidden="true"
-          >
-            ⚠
+          <span className="text-amber-700 dark:text-amber-300 leading-none" aria-hidden="true">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
           </span>
           <div>
             <h2
@@ -74,7 +84,22 @@ export function SubmitConfirmDialog({
         </div>
         {unansweredCount > 0 && (
           <p className="text-xs text-rose-700 dark:text-rose-300 flex items-center gap-1.5">
-            <span aria-hidden="true">⚠</span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="shrink-0"
+            >
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
             {unansweredCount} question{unansweredCount !== 1 ? "s" : ""} still unanswered.
           </p>
         )}

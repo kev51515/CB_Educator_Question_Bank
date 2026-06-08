@@ -28,16 +28,94 @@ import {
 import { PortfolioSubmissionForm } from "./PortfolioSubmissionForm";
 import { SkeletonRows } from "@/components/Skeleton";
 
-const TYPE_ICON: Record<StudentPortfolioItemType, string> = {
-  short_text: "✏️",
-  long_text: "📝",
-  file: "📎",
-  link: "🔗",
-  number: "🔢",
-  date: "📅",
-  choice: "◉",
-  multi_choice: "☑️",
-};
+/**
+ * Per-type leaf icons. Inline line-SVGs (stroke=currentColor, 24x24 viewBox)
+ * matching the repo icon style — no emoji/pictographs in shipped UI.
+ */
+function TypeIcon({ type }: { type: StudentPortfolioItemType }): JSX.Element {
+  const common = {
+    width: 18,
+    height: 18,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+  switch (type) {
+    case "short_text":
+      // pencil
+      return (
+        <svg {...common}>
+          <path d="M12 20h9" />
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z" />
+        </svg>
+      );
+    case "long_text":
+      // document with lines
+      return (
+        <svg {...common}>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="8" y1="13" x2="16" y2="13" />
+          <line x1="8" y1="17" x2="16" y2="17" />
+        </svg>
+      );
+    case "file":
+      // paperclip
+      return (
+        <svg {...common}>
+          <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+        </svg>
+      );
+    case "link":
+      // link
+      return (
+        <svg {...common}>
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+        </svg>
+      );
+    case "number":
+      // hash
+      return (
+        <svg {...common}>
+          <line x1="4" y1="9" x2="20" y2="9" />
+          <line x1="4" y1="15" x2="20" y2="15" />
+          <line x1="10" y1="3" x2="8" y2="21" />
+          <line x1="16" y1="3" x2="14" y2="21" />
+        </svg>
+      );
+    case "date":
+      // calendar
+      return (
+        <svg {...common}>
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+      );
+    case "choice":
+      // radio (single choice)
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "multi_choice":
+      // checkbox (checked)
+      return (
+        <svg {...common}>
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <polyline points="8 12 11 15 16 9" />
+        </svg>
+      );
+  }
+}
 
 function formatRelative(iso: string | null): string {
   if (!iso) return "";
@@ -200,7 +278,7 @@ function StudentNodeRow({
           aria-hidden
           className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-100 dark:ring-indigo-900 text-lg"
         >
-          {TYPE_ICON[node.item_type]}
+          <TypeIcon type={node.item_type} />
         </span>
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2 flex-wrap">

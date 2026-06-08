@@ -272,12 +272,21 @@ export function CourseSettings() {
                 <span className="text-base font-semibold text-slate-900 dark:text-slate-100">
                   {cls.name}
                 </span>
-                <span
+                <svg
                   aria-hidden
-                  className="text-xs text-slate-400 opacity-0 group-hover:opacity-100"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-slate-400 opacity-0 group-hover:opacity-100"
                 >
-                  ✎
-                </span>
+                  <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-9.9 9.9-3.56.486.486-3.56 9.414-9.886Z" />
+                  <path d="M14 4l3 3" />
+                </svg>
               </button>
             )}
             <p className="text-xs text-slate-500 dark:text-slate-400">

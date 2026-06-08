@@ -87,16 +87,68 @@ export const TYPE_LABELS: Record<PortfolioItemType, string> = {
   multi_choice: "Multi-choice",
 };
 
-export const TYPE_ICON: Record<PortfolioItemType, string> = {
-  short_text: "✏️",
-  long_text: "📝",
-  file: "📎",
-  link: "🔗",
-  number: "🔢",
-  date: "📅",
-  choice: "◉",
-  multi_choice: "☑️",
-};
+/**
+ * Clean line icons per portfolio item type (replaces the old emoji map).
+ * Stroke-based, 24-unit viewBox, matching the repo's ItemTypeIcon style so
+ * the row reads as tidy Canvas-style scaffolding rather than mixed-weight
+ * emoji that render differently per OS.
+ */
+function TypeIcon({ type }: { type: PortfolioItemType }): JSX.Element {
+  const paths: Record<PortfolioItemType, JSX.Element> = {
+    short_text: <path d="M4 7h16M4 12h10M4 17h7" />,
+    long_text: (
+      <>
+        <path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" />
+        <path d="M14 2v5h5" />
+        <path d="M9 13h6M9 16.5h4" />
+      </>
+    ),
+    file: (
+      <path d="M21.44 11.05 12.25 20.24a4 4 0 0 1-5.66-5.66l8.49-8.49a2.5 2.5 0 0 1 3.54 3.54l-8.49 8.49a1 1 0 0 1-1.41-1.41l7.78-7.78" />
+    ),
+    link: (
+      <>
+        <path d="M10 13a5 5 0 0 0 7.07 0l1.93-1.93a5 5 0 0 0-7.07-7.07L11 5" />
+        <path d="M14 11a5 5 0 0 0-7.07 0L5 12.93a5 5 0 0 0 7.07 7.07L13 19" />
+      </>
+    ),
+    number: <path d="M9 4 7 20M17 4l-2 16M5 9h15M4 15h15" />,
+    date: (
+      <>
+        <path d="M7 2v3M17 2v3" />
+        <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+        <path d="M4 10h16" />
+      </>
+    ),
+    choice: (
+      <>
+        <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" />
+        <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+      </>
+    ),
+    multi_choice: (
+      <>
+        <path d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z" />
+        <path d="M8 12.5 11 15.5 16.5 9" />
+      </>
+    ),
+  };
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      {paths[type]}
+    </svg>
+  );
+}
 
 export function formatRelative(iso: string | null): string {
   if (!iso) return "";
@@ -486,9 +538,9 @@ export function PortfolioItemNodeRow({
           </button>
           <span
             aria-hidden
-            className="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-md bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-100 dark:ring-indigo-900 text-sm"
+            className="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-md bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-100 dark:ring-indigo-900"
           >
-            {TYPE_ICON[node.item_type]}
+            <TypeIcon type={node.item_type} />
           </span>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2 flex-wrap">

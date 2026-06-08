@@ -83,7 +83,21 @@ export function TestPhaseHeader({
             ].join(" ")}
             aria-hidden="true"
           >
-            <span>⏱</span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="13" r="8" />
+              <path d="M12 9v4l2 2" />
+              <path d="M5 3 2 6" />
+              <path d="m22 6-3-3" />
+            </svg>
             <span>{formatTime(timeLeftSeconds)}</span>
           </div>
           {/*

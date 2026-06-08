@@ -20,7 +20,7 @@
  * always paired with a shape so the encoding is never color-only.
  */
 import { useMemo } from "react";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Skeleton } from "@/components/Skeleton";
 import type { ProctorEvent, ProctorEventType } from "./api";
 
@@ -160,11 +160,31 @@ function buildSummary(events: ProctorEvent[]): Summary {
 
 interface ChipDef {
   key: string;
-  glyph: string;
+  glyph: ReactNode;
   label: string;
   value: string | number;
   /** tailwind tone classes (bg/text/ring) */
   tone: string;
+}
+
+/** Small inline arrow-up-right icon — "left tab / navigated away" marker. */
+function ArrowUpRightIcon(): JSX.Element {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  );
 }
 
 function chipsFor(s: Summary): ChipDef[] {
@@ -180,7 +200,7 @@ function chipsFor(s: Summary): ChipDef[] {
   if (s.awayCount > 0)
     out.push({
       key: "away-count",
-      glyph: "↗",
+      glyph: <ArrowUpRightIcon />,
       label: `left tab ${s.awayCount}×`,
       value: "",
       tone: "bg-amber-50 text-amber-700 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900",

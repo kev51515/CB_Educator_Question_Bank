@@ -85,6 +85,27 @@ function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element 
   );
 }
 
+/** Small line-SVG padlock, matching ItemTypeIcon's stroke style. */
+function LockIcon(): JSX.Element {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className="h-3 w-3 flex-none"
+    >
+      <path d="M5 11a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" />
+      <path d="M8 9V7a4 4 0 0 1 8 0v2" />
+    </svg>
+  );
+}
+
 /**
  * Notion/Linear-style drop target. A single anchor row + relative position +
  * cursor-X depth resolution. `asChild` is only valid when position==="after"
@@ -647,12 +668,12 @@ function ModuleCard({
               title={`Locked since ${new Date(module.lock_at).toLocaleString()}`}
               className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1"
             >
-              🔒 Locked since {new Date(module.lock_at).toLocaleDateString()}
+              <LockIcon /> Locked since {new Date(module.lock_at).toLocaleDateString()}
             </span>
           )}
           {!isStudent && module.lock_at && (
-            <span className="text-xs text-slate-500 dark:text-slate-400 truncate">
-              🔒 {new Date(module.lock_at).toLocaleString()}
+            <span className="text-xs text-slate-500 dark:text-slate-400 truncate flex items-center gap-1">
+              <LockIcon /> {new Date(module.lock_at).toLocaleString()}
             </span>
           )}
           {module.opens_at && (

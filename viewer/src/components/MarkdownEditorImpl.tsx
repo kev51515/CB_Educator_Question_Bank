@@ -11,6 +11,7 @@ import { useEditor, EditorContent, type Editor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
 import { useEffect } from "react";
+import type { ReactNode } from "react";
 
 export interface MarkdownEditorProps {
   value: string;
@@ -81,7 +82,23 @@ export function MarkdownEditor({
               if (url) editor.chain().focus().setLink({ href: url }).run();
             }}
             active={editor.isActive("link")}
-            label="🔗"
+            ariaLabel="Insert link"
+            label={
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+              </svg>
+            }
           />
         </div>
       )}
@@ -101,15 +118,17 @@ export function MarkdownEditor({
 interface ToolbarButtonProps {
   onClick: () => void;
   active: boolean;
-  label: string;
+  label: ReactNode;
   className?: string;
+  ariaLabel?: string;
 }
 
-function ToolbarButton({ onClick, active, label, className = "" }: ToolbarButtonProps) {
+function ToolbarButton({ onClick, active, label, className = "", ariaLabel }: ToolbarButtonProps) {
   return (
     <button
       type="button"
       onClick={onClick}
+      aria-label={ariaLabel}
       className={`px-2 py-1 text-sm rounded transition ${
         active
           ? "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300"

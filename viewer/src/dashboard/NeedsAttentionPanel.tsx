@@ -247,7 +247,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
 
       {/* To grade */}
       <Section
-        icon="🎯"
+        icon=""
         label="To grade"
         count={filteredToGrade.length}
         collapsed={collapse.toGrade}
@@ -257,7 +257,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
         onRetry={() => void refreshToGrade()}
       >
         {filteredToGrade.length === 0 ? (
-          <EmptySectionLine text="All caught up here 🎉" />
+          <EmptySectionLine text="All caught up here" />
         ) : (
           <div className="space-y-2">
             {toGradeShown.map((item) => {
@@ -307,7 +307,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
 
       {/* Past due */}
       <Section
-        icon="⏰"
+        icon=""
         label="Past due"
         count={filteredPastDue.length}
         collapsed={collapse.pastDue}
@@ -317,7 +317,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
         onRetry={() => void refreshPastDue()}
       >
         {filteredPastDue.length === 0 ? (
-          <EmptySectionLine text="All caught up here 🎉" />
+          <EmptySectionLine text="All caught up here" />
         ) : (
           <div className="space-y-2">
             {pastDueShown.map((item) => (
@@ -367,7 +367,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
 
       {/* New replies */}
       <Section
-        icon="💬"
+        icon=""
         label="New replies"
         count={filteredReplies.length}
         collapsed={collapse.replies}
@@ -377,7 +377,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
         onRetry={() => void refreshReplies()}
       >
         {filteredReplies.length === 0 ? (
-          <EmptySectionLine text="All caught up here 🎉" />
+          <EmptySectionLine text="All caught up here" />
         ) : (
           <div className="space-y-2">
             {repliesShown.map((item) => (

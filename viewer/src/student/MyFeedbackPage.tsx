@@ -288,6 +288,25 @@ interface FeedbackRowProps {
   onOpen: (item: RecentFeedbackItem) => void;
 }
 
+function PencilIcon() {
+  return (
+    <svg
+      width={15}
+      height={15}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z" />
+    </svg>
+  );
+}
+
 function FeedbackRow({
   item,
   expanded,
@@ -295,7 +314,6 @@ function FeedbackRow({
   onOpen,
 }: FeedbackRowProps) {
   const hasFeedback = item.feedbackText !== null;
-  const icon = hasFeedback ? "✏️" : "✓";
   const timeAgo = formatTimeAgo(item.gradedAt);
   const grader = item.graderDisplayName ?? "your teacher";
   const meta = timeAgo
@@ -327,7 +345,7 @@ function FeedbackRow({
           aria-hidden
           className="mt-0.5 inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-300 text-sm"
         >
-          {icon}
+          {hasFeedback ? <PencilIcon /> : "✓"}
         </span>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">

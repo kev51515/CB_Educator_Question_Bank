@@ -19,7 +19,7 @@
  * collapse onto a single progress value.
  */
 import { useCallback, useId, useRef, useState } from "react";
-import type { ChangeEvent, DragEvent as ReactDragEvent } from "react";
+import type { ChangeEvent, DragEvent as ReactDragEvent, ReactElement } from "react";
 
 export interface FileDropzoneProps {
   files: File[];
@@ -43,10 +43,45 @@ function formatSize(bytes: number): string {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 }
 
-function iconFor(mime: string): string {
-  if (mime === "application/pdf") return "📄";
-  if (mime.startsWith("image/")) return "🖼️";
-  return "📦";
+function iconFor(mime: string): ReactElement {
+  const svgProps = {
+    width: 16,
+    height: 16,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+  if (mime === "application/pdf") {
+    // Document
+    return (
+      <svg {...svgProps}>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+      </svg>
+    );
+  }
+  if (mime.startsWith("image/")) {
+    // Image
+    return (
+      <svg {...svgProps}>
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <polyline points="21 15 16 10 5 21" />
+      </svg>
+    );
+  }
+  // Generic package/file
+  return (
+    <svg {...svgProps}>
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+      <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+      <line x1="12" y1="22.08" x2="12" y2="12" />
+    </svg>
+  );
 }
 
 /**
@@ -318,7 +353,10 @@ export function FileDropzone({
                 className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-lg" aria-hidden="true">
+                  <span
+                    className="inline-flex items-center justify-center text-slate-500 dark:text-slate-400"
+                    aria-hidden="true"
+                  >
                     {iconFor(f.type)}
                   </span>
                   <div className="min-w-0 flex-1">

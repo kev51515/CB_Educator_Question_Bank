@@ -19,19 +19,19 @@ const OPTIONS: TestTypeOption[] = [
     id: "cb",
     label: "College Board",
     description: "Official-style questions from the CB question bank.",
-    icon: "📘",
+    icon: "CB",
   },
   {
     id: "sat",
     label: "AI SAT Bank",
     description: "Curated SAT-style prep questions with rationales.",
-    icon: "📗",
+    icon: "AI",
   },
   {
     id: "mixed",
     label: "Mixed",
     description: "Half from each source — closer to the full test feel.",
-    icon: "📚",
+    icon: "Mix",
   },
 ];
 

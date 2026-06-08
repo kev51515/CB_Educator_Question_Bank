@@ -177,7 +177,23 @@ export function DraggablePrintList({
             <span className="text-[12px] text-ink-600 truncate min-w-0 flex-1">
               {entry.skill}
               {isBookmarked(entry.id) && (
-                <span className="ml-1 text-amber-500" aria-label="Bookmarked" title="Bookmarked">★</span>
+                <span
+                  className="ml-1 inline-flex items-center text-amber-500 align-text-bottom"
+                  aria-label="Bookmarked"
+                  title="Bookmarked"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-3 h-3"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </span>
               )}
               {isDone(entry.id) && (
                 <span className="ml-1 text-green-500" aria-label="Done" title="Done">✓</span>

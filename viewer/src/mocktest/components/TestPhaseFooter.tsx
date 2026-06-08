@@ -47,7 +47,20 @@ export function TestPhaseFooter({
             : "text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:text-amber-700 hover:border-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40",
         ].join(" ")}
       >
-        <span aria-hidden="true">⚑</span>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill={isFlagged ? "currentColor" : "none"}
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+          <line x1="4" y1="22" x2="4" y2="15" />
+        </svg>
         <span>{isFlagged ? "Flagged" : "Flag"}</span>
         <kbd className="hidden sm:inline font-mono opacity-50 text-[10px] ml-0.5">[F]</kbd>
       </button>
