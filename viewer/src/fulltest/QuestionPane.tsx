@@ -46,6 +46,10 @@ interface QuestionPaneProps {
   /** Review/answer-key mode: when set, marks the correct choice (mcq) or shows
    *  the canonical answer (grid). Purely additive — the runner never passes it. */
   correctAnswer?: string | null;
+  /** Force the single-column stacked layout (passage over question) regardless
+   *  of available width — a user toggle in Review/Preview. Default: auto
+   *  (container-query) split when there's room. */
+  forceStacked?: boolean;
 }
 
 /**
@@ -383,6 +387,7 @@ export function QuestionPane({
   highlights,
   onRemoveHighlight,
   correctAnswer,
+  forceStacked,
 }: QuestionPaneProps) {
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
@@ -424,10 +429,26 @@ export function QuestionPane({
       // columns. Narrow container: ONE scroll column, passage flowing into the
       // question+choices below it. Wide container (≥48rem): the Bluebook
       // two-column split with each pane scrolling independently.
+      //
+      // `forceStacked` (a user toggle) drops the container context + split
+      // utilities entirely → always single-column. The `@[48rem]:` header
+      // classes then collapse to their base (hidden), which is the stacked
+      // behaviour we want, so no extra branching is needed below.
+      const split = !forceStacked;
       return (
-        <div className="@container h-full">
-          <div className="h-full overflow-y-auto @[48rem]:grid @[48rem]:grid-cols-2 @[48rem]:divide-x @[48rem]:divide-slate-200 @[48rem]:overflow-hidden dark:@[48rem]:divide-slate-800">
-            <div className="border-b border-slate-200 px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto @[48rem]:border-b-0 lg:px-10 dark:border-slate-800">
+        <div className={split ? "@container h-full" : "h-full"}>
+          <div
+            className={`h-full overflow-y-auto ${
+              split
+                ? "@[48rem]:grid @[48rem]:grid-cols-2 @[48rem]:divide-x @[48rem]:divide-slate-200 @[48rem]:overflow-hidden dark:@[48rem]:divide-slate-800"
+                : ""
+            }`}
+          >
+            <div
+              className={`border-b border-slate-200 px-6 py-7 lg:px-10 dark:border-slate-800 ${
+                split ? "@[48rem]:h-full @[48rem]:overflow-y-auto @[48rem]:border-b-0" : ""
+              }`}
+            >
               {/* Question number atop the passage — always shown (both stacked
                   and split), so the passage is always labelled. In the split the
                   question column shows it again; when stacked, the in-column one
@@ -439,15 +460,15 @@ export function QuestionPane({
               </div>
               <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
             </div>
-            <div className="px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto lg:px-10">
+            <div className={`px-6 py-7 lg:px-10 ${split ? "@[48rem]:h-full @[48rem]:overflow-y-auto" : ""}`}>
               <div className="mx-auto max-w-xl">
                 {questionSide({
                   // Stacked: the nav strip already shows "Question N", so drop the
                   // in-body number above the choices. Split: keep it (it pairs with
                   // the number atop the passage). In review (disabled, no controls)
                   // the header is otherwise empty when stacked, so hide it too.
-                  numberClassName: "hidden @[48rem]:grid",
-                  containerClassName: disabled ? "hidden @[48rem]:flex" : "flex",
+                  numberClassName: split ? "hidden @[48rem]:grid" : "hidden",
+                  containerClassName: disabled ? (split ? "hidden @[48rem]:flex" : "hidden") : "flex",
                 })}
               </div>
             </div>

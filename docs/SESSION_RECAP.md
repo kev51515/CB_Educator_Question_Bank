@@ -1,6 +1,19 @@
 # Session Recap
 
-## Latest (2026-06-08) — code review + design polish of the fulltest review/proctor UI
+## Latest (2026-06-08) — manual "Stack" layout toggle (Review + Preview)
+
+The passage/question split is container-query automatic; added a user override
+so an educator can FORCE the single-column stacked layout even when there's room
+to split (e.g. to focus on the passage, or on a projector).
+- `QuestionPane` gained a `forceStacked?: boolean` prop. When set, it drops the
+  `@container` context + `@[48rem]:` split utilities entirely → always single
+  column. The header's `@[48rem]:` classes then collapse to their base (number
+  above choices hidden; review header hidden) — exactly the stacked behaviour.
+- A **"Stack" toggle** (aria-pressed, indigo when active) sits in the nav strip
+  of both `TestReviewPage` and `TestPreviewRunner`; state is per-session.
+  `tsc -b` + `vite build` green.
+
+## 2026-06-08 — code review + design polish of the fulltest review/proctor UI
 
 Two-lane review (correctness + design subagents) of the session's work, then
 applied the high-value fixes:
