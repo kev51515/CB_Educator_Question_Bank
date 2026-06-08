@@ -135,4 +135,6 @@ export interface TestCatalogEntry {
   sections?: Section[];
   /** Number of timed modules (e.g. 2 for an RW-only test, 4 for a full SAT). */
   module_count?: number;
+  /** Estimated total seated time across all timed modules, in seconds. */
+  total_time_seconds?: number | null;
 }

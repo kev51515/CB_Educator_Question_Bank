@@ -6,7 +6,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import type { Section, TestCatalogEntry } from "./types";
-import { CATALOG_SELECT, deriveSections } from "./testSections";
+import { CATALOG_SELECT, deriveSections, totalTimeSeconds } from "./testSections";
 
 interface RawCatalogRow {
   slug: string;
@@ -14,7 +14,7 @@ interface RawCatalogRow {
   title: string;
   short_title: string | null;
   total_questions: number;
-  test_modules: { section: Section }[] | null;
+  test_modules: { section: Section; time_limit_seconds: number }[] | null;
 }
 
 export function useFullTests(enabled = true): {
@@ -42,6 +42,7 @@ export function useFullTests(enabled = true): {
           total_questions: r.total_questions,
           sections: deriveSections(r.test_modules),
           module_count: r.test_modules?.length ?? 0,
+          total_time_seconds: totalTimeSeconds(r.test_modules),
         })),
       );
       setLoading(false);

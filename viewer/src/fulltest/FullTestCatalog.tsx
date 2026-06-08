@@ -17,7 +17,7 @@ import { TestCompletionModal } from "./TestCompletionModal";
 import { TestMonitorModal } from "./TestMonitorModal";
 import { AssignTestModal } from "./AssignTestModal";
 import { useFullTests } from "./useFullTests";
-import { SectionBadge } from "./testSections";
+import { SectionBadge, formatTestDuration } from "./testSections";
 import type { TestCatalogEntry } from "./types";
 
 export function FullTestCatalog() {
@@ -87,6 +87,9 @@ export function FullTestCatalog() {
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
               {t.total_questions} questions · {t.module_count ?? "—"} timed{" "}
               {t.module_count === 1 ? "module" : "modules"}
+              {formatTestDuration(t.total_time_seconds) && (
+                <> · ~{formatTestDuration(t.total_time_seconds)}</>
+              )}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Link

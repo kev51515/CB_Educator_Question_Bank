@@ -10,11 +10,36 @@
  */
 import type { Section } from "./types";
 
-/** PostgREST select that pulls the catalog columns plus each test's module sections. */
+/**
+ * PostgREST select that pulls the catalog columns plus each test's module
+ * sections and per-module time limits (used to derive composition + duration).
+ */
 export const CATALOG_SELECT =
-  "slug,ordinal,title,short_title,total_questions,test_modules(section)";
+  "slug,ordinal,title,short_title,total_questions,test_modules(section,time_limit_seconds)";
 
 const ORDER: Section[] = ["reading-writing", "math"];
+
+/**
+ * Estimated total seated time across a test's timed modules.
+ * Returns null when unknown (no modules / zero).
+ */
+export function totalTimeSeconds(
+  modules: ReadonlyArray<{ time_limit_seconds: number }> | null | undefined,
+): number | null {
+  if (!modules || modules.length === 0) return null;
+  const sum = modules.reduce((a, m) => a + (m.time_limit_seconds || 0), 0);
+  return sum > 0 ? sum : null;
+}
+
+/** Human duration, e.g. "64 min" or "2 hr 14 min". Null → null (caller hides it). */
+export function formatTestDuration(seconds: number | null | undefined): string | null {
+  if (!seconds || seconds <= 0) return null;
+  const mins = Math.round(seconds / 60);
+  if (mins < 60) return `${mins} min`;
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  return m === 0 ? `${h} hr` : `${h} hr ${m} min`;
+}
 
 /** Unique sections present across a test's modules, in canonical order (RW, then Math). */
 export function deriveSections(

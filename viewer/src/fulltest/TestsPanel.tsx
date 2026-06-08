@@ -10,7 +10,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { testRunPath } from "@/lib/routes";
-import { CATALOG_SELECT, deriveSections, SectionBadge } from "./testSections";
+import {
+  CATALOG_SELECT,
+  deriveSections,
+  formatTestDuration,
+  SectionBadge,
+  totalTimeSeconds,
+} from "./testSections";
 import type { Section, TestCatalogEntry } from "./types";
 
 interface RunRow {
@@ -31,7 +37,7 @@ interface RawTestRow {
   title: string;
   short_title: string | null;
   total_questions: number;
-  test_modules: { section: Section }[] | null;
+  test_modules: { section: Section; time_limit_seconds: number }[] | null;
 }
 
 export function TestsPanel() {
@@ -57,6 +63,7 @@ export function TestsPanel() {
         total_questions: r.total_questions,
         sections: deriveSections(r.test_modules),
         module_count: r.test_modules?.length ?? 0,
+        total_time_seconds: totalTimeSeconds(r.test_modules),
       })) as CatalogRow[];
       setTests(list);
 
@@ -117,6 +124,9 @@ export function TestsPanel() {
                   <div className="text-sm text-slate-500 dark:text-slate-400">
                     {t.total_questions} questions · {t.module_count ?? "—"} timed{" "}
                     {t.module_count === 1 ? "module" : "modules"}
+                    {formatTestDuration(t.total_time_seconds) && (
+                      <> · ~{formatTestDuration(t.total_time_seconds)}</>
+                    )}
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

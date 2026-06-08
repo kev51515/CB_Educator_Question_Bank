@@ -18,7 +18,7 @@ import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/lib/profile";
 import { ROUTES, testRunPath } from "@/lib/routes";
 import { useFullTests } from "@/fulltest/useFullTests";
-import { sectionSummary } from "@/fulltest/testSections";
+import { sectionSummary, formatTestDuration } from "@/fulltest/testSections";
 import { SmartDatePicker } from "@/components";
 import { useToast } from "@/components/Toast";
 import { EmptyState } from "@/components/EmptyState";
@@ -834,6 +834,14 @@ export function InlineAddItemRow({
                     <span className="tabular-nums">
                       {chosen.module_count} timed module
                       {chosen.module_count === 1 ? "" : "s"}
+                    </span>
+                  </>
+                )}
+                {formatTestDuration(chosen.total_time_seconds) && (
+                  <>
+                    <span className="text-slate-400">·</span>
+                    <span className="tabular-nums">
+                      ~{formatTestDuration(chosen.total_time_seconds)}
                     </span>
                   </>
                 )}
