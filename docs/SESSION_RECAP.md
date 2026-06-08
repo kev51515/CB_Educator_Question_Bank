@@ -1,6 +1,36 @@
 # Session Recap
 
-## Latest (2026-06-07) — live test-monitor roster polish + release/hide clarity (3 commits, no migrations)
+## Latest (2026-06-08) — educator "Preview test" → free-roam previewer (no migrations)
+
+**Staff "Preview test" no longer drops the educator into the proctored,
+linear student runner — it opens a free-roam previewer where they can jump
+across every module and question at will.** UI-only; `tsc -b` green.
+
+- **Why:** an educator previewing a test should have freedom, not be forced
+  through timed modules in order (the live runner blocks loading a module
+  *ahead* of `current_module`, and previewing created a real `test_runs` row).
+- **New `viewer/src/fulltest/TestPreviewRunner.tsx`** — a pure client-side
+  browser:
+  - Content via a direct staff SELECT on `tests → test_modules →
+    test_questions` (0048 RLS `is_staff`, same path as TestReviewPage) — **no
+    server run, no timer, no proctoring, no grading**, so previewing can't
+    pollute rosters/metrics.
+  - **Top-bar navigation:** module tabs (with per-module question counts) + a
+    question navigator strip (Question N of M, prev/next, and a jump grid of
+    every question). ←/→ keys move between questions.
+  - Renders through the real `QuestionPane` (`fullHeight`) so the educator sees
+    exactly what a student sees; answer selection is local + ephemeral.
+  - Bonus **"Show answer key"** toggle (staff can read the key already) +
+    "Exit preview" back to the test overview.
+- **`FullTestApp` is now a thin dispatcher** — its body moved into
+  `FullTestRunner` (unchanged); `FullTestApp` returns `<TestPreviewRunner />`
+  when opened on `/educator/tests/:slug/run` (detected from the path, computed
+  once via `useRef` so a later URL rewrite can't flip it), else the real
+  runner. No routing changes — the existing preview route already mounts
+  `FullTestApp`, so the parallel session's in-flight route-tree edits were left
+  untouched.
+
+## 2026-06-07 — live test-monitor roster polish + release/hide clarity (3 commits, no migrations)
 
 **Reworked the teacher-facing test-monitoring roster into one calm, scannable
 visual language across all three surfaces that render it, and made the

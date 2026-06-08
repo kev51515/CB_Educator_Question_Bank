@@ -22,6 +22,7 @@ import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
+import { TestPreviewRunner } from "./TestPreviewRunner";
 import { captureSelectionHighlight, useRunnerAnnotations, type Highlight } from "./annotations";
 import { ResultView } from "./ResultView";
 import {
@@ -106,7 +107,24 @@ function elimToPayload(
   return out;
 }
 
+/**
+ * Entry point for the full-test route. Staff who open a test's "Preview"
+ * (mounted at /educator/tests/:slug/run) get a free-roam previewer — jump
+ * across modules/questions with no server run, timer, or grading — instead of
+ * the proctored student runner below. Detected from the opening path (the
+ * educator route is staff-only, so no role wait is needed); computed once so a
+ * later URL rewrite can't flip the dispatch mid-life.
+ */
 export function FullTestApp() {
+  const isPreview = useRef(
+    typeof window !== "undefined" &&
+      /\/educator\/tests\/[^/]+\/run(?:\/|$)/.test(window.location.pathname),
+  ).current;
+  if (isPreview) return <TestPreviewRunner />;
+  return <FullTestRunner />;
+}
+
+function FullTestRunner() {
   const { slug = "" } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
