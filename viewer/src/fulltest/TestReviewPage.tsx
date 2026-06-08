@@ -18,10 +18,17 @@
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { supabase } from "@/lib/supabase";
 import { useBreadcrumbLabel } from "@/components";
 import { testOverviewPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
+import { ModuleTabs } from "./ModuleTabs";
+import { useTestNavigation } from "./useTestNavigation";
+import {
+  correctValue,
+  fetchTestContent,
+  type TestContentModule,
+  type TestContentQuestion,
+} from "./testContent";
 import { captureSelectionHighlight, useRunnerAnnotations } from "./annotations";
 import {
   listReviewCourses,
@@ -29,59 +36,19 @@ import {
   type ReviewCourse,
   type BreakdownRow,
 } from "./api";
-import type { Letter, Section, TestQuestion } from "./types";
+import type { Letter } from "./types";
 
 const LETTERS: Letter[] = ["A", "B", "C", "D"];
-
-interface RawQuestion {
-  id: string;
-  ref: string;
-  number: number;
-  position: number;
-  type: "mcq" | "grid";
-  passage: string | null;
-  passage_alt: string | null;
-  stem: string;
-  choices: Record<Letter, string> | null;
-  figure: string | null;
-  correct_answer: string | null;
-  accepted: string[] | null;
-}
-interface RawModule {
-  position: number;
-  label: string;
-  section: Section;
-  test_questions: RawQuestion[];
-}
-interface RawTest {
-  title: string;
-  test_modules: RawModule[];
-}
-interface ReviewQuestion extends TestQuestion {
-  correct_answer: string | null;
-}
-interface ReviewModule {
-  position: number;
-  label: string;
-  section: Section;
-  questions: ReviewQuestion[];
-}
-
-const SELECT =
-  "title,test_modules(position,label,section,test_questions(id,ref,number,position,type,passage,passage_alt,stem,choices,figure,correct_answer,accepted))";
 
 export function TestReviewPage(): JSX.Element {
   const { slug = "" } = useParams();
   const navigate = useNavigate();
 
-  const [modules, setModules] = useState<ReviewModule[]>([]);
+  const [modules, setModules] = useState<TestContentModule[]>([]);
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [mi, setMi] = useState(0);
-  const [qi, setQi] = useState(0);
-  const [navOpen, setNavOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(
     typeof window === "undefined" ? true : window.innerWidth >= 1024,
   );
@@ -101,45 +68,18 @@ export function TestReviewPage(): JSX.Element {
   useEffect(() => {
     let alive = true;
     setLoading(true);
-    void (async () => {
-      const { data, error: err } = await supabase
-        .from("tests")
-        .select(SELECT)
-        .eq("slug", slug)
-        .single();
-      if (!alive) return;
-      if (err || !data) {
-        setError(err?.message ?? "Test not found.");
-        setLoading(false);
-        return;
-      }
-      const raw = data as unknown as RawTest;
-      const mods: ReviewModule[] = [...(raw.test_modules ?? [])]
-        .sort((a, b) => a.position - b.position)
-        .map((m) => ({
-          position: m.position,
-          label: m.label,
-          section: m.section,
-          questions: [...(m.test_questions ?? [])]
-            .sort((a, b) => a.position - b.position)
-            .map((q) => ({
-              id: q.id,
-              ref: q.ref,
-              number: q.number,
-              type: q.type,
-              section: m.section,
-              passage: q.passage,
-              passage_alt: q.passage_alt,
-              stem: q.stem,
-              choices: q.choices,
-              figure: q.figure,
-              correct_answer: q.correct_answer ?? q.accepted?.[0] ?? null,
-            })),
-        }));
-      setTitle(raw.title);
-      setModules(mods);
-      setLoading(false);
-    })();
+    void fetchTestContent(slug)
+      .then((tc) => {
+        if (!alive) return;
+        setTitle(tc.title);
+        setModules(tc.modules);
+      })
+      .catch((e: unknown) => {
+        if (alive) setError(e instanceof Error ? e.message : "Test not found.");
+      })
+      .finally(() => {
+        if (alive) setLoading(false);
+      });
     return () => {
       alive = false;
     };
@@ -197,50 +137,10 @@ export function TestReviewPage(): JSX.Element {
     return m;
   }, [breakdown]);
 
-  const activeModule = modules[mi] ?? null;
-  const questions = activeModule?.questions ?? [];
-  const question = questions[qi] ?? null;
-
-  const goModule = useCallback((next: number) => {
-    setMi(next);
-    setQi(0);
-    setNavOpen(false);
-  }, []);
-
-  const goPrev = useCallback(() => {
-    setNavOpen(false);
-    if (qi > 0) setQi(qi - 1);
-    else if (mi > 0) {
-      const prevLen = modules[mi - 1]?.questions.length ?? 0;
-      setMi(mi - 1);
-      setQi(Math.max(0, prevLen - 1));
-    }
-  }, [qi, mi, modules]);
-
-  const goNext = useCallback(() => {
-    setNavOpen(false);
-    if (qi < questions.length - 1) setQi(qi + 1);
-    else if (mi < modules.length - 1) {
-      setMi(mi + 1);
-      setQi(0);
-    }
-  }, [qi, questions.length, mi, modules.length]);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      const el = e.target as HTMLElement | null;
-      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA")) return;
-      if (e.key === "ArrowLeft") goPrev();
-      else if (e.key === "ArrowRight") goNext();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [goPrev, goNext]);
+  const { mi, qi, setQi, navOpen, setNavOpen, activeModule, questions, question, goModule, goPrev, goNext, atFirst, atLast } =
+    useTestNavigation(modules);
 
   const exit = () => navigate(testOverviewPath(slug));
-
-  const atFirst = mi === 0 && qi === 0;
-  const atLast = mi === modules.length - 1 && qi === questions.length - 1;
 
   const addHighlight = () => {
     if (!question) return;
@@ -307,32 +207,7 @@ export function TestReviewPage(): JSX.Element {
           </div>
         </div>
 
-        {/* module tabs */}
-        {modules.length > 0 && (
-          <div className="flex items-center gap-1 overflow-x-auto px-3 pb-2">
-            {modules.map((m, i) => {
-              const active = i === mi;
-              return (
-                <button
-                  key={m.position}
-                  type="button"
-                  onClick={() => goModule(i)}
-                  aria-current={active ? "true" : undefined}
-                  className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
-                    active
-                      ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
-                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-                  }`}
-                >
-                  {m.label}
-                  <span className={`ml-1.5 tabular-nums ${active ? "opacity-70" : "text-slate-400 dark:text-slate-500"}`}>
-                    {m.questions.length}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        )}
+        <ModuleTabs modules={modules} activeIndex={mi} onSelect={goModule} />
       </header>
 
       {/* ---- nav strip ---- */}
@@ -558,7 +433,7 @@ export function TestReviewPage(): JSX.Element {
               onChange={() => {}}
               disabled
               fullHeight
-              correctAnswer={question.correct_answer}
+              correctAnswer={correctValue(question)}
               highlights={annot.get(question.id).highlights}
               onRemoveHighlight={(field, offset) =>
                 annot.removeHighlightAt(question.id, field, offset)
@@ -577,7 +452,7 @@ function BreakdownBody({
   rows,
   total,
 }: {
-  question: ReviewQuestion;
+  question: TestContentQuestion;
   rows: BreakdownRow[];
   total: number;
 }): JSX.Element {

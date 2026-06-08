@@ -1,6 +1,23 @@
 # Session Recap
 
-## Latest (2026-06-08) — proctor ⇄ student messaging on a paused test (migrations 0113–0114)
+## Latest (2026-06-08) — refactor: share the staff Preview/Review scaffolding (no migrations)
+
+**Removed the duplication introduced by the Preview + Review surfaces** by
+extracting three shared pieces in `viewer/src/fulltest/`:
+- **`testContent.ts`** — the staff `tests → test_modules → test_questions`
+  SELECT, its row→model mapping, the `TestContent*` types, and
+  `answerKeyText` / `correctValue` helpers. One home for the query + contract.
+- **`useTestNavigation.ts`** — the (module, question) cursor: prev/next that
+  wraps across modules, jump-to, nav-popover flag, and ←/→ keys.
+- **`ModuleTabs.tsx`** — the shared module-tab strip.
+
+`TestPreviewRunner` and `TestReviewPage` now consume these instead of each
+carrying their own copy (~100 lines of duplication gone; a schema change now
+touches one file). Behaviour-preserving; `tsc -b` + `vite build` green.
+Candidate for a future pass: `TestOverviewPage` is ~1000 lines and its roster
+row could be extracted into a component.
+
+## 2026-06-08 — proctor ⇄ student messaging on a paused test (migrations 0113–0114)
 
 **Two-way, fully-recorded communication for a paused live test.** When the
 proctor pauses a student, the student now sees a clear "Paused by your teacher"

@@ -6,189 +6,65 @@
  *   • NO server run — never creates a test_runs row, so previewing can't
  *     pollute rosters/metrics.
  *   • NO timers, auto-submit, proctoring, or grading.
- *   • Jump freely across every module AND every question via the top bar —
- *     module tabs + a question navigator (prev/next + a jump grid).
- *   • Optional "Show answer key" toggle (staff can read the key already; the
- *     student fidelity view hides it by default).
+ *   • Jump freely across every module AND every question (module tabs + a
+ *     question navigator with prev/next + a jump grid + ←/→ keys).
+ *   • Optional "Show answer key" toggle (off by default → student fidelity).
  *
- * Content comes from a direct staff SELECT on tests → test_modules →
- * test_questions (0048 RLS: is_staff) — the same path TestReviewPage uses.
- * Questions render through the real QuestionPane so the educator sees exactly
- * what a student sees; answer selection is local and ephemeral.
+ * Content + navigation come from the shared testContent loader and
+ * useTestNavigation, the same pieces TestReviewPage uses. Questions render
+ * through the real QuestionPane; answer selection is local and ephemeral.
  */
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { supabase } from "@/lib/supabase";
 import { useBreadcrumbLabel } from "@/components";
 import { testOverviewPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
-import type { Letter, Section, TestQuestion } from "./types";
-
-interface RawQuestion {
-  id: string;
-  ref: string;
-  number: number;
-  position: number;
-  type: "mcq" | "grid";
-  passage: string | null;
-  passage_alt: string | null;
-  stem: string;
-  choices: Record<Letter, string> | null;
-  figure: string | null;
-  correct_answer: string | null;
-  accepted: string[] | null;
-}
-interface RawModule {
-  position: number;
-  label: string;
-  section: Section;
-  test_questions: RawQuestion[];
-}
-interface RawTest {
-  slug: string;
-  title: string;
-  total_questions: number;
-  test_modules: RawModule[];
-}
-
-interface PreviewQuestion extends TestQuestion {
-  correct_answer: string | null;
-  accepted: string[] | null;
-}
-interface PreviewModule {
-  position: number;
-  label: string;
-  section: Section;
-  questions: PreviewQuestion[];
-}
-
-const SELECT =
-  "slug,title,total_questions,test_modules(position,label,section,test_questions(id,ref,number,position,type,passage,passage_alt,stem,choices,figure,correct_answer,accepted))";
-
-/** Friendly answer-key text for the banner. */
-function keyText(q: PreviewQuestion): string {
-  if (q.type === "grid") {
-    const main = q.correct_answer ?? q.accepted?.[0] ?? "—";
-    const extra =
-      q.accepted && q.accepted.length > 1 ? ` (accepts: ${q.accepted.join(", ")})` : "";
-    return `${main}${extra}`;
-  }
-  return q.correct_answer ?? "—";
-}
+import { ModuleTabs } from "./ModuleTabs";
+import { useTestNavigation } from "./useTestNavigation";
+import {
+  answerKeyText,
+  fetchTestContent,
+  type TestContentModule,
+} from "./testContent";
 
 export function TestPreviewRunner(): JSX.Element {
   const { slug = "" } = useParams();
   const navigate = useNavigate();
 
-  const [modules, setModules] = useState<PreviewModule[]>([]);
+  const [modules, setModules] = useState<TestContentModule[]>([]);
   const [title, setTitle] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [mi, setMi] = useState(0); // active module index
-  const [qi, setQi] = useState(0); // active question index (within module)
   const [answers, setAnswers] = useState<Record<string, string | null>>({});
   const [showKey, setShowKey] = useState(false);
-  const [navOpen, setNavOpen] = useState(false);
+
+  const nav = useTestNavigation(modules);
+  const { mi, qi, setQi, navOpen, setNavOpen, activeModule, questions, question, goModule, goPrev, goNext, atFirst, atLast } = nav;
 
   useBreadcrumbLabel(slug, title || undefined);
 
   useEffect(() => {
     let alive = true;
     setLoading(true);
-    void (async () => {
-      const { data, error: err } = await supabase
-        .from("tests")
-        .select(SELECT)
-        .eq("slug", slug)
-        .single();
-      if (!alive) return;
-      if (err || !data) {
-        setError(err?.message ?? "Test not found.");
-        setLoading(false);
-        return;
-      }
-      const raw = data as unknown as RawTest;
-      const mods: PreviewModule[] = [...(raw.test_modules ?? [])]
-        .sort((a, b) => a.position - b.position)
-        .map((m) => ({
-          position: m.position,
-          label: m.label,
-          section: m.section,
-          questions: [...(m.test_questions ?? [])]
-            .sort((a, b) => a.position - b.position)
-            .map((q) => ({
-              id: q.id,
-              ref: q.ref,
-              number: q.number,
-              type: q.type,
-              section: m.section,
-              passage: q.passage,
-              passage_alt: q.passage_alt,
-              stem: q.stem,
-              choices: q.choices,
-              figure: q.figure,
-              correct_answer: q.correct_answer,
-              accepted: q.accepted,
-            })),
-        }));
-      setTitle(raw.title);
-      setModules(mods);
-      setLoading(false);
-    })();
+    void fetchTestContent(slug)
+      .then((tc) => {
+        if (!alive) return;
+        setTitle(tc.title);
+        setModules(tc.modules);
+      })
+      .catch((e: unknown) => {
+        if (alive) setError(e instanceof Error ? e.message : "Test not found.");
+      })
+      .finally(() => {
+        if (alive) setLoading(false);
+      });
     return () => {
       alive = false;
     };
   }, [slug]);
 
-  const activeModule = modules[mi] ?? null;
-  const questions = activeModule?.questions ?? [];
-  const question = questions[qi] ?? null;
-
-  const goModule = useCallback((nextMi: number) => {
-    setMi(nextMi);
-    setQi(0);
-    setNavOpen(false);
-  }, []);
-
-  const goPrev = useCallback(() => {
-    setNavOpen(false);
-    if (qi > 0) {
-      setQi(qi - 1);
-    } else if (mi > 0) {
-      const prevLen = modules[mi - 1]?.questions.length ?? 0;
-      setMi(mi - 1);
-      setQi(Math.max(0, prevLen - 1)); // wrap to previous module's last question
-    }
-  }, [qi, mi, modules]);
-
-  const goNext = useCallback(() => {
-    setNavOpen(false);
-    if (qi < questions.length - 1) {
-      setQi(qi + 1);
-    } else if (mi < modules.length - 1) {
-      setMi(mi + 1);
-      setQi(0); // wrap to next module's first question
-    }
-  }, [qi, questions.length, mi, modules.length]);
-
-  // Keyboard: ←/→ move between questions (ignore while typing in a grid input).
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      const el = e.target as HTMLElement | null;
-      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA")) return;
-      if (e.key === "ArrowLeft") goPrev();
-      else if (e.key === "ArrowRight") goNext();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [goPrev, goNext]);
-
   const exit = () => navigate(testOverviewPath(slug));
-
-  const atFirst = mi === 0 && qi === 0;
-  const lastModule = modules.length - 1;
-  const atLast = mi === lastModule && qi === questions.length - 1;
 
   const answeredInModule = useMemo(
     () => questions.filter((q) => answers[q.id] != null && answers[q.id] !== "").length,
@@ -235,34 +111,7 @@ export function TestPreviewRunner(): JSX.Element {
           </div>
         </div>
 
-        {/* module tabs */}
-        {modules.length > 0 && (
-          <div className="flex items-center gap-1 overflow-x-auto px-3 pb-2">
-            {modules.map((m, i) => {
-              const active = i === mi;
-              return (
-                <button
-                  key={m.position}
-                  type="button"
-                  onClick={() => goModule(i)}
-                  aria-current={active ? "true" : undefined}
-                  className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
-                    active
-                      ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
-                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-                  }`}
-                >
-                  {m.label}
-                  <span
-                    className={`ml-1.5 tabular-nums ${active ? "opacity-70" : "text-slate-400 dark:text-slate-500"}`}
-                  >
-                    {m.questions.length}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        )}
+        <ModuleTabs modules={modules} activeIndex={mi} onSelect={goModule} />
       </header>
 
       {/* ---- question navigator strip ---- */}
@@ -344,7 +193,7 @@ export function TestPreviewRunner(): JSX.Element {
           {/* answer-key banner */}
           {showKey && (
             <div className="mt-2 inline-flex items-center gap-1.5 rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-800 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
-              <span className="font-semibold">Key:</span> {keyText(question)}
+              <span className="font-semibold">Key:</span> {answerKeyText(question)}
             </div>
           )}
         </div>
