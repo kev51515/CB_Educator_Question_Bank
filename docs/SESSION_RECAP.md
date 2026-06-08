@@ -34,6 +34,39 @@ so all 6 tests are fixed at once.
   It's Vite HMR doing a full reload after the bundle changed while the tab was
   backgrounded — dev-only.
 
+## 2026-06-08 — remove emojis app-wide (line-SVG icons / text)
+
+Project rule established: **no emojis in the codebase** (unprofessional —
+recorded in agent memory `no-emojis-in-codebase`). Swept every UI emoji
+pictograph and replaced it with an inline line-SVG icon (stroke=currentColor,
+24-viewBox) or plain text, in two commits (`d03e26e` proctor/review surfaces;
+`e671c7d` 22 more files via 4 parallel agents):
+- StatusPill alert/warn/paused pills drop their flag/arrow/pause emoji (the
+  coloured dot conveys state); Message buttons use a chat SVG; ProctorChat
+  presets are plain text; monitor uses "N marked" + a clock SVG.
+- components (FileDropzone, MarkdownEditor, Question flags/snapshot, print
+  list), teacher (Material/Portfolio type icons, QuickCreate cards, Course
+  settings, Modules lock), student (portfolio/feedback/materials), dashboard
+  (NeedsAttention), mocktest (break/submit/flag/timer/books/refresh), fulltest
+  (ProctorTimeline) all de-emoji'd.
+- Kept genuine non-emoji glyphs (⌘, ✓/✕ marks, kbd arrows, comment arrows).
+  Scan for UI emoji returns zero; `tsc -b` + `vite build` green. (One file —
+  `student/ModuleItemRowView.tsx` — left untouched as it has uncommitted edits;
+  it still has one `↗` glyph to clean later.)
+
+## 2026-06-08 — Modules: item Indent/Outdent control + clean line-icons
+
+Analysis of Canvas's Modules (DnD + indent) vs ours found we already had both:
+drag reorder (mouse + keyboard Alt+↑/↓ with SR announcements) and the
+`module_items.indent` column (0–5, since 0011) already rendered as left-padding
+in `tree.tsx`. The gaps were an item-level indent *control* and dated emoji
+icons (commit `4ad2ff7`):
+- Added **Indent / Outdent** to the module-item kebab (clamped 0–5, disabled at
+  the ends; persists via a direct `module_items.indent` update — RLS, no
+  migration; the row already renders the indent).
+- Replaced the emoji item-type icons with crisp slate **line-SVG icons**
+  (`ItemTypeIcon`) for a tidier, Canvas-style row.
+
 ## 2026-06-08 — loaded the real DSAT-Nov-2023 cohort + roster polish
 
 Backfilled a real class's mock-test answers and stood up the two summer cohorts.
