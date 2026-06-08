@@ -105,7 +105,7 @@ export function FullTestCatalog() {
                 to={testReviewPath(t.slug)}
                 className="rounded-lg bg-slate-900 px-3.5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
               >
-                Review answer key
+                Review Mode
               </Link>
               <Link
                 to={testRunPath(t.slug)}

@@ -40,6 +40,25 @@ import type { Letter } from "./types";
 
 const LETTERS: Letter[] = ["A", "B", "C", "D"];
 
+// Remember the class an educator last reviewed for a given test, so reopening
+// Review Mode "inherits" their class instead of resetting to the first one.
+const reviewClassKey = (slug: string): string => `fulltest:review:class:${slug}`;
+function readReviewClass(slug: string): string | null {
+  try {
+    return window.localStorage.getItem(reviewClassKey(slug));
+  } catch {
+    return null;
+  }
+}
+function writeReviewClass(slug: string, courseId: string | null): void {
+  try {
+    if (courseId) window.localStorage.setItem(reviewClassKey(slug), courseId);
+    else window.localStorage.removeItem(reviewClassKey(slug));
+  } catch {
+    /* ignore (private mode / quota) */
+  }
+}
+
 export function TestReviewPage(): JSX.Element {
   const { slug = "" } = useParams();
   const navigate = useNavigate();
@@ -85,7 +104,8 @@ export function TestReviewPage(): JSX.Element {
     };
   }, [slug]);
 
-  // --- load reviewable classes; default to the one with the most submitters ---
+  // --- load reviewable classes; inherit the educator's last class for this
+  // test, else default to the one with the most submitters ---
   useEffect(() => {
     let alive = true;
     void (async () => {
@@ -93,8 +113,13 @@ export function TestReviewPage(): JSX.Element {
         const cs = await listReviewCourses(slug);
         if (!alive) return;
         setCourses(cs);
-        const firstWithData = cs.find((c) => c.taken > 0) ?? cs[0] ?? null;
-        setCourseId(firstWithData ? firstWithData.course_id : null);
+        const saved = readReviewClass(slug);
+        const pick =
+          cs.find((c) => c.course_id === saved) ?? // honour their last choice
+          cs.find((c) => c.taken > 0) ?? // else the class that actually sat it
+          cs[0] ?? // else whatever's linked
+          null;
+        setCourseId(pick ? pick.course_id : null);
       } catch {
         if (alive) setCourses([]);
       }
@@ -165,6 +190,10 @@ export function TestReviewPage(): JSX.Element {
   const curTotal = curRows.length;
   const curCorrect = curRows.filter((r) => r.is_correct).length;
   const hlCount = question ? annot.get(question.id).highlights.length : 0;
+  const selectedCourse = courses.find((c) => c.course_id === courseId) ?? null;
+  // Any responses at all for this class? (drives the sidebar empty state).
+  const hasClassData = breakdown.length > 0;
+  const anotherClassHasData = courses.some((c) => c.course_id !== courseId && c.taken > 0);
 
   return (
     <div className="fixed inset-0 z-40 flex flex-col bg-white dark:bg-slate-950">
@@ -173,7 +202,7 @@ export function TestReviewPage(): JSX.Element {
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-2.5">
           <div className="flex min-w-0 items-center gap-2">
             <span className="inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
-              Review
+              Review Mode
             </span>
             <span className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">
               {title || "Loading…"}
@@ -186,7 +215,11 @@ export function TestReviewPage(): JSX.Element {
                 <span className="hidden sm:inline">Class</span>
                 <select
                   value={courseId ?? ""}
-                  onChange={(e) => setCourseId(e.target.value || null)}
+                  onChange={(e) => {
+                    const next = e.target.value || null;
+                    setCourseId(next);
+                    writeReviewClass(slug, next);
+                  }}
                   className="max-w-[14rem] rounded-md border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
                 >
                   {courses.map((c) => (
@@ -316,15 +349,22 @@ export function TestReviewPage(): JSX.Element {
         {/* left sidebar: class results */}
         {sidebarOpen && (
           <aside className="flex w-72 shrink-0 flex-col border-r border-slate-200 bg-slate-50/40 dark:border-slate-800 dark:bg-slate-900/30">
-            <div className="flex items-center justify-between px-3 py-2">
-              <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                Class results
-              </h2>
+            <div className="flex items-start justify-between gap-2 px-3 py-2">
+              <div className="min-w-0">
+                <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  Class results
+                </h2>
+                {selectedCourse && (
+                  <p className="mt-0.5 truncate text-[11px] text-slate-400 dark:text-slate-500">
+                    {selectedCourse.title} · {selectedCourse.taken} submitted
+                  </p>
+                )}
+              </div>
               <button
                 type="button"
                 onClick={() => setSidebarOpen(false)}
                 title="Collapse"
-                className="rounded-md px-1.5 py-0.5 text-slate-400 hover:bg-slate-200/60 hover:text-slate-600 dark:hover:bg-slate-800"
+                className="shrink-0 rounded-md px-1.5 py-0.5 text-slate-400 hover:bg-slate-200/60 hover:text-slate-600 dark:hover:bg-slate-800"
               >
                 ‹
               </button>
@@ -337,6 +377,21 @@ export function TestReviewPage(): JSX.Element {
                 </p>
               ) : breakdownLoading ? (
                 <p className="text-xs text-slate-400">Loading results…</p>
+              ) : !hasClassData ? (
+                <div className="rounded-lg bg-white px-3 py-3 text-xs ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
+                  <p className="font-medium text-slate-700 dark:text-slate-200">No responses yet</p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">
+                    No one in {selectedCourse?.title ?? "this class"} has submitted this
+                    test.
+                    {anotherClassHasData
+                      ? " Another class has — pick it from the Class menu above."
+                      : ""}
+                  </p>
+                  <p className="mt-2 text-[11px] text-slate-400 dark:text-slate-500">
+                    The answer key is shown on the right; per-question class
+                    breakdowns appear here once students submit.
+                  </p>
+                </div>
               ) : question ? (
                 <>
                   {/* current-question breakdown */}

@@ -1,6 +1,26 @@
 # Session Recap
 
-## Latest (2026-06-08) — staff sidebar: collapsible at tablet+ & discoverable (no migrations)
+## Latest (2026-06-08) — Review Mode polish: rename, class inheritance, sidebar empty state (no migrations)
+
+Follow-ups on the teacher Review surface from clicking through it live:
+- **Renamed "Answer key" → "Review Mode"** everywhere it links to
+  `/educator/tests/:slug/review` (TestOverviewPage button, FullTestCatalog
+  card, and the in-page badge).
+- **Class is inherited.** The chosen class is now persisted per test
+  (`fulltest:review:class:<slug>` in localStorage) and restored on reopen;
+  the first-time default still falls to the class that actually sat the test
+  (taken DESC), then any linked class. (The role-agnostic `/test/<slug>` link
+  carries no course, so navigation-time course context isn't available —
+  sticky memory + data-aware default is the inheritance mechanism.)
+- **Left "Class results" bar fixed.** Previously, when the selected class had
+  no submitters it rendered a wall of empty Q1–Qn rows with "—". Now it shows
+  a real empty state ("No responses yet … Another class has — pick it from the
+  Class menu") and only renders the per-question breakdown + section overview
+  when there's data. The sidebar header now names the class (`<name> · N
+  submitted`) so the results are anchored to a class. `tsc -b` + `vite build`
+  green.
+
+## 2026-06-08 — staff sidebar: collapsible at tablet+ & discoverable (no migrations)
 
 **The `StaffShell` left rail (the global educator nav, shown on every educator
 page incl. `/educator/courses`) was only collapsible at `lg+` via a buried
