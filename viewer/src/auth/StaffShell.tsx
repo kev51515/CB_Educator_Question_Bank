@@ -5,9 +5,10 @@
  * Renders a vertical icon+label left rail (Dashboard / Courses / Account)
  * plus an `<Outlet />` for whichever child route the router picked.
  *
- * The rail is collapsed to a slim icon-only column on narrow screens, then
- * expanded once we have horizontal room. Selection state lives in the URL
- * (via NavLink's `isActive`); no internal `useState`.
+ * At md+ the rail is user-collapsible between a 176px labelled column and a
+ * 64px icon-only one (⌘B, the top-chrome toggle, or the rail's bottom chevron;
+ * state persisted per user). Below md it's a fixed icon+label column. Selected
+ * nav state lives in the URL (via NavLink's `isActive`).
  *
  * The shell also mounts the overlay widgets (StudentBadge, AccountUpgradeBanner)
  * so the student/staff shells stay DRY.
@@ -161,11 +162,12 @@ export function StaffShell() {
   const [helpOpen, setHelpOpen] = useState(false);
   const closeHelp = useCallback(() => setHelpOpen(false), []);
 
-  // Linear-style desktop sidebar collapse (⌘B / Ctrl+B). State is per-user
-  // and persisted to localStorage. Only visually applies at lg+ — narrower
-  // breakpoints keep the existing responsive rail behavior (w-20 → md:w-44),
-  // and the shortcut is gated on those screens to avoid invisible toggles
-  // (state still updates, will reflect when user resizes back to wide).
+  // Linear-style sidebar collapse (⌘B / Ctrl+B, the top-chrome toggle, or the
+  // rail's bottom chevron). State is per-user and persisted to localStorage.
+  // Applies at md+ (tablet & desktop), toggling the rail between 176px and a
+  // 64px icon-only column. Below md the rail is a fixed icon+label column
+  // (w-20) and not collapsible; the shortcut still updates state and takes
+  // effect once the viewport widens past md.
   const userId = profile?.id ?? null;
   const [collapsed, setCollapsed] = useState<boolean>(() =>
     readSidebarCollapsed(userId),
@@ -276,17 +278,20 @@ export function StaffShell() {
           id="staff-shell-sidebar"
           aria-label="Primary"
           className={[
-            "sticky top-0 self-start h-screen flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-2 md:px-3 py-4 flex flex-col gap-1 motion-safe:transition-[width] motion-safe:duration-150 motion-safe:ease-out",
-            // Mobile + tablet: existing responsive behavior preserved.
-            // Desktop (lg+): toggleable between ~16 (64px) and 44 (176px).
-            "w-20 md:w-44",
-            collapsed ? "lg:w-16 lg:px-2" : "lg:w-44",
+            "sticky top-0 self-start h-screen flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-2 py-4 flex flex-col gap-1 motion-safe:transition-[width] motion-safe:duration-150 motion-safe:ease-out",
+            // Mobile (<md): fixed icon+label rail (w-20), not collapsible.
+            // Tablet & desktop (md+): toggleable between 44 (176px) and 16 (64px,
+            // icon-only) — drives off the persisted `collapsed` flag. Padding is
+            // part of the dynamic class so the two md: widths don't fight a
+            // static md:px-* (Tailwind same-breakpoint conflict).
+            "w-20",
+            collapsed ? "md:w-16 md:px-2" : "md:w-44 md:px-3",
           ].join(" ")}
         >
           <div
             className={[
               "px-2 pb-3 mb-2 border-b border-slate-100 dark:border-slate-800 hidden md:block",
-              collapsed ? "lg:hidden" : "",
+              collapsed ? "md:hidden" : "",
             ].join(" ")}
           >
             <p
@@ -315,7 +320,7 @@ export function StaffShell() {
                 <rect x={3} y={16} width={7} height={5} rx={1} />
               </svg>
             </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>
+            <span className={collapsed ? "md:hidden" : undefined}>
               Dashboard
             </span>
           </NavLink>
@@ -337,7 +342,7 @@ export function StaffShell() {
                 <path d="M8 7h8M8 11h8M8 15h5" />
               </svg>
             </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>Courses</span>
+            <span className={collapsed ? "md:hidden" : undefined}>Courses</span>
           </NavLink>
 
           <NavLink
@@ -360,7 +365,7 @@ export function StaffShell() {
                 <path d="M22 4a2 2 0 0 0-2-2h-6.5a2 2 0 0 0-2 2v16a2 2 0 0 1 2-2H22z" />
               </svg>
             </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>
+            <span className={collapsed ? "md:hidden" : undefined}>
               Question Bank
             </span>
           </NavLink>
@@ -390,7 +395,7 @@ export function StaffShell() {
                 <path d="M3 18l1.5 1.5L7 17" />
               </svg>
             </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>
+            <span className={collapsed ? "md:hidden" : undefined}>
               Submissions
             </span>
           </NavLink>
@@ -419,7 +424,7 @@ export function StaffShell() {
                 <path d="M16 2v4M8 2v4M3 10h18" />
               </svg>
             </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>Calendar</span>
+            <span className={collapsed ? "md:hidden" : undefined}>Calendar</span>
           </NavLink>
 
           <NavLink to={ROUTES.INBOX} className={railLinkClass} title="Inbox">
@@ -438,7 +443,7 @@ export function StaffShell() {
                 <path d="M8 9h8M8 13h5" />
               </svg>
             </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>Inbox</span>
+            <span className={collapsed ? "md:hidden" : undefined}>Inbox</span>
           </NavLink>
 
           <NavLink
@@ -463,7 +468,7 @@ export function StaffShell() {
                 <path d="M4 21a8 8 0 0 1 16 0" />
               </svg>
             </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>Account</span>
+            <span className={collapsed ? "md:hidden" : undefined}>Account</span>
           </NavLink>
 
           {/* Spacer pushes the collapse toggle to the bottom of the rail. */}
@@ -484,7 +489,7 @@ export function StaffShell() {
                 ? "Expand sidebar (⌘B)"
                 : "Collapse sidebar (⌘B)"
             }
-            className="hidden lg:inline-flex items-center justify-center min-h-[40px] min-w-[40px] w-full rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200 motion-safe:transition-all"
+            className="hidden md:inline-flex items-center justify-center min-h-[40px] min-w-[40px] w-full rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200 motion-safe:transition-all"
           >
             <svg
               aria-hidden
@@ -508,7 +513,24 @@ export function StaffShell() {
 
         {/* Right pane */}
         <main className="flex-1 min-w-0 flex flex-col" style={contentStyle}>
-          <Breadcrumbs />
+          <Breadcrumbs
+            leadingAction={
+              <button
+                type="button"
+                onClick={toggleCollapsed}
+                aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+                aria-expanded={!collapsed}
+                aria-controls="staff-shell-sidebar"
+                title={collapsed ? "Expand sidebar (⌘B)" : "Collapse sidebar (⌘B)"}
+                className="hidden md:inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100 motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              >
+                <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <rect x={3} y={4} width={18} height={16} rx={2} />
+                  <line x1={9} y1={4} x2={9} y2={20} />
+                </svg>
+              </button>
+            }
+          />
           <div className="flex-1 min-w-0">
             <Outlet />
           </div>

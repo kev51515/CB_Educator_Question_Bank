@@ -1,6 +1,25 @@
 # Session Recap
 
-## Latest (2026-06-08) — refactor: share the staff Preview/Review scaffolding (no migrations)
+## Latest (2026-06-08) — staff sidebar: collapsible at tablet+ & discoverable (no migrations)
+
+**The `StaffShell` left rail (the global educator nav, shown on every educator
+page incl. `/educator/courses`) was only collapsible at `lg+` via a buried
+bottom chevron / ⌘B.** Extended + surfaced it:
+- Collapse now works at **`md+`** (768px) — the rail toggles 176px ↔ 64px
+  icon-only. Below `md` it stays a fixed icon+label column (unchanged).
+- Added a **discoverable toggle in the top chrome**: `Breadcrumbs` gained an
+  optional `leadingAction` slot, and `StaffShell` passes a panel/hamburger
+  button there (visible `md+`), next to the back button. ⌘B and the rail's
+  bottom chevron still work; all three share the per-user persisted state.
+- Label/width visibility flipped `lg:*` → `md:*`; rail padding moved into the
+  dynamic class to avoid a same-breakpoint Tailwind `md:px-*` conflict.
+- Layout impact: the rail is a flex sibling of `<main class="flex-1 min-w-0">`,
+  so width changes auto-reflow content; `--app-chrome-top` (3rem) and the fixed
+  NotificationBell are unaffected; the courses card grid is viewport-keyed so
+  columns don't change (cards just widen). Change is global to all educator
+  surfaces by design. `tsc -b` + `vite build` green.
+
+## 2026-06-08 — refactor: share the staff Preview/Review scaffolding (no migrations)
 
 **Removed the duplication introduced by the Preview + Review surfaces** by
 extracting three shared pieces in `viewer/src/fulltest/`:
