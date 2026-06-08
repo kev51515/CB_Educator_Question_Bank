@@ -75,6 +75,8 @@ export function TestReviewPage(): JSX.Element {
   // User override: force the passage/question to stack (single column) even when
   // there's room to split. Off = auto (container-query) split.
   const [forceStacked, setForceStacked] = useState(false);
+  // "Explain" toggle: reveal per-choice rationale (which word is wrong + why).
+  const [showRationale, setShowRationale] = useState(false);
 
   // class results
   const [courses, setCourses] = useState<ReviewCourse[]>([]);
@@ -334,6 +336,25 @@ export function TestReviewPage(): JSX.Element {
               Stack
             </button>
 
+            {/* Reveal per-choice rationale (which word is wrong + why). */}
+            <button
+              type="button"
+              onClick={() => setShowRationale((v) => !v)}
+              aria-pressed={showRationale}
+              title={showRationale ? "Hide explanations" : "Explain why each choice is right or wrong"}
+              className={`inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-colors ${
+                showRationale
+                  ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300"
+                  : "text-slate-600 hover:bg-slate-200/60 dark:text-slate-300 dark:hover:bg-slate-800"
+              }`}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 16v-4M12 8h.01" />
+              </svg>
+              Explain
+            </button>
+
             <div className="ml-auto flex items-center gap-1">
               <button
                 type="button"
@@ -547,6 +568,8 @@ export function TestReviewPage(): JSX.Element {
               forceStacked={forceStacked}
               correctAnswer={correctValue(question)}
               choiceStats={choiceStats}
+              rationale={question.rationale}
+              showRationale={showRationale}
               highlights={annot.get(question.id).highlights}
               onRemoveHighlight={(field, offset) =>
                 annot.removeHighlightAt(question.id, field, offset)

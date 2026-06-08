@@ -10,10 +10,15 @@
 import { supabase } from "@/lib/supabase";
 import type { Letter, Section, TestQuestion } from "./types";
 
+/** Per-choice rationale (0120): which word is wrong + why; the correct choice
+ *  may carry just a `reason` (why it's right). All keys optional. */
+export type ChoiceRationale = Partial<Record<Letter, { wrong?: string; reason: string }>>;
+
 /** A question with its answer key, for staff Preview/Review surfaces. */
 export interface TestContentQuestion extends TestQuestion {
   correct_answer: string | null;
   accepted: string[] | null;
+  rationale: ChoiceRationale | null;
 }
 export interface TestContentModule {
   position: number;
@@ -41,6 +46,7 @@ interface RawQuestion {
   figure: string | null;
   correct_answer: string | null;
   accepted: string[] | null;
+  rationale: ChoiceRationale | null;
 }
 interface RawModule {
   position: number;
@@ -56,7 +62,7 @@ interface RawTest {
 }
 
 const SELECT =
-  "slug,title,total_questions,test_modules(position,label,section,test_questions(id,ref,number,position,type,passage,passage_alt,stem,choices,figure,correct_answer,accepted))";
+  "slug,title,total_questions,test_modules(position,label,section,test_questions(id,ref,number,position,type,passage,passage_alt,stem,choices,figure,correct_answer,accepted,rationale))";
 
 /** The canonical answer text for a question (grid folds in `accepted`). */
 export function answerKeyText(q: TestContentQuestion): string {
@@ -105,6 +111,7 @@ export async function fetchTestContent(slug: string): Promise<TestContent> {
           figure: q.figure,
           correct_answer: q.correct_answer,
           accepted: q.accepted,
+          rationale: q.rationale ?? null,
         })),
     }));
   return {

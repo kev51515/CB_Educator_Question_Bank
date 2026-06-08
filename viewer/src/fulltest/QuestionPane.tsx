@@ -18,6 +18,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Letter, TestQuestion } from "./types";
 import type { AnnotField, Highlight } from "./annotations";
+import type { ChoiceRationale } from "./testContent";
 import { PassageBody, RichInline, renderText } from "./passageRender";
 
 /** Per-choice class response stats for Review Mode (mcq). */
@@ -58,6 +59,10 @@ interface QuestionPaneProps {
   /** Review Mode: per-choice class response counts + names. When set, each mcq
    *  choice shows a clickable count pill (click → who chose it). */
   choiceStats?: ChoiceStats;
+  /** Review Mode: per-choice rationale (which word is wrong + why). */
+  rationale?: ChoiceRationale | null;
+  /** When true, reveal the rationale under each choice (the "Explain" toggle). */
+  showRationale?: boolean;
 }
 
 /**
@@ -280,6 +285,26 @@ function ChoiceCountPill({
   );
 }
 
+/** Render a choice's text with the "wrong" phrase highlighted in light red.
+ *  Background-only (no padding/weight change) so toggling adds no layout shift.
+ *  Falls back to plain rich text when the phrase isn't a literal substring. */
+function HighlightedChoiceText({ text, wrong }: { text: string; wrong: string }) {
+  const idx = text.toLowerCase().indexOf(wrong.toLowerCase());
+  if (idx < 0) return <RichInline text={text} />;
+  const before = text.slice(0, idx);
+  const match = text.slice(idx, idx + wrong.length);
+  const after = text.slice(idx + wrong.length);
+  return (
+    <>
+      {before && <RichInline text={before} />}
+      <mark className="rounded-sm bg-rose-200/70 text-rose-900 box-decoration-clone dark:bg-rose-500/40 dark:text-rose-50">
+        {match}
+      </mark>
+      {after && <RichInline text={after} />}
+    </>
+  );
+}
+
 function Prompt({
   question,
   value,
@@ -292,10 +317,14 @@ function Prompt({
   onRemoveHighlight,
   correctAnswer,
   choiceStats,
+  rationale,
+  showRationale,
 }: Pick<
   QuestionPaneProps,
-  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights" | "onRemoveHighlight" | "correctAnswer" | "choiceStats"
+  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights" | "onRemoveHighlight" | "correctAnswer" | "choiceStats" | "rationale" | "showRationale"
 >) {
+  const rationaleEmpty =
+    showRationale && (!rationale || Object.keys(rationale).length === 0);
   return (
     <div className="space-y-5">
       <p
@@ -313,105 +342,133 @@ function Prompt({
       </p>
 
       {question.type === "mcq" && question.choices && (
-        <ul className="space-y-3">
-          {LETTERS.map((letter) => {
-            const text = question.choices![letter];
-            if (text === undefined) return null;
-            const selected = value === letter;
-            const struck = eliminated?.has(letter) ?? false;
-            const isKey = correctAnswer != null && correctAnswer === letter;
-            // Review mode (correctAnswer set): every non-correct choice reads as
-            // a light-red "wrong" option.
-            const isWrong = correctAnswer != null && !isKey;
-            return (
-              <li key={letter} className="flex items-center gap-2">
-                <button
-                  type="button"
-                  disabled={disabled || struck}
-                  onClick={() => onChange(selected ? null : letter)}
-                  className={[
-                    "flex flex-1 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left transition",
-                    isKey
-                      ? "border-emerald-500 bg-emerald-50/70 dark:border-emerald-500 dark:bg-emerald-950/30"
-                      : isWrong
-                        ? "border-rose-200 bg-rose-50/60 dark:border-rose-900/70 dark:bg-rose-950/20"
-                        : selected && !struck
-                          ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
-                          : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
-                    struck ? "opacity-50" : "",
-                    disabled ? "cursor-default" : "",
-                  ].join(" ")}
-                >
-                  <span
-                    className={[
-                      "grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 text-sm font-bold",
-                      struck
-                        ? "border-slate-400 text-slate-400 line-through dark:border-slate-600 dark:text-slate-500"
-                        : isKey
-                          ? "border-emerald-500 bg-emerald-500 text-white"
+        <>
+          {rationaleEmpty && (
+            <p className="rounded-lg border border-dashed border-slate-300 bg-slate-50 px-3 py-2 text-xs text-slate-500 dark:border-slate-700 dark:bg-slate-800/40 dark:text-slate-400">
+              No explanation has been added for this question yet.
+            </p>
+          )}
+          <ul className="space-y-3">
+            {LETTERS.map((letter) => {
+              const text = question.choices![letter];
+              if (text === undefined) return null;
+              const selected = value === letter;
+              const struck = eliminated?.has(letter) ?? false;
+              const isKey = correctAnswer != null && correctAnswer === letter;
+              // Review mode (correctAnswer set): every non-correct choice reads
+              // as a light-red "wrong" option.
+              const isWrong = correctAnswer != null && !isKey;
+              const r = showRationale ? rationale?.[letter] : undefined;
+              const wrong = isWrong ? r?.wrong : undefined;
+              return (
+                <li key={letter} className="space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      disabled={disabled || struck}
+                      onClick={() => onChange(selected ? null : letter)}
+                      className={[
+                        "flex flex-1 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left transition",
+                        isKey
+                          ? "border-emerald-500 bg-emerald-50/70 dark:border-emerald-500 dark:bg-emerald-950/30"
                           : isWrong
-                            ? "border-rose-300 text-rose-500 dark:border-rose-800 dark:text-rose-400"
-                            : selected
-                              ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
-                              : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
-                    ].join(" ")}
-                  >
-                    {letter}
-                  </span>
-                  <span
-                    className={[
-                      "text-[16px] leading-relaxed",
-                      struck
-                        ? "text-slate-400 line-through dark:text-slate-500"
-                        : isWrong
-                          ? "text-rose-700 dark:text-rose-300"
-                          : "text-slate-800 dark:text-slate-200",
-                    ].join(" ")}
-                    style={SERIF}
-                  >
-                    <RichInline text={text} />
-                  </span>
-                  {isKey && (
-                    <span className="ml-auto inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-300">
-                      ✓ Correct
-                    </span>
-                  )}
-                </button>
+                            ? "border-rose-200 bg-rose-50/60 dark:border-rose-900/70 dark:bg-rose-950/20"
+                            : selected && !struck
+                              ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
+                              : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
+                        struck ? "opacity-50" : "",
+                        disabled ? "cursor-default" : "",
+                      ].join(" ")}
+                    >
+                      <span
+                        className={[
+                          "grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 text-sm font-bold",
+                          struck
+                            ? "border-slate-400 text-slate-400 line-through dark:border-slate-600 dark:text-slate-500"
+                            : isKey
+                              ? "border-emerald-500 bg-emerald-500 text-white"
+                              : isWrong
+                                ? "border-rose-300 text-rose-500 dark:border-rose-800 dark:text-rose-400"
+                                : selected
+                                  ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
+                                  : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
+                        ].join(" ")}
+                      >
+                        {letter}
+                      </span>
+                      <span
+                        className={[
+                          "text-[16px] leading-relaxed",
+                          struck
+                            ? "text-slate-400 line-through dark:text-slate-500"
+                            : isWrong
+                              ? "text-rose-700 dark:text-rose-300"
+                              : "text-slate-800 dark:text-slate-200",
+                        ].join(" ")}
+                        style={SERIF}
+                      >
+                        {wrong ? (
+                          <HighlightedChoiceText text={text} wrong={wrong} />
+                        ) : (
+                          <RichInline text={text} />
+                        )}
+                      </span>
+                      {isKey && (
+                        <span className="ml-auto inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-300">
+                          ✓ Correct
+                        </span>
+                      )}
+                    </button>
 
-                {choiceStats && (
-                  <ChoiceCountPill
-                    letter={letter}
-                    isKey={isKey}
-                    count={choiceStats[letter]?.count ?? 0}
-                    names={choiceStats[letter]?.names ?? []}
-                  />
-                )}
-
-                {strikeMode && onToggleEliminate && !disabled && (
-                  <button
-                    type="button"
-                    onClick={() => onToggleEliminate(letter)}
-                    aria-pressed={struck}
-                    aria-label={struck ? `Restore choice ${letter}` : `Cross out choice ${letter}`}
-                    title={struck ? `Restore choice ${letter}` : `Cross out choice ${letter}`}
-                    className={[
-                      "grid h-9 w-9 shrink-0 place-items-center rounded-full border text-xs font-bold transition",
-                      struck
-                        ? "border-blue-600 text-blue-700 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-950/40"
-                        : "border-slate-300 text-slate-500 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-400 dark:hover:bg-slate-800",
-                    ].join(" ")}
-                  >
-                    {struck ? (
-                      "Undo"
-                    ) : (
-                      <span className="line-through decoration-2">{letter}</span>
+                    {choiceStats && (
+                      <ChoiceCountPill
+                        letter={letter}
+                        isKey={isKey}
+                        count={choiceStats[letter]?.count ?? 0}
+                        names={choiceStats[letter]?.names ?? []}
+                      />
                     )}
-                  </button>
-                )}
-              </li>
-            );
-          })}
-        </ul>
+
+                    {strikeMode && onToggleEliminate && !disabled && (
+                      <button
+                        type="button"
+                        onClick={() => onToggleEliminate(letter)}
+                        aria-pressed={struck}
+                        aria-label={struck ? `Restore choice ${letter}` : `Cross out choice ${letter}`}
+                        title={struck ? `Restore choice ${letter}` : `Cross out choice ${letter}`}
+                        className={[
+                          "grid h-9 w-9 shrink-0 place-items-center rounded-full border text-xs font-bold transition",
+                          struck
+                            ? "border-blue-600 text-blue-700 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-950/40"
+                            : "border-slate-300 text-slate-500 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-400 dark:hover:bg-slate-800",
+                        ].join(" ")}
+                      >
+                        {struck ? (
+                          "Undo"
+                        ) : (
+                          <span className="line-through decoration-2">{letter}</span>
+                        )}
+                      </button>
+                    )}
+                  </div>
+
+                  {r?.reason && (
+                    <p
+                      className={[
+                        "pl-10 pr-2 text-[13px] leading-snug",
+                        isKey
+                          ? "text-emerald-700 dark:text-emerald-300"
+                          : "text-rose-700 dark:text-rose-300",
+                      ].join(" ")}
+                    >
+                      {r.reason}
+                    </p>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </>
       )}
 
       {question.type === "grid" && (
@@ -468,6 +525,8 @@ export function QuestionPane({
   correctAnswer,
   forceStacked,
   choiceStats,
+  rationale,
+  showRationale,
 }: QuestionPaneProps) {
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
@@ -496,6 +555,8 @@ export function QuestionPane({
           onRemoveHighlight={onRemoveHighlight}
           correctAnswer={correctAnswer}
           choiceStats={choiceStats}
+          rationale={rationale}
+          showRationale={showRationale}
         />
       </div>
     </>
