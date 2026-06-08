@@ -71,6 +71,9 @@ function band(pct: number): Band {
 
 const LEGEND_GRADIENT = `linear-gradient(to right, ${BANDS.bad.bg}, ${BANDS.mid.bg}, ${BANDS.good.bg})`;
 
+// Remember the teacher's By-skill / By-question preference across opens.
+const VIEW_KEY = "fulltest:review:heatmapView";
+
 // Canonical domain display order within each section.
 const DOMAIN_ORDER: Record<string, string[]> = {
   "reading-writing": [
@@ -185,7 +188,22 @@ export function ReviewHeatmap({
     return w;
   }, [skill]);
 
-  const [view, setView] = useState<"question" | "skill">(hasDomains ? "skill" : "question");
+  const [view, setViewState] = useState<"question" | "skill">(() => {
+    if (!hasDomains) return "question";
+    try {
+      return window.localStorage.getItem(VIEW_KEY) === "question" ? "question" : "skill";
+    } catch {
+      return "skill";
+    }
+  });
+  const setView = (v: "question" | "skill") => {
+    setViewState(v);
+    try {
+      window.localStorage.setItem(VIEW_KEY, v);
+    } catch {
+      /* ignore (private mode / quota) */
+    }
+  };
   const anyData = overall != null;
 
   return (
