@@ -1111,15 +1111,20 @@ function FullTestRunner() {
             </svg>
             Highlight
           </button>
-          {annot.get(q.id).highlights.length > 0 && (
-            <button
-              type="button"
-              onClick={() => annot.clearHighlights(q.id)}
-              className="rounded-md px-2.5 py-1 text-xs font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
-            >
-              Clear ({annot.get(q.id).highlights.length})
-            </button>
-          )}
+          {/* Always mounted (invisible when empty) so the first highlight
+              doesn't pop the button in and shift the toolbar — no layout shift. */}
+          <button
+            type="button"
+            onClick={() => annot.clearHighlights(q.id)}
+            aria-hidden={annot.get(q.id).highlights.length === 0}
+            tabIndex={annot.get(q.id).highlights.length === 0 ? -1 : 0}
+            className={[
+              "rounded-md px-2.5 py-1 text-xs font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800",
+              annot.get(q.id).highlights.length > 0 ? "" : "invisible pointer-events-none",
+            ].join(" ")}
+          >
+            Clear ({annot.get(q.id).highlights.length})
+          </button>
           <button
             type="button"
             onClick={() => setNotesOpen((v) => !v)}

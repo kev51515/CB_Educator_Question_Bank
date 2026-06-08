@@ -49,8 +49,9 @@
   "devDependencies": {
     "@axe-core/playwright": "4.11.3",
     "@eslint/js": "^10.0.1",
-    "@types/dompurify": "^3.0.5",
     "@playwright/test": "1.60.0",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@types/dompurify": "^3.0.5",
     "@types/katex": "^0.16.7",
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",

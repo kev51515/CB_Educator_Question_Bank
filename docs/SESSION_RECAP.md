@@ -1,6 +1,30 @@
 # Session Recap
 
-## Latest (2026-06-08) — Review Mode polish: rename, class inheritance, sidebar empty state (no migrations)
+## Latest (2026-06-08) — QuestionPane: container-query split + passage number + layout-shift-free highlight
+
+- **Passage/question split is now CONTAINER-query driven** (added the
+  first-party `@tailwindcss/container-queries` plugin). The Reading-&-Writing
+  two-column layout reacts to the *available width* of the pane, not the
+  viewport — so on the Review page (where the class sidebar narrows the area)
+  it stacks the question + choices BELOW the passage when there isn't room, and
+  splits into two columns when there is. Fixes the ugly full-width-passage /
+  stranded-question layout. Threshold: container ≥ 48rem.
+- **Question number echoed atop the passage** (left pane) in the two-column
+  split — hidden when stacked (the question header's number is right below).
+- **Highlight is now layout-shift-free.** The `<mark>` had `px-px` (1px each
+  side) which widened the highlighted run → reflowed/re-wrapped text on every
+  add/remove. Dropped the padding, kept background-only highlighting + added
+  `box-decoration-clone` for tidy multi-line rounding (paint-only). (Audited by
+  a subagent: confirmed `px-px` was the sole text-reflow cause; bg/rounding/
+  height are not.)
+- **No more "Clear (n)" toolbar pop-in:** the highlight Clear button is now
+  always mounted (invisible + non-interactive when count 0) in both the runner
+  toolbar and the Review nav strip, so the first highlight doesn't shift the
+  toolbar. `tsc -b` + `vite build` green; built CSS confirmed to contain the
+  container-query rules. NOTE: the dev server must be restarted to pick up the
+  new Tailwind plugin.
+
+## 2026-06-08 — Review Mode polish: rename, class inheritance, sidebar empty state (no migrations)
 
 Follow-ups on the teacher Review surface from clicking through it live:
 - **Renamed "Answer key" → "Review Mode"** everywhere it links to

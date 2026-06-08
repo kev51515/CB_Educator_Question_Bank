@@ -280,11 +280,13 @@ export function TestReviewPage(): JSX.Element {
               </svg>
               Highlight
             </button>
-            {hlCount > 0 && question && (
+            {question && (
               <button
                 type="button"
                 onClick={() => annot.clearHighlights(question.id)}
-                className="rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-200/60 dark:text-slate-400 dark:hover:bg-slate-800"
+                aria-hidden={hlCount === 0}
+                tabIndex={hlCount === 0 ? -1 : 0}
+                className={`rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-200/60 dark:text-slate-400 dark:hover:bg-slate-800 ${hlCount > 0 ? "" : "invisible pointer-events-none"}`}
               >
                 Clear ({hlCount})
               </button>

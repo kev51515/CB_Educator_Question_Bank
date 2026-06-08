@@ -76,7 +76,11 @@ function renderField(
           if (!sel || sel.isCollapsed) onRemove?.(field, s);
         }}
         title="Click to remove highlight"
-        className="cursor-pointer rounded-sm bg-amber-200/70 px-px text-inherit dark:bg-amber-300/40 dark:text-inherit"
+        // Background-only highlight: NO padding/margin so adding or removing it
+        // never changes text width → no reflow/re-wrap (layout-shift-free).
+        // box-decoration-clone keeps the rounded background tidy across line
+        // breaks (paint-only). See the highlight layout-shift audit (2026-06-08).
+        className="cursor-pointer rounded-sm bg-amber-200/70 text-inherit box-decoration-clone dark:bg-amber-300/40 dark:text-inherit"
       >
         {text.slice(s, e)}
       </mark>,
@@ -404,17 +408,29 @@ export function QuestionPane({
   // ── Runner mode ──────────────────────────────────────────────────────────
   if (fullHeight) {
     if (isRW && hasStimulus) {
-      // Below `md` (phones): ONE scroll container — the passage flows into the
-      // question so there's a single, natural scroll rather than two cramped
-      // stacked scroll panes. At `md`+ (tablets/desktop): the Bluebook
+      // The split is driven by a CONTAINER query, not the viewport, so it
+      // responds to the actual space the pane has — e.g. on the Review page the
+      // class sidebar narrows this area, and we stack rather than cram two
+      // columns. Narrow container: ONE scroll column, passage flowing into the
+      // question+choices below it. Wide container (≥48rem): the Bluebook
       // two-column split with each pane scrolling independently.
       return (
-        <div className="h-full overflow-y-auto md:grid md:grid-cols-2 md:divide-x md:divide-slate-200 md:overflow-hidden dark:md:divide-slate-800">
-          <div className="border-b border-slate-200 px-6 py-7 md:h-full md:overflow-y-auto md:border-b-0 lg:px-10 dark:border-slate-800">
-            <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
-          </div>
-          <div className="px-6 py-7 md:h-full md:overflow-y-auto lg:px-10">
-            <div className="mx-auto max-w-xl">{questionSide}</div>
+        <div className="@container h-full">
+          <div className="h-full overflow-y-auto @[48rem]:grid @[48rem]:grid-cols-2 @[48rem]:divide-x @[48rem]:divide-slate-200 @[48rem]:overflow-hidden dark:@[48rem]:divide-slate-800">
+            <div className="border-b border-slate-200 px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto @[48rem]:border-b-0 lg:px-10 dark:border-slate-800">
+              {/* Question number echoed atop the passage — only in the two-column
+                  split. When stacked, the question header's number sits right
+                  below the passage, so a second badge would be redundant. */}
+              <div className="mb-3 hidden @[48rem]:block">
+                <span className="grid h-6 w-fit min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900">
+                  {question.number}
+                </span>
+              </div>
+              <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
+            </div>
+            <div className="px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto lg:px-10">
+              <div className="mx-auto max-w-xl">{questionSide}</div>
+            </div>
           </div>
         </div>
       );
