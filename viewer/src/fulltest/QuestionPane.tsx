@@ -289,7 +289,9 @@ function ChoiceCountPill({
  *  Background-only (no padding/weight change) so toggling adds no layout shift.
  *  Falls back to plain rich text when the phrase isn't a literal substring. */
 function HighlightedChoiceText({ text, wrong }: { text: string; wrong: string }) {
-  const idx = text.toLowerCase().indexOf(wrong.toLowerCase());
+  // Don't split LaTeX ($…$) — slicing the delimiters would break KaTeX. Math
+  // choices fall back to plain render; the reason beneath still explains.
+  const idx = text.includes("$") ? -1 : text.toLowerCase().indexOf(wrong.toLowerCase());
   if (idx < 0) return <RichInline text={text} />;
   const before = text.slice(0, idx);
   const match = text.slice(idx, idx + wrong.length);
