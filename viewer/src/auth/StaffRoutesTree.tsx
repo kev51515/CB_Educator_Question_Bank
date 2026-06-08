@@ -1,11 +1,11 @@
 /**
  * StaffRoutesTree (code-split)
  * ============================
- * The authenticated teacher/admin route tree (+ the StaffTestGate splat helper),
+ * The authenticated teacher/admin route tree (+ the bare-test redirect helper),
  * extracted verbatim from AuthGate and lazy-loaded so the teacher console loads
  * in its own chunk — a student session never downloads it. Behavior unchanged.
  */
-import { Navigate, Route, Routes, useParams, useSearchParams } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { ROUTES, testOverviewPath } from "@/lib/routes";
 import { StaffShell } from "./StaffShell";
 import { AccountRoutes } from "./AccountRoutes";
@@ -25,16 +25,16 @@ import { QBankSubmissionLogPage } from "@/teacher/QBankSubmissionLogPage";
 import { StudentProfilePage } from "@/teacher/StudentProfilePage";
 import type { AccountContext } from "./routeTreeTypes";
 
-function StaffTestGate() {
-  const params = useParams();
-  const slug = params.slug ?? "";
-  const splat = params["*"] ?? "";
-  const [search] = useSearchParams();
-  const bare = splat === "";
-  if (bare && search.get("preview") !== "1") {
-    return <Navigate to={testOverviewPath(slug)} replace />;
-  }
-  return <FullTestApp />;
+/**
+ * Staff hitting the role-agnostic `/test/:slug` (the stored Modules link, or an
+ * old bookmark) always land on the per-test OVERVIEW — info, cohort stats,
+ * student data. The runner itself now lives at the role-prefixed
+ * EDUCATOR_TEST_RUN (`/educator/tests/:slug/run`), reached via "Preview" on the
+ * overview; staff never need the bare link to render the runner.
+ */
+function RedirectBareTestToOverview() {
+  const { slug = "" } = useParams();
+  return <Navigate to={testOverviewPath(slug)} replace />;
 }
 
 /**
@@ -43,15 +43,17 @@ function StaffTestGate() {
 export default function StaffRoutesTree({ account }: { account: AccountContext }) {
   return (
     <Routes>
-      {/* When staff open a test (the shared Modules /test/<slug> link), the
-          BARE link redirects to the per-test OVERVIEW — info, cohort stats,
-          student data — while "Preview" (?preview=1) and in-progress preview
-          deep-links (…/section/n/q/m) render the runner. One splat route +
-          internal gate so the runner keeps its state across the
-          bare→deep-link transition (a separate exact route would remount it
-          and bounce every "Begin"). Students never reach here (separate
-          tree). Runner renders OUTSIDE the shell — distraction-free takeover. */}
-      <Route path={`${ROUTES.TEST_RUN}/*`} element={<StaffTestGate />} />
+      {/* The role-prefixed staff runner (Preview). One splat route so it keeps
+          its state across the intro→deep-link (…/section/n/q/m) transition (a
+          separate exact route would remount it and bounce every "Begin").
+          Renders OUTSIDE the shell — distraction-free, full-viewport takeover.
+          The bare, role-agnostic /test/<slug> stored link redirects to the
+          overview. Students never reach here (separate tree). */}
+      <Route path={`${ROUTES.EDUCATOR_TEST_RUN}/*`} element={<FullTestApp />} />
+      <Route
+        path={`${ROUTES.TEST_RUN}/*`}
+        element={<RedirectBareTestToOverview />}
+      />
       <Route element={<StaffShell />}>
         <Route
           path={ROUTES.HOME}

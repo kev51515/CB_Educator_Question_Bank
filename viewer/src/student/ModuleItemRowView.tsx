@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/Toast";
-import { assignmentTakePath } from "@/lib/routes";
+import { assignmentTakePath, studentTestRunPath } from "@/lib/routes";
 import { ItemIcon } from "./ItemIcon";
 import {
   type AssignmentMeta,
@@ -137,10 +137,16 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
     }
     // Full tests open in-place (the runner owns the tab); external links open new.
     if (isFullTestLink) {
+      // Stored as the role-agnostic `/test/<slug>`; navigate straight to the
+      // role-prefixed student runner so the address bar shows the role (and we
+      // skip the bare-link redirect hop).
+      const testSlug = (item.url ?? "").replace(/^\/test\//, "").split("/")[0];
       return (
         <button
           type="button"
-          onClick={() => navigate(item.url ?? "")}
+          onClick={() =>
+            navigate(testSlug ? studentTestRunPath(testSlug) : item.url ?? "")
+          }
           className={`${rowBase} ${interactive} text-left`}
           style={{ paddingLeft: padLeft }}
           aria-label={`Open test ${item.title}`}

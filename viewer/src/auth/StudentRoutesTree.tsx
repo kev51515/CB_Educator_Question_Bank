@@ -5,8 +5,14 @@
  * lazy-loaded so a student's surfaces (and the test runner / KaTeX) load in
  * their own chunk instead of the main bundle. Behavior is unchanged.
  */
-import { Navigate, Route, Routes } from "react-router-dom";
-import { ROUTES, studentHomePath } from "@/lib/routes";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useParams,
+} from "react-router-dom";
+import { ROUTES, studentHomePath, studentTestRunPath } from "@/lib/routes";
 import { StudentShell } from "./StudentShell";
 import { AreaSelector } from "./AreaSelector";
 import { AccountRoutes } from "./AccountRoutes";
@@ -23,6 +29,21 @@ import { StudentCourseView } from "@/student/StudentCourseView";
 import { StudentCoursesPage } from "@/student/StudentCoursesPage";
 import type { AccountContext } from "./routeTreeTypes";
 
+/**
+ * Redirect the role-agnostic `/test/:slug/*` (the link stored in
+ * `module_items`, or an old bookmark) to the role-prefixed student runner,
+ * preserving any deep-link suffix (…/section/n/q/m) and query string so a
+ * resume / shared section link survives the hop.
+ */
+function RedirectBareTestToStudent() {
+  const params = useParams();
+  const slug = params.slug ?? "";
+  const splat = params["*"] ?? "";
+  const { search } = useLocation();
+  const suffix = splat ? `/${splat}` : "";
+  return <Navigate to={`${studentTestRunPath(slug)}${suffix}${search}`} replace />;
+}
+
 export default function StudentRoutesTree({
   studentId,
   account,
@@ -34,14 +55,21 @@ export default function StudentRoutesTree({
     <Routes>
       {/* Full-length test runner lives OUTSIDE the shell so it's a true
           distraction-free, full-viewport takeover (like Bluebook) — no left
-          rail / mobile tab bar behind its intro, loading, or running states. */}
+          rail / mobile tab bar behind its intro, loading, or running states.
+          The runner is role-prefixed (/student/test/:slug) so the address bar
+          shows the role like every other student surface; the bare,
+          role-agnostic /test/:slug stored link redirects here. */}
       <Route
-        path={`${ROUTES.TEST_RUN}/*`}
+        path={`${ROUTES.STUDENT_TEST_RUN}/*`}
         element={
           <StudentTestRunGuard>
             <FullTestApp />
           </StudentTestRunGuard>
         }
+      />
+      <Route
+        path={`${ROUTES.TEST_RUN}/*`}
+        element={<RedirectBareTestToStudent />}
       />
       <Route element={<StudentShell />}>
         {/* `/` redirects to the prefixed landing so the URL bar shows the

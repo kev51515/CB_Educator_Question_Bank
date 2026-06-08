@@ -60,18 +60,31 @@ export const ROUTES = {
   STUDENT_INBOX: "/student/inbox",
   STUDENT_INBOX_THREAD: "/student/inbox/:threadId",
   STUDENT_ACCOUNT: "/student/account",
+  // The student-facing full-length test runner. Role-prefixed so the address
+  // bar (and screenshots/logs) make the role obvious like every other student
+  // surface. The bare TEST_RUN below redirects students here.
+  STUDENT_TEST_RUN: "/student/test/:slug",
 
   // Proctored, full-length practice tests (e.g. a real Digital SAT form).
-  // Shared, role-agnostic, unprefixed — the entry URL stored in module_items.
+  // TEST_RUN is the role-AGNOSTIC entry — the stable string stored in
+  // `module_items.url` and shared in links — but it no longer renders anything
+  // itself: each role tree redirects it to the role-prefixed surface (students
+  // → STUDENT_TEST_RUN runner; staff → TEST_OVERVIEW). Kept as data so the
+  // stored links + their parsers (tree.tsx, StudentTestRunGuard, etc.) are
+  // untouched; only the runtime destination is role-aware.
   TEST_RUN: "/test/:slug",
 
   // Every authenticated educator (teacher + admin) surface carries the
   // `/educator` prefix.
   TESTS_ADMIN: "/educator/tests",
   // Staff: per-test overview — info, cohort stats, per-student data. This is
-  // where a teacher lands when they open a test (students go to TEST_RUN).
+  // where a teacher lands when they open a test (students go to STUDENT_TEST_RUN).
   TEST_OVERVIEW: "/educator/tests/:slug",
   TEST_REVIEW: "/educator/tests/:slug/review",
+  // Staff preview of the runner itself, role-prefixed + nested under the test's
+  // overview so it reads as "the run view of this test". Renders the full-screen
+  // FullTestApp (outside the staff shell). Reached from the overview's Preview.
+  EDUCATOR_TEST_RUN: "/educator/tests/:slug/run",
   QUESTION_BANK: "/educator/question-bank",
   QBANK_LOG: "/educator/qbank-submissions",
 
@@ -158,14 +171,23 @@ export function buildPath(
 
 // --- Convenience builders -------------------------------------------------
 
+/** The role-agnostic entry / stored-link form (`/test/:slug`). Use this only
+ *  when WRITING a stored `module_items.url` or sharing a role-neutral link;
+ *  at runtime it redirects to the role-prefixed surface. */
 export function testRunPath(slug: string): string {
   return buildPath(ROUTES.TEST_RUN, { slug });
 }
 
-/** Staff preview of the runner — `?preview=1` so the staff entry renders the
- *  runner instead of bouncing to the overview. */
+/** The student-facing runner URL (`/student/test/:slug`). Navigate students
+ *  here directly to skip the bare-link redirect hop. */
+export function studentTestRunPath(slug: string): string {
+  return buildPath(ROUTES.STUDENT_TEST_RUN, { slug });
+}
+
+/** Staff preview of the runner — the role-prefixed run view under the test's
+ *  overview (`/educator/tests/:slug/run`). Renders the full-screen runner. */
 export function testPreviewPath(slug: string): string {
-  return `${buildPath(ROUTES.TEST_RUN, { slug })}?preview=1`;
+  return buildPath(ROUTES.EDUCATOR_TEST_RUN, { slug });
 }
 
 export function testOverviewPath(slug: string): string {
