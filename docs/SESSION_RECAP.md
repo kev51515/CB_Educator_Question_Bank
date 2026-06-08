@@ -11,9 +11,10 @@ to split (e.g. to focus on the passage, or on a projector).
   above choices hidden; review header hidden) — exactly the stacked behaviour.
 - A **"Stack" toggle** (aria-pressed, indigo when active) sits in the nav strip
   of both `TestReviewPage` and `TestPreviewRunner`; state is per-session.
-- Forced-stack renders a **clean centred column** (number → passage →
-  divider → question) at `max-w-2xl`, so a wide screen doesn't get a
-  full-width passage line with a centred question floating below it.
+- Forced-stack renders a **single wide column** (number → passage → divider →
+  question) spanning **~95% of the width** (`mx-auto w-[95%]`), centred — this
+  mode is meant for PROJECTING to a class, so size/visibility beats reading
+  line-length. (Started at `max-w-2xl`; widened to 95% per the projector use.)
 - **Verified live in the running app** via `viewer/scripts/verify-stack-toggle.mjs`
   (`npm run verify:stack`): a Playwright harness that injects a disposable
   admin session, opens the DSAT review page, and asserts the passage/question

@@ -429,13 +429,14 @@ export function QuestionPane({
         </span>
       );
 
-      // User-forced stacked: ONE readable centred column (number → passage →
-      // question), so a wide screen doesn't get a full-width passage line with a
-      // centred question floating below it. Single in-body number (atop passage).
+      // User-forced stacked: ONE wide single column (number → passage →
+      // question). Spans ~95% of the width (centred) rather than a narrow
+      // reading column — this mode is meant for PROJECTING to a class, so
+      // visibility/size beats line-length. Single in-body number (atop passage).
       if (forceStacked) {
         return (
-          <div className="h-full overflow-y-auto px-6 py-7 lg:px-8">
-            <div className="mx-auto max-w-2xl space-y-5">
+          <div className="h-full overflow-y-auto py-7">
+            <div className="mx-auto w-[95%] space-y-5">
               <div>{numberBadge}</div>
               <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
               <div className="border-t border-slate-200 pt-5 dark:border-slate-800">
