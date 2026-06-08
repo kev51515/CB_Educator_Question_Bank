@@ -32,6 +32,7 @@ import type { ProctorEvent } from "./api";
 import { ResultView } from "./ResultView";
 import { AssignTestModal } from "./AssignTestModal";
 import { TestMonitorModal } from "./TestMonitorModal";
+import { ProctorChatModal } from "./ProctorChatModal";
 import ProctorTimeline from "./ProctorTimeline";
 import type { TestResult } from "./types";
 import {
@@ -269,9 +270,15 @@ export function TestOverviewPage(): JSX.Element {
     }
   };
 
-  // Pause / resume a student's live sitting (freezes their timer).
+  // Pause / resume a student's live sitting (freezes their timer). An optional
+  // reason (from the chat modal) is delivered to the student as a message (0113).
   const [pauseBusy, setPauseBusy] = useState<string | null>(null);
-  const onSetPause = async (runId: string, paused: boolean, name: string): Promise<void> => {
+  const onSetPause = async (
+    runId: string,
+    paused: boolean,
+    name: string,
+    reason?: string,
+  ): Promise<void> => {
     setPauseBusy(runId);
     try {
       const { error } = await supabase.rpc("proctor_set_pause", {
@@ -282,11 +289,59 @@ export function TestOverviewPage(): JSX.Element {
         toast.error(paused ? "Couldn't pause" : "Couldn't resume", error.message);
         return;
       }
+      if (paused && reason && reason.trim()) {
+        await supabase
+          .rpc("proctor_send_message", {
+            p_run_id: runId,
+            p_kind: "pause",
+            p_body: reason.trim(),
+          })
+          .then(({ error: e }) => {
+            if (e) toast.error("Paused, but the note didn't send", e.message);
+          });
+      }
       toast.success(paused ? `Paused ${name}` : `Resumed ${name}`);
       await refreshRoster();
     } finally {
       setPauseBusy(null);
     }
+  };
+
+  // Live proctor ⇄ student chat: which student's thread is open, and which runs
+  // have an unread student message (a dot on their Message button, fed by a
+  // realtime subscription to proctor_messages inserts).
+  const [chatTarget, setChatTarget] = useState<{ runId: string; name: string } | null>(null);
+  const [newMsgRuns, setNewMsgRuns] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    const channel = supabase
+      .channel("proctor_messages:overview")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "proctor_messages" },
+        (payload) => {
+          const m = payload.new as { run_id?: string; sender?: string };
+          if (m?.sender === "student" && m.run_id) {
+            const rid = m.run_id;
+            setNewMsgRuns((prev) => {
+              const n = new Set(prev);
+              n.add(rid);
+              return n;
+            });
+          }
+        },
+      )
+      .subscribe();
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, []);
+  const openChat = (runId: string, name: string): void => {
+    setChatTarget({ runId, name });
+    setNewMsgRuns((prev) => {
+      const n = new Set(prev);
+      n.delete(runId);
+      return n;
+    });
   };
 
   // Run the pending locked action (End now / Reset). Reset is gated behind
@@ -822,6 +877,22 @@ export function TestOverviewPage(): JSX.Element {
                             title="Integrity signals during the test"
                           />
                         )}
+                        {isAdmin && lr?.run_id && (
+                          <RowAction
+                            tone="primary"
+                            className="relative"
+                            onClick={() => openChat(lr.run_id ?? "", row.student_name ?? "Student")}
+                            title="Message this student (they can reply while paused)"
+                          >
+                            💬 Message
+                            {newMsgRuns.has(lr.run_id) && (
+                              <span
+                                aria-label="new message"
+                                className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white dark:ring-slate-900"
+                              />
+                            )}
+                          </RowAction>
+                        )}
                         {isAdmin && (
                           <ActionGroup>
                             {lr?.run_id && (
@@ -892,6 +963,23 @@ export function TestOverviewPage(): JSX.Element {
       {monitorOpen && (
         <TestMonitorModal slug={slug} title={title} isAdmin={isAdmin} onClose={() => setMonitorOpen(false)} />
       )}
+
+      {chatTarget &&
+        (() => {
+          // Read the student's current pause state live so the modal's
+          // Pause/Resume control reflects roster refreshes, not the open-time snapshot.
+          const lrNow = Array.from(live.values()).find((l) => l.run_id === chatTarget.runId);
+          return (
+            <ProctorChatModal
+              runId={chatTarget.runId}
+              studentName={chatTarget.name}
+              paused={lrNow?.paused ?? false}
+              pauseBusy={pauseBusy === chatTarget.runId}
+              onPause={(p, reason) => onSetPause(chatTarget.runId, p, chatTarget.name, reason)}
+              onClose={() => setChatTarget(null)}
+            />
+          );
+        })()}
 
       {confirmAction && (
         <InterventionModal

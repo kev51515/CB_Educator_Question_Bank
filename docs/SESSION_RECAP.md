@@ -1,6 +1,43 @@
 # Session Recap
 
-## Latest (2026-06-08) — teacher "Review" surface: answer key + per-class results + highlighting (migration 0112)
+## Latest (2026-06-08) — proctor ⇄ student messaging on a paused test (migrations 0113–0114)
+
+**Two-way, fully-recorded communication for a paused live test.** When the
+proctor pauses a student, the student now sees a clear "Paused by your teacher"
+screen with a chat (preset chips + free text); the proctor can pause with a
+reason and reply from the live monitor. `tsc -b` green; applied to Remote;
+`smoke-proctor-chat` 14/14 + full smoke all-green.
+
+- **Why this shape:** the paused screen is the only place a student sees the
+  channel — timer frozen, no test content visible — so it has ~no cheating
+  surface. Student messaging is **server-enforced to the paused window only**.
+- **0113 `proctor_messages`** — append-only table (sender student|staff, kind
+  text|preset|pause, body) with RLS read for the run's owner + any staff, **no
+  write policy** (DEFINER RPCs only → `sender` can't be forged; permanent log),
+  added to the realtime publication. `student_send_proctor_message` (own run,
+  paused only → `not_paused`) and `proctor_send_message`.
+- **0114** tightened `proctor_send_message` to **admin-only**, matching the
+  0104 model (all proctor *actions* are admin-only; staff keep *read*).
+- **Client:**
+  - `ProctorChat.tsx` — `useProctorChat` (RLS-direct read + realtime per run)
+    + a shared thread/preset/composer used by both sides. Presets: student
+    "👍 Okay / 🙋 Question / 🚻 Restroom / ⚠️ Technical issue / ✅ Ready"; staff
+    "One moment / On my way / Come see me / …".
+  - **Student paused overlay** (`FullTestApp`) embeds the chat with a quick-reply
+    + composer.
+  - **Proctor** (`TestOverviewPage`): a 💬 Message button per in-progress row
+    (live unread dot via a realtime subscription to `proctor_messages` inserts)
+    opens `ProctorChatModal` — pause-with-reason / resume + the thread. The
+    pause reason is delivered as a `kind='pause'` message.
+- **Test:** `viewer/scripts/smoke-proctor-chat.mjs` (`npm run smoke:proctor-chat`)
+  — disposable, self-cleaning: asserts paused-gating, admin-only send, non-admin
+  staff read access, RLS isolation (an unrelated student sees nothing), the
+  3-message record + sender order, and that resume re-closes the student's
+  window. **14/14.**
+- Follow-up: the chat is wired on `TestOverviewPage` (primary monitor); could
+  also be added to `TestMonitorModal` rows for parity.
+
+## 2026-06-08 — teacher "Review" surface: answer key + per-class results + highlighting (migration 0112)
 
 **Rebuilt the full-test "Review" (answer key) page into a preview-style,
 one-question-at-a-time review surface for going over a test WITH a class.**

@@ -23,6 +23,7 @@ import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
 import { TestPreviewRunner } from "./TestPreviewRunner";
+import { ProctorChat } from "./ProctorChat";
 import { captureSelectionHighlight, useRunnerAnnotations, type Highlight } from "./annotations";
 import { ResultView } from "./ResultView";
 import {
@@ -816,6 +817,21 @@ function FullTestRunner() {
           Your timer is frozen and your answers are saved. The test will continue
           right where you left off when your teacher resumes it.
         </p>
+
+        {/* Two-way channel with the proctor (0113) — only available while paused. */}
+        <div className="mx-auto mt-5 w-full max-w-md text-left">
+          <h2 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            Message your teacher
+          </h2>
+          <div className="flex h-72 flex-col rounded-xl border border-slate-200 bg-white p-2 dark:border-slate-800 dark:bg-slate-900">
+            <ProctorChat
+              runId={runId}
+              role="student"
+              emptyHint="Your teacher paused the test. Send them a message if you need anything — tap a quick reply or type below."
+            />
+          </div>
+        </div>
+
         <p className="mt-4 text-xs text-slate-400 dark:text-slate-500" aria-live="polite">
           Waiting to resume…
         </p>
