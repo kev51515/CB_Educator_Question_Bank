@@ -428,10 +428,11 @@ export function QuestionPane({
         <div className="@container h-full">
           <div className="h-full overflow-y-auto @[48rem]:grid @[48rem]:grid-cols-2 @[48rem]:divide-x @[48rem]:divide-slate-200 @[48rem]:overflow-hidden dark:@[48rem]:divide-slate-800">
             <div className="border-b border-slate-200 px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto @[48rem]:border-b-0 lg:px-10 dark:border-slate-800">
-              {/* Question number echoed atop the passage — only in the two-column
-                  split. When stacked, the question header's number sits right
-                  below the passage, so a second badge would be redundant. */}
-              <div className="mb-3 hidden @[48rem]:block">
+              {/* Question number atop the passage — always shown (both stacked
+                  and split), so the passage is always labelled. In the split the
+                  question column shows it again; when stacked, the in-column one
+                  is dropped (this badge is the single in-body number). */}
+              <div className="mb-3">
                 <span className="grid h-6 w-fit min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900">
                   {question.number}
                 </span>

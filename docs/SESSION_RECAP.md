@@ -9,13 +9,14 @@
   it stacks the question + choices BELOW the passage when there isn't room, and
   splits into two columns when there is. Fixes the ugly full-width-passage /
   stranded-question layout. Threshold: container ≥ 48rem.
-- **Question number echoed atop the passage** (left pane) in the two-column
-  split. When **stacked**, BOTH in-body numbers are dropped (the passage-top
-  badge and the question-column header badge) — the nav strip's "Question N of
-  M" already identifies it, so a body number is redundant. In review (no
-  mark/strike controls) the otherwise-empty question header is hidden entirely
-  when stacked. Driven by `@[48rem]:` container variants + the `disabled` flag;
-  QHeader gained `numberClassName`/`containerClassName` props for this.
+- **Question number atop the passage** (left pane) — always shown so the
+  passage is labelled in both layouts. In the two-column split the question
+  column shows the number again; when **stacked**, the in-column number is
+  dropped (the passage-top badge is the single in-body number, and the nav
+  strip's "Question N of M" also identifies it). In review (no mark/strike
+  controls) the otherwise-empty question header is hidden entirely when stacked.
+  Driven by `@[48rem]:` container variants + the `disabled` flag; QHeader gained
+  `numberClassName`/`containerClassName` props for this.
 - **Highlight is now layout-shift-free.** The `<mark>` had `px-px` (1px each
   side) which widened the highlighted run → reflowed/re-wrapped text on every
   add/remove. Dropped the padding, kept background-only highlighting + added
