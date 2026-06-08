@@ -10,7 +10,12 @@
   splits into two columns when there is. Fixes the ugly full-width-passage /
   stranded-question layout. Threshold: container ≥ 48rem.
 - **Question number echoed atop the passage** (left pane) in the two-column
-  split — hidden when stacked (the question header's number is right below).
+  split. When **stacked**, BOTH in-body numbers are dropped (the passage-top
+  badge and the question-column header badge) — the nav strip's "Question N of
+  M" already identifies it, so a body number is redundant. In review (no
+  mark/strike controls) the otherwise-empty question header is hidden entirely
+  when stacked. Driven by `@[48rem]:` container variants + the `disabled` flag;
+  QHeader gained `numberClassName`/`containerClassName` props for this.
 - **Highlight is now layout-shift-free.** The `<mark>` had `px-px` (1px each
   side) which widened the highlighted run → reflowed/re-wrapped text on every
   add/remove. Dropped the padding, kept background-only highlighting + added

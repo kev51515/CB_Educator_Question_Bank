@@ -151,17 +151,25 @@ function QHeader({
   onToggleMark,
   strikeMode,
   onToggleStrikeMode,
+  /** Display class for the number badge — lets the R&W fullHeight layout hide
+   *  it (`hidden @[48rem]:grid`) when stacked, since the nav strip shows it. */
+  numberClassName = "grid",
+  /** Display class for the whole header row — lets review (no controls) hide
+   *  the otherwise-empty header when stacked. */
+  containerClassName = "flex",
 }: {
   number: number;
   marked?: boolean;
   onToggleMark?: () => void;
   strikeMode?: boolean;
   onToggleStrikeMode?: () => void;
+  numberClassName?: string;
+  containerClassName?: string;
 }) {
   return (
-    <div className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2 dark:border-slate-700">
+    <div className={`items-center justify-between gap-3 border-b border-slate-200 pb-2 dark:border-slate-700 ${containerClassName}`}>
       <div className="flex items-center gap-3">
-        <span className="grid h-6 min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900">
+        <span className={`h-6 min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900 ${numberClassName}`}>
           {number}
         </span>
         {onToggleMark && (
@@ -379,7 +387,7 @@ export function QuestionPane({
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
 
-  const questionSide = (
+  const questionSide = (header?: { numberClassName?: string; containerClassName?: string }) => (
     <>
       <QHeader
         number={question.number}
@@ -387,6 +395,8 @@ export function QuestionPane({
         onToggleMark={onToggleMark}
         strikeMode={strikeMode}
         onToggleStrikeMode={question.type === "mcq" ? onToggleStrikeMode : undefined}
+        numberClassName={header?.numberClassName}
+        containerClassName={header?.containerClassName}
       />
       <div className="mt-5">
         <Prompt
@@ -429,7 +439,16 @@ export function QuestionPane({
               <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
             </div>
             <div className="px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto lg:px-10">
-              <div className="mx-auto max-w-xl">{questionSide}</div>
+              <div className="mx-auto max-w-xl">
+                {questionSide({
+                  // Stacked: the nav strip already shows "Question N", so drop the
+                  // in-body number above the choices. Split: keep it (it pairs with
+                  // the number atop the passage). In review (disabled, no controls)
+                  // the header is otherwise empty when stacked, so hide it too.
+                  numberClassName: "hidden @[48rem]:grid",
+                  containerClassName: disabled ? "hidden @[48rem]:flex" : "flex",
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -439,7 +458,7 @@ export function QuestionPane({
       <div className="h-full overflow-y-auto px-6 py-7">
         <div className="mx-auto max-w-2xl space-y-6">
           {question.figure && <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />}
-          {questionSide}
+          {questionSide()}
         </div>
       </div>
     );
@@ -452,14 +471,14 @@ export function QuestionPane({
         <div className="md:border-r md:border-slate-200 md:pr-6 dark:md:border-slate-700">
           <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
         </div>
-        <div>{questionSide}</div>
+        <div>{questionSide()}</div>
       </div>
     );
   }
   return (
     <div className="mx-auto max-w-2xl space-y-4">
       {question.figure && <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />}
-      {questionSide}
+      {questionSide()}
     </div>
   );
 }
