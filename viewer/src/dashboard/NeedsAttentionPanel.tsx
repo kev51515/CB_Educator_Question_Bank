@@ -34,7 +34,7 @@ import {
   timeAgo,
   timeUntil,
 } from "./needsAttentionHelpers";
-import { RefreshIcon } from "./needsAttentionIcons";
+import { RefreshIcon, GradeIcon, PastDueIcon, RepliesIcon } from "./needsAttentionIcons";
 import { AttentionRow } from "./AttentionRow";
 import { Section } from "./Section";
 import { EmptySectionLine } from "./EmptySectionLine";
@@ -247,7 +247,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
 
       {/* To grade */}
       <Section
-        icon=""
+        icon={<GradeIcon />}
         label="To grade"
         count={filteredToGrade.length}
         collapsed={collapse.toGrade}
@@ -307,7 +307,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
 
       {/* Past due */}
       <Section
-        icon=""
+        icon={<PastDueIcon />}
         label="Past due"
         count={filteredPastDue.length}
         collapsed={collapse.pastDue}
@@ -367,7 +367,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
 
       {/* New replies */}
       <Section
-        icon=""
+        icon={<RepliesIcon />}
         label="New replies"
         count={filteredReplies.length}
         collapsed={collapse.replies}

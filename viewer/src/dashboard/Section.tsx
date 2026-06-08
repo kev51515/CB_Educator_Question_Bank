@@ -14,7 +14,7 @@ function SectionSkeleton() {
 // ─── Section wrapper ──────────────────────────────────────────────────────
 
 interface SectionProps {
-  icon: string;
+  icon: React.ReactNode;
   label: string;
   count: number;
   collapsed: boolean;
@@ -52,7 +52,7 @@ export function Section({
         "
       >
         <ChevronIcon collapsed={collapsed} />
-        <span aria-hidden className="text-base leading-none">
+        <span aria-hidden className="inline-flex items-center leading-none">
           {icon}
         </span>
         <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">

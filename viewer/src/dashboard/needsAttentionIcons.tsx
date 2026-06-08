@@ -38,6 +38,57 @@ export function RowChevron() {
   );
 }
 
+// ─── Section header icons (slate line icons) ──────────────────────────────
+
+function SectionIcon({ children }: { children: React.ReactNode }) {
+  return (
+    <svg
+      width={15}
+      height={15}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className="text-slate-400 dark:text-slate-500"
+    >
+      {children}
+    </svg>
+  );
+}
+
+/** "To grade" — clipboard with a check. */
+export function GradeIcon() {
+  return (
+    <SectionIcon>
+      <path d="M9 4H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2" />
+      <rect x={9} y={3} width={6} height={4} rx={1} />
+      <path d="m9 14 2 2 4-4" />
+    </SectionIcon>
+  );
+}
+
+/** "Past due" — clock. */
+export function PastDueIcon() {
+  return (
+    <SectionIcon>
+      <circle cx={12} cy={12} r={9} />
+      <path d="M12 7.5V12l3 1.8" />
+    </SectionIcon>
+  );
+}
+
+/** "New replies" — chat bubble. */
+export function RepliesIcon() {
+  return (
+    <SectionIcon>
+      <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z" />
+    </SectionIcon>
+  );
+}
+
 export function RefreshIcon({ spinning }: { spinning: boolean }) {
   return (
     <svg
