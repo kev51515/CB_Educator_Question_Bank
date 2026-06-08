@@ -109,8 +109,10 @@ export function FullTestCatalog() {
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-500 dark:text-slate-400">
-        Full-length, proctored, Bluebook-style tests — timed modules, server-graded,
-        with an estimated SAT score. Review the answer key before assigning.
+        Proctored, Bluebook-style tests — timed modules, server-graded, with an
+        estimated score (full SAT for R&W + Math tests; a section score for
+        single-section ones). Check the composition and review the answer key
+        before assigning.
       </p>
 
       {kindsPresent.length > 1 && (
