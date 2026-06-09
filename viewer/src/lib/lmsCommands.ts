@@ -19,6 +19,7 @@ import type { Command } from "@/components/CommandPalette";
 import { useToast } from "@/components/Toast";
 import { useBankCommands } from "./BankCommandsContext";
 import { useProfile, type ProfileRole } from "./profile";
+import { canAccessQuestionBank } from "./access";
 import { supabase } from "./supabase";
 import {
   ROUTES,
@@ -259,8 +260,14 @@ export function useLmsCommands(): Command[] {
 
     const cmds: Command[] = [];
 
-    // 1. Top-level navigation (always available when authed)
+    // 1. Top-level navigation (always available when authed). The Practice /
+    //    Mock Test destinations are test/Question-Bank content, so they're
+    //    filtered out for educators without test access.
+    const canQbank = canAccessQuestionBank(profile.email);
     for (const nav of TOP_LEVEL_NAV) {
+      if (!canQbank && (nav.id === "go-practice" || nav.id === "go-mock-test")) {
+        continue;
+      }
       cmds.push({
         id: nav.id,
         label: nav.label,

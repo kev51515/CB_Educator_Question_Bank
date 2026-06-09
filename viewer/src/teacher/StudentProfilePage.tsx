@@ -32,6 +32,8 @@ import { Section } from "./StudentProfileSection";
 import { PrivateNotesSection } from "./PrivateNotesSection";
 import { StudentTestReportPanel } from "./StudentTestReportPanel";
 import { StudentTestRunsPanel } from "./StudentTestRunsPanel";
+import { useProfile } from "@/lib/profile";
+import { canAccessQuestionBank } from "@/lib/access";
 import { AttemptsBody } from "./AttemptsBody";
 import { PostsBody } from "./PostsBody";
 import { PortfolioBody } from "./PortfolioBody";
@@ -44,6 +46,9 @@ export function StudentProfilePage(): JSX.Element {
   const studentId = params.studentId ?? "";
   const navigate = useNavigate();
   const toast = useToast();
+  const { profile } = useProfile();
+  // Full-length test panels are test-content surfaces — gated with the rest.
+  const canQbank = canAccessQuestionBank(profile?.email);
   const {
     header,
     course,
@@ -203,11 +208,10 @@ export function StudentProfilePage(): JSX.Element {
             studentId={header.id}
           />
 
-          {/* Full-length test coaching report — score trajectory + weak domains. */}
-          <StudentTestReportPanel studentId={header.id} />
-
-          {/* Full-length test results — review + release-to-student control. */}
-          <StudentTestRunsPanel studentId={header.id} />
+          {/* Full-length test coaching report + results — gated to educators
+              with test/Question-Bank access. */}
+          {canQbank && <StudentTestReportPanel studentId={header.id} />}
+          {canQbank && <StudentTestRunsPanel studentId={header.id} />}
 
           {allEmpty ? (
             <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">

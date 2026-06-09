@@ -20,6 +20,8 @@ import { useCallback, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
 import { ClassSkillsSummaryCard } from "./ClassSkillsSummaryCard";
+import { useProfile } from "@/lib/profile";
+import { canAccessQuestionBank } from "@/lib/access";
 import { useCourseOverview, type RecentPost } from "./useCourseOverview";
 import { Skeleton, SkeletonCard } from "@/components/Skeleton";
 import {
@@ -188,6 +190,8 @@ function RecentPostRow({
 export function CourseOverview() {
   const { cls } = useClassContext();
   const navigate = useNavigate();
+  const { profile } = useProfile();
+  const canQbank = canAccessQuestionBank(profile?.email);
   const { data, loading, error, refresh } = useCourseOverview(cls.id);
 
   // Refresh debounce: don't let a frantic clicker fan-out 10 concurrent
@@ -261,7 +265,7 @@ export function CourseOverview() {
       )}
 
       {/* Class skills focus areas — self-hides until the class has test data. */}
-      <ClassSkillsSummaryCard />
+      {canQbank && <ClassSkillsSummaryCard />}
 
       {/* Body grid. 1-col mobile / 2-col tablet / 3-col desktop matches the
           Modules page bar; cards reflow naturally on resize. */}

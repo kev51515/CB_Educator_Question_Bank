@@ -43,10 +43,15 @@ function RedirectBareTestToOverview() {
  * Authenticated routes for staff (teacher / admin).
  */
 export default function StaffRoutesTree({ account }: { account: AccountContext }) {
-  // The Question Bank (+ its global Submissions log) is restricted to a
-  // specific subset of educators. Non-allowed staff who type/bookmark the URL
-  // or follow a stale link bounce to their dashboard rather than 404.
+  // Test / Question-Bank content is restricted to allow-listed educators. This
+  // gates EVERY test-connected route in one place: the Question Bank + its
+  // Submissions log, the full-test catalog/overview/review/replay, and the
+  // staff preview runner. Non-allowed staff who type/bookmark/follow a stale
+  // link to any of them bounce to their dashboard. (Per-course test analytics —
+  // the Skills tab, student test panels — are gated in their own surfaces.)
   const canQbank = canAccessQuestionBank(account.email);
+  const gate = (el: JSX.Element): JSX.Element =>
+    canQbank ? el : <Navigate to={ROUTES.DASHBOARD} replace />;
   return (
     <Routes>
       {/* The role-prefixed staff runner (Preview). One splat route so it keeps
@@ -55,7 +60,7 @@ export default function StaffRoutesTree({ account }: { account: AccountContext }
           Renders OUTSIDE the shell — distraction-free, full-viewport takeover.
           The bare, role-agnostic /test/<slug> stored link redirects to the
           overview. Students never reach here (separate tree). */}
-      <Route path={`${ROUTES.EDUCATOR_TEST_RUN}/*`} element={<FullTestApp />} />
+      <Route path={`${ROUTES.EDUCATOR_TEST_RUN}/*`} element={gate(<FullTestApp />)} />
       <Route
         path={`${ROUTES.TEST_RUN}/*`}
         element={<RedirectBareTestToOverview />}
@@ -68,30 +73,12 @@ export default function StaffRoutesTree({ account }: { account: AccountContext }
         <Route path={ROUTES.DASHBOARD} element={<DashboardPage />} />
         <Route path={ROUTES.CALENDAR} element={<CalendarPage />} />
         <Route path={ROUTES.COURSES} element={<AllClassesView />} />
-        <Route
-          path={ROUTES.QUESTION_BANK}
-          element={
-            canQbank ? (
-              <QuestionBankPage />
-            ) : (
-              <Navigate to={ROUTES.DASHBOARD} replace />
-            )
-          }
-        />
-        <Route
-          path={ROUTES.QBANK_LOG}
-          element={
-            canQbank ? (
-              <QBankSubmissionLogPage />
-            ) : (
-              <Navigate to={ROUTES.DASHBOARD} replace />
-            )
-          }
-        />
-        <Route path={ROUTES.TESTS_ADMIN} element={<TestsAdminPage />} />
-        <Route path={ROUTES.TEST_OVERVIEW} element={<TestOverviewPage />} />
-        <Route path={ROUTES.TEST_REVIEW} element={<TestReviewPage />} />
-        <Route path={ROUTES.TEST_REPLAY} element={<ReplayPage />} />
+        <Route path={ROUTES.QUESTION_BANK} element={gate(<QuestionBankPage />)} />
+        <Route path={ROUTES.QBANK_LOG} element={gate(<QBankSubmissionLogPage />)} />
+        <Route path={ROUTES.TESTS_ADMIN} element={gate(<TestsAdminPage />)} />
+        <Route path={ROUTES.TEST_OVERVIEW} element={gate(<TestOverviewPage />)} />
+        <Route path={ROUTES.TEST_REVIEW} element={gate(<TestReviewPage />)} />
+        <Route path={ROUTES.TEST_REPLAY} element={gate(<ReplayPage />)} />
         {/* Per-student profile inside a course. Registered BEFORE the
             ClassLayout wildcard below so React Router matches the more
             specific path first. Lives outside ClassLayout's tab strip

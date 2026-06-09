@@ -34,6 +34,7 @@ import {
 } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/lib/profile";
+import { canAccessQuestionBank } from "@/lib/access";
 import { useClass } from "./useClass";
 import {
   ClassLayoutContext,
@@ -118,6 +119,13 @@ export function ClassLayout() {
   const navigate = useNavigate();
   const { profile } = useProfile();
   const toast = useToast();
+  // The Skills tab is test-derived (per-domain mastery from test runs), so it's
+  // gated with the rest of the Question-Bank/test surfaces.
+  const canQbank = canAccessQuestionBank(profile?.email);
+  const visibleTabs = useMemo(
+    () => TABS.filter((t) => t.to !== "skills" || canQbank),
+    [canQbank],
+  );
 
   const { cls, loading, error, notFound, refresh, patch } = useClass(classId);
 
@@ -388,7 +396,7 @@ export function ClassLayout() {
               aria-label="Course sections"
               className="flex items-center gap-1 overflow-x-auto -mb-px"
             >
-              {TABS.map((tab) => (
+              {visibleTabs.map((tab) => (
                 <NavLink
                   key={tab.to || "overview"}
                   to={tab.to ? `${classPath(cls.short_code)}/${tab.to}` : classPath(cls.short_code)}
@@ -432,7 +440,16 @@ export function ClassLayout() {
             />
             <Route path="portfolio" element={<CoursePortfolio />} />
             <Route path="grades" element={<CourseGradebook />} />
-            <Route path="skills" element={<ClassSkillsView />} />
+            <Route
+              path="skills"
+              element={
+                canQbank ? (
+                  <ClassSkillsView />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
             <Route path="settings" element={<CourseSettings />} />
             <Route
               path="*"

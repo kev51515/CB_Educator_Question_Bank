@@ -15,8 +15,26 @@
  */
 
 /**
- * Educators permitted to open the Question Bank authoring surface (the bank
- * itself + its global submission log). Stored lower-cased; compare via
+ * GATED SURFACE REGISTRY — every test / Question-Bank-connected educator
+ * surface routes through {@link canAccessQuestionBank}. Keep this list in sync
+ * when you add a test-connected surface so nothing leaks:
+ *
+ *   Nav rail (StaffShell navItems):      Question Bank, Submissions
+ *   Top-level routes (StaffRoutesTree):  QUESTION_BANK, QBANK_LOG, TESTS_ADMIN,
+ *                                        TEST_OVERVIEW, TEST_REVIEW, TEST_REPLAY,
+ *                                        EDUCATOR_TEST_RUN (all via `gate()`)
+ *   Modules add-item (inline-add/tree):  Full-Test, Practice Test, Question Set
+ *   Course tab (ClassLayout):            Skills (tab hidden + route redirected)
+ *   Course Overview card:                ClassSkillsSummaryCard
+ *   Student profile panels:              StudentTestReportPanel, StudentTestRunsPanel
+ *   Dashboard widget:                    TestReleaseNudge
+ *   Command palette (lmsCommands):       Go to Practice, Go to Mock Test
+ *
+ * NOT gated (general teaching surfaces that merely *include* test rows):
+ * Assignments tab, Grades/Gradebook — a non-allowed educator can't add test
+ * content anyway, so these stay available for their regular assignments.
+ *
+ * Educators permitted to open these. Stored lower-cased; compare via
  * {@link canAccessQuestionBank}, which normalises the input.
  */
 const QUESTION_BANK_EMAILS: ReadonlySet<string> = new Set([

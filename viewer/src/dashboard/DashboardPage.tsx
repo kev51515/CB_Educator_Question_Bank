@@ -14,6 +14,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProfile } from "@/lib/profile";
+import { canAccessQuestionBank } from "@/lib/access";
 import { useTeacherClasses, type TeacherClass } from "@/teacher/useTeacherClasses";
 import {
   coursePath,
@@ -304,6 +305,8 @@ export function DashboardPage() {
   const navigate = useNavigate();
   const toast = useToast();
   const { profile } = useProfile();
+  // The "release test results" nudge is a test-content surface — gated.
+  const canQbank = canAccessQuestionBank(profile?.email);
   const { classes, loading, error, refresh } = useTeacherClasses(
     profile?.id ?? null,
   );
@@ -452,7 +455,7 @@ export function DashboardPage() {
 
         {profile?.id && <NeedsAttentionPanel teacherId={profile.id} />}
 
-        {profile?.id && <TestReleaseNudge />}
+        {profile?.id && canQbank && <TestReleaseNudge />}
 
         {profile?.id && <CohortSummaryWidget teacherId={profile.id} />}
 
