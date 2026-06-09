@@ -89,3 +89,21 @@ duplicate `formatRelative` fns into one `<RelativeTime>` — the times are
 interpolated into sentences + aria-labels (not standalone), and the 20 variants
 have divergent phrasing, so a sweep would risk visible wording drift across the
 app. Not worth the risk this session.
+
+---
+
+## Cycle 4 — `useMediaQuery` → `useSyncExternalStore` (correctness + clears the lone lint warning)
+
+**Why:** `useMediaQuery` (used app-wide for responsive behaviour) was the only
+file with an ESLint warning — `setMatches(mql.matches)` called synchronously
+inside an effect, which React flags as a cascading-render risk. It's also the
+textbook case for `useSyncExternalStore` (subscribing to an external browser
+store), which is more correct (no tearing) than mirroring into local state.
+
+**What:** Rewrote `useMediaQuery` with `useSyncExternalStore(subscribe,
+getSnapshot, getServerSnapshot=false)` — reads `matchMedia(query).matches`
+directly, subscribes to `change`, SSR-safe. Same signature; drop-in for all
+call sites. Removed the effect/`useState` mirror.
+
+**Verify:** `tsc -b` green; `eslint src/hooks/index.ts` now clean (0 warnings).
+Returns a primitive boolean snapshot, so no re-subscribe loop / tearing.
