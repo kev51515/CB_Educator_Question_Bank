@@ -169,6 +169,20 @@ async function main() {
       const { error } = await sClient.from("counseling_profiles").insert({ ...base, grad_year: 2028 });
       error ? bad("student creates own profile", error.message) : ok("student creates own profile");
     }
+
+    step("deadline reminders (0138)");
+    {
+      const d3 = new Date(Date.now() + 3 * 864e5).toISOString().slice(0, 10);
+      await cClient.from("college_applications").insert({ ...base, college_name: "Deadline U", status: "considering", deadline: d3 });
+      const { error } = await svc.rpc("run_counseling_deadline_reminders");
+      if (error) bad("run deadline reminders", error.message);
+      else {
+        const { data } = await svc.from("notifications").select("title").eq("recipient_id", student.id).eq("kind", "reminder");
+        (data ?? []).some((r) => (r.title ?? "").includes("Deadline U"))
+          ? ok("deadline reminder notification created")
+          : bad("expected a deadline reminder notification", JSON.stringify(data));
+      }
+    }
   } finally {
     step("cleanup");
     await cleanup().catch((e) => console.log("  ..    cleanup error", e.message));

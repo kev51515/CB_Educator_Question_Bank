@@ -45,6 +45,11 @@ DEFINER helper `is_teacher_of_course(uid, course_id)` (incl. shared co-teachers,
 student (trigger `fanout_counseling_task_notification`, 0136), mirroring the
 0059 grade-notify pattern. Icon added to `NotificationBell`.
 
+A daily pg_cron worker `run_counseling_deadline_reminders()` (0138, job
+`counseling-deadline-reminders`, 01:00 UTC) sends `'reminder'` notifications for
+college deadlines 3/1 days out (not submitted) and tasks due tomorrow (open),
+deduped per title per 20h. In-app only (no email).
+
 ## Counselor-only AI
 
 `supabase/functions/counselor-ai` — essay feedback + rec-letter draft. It
@@ -72,5 +77,3 @@ notification, and the missing-docs metric.
 
 - `clone_course` (0036) doesn't copy `course_type` — duplicating a counseling
   course currently yields a 'class'.
-- Deadline reminders (cron) for college deadlines not yet built (the
-  `assignment-due-reminders` function is the pattern to mirror).
