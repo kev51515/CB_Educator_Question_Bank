@@ -67,11 +67,14 @@ async function main() {
   for (const a of answers) a.run_id = run.id;
   for (let i = 0; i < answers.length; i += 100) await svc.from("test_run_answers").insert(answers.slice(i, i + 100));
 
+  const extraUserIds = []; // educators created during the run, torn down at the end
+
   const cleanup = async () => {
     await svc.from("test_run_answers").delete().eq("run_id", run.id);
     await svc.from("test_runs").delete().eq("id", run.id);
     await svc.from("course_memberships").delete().eq("course_id", course.id);
     await svc.from("courses").delete().eq("id", course.id);
+    for (const id of extraUserIds) await svc.auth.admin.deleteUser(id);
     for (const u of [admin, teacher, student]) await svc.auth.admin.deleteUser(u.id);
   };
 
@@ -107,6 +110,26 @@ async function main() {
     const { data: ds, error: dsErr } = await aClient.rpc("admin_dashboard_stats");
     if (dsErr) bad("admin reads dashboard stats", dsErr.message);
     else (ds && ds.users_by_role) ? ok("dashboard stats shape ok") : bad("dashboard stats shape", JSON.stringify(ds)?.slice(0, 80));
+
+    step("admin_create_educator (0129)");
+    const eduEmail = `adm-edu-${TAG}-${randomBytes(2).toString("hex")}@example.com`;
+    const { data: eduId, error: ceErr } = await aClient.rpc("admin_create_educator", {
+      p_email: eduEmail, p_display_name: "Smoke Educator", p_password: "EduPass123",
+    });
+    if (ceErr) bad("admin creates educator", ceErr.message);
+    else {
+      extraUserIds.push(eduId);
+      const { data: p } = await svc.from("profiles").select("role").eq("id", eduId).single();
+      p?.role === "teacher" ? ok("educator created as teacher") : bad("educator role", p?.role);
+    }
+    const { error: ceDup } = await aClient.rpc("admin_create_educator", {
+      p_email: eduEmail, p_display_name: "Dup", p_password: "EduPass123",
+    });
+    /email_taken/.test(ceDup?.message ?? "") ? ok("duplicate email rejected") : bad("expected email_taken", ceDup?.message ?? "no error");
+    const { error: ceAuth } = await tClient.rpc("admin_create_educator", {
+      p_email: `x-${TAG}@example.com`, p_display_name: "X", p_password: "EduPass123",
+    });
+    /not_authorized/.test(ceAuth?.message ?? "") ? ok("non-admin rejected from create-educator") : bad("non-admin should be rejected", ceAuth?.message ?? "no error");
   } finally {
     step("cleanup");
     await cleanup().catch((e) => console.log("  ..    cleanup error", e.message));
