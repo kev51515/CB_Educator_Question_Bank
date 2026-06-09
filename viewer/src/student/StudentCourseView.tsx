@@ -512,15 +512,19 @@ export function StudentCourseView(): JSX.Element {
             )}
 
             {modules.length === 0 ? (
-              <div className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 p-8 text-center space-y-2">
-                <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Nothing published yet
-                </p>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Your teacher hasn't published any modules in this course. Check
-                  back soon — new assignments and tests will appear here.
-                </p>
-              </div>
+              // Counseling courses are driven by the counseling section above,
+              // not modules — don't show a "nothing published" modules notice.
+              course.course_type === "counseling" ? null : (
+                <div className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 p-8 text-center space-y-2">
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
+                    Nothing published yet
+                  </p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    Your teacher hasn't published any modules in this course. Check
+                    back soon — new assignments and tests will appear here.
+                  </p>
+                </div>
+              )
             ) : (
               <div className="space-y-4">
                 {modules.map((m) => {

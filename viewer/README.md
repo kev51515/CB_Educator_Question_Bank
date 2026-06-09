@@ -1,4 +1,4 @@
-# SAT Question Bank Viewer
+# OmniLMS (viewer)
 
 A local-dev Vite + React + TypeScript app that browses the JSON files produced
 by the scraper in `../data/json/`.

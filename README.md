@@ -1,6 +1,10 @@
-# CB Educator Question Bank
+# OmniLMS
 
-SAT-style question bank scraped from College Board, with parallel-form generation, template-aware verification, and a browsable viewer.
+An LMS for SAT classes **and** college counseling — Canvas-style courses,
+full-length Bluebook-style tests + skill mastery, and a counseling suite
+(college lists, applications, tasks, advising). Built on React 19 + Vite +
+Supabase. (Repo dir is still `CB_Educator_Question_Bank`; product brand is
+OmniLMS.)
 
 ## What's here
 
