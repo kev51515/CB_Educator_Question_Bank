@@ -2,9 +2,12 @@
  * StudentTestReportPanel
  * ======================
  * Teacher coaching view on the student profile: full-test score trajectory
- * (estimated scaled score across attempts) + weakest domains. Reads
- * student_test_report (0088). Renders nothing until the student has a submitted
- * full-length test.
+ * (estimated scaled score across attempts) + a full per-section domain
+ * breakdown with a "Focus" callout. Reads student_test_report — its `runs`
+ * array spans every submitted attempt (the trajectory), while its `domains`
+ * rollup counts only the latest attempt per test so retakes of the same form
+ * aren't double-counted (0088; latest-attempt dedup added in 0122). Renders
+ * nothing until the student has a submitted full-length test.
  */
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
