@@ -99,6 +99,8 @@ export interface ResultQuestion {
   is_correct: boolean | null;
   /** Choices the student crossed out during the test. */
   eliminated: Letter[];
+  /** official SAT skill domain (e.g. "Algebra"); null if unclassified */
+  domain: string | null;
 }
 
 export interface ModuleTiming {

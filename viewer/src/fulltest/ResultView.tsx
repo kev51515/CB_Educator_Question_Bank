@@ -117,6 +117,8 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
           )}
         </header>
 
+        <SkillProfileCard result={result} />
+
         <TimingCard result={result} />
 
         <div className="mt-6 space-y-4">
@@ -166,6 +168,125 @@ function ScoreChip({
         </div>
       )}
     </div>
+  );
+}
+
+// --- Skill profile (per-domain mastery) -------------------------------------
+
+/** Same 3-band palette as the teacher heatmap: ≥70 strong, ≥40 developing,
+ *  below = needs work. */
+const SKILL_BANDS = {
+  good: { bg: "#10b981", fg: "#ffffff", label: "Strong" },
+  mid: { bg: "#f59e0b", fg: "#1f2937", label: "Developing" },
+  bad: { bg: "#f43f5e", fg: "#ffffff", label: "Focus area" },
+} as const;
+const skillBand = (pct: number) =>
+  pct >= 70 ? SKILL_BANDS.good : pct >= 40 ? SKILL_BANDS.mid : SKILL_BANDS.bad;
+
+const DOMAIN_ORDER: Record<string, string[]> = {
+  "reading-writing": [
+    "Information and Ideas",
+    "Craft and Structure",
+    "Expression of Ideas",
+    "Standard English Conventions",
+  ],
+  math: ["Algebra", "Advanced Math", "Problem-Solving and Data Analysis", "Geometry and Trigonometry"],
+};
+const SECTION_ORDER = ["reading-writing", "math"];
+
+interface DomainStat {
+  domain: string;
+  correct: number;
+  total: number;
+  pct: number;
+}
+
+/**
+ * A student-facing breakdown of how they did on each College Board skill
+ * domain — the SAT-prep payoff of the result screen. Surfaces a single "focus
+ * area" up top (or praise when strong across the board), then per-section
+ * mastery bars. Hidden entirely when the test has no classified questions.
+ */
+function SkillProfileCard({ result }: { result: TestResult }) {
+  const bySection = new Map<string, Map<string, { correct: number; total: number }>>();
+  for (const q of result.questions) {
+    if (!q.domain) continue;
+    if (!bySection.has(q.section)) bySection.set(q.section, new Map());
+    const dm = bySection.get(q.section)!;
+    const e = dm.get(q.domain) ?? { correct: 0, total: 0 };
+    e.total += 1;
+    if (q.is_correct === true) e.correct += 1;
+    dm.set(q.domain, e);
+  }
+  if (bySection.size === 0) return null;
+
+  const sections = SECTION_ORDER.filter((s) => bySection.has(s)).concat(
+    [...bySection.keys()].filter((s) => !SECTION_ORDER.includes(s)),
+  );
+  const grouped = sections.map((sec) => {
+    const dm = bySection.get(sec)!;
+    const order = DOMAIN_ORDER[sec] ?? [];
+    const domains: DomainStat[] = [...dm.entries()]
+      .map(([domain, e]) => ({ domain, correct: e.correct, total: e.total, pct: Math.round((e.correct / e.total) * 100) }))
+      .sort((a, b) => (order.indexOf(a.domain) + 1 || 99) - (order.indexOf(b.domain) + 1 || 99));
+    return { section: sec, domains };
+  });
+
+  const all = grouped.flatMap((g) => g.domains);
+  const weakest = all.reduce<DomainStat | null>((w, d) => (!w || d.pct < w.pct ? d : w), null);
+  const focus = weakest && weakest.pct < 70 ? weakest : null;
+
+  return (
+    <section className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
+      <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+        Skills by topic
+      </h2>
+
+      {focus ? (
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          Focus area:{" "}
+          <span
+            className="rounded-md px-1.5 py-0.5 font-semibold"
+            style={{ backgroundColor: skillBand(focus.pct).bg, color: skillBand(focus.pct).fg }}
+          >
+            {focus.domain} · {focus.pct}%
+          </span>{" "}
+          — practising this skill will move your score the most.
+        </p>
+      ) : (
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          Strong across every topic — nice work. Keep all skills sharp before the real test.
+        </p>
+      )}
+
+      <div className="mt-4 space-y-5">
+        {grouped.map((g) => (
+          <div key={g.section}>
+            <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+              {SECTION_LABEL[g.section] ?? g.section}
+            </h3>
+            <div className="space-y-2.5">
+              {g.domains.map((d) => (
+                <div key={d.domain} className="flex items-center gap-3">
+                  <span className="w-48 shrink-0 text-sm text-slate-700 dark:text-slate-200 sm:w-56">
+                    {d.domain}
+                  </span>
+                  <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                    <span
+                      className="block h-full rounded-full"
+                      style={{ width: `${d.pct}%`, backgroundColor: skillBand(d.pct).bg }}
+                    />
+                  </span>
+                  <span className="w-24 shrink-0 text-right text-xs tabular-nums text-slate-500 dark:text-slate-400">
+                    {d.correct}/{d.total} · {d.pct}%
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
