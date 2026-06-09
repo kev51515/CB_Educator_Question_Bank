@@ -116,13 +116,18 @@ export function CounselingCaseloadView() {
       ) : (
         <>
           {/* Totals */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             <StatCard label="Students" value={totals?.students ?? 0} />
             <StatCard label="Applications" value={totals?.applications ?? 0} />
             <StatCard
               label="Due in 14 days"
               value={totals?.upcoming_deadlines_14d ?? 0}
               tone={(totals?.upcoming_deadlines_14d ?? 0) > 0 ? "indigo" : "slate"}
+            />
+            <StatCard
+              label="Docs missing"
+              value={totals?.docs_missing ?? 0}
+              tone={(totals?.docs_missing ?? 0) > 0 ? "rose" : "slate"}
             />
             <StatCard label="Open tasks" value={totals?.tasks_open ?? 0} />
             <StatCard
@@ -163,6 +168,7 @@ export function CounselingCaseloadView() {
                     <th className="px-4 py-2.5 font-medium">Applications</th>
                     <th className="px-4 py-2.5 font-medium">Accepted</th>
                     <th className="px-4 py-2.5 font-medium">Next deadline</th>
+                    <th className="px-4 py-2.5 font-medium">Docs</th>
                     <th className="px-4 py-2.5 font-medium">Tasks</th>
                     <th className="px-4 py-2.5 font-medium">Last meeting</th>
                   </tr>
@@ -189,6 +195,15 @@ export function CounselingCaseloadView() {
                       </td>
                       <td className="px-4 py-2.5 text-slate-700 dark:text-slate-200">
                         {fmtDate(s.next_deadline)}
+                      </td>
+                      <td className="px-4 py-2.5">
+                        {s.docs_missing > 0 ? (
+                          <span className="rounded-full bg-amber-100 dark:bg-amber-950/50 px-1.5 py-0.5 text-[11px] font-semibold text-amber-700 dark:text-amber-300">
+                            {s.docs_missing} missing
+                          </span>
+                        ) : (
+                          <span className="text-slate-400 dark:text-slate-500">—</span>
+                        )}
                       </td>
                       <td className="px-4 py-2.5">
                         <span className="text-slate-700 dark:text-slate-200">

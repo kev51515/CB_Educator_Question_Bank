@@ -14,6 +14,7 @@ export interface CaseloadStudent {
   applications_submitted: number;
   applications_accepted: number;
   next_deadline: string | null;
+  docs_missing: number;
   tasks_open: number;
   tasks_overdue: number;
   last_meeting: string | null;
@@ -25,6 +26,7 @@ export interface CaseloadTotals {
   by_status: Record<string, number> | null;
   by_plan: Record<string, number> | null;
   upcoming_deadlines_14d: number;
+  docs_missing: number;
   tasks_open: number;
   tasks_overdue: number;
 }

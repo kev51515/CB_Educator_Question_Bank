@@ -15,6 +15,7 @@ import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "../ConfirmDialog";
+import { ApplicationDocsChecklist } from "./ApplicationDocsChecklist";
 
 type Tier = "reach" | "target" | "safety" | "likely";
 type Plan = "ED" | "ED2" | "EA" | "REA" | "RD" | "rolling";
@@ -308,6 +309,9 @@ export function CollegeApplicationsPanel({
                   Remove
                 </button>
               </div>
+
+              {/* Per-application document checklist ("missing docs"). */}
+              <ApplicationDocsChecklist appId={app.id} />
             </li>
           ))}
         </ul>

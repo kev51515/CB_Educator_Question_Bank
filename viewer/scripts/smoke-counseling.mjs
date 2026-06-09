@@ -80,7 +80,10 @@ async function main() {
 
     step("college_applications");
     {
-      const { error } = await cClient.from("college_applications").insert({ ...base, college_name: "MIT", tier: "reach", plan: "EA" });
+      const { error } = await cClient.from("college_applications").insert({
+        ...base, college_name: "MIT", tier: "reach", plan: "EA",
+        documents: [{ label: "Transcript", done: false }, { label: "Essay", done: true }],
+      });
       error ? bad("counselor adds college", error.message) : ok("counselor adds college");
     }
     {
@@ -130,6 +133,9 @@ async function main() {
         row && row.applications_total >= 1 && row.tasks_open >= 1
           ? ok("caseload per-student aggregates present")
           : bad("per-student row aggregates", JSON.stringify(row));
+        (data?.totals?.docs_missing ?? 0) >= 1 && (row?.docs_missing ?? 0) >= 1
+          ? ok("caseload counts missing documents", `${data.totals.docs_missing}`)
+          : bad("docs_missing", `totals=${data?.totals?.docs_missing} row=${row?.docs_missing}`);
       }
     }
     {
