@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Skeleton } from "@/components/Skeleton";
+import { useToast } from "@/components/Toast";
 import type { ProfileRole } from "@/lib/profile";
 import { formatDate, getErrorMessage, roleBadgeClass } from "./allUsersHelpers";
 
@@ -44,9 +45,11 @@ export function UserDetailDrawer({
 }): JSX.Element | null {
   const dialogRef = useRef<HTMLDivElement>(null);
   useFocusTrap(dialogRef, userId != null);
+  const toast = useToast();
   const [data, setData] = useState<Overview | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [resetting, setResetting] = useState(false);
 
   useEffect(() => {
     if (!userId) return;
@@ -70,6 +73,32 @@ export function UserDetailDrawer({
       alive.current = false;
     };
   }, [userId]);
+
+  const sendReset = async (): Promise<void> => {
+    if (!data) return;
+    setResetting(true);
+    try {
+      const { error: err } = await supabase.auth.resetPasswordForEmail(data.email, {
+        redirectTo: typeof window !== "undefined" ? window.location.origin : undefined,
+      });
+      if (err) throw err;
+      toast.success("Password reset sent", data.email);
+    } catch (e) {
+      toast.error("Couldn't send reset", getErrorMessage(e));
+    } finally {
+      setResetting(false);
+    }
+  };
+
+  const copyId = async (): Promise<void> => {
+    if (!data) return;
+    try {
+      await navigator.clipboard.writeText(data.id);
+      toast.success("User ID copied");
+    } catch {
+      toast.error("Copy failed");
+    }
+  };
 
   if (!userId) return null;
 
@@ -151,6 +180,40 @@ export function UserDetailDrawer({
                     hint="submitted / total"
                   />
                 </div>
+              </div>
+
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+                  Quick actions
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() => void sendReset()}
+                    disabled={resetting}
+                    className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50 disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-slate-200 dark:ring-slate-700 dark:hover:bg-slate-800"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <path d="m3 7 9 6 9-6" />
+                    </svg>
+                    {resetting ? "Sending…" : "Send password reset"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => void copyId()}
+                    className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-slate-200 dark:ring-slate-700 dark:hover:bg-slate-800"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <rect x="9" y="9" width="13" height="13" rx="2" />
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                    </svg>
+                    Copy user ID
+                  </button>
+                </div>
+                <p className="mt-2 text-[11px] text-slate-400 dark:text-slate-500">
+                  Sends a password-reset email to {data.email}.
+                </p>
               </div>
             </div>
           ) : null}

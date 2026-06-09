@@ -16,6 +16,8 @@ Dates are the work date. Migration numbers in parentheses where relevant.
   submitted/total). New admin-only `admin_user_overview` RPC (**0125**); reads
   `auth.users.last_sign_in_at` via the SECURITY DEFINER fn. `UserDetailDrawer`
   follows the modal contract (focus trap, Esc/backdrop close). _Verified live._
+  Quick actions in the drawer: **Send password reset** (emails the user a reset
+  link — unblock a locked-out account) and **Copy user ID** (support/debug).
 - **Admin: export full user roster to CSV** from the All Users view (email, name,
   role, joined) — fetches every page, not just the loaded one. Reuses `lib/csv.ts`.
 - **Admin "View as" role preview.** An admin can switch the rendered role
