@@ -32,3 +32,28 @@ second-level precision needed); keeps re-renders cheap.
 warning is pre-existing in `useMediaQuery`). Other `Date.now()`-in-render
 surfaces can adopt `useNow` incrementally — not swept this cycle to keep the
 change tight.
+
+---
+
+## Cycle 2 — "Due soon" urgency accent on student assignment rows
+
+**Why:** A To-do assignment due in 3 hours looked identical to one due next week
+— both neutral slate. Only past-due rows had a colour (rose). Students had no
+at-a-glance signal of what to do *now*, which is exactly when an LMS should help
+prioritise. Pairs with Cycle 1: the panel now ticks, so a row turns amber live
+as it crosses into the 24h window.
+
+**What:**
+- `assignmentsPanelHelpers.ts`: added `isDueImminent(a, now)` (due within 24h,
+  unsubmitted) + a `DUE_IMMINENT_MS` constant — a tighter band than the existing
+  7-day `isDueSoon` filter.
+- `AssignmentRow.tsx`: new optional `dueSoon` prop. A To-do row that's imminent
+  gets an amber ring/bg and amber-medium due text (`urgent = tone==='todo' &&
+  dueSoon`). Past-due still wins (rose); completed unaffected.
+- `AssignmentsPanel.tsx`: passes `dueSoon={isDueImminent(a, now)}` to both the
+  grouped To-do list and the flat sorted list.
+
+**Assumption:** 24h is the right "act now" threshold (vs. the 7-day soft filter).
+
+**Verify:** `tsc -b` green; `eslint` clean on all three files. Styling-only change
+(class swap) gated on existing, tested predicates.

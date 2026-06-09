@@ -37,6 +37,7 @@ import {
   SORT_ORDER,
   categorise,
   compareAssignments,
+  isDueImminent,
   isDueSoon,
   isGraded,
   isOpen,
@@ -316,6 +317,7 @@ export function AssignmentsPanel({
                     key={a.id}
                     assignment={a}
                     tone="todo"
+                    dueSoon={isDueImminent(a, now)}
                     onStart={() => onStart(a)}
                     onReview={(attempt) => onReview(a, attempt)}
                   />
@@ -369,6 +371,7 @@ export function AssignmentsPanel({
               key={a.id}
               assignment={a}
               tone={toneForAssignment(a, now)}
+              dueSoon={isDueImminent(a, now)}
               onStart={() => onStart(a)}
               onReview={(attempt) => onReview(a, attempt)}
             />

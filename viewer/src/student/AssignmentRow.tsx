@@ -12,6 +12,9 @@ import {
 interface AssignmentRowProps {
   assignment: StudentAssignment;
   tone: "todo" | "past-due" | "completed";
+  /** To-do item due within ~24h — gets an amber "act now" accent. Ignored for
+   *  past-due (already rose) and completed rows. */
+  dueSoon?: boolean;
   onStart: () => void;
   onReview: (attempt: StudentAssignmentAttempt) => void;
 }
@@ -19,26 +22,35 @@ interface AssignmentRowProps {
 export function AssignmentRow({
   assignment,
   tone,
+  dueSoon = false,
   onStart,
   onReview,
 }: AssignmentRowProps) {
   const attempt = assignment.my_attempt;
   const isCompleted = tone === "completed" && attempt?.submitted_at !== null;
   const gradingIndicator = buildGradingIndicator(attempt);
+  const urgent = tone === "todo" && dueSoon;
 
-  // Tone palettes: keep the structure constant, vary the accent.
+  // Tone palettes: keep the structure constant, vary the accent. Past-due
+  // (rose) wins; an imminent To-do gets an amber "act now" accent; else neutral.
   const accentRing =
     tone === "past-due"
       ? "ring-rose-200 dark:ring-rose-900"
-      : "ring-slate-200 dark:ring-slate-800";
+      : urgent
+        ? "ring-amber-300 dark:ring-amber-800"
+        : "ring-slate-200 dark:ring-slate-800";
   const accentBg =
     tone === "past-due"
       ? "bg-rose-50/80 dark:bg-rose-950/30"
-      : "bg-white/80 dark:bg-slate-900/60";
+      : urgent
+        ? "bg-amber-50/80 dark:bg-amber-950/20"
+        : "bg-white/80 dark:bg-slate-900/60";
   const dueColor =
     tone === "past-due"
       ? "text-rose-600 dark:text-rose-400"
-      : "text-slate-500 dark:text-slate-400";
+      : urgent
+        ? "text-amber-700 dark:text-amber-400 font-medium"
+        : "text-slate-500 dark:text-slate-400";
 
   return (
     <li

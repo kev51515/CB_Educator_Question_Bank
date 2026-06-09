@@ -59,6 +59,9 @@ export const SORT_LABELS: Record<SortKey, string> = {
 export const SORT_ORDER: SortKey[] = ["due_asc", "due_desc", "recent", "course"];
 
 const DUE_SOON_MS = 7 * 24 * 60 * 60 * 1000;
+/** Tighter "act now" window than the 7-day `isDueSoon` filter — drives the
+ *  amber urgency accent on To-do rows. */
+const DUE_IMMINENT_MS = 24 * 60 * 60 * 1000;
 
 const VIEW_STORAGE_PREFIX = "student.assignmentsPanel.view:";
 
@@ -240,6 +243,16 @@ export function isDueSoon(a: StudentAssignment, now: number): boolean {
   const dueMs = new Date(a.due_at).getTime();
   if (!Number.isFinite(dueMs)) return false;
   return dueMs >= now && dueMs <= now + DUE_SOON_MS;
+}
+
+/** Due within the next 24h and not yet submitted — the "act now" urgency band
+ *  that warrants an amber accent on a To-do row. */
+export function isDueImminent(a: StudentAssignment, now: number): boolean {
+  if (isSubmitted(a)) return false;
+  if (!a.due_at) return false;
+  const dueMs = new Date(a.due_at).getTime();
+  if (!Number.isFinite(dueMs)) return false;
+  return dueMs >= now && dueMs <= now + DUE_IMMINENT_MS;
 }
 
 export function matchesFilter(
