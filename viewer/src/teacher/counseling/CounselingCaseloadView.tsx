@@ -85,7 +85,7 @@ type SortKey =
   | "docs"
   | "tasks"
   | "meeting";
-type CaseloadFilter = "all" | "attention" | "missing_docs";
+type CaseloadFilter = "all" | "attention" | "missing_docs" | "deadline_soon";
 
 export function CounselingCaseloadView() {
   const { cls } = useClassContext();
@@ -117,9 +117,13 @@ export function CounselingCaseloadView() {
   };
 
   const displayed = useMemo(() => {
+    const soon = new Date();
+    soon.setDate(soon.getDate() + 14);
+    const soonStr = soon.toISOString().slice(0, 10);
     const filtered = students.filter((s) => {
       if (filter === "missing_docs") return s.docs_missing > 0;
       if (filter === "attention") return s.docs_missing > 0 || s.tasks_overdue > 0;
+      if (filter === "deadline_soon") return !!s.next_deadline && s.next_deadline <= soonStr;
       return true;
     });
     const dir = sortDir === "asc" ? 1 : -1;
@@ -176,6 +180,7 @@ export function CounselingCaseloadView() {
   const FILTERS: { value: CaseloadFilter; label: string }[] = [
     { value: "all", label: "All" },
     { value: "attention", label: "Needs attention" },
+    { value: "deadline_soon", label: "Deadline soon" },
     { value: "missing_docs", label: "Missing docs" },
   ];
 

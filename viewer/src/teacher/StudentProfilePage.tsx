@@ -221,13 +221,16 @@ export function StudentProfilePage(): JSX.Element {
           {/* Counseling workspace — only for counseling courses (0133/0134):
               digital profile, college list + applications, tasks, meeting notes. */}
           {course?.course_type === "counseling" && course.id && (
-            <>
+            <section className="space-y-4">
+              <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100 pt-2">
+                College counseling
+              </h2>
               <CounselingProfilePanel courseId={course.id} studentId={header.id} />
               <CollegeApplicationsPanel courseId={course.id} studentId={header.id} />
               <CounselingTasksPanel courseId={course.id} studentId={header.id} />
               <CounselingMeetingsPanel courseId={course.id} studentId={header.id} />
               <CounselorAiCard courseId={course.id} />
-            </>
+            </section>
           )}
 
           {allEmpty ? (

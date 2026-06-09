@@ -505,6 +505,9 @@ export function StudentCourseView(): JSX.Element {
                 No AI here by design — AI tools are counselor-only. */}
             {course.course_type === "counseling" && profile?.id && (
               <section className="space-y-4">
+                <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+                  College counseling
+                </h2>
                 <StudentCounselingProfileCard courseId={course.id} studentId={profile.id} />
                 <StudentCollegeListCard courseId={course.id} studentId={profile.id} />
                 <StudentCounselingTasksCard courseId={course.id} studentId={profile.id} />
