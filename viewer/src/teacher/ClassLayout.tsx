@@ -25,7 +25,6 @@
 import { useMemo, useState } from "react";
 import { KebabMenu, type KebabMenuOption, useBreadcrumbLabel } from "@/components";
 import {
-  NavLink,
   Navigate,
   Route,
   Routes,
@@ -57,6 +56,7 @@ import { CounselingCaseloadView } from "./counseling/CounselingCaseloadView";
 import { CourseDiscussions } from "./CourseDiscussions";
 import { DiscussionTopicView } from "./DiscussionTopicView";
 import { CourseSettings } from "./CourseSettings";
+import { CourseTabStrip } from "./CourseTabStrip";
 import { ModulesPage } from "./ModulesPage";
 import { QuickCreatePalette } from "./QuickCreatePalette";
 import { ROUTES, classPath, coursePath } from "@/lib/routes";
@@ -86,32 +86,28 @@ interface TabDef {
   end?: boolean;
 }
 
+// Default order is grouped by function (the user can drag-reorder + it persists
+// per user via CourseTabStrip). Groups: Teach · Insights · People · Resources ·
+// Manage. Modules stays first (it's the default landing route).
 const TABS: ReadonlyArray<TabDef> = [
-  // Why first + default: Canvas convention. The course detail used to default
-  // to the Assignments list; per the spec it now lands on Modules. The
-  // `index` route below redirects "" → "modules" so the bare /courses/:id
-  // URL resolves cleanly. Overview is still a tab — just no longer the index.
+  // Teach
   { to: "modules", label: "Modules" },
-  { to: "overview", label: "Overview" },
-  { to: "caseload", label: "Caseload" },
-  { to: "roster", label: "Roster" },
   { to: "assignments", label: "Assignments" },
-  { to: "announcements", label: "Announcements" },
-  { to: "materials", label: "Materials" },
-  { to: "discussions", label: "Discussions" },
-  { to: "portfolio", label: "Portfolio" },
   { to: "grades", label: "Grades" },
+  // Insights
+  { to: "overview", label: "Overview" },
   { to: "skills", label: "Skills" },
+  { to: "caseload", label: "Caseload" },
+  // People & comms
+  { to: "roster", label: "Roster" },
+  { to: "announcements", label: "Announcements" },
+  { to: "discussions", label: "Discussions" },
+  // Resources
+  { to: "materials", label: "Materials" },
+  { to: "portfolio", label: "Portfolio" },
+  // Manage
   { to: "settings", label: "Settings" },
 ];
-
-function tabClass({ isActive }: { isActive: boolean }): string {
-  return `whitespace-nowrap min-h-[40px] md:min-h-0 inline-flex items-center px-3 py-2.5 md:py-2 text-sm font-medium border-b-2 transition-colors ${
-    isActive
-      ? "border-indigo-600 text-indigo-700 dark:text-indigo-300"
-      : "border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700"
-  }`;
-}
 
 export function ClassLayout() {
   // Route is /courses/:courseId/* — keep the local name `classId` because
@@ -406,22 +402,12 @@ export function ClassLayout() {
                 {actionError}
               </div>
             )}
-            {/* Tab strip */}
-            <nav
-              aria-label="Course sections"
-              className="flex items-center gap-1 overflow-x-auto -mb-px"
-            >
-              {visibleTabs.map((tab) => (
-                <NavLink
-                  key={tab.to || "overview"}
-                  to={tab.to ? `${classPath(cls.short_code)}/${tab.to}` : classPath(cls.short_code)}
-                  end={tab.end}
-                  className={tabClass}
-                >
-                  {tab.label}
-                </NavLink>
-              ))}
-            </nav>
+            {/* Tab strip — drag to reorder; order persists per user. */}
+            <CourseTabStrip
+              tabs={visibleTabs}
+              shortCode={cls.short_code}
+              userId={profile?.id ?? null}
+            />
           </div>
         </div>
 
