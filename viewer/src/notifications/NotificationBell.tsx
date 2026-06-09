@@ -116,6 +116,15 @@ function KindIcon({ kind, unread }: { kind: string; unread: boolean }): JSX.Elem
           <path d="M12 7v5l3 2" />
         </svg>
       );
+    case "counseling_task":
+      // Clipboard-with-check (assigned counseling to-do)
+      return (
+        <svg {...common}>
+          <rect x="6" y="4" width="12" height="16" rx="2" />
+          <path d="M9 4h6v3H9z" />
+          <path d="m9 13 2 2 4-4" />
+        </svg>
+      );
     default:
       // Generic dot
       return (

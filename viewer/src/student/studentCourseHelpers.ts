@@ -10,6 +10,8 @@ export interface CourseRow {
   short_code: string;
   name: string;
   description: string | null;
+  /** 'class' | 'counseling' (0133). Drives the student counseling section. */
+  course_type?: string | null;
   /** Supabase types embedded relations as arrays even on FK joins that
    *  resolve to at most one row. Normalised to a single nullable record
    *  at usage time. */

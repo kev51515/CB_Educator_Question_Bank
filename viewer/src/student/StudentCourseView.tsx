@@ -29,6 +29,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
 import { ROUTES } from "@/lib/routes";
+import { useProfile } from "@/lib/profile";
+import { StudentCounselingProfileCard } from "./counseling/StudentCounselingProfileCard";
+import { StudentCollegeListCard } from "./counseling/StudentCollegeListCard";
+import { StudentCounselingTasksCard } from "./counseling/StudentCounselingTasksCard";
 import {
   type AssignmentMeta,
   type CourseRow,
@@ -63,7 +67,7 @@ const UUID_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 const COURSE_SELECT =
-  "id, short_code, name, description, teacher:profiles!courses_teacher_id_fkey(display_name)";
+  "id, short_code, name, description, course_type, teacher:profiles!courses_teacher_id_fkey(display_name)";
 
 /**
  * Bounded retry budget for the initial course lookup. This surface most often
@@ -84,6 +88,7 @@ export function StudentCourseView(): JSX.Element {
   const params = useParams<{ short: string }>();
   const navigate = useNavigate();
   const short = (params.short ?? "").toUpperCase();
+  const { profile } = useProfile();
 
   const [course, setCourse] = useState<CourseRow | null>(null);
   const [modules, setModules] = useState<ModuleRow[]>([]);
@@ -494,6 +499,17 @@ export function StudentCourseView(): JSX.Element {
                 />
               </div>
             </header>
+
+            {/* Counseling workspace (student side) — only for counseling
+                courses: their own profile, college list, and assigned tasks.
+                No AI here by design — AI tools are counselor-only. */}
+            {course.course_type === "counseling" && profile?.id && (
+              <section className="space-y-4">
+                <StudentCounselingProfileCard courseId={course.id} studentId={profile.id} />
+                <StudentCollegeListCard courseId={course.id} studentId={profile.id} />
+                <StudentCounselingTasksCard courseId={course.id} studentId={profile.id} />
+              </section>
+            )}
 
             {modules.length === 0 ? (
               <div className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 p-8 text-center space-y-2">

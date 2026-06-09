@@ -52,6 +52,7 @@ async function main() {
     for (const t of ["counseling_meetings", "counseling_tasks", "college_applications", "counseling_profiles"]) {
       await svc.from(t).delete().eq("course_id", course.id);
     }
+    await svc.from("notifications").delete().eq("recipient_id", student.id);
     await svc.from("course_memberships").delete().eq("course_id", course.id);
     await svc.from("courses").delete().eq("id", course.id);
     for (const u of [counselor, other, student]) await svc.auth.admin.deleteUser(u.id);
@@ -93,9 +94,11 @@ async function main() {
     }
 
     step("counseling_tasks");
+    let taskId = null;
     {
-      const { error } = await cClient.from("counseling_tasks").insert({ ...base, title: "Draft essay" });
-      error ? bad("counselor assigns task", error.message) : ok("counselor assigns task");
+      const { data, error } = await cClient.from("counseling_tasks").insert({ ...base, title: "Draft essay" }).select("id").single();
+      if (error) bad("counselor assigns task", error.message);
+      else { taskId = data.id; ok("counselor assigns task"); }
     }
     {
       const { data } = await sClient.from("counseling_tasks").select("title").eq("course_id", course.id);
@@ -132,6 +135,33 @@ async function main() {
     {
       const { error } = await oClient.rpc("counseling_caseload", { p_course_id: course.id });
       /not_authorized/.test(error?.message ?? "") ? ok("unrelated teacher rejected from caseload") : bad("other should be rejected", error?.message ?? "no error");
+    }
+
+    step("student self-service (0136)");
+    {
+      // The counselor's task insert should have fanned out a notification.
+      const { data } = await svc.from("notifications").select("id").eq("recipient_id", student.id).eq("kind", "counseling_task");
+      (data?.length ?? 0) >= 1 ? ok("task assignment notified the student") : bad("expected a counseling_task notification", `${data?.length}`);
+    }
+    {
+      // Student marks their own task done via the RPC.
+      const { error } = await sClient.rpc("complete_counseling_task", { p_task_id: taskId, p_done: true });
+      if (error) bad("student completes own task", error.message);
+      else {
+        const { data } = await svc.from("counseling_tasks").select("status").eq("id", taskId).single();
+        data?.status === "done" ? ok("student completed own task (RPC)") : bad("task should be done", data?.status);
+      }
+    }
+    {
+      // Unrelated teacher cannot complete the task.
+      const { error } = await oClient.rpc("complete_counseling_task", { p_task_id: taskId, p_done: false });
+      /not_authorized/.test(error?.message ?? "") ? ok("unrelated teacher can't complete task") : bad("other complete should be rejected", error?.message ?? "no error");
+    }
+    {
+      // Student can CREATE their own profile (delete the counselor's first).
+      await svc.from("counseling_profiles").delete().eq("course_id", course.id);
+      const { error } = await sClient.from("counseling_profiles").insert({ ...base, grad_year: 2028 });
+      error ? bad("student creates own profile", error.message) : ok("student creates own profile");
     }
   } finally {
     step("cleanup");
