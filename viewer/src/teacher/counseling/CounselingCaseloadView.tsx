@@ -7,7 +7,7 @@
  * Counseling-only tab (gated in ClassLayout). Reads the counseling_caseload
  * RPC (0135) via useCounselingCaseload.
  */
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useClassContext } from "../classLayoutContext";
 import { courseStudentProfilePath } from "@/lib/routes";
@@ -77,6 +77,16 @@ function StatCard({
   );
 }
 
+type SortKey =
+  | "name"
+  | "applications"
+  | "accepted"
+  | "deadline"
+  | "docs"
+  | "tasks"
+  | "meeting";
+type CaseloadFilter = "all" | "attention" | "missing_docs";
+
 export function CounselingCaseloadView() {
   const { cls } = useClassContext();
   const { data, loading, error } = useCounselingCaseload(cls.id);
@@ -92,6 +102,82 @@ export function CounselingCaseloadView() {
       count: by[s] ?? 0,
     }));
   }, [totals?.by_status]);
+
+  const [filter, setFilter] = useState<CaseloadFilter>("all");
+  const [sortKey, setSortKey] = useState<SortKey>("name");
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+
+  const onSort = (key: SortKey) => {
+    if (key === sortKey) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir("asc");
+    }
+  };
+
+  const displayed = useMemo(() => {
+    const filtered = students.filter((s) => {
+      if (filter === "missing_docs") return s.docs_missing > 0;
+      if (filter === "attention") return s.docs_missing > 0 || s.tasks_overdue > 0;
+      return true;
+    });
+    const dir = sortDir === "asc" ? 1 : -1;
+    // Dates: nulls always sort last, regardless of direction.
+    const byDate = (a: string | null, b: string | null): number => {
+      if (!a && !b) return 0;
+      if (!a) return 1;
+      if (!b) return -1;
+      return (a < b ? -1 : a > b ? 1 : 0) * dir;
+    };
+    const name = (s: CaseloadStudent) => (s.display_name?.trim() || s.email);
+    return [...filtered].sort((a, b) => {
+      switch (sortKey) {
+        case "name": return name(a).localeCompare(name(b)) * dir;
+        case "applications": return (a.applications_total - b.applications_total) * dir;
+        case "accepted": return (a.applications_accepted - b.applications_accepted) * dir;
+        case "deadline": return byDate(a.next_deadline, b.next_deadline);
+        case "docs": return (a.docs_missing - b.docs_missing) * dir;
+        case "tasks": return (a.tasks_open - b.tasks_open) * dir;
+        case "meeting": return byDate(a.last_meeting, b.last_meeting);
+        default: return 0;
+      }
+    });
+  }, [students, filter, sortKey, sortDir]);
+
+  const sortTh = (label: string, key: SortKey) => (
+    <th className="px-4 py-2.5 font-medium">
+      <button
+        type="button"
+        onClick={() => onSort(key)}
+        className="inline-flex items-center gap-1 uppercase tracking-wide hover:text-slate-700 dark:hover:text-slate-200"
+      >
+        {label}
+        <svg
+          width={10}
+          height={10}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={3}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden
+          className={`transition ${sortKey === key ? "opacity-100" : "opacity-0"} ${
+            sortKey === key && sortDir === "asc" ? "rotate-180" : ""
+          }`}
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </button>
+    </th>
+  );
+
+  const FILTERS: { value: CaseloadFilter; label: string }[] = [
+    { value: "all", label: "All" },
+    { value: "attention", label: "Needs attention" },
+    { value: "missing_docs", label: "Missing docs" },
+  ];
 
   return (
     <div className="space-y-6">
@@ -160,21 +246,49 @@ export function CounselingCaseloadView() {
               No students enrolled yet. Add students from the Roster tab.
             </p>
           ) : (
-            <div className="overflow-x-auto rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
-              <table className="min-w-full text-sm">
-                <thead className="bg-slate-50 dark:bg-slate-900/60 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                  <tr>
-                    <th className="px-4 py-2.5 font-medium">Student</th>
-                    <th className="px-4 py-2.5 font-medium">Applications</th>
-                    <th className="px-4 py-2.5 font-medium">Accepted</th>
-                    <th className="px-4 py-2.5 font-medium">Next deadline</th>
-                    <th className="px-4 py-2.5 font-medium">Docs</th>
-                    <th className="px-4 py-2.5 font-medium">Tasks</th>
-                    <th className="px-4 py-2.5 font-medium">Last meeting</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                  {students.map((s: CaseloadStudent) => (
+            <div className="space-y-3">
+              {/* Filters */}
+              <div className="flex flex-wrap items-center gap-2">
+                {FILTERS.map((f) => (
+                  <button
+                    key={f.value}
+                    type="button"
+                    aria-pressed={filter === f.value}
+                    onClick={() => setFilter(f.value)}
+                    className={`rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors ${
+                      filter === f.value
+                        ? "bg-indigo-600 text-white ring-indigo-600"
+                        : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800"
+                    }`}
+                  >
+                    {f.label}
+                  </button>
+                ))}
+                <span className="text-xs text-slate-400 dark:text-slate-500">
+                  {displayed.length} of {students.length}
+                </span>
+              </div>
+
+              {displayed.length === 0 ? (
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  No students match this filter.
+                </p>
+              ) : (
+                <div className="overflow-x-auto rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
+                  <table className="min-w-full text-sm">
+                    <thead className="bg-slate-50 dark:bg-slate-900/60 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      <tr>
+                        {sortTh("Student", "name")}
+                        {sortTh("Applications", "applications")}
+                        {sortTh("Accepted", "accepted")}
+                        {sortTh("Next deadline", "deadline")}
+                        {sortTh("Docs", "docs")}
+                        {sortTh("Tasks", "tasks")}
+                        {sortTh("Last meeting", "meeting")}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                      {displayed.map((s: CaseloadStudent) => (
                     <tr
                       key={s.id}
                       className="hover:bg-slate-50 dark:hover:bg-slate-800/50"
@@ -220,8 +334,10 @@ export function CounselingCaseloadView() {
                       </td>
                     </tr>
                   ))}
-                </tbody>
-              </table>
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
           )}
         </>
