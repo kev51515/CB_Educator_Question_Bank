@@ -380,11 +380,11 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
         eyebrow="Join your class"
         title="You're one"
         titleAccent="code away."
-        lead="No account to create, nothing to install. Enter the code your teacher gave you and you're practicing in under a minute."
+        lead="No account to create, nothing to install. Enter the code your teacher gave you and you're in your class in under a minute."
         steps={[
           { n: "01", title: "Enter your code", blurb: "The course or personal login code from your teacher." },
           { n: "02", title: "Add your details", blurb: "Your name — or an email & password for a personal seat." },
-          { n: "03", title: "Start practicing", blurb: "Jump straight into your class and assignments." },
+          { n: "03", title: "Open your class", blurb: "Jump straight into your assignments, tests, and resources." },
         ]}
       />
 

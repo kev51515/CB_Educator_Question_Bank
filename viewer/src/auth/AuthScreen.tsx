@@ -184,14 +184,14 @@ export function AuthScreen({
 
       {/* ───────────────── LEFT · brand panel (lg+) ───────────────── */}
       <BrandPanel
-        eyebrow="Digital SAT preparation"
-        title="Scores,"
-        titleAccent="by design."
-        lead="A focused practice platform built by SAT teachers — skill mastery, full-length Bluebook-style tests, and progress you can actually see."
+        eyebrow="Teaching & college counseling"
+        title="One platform,"
+        titleAccent="class to college."
+        lead="OmniLMS brings classes and college counseling together — modules and full-length tests, skill mastery, plus college lists, applications, and advising."
         steps={[
-          { n: "01", title: "Full-length tests", blurb: "Bluebook-style modules, real timing." },
-          { n: "02", title: "Skill mastery", blurb: "Every question mapped to a CB skill." },
-          { n: "03", title: "Score insights", blurb: "Trajectories, weak-skill focus, predictions." },
+          { n: "01", title: "Classes & tests", blurb: "Modules, assignments, full-length Bluebook-style tests." },
+          { n: "02", title: "Skill mastery", blurb: "Every question mapped to a skill, with insights." },
+          { n: "03", title: "College counseling", blurb: "College lists, applications, tasks, advising." },
         ]}
       />
 
