@@ -9,6 +9,13 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 
 ## 2026-06-09
 
+### Docs
+- Added [`docs/SKILL_DOMAINS.md`](docs/SKILL_DOMAINS.md) — end-to-end architecture
+  of the SAT skill-domain system (data, shared `skills.ts` module, the four
+  surfaces, RLS/RPCs, how to classify a new test, gotchas).
+- README now describes the Canvas-style LMS + skill analytics, links the new
+  docs, and corrects the dev server port (9000, not 5173).
+
 ### Added
 - **SAT domain chip on student result review cards.** Each per-question card on
   a released result now shows its skill domain (e.g. "Advanced Math") next to

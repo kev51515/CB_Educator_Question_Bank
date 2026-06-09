@@ -8,6 +8,7 @@ SAT-style question bank scraped from College Board, with parallel-form generatio
 - **Set #1 parallel form**: 3,441 clones that test the same skills at the same difficulty with different surface content (`data/sets/set-1/json/`).
 - **Skill template framework**: 29 skill catalogs (`data/templates/`) with 131 aspects, 340 types, and measurable difficulty levers — the spec that drives faithful cloning.
 - **Browser viewer** (`viewer/`): React + Vite. Filters, search, command palette, print-set workflow, Set toggle.
+- **Canvas-style LMS** (`viewer/`, Supabase backend): courses, modules, assignments, full-length Digital SAT practice tests, gradebook, and **SAT skill-domain analytics** — a class results heatmap (by question / by skill), per-student and student-facing skill profiles, and cross-class comparison. See [`docs/SKILL_DOMAINS.md`](docs/SKILL_DOMAINS.md).
 - **Verification pipeline**: subagent-driven template-aware checks; per-clone `templateId` tags; aggregate reports.
 
 ## Quick start
@@ -17,7 +18,7 @@ SAT-style question bank scraped from College Board, with parallel-form generatio
 cd viewer
 npm install
 npm run dev
-# Open http://localhost:5173
+# Open http://localhost:9000
 ```
 
 ## Status
@@ -28,6 +29,9 @@ npm run dev
 
 ## Documentation
 
+- [`CHANGELOG.md`](CHANGELOG.md) — dated log of recent changes
+- [`docs/SKILL_DOMAINS.md`](docs/SKILL_DOMAINS.md) — SAT skill-domain analytics architecture
+- [`docs/MIGRATIONS.md`](docs/MIGRATIONS.md) — one row per DB migration
 - [`docs/SESSION_REPORT.md`](docs/SESSION_REPORT.md) — comprehensive quality audit + history
 - [`docs/SESSION_PROGRESS.md`](docs/SESSION_PROGRESS.md) — current state + resume guide
 - [`data/templates/_schema.md`](data/templates/_schema.md) — 6-level taxonomy spec
