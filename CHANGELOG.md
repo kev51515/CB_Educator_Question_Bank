@@ -10,6 +10,14 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 ## 2026-06-09
 
 ### Added
+- **Class skills dashboard** (new "Skills" tab on a course) — class-wide,
+  cross-test per-domain mastery: %-correct per SAT domain aggregated over the
+  latest submitted run per (student, test) for enrolled students, grouped by
+  section, with a weakest-skill callout, counts header, and CSV export. New
+  `course_skill_mastery` RPC (**0123**, course-scoped SECURITY DEFINER);
+  `teacher/ClassSkillsView.tsx` reuses `skills.ts` + `lib/csv.ts`. The 5th and
+  broadest skill surface. _Verified: 3 students × 1 test renders the rollup +
+  weakest callout._
 - **Clickable skill → jump-to-question on the student result.** Each domain
   name and the "Focus area" chip in the Skills-by-topic card now scrolls the
   page to that skill's first question in the review list below (each review card

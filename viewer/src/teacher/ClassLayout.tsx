@@ -50,6 +50,7 @@ import { AttemptDetailPage } from "./AttemptDetailPage";
 import { CourseAnnouncements } from "./CourseAnnouncements";
 import { CourseMaterials } from "./CourseMaterials";
 import { CourseGradebook } from "./CourseGradebook";
+import { ClassSkillsView } from "./ClassSkillsView";
 import { CoursePortfolio } from "./CoursePortfolio";
 import { CourseDiscussions } from "./CourseDiscussions";
 import { DiscussionTopicView } from "./DiscussionTopicView";
@@ -97,6 +98,7 @@ const TABS: ReadonlyArray<TabDef> = [
   { to: "discussions", label: "Discussions" },
   { to: "portfolio", label: "Portfolio" },
   { to: "grades", label: "Grades" },
+  { to: "skills", label: "Skills" },
   { to: "settings", label: "Settings" },
 ];
 
@@ -430,6 +432,7 @@ export function ClassLayout() {
             />
             <Route path="portfolio" element={<CoursePortfolio />} />
             <Route path="grades" element={<CourseGradebook />} />
+            <Route path="skills" element={<ClassSkillsView />} />
             <Route path="settings" element={<CourseSettings />} />
             <Route
               path="*"
