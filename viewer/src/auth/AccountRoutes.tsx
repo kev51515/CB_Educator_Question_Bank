@@ -39,10 +39,6 @@ export interface AccountRoutesProps {
   basePath: string;
 }
 
-function isStaff(role: ProfileRole): boolean {
-  return role === "teacher" || role === "admin";
-}
-
 function roleBadgeLabel(role: ProfileRole): string {
   switch (role) {
     case "admin":
@@ -101,7 +97,11 @@ export function AccountRoutes({
   onSignOut,
   basePath,
 }: AccountRoutesProps) {
-  const staff = isStaff(profile.role);
+  // Admin tools (Stats / Users / Invite codes / Audit log) expose system-wide
+  // data + privileged actions, so they are ADMIN-only — a teacher is here just
+  // to run their own courses and must not see other people's data or the whole
+  // system. (Previously gated on is_staff, which leaked the section to teachers.)
+  const admin = profile.role === "admin";
   const displayName = profile.display_name?.trim() || email;
   const settingsPath = `${basePath}/settings`;
   const notifPath = `${basePath}/notification-preferences`;
@@ -142,7 +142,7 @@ export function AccountRoutes({
               <SidebarLink to={settingsPath} label="Settings" />
               <SidebarLink to={notifPath} label="Notifications" />
             </div>
-            {staff && (
+            {admin && (
               <div className="space-y-1 pt-2 border-t border-slate-200 dark:border-slate-800">
                 <p className="px-3 pt-2 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Admin
@@ -191,7 +191,7 @@ export function AccountRoutes({
                 path="notification-preferences"
                 element={<NotificationPreferencesPage />}
               />
-              {staff ? (
+              {admin ? (
                 <>
                   <Route path="admin/stats" element={<AdminStatsPage />} />
                   <Route
@@ -202,7 +202,8 @@ export function AccountRoutes({
                   <Route path="admin/audit" element={<AdminAuditPage />} />
                 </>
               ) : (
-                // Students who deep-link to admin URLs get bounced.
+                // Non-admins (teachers + students) who deep-link to an admin URL
+                // get bounced to their own account settings.
                 <Route
                   path="admin/*"
                   element={<Navigate to={settingsPath} replace />}

@@ -40,6 +40,7 @@ const SUITES = [
   { name: "announcements", script: "smoke-announcements.mjs" },
   { name: "skills",        script: "smoke-skills.mjs" },
   { name: "admin",         script: "smoke-admin.mjs" },
+  { name: "sharing",       script: "smoke-course-sharing.mjs" },
 ];
 
 const results = [];
