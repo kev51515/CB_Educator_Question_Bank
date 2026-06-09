@@ -9,13 +9,6 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 
 ## 2026-06-09
 
-### Docs
-- Added [`docs/SKILL_DOMAINS.md`](docs/SKILL_DOMAINS.md) — end-to-end architecture
-  of the SAT skill-domain system (data, shared `skills.ts` module, the four
-  surfaces, RLS/RPCs, how to classify a new test, gotchas).
-- README now describes the Canvas-style LMS + skill analytics, links the new
-  docs, and corrects the dev server port (9000, not 5173).
-
 ### Added
 - **Clickable skill → jump-to-question on the student result.** Each domain
   name and the "Focus area" chip in the Skills-by-topic card now scrolls the
@@ -42,3 +35,10 @@ Dates are the work date. Migration numbers in parentheses where relevant.
   still spans all attempts so the score-trajectory sparkline is unchanged.
   _Verified: a 2-attempt same-test student now reports 98 domain answers (one
   attempt) with both runs in the trajectory._
+
+### Docs
+- Added [`docs/SKILL_DOMAINS.md`](docs/SKILL_DOMAINS.md) — end-to-end architecture
+  of the SAT skill-domain system (data, shared `skills.ts` module, the four
+  surfaces, RLS/RPCs, how to classify a new test, gotchas).
+- README now describes the Canvas-style LMS + skill analytics, links the new
+  docs, and corrects the dev server port (9000, not 5173).
