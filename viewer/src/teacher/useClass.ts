@@ -35,6 +35,7 @@ interface ClassRow {
   join_code: string;
   archived: boolean;
   is_template: boolean | null;
+  course_type: string | null;
   created_at: string;
   updated_at: string;
   course_memberships: { count: number }[] | null;
@@ -77,7 +78,7 @@ export function useClass(classId: string | null | undefined): UseClass {
       const { data, error: queryError } = await supabase
         .from("courses")
         .select(
-          "id, short_code, name, description, join_code, archived, is_template, created_at, updated_at, course_memberships(count)",
+          "id, short_code, name, description, join_code, archived, is_template, course_type, created_at, updated_at, course_memberships(count)",
         )
         .eq(lookupColumn, classId)
         .maybeSingle();
@@ -103,6 +104,7 @@ export function useClass(classId: string | null | undefined): UseClass {
         join_code: row.join_code,
         archived: row.archived,
         is_template: row.is_template ?? false,
+        course_type: row.course_type === "counseling" ? "counseling" : "class",
         created_at: row.created_at,
         updated_at: row.updated_at,
         member_count: row.course_memberships?.[0]?.count ?? 0,

@@ -50,6 +50,7 @@ import {
   type FieldKey,
   type ClassDraft,
 } from "./classFormHelpers";
+import type { CourseType } from "./useTeacherClasses";
 
 export type ClassFormMode = "create" | "edit";
 
@@ -92,6 +93,8 @@ export function ClassFormModal({
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [archived, setArchived] = useState(false);
+  // Course type is chosen at creation (normal Class vs Counseling). 0133.
+  const [courseType, setCourseType] = useState<CourseType>("class");
   const [busy, setBusy] = useState(false);
   const [created, setCreated] = useState<CreatedClass | null>(null);
   const [copied, setCopied] = useState(false);
@@ -153,6 +156,8 @@ export function ClassFormModal({
     setCopied(false);
     setShowTemplatePicker(false);
     setTemplateSource(null);
+    // Type is a create-time choice; default to a normal Class each open.
+    setCourseType("class");
 
     const id = window.setTimeout(() => nameRef.current?.focus(), 0);
     return () => window.clearTimeout(id);
@@ -372,6 +377,7 @@ export function ClassFormModal({
             name: trimmedName,
             description: description.trim() || null,
             join_code: joinCode,
+            course_type: courseType,
           })
           .select("id, name, description, join_code")
           .single();
@@ -630,6 +636,44 @@ export function ClassFormModal({
                     Start from template?
                   </button>
                 )}
+              </div>
+            )}
+
+            {/* Course type — chosen at creation. Counseling unlocks the
+                college/career counseling surfaces (Portfolio today). */}
+            {mode === "create" && (
+              <div>
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  Course type
+                </span>
+                <div className="mt-1 grid grid-cols-2 gap-2">
+                  {([
+                    { value: "class", title: "Class", blurb: "SAT prep — modules, assignments, grades, skills." },
+                    { value: "counseling", title: "Counseling", blurb: "College & career — portfolio, applications, advising." },
+                  ] as const).map((opt) => {
+                    const active = courseType === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        aria-pressed={active}
+                        onClick={() => setCourseType(opt.value)}
+                        className={`text-left rounded-lg border px-3 py-2 transition-colors ${
+                          active
+                            ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/50 ring-1 ring-indigo-500"
+                            : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700"
+                        }`}
+                      >
+                        <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100">
+                          {opt.title}
+                        </span>
+                        <span className="block text-[11px] text-slate-500 dark:text-slate-400">
+                          {opt.blurb}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             )}
 

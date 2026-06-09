@@ -122,12 +122,20 @@ export function ClassLayout() {
   // The Skills tab is test-derived (per-domain mastery from test runs), so it's
   // gated with the rest of the Question-Bank/test surfaces.
   const canQbank = canAccessQuestionBank(profile?.email);
-  const visibleTabs = useMemo(
-    () => TABS.filter((t) => t.to !== "skills" || canQbank),
-    [canQbank],
-  );
 
   const { cls, loading, error, notFound, refresh, patch } = useClass(classId);
+
+  // Portfolio is a counseling surface — only on counseling courses (0133).
+  const isCounseling = cls?.course_type === "counseling";
+  const visibleTabs = useMemo(
+    () =>
+      TABS.filter((t) => {
+        if (t.to === "skills") return canQbank;
+        if (t.to === "portfolio") return isCounseling;
+        return true;
+      }),
+    [canQbank, isCounseling],
+  );
 
   // Publish the real course name to the global breadcrumb bar. NO-OPs until
   // both key + label are truthy, so calling it unconditionally before the
@@ -325,6 +333,11 @@ export function ClassLayout() {
                   >
                     {cls.short_code}
                   </button>
+                  {isCounseling && (
+                    <span className="rounded-full bg-violet-100 dark:bg-violet-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-violet-700 dark:text-violet-300 ring-1 ring-violet-200 dark:ring-violet-900">
+                      Counseling
+                    </span>
+                  )}
                   {cls.archived && (
                     <span className="rounded-full bg-amber-100 dark:bg-amber-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-900">
                       Archived
@@ -438,7 +451,16 @@ export function ClassLayout() {
               path="discussions/:topicId"
               element={<DiscussionTopicView />}
             />
-            <Route path="portfolio" element={<CoursePortfolio />} />
+            <Route
+              path="portfolio"
+              element={
+                isCounseling ? (
+                  <CoursePortfolio />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
             <Route path="grades" element={<CourseGradebook />} />
             <Route
               path="skills"

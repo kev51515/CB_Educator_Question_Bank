@@ -11,6 +11,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
+/** A normal teaching Class vs a college/career Counseling course (0133). */
+export type CourseType = "class" | "counseling";
+
 export interface TeacherClass {
   id: string;
   /** 6-char A-Z2-9 stable URL slug (migration 0038). Prefer this over `id` for URLs. */
@@ -20,6 +23,8 @@ export interface TeacherClass {
   join_code: string;
   archived: boolean;
   is_template: boolean;
+  /** 'class' (default SAT-prep) or 'counseling' (unlocks counseling surfaces). */
+  course_type: CourseType;
   created_at: string;
   updated_at: string;
   member_count: number;
@@ -40,6 +45,7 @@ interface ClassRow {
   join_code: string;
   archived: boolean;
   is_template: boolean | null;
+  course_type: string | null;
   created_at: string;
   updated_at: string;
   course_memberships: { count: number }[] | null;
@@ -70,7 +76,7 @@ export function useTeacherClasses(teacherId: string | null): UseTeacherClasses {
         .select(
           // Embedded count of course_memberships — PostgREST supports this
           // via the `count` modifier on a related resource.
-          "id, short_code, name, description, join_code, archived, is_template, created_at, updated_at, course_memberships(count)",
+          "id, short_code, name, description, join_code, archived, is_template, course_type, created_at, updated_at, course_memberships(count)",
         )
         // No teacher_id filter: RLS (migration 0130) already scopes a teacher
         // to the courses they OWN or that were SHARED with them, so this returns
@@ -93,6 +99,7 @@ export function useTeacherClasses(teacherId: string | null): UseTeacherClasses {
         join_code: row.join_code,
         archived: row.archived,
         is_template: row.is_template ?? false,
+        course_type: row.course_type === "counseling" ? "counseling" : "class",
         created_at: row.created_at,
         updated_at: row.updated_at,
         member_count: row.course_memberships?.[0]?.count ?? 0,
