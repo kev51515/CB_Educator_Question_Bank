@@ -30,6 +30,7 @@ import { NotificationBell } from "@/notifications";
 import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
 import { useProfile } from "@/lib/profile";
+import { canAccessQuestionBank } from "@/lib/access";
 import { CommandPalette, type Command } from "@/components/CommandPalette";
 import { ShortcutsHelp } from "@/components/ShortcutsHelp";
 import { useLmsCommands } from "@/lib/lmsCommands";
@@ -156,6 +157,10 @@ export function StaffShell() {
   const { upgradeAnonymousAccount } = useStudentSession();
 
   const displayName = profile?.display_name ?? session?.name ?? "";
+
+  // Question Bank (+ its global Submissions log) is owned by a specific subset
+  // of educators — others don't see the rail entries at all. See lib/access.ts.
+  const canQbank = canAccessQuestionBank(profile?.email);
 
   const [paletteOpen, setPaletteOpen] = useState(false);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
@@ -346,60 +351,64 @@ export function StaffShell() {
             <span className={collapsed ? "md:hidden" : undefined}>Courses</span>
           </NavLink>
 
-          <NavLink
-            to={ROUTES.QUESTION_BANK}
-            className={railLinkClass}
-            title="Question Bank"
-          >
-            <RailIcon>
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M2 4a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v16a2 2 0 0 0-2-2H2z" />
-                <path d="M22 4a2 2 0 0 0-2-2h-6.5a2 2 0 0 0-2 2v16a2 2 0 0 1 2-2H22z" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "md:hidden" : undefined}>
-              Question Bank
-            </span>
-          </NavLink>
+          {canQbank && (
+            <NavLink
+              to={ROUTES.QUESTION_BANK}
+              className={railLinkClass}
+              title="Question Bank"
+            >
+              <RailIcon>
+                <svg
+                  width={20}
+                  height={20}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M2 4a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v16a2 2 0 0 0-2-2H2z" />
+                  <path d="M22 4a2 2 0 0 0-2-2h-6.5a2 2 0 0 0-2 2v16a2 2 0 0 1 2-2H22z" />
+                </svg>
+              </RailIcon>
+              <span className={collapsed ? "md:hidden" : undefined}>
+                Question Bank
+              </span>
+            </NavLink>
+          )}
 
-          <NavLink
-            to={ROUTES.QBANK_LOG}
-            className={railLinkClass}
-            title="Submissions"
-          >
-            <RailIcon>
-              {/* List-with-checkmark — matches the "audit log of attempts"
-                  semantics. Kept stroke-based to share the rail's visual
-                  weight with the other icons. */}
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M9 6h11M9 12h11M9 18h11" />
-                <path d="M3 6l1.5 1.5L7 5" />
-                <path d="M3 12l1.5 1.5L7 11" />
-                <path d="M3 18l1.5 1.5L7 17" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "md:hidden" : undefined}>
-              Submissions
-            </span>
-          </NavLink>
+          {canQbank && (
+            <NavLink
+              to={ROUTES.QBANK_LOG}
+              className={railLinkClass}
+              title="Submissions"
+            >
+              <RailIcon>
+                {/* List-with-checkmark — matches the "audit log of attempts"
+                    semantics. Kept stroke-based to share the rail's visual
+                    weight with the other icons. */}
+                <svg
+                  width={20}
+                  height={20}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 6h11M9 12h11M9 18h11" />
+                  <path d="M3 6l1.5 1.5L7 5" />
+                  <path d="M3 12l1.5 1.5L7 11" />
+                  <path d="M3 18l1.5 1.5L7 17" />
+                </svg>
+              </RailIcon>
+              <span className={collapsed ? "md:hidden" : undefined}>
+                Submissions
+              </span>
+            </NavLink>
+          )}
 
           {/* "Tests" nav removed — full-length tests now live under the
               Question Bank → "Full-Test" tab (unified tests surface). The

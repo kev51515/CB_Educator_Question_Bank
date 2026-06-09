@@ -7,6 +7,7 @@
  */
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { ROUTES, testOverviewPath } from "@/lib/routes";
+import { canAccessQuestionBank } from "@/lib/access";
 import { StaffShell } from "./StaffShell";
 import { AccountRoutes } from "./AccountRoutes";
 import { ClassLayout } from "./routeViews";
@@ -42,6 +43,10 @@ function RedirectBareTestToOverview() {
  * Authenticated routes for staff (teacher / admin).
  */
 export default function StaffRoutesTree({ account }: { account: AccountContext }) {
+  // The Question Bank (+ its global Submissions log) is restricted to a
+  // specific subset of educators. Non-allowed staff who type/bookmark the URL
+  // or follow a stale link bounce to their dashboard rather than 404.
+  const canQbank = canAccessQuestionBank(account.email);
   return (
     <Routes>
       {/* The role-prefixed staff runner (Preview). One splat route so it keeps
@@ -63,8 +68,26 @@ export default function StaffRoutesTree({ account }: { account: AccountContext }
         <Route path={ROUTES.DASHBOARD} element={<DashboardPage />} />
         <Route path={ROUTES.CALENDAR} element={<CalendarPage />} />
         <Route path={ROUTES.COURSES} element={<AllClassesView />} />
-        <Route path={ROUTES.QUESTION_BANK} element={<QuestionBankPage />} />
-        <Route path={ROUTES.QBANK_LOG} element={<QBankSubmissionLogPage />} />
+        <Route
+          path={ROUTES.QUESTION_BANK}
+          element={
+            canQbank ? (
+              <QuestionBankPage />
+            ) : (
+              <Navigate to={ROUTES.DASHBOARD} replace />
+            )
+          }
+        />
+        <Route
+          path={ROUTES.QBANK_LOG}
+          element={
+            canQbank ? (
+              <QBankSubmissionLogPage />
+            ) : (
+              <Navigate to={ROUTES.DASHBOARD} replace />
+            )
+          }
+        />
         <Route path={ROUTES.TESTS_ADMIN} element={<TestsAdminPage />} />
         <Route path={ROUTES.TEST_OVERVIEW} element={<TestOverviewPage />} />
         <Route path={ROUTES.TEST_REVIEW} element={<TestReviewPage />} />
