@@ -54,6 +54,7 @@ export interface AdminClass {
   join_code: string;
   archived: boolean;
   is_template: boolean;
+  course_type: string;
   created_at: string;
   teacher_id: string;
   teacher_name: string | null;
@@ -72,6 +73,7 @@ interface RawClassRow {
   join_code: string;
   archived: boolean;
   is_template: boolean | null;
+  course_type: string | null;
   created_at: string;
   teacher_id: string;
   teacher: { display_name: string | null; email: string } | null;
@@ -202,7 +204,7 @@ export function AllClassesView() {
       const { data, error: queryError } = await supabase
         .from("courses")
         .select(
-          "id, short_code, name, description, join_code, archived, is_template, created_at, teacher_id, teacher:profiles!courses_teacher_id_fkey(display_name, email), course_memberships(count), assignments(count)",
+          "id, short_code, name, description, join_code, archived, is_template, course_type, created_at, teacher_id, teacher:profiles!courses_teacher_id_fkey(display_name, email), course_memberships(count), assignments(count)",
         )
         .order("created_at", { ascending: false });
 
@@ -221,6 +223,7 @@ export function AllClassesView() {
         join_code: row.join_code,
         archived: row.archived,
         is_template: row.is_template ?? false,
+        course_type: row.course_type === "counseling" ? "counseling" : "class",
         created_at: row.created_at,
         teacher_id: row.teacher_id,
         teacher_name: row.teacher?.display_name ?? null,
@@ -611,6 +614,7 @@ function AdminCourseCardRow({
       muted={archivedOpt && !course.is_template}
       onClick={onNavigate}
       ariaLabel={`Open course ${course.name}`}
+      tag={course.course_type === "counseling" ? "Counseling" : undefined}
       status={{ label: statusLabel, tone }}
       kebab={kebab}
       meta={

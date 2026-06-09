@@ -57,6 +57,8 @@ export interface CourseCardProps {
   metrics?: ReadonlyArray<CourseCardMetric>;
   /** Status pill rendered in the top-right of the card body. */
   status?: { label: string; tone: "emerald" | "slate" | "amber" | "indigo" };
+  /** Optional small tag pill next to the status (e.g. "Counseling"). */
+  tag?: string;
   /** Footer slot — quick-nav icons (Dashboard) or CTA buttons (admin). */
   footer?: ReactNode;
   /** Visually deemphasize (archived courses). */
@@ -79,6 +81,7 @@ export function CourseCard({
   meta,
   metrics,
   status,
+  tag,
   footer,
   muted = false,
   onClick,
@@ -127,7 +130,14 @@ export function CourseCard({
           <h3 className="min-w-0 flex-1 truncate text-base font-semibold text-slate-900 dark:text-slate-100">
             {name}
           </h3>
-          {status && <StatusPill {...status} />}
+          <div className="flex shrink-0 items-center gap-1.5">
+            {tag && (
+              <span className="rounded-full bg-violet-100 dark:bg-violet-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-violet-700 dark:text-violet-300">
+                {tag}
+              </span>
+            )}
+            {status && <StatusPill {...status} />}
+          </div>
         </div>
         {shortDesc && (
           <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">

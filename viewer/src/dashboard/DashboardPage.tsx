@@ -221,6 +221,7 @@ function DashboardCard({
       paletteSeed={course.id}
       name={course.name}
       description={course.description}
+      tag={course.course_type === "counseling" ? "Counseling" : undefined}
       metrics={[
         {
           label: course.member_count === 1 ? "student" : "students",
