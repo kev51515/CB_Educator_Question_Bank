@@ -27,6 +27,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { EmptyState, Skeleton, useToast } from "@/components";
+import { useRovingTabIndex } from "@/hooks";
 import { useStudentSession } from "@/auth/session";
 import { ROUTES, assignmentReviewPath } from "@/lib/routes";
 import {
@@ -459,6 +460,13 @@ export function MyFeedbackPage() {
     setPrefs((prev) => (prev.filter === next ? prev : { ...prev, filter: next }));
   }, []);
 
+  // Roving-tabindex keyboard nav (Arrow/Home/End) for the filter tablist.
+  const { getTabProps } = useRovingTabIndex<HTMLButtonElement>({
+    count: FILTER_PILLS.length,
+    activeIndex: FILTER_PILLS.findIndex((p) => p.key === prefs.filter),
+    onSelect: (i) => setFilter(FILTER_PILLS[i].key),
+  });
+
   const setSort = useCallback((next: SortKey): void => {
     setPrefs((prev) => (prev.sort === next ? prev : { ...prev, sort: next }));
   }, []);
@@ -575,7 +583,7 @@ export function MyFeedbackPage() {
                 aria-label="Filter feedback"
                 className="flex flex-wrap items-center gap-2"
               >
-                {FILTER_PILLS.map((pill) => {
+                {FILTER_PILLS.map((pill, idx) => {
                   const active = prefs.filter === pill.key;
                   const count = filterCounts[pill.key];
                   return (
@@ -585,6 +593,7 @@ export function MyFeedbackPage() {
                       role="tab"
                       aria-selected={active}
                       onClick={() => setFilter(pill.key)}
+                      {...getTabProps(idx)}
                       className={`inline-flex min-h-[40px] items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 ${
                         active
                           ? pill.activePalette

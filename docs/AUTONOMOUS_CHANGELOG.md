@@ -138,3 +138,28 @@ review/skills surfaces).
    times stay fresh — DRY + consistency + live.
 3. A Playwright keyboard/a11y smoke for the filter tablists (and the assignment
    due-state styling) so these UX/a11y behaviours are regression-guarded.
+
+---
+
+## Cycle 5 — roll `useRovingTabIndex` to 3 more student filter tablists
+
+**Why:** Follow-through on Cycle 3's hook to actually close the keyboard-a11y gap
+where it counts — the high-traffic student filter tablists. Each was the same
+"declares role=tablist, no arrow nav" shape as AssignmentsPanel.
+
+**What:** Adopted `useRovingTabIndex` (Arrow/Home/End + roving tabindex) in:
+- `MyFeedbackPage` (feedback filter pills)
+- `CourseMaterialsList` (material-type filter pills)
+- `StudentPortfolio` (status filter pills)
+
+Each: compute `activeIndex` from the existing filter state, `onSelect` reuses the
+existing setter, and `{...getTabProps(idx)}` spreads onto the `role="tab"`
+buttons. No behaviour change for mouse/click users; the group is now a single Tab
+stop with arrow navigation, matching the ARIA contract.
+
+**Verify:** `tsc -b` green; `eslint` clean on all three. (Live keyboard E2E still
+deferred — same note as Cycle 3; logic mirrors the tested KebabMenu roving impl.)
+
+**Remaining `role="tablist"` without arrow nav:** AuthScreen (2 hardcoded tabs +
+a role radio group — different shape), AllUsersView, calendar (already had it),
+and a handful of teacher surfaces (left alone — parallel session active there).

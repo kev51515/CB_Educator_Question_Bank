@@ -15,6 +15,7 @@
  * all their leaf descendants. A polite live region announces filter changes.
  */
 import { useEffect, useMemo, useState } from "react";
+import { useRovingTabIndex } from "@/hooks";
 import { useClassContext } from "@/teacher/classLayoutContext";
 import { useProfile } from "@/lib/profile";
 import {
@@ -546,6 +547,13 @@ export function StudentPortfolio() {
   const countForPill = (v: FilterValue): number =>
     v === "all" ? totalLeaves : counts[v];
 
+  // Roving-tabindex keyboard nav (Arrow/Home/End) for the filter tablist.
+  const { getTabProps } = useRovingTabIndex<HTMLButtonElement>({
+    count: pillValues.length,
+    activeIndex: pillValues.indexOf(filter),
+    onSelect: (i) => setFilter(pillValues[i]),
+  });
+
   const liveMessage =
     filter === "all"
       ? `Showing all ${totalLeaves} portfolio items.`
@@ -577,7 +585,7 @@ export function StudentPortfolio() {
             aria-label="Filter portfolio items by status"
             className="flex flex-wrap gap-2"
           >
-            {pillValues.map((v) => {
+            {pillValues.map((v, idx) => {
               const isActive = filter === v;
               const count = countForPill(v);
               return (
@@ -587,6 +595,7 @@ export function StudentPortfolio() {
                   type="button"
                   aria-selected={isActive}
                   onClick={() => setFilter(v)}
+                  {...getTabProps(idx)}
                   className={`inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium ring-1 min-h-[40px] transition-colors ${
                     isActive
                       ? FILTER_ACTIVE_CLASS[v]

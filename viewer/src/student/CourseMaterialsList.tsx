@@ -27,6 +27,7 @@
  *   - Empty filtered state: "No materials match" + Show all CTA
  */
 import { useEffect, useMemo, useState } from "react";
+import { useRovingTabIndex } from "@/hooks";
 import { useStudentMaterials, type StudentMaterial, type StudentMaterialKind } from "./useStudentMaterials";
 import { SkeletonRows } from "@/components/Skeleton";
 import { supabase } from "@/lib/supabase";
@@ -290,6 +291,13 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
     setQuery("");
   };
 
+  // Roving-tabindex keyboard nav (Arrow/Home/End) for the filter tablist.
+  const { getTabProps } = useRovingTabIndex<HTMLButtonElement>({
+    count: FILTER_PILLS.length,
+    activeIndex: FILTER_PILLS.findIndex((p) => p.value === view.filter),
+    onSelect: (i) => setView((v) => ({ ...v, filter: FILTER_PILLS[i].value })),
+  });
+
   return (
     <section aria-labelledby="course-materials-title" className="space-y-3">
       <div className="flex items-baseline justify-between">
@@ -353,7 +361,7 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
             aria-label="Filter materials by type"
             className="flex flex-wrap gap-1.5"
           >
-            {FILTER_PILLS.map((pill) => {
+            {FILTER_PILLS.map((pill, idx) => {
               const active = view.filter === pill.value;
               const count = counts[pill.value];
               return (
@@ -365,6 +373,7 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
                   onClick={() =>
                     setView((v) => ({ ...v, filter: pill.value }))
                   }
+                  {...getTabProps(idx)}
                   className={[
                     "inline-flex items-center gap-1.5 min-h-10 px-3 rounded-full text-sm ring-1 motion-safe:transition-colors",
                     active
