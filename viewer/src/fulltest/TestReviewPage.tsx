@@ -23,6 +23,7 @@ import { Skeleton } from "@/components/Skeleton";
 import { testOverviewPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
 import { ReviewHeatmap } from "./ReviewHeatmap";
+import { ClassComparison } from "./ClassComparison";
 import { ModuleTabs } from "./ModuleTabs";
 import { useTestNavigation } from "./useTestNavigation";
 import {
@@ -80,6 +81,8 @@ export function TestReviewPage(): JSX.Element {
   const [showRationale, setShowRationale] = useState(false);
   // Whole-test class heatmap overlay (% correct per question, click to jump).
   const [heatmapOpen, setHeatmapOpen] = useState(false);
+  // Cross-class comparison overlay (per-domain % correct, one column per class).
+  const [compareOpen, setCompareOpen] = useState(false);
 
   // class results
   const [courses, setCourses] = useState<ReviewCourse[]>([]);
@@ -218,6 +221,8 @@ export function TestReviewPage(): JSX.Element {
   // Any responses at all for this class? (drives the sidebar empty state).
   const hasClassData = breakdown.length > 0;
   const anotherClassHasData = courses.some((c) => c.course_id !== courseId && c.taken > 0);
+  // Classes with submissions — cross-class comparison needs at least two.
+  const comparableCourses = courses.filter((c) => c.taken > 0);
 
   // Per-choice counts + names for the inline pills on each mcq answer choice.
   const choiceStats = useMemo(() => {
@@ -398,6 +403,23 @@ export function TestReviewPage(): JSX.Element {
                   <rect x="14" y="14" width="7" height="7" rx="1" />
                 </svg>
                 Heatmap
+              </button>
+            )}
+
+            {/* Cross-class comparison — only when ≥2 classes have submissions. */}
+            {comparableCourses.length >= 2 && (
+              <button
+                type="button"
+                onClick={() => setCompareOpen(true)}
+                title="Compare classes — % correct by topic across every class that took this test"
+                className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-slate-600 hover:bg-slate-200/60 dark:text-slate-300 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M3 3v18h18" />
+                  <rect x="7" y="10" width="3" height="7" />
+                  <rect x="14" y="6" width="3" height="11" />
+                </svg>
+                Compare
               </button>
             )}
 
@@ -638,6 +660,16 @@ export function TestReviewPage(): JSX.Element {
           onClose={() => setHeatmapOpen(false)}
           courseTitle={selectedCourse?.title ?? null}
           taken={selectedCourse?.taken}
+        />
+      )}
+
+      {compareOpen && (
+        <ClassComparison
+          slug={slug}
+          modules={modules}
+          courses={comparableCourses}
+          currentCourseId={courseId}
+          onClose={() => setCompareOpen(false)}
         />
       )}
     </div>
