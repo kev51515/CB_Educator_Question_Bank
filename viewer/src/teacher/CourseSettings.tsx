@@ -25,6 +25,7 @@ import { useToast, MarkdownEditor, useOptimistic } from "@/components";
 import { useClassContext } from "./classLayoutContext";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { CourseSharingControls } from "./CourseSharingControls";
+import type { CourseType } from "./useTeacherClasses";
 import { ROUTES } from "@/lib/routes";
 
 interface RegeneratedClassRow {
@@ -196,6 +197,24 @@ export function CourseSettings() {
       },
       successMessage: next ? "Marked as template" : "Template flag removed",
     });
+  };
+
+  const changeCourseType = async (next: CourseType): Promise<void> => {
+    if (next === cls.course_type) return;
+    const previous = cls.course_type;
+    patch({ course_type: next });
+    const { error: updError } = await supabase
+      .from("courses")
+      .update({ course_type: next })
+      .eq("id", cls.id);
+    if (updError) {
+      patch({ course_type: previous });
+      toast.error("Couldn't change course type", updError.message);
+      return;
+    }
+    toast.success(
+      next === "counseling" ? "Switched to Counseling" : "Switched to Class",
+    );
   };
 
   const onDelete = async (): Promise<void> => {
@@ -456,7 +475,44 @@ export function CourseSettings() {
           </label>
         </SettingsCard>
 
-        {/* 5. Sharing */}
+        {/* 5. Course type */}
+        <SettingsCard
+          title="Course type"
+          description="A Class is for SAT-prep teaching; a Counseling course unlocks the college/career advising surfaces (Portfolio, Caseload, college lists, tasks)."
+        >
+          <div className="grid grid-cols-2 gap-2 max-w-md">
+            {([
+              { value: "class", title: "Class", blurb: "Modules, assignments, grades, skills." },
+              { value: "counseling", title: "Counseling", blurb: "Portfolio, caseload, college advising." },
+            ] as const).map((opt) => {
+              const active = cls.course_type === opt.value;
+              return (
+                <button
+                  key={opt.value}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => {
+                    void changeCourseType(opt.value);
+                  }}
+                  className={`text-left rounded-lg border px-3 py-2 transition-colors ${
+                    active
+                      ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/50 ring-1 ring-indigo-500"
+                      : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700"
+                  }`}
+                >
+                  <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100">
+                    {opt.title}
+                  </span>
+                  <span className="block text-[11px] text-slate-500 dark:text-slate-400">
+                    {opt.blurb}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </SettingsCard>
+
+        {/* 6. Sharing */}
         <SettingsCard
           title="Sharing"
           description="Give another educator full co-management of this course. They'll see it in their own course list."

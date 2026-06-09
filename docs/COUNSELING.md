@@ -72,6 +72,5 @@ notification, and the missing-docs metric.
 
 - `clone_course` (0036) doesn't copy `course_type` — duplicating a counseling
   course currently yields a 'class'.
-- Changing a course's type after creation isn't wired (create-time only).
 - Deadline reminders (cron) for college deadlines not yet built (the
   `assignment-due-reminders` function is the pattern to mirror).
