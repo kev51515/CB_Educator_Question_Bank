@@ -37,6 +37,7 @@ interface CollegeApplication {
   deadline: string | null;
   status: Status;
   notes: string | null;
+  documents: { label: string; done: boolean }[] | null;
   submitted_at: string | null;
   created_at: string;
   updated_at: string;
@@ -199,6 +200,40 @@ export function StudentCollegeListCard({
                   <p className="text-xs text-slate-500 dark:text-slate-400">
                     {app.notes}
                   </p>
+                )}
+                {app.documents && app.documents.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {app.documents.filter((d) => !d.done).length > 0 ? (
+                      <span className="rounded-full bg-amber-100 dark:bg-amber-950/50 px-1.5 py-0.5 text-[11px] font-semibold text-amber-700 dark:text-amber-300">
+                        {app.documents.filter((d) => !d.done).length} to submit
+                      </span>
+                    ) : (
+                      <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-1.5 py-0.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
+                        All documents in
+                      </span>
+                    )}
+                    {app.documents.map((d, i) => (
+                      <span
+                        key={i}
+                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] ring-1 ${
+                          d.done
+                            ? "bg-emerald-50 dark:bg-emerald-950/40 ring-emerald-200 dark:ring-emerald-900 text-emerald-700 dark:text-emerald-300"
+                            : "bg-slate-50 dark:bg-slate-800 ring-slate-200 dark:ring-slate-700 text-slate-600 dark:text-slate-300"
+                        }`}
+                      >
+                        {d.done ? (
+                          <svg width={10} height={10} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                            <path d="M5 12l5 5 9-11" />
+                          </svg>
+                        ) : (
+                          <svg width={10} height={10} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+                            <circle cx={12} cy={12} r={8} />
+                          </svg>
+                        )}
+                        {d.label}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
 
