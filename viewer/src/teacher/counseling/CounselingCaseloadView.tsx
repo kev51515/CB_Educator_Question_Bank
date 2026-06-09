@@ -56,11 +56,15 @@ function StatCard({
   value,
   hint,
   tone = "slate",
+  onClick,
+  active,
 }: {
   label: string;
   value: number | string;
   hint?: string;
   tone?: "slate" | "rose" | "indigo";
+  onClick?: () => void;
+  active?: boolean;
 }) {
   const toneClass =
     tone === "rose"
@@ -68,13 +72,31 @@ function StatCard({
       : tone === "indigo"
         ? "text-indigo-700 dark:text-indigo-300"
         : "text-slate-900 dark:text-slate-100";
-  return (
-    <div className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 px-4 py-3">
+  const base = `rounded-xl ring-1 px-4 py-3 text-left transition-colors ${
+    active
+      ? "ring-indigo-500 bg-indigo-50 dark:bg-indigo-950/40"
+      : "ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900"
+  }`;
+  const body = (
+    <>
       <div className={`text-2xl font-bold ${toneClass}`}>{value}</div>
       <div className="text-xs font-medium text-slate-500 dark:text-slate-400">{label}</div>
       {hint && <div className="text-[11px] text-slate-400 dark:text-slate-500">{hint}</div>}
-    </div>
+    </>
   );
+  if (onClick) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        aria-pressed={active}
+        className={`${base} block w-full hover:ring-indigo-400 dark:hover:ring-indigo-700`}
+      >
+        {body}
+      </button>
+    );
+  }
+  return <div className={base}>{body}</div>;
 }
 
 type SortKey =
@@ -214,17 +236,23 @@ export function CounselingCaseloadView() {
               label="Due in 14 days"
               value={totals?.upcoming_deadlines_14d ?? 0}
               tone={(totals?.upcoming_deadlines_14d ?? 0) > 0 ? "indigo" : "slate"}
+              onClick={() => setFilter((f) => (f === "deadline_soon" ? "all" : "deadline_soon"))}
+              active={filter === "deadline_soon"}
             />
             <StatCard
               label="Docs missing"
               value={totals?.docs_missing ?? 0}
               tone={(totals?.docs_missing ?? 0) > 0 ? "rose" : "slate"}
+              onClick={() => setFilter((f) => (f === "missing_docs" ? "all" : "missing_docs"))}
+              active={filter === "missing_docs"}
             />
             <StatCard label="Open tasks" value={totals?.tasks_open ?? 0} />
             <StatCard
               label="Overdue tasks"
               value={totals?.tasks_overdue ?? 0}
               tone={(totals?.tasks_overdue ?? 0) > 0 ? "rose" : "slate"}
+              onClick={() => setFilter((f) => (f === "attention" ? "all" : "attention"))}
+              active={filter === "attention"}
             />
           </div>
 
