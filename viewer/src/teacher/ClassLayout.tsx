@@ -419,7 +419,12 @@ export function ClassLayout() {
             {/* Default landing tab is now Modules (Canvas-aligned). The bare
                 /courses/:id URL redirects to /courses/:id/modules so the tab
                 strip highlights correctly and deep links keep working. */}
-            <Route index element={<Navigate to="modules" replace />} />
+            <Route
+              index
+              element={
+                <Navigate to={isCounseling ? "caseload" : "modules"} replace />
+              }
+            />
             <Route path="modules" element={<ModulesPage />} />
             <Route path="overview" element={<CourseOverview />} />
             <Route

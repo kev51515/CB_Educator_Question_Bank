@@ -165,7 +165,15 @@ export function AllClassesView() {
           setInlineType("class");
           void refresh();
           const shortCode = data.short_code as string | null;
-          if (shortCode) navigate(courseModulesPath(shortCode));
+          // Counseling courses land on their default tab (Caseload) via the
+          // bare course URL; classes go straight to Modules.
+          if (shortCode) {
+            navigate(
+              inlineType === "counseling"
+                ? coursePath(shortCode)
+                : courseModulesPath(shortCode),
+            );
+          }
           return;
         }
         // 23505 = unique violation. Retry with a fresh join code.
