@@ -128,7 +128,8 @@ export function ClassLayout() {
   const visibleTabs = useMemo(
     () =>
       TABS.filter((t) => {
-        if (t.to === "skills") return canQbank;
+        // Skills is SAT-test-derived — not relevant to counseling courses.
+        if (t.to === "skills") return canQbank && !isCounseling;
         if (t.to === "portfolio" || t.to === "caseload") return isCounseling;
         return true;
       }),
@@ -468,7 +469,7 @@ export function ClassLayout() {
             <Route
               path="skills"
               element={
-                canQbank ? (
+                canQbank && !isCounseling ? (
                   <ClassSkillsView />
                 ) : (
                   <Navigate to={classPath(cls.short_code)} replace />
