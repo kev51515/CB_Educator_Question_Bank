@@ -16,6 +16,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Skeleton } from "@/components/Skeleton";
+import { downloadCsv } from "@/lib/csv";
 import { getAnswerBreakdown, type ReviewCourse } from "./api";
 import { band, orderDomains, orderSections, pctOf, sectionLabel } from "./skills";
 import type { TestContentModule } from "./testContent";
@@ -123,23 +124,9 @@ export function ClassComparison({ slug, modules, courses, currentCourseId, onClo
 
   const exportCsv = () => {
     if (!stats) return;
-    const esc = (v: string | number) => `"${String(v).replace(/"/g, '""')}"`;
     const header = ["Topic", ...stats.map((s) => `${s.course.title} (% correct)`)];
-    const lines = [header.map(esc).join(",")];
-    for (const row of rows) {
-      const cells = stats.map((s) => {
-        const p = tallyPct(tallyFor(s, row));
-        return p == null ? "" : p;
-      });
-      lines.push([esc(row.label), ...cells].join(","));
-    }
-    const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `class-comparison-${slug}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
+    const body = rows.map((row) => [row.label, ...stats.map((s) => tallyPct(tallyFor(s, row)) ?? "")]);
+    downloadCsv(`class-comparison-${slug}.csv`, [header, ...body]);
   };
 
   return (

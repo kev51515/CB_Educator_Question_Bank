@@ -17,6 +17,10 @@ Dates are the work date. Migration numbers in parentheses where relevant.
   docs, and corrects the dev server port (9000, not 5173).
 
 ### Added
+- **CSV export from the Review heatmap** — per-question rows (module, Q#, domain,
+  %-correct, correct, total). Extracted a shared `viewer/src/lib/csv.ts`
+  (`toCsv` / `downloadCsv`, RFC-4180 escaping) and moved the cross-class
+  comparison's inline CSV logic onto it — one download helper, no duplication.
 - **SAT domain chip on student result review cards.** Each per-question card on
   a released result now shows its skill domain (e.g. "Advanced Math") next to
   "Section · Q#", so a student reviewing a missed question sees which skill it

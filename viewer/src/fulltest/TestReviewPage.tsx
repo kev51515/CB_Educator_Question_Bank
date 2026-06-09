@@ -664,6 +664,7 @@ export function TestReviewPage(): JSX.Element {
           onClose={() => setHeatmapOpen(false)}
           courseTitle={selectedCourse?.title ?? null}
           taken={selectedCourse?.taken}
+          slug={slug}
         />
       )}
 

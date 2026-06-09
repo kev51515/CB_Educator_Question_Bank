@@ -21,6 +21,7 @@
  */
 import { useMemo, useRef, useState } from "react";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
+import { downloadCsv } from "@/lib/csv";
 import { band, BANDS, isChoiceLetter, LEGEND_GRADIENT, orderDomains, orderSections, sectionLabel } from "./skills";
 import type { TestContentModule } from "./testContent";
 
@@ -41,6 +42,8 @@ interface Props {
   onClose: () => void;
   courseTitle?: string | null;
   taken?: number;
+  /** test slug, for the CSV filename */
+  slug?: string;
 }
 
 interface Cell {
@@ -78,6 +81,7 @@ export function ReviewHeatmap({
   onClose,
   courseTitle,
   taken,
+  slug,
 }: Props): JSX.Element {
   const dialogRef = useRef<HTMLDivElement>(null);
   useFocusTrap(dialogRef, true);
@@ -85,6 +89,19 @@ export function ReviewHeatmap({
   const jump = (c: Cell) => {
     onJump(c.mIdx, c.qIdx);
     onClose();
+  };
+
+  const exportCsv = () => {
+    const header = ["Module", "Question", "Domain", "% correct", "Correct", "Total"];
+    const body = flat.map((c) => [
+      c.label,
+      c.number,
+      c.domain ?? "",
+      c.pct ?? "",
+      c.st?.correct ?? "",
+      c.st?.total ?? "",
+    ]);
+    downloadCsv(`heatmap-${slug ?? "results"}.csv`, [header, ...body]);
   };
 
   // Flatten every question with its module coordinates + class stat.
@@ -239,6 +256,18 @@ export function ReviewHeatmap({
                     </button>
                   ))}
                 </div>
+              )}
+              {anyData && (
+                <button
+                  type="button"
+                  onClick={exportCsv}
+                  className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-600 ring-1 ring-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800"
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                  </svg>
+                  Export CSV
+                </button>
               )}
               <button
                 type="button"
