@@ -34,6 +34,10 @@ import { StudentTestReportPanel } from "./StudentTestReportPanel";
 import { StudentTestRunsPanel } from "./StudentTestRunsPanel";
 import { useProfile } from "@/lib/profile";
 import { canAccessQuestionBank } from "@/lib/access";
+import { CounselingProfilePanel } from "./counseling/CounselingProfilePanel";
+import { CollegeApplicationsPanel } from "./counseling/CollegeApplicationsPanel";
+import { CounselingTasksPanel } from "./counseling/CounselingTasksPanel";
+import { CounselingMeetingsPanel } from "./counseling/CounselingMeetingsPanel";
 import { AttemptsBody } from "./AttemptsBody";
 import { PostsBody } from "./PostsBody";
 import { PortfolioBody } from "./PortfolioBody";
@@ -212,6 +216,17 @@ export function StudentProfilePage(): JSX.Element {
               with test/Question-Bank access. */}
           {canQbank && <StudentTestReportPanel studentId={header.id} />}
           {canQbank && <StudentTestRunsPanel studentId={header.id} />}
+
+          {/* Counseling workspace — only for counseling courses (0133/0134):
+              digital profile, college list + applications, tasks, meeting notes. */}
+          {course?.course_type === "counseling" && course.id && (
+            <>
+              <CounselingProfilePanel courseId={course.id} studentId={header.id} />
+              <CollegeApplicationsPanel courseId={course.id} studentId={header.id} />
+              <CounselingTasksPanel courseId={course.id} studentId={header.id} />
+              <CounselingMeetingsPanel courseId={course.id} studentId={header.id} />
+            </>
+          )}
 
           {allEmpty ? (
             <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">

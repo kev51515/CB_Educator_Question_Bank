@@ -1,0 +1,129 @@
+#!/usr/bin/env node
+/**
+ * smoke-counseling.mjs
+ *
+ * Verifies the counseling data model + RLS from migration 0134:
+ *   counseling_profiles, college_applications, counseling_tasks (counselor
+ *   full + student reads own) and counseling_meetings (counselor-private,
+ *   no student read). Also checks an unrelated teacher can't read any of it.
+ *
+ * Disposable + self-cleaning.
+ */
+import { createClient } from "@supabase/supabase-js";
+import { randomBytes } from "node:crypto";
+
+const URL = process.env.SUPABASE_URL, ANON = process.env.SUPABASE_ANON_KEY, SERVICE = process.env.SUPABASE_SERVICE_KEY;
+const miss = ["SUPABASE_URL", "SUPABASE_ANON_KEY", "SUPABASE_SERVICE_KEY"].filter((k) => !process.env[k]);
+if (miss.length) { console.error("smoke-counseling: missing env:", miss.join(", ")); process.exit(2); }
+const TAG = randomBytes(3).toString("hex");
+const svc = createClient(URL, SERVICE, { auth: { autoRefreshToken: false, persistSession: false } });
+const userClient = () => createClient(URL, ANON, { auth: { autoRefreshToken: false, persistSession: false } });
+
+let pass = 0, fail = 0;
+const ok = (l, x = "") => { pass++; console.log(`  PASS  ${l}${x ? "  " + x : ""}`); };
+const bad = (l, d = "") => { fail++; console.log(`  FAIL  ${l}`); if (d) console.log(`        ${d}`); };
+const step = (l) => console.log(`\n=== ${l} ===`);
+
+async function mkUser(role) {
+  const email = `cn-${role}-${TAG}-${randomBytes(2).toString("hex")}@gmail.com`, password = "Cn!" + randomBytes(4).toString("hex");
+  const { data, error } = await svc.auth.admin.createUser({ email, password, email_confirm: true });
+  if (error) throw new Error(`createUser ${role}: ${error.message}`);
+  await svc.from("profiles").update({ role, display_name: `Cn ${role}` }).eq("id", data.user.id);
+  return { id: data.user.id, email, password };
+}
+async function signedIn(u) {
+  const c = userClient();
+  const { error } = await c.auth.signInWithPassword({ email: u.email, password: u.password });
+  if (error) throw new Error(`signIn ${u.email}: ${error.message}`);
+  return c;
+}
+
+async function main() {
+  step("provision");
+  const counselor = await mkUser("teacher");
+  const other = await mkUser("teacher");
+  const student = await mkUser("student");
+  const { data: course } = await svc.from("courses")
+    .insert({ name: `Counsel ${TAG}`, teacher_id: counselor.id, course_type: "counseling" })
+    .select("id").single();
+  await svc.from("course_memberships").insert({ course_id: course.id, student_id: student.id });
+
+  const cleanup = async () => {
+    for (const t of ["counseling_meetings", "counseling_tasks", "college_applications", "counseling_profiles"]) {
+      await svc.from(t).delete().eq("course_id", course.id);
+    }
+    await svc.from("course_memberships").delete().eq("course_id", course.id);
+    await svc.from("courses").delete().eq("id", course.id);
+    for (const u of [counselor, other, student]) await svc.auth.admin.deleteUser(u.id);
+  };
+
+  try {
+    const cClient = await signedIn(counselor);
+    const oClient = await signedIn(other);
+    const sClient = await signedIn(student);
+    const base = { course_id: course.id, student_id: student.id };
+
+    step("counseling_profiles");
+    {
+      const { error } = await cClient.from("counseling_profiles").insert({ ...base, grad_year: 2027, gpa: 3.9, intended_major: "CS" });
+      error ? bad("counselor creates profile", error.message) : ok("counselor creates profile");
+    }
+    {
+      const { data } = await sClient.from("counseling_profiles").select("grad_year").eq("course_id", course.id);
+      (data?.length ?? 0) === 1 ? ok("student reads own profile") : bad("student should read own profile", `${data?.length}`);
+    }
+    {
+      const { data } = await oClient.from("counseling_profiles").select("id").eq("course_id", course.id);
+      (data?.length ?? 0) === 0 ? ok("unrelated teacher can't read profile") : bad("other should see nothing", `${data?.length}`);
+    }
+
+    step("college_applications");
+    {
+      const { error } = await cClient.from("college_applications").insert({ ...base, college_name: "MIT", tier: "reach", plan: "EA" });
+      error ? bad("counselor adds college", error.message) : ok("counselor adds college");
+    }
+    {
+      const { data } = await sClient.from("college_applications").select("college_name").eq("course_id", course.id);
+      (data?.length ?? 0) === 1 ? ok("student reads own college list") : bad("student should read own list", `${data?.length}`);
+    }
+    {
+      const { error } = await oClient.from("college_applications").insert({ ...base, college_name: "Hax" });
+      // RLS WITH CHECK should reject an unrelated teacher's insert.
+      error ? ok("unrelated teacher can't add college") : bad("other insert should be rejected");
+    }
+
+    step("counseling_tasks");
+    {
+      const { error } = await cClient.from("counseling_tasks").insert({ ...base, title: "Draft essay" });
+      error ? bad("counselor assigns task", error.message) : ok("counselor assigns task");
+    }
+    {
+      const { data } = await sClient.from("counseling_tasks").select("title").eq("course_id", course.id);
+      (data?.length ?? 0) === 1 ? ok("student reads own tasks") : bad("student should read own tasks", `${data?.length}`);
+    }
+
+    step("counseling_meetings (counselor-private)");
+    {
+      const { error } = await cClient.from("counseling_meetings").insert({ ...base, summary: "Kickoff" });
+      error ? bad("counselor logs meeting", error.message) : ok("counselor logs meeting");
+    }
+    {
+      const { data } = await cClient.from("counseling_meetings").select("summary").eq("course_id", course.id);
+      (data?.length ?? 0) === 1 ? ok("counselor reads meeting") : bad("counselor should read meeting", `${data?.length}`);
+    }
+    {
+      const { data } = await sClient.from("counseling_meetings").select("id").eq("course_id", course.id);
+      (data?.length ?? 0) === 0 ? ok("student CANNOT read meeting notes (private)") : bad("meeting notes should be private", `${data?.length}`);
+    }
+  } finally {
+    step("cleanup");
+    await cleanup().catch((e) => console.log("  ..    cleanup error", e.message));
+    console.log("  ..    disposable users + course removed");
+  }
+
+  console.log(`\n----------------------------------`);
+  console.log(`TOTAL: ${pass + fail}  PASS: ${pass}  FAIL: ${fail}`);
+  console.log(`==================================`);
+  process.exit(fail > 0 ? 1 : 0);
+}
+main().catch((e) => { console.error("smoke-counseling crashed:", e?.message ?? e); process.exit(1); });

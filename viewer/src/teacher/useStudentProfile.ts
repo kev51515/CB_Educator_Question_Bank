@@ -28,6 +28,7 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import type { CourseType } from "./useTeacherClasses";
 
 // --- Public types ----------------------------------------------------------
 
@@ -44,6 +45,7 @@ export interface StudentProfileCourse {
   id: string;
   short_code: string;
   name: string;
+  course_type: CourseType;
 }
 
 export interface StudentAttemptRow {
@@ -109,6 +111,7 @@ interface CourseRow {
   id: string;
   short_code: string;
   name: string;
+  course_type: string | null;
 }
 
 interface ProfileRow {
@@ -266,7 +269,7 @@ export function useStudentProfile(
       const lookupColumn = isShortCode(courseRef) ? "short_code" : "id";
       const courseRes = await supabase
         .from("courses")
-        .select("id, short_code, name")
+        .select("id, short_code, name, course_type")
         .eq(lookupColumn, courseRef)
         .maybeSingle();
       if (courseRes.error) {
@@ -293,7 +296,13 @@ export function useStudentProfile(
         return;
       }
       resolvedCourse = courseRes.data as unknown as CourseRow;
-      setCourse(resolvedCourse);
+      setCourse({
+        id: resolvedCourse.id,
+        short_code: resolvedCourse.short_code,
+        name: resolvedCourse.name,
+        course_type:
+          resolvedCourse.course_type === "counseling" ? "counseling" : "class",
+      });
     } catch (err: unknown) {
       setHeaderError(getErrorMessage(err, "Failed to load course."));
       setHeaderLoading(false);

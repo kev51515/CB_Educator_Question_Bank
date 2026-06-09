@@ -41,6 +41,7 @@ const SUITES = [
   { name: "skills",        script: "smoke-skills.mjs" },
   { name: "admin",         script: "smoke-admin.mjs" },
   { name: "sharing",       script: "smoke-course-sharing.mjs" },
+  { name: "counseling",    script: "smoke-counseling.mjs" },
 ];
 
 const results = [];
