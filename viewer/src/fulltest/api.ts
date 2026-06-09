@@ -164,14 +164,40 @@ export type ProctorEventType =
   | "contextmenu_blocked"
   | "devtools";
 
+/**
+ * The action-journal event types accepted by `test_log_action` (migration
+ * 0124). These describe HOW a student worked the test (answer churn, flags,
+ * choice eliminations, navigation/revisits) — coaching insight + in-person
+ * cheating evidence — as opposed to the integrity SIGNALS above.
+ */
+export type ActionEventType =
+  | "answer_set"
+  | "answer_change"
+  | "answer_clear"
+  | "flag"
+  | "unflag"
+  | "eliminate"
+  | "uneliminate"
+  | "nav";
+
+/** Any row that can appear on a run's timeline (integrity signal OR action). */
+export type TimelineEventType = ProctorEventType | ActionEventType;
+
+/** Optional payload carried by action events (e.g. an answer change from→to). */
+export interface ActionMeta {
+  from?: string | null;
+  to?: string | null;
+  choice?: string | null;
+}
+
 /** One row of a run's proctoring timeline (from `get_test_run_timeline`). */
 export interface ProctorEvent {
   at: string;
-  type: ProctorEventType;
+  type: TimelineEventType;
   module: number | null;
   question: number | null;
   durationSeconds: number | null;
-  meta: unknown | null;
+  meta: ActionMeta | null;
 }
 
 /**
@@ -194,6 +220,31 @@ export async function logProctorEvent(
     });
   } catch {
     /* non-fatal — proctoring telemetry is observational only */
+  }
+}
+
+/**
+ * Record a single action-journal event (answer set/change/clear, flag, choice
+ * elimination, navigation) via `test_log_action` (migration 0124). Best-effort
+ * with the same contract as logProctorEvent: telemetry must NEVER disrupt the
+ * test, so every error is swallowed. Gated by the caller on proctoring_level
+ * != 'off' so 'off' stays genuinely silent.
+ */
+export async function logAction(
+  runId: string,
+  type: ActionEventType,
+  opts: { question?: number; module?: number; meta?: ActionMeta } = {},
+): Promise<void> {
+  try {
+    await supabase.rpc("test_log_action", {
+      p_run_id: runId,
+      p_type: type,
+      p_question: opts.question ?? null,
+      p_module: opts.module ?? null,
+      p_meta: opts.meta ?? null,
+    });
+  } catch {
+    /* non-fatal — action telemetry is observational only */
   }
 }
 

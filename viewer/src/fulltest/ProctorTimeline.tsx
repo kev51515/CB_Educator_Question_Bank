@@ -22,7 +22,12 @@
 import { useMemo } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { Skeleton } from "@/components/Skeleton";
-import type { ProctorEvent, ProctorEventType } from "./api";
+import type {
+  ProctorEvent,
+  ProctorEventType,
+  ActionEventType,
+  TimelineEventType,
+} from "./api";
 
 export interface ProctorTimelineProps {
   events: ProctorEvent[];
@@ -63,6 +68,29 @@ const EVENT_STYLES: Record<ProctorEventType, EventStyle> = {
   devtools: { label: "Opened dev tools", shape: "tick", fill: "#a855f7", darkFill: "#c084fc", glyph: "▏" },
 };
 
+/**
+ * Action-journal types (migration 0124) are a SEPARATE family from the
+ * integrity signals above: high-volume (a student may change one answer many
+ * times) and behavioural rather than violations. They're partitioned out of
+ * the integrity track/summary and rendered as an aggregated "Answer activity"
+ * section so they neither swamp the flag track nor break the "no flags"
+ * reassurance.
+ */
+const ACTION_TYPES: ReadonlySet<TimelineEventType> = new Set<ActionEventType>([
+  "answer_set",
+  "answer_change",
+  "answer_clear",
+  "flag",
+  "unflag",
+  "eliminate",
+  "uneliminate",
+  "nav",
+]);
+
+function isActionEvent(ev: ProctorEvent): boolean {
+  return ACTION_TYPES.has(ev.type);
+}
+
 const MIN_BLOCK_WIDTH_PCT = 1.2; // a short away-event is still visibly wide
 const MIN_TRACK_MS = 60_000; // guard against a zero/near-zero span
 
@@ -89,7 +117,7 @@ function fmtElapsed(ms: number): string {
 
 /** "Left tab · Q14 · 0:42" — humanized marker / list label. */
 function describe(ev: ProctorEvent): string {
-  const base = EVENT_STYLES[ev.type]?.label ?? ev.type;
+  const base = EVENT_STYLES[ev.type as ProctorEventType]?.label ?? ev.type;
   const parts = [base];
   if (ev.question != null) parts.push(`Q${ev.question}`);
   else if (ev.module != null) parts.push(`Module ${ev.module}`);
@@ -165,6 +193,8 @@ interface ChipDef {
   value: string | number;
   /** tailwind tone classes (bg/text/ring) */
   tone: string;
+  /** optional hover/focus tooltip explaining what the count means. */
+  title?: string;
 }
 
 /** Small inline arrow-up-right icon — "left tab / navigated away" marker. */
@@ -246,6 +276,7 @@ function SummaryChips({ chips }: { chips: ChipDef[] }): JSX.Element {
       {chips.map((c) => (
         <span
           key={c.key}
+          title={c.title}
           className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${c.tone}`}
         >
           <span aria-hidden className="leading-none">
@@ -363,6 +394,181 @@ function FocusedState(): JSX.Element {
   );
 }
 
+// --- answer activity (action journal, migration 0124) ----------------------
+
+interface QuestionActivity {
+  question: number;
+  /** ordered answer chain, e.g. ["B","D","A","D"] ("—" = cleared). */
+  chain: string[];
+  changeCount: number; // answer_change events
+  flagged: boolean; // net flag state (flags − unflags > 0)
+  eliminations: number; // eliminate events
+  revisits: number; // nav events beyond the first
+}
+
+interface ActivityModel {
+  totalChanges: number;
+  flagCount: number; // questions currently flagged
+  elimCount: number; // total eliminate events
+  highChurn: QuestionActivity[]; // questions changed ≥2×, most-churned first
+}
+
+function buildActivity(actions: ProctorEvent[]): ActivityModel {
+  // Group by question, preserving chronological order (events arrive ordered).
+  const byQ = new Map<number, ProctorEvent[]>();
+  for (const ev of actions) {
+    if (ev.question == null) continue;
+    const list = byQ.get(ev.question);
+    if (list) list.push(ev);
+    else byQ.set(ev.question, [ev]);
+  }
+
+  const perQ: QuestionActivity[] = [];
+  let elimCount = 0;
+  for (const [question, list] of byQ) {
+    const chain: string[] = [];
+    let changeCount = 0;
+    let flags = 0;
+    let eliminations = 0;
+    let navs = 0;
+    for (const ev of list) {
+      switch (ev.type) {
+        case "answer_set":
+          if (ev.meta?.to) chain.push(ev.meta.to);
+          break;
+        case "answer_change":
+          if (ev.meta?.to) chain.push(ev.meta.to);
+          changeCount += 1;
+          break;
+        case "answer_clear":
+          chain.push("—");
+          break;
+        case "flag":
+          flags += 1;
+          break;
+        case "unflag":
+          flags -= 1;
+          break;
+        case "eliminate":
+          eliminations += 1;
+          elimCount += 1;
+          break;
+        case "nav":
+          navs += 1;
+          break;
+        default:
+          break;
+      }
+    }
+    perQ.push({
+      question,
+      chain,
+      changeCount,
+      flagged: flags > 0,
+      eliminations,
+      revisits: Math.max(0, navs - 1),
+    });
+  }
+
+  const flagCount = perQ.filter((q) => q.flagged).length;
+  const totalChanges = perQ.reduce((n, q) => n + q.changeCount, 0);
+  const highChurn = perQ
+    .filter((q) => q.changeCount >= 2)
+    .sort((a, b) => b.changeCount - a.changeCount || a.question - b.question);
+
+  return { totalChanges, flagCount, elimCount, highChurn };
+}
+
+function ActivitySummary({ model }: { model: ActivityModel }): JSX.Element {
+  const chips: ChipDef[] = [];
+  if (model.totalChanges > 0)
+    chips.push({
+      key: "changes",
+      glyph: "↻",
+      label: "answer changes",
+      value: model.totalChanges,
+      tone: "bg-indigo-50 text-indigo-700 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900",
+      title: "How many times this student replaced an answer they had already chosen, across the whole test.",
+    });
+  if (model.highChurn.length > 0)
+    chips.push({
+      key: "churn",
+      glyph: "⇄",
+      label: "high-churn Qs",
+      value: model.highChurn.length,
+      tone: "bg-indigo-50 text-indigo-700 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900",
+      title: "Questions whose answer changed 2 or more times — worth a look for confusion or second-guessing.",
+    });
+  if (model.flagCount > 0)
+    chips.push({
+      key: "flags",
+      glyph: "⚑",
+      label: "flagged",
+      value: model.flagCount,
+      tone: "bg-amber-50 text-amber-700 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900",
+      title: "Questions the student marked for review and left flagged at submit.",
+    });
+  if (model.elimCount > 0)
+    chips.push({
+      key: "elim",
+      glyph: "⊘",
+      label: "eliminations",
+      value: model.elimCount,
+      tone: "bg-slate-100 text-slate-600 ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700",
+      title: "How many answer choices the student crossed out using the eliminator tool.",
+    });
+
+  if (chips.length === 0) return <></>;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-2">
+        <h4 className="text-[11px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+          Answer activity
+        </h4>
+        <span
+          aria-hidden
+          title="How the student worked the test — recorded only when proctoring is on. Use it for coaching (where they second-guessed) and to spot last-second answer swaps."
+          className="flex h-3.5 w-3.5 cursor-help items-center justify-center rounded-full bg-slate-200 text-[9px] font-bold text-slate-500 dark:bg-slate-700 dark:text-slate-300"
+        >
+          ?
+        </span>
+      </div>
+      <p className="text-[11px] text-slate-400 dark:text-slate-500">
+        Most-changed questions, with each answer in the order the student picked it
+        (<span className="font-mono">→</span> shows a change, <span className="font-mono">—</span> a clear).
+      </p>
+      <SummaryChips chips={chips} />
+      {model.highChurn.length > 0 && (
+        <ul className="divide-y divide-slate-100 dark:divide-slate-800 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+          {model.highChurn.slice(0, 8).map((q) => (
+            <li
+              key={q.question}
+              title={`Q${q.question}: answered ${q.chain.join(" then ")}${q.revisits > 0 ? ` · revisited ${q.revisits}×` : ""}`}
+              className="flex items-center gap-2.5 px-3 py-1.5 text-xs bg-white dark:bg-slate-900"
+            >
+              <span className="flex-none font-semibold text-slate-700 dark:text-slate-200 tabular-nums w-10">
+                Q{q.question}
+              </span>
+              <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">
+                {q.chain.join(" → ")}
+              </span>
+              {q.revisits > 0 && (
+                <span className="flex-none text-[10px] text-slate-400 dark:text-slate-500">
+                  {q.revisits} revisit{q.revisits === 1 ? "" : "s"}
+                </span>
+              )}
+              <span className="flex-none tabular-nums font-semibold text-indigo-600 dark:text-indigo-400">
+                {q.changeCount}× changed
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 // --- main ------------------------------------------------------------------
 
 export default function ProctorTimeline({
@@ -372,12 +578,24 @@ export default function ProctorTimeline({
   loading = false,
   compact = false,
 }: ProctorTimelineProps): JSX.Element {
+  // Partition the timeline into integrity SIGNALS (the flag track) and ACTION
+  // journal (answer churn / flags / eliminations — the "Answer activity"
+  // aggregate). They have very different volume and meaning.
+  const { integrity, actions } = useMemo(() => {
+    const integ: ProctorEvent[] = [];
+    const acts: ProctorEvent[] = [];
+    for (const ev of events) (isActionEvent(ev) ? acts : integ).push(ev);
+    return { integrity: integ, actions: acts };
+  }, [events]);
+
+  const activity = useMemo(() => buildActivity(actions), [actions]);
+
   const { positioned, summary, ticks } = useMemo(() => {
-    const sum = buildSummary(events);
+    const sum = buildSummary(integrity);
 
     // Establish the track span. Prefer explicit started/submitted; otherwise
     // derive from the events themselves so the layout still reads sensibly.
-    const evTimes = events
+    const evTimes = integrity
       .map((e) => new Date(e.at).getTime())
       .filter((t) => !Number.isNaN(t));
     const startMs = (() => {
@@ -393,12 +611,12 @@ export default function ProctorTimeline({
     })();
     const span = Math.max(MIN_TRACK_MS, endMs - startMs);
 
-    const pos: Positioned[] = events
+    const pos: Positioned[] = integrity
       .map((ev) => {
         const t = new Date(ev.at).getTime();
         const elapsedMs = Number.isNaN(t) ? 0 : Math.max(0, t - startMs);
         const leftPct = Math.min(100, Math.max(0, (elapsedMs / span) * 100));
-        const style = EVENT_STYLES[ev.type] ?? EVENT_STYLES.away;
+        const style = EVENT_STYLES[ev.type as ProctorEventType] ?? EVENT_STYLES.away;
         let widthPct = 0;
         if (style.shape === "block") {
           const durMs = (ev.durationSeconds ?? 0) * 1000;
@@ -415,7 +633,9 @@ export default function ProctorTimeline({
     }));
 
     return { positioned: pos, summary: sum, ticks: tk };
-  }, [events, startedAt, submittedAt]);
+  }, [integrity, startedAt, submittedAt]);
+
+  const hasActivity = activity.totalChanges > 0 || activity.flagCount > 0 || activity.elimCount > 0;
 
   if (loading) {
     return (
@@ -430,22 +650,18 @@ export default function ProctorTimeline({
     );
   }
 
-  if (events.length === 0) {
-    // Compact embeds want a one-liner; full mode gets the reassuring card.
-    if (compact) {
+  const chips = chipsFor(summary);
+
+  // COMPACT: integrity signals only (chips + thin sparkline track). The dense
+  // monitor row never shows the answer-activity aggregate.
+  if (compact) {
+    if (integrity.length === 0) {
       return (
         <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
           <span aria-hidden>✓</span> No flags
         </span>
       );
     }
-    return <FocusedState />;
-  }
-
-  const chips = chipsFor(summary);
-
-  // COMPACT: chips + thin sparkline track only.
-  if (compact) {
     return (
       <div className="space-y-1.5">
         {chips.length > 0 && <SummaryChips chips={chips} />}
@@ -458,12 +674,16 @@ export default function ProctorTimeline({
     );
   }
 
-  // FULL.
+  // FULL: integrity section (flag track OR reassurance) + answer-activity.
   return (
-    <div className="space-y-3">
-      {chips.length > 0 && <SummaryChips chips={chips} />}
+    <div className="space-y-4">
+      {integrity.length === 0 ? (
+        <FocusedState />
+      ) : (
+        <div className="space-y-3">
+          {chips.length > 0 && <SummaryChips chips={chips} />}
 
-      {/* scaled track + axis */}
+          {/* scaled track + axis */}
       <div className="overflow-x-auto">
         <div className="min-w-[280px] space-y-1">
           <Track positioned={positioned} />
@@ -520,6 +740,10 @@ export default function ProctorTimeline({
           );
         })}
       </ul>
+        </div>
+      )}
+
+      {hasActivity && <ActivitySummary model={activity} />}
     </div>
   );
 }

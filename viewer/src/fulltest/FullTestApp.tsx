@@ -33,6 +33,7 @@ import {
   getRunState,
   heartbeat,
   logProctorEvent,
+  logAction,
   loadCachedAnswers,
   saveCachedAnswers,
   saveProgress,
@@ -707,19 +708,30 @@ function FullTestRunner() {
   const saveDraftRef = useRef(saveDraftNow);
   saveDraftRef.current = saveDraftNow;
 
+  // Mirror the latest answers so the action journal can read the PRIOR value of
+  // a question without logging inside the setState updater (which would
+  // double-fire under StrictMode). Synced every render, like saveDraftRef.
+  const answersRef = useRef(answers);
+  answersRef.current = answers;
+
   // Proctoring heartbeat: tell the server which question we're on, on every
   // navigation and every 15s (so a teacher's live monitor stays current and
   // can spot an idle student). Best-effort.
   useEffect(() => {
     if (phase !== "module" || !runId) return;
+    const n = questions[index]?.number;
     const send = () => {
-      const n = questions[index]?.number;
       if (n != null) void heartbeat(runId, n);
     };
     send();
+    // Action journal: record the navigation/revisit so the timeline can show
+    // dwell-per-question and how often a student returned to a question.
+    if (proctorOn && n != null) {
+      void logAction(runId, "nav", { question: n, module: moduleMeta?.position });
+    }
     const id = window.setInterval(send, 15000);
     return () => window.clearInterval(id);
-  }, [index, phase, runId, questions]);
+  }, [index, phase, runId, questions, proctorOn, moduleMeta]);
 
   // Belt-and-braces: flush a draft every 3 question navigations.
   const navCountRef = useRef(0);
@@ -759,13 +771,27 @@ function FullTestRunner() {
 
   const setAnswer = useCallback(
     (qid: string, value: string | null) => {
+      const before = answersRef.current[qid] ?? null;
       setAnswers((prev) => {
         const next = { ...prev, [qid]: value };
         if (runId && moduleMeta) saveCachedAnswers(runId, moduleMeta.position, next);
         return next;
       });
+      // Action journal (best-effort, gated on proctoring). Records answer churn
+      // — coaching insight + last-second-change cheating signal — as from→to.
+      if (runId && proctorOn && before !== value) {
+        const question = questions.find((qq) => qq.id === qid)?.number;
+        const module = moduleMeta?.position;
+        if (value == null) {
+          void logAction(runId, "answer_clear", { question, module, meta: { from: before } });
+        } else if (before == null) {
+          void logAction(runId, "answer_set", { question, module, meta: { to: value } });
+        } else {
+          void logAction(runId, "answer_change", { question, module, meta: { from: before, to: value } });
+        }
+      }
     },
-    [runId, moduleMeta],
+    [runId, moduleMeta, proctorOn, questions],
   );
 
   // --- render ---------------------------------------------------------------
@@ -976,13 +1002,22 @@ function FullTestRunner() {
   const q = questions[index];
   const answeredCount = questions.filter((qq) => answers[qq.id]).length;
   const lowTime = remaining <= 60;
-  const toggleMark = (qid: string) =>
+  const toggleMark = (qid: string) => {
+    const wasMarked = marked.has(qid);
     setMarked((prev) => {
       const n = new Set(prev);
       if (n.has(qid)) n.delete(qid);
       else n.add(qid);
       return n;
     });
+    if (runId && proctorOn) {
+      const question = questions.find((qq) => qq.id === qid)?.number;
+      void logAction(runId, wasMarked ? "unflag" : "flag", {
+        question,
+        module: moduleMeta?.position,
+      });
+    }
+  };
   const toggleEliminate = (qid: string, letter: Letter) => {
     const wasStruck = eliminated[qid]?.has(letter) ?? false;
     setEliminated((prev) => {
@@ -991,6 +1026,14 @@ function FullTestRunner() {
       else cur.add(letter);
       return { ...prev, [qid]: cur };
     });
+    if (runId && proctorOn) {
+      const question = questions.find((qq) => qq.id === qid)?.number;
+      void logAction(runId, wasStruck ? "uneliminate" : "eliminate", {
+        question,
+        module: moduleMeta?.position,
+        meta: { choice: letter },
+      });
+    }
     // Crossing out the choice the student had selected clears that selection,
     // so an eliminated answer is never silently submitted as their response.
     if (!wasStruck && answers[qid] === letter) setAnswer(qid, null);
