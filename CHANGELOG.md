@@ -7,6 +7,39 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 > Note: an earlier parallel session also kept `docs/AUTONOMOUS_CHANGELOG.md`;
 > this root file is the canonical changelog going forward.
 
+## 2026-06-10
+
+### Changed
+- **Rebranded the app to "OmniLMS"** (more flexible than SAT-only): page title,
+  PWA manifest, splash, exports/print headers, app header, sign-in wordmark +
+  brand copy (now positions classes **and** college counseling), package name,
+  READMEs. The "Question Bank" feature label, Educator/Student roles, the
+  © PrepMasters company footer, and SAT references in test content are unchanged.
+- **Wider desktop layout** — main surfaces (course header/tabs/body, Dashboard,
+  Courses list) use up to 1800px; Account + per-student pages a wider cap.
+
+### Added
+- **Grouped + adjustable course tab strip** — the per-course tabs are grouped by
+  function in their default order (Teach · Insights · People · Resources ·
+  Manage) and are **drag- or keyboard-reorderable** (Alt+←/→), **saved per
+  user**. The active tab auto-scrolls into view; the visible set stays
+  course-type aware. New `CourseTabStrip`.
+- **Admin entry in the rail** — an admin in their own view gets an "Admin" rail
+  item (→ Stats/Users/Invite codes/Audit log) and an "Admin" header label
+  (hidden while previewing another role via "View as").
+
+### Polish
+- Counseling courses default to the **Caseload** tab (not an empty Modules page);
+  a violet **"Counseling"** badge marks them on course cards.
+- **Caseload**: sortable columns + filter chips (All / Needs attention /
+  Deadline soon / Missing docs), clickable total cards that toggle the matching
+  filter, filter+sort **persisted per device**, focus rings, and an actionable
+  empty state.
+- Student counseling courses hide the SAT "assignments due / my average" stats;
+  counseling cards are grouped under a "College counseling" heading on both
+  sides; the student college list shows per-college document status.
+- Counselor AI: action disabled until there's enough input, with a char count.
+
 ## 2026-06-09
 
 ### Added
