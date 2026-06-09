@@ -121,6 +121,27 @@ export function ClassComparison({ slug, modules, courses, currentCourseId, onClo
   const tallyFor = (s: ClassStat, row: Row): Tally | undefined =>
     row.kind === "overall" ? s.overall : row.kind === "section" ? s.section[row.section!] : s.domain[row.domain!];
 
+  const exportCsv = () => {
+    if (!stats) return;
+    const esc = (v: string | number) => `"${String(v).replace(/"/g, '""')}"`;
+    const header = ["Topic", ...stats.map((s) => `${s.course.title} (% correct)`)];
+    const lines = [header.map(esc).join(",")];
+    for (const row of rows) {
+      const cells = stats.map((s) => {
+        const p = tallyPct(tallyFor(s, row));
+        return p == null ? "" : p;
+      });
+      lines.push([esc(row.label), ...cells].join(","));
+    }
+    const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `class-comparison-${slug}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-3 backdrop-blur-sm sm:p-6"
@@ -147,17 +168,31 @@ export function ClassComparison({ slug, modules, courses, currentCourseId, onClo
               % correct by topic — the weakest class in each row is outlined.
             </p>
           </div>
-          <button
-            type="button"
-            data-autofocus
-            onClick={onClose}
-            aria-label="Close comparison"
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-slate-800"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
-          </button>
+          <div className="flex shrink-0 items-center gap-2">
+            {stats && stats.length > 0 && (
+              <button
+                type="button"
+                onClick={exportCsv}
+                className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-600 ring-1 ring-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                </svg>
+                Export CSV
+              </button>
+            )}
+            <button
+              type="button"
+              data-autofocus
+              onClick={onClose}
+              aria-label="Close comparison"
+              className="grid h-10 w-10 place-items-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-slate-800"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         <div className="min-h-0 flex-1 overflow-auto px-5 py-5 sm:px-7">
