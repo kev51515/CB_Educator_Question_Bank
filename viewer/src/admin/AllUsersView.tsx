@@ -32,6 +32,7 @@ import type { ProfileRole } from "@/lib/profile";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { UserDetailDrawer } from "./UserDetailDrawer";
+import { AddEducatorModal } from "./AddEducatorModal";
 import {
   DEFAULT_FILTER,
   DEFAULT_SORT,
@@ -73,6 +74,7 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
   const [actionError, setActionError] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<AdminUser | null>(null);
+  const [addEducatorOpen, setAddEducatorOpen] = useState<boolean>(false);
 
   // Hydrate from localStorage on first render so the user's chosen triage
   // shape survives reloads. The shape-validate in loadPersistedView guards
@@ -303,6 +305,18 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
             aria-label="Search users by name or email"
             className="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[40px]"
           />
+          <button
+            type="button"
+            onClick={() => setAddEducatorOpen(true)}
+            className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-1.5 min-h-[40px] motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M19 8v6M22 11h-6" />
+            </svg>
+            Add educator
+          </button>
           <button
             type="button"
             onClick={() => void refresh()}
@@ -614,6 +628,13 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
       )}
 
       <UserDetailDrawer userId={detailUserId} onClose={() => setDetailUserId(null)} />
+
+      {addEducatorOpen && (
+        <AddEducatorModal
+          onClose={() => setAddEducatorOpen(false)}
+          onCreated={() => void refresh()}
+        />
+      )}
     </div>
   );
 }

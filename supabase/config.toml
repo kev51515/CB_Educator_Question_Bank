@@ -199,7 +199,15 @@ web3 = 30
 
 [auth.email]
 # Allow/disallow new user signups via email to your project.
-enable_signup = true
+# INVITATION-ONLY: public email self-signup is DISABLED. Educators are
+# provisioned by an admin (admin_create_educator RPC / admin "Add educator");
+# students join via the teacher's class/seat code over ANONYMOUS sign-in
+# (enable_anonymous_sign_ins above stays true). admin.createUser + the
+# admin_create_* SQL RPCs bypass this, so provisioning + test harnesses are
+# unaffected. NOTE: the deployed project's source of truth is the Supabase
+# dashboard — flip Authentication → Sign In/Up → Email "Allow new users to
+# sign up" OFF there too for the production gate.
+enable_signup = false
 # If enabled, a user will be required to confirm any email change on both the old, and new email
 # addresses. If disabled, only the new email is required to confirm.
 double_confirm_changes = true

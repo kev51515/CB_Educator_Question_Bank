@@ -58,7 +58,6 @@ interface AuthScreenProps {
 
 export function AuthScreen({
   signInWithPassword,
-  signUp,
   requestPasswordReset,
   onSwitchToQuickStart,
 }: AuthScreenProps) {
@@ -79,27 +78,17 @@ export function AuthScreen({
   // Password-reset fields
   const [resetEmail, setResetEmail] = useState("");
 
-  // Sign-up fields (educator invite-only; students join via class code)
-  const [signUpName, setSignUpName] = useState("");
-  const [signUpEmail, setSignUpEmail] = useState("");
-  const [signUpPassword, setSignUpPassword] = useState("");
-  const [signUpInviteCode, setSignUpInviteCode] = useState("");
 
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
   const signInEmailRef = useRef<HTMLInputElement | null>(null);
-  const signUpNameRef = useRef<HTMLInputElement | null>(null);
   const resetEmailRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    if (tab === "signin") {
-      if (signInMode === "reset") resetEmailRef.current?.focus();
-      else signInEmailRef.current?.focus();
-    } else {
-      signUpNameRef.current?.focus();
-    }
+    if (signInMode === "reset") resetEmailRef.current?.focus();
+    else signInEmailRef.current?.focus();
     setError(null);
   }, [tab, signInMode]);
 
@@ -170,52 +159,6 @@ export function AuthScreen({
     }
   };
 
-  const onSignUpSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-    setNotice(null);
-    if (!signUpName.trim()) {
-      setError("Please enter your name.");
-      return;
-    }
-    if (!signUpEmail.trim()) {
-      setError("Please enter your email.");
-      return;
-    }
-    if (signUpPassword.length < 6) {
-      setError("Password must be at least 6 characters.");
-      return;
-    }
-    if (!signUpInviteCode.trim()) {
-      setError("An educator invite code from your admin is required.");
-      return;
-    }
-    setBusy(true);
-    try {
-      const { error: err } = await signUp(
-        signUpEmail.trim(),
-        signUpPassword,
-        signUpName.trim(),
-        "teacher",
-        signUpInviteCode.trim(),
-      );
-      if (err) {
-        setError(cleanError(err));
-        return;
-      }
-      // Success. If Supabase returned a session, onAuthStateChange will
-      // already have routed us out of this screen. If not (e.g. email
-      // confirmation required), nudge the user to sign in.
-      setNotice("Account created — you can sign in now.");
-      setSignInEmail(signUpEmail.trim());
-      setSignUpPassword("");
-      setSignUpInviteCode("");
-      setTab("signin");
-    } finally {
-      setBusy(false);
-    }
-  };
-
   // ---- presentational classes ---------------------------------------------
   // inputCls / labelCls / primaryBtn are shared with QuickStartScreen — see
   // authScreenHelpers. tabCls / segBtn are auth-only.
@@ -279,7 +222,7 @@ export function AuthScreen({
                 ? signInMode === "reset"
                   ? "Enter your email and we'll send you a reset link."
                   : "Welcome back — pick your role and sign in."
-                : "Educators join with an invite code from an admin. Students: use “Join with a class code” below."}
+                : "Accounts are invitation-only — here's how to get one."}
             </p>
           </header>
 
@@ -456,65 +399,24 @@ export function AuthScreen({
             </form>
           )}
 
-          {/* sign-up */}
+          {/* sign-up: invitation-only — educators are provisioned by an admin,
+              students join with a class code. No self-service account creation. */}
           {tab === "signup" && (
-            <form onSubmit={onSignUpSubmit} className="space-y-4">
-              <label className="block">
-                <span className={labelCls}>Your name</span>
-                <input
-                  ref={signUpNameRef}
-                  type="text"
-                  value={signUpName}
-                  onChange={(e) => setSignUpName(e.target.value)}
-                  autoComplete="name"
-                  className={inputCls}
-                  placeholder="e.g. Alex Chen"
-                />
-              </label>
-
-              <label className="block">
-                <span className={labelCls}>Invite code</span>
-                <input
-                  type="text"
-                  value={signUpInviteCode}
-                  onChange={(e) => setSignUpInviteCode(e.target.value.toUpperCase())}
-                  autoComplete="off"
-                  spellCheck={false}
-                  className={`${inputCls} font-mono uppercase tracking-wider`}
-                  placeholder="e.g. SPRING-2026"
-                />
-                <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
-                  Educator accounts are invite-only. Ask an admin for a code.
-                </span>
-              </label>
-
-              <label className="block">
-                <span className={labelCls}>Email</span>
-                <input
-                  type="email"
-                  value={signUpEmail}
-                  onChange={(e) => setSignUpEmail(e.target.value)}
-                  autoComplete="email"
-                  className={inputCls}
-                  placeholder="you@example.com"
-                />
-              </label>
-              <label className="block">
-                <span className={labelCls}>Password</span>
-                <input
-                  type="password"
-                  value={signUpPassword}
-                  onChange={(e) => setSignUpPassword(e.target.value)}
-                  autoComplete="new-password"
-                  minLength={6}
-                  className={inputCls}
-                  placeholder="At least 6 characters"
-                />
-              </label>
-              <button type="submit" disabled={busy} className={primaryBtn}>
-                {busy ? "Creating account…" : "Create account"}
-              </button>
-            </form>
+            <div className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 dark:border-white/10 dark:bg-white/[0.03]">
+              <p className="text-sm font-medium text-stone-800 dark:text-stone-100">
+                Accounts are invitation-only.
+              </p>
+              <ul className="mt-2 space-y-1.5 text-sm text-stone-600 dark:text-stone-400">
+                <li>
+                  <span className="font-medium text-stone-700 dark:text-stone-200">Educators</span> — ask an
+                  admin to create your account, then sign in above with your email + password.
+                </li>
+                <li>
+                  <span className="font-medium text-stone-700 dark:text-stone-200">Students</span> — use{" "}
+                  <span className="font-medium">Join with a class code</span> below (your teacher gives you a code).
+                </li>
+              </ul>
+            </div>
           )}
 
           {/* prominent alternative entry — class / QR code, no password needed.
