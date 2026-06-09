@@ -178,16 +178,34 @@ export type ActionEventType =
   | "unflag"
   | "eliminate"
   | "uneliminate"
-  | "nav";
+  | "nav"
+  // replay capture (0126)
+  | "highlight_add"
+  | "highlight_remove"
+  | "highlight_clear"
+  | "note_edit"
+  | "calc_open"
+  | "calc_close"
+  | "dwell";
 
 /** Any row that can appear on a run's timeline (integrity signal OR action). */
 export type TimelineEventType = ProctorEventType | ActionEventType;
 
-/** Optional payload carried by action events (e.g. an answer change from→to). */
+/** Optional payload carried by action events. */
 export interface ActionMeta {
+  /** answer_set/change/clear */
   from?: string | null;
   to?: string | null;
+  /** eliminate/uneliminate */
   choice?: string | null;
+  /** highlight_add/remove */
+  field?: "passage" | "stem" | null;
+  start?: number | null;
+  end?: number | null;
+  offset?: number | null;
+  color?: string | null;
+  /** highlight_add (selected text) / note_edit (note text, capped) */
+  text?: string | null;
 }
 
 /** One row of a run's proctoring timeline (from `get_test_run_timeline`). */
@@ -233,7 +251,7 @@ export async function logProctorEvent(
 export async function logAction(
   runId: string,
   type: ActionEventType,
-  opts: { question?: number; module?: number; meta?: ActionMeta } = {},
+  opts: { question?: number; module?: number; meta?: ActionMeta; durationSeconds?: number } = {},
 ): Promise<void> {
   try {
     await supabase.rpc("test_log_action", {
@@ -242,6 +260,7 @@ export async function logAction(
       p_question: opts.question ?? null,
       p_module: opts.module ?? null,
       p_meta: opts.meta ?? null,
+      p_duration_seconds: opts.durationSeconds ?? null,
     });
   } catch {
     /* non-fatal — action telemetry is observational only */

@@ -26,6 +26,7 @@ import { TestPreviewRunner } from "./TestPreviewRunner";
 import { ProctorChat } from "./ProctorChat";
 import {
   captureSelectionHighlight,
+  currentSelectionText,
   useRunnerAnnotations,
   type Highlight,
   type HighlightColor,
@@ -184,6 +185,16 @@ function FullTestRunner() {
   const qIdRef = useRef<string | null>(null);
   const addHighlightRef = useRef(annot.addHighlight);
   addHighlightRef.current = annot.addHighlight;
+  // Per-question dwell stopwatch (active seconds, paused while the tab is
+  // hidden) — emits a `dwell` event on question-leave / submit / unmount so
+  // per-question time is accurate + aggregate-ready (individual vs cohort).
+  const dwellQRef = useRef<number | null>(null);
+  const dwellActiveMsRef = useRef(0);
+  const dwellTickRef = useRef<number | null>(null);
+  const dwellFlushRef = useRef<() => void>(() => {});
+  const dwellStartRef = useRef<(q: number | null) => void>(() => {});
+  // Debounce for note_edit replay events.
+  const noteTimerRef = useRef<number | undefined>(undefined);
   const [marked, setMarked] = useState<Set<string>>(new Set());
   const [navOpen, setNavOpen] = useState(false);
   const [timerHidden, setTimerHidden] = useState(false);
@@ -212,6 +223,30 @@ function FullTestRunner() {
     ((start as { proctoring_level?: ProctoringLevel } | null)?.proctoring_level) ?? "off";
   const proctorOn = proctoringLevel !== "off";
   const strict = proctoringLevel === "strict";
+
+  // Dwell stopwatch helpers (stable via refs; read fresh runId/proctorOn/module).
+  // dwellTick folds elapsed-since-resume into the active accumulator.
+  dwellFlushRef.current = () => {
+    if (dwellTickRef.current != null) {
+      dwellActiveMsRef.current += Date.now() - dwellTickRef.current;
+      dwellTickRef.current = Date.now();
+    }
+    const q = dwellQRef.current;
+    const secs = Math.round(dwellActiveMsRef.current / 1000);
+    if (runId && proctorOn && q != null && secs > 0) {
+      void logAction(runId, "dwell", {
+        question: q,
+        module: currentModuleRef.current ?? undefined,
+        durationSeconds: secs,
+      });
+    }
+    dwellActiveMsRef.current = 0;
+  };
+  dwellStartRef.current = (q: number | null) => {
+    dwellQRef.current = q;
+    dwellActiveMsRef.current = 0;
+    dwellTickRef.current = q != null ? Date.now() : null;
+  };
 
   // Element fullscreen support — iOS Safari on iPhone has no element-level
   // requestFullscreen, so strict lockdown can't be enforced there. We detect
@@ -341,6 +376,9 @@ function FullTestRunner() {
   const doSubmitModule = useCallback(async () => {
     if (!runId || !moduleMeta || submittingRef.current) return;
     submittingRef.current = true;
+    // Flush the current question's dwell BEFORE submit — after the last module
+    // the run flips to 'submitted' and the dwell logger would no-op.
+    dwellFlushRef.current();
     setPhase("submitting");
     try {
       const res = await submitModule(
@@ -451,13 +489,55 @@ function FullTestRunner() {
       if (!qid) return;
       const hl = captureSelectionHighlight(hlColor);
       if (hl) {
+        const text = currentSelectionText();
         addHighlightRef.current(qid, hl);
         window.getSelection()?.removeAllRanges();
+        if (runId && proctorOn) {
+          void logAction(runId, "highlight_add", {
+            question: currentQuestionRef.current ?? undefined,
+            module: currentModuleRef.current ?? undefined,
+            meta: { field: hl.field, start: hl.start, end: hl.end, color: hl.color, text },
+          });
+        }
       }
     };
     document.addEventListener("mouseup", onUp);
     return () => document.removeEventListener("mouseup", onUp);
-  }, [phase, hlColor]);
+  }, [phase, hlColor, runId, proctorOn]);
+
+  // Dwell stopwatch — flush the previous question's active time and start the
+  // new one on every navigation; flush when leaving the module phase entirely.
+  useEffect(() => {
+    if (phase !== "module") {
+      dwellFlushRef.current();
+      dwellQRef.current = null;
+      dwellTickRef.current = null;
+      return;
+    }
+    dwellFlushRef.current();
+    dwellStartRef.current(questions[index]?.number ?? null);
+  }, [index, phase, questions]);
+
+  // Pause the dwell stopwatch while the tab is hidden so away-time isn't counted
+  // as time-on-question (keeps per-question time comparable across students).
+  useEffect(() => {
+    if (phase !== "module") return;
+    const onVis = () => {
+      if (document.hidden) {
+        if (dwellTickRef.current != null) {
+          dwellActiveMsRef.current += Date.now() - dwellTickRef.current;
+          dwellTickRef.current = null;
+        }
+      } else if (dwellQRef.current != null) {
+        dwellTickRef.current = Date.now();
+      }
+    };
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
+  }, [phase]);
+
+  // Final flush on unmount (e.g. navigating away mid-test).
+  useEffect(() => () => dwellFlushRef.current(), []);
 
   // Integrity telemetry while taking a module: paste / copy / leaving fullscreen.
   // In 'soft' mode this is detection-only (the proctor sees live counts, nothing
@@ -1142,7 +1222,16 @@ function FullTestRunner() {
           {moduleMeta?.section === "math" && (
             <button
               type="button"
-              onClick={() => setCalcOpen((v) => !v)}
+              onClick={() => {
+                const nv = !calcOpen;
+                setCalcOpen(nv);
+                if (runId && proctorOn) {
+                  void logAction(runId, nv ? "calc_open" : "calc_close", {
+                    module: currentModuleRef.current ?? undefined,
+                    question: currentQuestionRef.current ?? undefined,
+                  });
+                }
+              }}
               className={[
                 "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-medium transition",
                 calcOpen
@@ -1160,7 +1249,18 @@ function FullTestRunner() {
           )}
         </div>
       </header>
-      <DesmosCalculator open={calcOpen} onClose={() => setCalcOpen(false)} />
+      <DesmosCalculator
+        open={calcOpen}
+        onClose={() => {
+          if (calcOpen && runId && proctorOn) {
+            void logAction(runId, "calc_close", {
+              module: currentModuleRef.current ?? undefined,
+              question: currentQuestionRef.current ?? undefined,
+            });
+          }
+          setCalcOpen(false);
+        }}
+      />
 
       {/* ── Study tools: highlight + notes ── */}
       {q && (
@@ -1168,7 +1268,16 @@ function FullTestRunner() {
           <HighlighterBar
             active={hlColor}
             onPick={(c) => setHlColor((prev) => (prev === c ? null : c))}
-            onClear={() => annot.clearHighlights(q.id)}
+            onClear={() => {
+              const had = annot.get(q.id).highlights.length;
+              annot.clearHighlights(q.id);
+              if (had > 0 && runId && proctorOn) {
+                void logAction(runId, "highlight_clear", {
+                  question: q.number,
+                  module: moduleMeta?.position,
+                });
+              }
+            }}
             count={annot.get(q.id).highlights.length}
           />
           <span className="mx-1 h-4 w-px bg-slate-200 dark:bg-slate-700" aria-hidden />
@@ -1194,7 +1303,23 @@ function FullTestRunner() {
         <div className="shrink-0 border-b border-slate-200 px-5 py-2 dark:border-slate-800">
           <textarea
             value={annot.get(q.id).note}
-            onChange={(e) => annot.setNote(q.id, e.target.value)}
+            onChange={(e) => {
+              const text = e.target.value;
+              annot.setNote(q.id, text);
+              // Debounced note_edit snapshot for replay (capped length).
+              if (runId && proctorOn) {
+                window.clearTimeout(noteTimerRef.current);
+                const qn = q.number;
+                const mod = moduleMeta?.position;
+                noteTimerRef.current = window.setTimeout(() => {
+                  void logAction(runId, "note_edit", {
+                    question: qn,
+                    module: mod,
+                    meta: { text: text.slice(0, 500) },
+                  });
+                }, 1500);
+              }
+            }}
             rows={2}
             placeholder="Jot a note for this question…"
             className="w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
@@ -1221,7 +1346,16 @@ function FullTestRunner() {
             eliminated={eliminated[q.id]}
             onToggleEliminate={(letter) => toggleEliminate(q.id, letter)}
             highlights={annot.get(q.id).highlights}
-            onRemoveHighlight={(field, offset) => annot.removeHighlightAt(q.id, field, offset)}
+            onRemoveHighlight={(field, offset) => {
+              annot.removeHighlightAt(q.id, field, offset);
+              if (runId && proctorOn) {
+                void logAction(runId, "highlight_remove", {
+                  question: q.number,
+                  module: moduleMeta?.position,
+                  meta: { field, offset },
+                });
+              }
+            }}
           />
         )}
       </main>
