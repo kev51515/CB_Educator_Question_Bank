@@ -66,6 +66,16 @@ Dates are the work date. Migration numbers in parentheses where relevant.
   tests — reinforcing the "Focus area" from the summary card. Uses the `domain`
   already returned by `get_test_result` (0121); matches the teacher-side nav pill.
 
+### Changed
+- **Invitation-only access — removed open self-signup.** The AuthScreen
+  "Create account" tab is now **"Educator sign-up"**: educator-only and always
+  requires an admin **invite code** (the codeless student self-signup + the
+  student/teacher role toggle are gone). Students continue to onboard via the
+  teacher's **class/seat code** through QuickStart (already code-gated). Net:
+  educators ← admin invite code, students ← teacher code; no account can be
+  created without an invitation. (UI gate; reversible. A full server-side lock
+  would also disable GoTrue self-signup in the Supabase project.)
+
 ### Fixed
 - **Teacher per-student skill mastery double-counted retakes** (0122). The
   `student_test_report` RPC's per-domain rollup summed every submitted run, so a

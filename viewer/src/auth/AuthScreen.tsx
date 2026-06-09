@@ -79,8 +79,7 @@ export function AuthScreen({
   // Password-reset fields
   const [resetEmail, setResetEmail] = useState("");
 
-  // Sign-up fields
-  const [signUpRole, setSignUpRole] = useState<SignUpRole>("student");
+  // Sign-up fields (educator invite-only; students join via class code)
   const [signUpName, setSignUpName] = useState("");
   const [signUpEmail, setSignUpEmail] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
@@ -187,8 +186,8 @@ export function AuthScreen({
       setError("Password must be at least 6 characters.");
       return;
     }
-    if (signUpRole === "teacher" && !signUpInviteCode.trim()) {
-      setError("Teacher signup requires an invite code from your admin.");
+    if (!signUpInviteCode.trim()) {
+      setError("An educator invite code from your admin is required.");
       return;
     }
     setBusy(true);
@@ -197,8 +196,8 @@ export function AuthScreen({
         signUpEmail.trim(),
         signUpPassword,
         signUpName.trim(),
-        signUpRole,
-        signUpRole === "teacher" ? signUpInviteCode.trim() : undefined,
+        "teacher",
+        signUpInviteCode.trim(),
       );
       if (err) {
         setError(cleanError(err));
@@ -273,14 +272,14 @@ export function AuthScreen({
             >
               {tab === "signin"
                 ? `${ROLE_LABELS[signInRole]} sign-in`
-                : "Create your account"}
+                : "Educator sign-up"}
             </h1>
             <p className="mt-1.5 text-sm text-stone-500 dark:text-stone-400">
               {tab === "signin"
                 ? signInMode === "reset"
                   ? "Enter your email and we'll send you a reset link."
                   : "Welcome back — pick your role and sign in."
-                : "Start practicing in under a minute."}
+                : "Educators join with an invite code from an admin. Students: use “Join with a class code” below."}
             </p>
           </header>
 
@@ -309,7 +308,7 @@ export function AuthScreen({
               onClick={() => setTab("signup")}
               className={tabCls(tab === "signup")}
             >
-              Create account
+              Educator sign-up
             </button>
           </div>
 
@@ -460,27 +459,6 @@ export function AuthScreen({
           {/* sign-up */}
           {tab === "signup" && (
             <form onSubmit={onSignUpSubmit} className="space-y-4">
-              <fieldset>
-                <legend className={`${labelCls} mb-1.5`}>I am a</legend>
-                <div
-                  role="radiogroup"
-                  aria-label="Account role"
-                  className="grid grid-cols-2 gap-1 rounded-xl bg-stone-100 p-1 dark:bg-white/5"
-                >
-                  {(["student", "teacher"] as const).map((value) => (
-                    <button
-                      key={value}
-                      type="button"
-                      role="radio"
-                      aria-checked={signUpRole === value}
-                      onClick={() => setSignUpRole(value)}
-                      className={`capitalize ${segBtn(signUpRole === value)}`}
-                    >
-                      {value}
-                    </button>
-                  ))}
-                </div>
-              </fieldset>
               <label className="block">
                 <span className={labelCls}>Your name</span>
                 <input
@@ -494,25 +472,21 @@ export function AuthScreen({
                 />
               </label>
 
-              {signUpRole === "teacher" && (
-                <label className="block">
-                  <span className={labelCls}>Teacher invite code</span>
-                  <input
-                    type="text"
-                    value={signUpInviteCode}
-                    onChange={(e) => setSignUpInviteCode(e.target.value.toUpperCase())}
-                    autoComplete="off"
-                    spellCheck={false}
-                    className={`${inputCls} font-mono uppercase tracking-wider`}
-                    placeholder="e.g. SPRING-2026"
-                  />
-                  <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
-                    Teachers have full Console access (manage all courses, users,
-                    invite codes). You'll need a code from existing staff to sign
-                    up as one.
-                  </span>
-                </label>
-              )}
+              <label className="block">
+                <span className={labelCls}>Invite code</span>
+                <input
+                  type="text"
+                  value={signUpInviteCode}
+                  onChange={(e) => setSignUpInviteCode(e.target.value.toUpperCase())}
+                  autoComplete="off"
+                  spellCheck={false}
+                  className={`${inputCls} font-mono uppercase tracking-wider`}
+                  placeholder="e.g. SPRING-2026"
+                />
+                <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
+                  Educator accounts are invite-only. Ask an admin for a code.
+                </span>
+              </label>
 
               <label className="block">
                 <span className={labelCls}>Email</span>
