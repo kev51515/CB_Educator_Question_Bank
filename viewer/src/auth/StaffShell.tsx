@@ -13,14 +13,13 @@
  * The shell also mounts the overlay widgets (StudentBadge, AccountUpgradeBanner)
  * so the student/staff shells stay DRY.
  */
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import {
   useCallback,
   useEffect,
   useMemo,
   useState,
   type CSSProperties,
-  type ReactNode,
 } from "react";
 import { Breadcrumbs, BreadcrumbProvider } from "@/components";
 import { ROUTES } from "@/lib/routes";
@@ -31,6 +30,11 @@ import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
 import { useProfile } from "@/lib/profile";
 import { canAccessQuestionBank } from "@/lib/access";
+import {
+  ReorderableNavRail,
+  isAccountRouteActive,
+  type NavRailItem,
+} from "./navRail";
 import { CommandPalette, type Command } from "@/components/CommandPalette";
 import { ShortcutsHelp } from "@/components/ShortcutsHelp";
 import { useLmsCommands } from "@/lib/lmsCommands";
@@ -115,43 +119,11 @@ function isEditableTarget(target: EventTarget | null): boolean {
   return false;
 }
 
-interface RailIconProps {
-  children: ReactNode;
-}
-
-function RailIcon({ children }: RailIconProps) {
-  return (
-    <span
-      aria-hidden
-      className="inline-flex items-center justify-center h-6 w-6"
-    >
-      {children}
-    </span>
-  );
-}
-
-function railLinkClass({ isActive }: { isActive: boolean }): string {
-  return [
-    "flex flex-col md:flex-row items-center md:items-center gap-1 md:gap-3 px-2 md:px-3 py-3 min-h-[44px] rounded-lg text-xs md:text-sm font-medium transition-colors w-full",
-    isActive
-      ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-200 ring-1 ring-indigo-200 dark:ring-indigo-900"
-      : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800",
-  ].join(" ");
-}
-
-
-/**
- * Heuristic: a path "matches" /account when it starts with /account/. We
- * rely on this for the Account rail item's active state instead of NavLink's
- * built-in match (which would only highlight on an exact /account hit).
- */
-function isAccountRouteActive(pathname: string): boolean {
-  return pathname === ROUTES.ACCOUNT || pathname.startsWith(`${ROUTES.ACCOUNT}/`);
-}
+// RailIcon / railLinkClass / isAccountRouteActive + the reorderable rail itself
+// live in ./navRail (imported above). The rail items are defined in render.
 
 export function StaffShell() {
   const navigate = useNavigate();
-  const location = useLocation();
   const { session, signOut, setArea } = useStudentSession();
   const { profile } = useProfile();
   const { upgradeAnonymousAccount } = useStudentSession();
@@ -273,6 +245,99 @@ export function StaffShell() {
     "--app-chrome-top": "3rem",
   } as CSSProperties;
 
+  // Rail items as data so the user can drag-reorder them (persisted per user
+  // by ReorderableNavRail). Question Bank + Submissions only appear for the
+  // allow-listed educators (see lib/access.ts).
+  const navItems: NavRailItem[] = [
+    {
+      id: "dashboard",
+      to: ROUTES.DASHBOARD,
+      label: "Dashboard",
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <rect x={3} y={3} width={7} height={9} rx={1} />
+          <rect x={14} y={3} width={7} height={5} rx={1} />
+          <rect x={14} y={12} width={7} height={9} rx={1} />
+          <rect x={3} y={16} width={7} height={5} rx={1} />
+        </svg>
+      ),
+    },
+    {
+      id: "courses",
+      to: ROUTES.COURSES,
+      label: "Courses",
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" />
+          <path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2" />
+          <path d="M8 7h8M8 11h8M8 15h5" />
+        </svg>
+      ),
+    },
+    ...(canQbank
+      ? ([
+          {
+            id: "question-bank",
+            to: ROUTES.QUESTION_BANK,
+            label: "Question Bank",
+            icon: (
+              <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 4a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v16a2 2 0 0 0-2-2H2z" />
+                <path d="M22 4a2 2 0 0 0-2-2h-6.5a2 2 0 0 0-2 2v16a2 2 0 0 1 2-2H22z" />
+              </svg>
+            ),
+          },
+          {
+            id: "submissions",
+            to: ROUTES.QBANK_LOG,
+            label: "Submissions",
+            icon: (
+              <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 6h11M9 12h11M9 18h11" />
+                <path d="M3 6l1.5 1.5L7 5" />
+                <path d="M3 12l1.5 1.5L7 11" />
+                <path d="M3 18l1.5 1.5L7 17" />
+              </svg>
+            ),
+          },
+        ] as NavRailItem[])
+      : []),
+    {
+      id: "calendar",
+      to: ROUTES.CALENDAR,
+      label: "Calendar",
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <rect x={3} y={4} width={18} height={17} rx={2} />
+          <path d="M16 2v4M8 2v4M3 10h18" />
+        </svg>
+      ),
+    },
+    {
+      id: "inbox",
+      to: ROUTES.INBOX,
+      label: "Inbox",
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 4h16v12H5.5L4 17.5z" />
+          <path d="M8 9h8M8 13h5" />
+        </svg>
+      ),
+    },
+    {
+      id: "account",
+      to: ROUTES.ACCOUNT,
+      label: "Account",
+      isActive: isAccountRouteActive,
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <circle cx={12} cy={8} r={4} />
+          <path d="M4 21a8 8 0 0 1 16 0" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <BreadcrumbProvider>
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
@@ -308,178 +373,12 @@ export function StaffShell() {
             </p>
           </div>
 
-          <NavLink to={ROUTES.DASHBOARD} className={railLinkClass} title="Dashboard">
-            <RailIcon>
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x={3} y={3} width={7} height={9} rx={1} />
-                <rect x={14} y={3} width={7} height={5} rx={1} />
-                <rect x={14} y={12} width={7} height={9} rx={1} />
-                <rect x={3} y={16} width={7} height={5} rx={1} />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "md:hidden" : undefined}>
-              Dashboard
-            </span>
-          </NavLink>
-
-          <NavLink to={ROUTES.COURSES} className={railLinkClass} title="Courses">
-            <RailIcon>
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" />
-                <path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2" />
-                <path d="M8 7h8M8 11h8M8 15h5" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "md:hidden" : undefined}>Courses</span>
-          </NavLink>
-
-          {canQbank && (
-            <NavLink
-              to={ROUTES.QUESTION_BANK}
-              className={railLinkClass}
-              title="Question Bank"
-            >
-              <RailIcon>
-                <svg
-                  width={20}
-                  height={20}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M2 4a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v16a2 2 0 0 0-2-2H2z" />
-                  <path d="M22 4a2 2 0 0 0-2-2h-6.5a2 2 0 0 0-2 2v16a2 2 0 0 1 2-2H22z" />
-                </svg>
-              </RailIcon>
-              <span className={collapsed ? "md:hidden" : undefined}>
-                Question Bank
-              </span>
-            </NavLink>
-          )}
-
-          {canQbank && (
-            <NavLink
-              to={ROUTES.QBANK_LOG}
-              className={railLinkClass}
-              title="Submissions"
-            >
-              <RailIcon>
-                {/* List-with-checkmark — matches the "audit log of attempts"
-                    semantics. Kept stroke-based to share the rail's visual
-                    weight with the other icons. */}
-                <svg
-                  width={20}
-                  height={20}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M9 6h11M9 12h11M9 18h11" />
-                  <path d="M3 6l1.5 1.5L7 5" />
-                  <path d="M3 12l1.5 1.5L7 11" />
-                  <path d="M3 18l1.5 1.5L7 17" />
-                </svg>
-              </RailIcon>
-              <span className={collapsed ? "md:hidden" : undefined}>
-                Submissions
-              </span>
-            </NavLink>
-          )}
-
-          {/* "Tests" nav removed — full-length tests now live under the
-              Question Bank → "Full-Test" tab (unified tests surface). The
-              /tests/:slug/review route stays for the "Review answer key" link. */}
-
-          <NavLink
-            to={ROUTES.CALENDAR}
-            className={railLinkClass}
-            title="Calendar"
-          >
-            <RailIcon>
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x={3} y={4} width={18} height={17} rx={2} />
-                <path d="M16 2v4M8 2v4M3 10h18" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "md:hidden" : undefined}>Calendar</span>
-          </NavLink>
-
-          <NavLink to={ROUTES.INBOX} className={railLinkClass} title="Inbox">
-            <RailIcon>
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M4 4h16v12H5.5L4 17.5z" />
-                <path d="M8 9h8M8 13h5" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "md:hidden" : undefined}>Inbox</span>
-          </NavLink>
-
-          <NavLink
-            to={ROUTES.ACCOUNT}
-            title="Account"
-            className={() =>
-              railLinkClass({ isActive: isAccountRouteActive(location.pathname) })
-            }
-          >
-            <RailIcon>
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx={12} cy={8} r={4} />
-                <path d="M4 21a8 8 0 0 1 16 0" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "md:hidden" : undefined}>Account</span>
-          </NavLink>
+          {/* Drag-reorderable nav items (order persists per user). */}
+          <ReorderableNavRail
+            items={navItems}
+            collapsed={collapsed}
+            userId={userId}
+          />
 
           {/* Spacer pushes the collapse toggle to the bottom of the rail. */}
           <div className="flex-1" aria-hidden />
