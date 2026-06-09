@@ -57,3 +57,35 @@ as it crosses into the 24h window.
 
 **Verify:** `tsc -b` green; `eslint` clean on all three files. Styling-only change
 (class swap) gated on existing, tested predicates.
+
+---
+
+## Cycle 3 — `useRovingTabIndex` hook; keyboard a11y for the assignments filter tablist
+
+**Why:** 15 non-fulltest surfaces declare `role="tablist"` but most (incl.
+`AssignmentsPanel`'s filter chips) never implemented the WAI-ARIA tablist
+keyboard pattern — Arrow keys don't move between tabs and every tab is a
+separate Tab stop. The project otherwise holds a high a11y bar (roving tabindex
+in `KebabMenu`, 37+ focus-trapped dialogs), so this was an inconsistency for
+keyboard/screen-reader users.
+
+**What:**
+- Added `useRovingTabIndex<T>()` to `@/hooks`: returns `getTabProps(i)` (ref,
+  roving `tabIndex`, `onKeyDown`) implementing Arrow (wrapping) + Home/End with
+  "selection follows focus" (arrowing a filter also activates it). Generic over
+  the element type; horizontal/vertical orientation.
+- Wired it into `AssignmentsPanel`'s filter tablist — now a single Tab stop with
+  Arrow/Home/End navigation, matching the ARIA contract it already advertised.
+
+**Assumption:** Automatic activation (selection follows focus) is right for
+filter chips — consistent with how a mouse click both focuses and filters.
+
+**Verify:** `tsc -b` green; `eslint` clean (the 1 warning is pre-existing in
+`useMediaQuery`). The remaining ~14 `role="tablist"` surfaces can adopt the same
+hook incrementally — left as follow-up to keep this change reviewable.
+
+**Abandoned mid-cycle (self-critique caught it):** consolidating the 20
+duplicate `formatRelative` fns into one `<RelativeTime>` — the times are
+interpolated into sentences + aria-labels (not standalone), and the 20 variants
+have divergent phrasing, so a sweep would risk visible wording drift across the
+app. Not worth the risk this session.

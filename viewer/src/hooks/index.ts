@@ -9,7 +9,13 @@
  * Add new hook files alongside this `index.ts` and re-export them at the
  * bottom of this file so consumers have a single import surface.
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 
 /** Reactive CSS media query. */
 export function useMediaQuery(query: string): boolean {
@@ -359,6 +365,77 @@ export function useNow(intervalMs: number = 60_000): number {
     return () => clearInterval(id);
   }, [intervalMs]);
   return now;
+}
+
+/**
+ * WAI-ARIA tablist keyboard support via roving tabindex. Returns `getTabProps(i)`
+ * to spread onto each `role="tab"` element:
+ *   - Arrow keys move focus between tabs (wrapping); Home/End jump to the ends.
+ *   - Only the active tab is in the Tab sequence (`tabIndex` 0 vs -1), so the
+ *     group is a single tab stop and Arrows drive intra-group movement.
+ *   - These filter-style tablists use "selection follows focus": arrowing to a
+ *     tab also calls `onSelect(index)`, so the moved-to filter activates.
+ *
+ * `orientation` picks the arrow axis (default horizontal: Left/Right).
+ */
+export function useRovingTabIndex<T extends HTMLElement = HTMLElement>(opts: {
+  count: number;
+  activeIndex: number;
+  onSelect: (index: number) => void;
+  orientation?: "horizontal" | "vertical";
+}): { getTabProps: (index: number) => {
+  ref: (el: T | null) => void;
+  tabIndex: number;
+  onKeyDown: (e: ReactKeyboardEvent<T>) => void;
+} } {
+  const { count, activeIndex, onSelect, orientation = "horizontal" } = opts;
+  const refs = useRef<Array<T | null>>([]);
+  const nextKey = orientation === "horizontal" ? "ArrowRight" : "ArrowDown";
+  const prevKey = orientation === "horizontal" ? "ArrowLeft" : "ArrowUp";
+
+  const move = useCallback(
+    (to: number) => {
+      if (count === 0) return;
+      const i = ((to % count) + count) % count;
+      onSelect(i);
+      refs.current[i]?.focus();
+    },
+    [count, onSelect],
+  );
+
+  const getTabProps = useCallback(
+    (index: number) => ({
+      ref: (el: T | null) => {
+        refs.current[index] = el;
+      },
+      tabIndex: index === activeIndex ? 0 : -1,
+      onKeyDown: (e: ReactKeyboardEvent<T>) => {
+        switch (e.key) {
+          case nextKey:
+            e.preventDefault();
+            move(index + 1);
+            break;
+          case prevKey:
+            e.preventDefault();
+            move(index - 1);
+            break;
+          case "Home":
+            e.preventDefault();
+            move(0);
+            break;
+          case "End":
+            e.preventDefault();
+            move(count - 1);
+            break;
+          default:
+            break;
+        }
+      },
+    }),
+    [activeIndex, count, move, nextKey, prevKey],
+  );
+
+  return { getTabProps };
 }
 
 // External hooks: re-export from their own modules for the @/hooks barrel.

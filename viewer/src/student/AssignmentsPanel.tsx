@@ -21,7 +21,7 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useNow } from "@/hooks";
+import { useNow, useRovingTabIndex } from "@/hooks";
 import {
   useStudentAssignments,
   type StudentAssignment,
@@ -178,6 +178,13 @@ export function AssignmentsPanel({
     setView((prev) => ({ ...prev, filter: next }));
   };
 
+  // Roving-tabindex keyboard support for the filter tablist (Arrow/Home/End).
+  const { getTabProps } = useRovingTabIndex<HTMLButtonElement>({
+    count: FILTER_ORDER.length,
+    activeIndex: FILTER_ORDER.indexOf(view.filter),
+    onSelect: (i) => handleFilterChange(FILTER_ORDER[i]),
+  });
+
   const handleSortChange = (next: SortKey) => {
     setView((prev) => ({ ...prev, sort: next }));
   };
@@ -215,7 +222,7 @@ export function AssignmentsPanel({
             aria-label="Filter assignments"
             className="flex flex-wrap items-center gap-1.5"
           >
-            {FILTER_ORDER.map((key) => {
+            {FILTER_ORDER.map((key, idx) => {
               const isActive = view.filter === key;
               const count = counts[key];
               const base =
@@ -233,6 +240,7 @@ export function AssignmentsPanel({
                   aria-controls="my-assignments-results"
                   onClick={() => handleFilterChange(key)}
                   className={`${base} ${isActive ? active : inactive}`}
+                  {...getTabProps(idx)}
                 >
                   <span>{FILTER_LABELS[key]}</span>
                   <span
