@@ -24,6 +24,7 @@ import { supabase } from "@/lib/supabase";
 import { useToast, MarkdownEditor, useOptimistic } from "@/components";
 import { useClassContext } from "./classLayoutContext";
 import { ConfirmDialog } from "./ConfirmDialog";
+import { CourseSharingControls } from "./CourseSharingControls";
 import { ROUTES } from "@/lib/routes";
 
 interface RegeneratedClassRow {
@@ -455,7 +456,15 @@ export function CourseSettings() {
           </label>
         </SettingsCard>
 
-        {/* 5. Danger zone */}
+        {/* 5. Sharing */}
+        <SettingsCard
+          title="Sharing"
+          description="Give another educator full co-management of this course. They'll see it in their own course list."
+        >
+          <CourseSharingControls courseId={cls.id} />
+        </SettingsCard>
+
+        {/* 6. Danger zone */}
         <section className="rounded-2xl ring-1 bg-rose-50/40 dark:bg-rose-950/20 ring-rose-200 dark:ring-rose-900 px-5 py-5 space-y-4">
           <header className="space-y-1">
             <h3 className="text-sm font-semibold text-rose-700 dark:text-rose-300">

@@ -72,7 +72,10 @@ export function useTeacherClasses(teacherId: string | null): UseTeacherClasses {
           // via the `count` modifier on a related resource.
           "id, short_code, name, description, join_code, archived, is_template, created_at, updated_at, course_memberships(count)",
         )
-        .eq("teacher_id", teacherId)
+        // No teacher_id filter: RLS (migration 0130) already scopes a teacher
+        // to the courses they OWN or that were SHARED with them, so this returns
+        // own + shared. (An admin sees all — consistent with their oversight
+        // role and the /courses list.)
         .order("created_at", { ascending: false });
 
       if (queryError) {
