@@ -10,6 +10,29 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 ## 2026-06-09
 
 ### Added
+- **Counseling course type + full counseling suite.** Courses now have a
+  `course_type` ('class' | 'counseling', migration 0133) chosen at creation;
+  Portfolio moved to counseling-only. The Counseling type unlocks a college/
+  career advising workspace (see [`docs/COUNSELING.md`](docs/COUNSELING.md)):
+  - **Per-student workspace** (counselor side, StudentProfilePage): digital
+    profile, college list + **application tracker** (status/plan/deadline),
+    **document checklist** ("missing docs"), counselor **tasks**, and
+    counselor-private **meeting notes**. Migrations 0134, 0137.
+  - **Caseload dashboard** — a counseling-only course tab with course-wide
+    totals (applications by status, deadlines due in 14 days, missing docs,
+    open/overdue tasks) + a per-student table deep-linking into each workspace.
+    `counseling_caseload` RPC (0135/0137).
+  - **Student portal** — students in a counseling course see/maintain their own
+    profile, college list (read), and tasks (check off via RPC); they're
+    **notified** when a counselor assigns a task. Migration 0136. (No AI on the
+    student side, by design.)
+  - **Counselor-only AI** — an "essay feedback" + "rec-letter draft" assistant
+    on the per-student workspace, via a new `counselor-ai` edge function that
+    authorizes teachers-of-course/admin only and calls the LLM server-side.
+    Needs a one-time `supabase secrets set ANTHROPIC_API_KEY=…` +
+    `supabase functions deploy counselor-ai`.
+  - Verified by `smoke-counseling.mjs` (20/20: RLS, caseload, student
+    self-service, notifications, missing-docs).
 - **Admin: cohort-wide skill health** on the Stats page — a "Skills across all
   students" card showing per-SAT-domain %-correct across every student's latest
   attempt per test, with a weakest-domain callout (program-level signal). New
