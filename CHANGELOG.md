@@ -10,6 +10,12 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 ## 2026-06-09
 
 ### Added
+- **Admin: cohort-wide skill health** on the Stats page — a "Skills across all
+  students" card showing per-SAT-domain %-correct across every student's latest
+  attempt per test, with a weakest-domain callout (program-level signal). New
+  admin-only `system_skill_mastery` RPC (**0128**); `SystemSkillsCard`. Also
+  de-duplicated the section-grouping into a shared `groupDomainRows`/`weakestDomain`
+  in `fulltest/skills.ts` (course + system surfaces now share it).
 - **Admin: per-user activity drawer.** Click a name in the admin All Users table
   to open a snapshot — role, joined, last sign-in, last active, and activity
   counts (courses teaching/enrolled, assignment attempts, full-test runs

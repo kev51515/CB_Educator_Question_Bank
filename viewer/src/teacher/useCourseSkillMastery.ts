@@ -9,38 +9,28 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { orderDomains, orderSections, pctOf } from "@/fulltest/skills";
+import {
+  groupDomainRows,
+  weakestDomain,
+  type SkillDomainRow,
+  type SkillDomainStat,
+  type SkillSectionGroup,
+} from "@/fulltest/skills";
 
-export interface DomainRow {
-  section: string;
-  domain: string;
-  correct: number;
-  total: number;
-}
 export interface Mastery {
   students: number;
   tests: number;
   attempts: number;
-  domains: DomainRow[];
-}
-export interface DomainStat {
-  domain: string;
-  correct: number;
-  total: number;
-  pct: number;
-}
-export interface SectionGroup {
-  section: string;
-  domains: DomainStat[];
+  domains: SkillDomainRow[];
 }
 
 export interface CourseSkillMastery {
   loading: boolean;
   error: string | null;
   mastery: Mastery | null;
-  grouped: SectionGroup[];
-  all: DomainStat[];
-  weakest: DomainStat | null;
+  grouped: SkillSectionGroup[];
+  all: SkillDomainStat[];
+  weakest: SkillDomainStat | null;
 }
 
 export function useCourseSkillMastery(courseId: string): CourseSkillMastery {
@@ -69,30 +59,9 @@ export function useCourseSkillMastery(courseId: string): CourseSkillMastery {
     };
   }, [courseId]);
 
-  const grouped = useMemo<SectionGroup[]>(() => {
-    const rows = mastery?.domains ?? [];
-    const bySection = new Map<string, Map<string, DomainRow>>();
-    for (const r of rows) {
-      if (!bySection.has(r.section)) bySection.set(r.section, new Map());
-      bySection.get(r.section)!.set(r.domain, r);
-    }
-    return orderSections(bySection.keys()).map((sec) => {
-      const byName = bySection.get(sec)!;
-      return {
-        section: sec,
-        domains: orderDomains(sec, byName.keys()).map((name) => {
-          const r = byName.get(name)!;
-          return { domain: name, correct: r.correct, total: r.total, pct: pctOf(r.correct, r.total) ?? 0 };
-        }),
-      };
-    });
-  }, [mastery]);
-
+  const grouped = useMemo(() => groupDomainRows(mastery?.domains ?? []), [mastery]);
   const all = useMemo(() => grouped.flatMap((g) => g.domains), [grouped]);
-  const weakest = useMemo(
-    () => all.reduce<DomainStat | null>((w, d) => (!w || d.pct < w.pct ? d : w), null),
-    [all],
-  );
+  const weakest = useMemo(() => weakestDomain(grouped), [grouped]);
 
   return { loading, error, mastery, grouped, all, weakest };
 }

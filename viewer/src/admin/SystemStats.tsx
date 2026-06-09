@@ -11,6 +11,7 @@
  * a refresh doesn't fan out to 8 separate round-trips.
  */
 import { useCallback, useEffect, useState } from "react";
+import { SystemSkillsCard } from "./SystemSkillsCard";
 import { supabase } from "@/lib/supabase";
 import { Skeleton } from "@/components/Skeleton";
 import { useToast } from "@/components/Toast";
@@ -315,6 +316,8 @@ export function SystemStats() {
               subtext="Submissions in the last week"
             />
           </section>
+
+          <SystemSkillsCard />
 
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">

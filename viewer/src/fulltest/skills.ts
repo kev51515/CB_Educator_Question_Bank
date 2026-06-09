@@ -85,3 +85,49 @@ export function pctOf(correct: number, total: number): number | null {
 export function isChoiceLetter(value: string): boolean {
   return /^[A-D]$/.test(value);
 }
+
+// --- domain rollup grouping (shared by the course + system skill surfaces) ---
+
+/** A flat per-domain tally as returned by the skill-mastery RPCs. */
+export interface SkillDomainRow {
+  section: string;
+  domain: string;
+  correct: number;
+  total: number;
+}
+export interface SkillDomainStat extends SkillDomainRow {
+  pct: number;
+}
+export interface SkillSectionGroup {
+  section: string;
+  domains: SkillDomainStat[];
+}
+
+/**
+ * Group flat per-domain rows into canonical section → domain order with %s.
+ * Shared so every "class/cohort skills" surface buckets identically.
+ */
+export function groupDomainRows(rows: SkillDomainRow[]): SkillSectionGroup[] {
+  const bySection = new Map<string, Map<string, SkillDomainRow>>();
+  for (const r of rows) {
+    if (!bySection.has(r.section)) bySection.set(r.section, new Map());
+    bySection.get(r.section)!.set(r.domain, r);
+  }
+  return orderSections(bySection.keys()).map((sec) => {
+    const byName = bySection.get(sec)!;
+    return {
+      section: sec,
+      domains: orderDomains(sec, byName.keys()).map((name) => {
+        const r = byName.get(name)!;
+        return { ...r, pct: pctOf(r.correct, r.total) ?? 0 };
+      }),
+    };
+  });
+}
+
+/** The single weakest domain across grouped sections (lowest %), or null. */
+export function weakestDomain(groups: SkillSectionGroup[]): SkillDomainStat | null {
+  return groups
+    .flatMap((g) => g.domains)
+    .reduce<SkillDomainStat | null>((w, d) => (!w || d.pct < w.pct ? d : w), null);
+}
