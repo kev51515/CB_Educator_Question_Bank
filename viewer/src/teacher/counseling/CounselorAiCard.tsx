@@ -143,10 +143,13 @@ export function CounselorAiCard({ courseId }: { courseId: string }) {
         className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-violet-500"
       />
 
-      <div className="flex items-center justify-end gap-2">
+      <div className="flex items-center justify-end gap-3">
+        <span className="text-[11px] text-slate-400 dark:text-slate-500">
+          {text.trim().length} chars
+        </span>
         <button
           type="button"
-          disabled={busy}
+          disabled={busy || text.trim().length < 10}
           onClick={() => void run()}
           className="rounded-md bg-violet-600 hover:bg-violet-700 text-white text-xs font-medium px-3 py-2 min-h-[40px] disabled:opacity-50 disabled:cursor-not-allowed"
         >

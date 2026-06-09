@@ -90,7 +90,7 @@ function StatCard({
         type="button"
         onClick={onClick}
         aria-pressed={active}
-        className={`${base} block w-full hover:ring-indigo-400 dark:hover:ring-indigo-700`}
+        className={`${base} block w-full hover:ring-indigo-400 dark:hover:ring-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500`}
       >
         {body}
       </button>
@@ -176,7 +176,7 @@ export function CounselingCaseloadView() {
       <button
         type="button"
         onClick={() => onSort(key)}
-        className="inline-flex items-center gap-1 uppercase tracking-wide hover:text-slate-700 dark:hover:text-slate-200"
+        className="inline-flex items-center gap-1 rounded uppercase tracking-wide hover:text-slate-700 dark:hover:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
       >
         {label}
         <svg
@@ -288,7 +288,7 @@ export function CounselingCaseloadView() {
                     type="button"
                     aria-pressed={filter === f.value}
                     onClick={() => setFilter(f.value)}
-                    className={`rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors ${
+                    className={`rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
                       filter === f.value
                         ? "bg-indigo-600 text-white ring-indigo-600"
                         : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800"
