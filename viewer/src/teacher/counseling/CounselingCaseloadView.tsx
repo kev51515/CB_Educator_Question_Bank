@@ -7,7 +7,7 @@
  * Counseling-only tab (gated in ClassLayout). Reads the counseling_caseload
  * RPC (0135) via useCounselingCaseload.
  */
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useClassContext } from "../classLayoutContext";
 import { courseStudentProfilePath } from "@/lib/routes";
@@ -109,6 +109,26 @@ type SortKey =
   | "meeting";
 type CaseloadFilter = "all" | "attention" | "missing_docs" | "deadline_soon";
 
+// Persist the counselor's preferred caseload view (filter + sort) per device,
+// per the project's "persist filter selections" UX bar.
+const PREF_KEY = "staff.caseload.view";
+const FILTERS_SET = new Set(["all", "attention", "missing_docs", "deadline_soon"]);
+const SORTKEYS_SET = new Set([
+  "name", "applications", "accepted", "deadline", "docs", "tasks", "meeting",
+]);
+function readPref(): { filter: CaseloadFilter; sortKey: SortKey; sortDir: "asc" | "desc" } {
+  try {
+    const p = JSON.parse(localStorage.getItem(PREF_KEY) || "{}");
+    return {
+      filter: FILTERS_SET.has(p.filter) ? p.filter : "all",
+      sortKey: SORTKEYS_SET.has(p.sortKey) ? p.sortKey : "name",
+      sortDir: p.sortDir === "desc" ? "desc" : "asc",
+    };
+  } catch {
+    return { filter: "all", sortKey: "name", sortDir: "asc" };
+  }
+}
+
 export function CounselingCaseloadView() {
   const { cls } = useClassContext();
   const { data, loading, error } = useCounselingCaseload(cls.id);
@@ -125,9 +145,16 @@ export function CounselingCaseloadView() {
     }));
   }, [totals?.by_status]);
 
-  const [filter, setFilter] = useState<CaseloadFilter>("all");
-  const [sortKey, setSortKey] = useState<SortKey>("name");
-  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+  const [filter, setFilter] = useState<CaseloadFilter>(() => readPref().filter);
+  const [sortKey, setSortKey] = useState<SortKey>(() => readPref().sortKey);
+  const [sortDir, setSortDir] = useState<"asc" | "desc">(() => readPref().sortDir);
+  useEffect(() => {
+    try {
+      localStorage.setItem(PREF_KEY, JSON.stringify({ filter, sortKey, sortDir }));
+    } catch {
+      /* ignore */
+    }
+  }, [filter, sortKey, sortDir]);
 
   const onSort = (key: SortKey) => {
     if (key === sortKey) {
