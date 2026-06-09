@@ -577,7 +577,7 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
                   ? "Started ✓"
                   : isSeat
                     ? "Claim my login"
-                    : "Start practicing"}
+                    : "Enter class"}
             </button>
           </form>
 
