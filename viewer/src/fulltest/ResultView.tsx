@@ -175,6 +175,8 @@ interface DomainStat {
   correct: number;
   total: number;
   pct: number;
+  /** id of this domain's first question, for jump-to-review */
+  firstId: string;
 }
 
 /**
@@ -186,8 +188,10 @@ interface DomainStat {
 function SkillProfileCard({ result }: { result: TestResult }) {
   const grouped = useMemo(() => {
     const bySection = new Map<string, Map<string, { correct: number; total: number }>>();
+    const firstId = new Map<string, string>(); // domain → its first question id
     for (const q of result.questions) {
       if (!q.domain) continue;
+      if (!firstId.has(q.domain)) firstId.set(q.domain, q.id);
       if (!bySection.has(q.section)) bySection.set(q.section, new Map());
       const dm = bySection.get(q.section)!;
       const prev = dm.get(q.domain) ?? { correct: 0, total: 0 };
@@ -200,7 +204,7 @@ function SkillProfileCard({ result }: { result: TestResult }) {
       const dm = bySection.get(sec)!;
       const domains: DomainStat[] = orderDomains(sec, dm.keys()).map((domain) => {
         const e = dm.get(domain)!;
-        return { domain, correct: e.correct, total: e.total, pct: pctOf(e.correct, e.total) ?? 0 };
+        return { domain, correct: e.correct, total: e.total, pct: pctOf(e.correct, e.total) ?? 0, firstId: firstId.get(domain)! };
       });
       return { section: sec, domains };
     });
@@ -212,6 +216,11 @@ function SkillProfileCard({ result }: { result: TestResult }) {
   const weakest = all.reduce<DomainStat | null>((w, d) => (!w || d.pct < w.pct ? d : w), null);
   const focus = weakest && weakest.pct < 70 ? weakest : null;
 
+  // Jump to a domain's first question in the review list below.
+  const jumpToQuestion = (id: string) => {
+    document.getElementById(`result-q-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
       <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
@@ -221,12 +230,15 @@ function SkillProfileCard({ result }: { result: TestResult }) {
       {focus ? (
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
           Focus area:{" "}
-          <span
-            className="rounded-md px-1.5 py-0.5 font-semibold"
+          <button
+            type="button"
+            onClick={() => jumpToQuestion(focus.firstId)}
+            className="rounded-md px-1.5 py-0.5 font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 dark:focus-visible:ring-offset-slate-900"
             style={{ backgroundColor: band(focus.pct).bg, color: band(focus.pct).fg }}
+            title={`Jump to the first ${focus.domain} question`}
           >
             {focus.domain} · {focus.pct}%
-          </span>{" "}
+          </button>{" "}
           — practising this skill will move your score the most.
         </p>
       ) : (
@@ -244,9 +256,14 @@ function SkillProfileCard({ result }: { result: TestResult }) {
             <div className="space-y-2.5">
               {g.domains.map((d) => (
                 <div key={d.domain} className="flex items-center gap-3">
-                  <span className="w-48 shrink-0 text-sm text-slate-700 dark:text-slate-200 sm:w-56">
+                  <button
+                    type="button"
+                    onClick={() => jumpToQuestion(d.firstId)}
+                    className="w-48 shrink-0 truncate text-left text-sm text-slate-700 hover:text-indigo-600 hover:underline focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-slate-200 dark:hover:text-indigo-400 sm:w-56"
+                    title={`Jump to the first ${d.domain} question`}
+                  >
                     {d.domain}
-                  </span>
+                  </button>
                   <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
                     <span
                       className="block h-full rounded-full"
@@ -333,8 +350,9 @@ function ReviewCard({ rq }: { rq: ResultQuestion }) {
 
   return (
     <div
+      id={`result-q-${rq.id}`}
       className={[
-        "rounded-xl border bg-white p-5 dark:bg-slate-900",
+        "scroll-mt-4 rounded-xl border bg-white p-5 dark:bg-slate-900",
         correct
           ? "border-emerald-200 dark:border-emerald-900"
           : "border-rose-200 dark:border-rose-900",

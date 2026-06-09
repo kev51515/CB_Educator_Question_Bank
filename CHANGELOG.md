@@ -17,6 +17,11 @@ Dates are the work date. Migration numbers in parentheses where relevant.
   docs, and corrects the dev server port (9000, not 5173).
 
 ### Added
+- **Clickable skill → jump-to-question on the student result.** Each domain
+  name and the "Focus area" chip in the Skills-by-topic card now scrolls the
+  page to that skill's first question in the review list below (each review card
+  carries a `result-q-<id>` anchor), turning the summary into a navigation aid.
+  _Verified: clicking the Focus chip scrolls to the first weak-domain question._
 - **CSV export from the Review heatmap** — per-question rows (module, Q#, domain,
   %-correct, correct, total). Extracted a shared `viewer/src/lib/csv.ts`
   (`toCsv` / `downloadCsv`, RFC-4180 escaping) and moved the cross-class
