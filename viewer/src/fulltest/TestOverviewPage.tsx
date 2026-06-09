@@ -26,7 +26,7 @@ import { useToast } from "@/components/Toast";
 import { Skeleton } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { useBreadcrumbLabel } from "@/components";
-import { ROUTES, testPreviewPath, testReviewPath } from "@/lib/routes";
+import { ROUTES, testPreviewPath, testReviewPath, testReplayPath } from "@/lib/routes";
 import { getResult, getRunTimeline } from "./api";
 import type { ProctorEvent } from "./api";
 import { ResultView } from "./ResultView";
@@ -758,6 +758,7 @@ export function TestOverviewPage(): JSX.Element {
                   pauseBusy={pauseBusy}
                   hasNewMessage={lr?.run_id ? newMsgRuns.has(lr.run_id) : false}
                   onReview={onReview}
+                  onReplay={(runId) => navigate(testReplayPath(slug, runId))}
                   onToggleRelease={onToggleRow}
                   onSetPause={onSetPause}
                   onOpenChat={openChat}

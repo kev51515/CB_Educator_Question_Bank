@@ -78,6 +78,10 @@ Dates are the work date. Migration numbers in parentheses where relevant.
   attempt) with both runs in the trajectory._
 
 ### Tests
+- **`smoke-admin.mjs`** — disposable, self-cleaning coverage for the admin
+  management/monitoring RPCs: `admin_user_overview` (activity counts + is_admin
+  gate + not_found), `system_skill_mastery` (cohort rollup shape + gate), and
+  `admin_dashboard_stats`. Wired into `smoke-all` + `npm run smoke:admin`. 10/10.
 - **`smoke-skills.mjs`** — a disposable, self-cleaning integration suite for the
   three skill RPCs: `get_test_result` domain presence + release gate (0121),
   `student_test_report` latest-attempt dedup (0122), and `course_skill_mastery`

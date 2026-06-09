@@ -15,6 +15,7 @@ import type {
   GetModuleResult,
   StartTestResult,
   SubmitModuleResult,
+  TestQuestion,
   TestResult,
 } from "./types";
 
@@ -289,6 +290,76 @@ export async function getRunTimeline(runId: string): Promise<ProctorEvent[]> {
   } catch {
     return [];
   }
+}
+
+// --- replay (migration 0127) ----------------------------------------------
+
+export interface ReplayRun {
+  id: string;
+  status: string;
+  started_at: string | null;
+  submitted_at: string | null;
+  current_module: number;
+  proctoring_level: ProctoringLevel;
+  student_id: string;
+  student_name: string | null;
+  test: { slug: string; title: string; short_title: string | null };
+}
+
+export interface ReplayModule {
+  position: number;
+  section: string;
+  label: string | null;
+  time_limit_seconds: number;
+  question_count: number;
+  questions: TestQuestion[];
+}
+
+export interface ReplayFinal {
+  answers: Record<string, string | null>;
+  eliminations: Record<string, string[]>;
+  marks: string[];
+  highlights: Record<string, unknown[]>;
+  notes: Record<string, string>;
+}
+
+export interface ReplayData {
+  run: ReplayRun;
+  modules: ReplayModule[];
+  events: ProctorEvent[];
+  final: ReplayFinal;
+}
+
+/**
+ * Fetch one student's sitting for the proctor REPLAY page (migration 0127):
+ * run meta + every module's content + the ordered event stream + final saved
+ * state. A deliberate teacher action — THROWS a TestApiError on failure so the
+ * page can show an error state (unlike the best-effort telemetry helpers).
+ */
+export async function getRunReplay(runId: string): Promise<ReplayData> {
+  const { data, error } = await supabase.rpc("get_test_run_replay", {
+    p_run_id: runId,
+  });
+  if (error) throw mapError(error);
+  const d = data as {
+    run: ReplayRun;
+    modules: ReplayModule[];
+    events: Array<Record<string, unknown>>;
+    final: ReplayFinal;
+  };
+  return {
+    run: d.run,
+    modules: d.modules ?? [],
+    events: (d.events ?? []).map((row) => ({
+      at: row.at as string,
+      type: row.type as TimelineEventType,
+      module: (row.module as number | null) ?? null,
+      question: (row.question as number | null) ?? null,
+      durationSeconds: (row.duration_seconds as number | null) ?? null,
+      meta: (row.meta as ActionMeta | null) ?? null,
+    })),
+    final: d.final ?? { answers: {}, eliminations: {}, marks: [], highlights: {}, notes: {} },
+  };
 }
 
 /**

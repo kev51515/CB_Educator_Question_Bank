@@ -27,6 +27,7 @@ interface RosterRowProps {
   pauseBusy: string | null;
   hasNewMessage: boolean;
   onReview: (row: RosterRowData) => void;
+  onReplay: (runId: string) => void;
   onToggleRelease: (row: RosterRowData) => void;
   onSetPause: (runId: string, paused: boolean, name: string) => void;
   onOpenChat: (runId: string, name: string) => void;
@@ -43,6 +44,7 @@ export function RosterRowView({
   pauseBusy,
   hasNewMessage,
   onReview,
+  onReplay,
   onToggleRelease,
   onSetPause,
   onOpenChat,
@@ -112,6 +114,14 @@ export function RosterRowView({
               >
                 {reviewLoadingId === row.run_id ? "…" : "Review"}
               </RowAction>
+              {row.run_id && (
+                <RowAction
+                  onClick={() => onReplay(row.run_id ?? "")}
+                  title="Replay this student's sitting — answers, highlights, notes and timing"
+                >
+                  Replay
+                </RowAction>
+              )}
               {isAdmin && (
                 <RowAction
                   onClick={() => onToggleRelease(row)}
@@ -150,6 +160,14 @@ export function RosterRowView({
             )}
             {integrity && (
               <StatusPill tone="alert" label={integrity} title="Integrity signals during the test" />
+            )}
+            {lr?.run_id && (
+              <RowAction
+                onClick={() => onReplay(lr.run_id ?? "")}
+                title="Replay this student's actions so far"
+              >
+                Replay
+              </RowAction>
             )}
             {isAdmin && lr?.run_id && (
               <RowAction

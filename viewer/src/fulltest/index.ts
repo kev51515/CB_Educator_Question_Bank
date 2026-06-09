@@ -10,4 +10,5 @@ export { TestsPanel } from "./TestsPanel";
 export { TestsAdminPage } from "./TestsAdminPage";
 export { TestReviewPage } from "./TestReviewPage";
 export { TestOverviewPage } from "./TestOverviewPage";
+export { ReplayPage } from "./ReplayPage";
 export type { TestCatalogEntry, TestResult } from "./types";

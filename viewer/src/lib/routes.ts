@@ -81,6 +81,9 @@ export const ROUTES = {
   // where a teacher lands when they open a test (students go to STUDENT_TEST_RUN).
   TEST_OVERVIEW: "/educator/tests/:slug",
   TEST_REVIEW: "/educator/tests/:slug/review",
+  // Staff: replay one student's sitting — scrub/play the captured action
+  // stream (answers, colored highlights, notes, eliminations, flags, dwell).
+  TEST_REPLAY: "/educator/tests/:slug/replay/:runId",
   // Staff preview of the runner itself, role-prefixed + nested under the test's
   // overview so it reads as "the run view of this test". Renders the full-screen
   // FullTestApp (outside the staff shell). Reached from the overview's Preview.
@@ -196,6 +199,10 @@ export function testOverviewPath(slug: string): string {
 
 export function testReviewPath(slug: string): string {
   return buildPath(ROUTES.TEST_REVIEW, { slug });
+}
+
+export function testReplayPath(slug: string, runId: string): string {
+  return buildPath(ROUTES.TEST_REPLAY, { slug, runId });
 }
 
 export function coursePath(courseId: string): string {
