@@ -1,6 +1,42 @@
 # Session Recap
 
-## Latest (2026-06-09) — SAT skill domains: heatmap, student + teacher profiles, class comparison
+## Latest (2026-06-09) — autonomous polish pass: reusable hooks, student UX, keyboard a11y
+
+A self-directed improvement run in the student / shared-hooks / admin layer
+(deliberately clear of the `fulltest/` + teacher-skills surfaces a parallel
+session was editing). 7 changes shipped + verified, 1 attempted-and-reverted.
+Full per-cycle rationale in `docs/AUTONOMOUS_CHANGELOG.md`.
+
+- **`useNow(intervalMs=60s)` hook** (`@/hooks`) — a shared timestamp that ticks
+  on a coarse interval. `const now = Date.now()` was recomputed every render
+  (invalidating `now`-keyed `useMemo`s) and froze time-based UI. Wired into
+  `AssignmentsPanel` so "Due soon → Past due" grouping + filter counts refresh
+  live while the page sits open.
+- **Amber "due soon" urgency accent** — `isDueImminent` (≤24h, unsubmitted) +
+  an amber ring/bg/text on imminent To-do assignment rows (past-due rose still
+  wins). Surfaces live via the `useNow` tick.
+- **`useRovingTabIndex<T>()` hook** (`@/hooks`) — WAI-ARIA tablist keyboard
+  support (Arrow/Home/End + roving tabindex, selection-follows-focus). Adopted
+  on **6 filter tablists**: `AssignmentsPanel`, `MyFeedbackPage`,
+  `CourseMaterialsList`, `StudentPortfolio`, `AllUsersView`, and
+  `AdminInviteCodesPage` — the last a real **bug fix** (it had roving `tabIndex`
+  but no arrow handler, so inactive filters were fully keyboard-unreachable).
+  Verified **live** via Playwright (`viewer/scripts/_verify-roving.mjs`, 4/4:
+  one active tab, ArrowRight activates + moves focus, Home → first).
+- **`useMediaQuery` → `useSyncExternalStore`** — was the codebase's only ESLint
+  warning (setState-in-effect / cascading-render risk); rewritten with the
+  canonical external-store pattern. Same signature; drop-in for all consumers.
+- **Reverted (verify caught a regression):** roving on the AuthScreen sign-in /
+  create-account tabs conflicted with its intentional focus-the-field-on-switch
+  effect (made the inactive tab unreachable) — reverted with zero diff. Lesson:
+  roving "selection-follows-focus" only fits filter chips with no focus
+  side-effect on select.
+
+Left `main` green for all of the above (the only working-tree tsc errors were a
+parallel session's unstaged `fulltest/` WIP). Every commit path-scoped; no
+force pushes.
+
+## 2026-06-09 — SAT skill domains: heatmap, student + teacher profiles, class comparison
 
 Built an end-to-end per-domain skill system on top of the full tests, all
 sharing one module so the four surfaces stay in lockstep.

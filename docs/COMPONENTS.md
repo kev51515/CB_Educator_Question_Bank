@@ -68,8 +68,19 @@ For the underlying design language (color, typography, spacing), see
   with cross-tab sync (`useLocalStorageSet`, `useLocalStorageMap`,
   `useLocalStorageJSON`, `useLocalStorageNumber`, `useLocalStorageRecent`,
   `useLocalStorageConfidence`).
-- **useMediaQuery** (`hooks/index.ts`) — Reactive media query state.
+- **useMediaQuery** (`hooks/index.ts`) — Reactive media query state, backed by
+  `useSyncExternalStore` (no setState-in-effect; SSR snapshot `false`).
 - **useModals** (`hooks/useModals.ts`) — Modal state machinery.
+- **useNow** (`hooks/index.ts`) — A timestamp that refreshes every `intervalMs`
+  (default 60s) so relative-time labels + time-based categorisation update while
+  a view sits open, and `now`-keyed `useMemo`s recompute on the tick rather than
+  every render. Used by `AssignmentsPanel` (live "Due soon → Past due").
+- **useRovingTabIndex<T>** (`hooks/index.ts`) — WAI-ARIA tablist keyboard
+  support: `getTabProps(i)` (ref + roving `tabIndex` + `onKeyDown`) gives
+  Arrow/Home/End movement with selection-follows-focus. Spread onto each
+  `role="tab"`. Adopted by AssignmentsPanel, MyFeedbackPage, CourseMaterialsList,
+  StudentPortfolio, AllUsersView, AdminInviteCodesPage. **Don't** use it on
+  tablists that move focus elsewhere on select (e.g. autofocus a field).
 
 ## Filter system
 - **FacetDef** (`lib/facets.ts`) — Filter definition shape (see Foundations).
