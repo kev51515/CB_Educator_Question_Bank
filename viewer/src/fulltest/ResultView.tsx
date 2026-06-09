@@ -340,9 +340,19 @@ function ReviewCard({ rq }: { rq: ResultQuestion }) {
           : "border-rose-200 dark:border-rose-900",
       ].join(" ")}
     >
-      <div className="mb-3 flex items-center justify-between">
-        <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-          {sectionLabel(rq.section)} · Q{rq.number}
+      <div className="mb-3 flex items-center justify-between gap-2">
+        <span className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            {sectionLabel(rq.section)} · Q{rq.number}
+          </span>
+          {rq.domain && (
+            <span
+              className="rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300"
+              title="SAT skill domain"
+            >
+              {rq.domain}
+            </span>
+          )}
         </span>
         <span
           className={[

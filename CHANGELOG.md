@@ -9,6 +9,13 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 
 ## 2026-06-09
 
+### Added
+- **SAT domain chip on student result review cards.** Each per-question card on
+  a released result now shows its skill domain (e.g. "Advanced Math") next to
+  "Section · Q#", so a student reviewing a missed question sees which skill it
+  tests — reinforcing the "Focus area" from the summary card. Uses the `domain`
+  already returned by `get_test_result` (0121); matches the teacher-side nav pill.
+
 ### Fixed
 - **Teacher per-student skill mastery double-counted retakes** (0122). The
   `student_test_report` RPC's per-domain rollup summed every submitted run, so a
