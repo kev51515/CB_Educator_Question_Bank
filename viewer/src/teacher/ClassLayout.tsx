@@ -280,7 +280,7 @@ export function ClassLayout() {
   if (loading) {
     return (
       <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-slate-50 dark:bg-slate-950 px-4 py-6">
-        <div className="max-w-5xl">
+        <div className="max-w-[1800px]">
           <SkeletonRows count={6} rowClassName="h-12" />
         </div>
       </div>
@@ -318,7 +318,7 @@ export function ClassLayout() {
       <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
         {/* Persistent header: course name + back link + kebab actions */}
         <div className="border-b border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur">
-          <div className="max-w-5xl px-4 sm:px-6 lg:px-8 pt-6 pb-2 space-y-3">
+          <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 pt-6 pb-2 space-y-3">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
@@ -428,7 +428,7 @@ export function ClassLayout() {
         {/* Tab body — owns its own <Routes>; child paths are relative to
             /classes/:classId because AuthGate registered the parent route
             with a `/*` wildcard. */}
-        <div className="max-w-5xl px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6">
           <Routes>
             {/* Default landing tab is now Modules (Canvas-aligned). The bare
                 /courses/:id URL redirects to /courses/:id/modules so the tab

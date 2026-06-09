@@ -250,7 +250,7 @@ export function AllClassesView() {
   }, [classes, search, filter]);
 
   return (
-    <div className="max-w-7xl px-4 sm:px-6 lg:px-8 py-6 space-y-4">
+    <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6 space-y-4">
       <header className="flex items-center justify-between gap-3 flex-wrap">
         <div>
           <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">

@@ -417,7 +417,7 @@ export function DashboardPage() {
 
   return (
     <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-slate-50 dark:bg-slate-950">
-      <div className="max-w-6xl px-4 sm:px-6 lg:px-8 py-6 space-y-8">
+      <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6 space-y-8">
         <header className="flex items-end justify-between gap-3">
           <div className="space-y-1">
             <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
