@@ -99,13 +99,27 @@ export function CourseTabStrip({ tabs, shortCode, userId }: Props) {
     [ordered, commit],
   );
 
+  // Keyboard reorder: Alt+←/→ moves the focused tab. React keeps the same DOM
+  // node (stable key) when the list reorders, so focus stays on the tab.
+  const nudge = useCallback(
+    (id: string, dir: -1 | 1) => {
+      const ids = ordered.map((t) => t.to);
+      const from = ids.indexOf(id);
+      const to = from + dir;
+      if (from < 0 || to < 0 || to >= ids.length) return;
+      [ids[from], ids[to]] = [ids[to], ids[from]];
+      commit(ids);
+    },
+    [ordered, commit],
+  );
+
   return (
     <nav aria-label="Course sections" className="flex items-center gap-1 overflow-x-auto -mb-px">
       {ordered.map((tab) => (
         <div
           key={tab.to}
           draggable
-          title="Drag to reorder"
+          title="Drag, or Alt+←/→, to reorder"
           onDragStart={(e) => {
             setDragId(tab.to);
             e.dataTransfer.effectAllowed = "move";
@@ -129,6 +143,16 @@ export function CourseTabStrip({ tabs, shortCode, userId }: Props) {
             end={tab.end}
             draggable={false}
             className={tabClass}
+            aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight"
+            onKeyDown={(e) => {
+              if (e.altKey && e.key === "ArrowLeft") {
+                e.preventDefault();
+                nudge(tab.to, -1);
+              } else if (e.altKey && e.key === "ArrowRight") {
+                e.preventDefault();
+                nudge(tab.to, 1);
+              }
+            }}
           >
             {tab.label}
           </NavLink>
