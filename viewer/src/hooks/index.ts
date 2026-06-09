@@ -344,6 +344,23 @@ export function useEscapeKey(handler: () => void, active: boolean = true): void 
   }, [active]);
 }
 
+/**
+ * A timestamp (ms) that refreshes every `intervalMs` (default 60s) so
+ * relative-time labels and time-based categorisation update while a view sits
+ * open instead of freezing at first render. Also stabilises `useMemo`s that
+ * depend on "now": they recompute on each coarse tick rather than on every
+ * unrelated re-render. Use a coarse interval — most "x minutes ago" / due-soon
+ * UIs don't need second precision, and a coarse tick keeps re-renders cheap.
+ */
+export function useNow(intervalMs: number = 60_000): number {
+  const [now, setNow] = useState<number>(() => Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), intervalMs);
+    return () => clearInterval(id);
+  }, [intervalMs]);
+  return now;
+}
+
 // External hooks: re-export from their own modules for the @/hooks barrel.
 export * from "./useKeyboardShortcuts";
 export * from "./useModals";

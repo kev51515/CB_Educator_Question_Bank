@@ -21,6 +21,7 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { useNow } from "@/hooks";
 import {
   useStudentAssignments,
   type StudentAssignment,
@@ -112,8 +113,10 @@ export function AssignmentsPanel({
     writeView(userId, view);
   }, [userId, view]);
 
-  // Pre-compute `now` once per render so all predicates share the same anchor.
-  const now = Date.now();
+  // Shared time anchor that ticks once a minute, so "Due soon" → "Past due"
+  // transitions surface live while the panel sits open (and the memos below
+  // recompute on the tick, not on every unrelated re-render).
+  const now = useNow();
 
   // Filter counts power the trailing "(N)" labels on each chip. We always
   // compute against the full open-assignment set so the counts don't drift
