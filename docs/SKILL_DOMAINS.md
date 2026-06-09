@@ -1,6 +1,6 @@
 # SAT Skill Domains — architecture
 
-How per-question SAT **skill domains** flow from the database to the five
+How per-question SAT **skill domains** flow from the database to the six
 surfaces that visualise class/student mastery. Read this before touching any of
 the skill/heatmap/comparison code.
 
@@ -26,7 +26,7 @@ the skill/heatmap/comparison code.
 
 ## The shared module — `viewer/src/fulltest/skills.ts`
 
-Single source of truth so all five surfaces stay visually + semantically in
+Single source of truth so all six surfaces stay visually + semantically in
 lockstep. Exports:
 
 - `BANDS` / `band(pct)` — the 3-band performance palette (emerald ≥70, amber
@@ -41,8 +41,11 @@ lockstep. Exports:
 - `pctOf(correct, total)` — rounded %, `null` on zero (no divide-by-zero).
 - `isChoiceLetter(value)` — distinguishes an MCQ letter (A–D) from a typed grid
   value, so "most chose X" hints only show for MCQ.
+- `groupDomainRows(rows)` / `weakestDomain(groups)` (+ `Skill*` types) — bucket the
+  RPCs' flat per-domain rows into canonical section→domain order with %s, and pick
+  the single weakest. Shared by the course + cohort skill surfaces.
 
-## The five surfaces
+## The six surfaces
 
 | Surface | File | Scope | Data source |
 |---|---|---|---|
@@ -51,8 +54,9 @@ lockstep. Exports:
 | **Student skill profile** (released result) | `fulltest/ResultView.tsx` → `SkillProfileCard` | one student, one run | `get_test_result` (0121 adds `domain`) |
 | Teacher **per-student breakdown** (student profile) | `teacher/StudentTestReportPanel.tsx` | one student, across tests | `student_test_report` (0088; latest-attempt dedup 0122) |
 | Teacher **Class skills** tab (course) | `teacher/ClassSkillsView.tsx` | one class, across tests | `course_skill_mastery` (0123) |
+| Admin **Skills across all students** (Stats) | `admin/SystemSkillsCard.tsx` | whole cohort, across tests | `system_skill_mastery` (0128) |
 
-All five import `skills.ts` and render the same per-section domain bars +
+All six import `skills.ts` and render the same per-section domain bars +
 band colours. The student result also shows a per-question domain chip; the
 teacher Review nav strip shows the current question's domain pill.
 
@@ -77,7 +81,7 @@ caller is staff (allowed by RLS).
 
 1. Populate `test_questions.domain` for the new form's questions (8 canonical
    strings; classify from stems, correct R&W by rule, check the blueprint).
-2. Nothing else to change — all five surfaces light up automatically (heatmap
+2. Nothing else to change — all six surfaces light up automatically (heatmap
    defaults to By-skill once `domain` is present; profiles show the rollup).
 3. If you change the band thresholds, domain set, or section labels, change them
    **only** in `skills.ts`.
