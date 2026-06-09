@@ -1,6 +1,39 @@
 # Session Recap
 
-## Latest (2026-06-08) — full-test passage: set-apart card + real tables
+## Latest (2026-06-09) — SAT skill domains: heatmap, student + teacher profiles, class comparison
+
+Built an end-to-end per-domain skill system on top of the full tests, all
+sharing one module so the four surfaces stay in lockstep.
+
+- **Data.** `test_questions.domain` (empty since the full-test bundle) now
+  classified for **all 456 questions** into the 8 official College Board domains
+  (subagents + a rule-based correction pass over the formulaic R&W stems;
+  distribution matches the blueprint). Also: per-choice `rationale` generated for
+  all **423 MCQ** earlier in the session (Review Mode "Explain").
+- **Shared module** `viewer/src/fulltest/skills.ts` — band palette (emerald≥70 /
+  amber≥40 / rose), legend gradient, canonical domain order, section labels,
+  `pctOf`, `sectionForDomain`. ReviewHeatmap, ClassComparison, ResultView, and
+  the teacher StudentTestReportPanel all import it (removed triplicated consts).
+- **Teacher Review heatmap** (`ReviewHeatmap.tsx`): By-question / By-skill toggle
+  (persisted), triage bar, distractor "most chose" hint, "most missed" chips.
+- **Student skill profile** (`ResultView.tsx` → SkillProfileCard): per-domain
+  mastery + "Focus area" on the released result. Needs **migration 0121** —
+  `get_test_result` now returns each question's `domain` (staff-only via RLS, so
+  it must flow through that SECURITY DEFINER RPC).
+- **Teacher per-student** (`StudentTestReportPanel.tsx`): upgraded the dormant
+  top-4 weakest list into a full per-section breakdown + Focus callout.
+- **Cross-class comparison** (`ClassComparison.tsx`): table of per-domain %
+  per class, weakest-row rings (≥10pt) + gap badges (≥15pt), CSV export. Reuses
+  `list_test_review_courses` + `get_test_answer_breakdown` (no new RPC).
+- Hardened via a code-review pass (immutability, a11y `<caption>`/sr-only,
+  stable tie-breaks, dropped a misleading answer-attempt fraction).
+
+Verified each surface live (disposable teacher/student + synthetic released
+runs); clickthrough-practice-test 42/42 + edges 10/10 after 0121. Note: a
+concurrent uncommitted edit to `FullTestCatalog.tsx` keeps the full `tsc -b`
+red — all skill-system files are clean.
+
+## (2026-06-08) — full-test passage: set-apart card + real tables
 
 The reader rendered passages as one flat `whitespace-pre-wrap` paragraph, so
 embedded pipe-delimited tables looked like raw text and literary excerpts didn't
