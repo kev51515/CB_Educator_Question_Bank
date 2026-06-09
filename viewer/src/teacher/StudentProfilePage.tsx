@@ -38,6 +38,7 @@ import { CounselingProfilePanel } from "./counseling/CounselingProfilePanel";
 import { CollegeApplicationsPanel } from "./counseling/CollegeApplicationsPanel";
 import { CounselingTasksPanel } from "./counseling/CounselingTasksPanel";
 import { CounselingMeetingsPanel } from "./counseling/CounselingMeetingsPanel";
+import { CounselorAiCard } from "./counseling/CounselorAiCard";
 import { AttemptsBody } from "./AttemptsBody";
 import { PostsBody } from "./PostsBody";
 import { PortfolioBody } from "./PortfolioBody";
@@ -225,6 +226,7 @@ export function StudentProfilePage(): JSX.Element {
               <CollegeApplicationsPanel courseId={course.id} studentId={header.id} />
               <CounselingTasksPanel courseId={course.id} studentId={header.id} />
               <CounselingMeetingsPanel courseId={course.id} studentId={header.id} />
+              <CounselorAiCard courseId={course.id} />
             </>
           )}
 
