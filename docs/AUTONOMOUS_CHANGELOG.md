@@ -107,3 +107,34 @@ call sites. Removed the effect/`useState` mirror.
 
 **Verify:** `tsc -b` green; `eslint src/hooks/index.ts` now clean (0 warnings).
 Returns a primitive boolean snapshot, so no re-subscribe loop / tearing.
+
+---
+
+## End of session
+
+**Shipped (4 cycles, all committed + pushed, build green):**
+1. `useNow` time-tick hook → live due-state updates in AssignmentsPanel.
+2. Amber "due soon" urgency accent on imminent (≤24h) assignment rows.
+3. `useRovingTabIndex` a11y hook + keyboard nav on the assignments filter tablist.
+4. `useMediaQuery` rewritten with `useSyncExternalStore` (cleared the last lint warning).
+
+**Final state:** `tsc -b` 0 errors; 0 real ESLint problems (non-fulltest). Stayed
+out of `fulltest/`/`mocktest/` throughout (a parallel session was editing the
+review/skills surfaces).
+
+**Still rough / follow-ups:**
+- `useNow` adopted in one surface; ~13 other `Date.now()`-in-render sites + ~20
+  duplicate `formatRelative` fns remain (consolidation deferred — phrasing-drift risk).
+- `useRovingTabIndex` adopted in one tablist; ~14 other `role="tablist"` surfaces
+  still lack arrow-key nav.
+- Cycle-2/3 changes verified by tsc + pattern-fidelity, not a live keyboard E2E
+  (would need a student session with assignments to render the panel).
+
+**Top 3 next:**
+1. Roll `useRovingTabIndex` across the remaining `role="tablist"` surfaces (one
+   small PR each) — finishes a real keyboard-a11y gap with the now-proven hook.
+2. Consolidate the 20 `formatRelative` impls into one `lib/relativeTime` util
+   (carefully, matching each site's phrasing) + adopt `useNow` so all relative
+   times stay fresh — DRY + consistency + live.
+3. A Playwright keyboard/a11y smoke for the filter tablists (and the assignment
+   due-state styling) so these UX/a11y behaviours are regression-guarded.
