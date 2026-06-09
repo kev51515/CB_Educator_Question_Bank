@@ -16,6 +16,7 @@ import { supabase } from "@/lib/supabase";
 import { DuplicateCourseModal } from "@/teacher/DuplicateCourseModal";
 import { ClassFormModal, type EditableClass } from "@/teacher/ClassFormModal";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
+import type { CourseType } from "@/teacher/useTeacherClasses";
 import {
   CourseCard,
   EmptyState,
@@ -115,6 +116,7 @@ export function AllClassesView() {
   const [inlineCreating, setInlineCreating] = useState<boolean>(false);
   const [inlineBusy, setInlineBusy] = useState<boolean>(false);
   const [inlineName, setInlineName] = useState<string>("");
+  const [inlineType, setInlineType] = useState<CourseType>("class");
   const inlineInputRef = useRef<HTMLInputElement | null>(null);
 
   const { profile } = useProfile();
@@ -152,6 +154,7 @@ export function AllClassesView() {
             teacher_id: profile.id,
             name: trimmed,
             join_code: joinCode,
+            course_type: inlineType,
           })
           .select("id, short_code")
           .single();
@@ -159,6 +162,7 @@ export function AllClassesView() {
           toast.success("Course created");
           setInlineCreating(false);
           setInlineName("");
+          setInlineType("class");
           void refresh();
           const shortCode = data.short_code as string | null;
           if (shortCode) navigate(courseModulesPath(shortCode));
@@ -364,6 +368,35 @@ export function AllClassesView() {
                 <p className="text-xs text-slate-500 dark:text-slate-400">
                   Saved as draft. You'll land on the new course's Modules page.
                 </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {([
+                    { value: "class", title: "Class", blurb: "SAT prep" },
+                    { value: "counseling", title: "Counseling", blurb: "College advising" },
+                  ] as const).map((opt) => {
+                    const active = inlineType === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        aria-pressed={active}
+                        disabled={inlineBusy}
+                        onClick={() => setInlineType(opt.value)}
+                        className={`text-left rounded-lg border px-2.5 py-1.5 transition-colors disabled:opacity-50 ${
+                          active
+                            ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/50 ring-1 ring-indigo-500"
+                            : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700"
+                        }`}
+                      >
+                        <span className="block text-xs font-semibold text-slate-900 dark:text-slate-100">
+                          {opt.title}
+                        </span>
+                        <span className="block text-[10px] text-slate-500 dark:text-slate-400">
+                          {opt.blurb}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
                 <div className="flex items-center gap-2 mt-auto">
                   <button
                     type="submit"
