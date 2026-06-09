@@ -6,91 +6,28 @@
  * attempt per student per test). Answers "where is this class weak overall?" —
  * the cross-test generalisation of the per-test Review heatmap/comparison.
  *
- * Reads the `course_skill_mastery` RPC (0123; course-scoped SECURITY DEFINER).
- * Reuses the shared skill palette/ordering (fulltest/skills.ts) and CSV helper
- * (lib/csv.ts) so it matches the other four skill surfaces. Renders nothing
- * heavy until loaded; shows an empty state until a class sits a full test.
+ * Data + grouping come from useCourseSkillMastery (course_skill_mastery RPC,
+ * 0123). Reuses the shared skill palette (fulltest/skills.ts) and CSV helper
+ * (lib/csv.ts) so it matches the other skill surfaces. Empty state until a class
+ * sits a full test.
  */
-import { useEffect, useMemo, useState } from "react";
-import { supabase } from "@/lib/supabase";
 import { Skeleton } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { downloadCsv } from "@/lib/csv";
-import { band, orderDomains, orderSections, pctOf, sectionLabel } from "@/fulltest/skills";
+import { band, sectionLabel } from "@/fulltest/skills";
 import { useClassContext } from "./classLayoutContext";
-
-interface DomainRow {
-  section: string;
-  domain: string;
-  correct: number;
-  total: number;
-}
-interface Mastery {
-  students: number;
-  tests: number;
-  attempts: number;
-  domains: DomainRow[];
-}
+import { useCourseSkillMastery } from "./useCourseSkillMastery";
 
 export function ClassSkillsView(): JSX.Element {
   const { cls } = useClassContext();
-  const courseId = cls.id;
-  const [data, setData] = useState<Mastery | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const alive = { current: true };
-    setLoading(true);
-    setError(null);
-    void (async () => {
-      try {
-        const { data: res, error: err } = await supabase.rpc("course_skill_mastery", {
-          p_course_id: courseId,
-        });
-        if (!alive.current) return;
-        if (err) throw err;
-        setData(res as Mastery);
-      } catch (e) {
-        if (alive.current) setError(e instanceof Error ? e.message : "Could not load class skills.");
-      } finally {
-        if (alive.current) setLoading(false);
-      }
-    })();
-    return () => {
-      alive.current = false;
-    };
-  }, [courseId]);
-
-  // Group the flat domain rows by section in canonical order, with %s.
-  const grouped = useMemo(() => {
-    const rows = data?.domains ?? [];
-    const bySection = new Map<string, Map<string, DomainRow>>();
-    for (const r of rows) {
-      if (!bySection.has(r.section)) bySection.set(r.section, new Map());
-      bySection.get(r.section)!.set(r.domain, r);
-    }
-    return orderSections(bySection.keys()).map((sec) => {
-      const byName = bySection.get(sec)!;
-      return {
-        section: sec,
-        domains: orderDomains(sec, byName.keys()).map((name) => {
-          const r = byName.get(name)!;
-          return { domain: name, correct: r.correct, total: r.total, pct: pctOf(r.correct, r.total) ?? 0 };
-        }),
-      };
-    });
-  }, [data]);
-
-  const all = grouped.flatMap((g) => g.domains);
-  const weakest = all.reduce<(typeof all)[number] | null>((w, d) => (!w || d.pct < w.pct ? d : w), null);
+  const { loading, error, mastery, grouped, all, weakest } = useCourseSkillMastery(cls.id);
 
   const exportCsv = () => {
     const header = ["Section", "Domain", "% correct", "Correct", "Total"];
     const body = grouped.flatMap((g) =>
       g.domains.map((d) => [sectionLabel(g.section), d.domain, d.pct, d.correct, d.total]),
     );
-    downloadCsv(`class-skills-${cls.short_code ?? courseId}.csv`, [header, ...body]);
+    downloadCsv(`class-skills-${cls.short_code ?? cls.id}.csv`, [header, ...body]);
   };
 
   if (loading) {
@@ -128,8 +65,8 @@ export function ClassSkillsView(): JSX.Element {
             Class skills
           </h2>
           <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-            Across {data!.tests} test{data!.tests === 1 ? "" : "s"} · {data!.students} student
-            {data!.students === 1 ? "" : "s"} · latest attempt per test
+            Across {mastery!.tests} test{mastery!.tests === 1 ? "" : "s"} · {mastery!.students} student
+            {mastery!.students === 1 ? "" : "s"} · latest attempt per test
             {weakest && (
               <>
                 {" · "}weakest:{" "}

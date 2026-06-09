@@ -19,6 +19,7 @@
 import { useCallback, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
+import { ClassSkillsSummaryCard } from "./ClassSkillsSummaryCard";
 import { useCourseOverview, type RecentPost } from "./useCourseOverview";
 import { Skeleton, SkeletonCard } from "@/components/Skeleton";
 import {
@@ -258,6 +259,9 @@ export function CourseOverview() {
           {error}
         </div>
       )}
+
+      {/* Class skills focus areas — self-hides until the class has test data. */}
+      <ClassSkillsSummaryCard />
 
       {/* Body grid. 1-col mobile / 2-col tablet / 3-col desktop matches the
           Modules page bar; cards reflow naturally on resize. */}

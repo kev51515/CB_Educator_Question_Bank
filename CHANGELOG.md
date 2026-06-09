@@ -10,6 +10,12 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 ## 2026-06-09
 
 ### Added
+- **Class skills focus-areas card on the course Overview** — surfaces the class's
+  3 weakest SAT domains with a "View all skills →" link to the Skills tab, so a
+  teacher sees the signal without navigating. Self-hides until the class has test
+  data. Extracted a shared `useCourseSkillMastery` hook (fetch + section grouping
+  + weakest) now used by both the Overview card and the full `ClassSkillsView`
+  (no duplicated logic).
 - **Class skills dashboard** (new "Skills" tab on a course) — class-wide,
   cross-test per-domain mastery: %-correct per SAT domain aggregated over the
   latest submitted run per (student, test) for enrolled students, grouped by
