@@ -16,7 +16,6 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.tsx";
 import { ErrorBoundary, ToastProvider } from "@/components";
-import { BetaGate } from "@/beta/BetaGate";
 import { AuthGate } from "@/auth";
 import { registerServiceWorker } from "./registerSW";
 import { captureError, initTelemetry } from "@/lib/telemetry";
@@ -50,15 +49,13 @@ if (typeof ric === "function") {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ErrorBoundary>
-      <BetaGate>
-        <BrowserRouter>
-          <ToastProvider>
-            <AuthGate>
-              <App />
-            </AuthGate>
-          </ToastProvider>
-        </BrowserRouter>
-      </BetaGate>
+      <BrowserRouter>
+        <ToastProvider>
+          <AuthGate>
+            <App />
+          </AuthGate>
+        </ToastProvider>
+      </BrowserRouter>
     </ErrorBoundary>
   </StrictMode>,
 );
