@@ -6,9 +6,10 @@
  * student_test_report (0088). Renders nothing until the student has a submitted
  * full-length test.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { scaledFromSectionScores, type ScaledReport } from "@/fulltest/satScore";
+import { band, orderDomains, orderSections, pctOf, sectionForDomain, sectionLabel } from "@/fulltest/skills";
 
 interface RunRow {
   run_id: string;
@@ -89,14 +90,42 @@ export function StudentTestReportPanel({ studentId }: { studentId: string | null
     };
   }, [studentId]);
 
+  // Full per-section domain breakdown (domains are section-exclusive, so we can
+  // group by section client-side without the RPC returning one).
+  const grouped = useMemo(() => {
+    const bySection = new Map<string, Map<string, DomainRow>>();
+    for (const d of domains) {
+      if (!d.total) continue;
+      const sec = sectionForDomain(d.domain);
+      if (!sec) continue;
+      if (!bySection.has(sec)) bySection.set(sec, new Map());
+      bySection.get(sec)!.set(d.domain, d);
+    }
+    return orderSections(bySection.keys()).map((sec) => {
+      const byName = bySection.get(sec)!;
+      return {
+        section: sec,
+        domains: orderDomains(sec, byName.keys()).map((name) => {
+          const r = byName.get(name)!;
+          return { domain: name, correct: r.correct, total: r.total, pct: pctOf(r.correct, r.total) ?? 0 };
+        }),
+      };
+    });
+  }, [domains]);
+
   if (!loaded) return null;
 
   const scaled = runs
     .map((r) => ({ run: r, s: scaledFromSectionScores(r.section_scores) }))
     .filter((x): x is { run: RunRow; s: ScaledReport & { total: number } } => x.s.total !== null);
-  const weak = domains.filter((d) => d.total >= 3).slice(0, 4);
+  const allDomains = grouped.flatMap((g) => g.domains);
+  const hasDomains = allDomains.length > 0;
+  // Focus area = weakest domain with a meaningful sample, mirroring the student view.
+  const focus = allDomains
+    .filter((d) => d.total >= 3)
+    .reduce<(typeof allDomains)[number] | null>((w, d) => (!w || d.pct < w.pct ? d : w), null);
 
-  if (scaled.length === 0 && weak.length === 0) return null;
+  if (scaled.length === 0 && !hasDomains) return null;
 
   const totals = scaled.map((x) => x.s.total);
   const latest = scaled[scaled.length - 1];
@@ -145,32 +174,49 @@ export function StudentTestReportPanel({ studentId }: { studentId: string | null
         </div>
       )}
 
-      {weak.length > 0 && (
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-            Weakest domains
-          </p>
-          <ul className="mt-2 space-y-1.5">
-            {weak.map((d) => {
-              const pct = d.total > 0 ? Math.round((d.correct / d.total) * 100) : 0;
-              return (
-                <li key={d.domain} className="flex items-center gap-3 text-sm">
-                  <span className="min-w-0 flex-1 truncate text-slate-700 dark:text-slate-200">
-                    {d.domain}
-                  </span>
-                  <span className="h-1.5 w-24 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
-                    <span
-                      className={`block h-full rounded-full ${pct < 50 ? "bg-rose-500" : pct < 75 ? "bg-amber-500" : "bg-emerald-500"}`}
-                      style={{ width: `${pct}%` }}
-                    />
-                  </span>
-                  <span className="w-16 text-right tabular-nums text-xs text-slate-500 dark:text-slate-400">
-                    {d.correct}/{d.total} ({pct}%)
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
+      {hasDomains && (
+        <div className="space-y-4">
+          <div className="flex items-baseline justify-between gap-2">
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              Skills by domain
+            </p>
+            {focus && (
+              <span className="text-[11px] text-slate-500 dark:text-slate-400">
+                Focus:{" "}
+                <span
+                  className="rounded px-1.5 py-0.5 font-semibold"
+                  style={{ backgroundColor: band(focus.pct).bg, color: band(focus.pct).fg }}
+                >
+                  {focus.domain} · {focus.pct}%
+                </span>
+              </span>
+            )}
+          </div>
+          {grouped.map((g) => (
+            <div key={g.section}>
+              <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+                {sectionLabel(g.section)}
+              </p>
+              <ul className="space-y-1.5">
+                {g.domains.map((d) => (
+                  <li key={d.domain} className="flex items-center gap-3 text-sm">
+                    <span className="min-w-0 flex-1 truncate text-slate-700 dark:text-slate-200">
+                      {d.domain}
+                    </span>
+                    <span className="h-1.5 w-24 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                      <span
+                        className="block h-full rounded-full"
+                        style={{ width: `${d.pct}%`, backgroundColor: band(d.pct).bg }}
+                      />
+                    </span>
+                    <span className="w-16 text-right tabular-nums text-xs text-slate-500 dark:text-slate-400">
+                      {d.correct}/{d.total} ({d.pct}%)
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       )}
     </section>

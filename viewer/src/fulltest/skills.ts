@@ -47,6 +47,16 @@ export const DOMAIN_ORDER: Record<string, string[]> = {
 /** Sections in the order they appear on a test. */
 export const SECTION_ORDER = ["reading-writing", "math"];
 
+/** Reverse lookup: which section a domain belongs to (domains are section-exclusive).
+ *  Lets surfaces that only have a domain name (e.g. the cross-test student report,
+ *  whose RPC returns domains without a section) still group by section. */
+const DOMAIN_TO_SECTION: Record<string, string> = Object.fromEntries(
+  Object.entries(DOMAIN_ORDER).flatMap(([sec, doms]) => doms.map((d) => [d, sec])),
+);
+export function sectionForDomain(domain: string): string | null {
+  return DOMAIN_TO_SECTION[domain] ?? null;
+}
+
 /** Human label for a section key. */
 export function sectionLabel(s: string): string {
   return s === "reading-writing" ? "Reading & Writing" : s === "math" ? "Math" : s;
