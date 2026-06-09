@@ -6,8 +6,8 @@
  * saved order reconciles: known ids first, new ids appended, missing ones
  * dropped.
  */
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { classPath } from "@/lib/routes";
 
 export interface CourseTab {
@@ -81,6 +81,14 @@ export function CourseTabStrip({ tabs, shortCode, userId }: Props) {
   const ordered = useMemo(() => applyOrder(tabs, order), [tabs, order]);
   const [dragId, setDragId] = useState<string | null>(null);
 
+  // Keep the active tab visible in the (horizontally scrolling) strip.
+  const { pathname } = useLocation();
+  const base = classPath(shortCode);
+  const activeRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    activeRef.current?.scrollIntoView({ inline: "nearest", block: "nearest" });
+  }, [pathname, ordered.length]);
+
   const commit = useCallback(
     (ids: string[]) => {
       setOrder(ids);
@@ -115,9 +123,14 @@ export function CourseTabStrip({ tabs, shortCode, userId }: Props) {
 
   return (
     <nav aria-label="Course sections" className="flex items-center gap-1 overflow-x-auto -mb-px">
-      {ordered.map((tab) => (
+      {ordered.map((tab) => {
+        const tabPath = tab.to ? `${base}/${tab.to}` : base;
+        const isActiveTab =
+          pathname === tabPath || pathname.startsWith(`${tabPath}/`);
+        return (
         <div
           key={tab.to}
+          ref={isActiveTab ? activeRef : undefined}
           draggable
           title="Drag, or Alt+←/→, to reorder"
           onDragStart={(e) => {
@@ -157,7 +170,8 @@ export function CourseTabStrip({ tabs, shortCode, userId }: Props) {
             {tab.label}
           </NavLink>
         </div>
-      ))}
+        );
+      })}
     </nav>
   );
 }
