@@ -1,6 +1,6 @@
 {
-  "name": "SAT Question Bank",
-  "short_name": "SAT Bank",
+  "name": "OmniLMS",
+  "short_name": "OmniLMS",
   "description": "Browse and study SAT practice questions",
   "start_url": "/",
   "display": "standalone",

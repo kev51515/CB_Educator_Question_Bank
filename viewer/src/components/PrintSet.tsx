@@ -26,7 +26,7 @@ export function PrintSet({ questions, numbers, notes }: PrintSetProps) {
   return (
     <div className="print-set-container">
       <div className="print-set-title">
-        SAT Question Bank — {questions.length} question{questions.length === 1 ? "" : "s"}
+        OmniLMS — {questions.length} question{questions.length === 1 ? "" : "s"}
       </div>
 
       {questions.map((q, i) => (

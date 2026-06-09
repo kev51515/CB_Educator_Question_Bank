@@ -17,7 +17,7 @@ export function generateWorksheetHTML(
   notes: Record<string, string>,
 ): string {
   const count = questions.length;
-  const title = `SAT Question Bank — ${count} question${count === 1 ? "" : "s"}`;
+  const title = `OmniLMS — ${count} question${count === 1 ? "" : "s"}`;
 
   const questionBlocks = questions
     .map((q, i) => {

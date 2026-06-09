@@ -32,7 +32,7 @@ export function SplashScreen({ mode, message, hint }: SplashScreenProps) {
       <div className="max-w-md">
         <BrandMark />
         <h1 className="mt-5 text-[15px] font-semibold tracking-tight text-ink-800">
-          SAT Question Bank
+          OmniLMS
         </h1>
 
         {mode === "loading" ? (

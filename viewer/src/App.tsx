@@ -931,7 +931,7 @@ function App() {
       <header className="flex items-center justify-between px-6 h-12 border-b border-ink-150 bg-white/85 backdrop-blur-xl">
         <div className="flex items-baseline gap-3">
           <h1 className="text-[14px] font-semibold tracking-tight text-ink-800">
-            SAT Question Bank
+            OmniLMS
           </h1>
           <span className="text-[12px] text-ink-600 tabular-nums">
             {setupComplete

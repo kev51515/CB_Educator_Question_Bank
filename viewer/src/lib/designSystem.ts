@@ -1,5 +1,5 @@
 /**
- * Centralized design tokens for the SAT Question Bank viewer.
+ * Centralized design tokens for the OmniLMS viewer.
  *
  * ── Status ──
  * IDENTITY tokens (re-exported from designTokens.ts) are USED in production code.
@@ -85,7 +85,7 @@ export const STATUS = {
 
 /** Typography scale. Lift these out so type stays consistent across components. */
 export const TYPE = {
-  /** "SAT Question Bank" app title */
+  /** "OmniLMS" app title */
   title:     "text-[14px] font-semibold tracking-tight",
   /** Question stem body */
   body:      "text-[14px] leading-relaxed",

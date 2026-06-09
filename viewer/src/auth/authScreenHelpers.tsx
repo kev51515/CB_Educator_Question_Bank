@@ -64,13 +64,13 @@ export function Wordmark({ tone }: { tone: "light" | "dark" }) {
         style={serif}
         aria-hidden
       >
-        P
+        O
       </span>
       <span
         className={`text-lg font-semibold tracking-tight ${text}`}
         style={serif}
       >
-        PrepMasters
+        OmniLMS
       </span>
     </div>
   );

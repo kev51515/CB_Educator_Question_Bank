@@ -62,7 +62,7 @@ export function exportAsPlainText(opts: ExportOptions): string {
   const count = questions.length;
   const lines: string[] = [];
 
-  lines.push(`SAT Question Bank — ${count} question${count === 1 ? "" : "s"}`);
+  lines.push(`OmniLMS — ${count} question${count === 1 ? "" : "s"}`);
   lines.push("=".repeat(40));
   lines.push("");
 
@@ -165,7 +165,7 @@ export function exportAsMarkdown(opts: ExportOptions): string {
   const count = questions.length;
   const lines: string[] = [];
 
-  lines.push(`# SAT Question Bank — ${count} question${count === 1 ? "" : "s"}`);
+  lines.push(`# OmniLMS — ${count} question${count === 1 ? "" : "s"}`);
   lines.push("");
 
   questions.forEach((q, i) => {
