@@ -10,6 +10,12 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 ## 2026-06-09
 
 ### Added
+- **Admin: per-user activity drawer.** Click a name in the admin All Users table
+  to open a snapshot — role, joined, last sign-in, last active, and activity
+  counts (courses teaching/enrolled, assignment attempts, full-test runs
+  submitted/total). New admin-only `admin_user_overview` RPC (**0125**); reads
+  `auth.users.last_sign_in_at` via the SECURITY DEFINER fn. `UserDetailDrawer`
+  follows the modal contract (focus trap, Esc/backdrop close). _Verified live._
 - **Admin: export full user roster to CSV** from the All Users view (email, name,
   role, joined) — fetches every page, not just the loaded one. Reuses `lib/csv.ts`.
 - **Admin "View as" role preview.** An admin can switch the rendered role

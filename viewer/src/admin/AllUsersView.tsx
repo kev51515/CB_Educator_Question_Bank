@@ -31,6 +31,7 @@ import { useToast } from "@/components/Toast";
 import type { ProfileRole } from "@/lib/profile";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
+import { UserDetailDrawer } from "./UserDetailDrawer";
 import {
   DEFAULT_FILTER,
   DEFAULT_SORT,
@@ -65,6 +66,8 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
   const [total, setTotal] = useState<number>(0);
   const [page, setPage] = useState<number>(0);
   const [search, setSearch] = useState<string>("");
+  // Per-user activity drawer (admin monitoring).
+  const [detailUserId, setDetailUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
@@ -482,7 +485,14 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
                       className="border-t border-slate-100 dark:border-slate-800"
                     >
                       <td className="px-5 py-2 text-slate-900 dark:text-slate-100">
-                        {u.display_name ?? <span className="text-slate-400">—</span>}
+                        <button
+                          type="button"
+                          onClick={() => setDetailUserId(u.id)}
+                          className="text-left font-medium text-slate-900 hover:text-indigo-600 hover:underline focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-slate-100 dark:hover:text-indigo-400"
+                          title="View activity"
+                        >
+                          {u.display_name ?? <span className="text-slate-400">—</span>}
+                        </button>
                         {isSelf && (
                           <span className="ml-2 text-xs text-slate-400">(you)</span>
                         )}
@@ -602,6 +612,8 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
           onCancel={() => setConfirmDelete(null)}
         />
       )}
+
+      <UserDetailDrawer userId={detailUserId} onClose={() => setDetailUserId(null)} />
     </div>
   );
 }
