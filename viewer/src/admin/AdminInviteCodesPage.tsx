@@ -12,6 +12,7 @@
  * console's nav for profile.role === 'admin'.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRovingTabIndex } from "@/hooks";
 import { supabase } from "@/lib/supabase";
 import { SmartDatePicker } from "@/components/SmartDatePicker";
 import { useToast } from "@/components/Toast";
@@ -66,6 +67,15 @@ export function AdminInviteCodesPage() {
   const setFilter = useCallback((filter: FilterKey) => {
     setView((v) => ({ ...v, filter }));
   }, []);
+
+  // Roving-tabindex keyboard nav for the status-filter tablist. (It already had
+  // tabIndex 0/-1 roving but NO arrow handler, leaving inactive filters
+  // keyboard-unreachable — Arrow/Home/End now reach them.)
+  const { getTabProps } = useRovingTabIndex<HTMLButtonElement>({
+    count: FILTER_OPTIONS.length,
+    activeIndex: FILTER_OPTIONS.findIndex((o) => o.key === view.filter),
+    onSelect: (i) => setFilter(FILTER_OPTIONS[i].key),
+  });
   const setSort = useCallback((sort: SortKey) => {
     setView((v) => ({ ...v, sort }));
   }, []);
@@ -400,7 +410,7 @@ export function AdminInviteCodesPage() {
                 aria-label="Filter codes by status"
                 className="flex flex-wrap items-center gap-1.5"
               >
-                {FILTER_OPTIONS.map((opt) => {
+                {FILTER_OPTIONS.map((opt, idx) => {
                   const count =
                     opt.key === "all"
                       ? counts.all
@@ -416,8 +426,8 @@ export function AdminInviteCodesPage() {
                       type="button"
                       role="tab"
                       aria-selected={selected}
-                      tabIndex={selected ? 0 : -1}
                       onClick={() => setFilter(opt.key)}
+                      {...getTabProps(idx)}
                       className={
                         "inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium min-h-[40px] transition-colors " +
                         (selected

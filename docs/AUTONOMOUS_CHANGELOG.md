@@ -223,3 +223,20 @@ select (admin invites, etc.) with the proven hook; (2) the `formatRelative` ×20
 consolidation (carefully, phrasing-preserving) + `useNow` so all relative times
 stay fresh; (3) a permanent Playwright a11y smoke (fold in `_verify-roving` /
 `_verify-auth-tabs`) so tablist keyboard nav is regression-guarded.
+
+---
+
+## Cycle 8 — fix keyboard-unreachable filters on AdminInviteCodesPage
+
+**Why (real bug, not just polish):** the status-filter tablist already set
+`tabIndex={selected ? 0 : -1}` (roving) but had **no arrow-key handler** — so the
+inactive filters were `-1` (not Tab-reachable) AND had no other keyboard path,
+making them completely **keyboard-unreachable**. Worse than the other tablists.
+
+**What:** replaced the manual `tabIndex` with `useRovingTabIndex` (same wiring as
+the live-verified `AllUsersView`), so Arrow/Home/End now reach every filter.
+
+**Verify:** `tsc -b` clean on the file (only unrelated `fulltest/` parallel-WIP
+errors remain); `eslint` clean. Wiring is byte-identical to the AllUsersView
+adoption that passed the 4/4 live Playwright keyboard check. Admin-only surface —
+no overlap with the parallel session (which is in `fulltest/`).
