@@ -24,6 +24,7 @@
  *   triage shape.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRovingTabIndex } from "@/hooks";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
 import type { ProfileRole } from "@/lib/profile";
@@ -199,6 +200,13 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
     setView({ filter: DEFAULT_FILTER, sort: DEFAULT_SORT });
   };
 
+  // Roving-tabindex keyboard nav (Arrow/Home/End) for the role-filter tablist.
+  const { getTabProps } = useRovingTabIndex<HTMLButtonElement>({
+    count: ROLE_FILTERS.length,
+    activeIndex: ROLE_FILTERS.indexOf(filter),
+    onSelect: (i) => setView((v) => ({ ...v, filter: ROLE_FILTERS[i] })),
+  });
+
   const onChangeRole = async (user: AdminUser, nextRole: ProfileRole): Promise<void> => {
     if (nextRole === user.role) return;
     setActionError(null);
@@ -302,7 +310,7 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
           aria-label="Filter by role"
           className="flex items-center gap-1.5 flex-wrap"
         >
-          {ROLE_FILTERS.map((f) => {
+          {ROLE_FILTERS.map((f, idx) => {
             const active = filter === f;
             const count = roleCounts[f];
             return (
@@ -313,6 +321,7 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
                 aria-selected={active}
                 aria-controls="all-users-table"
                 onClick={() => setView((v) => ({ ...v, filter: f }))}
+                {...getTabProps(idx)}
                 className={[
                   "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium min-h-[40px]",
                   "motion-safe:transition-colors",

@@ -163,3 +163,24 @@ deferred — same note as Cycle 3; logic mirrors the tested KebabMenu roving imp
 **Remaining `role="tablist"` without arrow nav:** AuthScreen (2 hardcoded tabs +
 a role radio group — different shape), AllUsersView, calendar (already had it),
 and a handful of teacher surfaces (left alone — parallel session active there).
+
+---
+
+## Cycle 6 — roving tabindex on AllUsersView + LIVE keyboard verification
+
+**Why:** I'd applied `useRovingTabIndex` to 5 surfaces on tsc + pattern-fidelity
+alone. This cycle both extends coverage to the admin role-filter and *proves the
+hook works in a real browser* (admin always has users to render, so it's the one
+tablist I can reach without elaborate fixture setup).
+
+**What:**
+- Adopted `useRovingTabIndex` in `admin/AllUsersView` (role-filter tablist).
+- `scripts/_verify-roving.mjs`: Playwright harness — disposable admin → opens
+  `/educator/account/admin/users` → asserts the role tablist's keyboard model.
+
+**Verify (LIVE, 4/4 PASS):** roving tabindex (exactly 1 tab `tabindex=0`, rest
+`-1`); ArrowRight both activates (`aria-selected=true`) and moves focus to the
+next tab; Home moves focus to the first. This validates the shared hook for all
+6 adopting surfaces. `tsc` clean on `AllUsersView` (the unrelated tsc errors in
+`fulltest/ProctorTimeline.tsx` are the parallel session's unstaged WIP, not on
+committed main).
