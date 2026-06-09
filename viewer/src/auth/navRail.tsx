@@ -45,6 +45,8 @@ export function railLinkClass({ isActive }: { isActive: boolean }): string {
 }
 
 export function isAccountRouteActive(pathname: string): boolean {
+  // Account settings — but NOT the admin subtree (that has its own rail item).
+  if (pathname.startsWith(`${ROUTES.ACCOUNT}/admin`)) return false;
   return pathname === ROUTES.ACCOUNT || pathname.startsWith(`${ROUTES.ACCOUNT}/`);
 }
 

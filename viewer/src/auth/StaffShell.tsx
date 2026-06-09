@@ -24,7 +24,7 @@ import {
 import { Breadcrumbs, BreadcrumbProvider } from "@/components";
 import { ROUTES } from "@/lib/routes";
 import { StudentBadge } from "./StudentBadge";
-import { ViewAsMenuItems } from "./viewAs";
+import { ViewAsMenuItems, useViewAs } from "./viewAs";
 import { NotificationBell } from "@/notifications";
 import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
@@ -133,6 +133,10 @@ export function StaffShell() {
   // Question Bank (+ its global Submissions log) is owned by a specific subset
   // of educators — others don't see the rail entries at all. See lib/access.ts.
   const canQbank = canAccessQuestionBank(profile?.email);
+  // An admin viewing their own (not previewing another role) gets the Admin
+  // label + an Admin rail entry into the admin tools.
+  const viewAs = useViewAs();
+  const showAdmin = profile?.role === "admin" && !viewAs;
 
   const [paletteOpen, setPaletteOpen] = useState(false);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
@@ -336,6 +340,23 @@ export function StaffShell() {
         </svg>
       ),
     },
+    // Admin tools — only for an admin in their own (non-preview) view.
+    ...(showAdmin
+      ? ([
+          {
+            id: "admin",
+            to: ROUTES.ACCOUNT_ADMIN_STATS,
+            label: "Admin",
+            isActive: (p: string) => p.includes("/account/admin"),
+            icon: (
+              <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            ),
+          },
+        ] as NavRailItem[])
+      : []),
   ];
 
   return (
@@ -369,7 +390,7 @@ export function StaffShell() {
               aria-hidden={collapsed}
               className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate"
             >
-              Educator
+              {showAdmin ? "Admin" : "Educator"}
             </p>
           </div>
 
