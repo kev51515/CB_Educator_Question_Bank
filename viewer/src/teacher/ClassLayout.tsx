@@ -53,6 +53,7 @@ import { CourseMaterials } from "./CourseMaterials";
 import { CourseGradebook } from "./CourseGradebook";
 import { ClassSkillsView } from "./ClassSkillsView";
 import { CoursePortfolio } from "./CoursePortfolio";
+import { CounselingCaseloadView } from "./counseling/CounselingCaseloadView";
 import { CourseDiscussions } from "./CourseDiscussions";
 import { DiscussionTopicView } from "./DiscussionTopicView";
 import { CourseSettings } from "./CourseSettings";
@@ -92,6 +93,7 @@ const TABS: ReadonlyArray<TabDef> = [
   // URL resolves cleanly. Overview is still a tab — just no longer the index.
   { to: "modules", label: "Modules" },
   { to: "overview", label: "Overview" },
+  { to: "caseload", label: "Caseload" },
   { to: "roster", label: "Roster" },
   { to: "assignments", label: "Assignments" },
   { to: "announcements", label: "Announcements" },
@@ -131,7 +133,7 @@ export function ClassLayout() {
     () =>
       TABS.filter((t) => {
         if (t.to === "skills") return canQbank;
-        if (t.to === "portfolio") return isCounseling;
+        if (t.to === "portfolio" || t.to === "caseload") return isCounseling;
         return true;
       }),
     [canQbank, isCounseling],
@@ -434,6 +436,16 @@ export function ClassLayout() {
             <Route index element={<Navigate to="modules" replace />} />
             <Route path="modules" element={<ModulesPage />} />
             <Route path="overview" element={<CourseOverview />} />
+            <Route
+              path="caseload"
+              element={
+                isCounseling ? (
+                  <CounselingCaseloadView />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
             <Route path="roster" element={<ClassRoster />} />
             <Route path="assignments" element={<ClassAssignmentsTab />} />
             <Route

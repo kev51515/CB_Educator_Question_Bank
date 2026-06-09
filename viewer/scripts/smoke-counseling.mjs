@@ -115,6 +115,24 @@ async function main() {
       const { data } = await sClient.from("counseling_meetings").select("id").eq("course_id", course.id);
       (data?.length ?? 0) === 0 ? ok("student CANNOT read meeting notes (private)") : bad("meeting notes should be private", `${data?.length}`);
     }
+
+    step("counseling_caseload RPC (0135)");
+    {
+      const { data, error } = await cClient.rpc("counseling_caseload", { p_course_id: course.id });
+      if (error) bad("counselor reads caseload", error.message);
+      else {
+        (data?.totals?.students ?? 0) >= 1 ? ok("caseload counts students", `${data.totals.students}`) : bad("students count", JSON.stringify(data?.totals));
+        (data?.totals?.applications ?? 0) >= 1 ? ok("caseload counts applications", `${data.totals.applications}`) : bad("applications count", JSON.stringify(data?.totals));
+        const row = (data?.students ?? []).find((s) => s.id === student.id);
+        row && row.applications_total >= 1 && row.tasks_open >= 1
+          ? ok("caseload per-student aggregates present")
+          : bad("per-student row aggregates", JSON.stringify(row));
+      }
+    }
+    {
+      const { error } = await oClient.rpc("counseling_caseload", { p_course_id: course.id });
+      /not_authorized/.test(error?.message ?? "") ? ok("unrelated teacher rejected from caseload") : bad("other should be rejected", error?.message ?? "no error");
+    }
   } finally {
     step("cleanup");
     await cleanup().catch((e) => console.log("  ..    cleanup error", e.message));
