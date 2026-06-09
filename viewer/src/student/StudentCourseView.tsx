@@ -439,6 +439,8 @@ export function StudentCourseView(): JSX.Element {
                 )}
               </div>
 
+              {/* SAT/class quick-stats — not meaningful for a counseling course. */}
+              {course.course_type !== "counseling" && (
               <div
                 className="grid grid-cols-1 sm:grid-cols-2 gap-3"
                 role="group"
@@ -498,6 +500,7 @@ export function StudentCourseView(): JSX.Element {
                   }
                 />
               </div>
+              )}
             </header>
 
             {/* Counseling workspace (student side) — only for counseling
