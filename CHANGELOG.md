@@ -44,6 +44,13 @@ Dates are the work date. Migration numbers in parentheses where relevant.
   _Verified: a 2-attempt same-test student now reports 98 domain answers (one
   attempt) with both runs in the trajectory._
 
+### Tests
+- **`smoke-skills.mjs`** — a disposable, self-cleaning integration suite for the
+  three skill RPCs: `get_test_result` domain presence + release gate (0121),
+  `student_test_report` latest-attempt dedup (0122), and `course_skill_mastery`
+  class rollup + course-scope authorization (0123). Wired into `smoke-all` and
+  `npm run smoke:skills`. 11/11 green.
+
 ### Docs
 - Added [`docs/SKILL_DOMAINS.md`](docs/SKILL_DOMAINS.md) — end-to-end architecture
   of the SAT skill-domain system (data, shared `skills.ts` module, the four
