@@ -16,6 +16,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/lib/profile";
+import { canAccessQuestionBank } from "@/lib/access";
 import { ROUTES, testRunPath } from "@/lib/routes";
 import { useFullTests } from "@/fulltest/useFullTests";
 import { sectionSummary, formatTestDuration } from "@/fulltest/testSections";
@@ -189,11 +190,30 @@ export function InlineAddItemRow({
   const toast = useToast();
   const userIdForKeys = profile?.id ?? null;
 
+  // Question Bank content (Full-Test, Practice Test, Question Set) is restricted
+  // to allow-listed educators — they can't add those item types to a module
+  // either. Assignment / Header / Link stay available to everyone. See
+  // lib/access.ts.
+  const canQbank = canAccessQuestionBank(profile?.email);
+
   // Last-used type per (user, class) — preselect on open. Falls back to
   // 'assignment' the very first time.
   const [itemType, setItemType] = useState<InlineAddType>(
     () => readLastAddType(userIdForKeys, classId) ?? "assignment",
   );
+
+  // If a non-allow-listed educator's persisted last-type is a Question Bank
+  // type, fall back to Assignment so they never land on a hidden tab.
+  useEffect(() => {
+    if (
+      !canQbank &&
+      (itemType === "full_test" ||
+        itemType === "question_set" ||
+        itemType === "practice_test")
+    ) {
+      setItemType("assignment");
+    }
+  }, [canQbank, itemType]);
   const [title, setTitle] = useState("");
   // "Override display title" lives behind a disclosure; default closed.
   const [showOverrideTitle, setShowOverrideTitle] = useState(false);
@@ -734,9 +754,9 @@ export function InlineAddItemRow({
         <span className="sr-only">Item type</span>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
           {chip("assignment", "Assignment")}
-          {chip("full_test", "Full-Test")}
-          {chip("question_set", "Question Set")}
-          {chip("practice_test", "Practice Test")}
+          {canQbank && chip("full_test", "Full-Test")}
+          {canQbank && chip("question_set", "Question Set")}
+          {canQbank && chip("practice_test", "Practice Test")}
           {chip("header", "Header")}
           {chip("link", "Link")}
         </div>

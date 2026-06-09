@@ -16,6 +16,8 @@ import { supabase } from "@/lib/supabase";
 import { testOverviewPath } from "@/lib/routes";
 import { KebabMenu, type KebabMenuOption } from "@/components";
 import { useToast } from "@/components/Toast";
+import { useProfile } from "@/lib/profile";
+import { canAccessQuestionBank } from "@/lib/access";
 import { type ModuleItem, type ModuleNode } from "@/teacher/useCourseModules";
 import {
   resolveDropTarget,
@@ -296,6 +298,10 @@ function ModuleCard({
   onToggleSelected,
 }: ModuleHeaderProps): JSX.Element {
   const toast = useToast();
+  const { profile } = useProfile();
+  // Question Bank item types are hidden in the add-item menu for non-allow-listed
+  // educators; keep the empty-state hint consistent with what they can add.
+  const canQbank = canAccessQuestionBank(profile?.email);
 
   const onToggleItemPublished = useCallback(
     async (item: ModuleItem): Promise<void> => {
@@ -752,7 +758,9 @@ function ModuleCard({
             <div className="px-4 py-6 text-sm text-slate-500 dark:text-slate-400 text-center">
               <div>No items yet.</div>
               <div className="mt-1 text-[12px] text-slate-500 dark:text-slate-400">
-                Add an Assignment, Practice Test, Question Set, Header, or Link.
+                {canQbank
+                  ? "Add an Assignment, Practice Test, Question Set, Header, or Link."
+                  : "Add an Assignment, Header, or Link."}
               </div>
             </div>
           ) : null}
