@@ -17,27 +17,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Skeleton } from "@/components/Skeleton";
 import { getAnswerBreakdown, type ReviewCourse } from "./api";
+import { band, orderDomains, orderSections, pctOf, sectionLabel } from "./skills";
 import type { TestContentModule } from "./testContent";
-
-const BANDS = {
-  good: { bg: "#10b981", fg: "#ffffff" },
-  mid: { bg: "#f59e0b", fg: "#1f2937" },
-  bad: { bg: "#f43f5e", fg: "#ffffff" },
-} as const;
-const band = (pct: number) => (pct >= 70 ? BANDS.good : pct >= 40 ? BANDS.mid : BANDS.bad);
-
-const DOMAIN_ORDER: Record<string, string[]> = {
-  "reading-writing": [
-    "Information and Ideas",
-    "Craft and Structure",
-    "Expression of Ideas",
-    "Standard English Conventions",
-  ],
-  math: ["Algebra", "Advanced Math", "Problem-Solving and Data Analysis", "Geometry and Trigonometry"],
-};
-const SECTION_ORDER = ["reading-writing", "math"];
-const sectionLabel = (s: string) =>
-  s === "reading-writing" ? "Reading & Writing" : s === "math" ? "Math" : s;
 
 interface Props {
   slug: string;
@@ -51,7 +32,7 @@ interface Tally {
   c: number;
   t: number;
 }
-const pctOf = (x: Tally | undefined): number | null => (x && x.t ? Math.round((x.c / x.t) * 100) : null);
+const tallyPct = (x: Tally | undefined): number | null => (x ? pctOf(x.c, x.t) : null);
 
 interface ClassStat {
   course: ReviewCourse;
@@ -92,16 +73,12 @@ export function ClassComparison({ slug, modules, courses, currentCourseId, onClo
       }
     }
     const rows: Row[] = [{ key: "overall", label: "Overall", kind: "overall" }];
-    const orderedSections = SECTION_ORDER.filter((s) => sectionsPresent.has(s)).concat(
-      [...sectionsPresent].filter((s) => !SECTION_ORDER.includes(s)),
-    );
-    for (const sec of orderedSections) {
+    for (const sec of orderSections(sectionsPresent)) {
       rows.push({ key: `sec:${sec}`, label: sectionLabel(sec), kind: "section", section: sec });
       const present = domainsBySection.get(sec);
       if (!present) continue;
-      const order = DOMAIN_ORDER[sec] ?? [];
-      const doms = [...present].sort((a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
-      for (const d of doms) rows.push({ key: `dom:${sec}:${d}`, label: d, kind: "domain", section: sec, domain: d });
+      for (const d of orderDomains(sec, present))
+        rows.push({ key: `dom:${sec}:${d}`, label: d, kind: "domain", section: sec, domain: d });
     }
     return { qMeta, rows };
   }, [modules]);
@@ -196,6 +173,10 @@ export function ClassComparison({ slug, modules, courses, currentCourseId, onClo
             </div>
           ) : (
             <table className="border-collapse text-sm">
+              <caption className="sr-only">
+                Percent correct by topic, one column per class. The weakest class in each row (when the
+                gap is at least 10 points) is outlined.
+              </caption>
               <thead>
                 <tr>
                   <th className="sticky left-0 z-10 bg-white py-2 pr-3 text-left align-bottom dark:bg-slate-900" />
@@ -220,7 +201,7 @@ export function ClassComparison({ slug, modules, courses, currentCourseId, onClo
               </thead>
               <tbody>
                 {rows.map((row) => {
-                  const pcts = stats.map((s) => pctOf(tallyFor(s, row)));
+                  const pcts = stats.map((s) => tallyPct(tallyFor(s, row)));
                   const valid = pcts.filter((p): p is number => p != null);
                   const min = valid.length >= 2 ? Math.min(...valid) : null;
                   const max = valid.length >= 2 ? Math.max(...valid) : null;
@@ -255,18 +236,14 @@ export function ClassComparison({ slug, modules, courses, currentCourseId, onClo
                               <span className="text-xs text-slate-300 dark:text-slate-600">—</span>
                             ) : (
                               <span
-                                className={`inline-flex min-w-[3.25rem] flex-col items-center rounded-md px-2 py-1 ${
+                                className={`inline-flex min-w-[3rem] items-center justify-center rounded-md px-2.5 py-1.5 text-xs tabular-nums ${
                                   isHeader ? "font-bold" : "font-semibold"
                                 } ${isLow ? "ring-2 ring-rose-400 ring-offset-1 dark:ring-offset-slate-900" : ""}`}
                                 style={{ backgroundColor: band(pct).bg, color: band(pct).fg }}
-                                title={tally ? `${tally.c}/${tally.t} correct` : undefined}
+                                title={tally ? `${tally.c} of ${tally.t} answers correct (${pct}%)` : undefined}
                               >
-                                <span className="text-xs leading-none tabular-nums">{pct}%</span>
-                                {tally && (
-                                  <span className="mt-0.5 text-[9px] font-medium leading-none opacity-80 tabular-nums">
-                                    {tally.c}/{tally.t}
-                                  </span>
-                                )}
+                                {pct}%
+                                {isLow && <span className="sr-only"> (weakest class)</span>}
                               </span>
                             )}
                           </td>

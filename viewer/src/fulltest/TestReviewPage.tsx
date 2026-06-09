@@ -206,7 +206,11 @@ export function TestReviewPage(): JSX.Element {
       }
       let topWrong: { value: string; count: number } | null = null;
       for (const [value, count] of wrong) {
-        if (!topWrong || count > topWrong.count) topWrong = { value, count };
+        // Stable tie-break (lexicographic) so the "most chose" hint doesn't flip
+        // between renders when two distractors are equally common.
+        if (!topWrong || count > topWrong.count || (count === topWrong.count && value < topWrong.value)) {
+          topWrong = { value, count };
+        }
       }
       return { total: rows.length, correct: rows.filter((r) => r.is_correct).length, topWrong };
     },

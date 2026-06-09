@@ -21,6 +21,7 @@
  */
 import { useMemo, useRef, useState } from "react";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
+import { band, BANDS, isChoiceLetter, LEGEND_GRADIENT, orderDomains, orderSections, sectionLabel } from "./skills";
 import type { TestContentModule } from "./testContent";
 
 export interface QStat {
@@ -53,46 +54,18 @@ interface Cell {
   st: QStat | null;
 }
 
-/**
- * The app's standard 3-band performance palette (matches the Review sidebar
- * bars): emerald ≥70%, amber ≥40%, rose below. Text colour per band is picked
- * for legibility on the fill — dark on amber, white on green/red.
- */
-const BANDS = {
-  good: { bg: "#10b981", fg: "#ffffff" }, // emerald-500
-  mid: { bg: "#f59e0b", fg: "#1f2937" }, // amber-500 + slate-800 text
-  bad: { bg: "#f43f5e", fg: "#ffffff" }, // rose-500
-} as const;
-type Band = (typeof BANDS)[keyof typeof BANDS];
-
-function band(pct: number): Band {
-  return pct >= 70 ? BANDS.good : pct >= 40 ? BANDS.mid : BANDS.bad;
-}
-
-const LEGEND_GRADIENT = `linear-gradient(to right, ${BANDS.bad.bg}, ${BANDS.mid.bg}, ${BANDS.good.bg})`;
-
 // Remember the teacher's By-skill / By-question preference across opens.
 const VIEW_KEY = "fulltest:review:heatmapView";
 
-// Canonical domain display order within each section.
-const DOMAIN_ORDER: Record<string, string[]> = {
-  "reading-writing": [
-    "Information and Ideas",
-    "Craft and Structure",
-    "Expression of Ideas",
-    "Standard English Conventions",
-  ],
-  math: ["Algebra", "Advanced Math", "Problem-Solving and Data Analysis", "Geometry and Trigonometry"],
-};
-const SECTION_ORDER = ["reading-writing", "math"];
-const sectionLabel = (s: string): string =>
-  s === "reading-writing" ? "Reading & Writing" : s === "math" ? "Math" : s;
-
-/** "3/8 correct (38%) · most chose B" — shared by tooltip + aria-label. */
+/** "3/8 correct (38%) · most chose B" — shared by tooltip + aria-label. The
+ *  distractor hint is shown only for MCQ letters (a typed grid value like "1.5"
+ *  reads ambiguously as "most chose 1.5"). */
 function describe(c: Cell): string {
   if (!c.st) return `Q${c.number}: no responses`;
   let s = `Q${c.number}: ${c.st.correct} of ${c.st.total} correct (${c.pct}%)`;
-  if (c.pct! < 100 && c.st.topWrong) s += ` · most chose ${c.st.topWrong.value}`;
+  if (c.pct! < 100 && c.st.topWrong && isChoiceLetter(c.st.topWrong.value)) {
+    s += ` · most chose ${c.st.topWrong.value}`;
+  }
   return s;
 }
 
@@ -160,18 +133,11 @@ export function ReviewHeatmap({
       const dm = bySection.get(c.section)!;
       (dm.get(c.domain) ?? dm.set(c.domain, []).get(c.domain)!).push(c);
     }
-    const sections = SECTION_ORDER.filter((s) => bySection.has(s)).concat(
-      [...bySection.keys()].filter((s) => !SECTION_ORDER.includes(s)),
-    );
-    return sections.map((sec) => {
+    return orderSections(bySection.keys()).map((sec) => {
       const dm = bySection.get(sec)!;
-      const order = DOMAIN_ORDER[sec] ?? [];
-      const domains = [...dm.keys()].sort(
-        (a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99),
-      );
       return {
         section: sec,
-        domains: domains.map((d) => {
+        domains: orderDomains(sec, dm.keys()).map((d) => {
           const qs = dm.get(d)!.slice().sort((a, b) => a.number - b.number);
           return { domain: d, pct: aggregate(qs), cells: qs };
         }),

@@ -5,16 +5,13 @@
  * once the run is submitted, when the server safely returns the answer key
  * alongside the student's response (`get_test_result`).
  */
+import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
 import { scaledFromSectionScores } from "./satScore";
+import { band, orderDomains, orderSections, pctOf, sectionLabel } from "./skills";
 import type { ResultQuestion, TestResult } from "./types";
-
-const SECTION_LABEL: Record<string, string> = {
-  "reading-writing": "Reading & Writing",
-  math: "Math",
-};
 
 const SCALED_NOTE =
   "Estimated from your raw section scores on a representative Digital SAT curve. " +
@@ -30,9 +27,9 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
   // surface that as the hero instead of the raw fallback.
   const singleSection =
     scaled.total === null && scaled.rw !== null
-      ? { label: SECTION_LABEL["reading-writing"], scaled: scaled.rw }
+      ? { label: sectionLabel("reading-writing"), scaled: scaled.rw }
       : scaled.total === null && scaled.math !== null
-        ? { label: SECTION_LABEL["math"], scaled: scaled.math }
+        ? { label: sectionLabel("math"), scaled: scaled.math }
         : null;
   const hasEstimate = scaled.total !== null || singleSection !== null;
 
@@ -173,27 +170,6 @@ function ScoreChip({
 
 // --- Skill profile (per-domain mastery) -------------------------------------
 
-/** Same 3-band palette as the teacher heatmap: ≥70 strong, ≥40 developing,
- *  below = needs work. */
-const SKILL_BANDS = {
-  good: { bg: "#10b981", fg: "#ffffff", label: "Strong" },
-  mid: { bg: "#f59e0b", fg: "#1f2937", label: "Developing" },
-  bad: { bg: "#f43f5e", fg: "#ffffff", label: "Focus area" },
-} as const;
-const skillBand = (pct: number) =>
-  pct >= 70 ? SKILL_BANDS.good : pct >= 40 ? SKILL_BANDS.mid : SKILL_BANDS.bad;
-
-const DOMAIN_ORDER: Record<string, string[]> = {
-  "reading-writing": [
-    "Information and Ideas",
-    "Craft and Structure",
-    "Expression of Ideas",
-    "Standard English Conventions",
-  ],
-  math: ["Algebra", "Advanced Math", "Problem-Solving and Data Analysis", "Geometry and Trigonometry"],
-};
-const SECTION_ORDER = ["reading-writing", "math"];
-
 interface DomainStat {
   domain: string;
   correct: number;
@@ -208,29 +184,29 @@ interface DomainStat {
  * mastery bars. Hidden entirely when the test has no classified questions.
  */
 function SkillProfileCard({ result }: { result: TestResult }) {
-  const bySection = new Map<string, Map<string, { correct: number; total: number }>>();
-  for (const q of result.questions) {
-    if (!q.domain) continue;
-    if (!bySection.has(q.section)) bySection.set(q.section, new Map());
-    const dm = bySection.get(q.section)!;
-    const e = dm.get(q.domain) ?? { correct: 0, total: 0 };
-    e.total += 1;
-    if (q.is_correct === true) e.correct += 1;
-    dm.set(q.domain, e);
-  }
-  if (bySection.size === 0) return null;
+  const grouped = useMemo(() => {
+    const bySection = new Map<string, Map<string, { correct: number; total: number }>>();
+    for (const q of result.questions) {
+      if (!q.domain) continue;
+      if (!bySection.has(q.section)) bySection.set(q.section, new Map());
+      const dm = bySection.get(q.section)!;
+      const prev = dm.get(q.domain) ?? { correct: 0, total: 0 };
+      dm.set(q.domain, {
+        correct: prev.correct + (q.is_correct === true ? 1 : 0),
+        total: prev.total + 1,
+      });
+    }
+    return orderSections(bySection.keys()).map((sec) => {
+      const dm = bySection.get(sec)!;
+      const domains: DomainStat[] = orderDomains(sec, dm.keys()).map((domain) => {
+        const e = dm.get(domain)!;
+        return { domain, correct: e.correct, total: e.total, pct: pctOf(e.correct, e.total) ?? 0 };
+      });
+      return { section: sec, domains };
+    });
+  }, [result.questions]);
 
-  const sections = SECTION_ORDER.filter((s) => bySection.has(s)).concat(
-    [...bySection.keys()].filter((s) => !SECTION_ORDER.includes(s)),
-  );
-  const grouped = sections.map((sec) => {
-    const dm = bySection.get(sec)!;
-    const order = DOMAIN_ORDER[sec] ?? [];
-    const domains: DomainStat[] = [...dm.entries()]
-      .map(([domain, e]) => ({ domain, correct: e.correct, total: e.total, pct: Math.round((e.correct / e.total) * 100) }))
-      .sort((a, b) => (order.indexOf(a.domain) + 1 || 99) - (order.indexOf(b.domain) + 1 || 99));
-    return { section: sec, domains };
-  });
+  if (grouped.length === 0) return null;
 
   const all = grouped.flatMap((g) => g.domains);
   const weakest = all.reduce<DomainStat | null>((w, d) => (!w || d.pct < w.pct ? d : w), null);
@@ -247,7 +223,7 @@ function SkillProfileCard({ result }: { result: TestResult }) {
           Focus area:{" "}
           <span
             className="rounded-md px-1.5 py-0.5 font-semibold"
-            style={{ backgroundColor: skillBand(focus.pct).bg, color: skillBand(focus.pct).fg }}
+            style={{ backgroundColor: band(focus.pct).bg, color: band(focus.pct).fg }}
           >
             {focus.domain} · {focus.pct}%
           </span>{" "}
@@ -263,7 +239,7 @@ function SkillProfileCard({ result }: { result: TestResult }) {
         {grouped.map((g) => (
           <div key={g.section}>
             <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
-              {SECTION_LABEL[g.section] ?? g.section}
+              {sectionLabel(g.section)}
             </h3>
             <div className="space-y-2.5">
               {g.domains.map((d) => (
@@ -274,7 +250,7 @@ function SkillProfileCard({ result }: { result: TestResult }) {
                   <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
                     <span
                       className="block h-full rounded-full"
-                      style={{ width: `${d.pct}%`, backgroundColor: skillBand(d.pct).bg }}
+                      style={{ width: `${d.pct}%`, backgroundColor: band(d.pct).bg }}
                     />
                   </span>
                   <span className="w-24 shrink-0 text-right text-xs tabular-nums text-slate-500 dark:text-slate-400">
@@ -294,12 +270,6 @@ function fmtClock(sec: number | null): string {
   if (sec == null) return "—";
   const s = Math.max(0, Math.round(sec));
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
-}
-
-function sectionLabel(section: string | undefined): string {
-  if (section === "math") return "Math";
-  if (section === "reading-writing") return "Reading & Writing";
-  return "Section";
 }
 
 /** Per-module time-on-task (from test_runs.module_timing). Coaching signal:
@@ -329,7 +299,7 @@ function TimingCard({ result }: { result: TestResult }) {
           return (
             <li key={pos} className="flex items-center justify-between gap-3 py-2 text-sm">
               <span className="text-slate-700 dark:text-slate-200">
-                Module {pos} · {sectionLabel(sectionByPos.get(pos))}
+                Module {pos} · {sectionLabel(sectionByPos.get(pos) ?? "")}
               </span>
               <span className="flex items-center gap-2 tabular-nums text-slate-600 dark:text-slate-300">
                 {fmtClock(tm.elapsed_seconds)}
@@ -372,7 +342,7 @@ function ReviewCard({ rq }: { rq: ResultQuestion }) {
     >
       <div className="mb-3 flex items-center justify-between">
         <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-          {SECTION_LABEL[rq.section] ?? rq.section} · Q{rq.number}
+          {sectionLabel(rq.section)} · Q{rq.number}
         </span>
         <span
           className={[
