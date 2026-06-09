@@ -184,3 +184,42 @@ next tab; Home moves focus to the first. This validates the shared hook for all
 6 adopting surfaces. `tsc` clean on `AllUsersView` (the unrelated tsc errors in
 `fulltest/ProctorTimeline.tsx` are the parallel session's unstaged WIP, not on
 committed main).
+
+---
+
+## Cycle 7 — AuthScreen roving tablist: ATTEMPTED → REVERTED (regression caught by live verify)
+
+**Tried:** apply `useRovingTabIndex` to the sign-in / create-account tabs (the
+highest-traffic screen).
+
+**Why reverted:** AuthScreen intentionally autofocuses the relevant form field
+when the tab switches (`useEffect` on `[tab, signInMode]`). With roving, the
+inactive tab becomes `tabindex=-1` and arrowing to it immediately hands focus to
+the form field — so you can't arrow *back*, which is worse than the original
+(both tabs plainly Tab-reachable). The live Playwright check failed exactly here
+(selection moved but focus didn't persist on the tab). Fully reverted — no diff.
+
+**Lesson for the remaining tablists:** the roving "selection-follows-focus"
+pattern only fits filter chip groups that DON'T move focus elsewhere on select.
+Surfaces with focus side-effects on tab change should keep plain Tab order.
+
+---
+
+## Session 2 close
+
+**Shipped this session (cycles 1–6, all committed, pushed, individually verified):**
+useNow hook + live due-states (1) · amber due-soon urgency (2) · useRovingTabIndex
++ assignments filter (3) · useMediaQuery→useSyncExternalStore (4) · roving on 3
+more student tablists (5) · roving on AllUsersView + **live 4/4 Playwright keyboard
+verification** (6). Cycle 7 attempted + reverted (above).
+
+**State left:** committed `main` is green; the only working-tree tsc error is the
+parallel session's unstaged `fulltest/ProctorTimeline.tsx` WIP (not mine). 0 lint
+problems in everything I touched. Roving keyboard nav now live-verified and on 6
+tablists.
+
+**Top 3 next:** (1) finish the remaining filter tablists that DON'T autofocus on
+select (admin invites, etc.) with the proven hook; (2) the `formatRelative` ×20
+consolidation (carefully, phrasing-preserving) + `useNow` so all relative times
+stay fresh; (3) a permanent Playwright a11y smoke (fold in `_verify-roving` /
+`_verify-auth-tabs`) so tablist keyboard nav is regression-guarded.
