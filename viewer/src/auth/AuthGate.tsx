@@ -44,6 +44,7 @@ import { CommandPalette } from "@/components/CommandPalette";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { useStudentSession } from "./session";
 import { useProfile } from "@/lib/profile";
+import { useViewAs, ViewAsBanner } from "./viewAs";
 import { AuthScreen } from "./AuthScreen";
 import { QuickStartScreen } from "./QuickStartScreen";
 import { PasswordResetScreen } from "./PasswordResetScreen";
@@ -236,6 +237,9 @@ function AuthGateImpl() {
   } = useStudentSession();
   const { profile, loading: profileLoading, error: profileError, refresh } =
     useProfile();
+  // Admin "view as" preview (no-op for non-admins). Read unconditionally here so
+  // the hook order is stable across the early returns below.
+  const viewAs = useViewAs();
 
   // Track whether we're currently inside a Supabase PASSWORD_RECOVERY window.
   // We listen to the auth event rather than ?reset=1 because the event is
@@ -302,7 +306,11 @@ function AuthGateImpl() {
     );
   }
 
-  const isStaff = profile.role === "teacher" || profile.role === "admin";
+  // An admin can preview the educator/student experience; everyone else renders
+  // their real role. effectiveRole drives which surface tree mounts.
+  const effectiveRole =
+    profile.role === "admin" && viewAs ? viewAs : profile.role;
+  const isStaff = effectiveRole === "teacher" || effectiveRole === "admin";
   const account: AccountContext = {
     profile,
     email: session.email,
@@ -313,6 +321,7 @@ function AuthGateImpl() {
 
   return (
     <Suspense fallback={<LoadingScreen />}>
+      <ViewAsBanner />
       {isStaff ? (
         <StaffRoutesTree account={account} />
       ) : (

@@ -5,7 +5,7 @@
  * student can switch areas or sign out without us touching the viewer's
  * existing header. Fixed-positioned, collapses to an icon on small screens.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "@/lib/routes";
 
@@ -38,6 +38,9 @@ interface StudentBadgeProps {
    *  StudentShell overrides with the `/student/*` equivalents. */
   inboxPath?: string;
   accountPath?: string;
+  /** Optional extra menu content rendered just under the header (e.g. the
+   *  admin "View as" switcher). Self-hides when not applicable. */
+  menuExtra?: ReactNode;
 }
 
 export function StudentBadge({
@@ -49,6 +52,7 @@ export function StudentBadge({
   showSwitchArea = true,
   inboxPath = ROUTES.INBOX,
   accountPath = ROUTES.ACCOUNT,
+  menuExtra,
 }: StudentBadgeProps) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -96,6 +100,7 @@ export function StudentBadge({
               </p>
             )}
           </div>
+          {menuExtra}
           {showSwitchArea && (
             <button
               type="button"

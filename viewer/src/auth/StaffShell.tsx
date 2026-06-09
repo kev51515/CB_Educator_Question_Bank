@@ -25,6 +25,7 @@ import {
 import { Breadcrumbs, BreadcrumbProvider } from "@/components";
 import { ROUTES } from "@/lib/routes";
 import { StudentBadge } from "./StudentBadge";
+import { ViewAsMenuItems } from "./viewAs";
 import { NotificationBell } from "@/notifications";
 import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
@@ -551,6 +552,7 @@ export function StaffShell() {
         }}
         onSignOut={signOut}
         showSwitchArea={false}
+        menuExtra={<ViewAsMenuItems />}
       />
 
       {/* Global ⌘/Ctrl+K command palette. We pass the LMS command registry

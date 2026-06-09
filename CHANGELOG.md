@@ -10,6 +10,17 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 ## 2026-06-09
 
 ### Added
+- **Admin "View as" role preview.** An admin can switch the rendered role
+  (Admin / Educator / Student) from the account badge menu to see those
+  experiences; a persistent amber banner ("Previewing as … — Return to admin
+  view") keeps it obvious + reversible from any shell. Single-role model is
+  unchanged — this is a view preview of the admin's own surfaces, not
+  impersonation of a specific user. New `auth/viewAs.tsx` (tiny external store +
+  `ViewAsMenuItems`/`ViewAsBanner`); `AuthGate` branches on the effective role.
+  _Verified: admin → View as Student renders the student shell + banner; Return
+  restores admin view._
+- **Accounts:** granted `admin` to kevyao@gmail.com (already admin); created
+  educators kyao@prepmastersedu.com and kteo@prepmastersedu.com (role `teacher`).
 - **Class skills focus-areas card on the course Overview** — surfaces the class's
   3 weakest SAT domains with a "View all skills →" link to the Skills tab, so a
   teacher sees the signal without navigating. Self-hides until the class has test
