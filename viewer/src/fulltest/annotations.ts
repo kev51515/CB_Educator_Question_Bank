@@ -13,10 +13,54 @@ import { useLocalStorageJSON } from "@/hooks";
 
 export type AnnotField = "passage" | "stem";
 
+/** The 5 highlighter colors offered in the runner's highlighter bar. */
+export type HighlightColor = "yellow" | "green" | "blue" | "pink" | "orange";
+
+export const HIGHLIGHT_COLORS: readonly HighlightColor[] = [
+  "yellow",
+  "green",
+  "blue",
+  "pink",
+  "orange",
+];
+
+export const DEFAULT_HIGHLIGHT_COLOR: HighlightColor = "yellow";
+
+/**
+ * Per-color rendering. `mark` is a TRANSLUCENT fill applied inline on the
+ * <mark> — it reads on both light and dark backgrounds (over `text-inherit`),
+ * sidestepping Tailwind's class-based dark mode for dynamic colors. `swatch`
+ * is the solid color for the highlighter-bar buttons.
+ */
+export const HIGHLIGHT_FILL: Record<HighlightColor, { mark: string; swatch: string }> = {
+  yellow: { mark: "rgba(250,204,21,0.45)", swatch: "#facc15" },
+  green: { mark: "rgba(34,197,94,0.40)", swatch: "#22c55e" },
+  blue: { mark: "rgba(59,130,246,0.42)", swatch: "#3b82f6" },
+  pink: { mark: "rgba(236,72,153,0.38)", swatch: "#ec4899" },
+  orange: { mark: "rgba(249,115,22,0.42)", swatch: "#f97316" },
+};
+
+/** Human label for tooltips / replay. */
+export const HIGHLIGHT_LABEL: Record<HighlightColor, string> = {
+  yellow: "Yellow",
+  green: "Green",
+  blue: "Blue",
+  pink: "Pink",
+  orange: "Orange",
+};
+
 export interface Highlight {
   field: AnnotField;
   start: number;
   end: number;
+  color: HighlightColor;
+}
+
+/** Coerce a possibly-colorless (legacy) highlight to a valid color. */
+export function coerceColor(c: unknown): HighlightColor {
+  return typeof c === "string" && (HIGHLIGHT_COLORS as readonly string[]).includes(c)
+    ? (c as HighlightColor)
+    : DEFAULT_HIGHLIGHT_COLOR;
 }
 
 export interface QAnnotation {
@@ -48,6 +92,15 @@ export function mergeRanges(ranges: Range[]): Range[] {
     else out.push({ start: r.start, end: r.end });
   }
   return out;
+}
+
+/** Remove `cut` from `r`, returning the 0–2 remaining pieces. */
+export function subtractRange(r: Range, cut: Range): Range[] {
+  if (cut.end <= r.start || cut.start >= r.end) return [r]; // no overlap
+  const out: Range[] = [];
+  if (cut.start > r.start) out.push({ start: r.start, end: cut.start }); // left remainder
+  if (cut.end < r.end) out.push({ start: cut.end, end: r.end }); // right remainder
+  return out; // fully covered → []
 }
 
 /** Local character offset of (node, nodeOffset) within `el`'s text content. */
@@ -108,7 +161,9 @@ function fieldElementOf(container: Node): HTMLElement | null {
  * entirely within one annotation field. Returns null otherwise (nothing
  * selected, collapsed, or spanning fields).
  */
-export function captureSelectionHighlight(): Highlight | null {
+export function captureSelectionHighlight(
+  color: HighlightColor = DEFAULT_HIGHLIGHT_COLOR,
+): Highlight | null {
   const sel = window.getSelection();
   if (!sel || sel.isCollapsed || sel.rangeCount === 0) return null;
   if ((sel.toString().trim().length ?? 0) < 1) return null;
@@ -125,7 +180,12 @@ export function captureSelectionHighlight(): Highlight | null {
   const end = offsetWithin(startField, range.endContainer, range.endOffset);
   // -1 marks a selection anchored inside a non-highlightable block (e.g. a table).
   if (start < 0 || end < 0 || end <= start) return null;
-  return { field, start, end };
+  return { field, start, end, color };
+}
+
+/** Selected text of the current selection (for the replay event payload). */
+export function currentSelectionText(): string {
+  return window.getSelection()?.toString().trim().slice(0, 120) ?? "";
 }
 
 // --- hook --------------------------------------------------------------------
@@ -156,12 +216,22 @@ export function useRunnerAnnotations(slug: string): UseRunnerAnnotations {
     (qid: string, hl: Highlight): void => {
       setStore((prev) => {
         const cur = prev[qid] ?? EMPTY;
-        const others = cur.highlights.filter((h) => h.field !== hl.field);
-        const sameField = cur.highlights.filter((h) => h.field === hl.field);
-        const merged = mergeRanges([...sameField, hl]).map(
-          (r): Highlight => ({ field: hl.field, start: r.start, end: r.end }),
+        // 1. Newest color wins on overlap: subtract the new span from every
+        //    existing highlight in the SAME field (any color), splitting them.
+        const trimmed: Highlight[] = cur.highlights.flatMap((h) =>
+          h.field !== hl.field
+            ? [h]
+            : subtractRange({ start: h.start, end: h.end }, { start: hl.start, end: hl.end }).map(
+                (r): Highlight => ({ field: h.field, start: r.start, end: r.end, color: h.color }),
+              ),
         );
-        return { ...prev, [qid]: { ...cur, highlights: [...others, ...merged] } };
+        // 2. Merge the new range with same-field, same-color ranges only.
+        const sameColor = trimmed.filter((h) => h.field === hl.field && h.color === hl.color);
+        const otherColor = trimmed.filter((h) => !(h.field === hl.field && h.color === hl.color));
+        const merged = mergeRanges([...sameColor, hl]).map(
+          (r): Highlight => ({ field: hl.field, start: r.start, end: r.end, color: hl.color }),
+        );
+        return { ...prev, [qid]: { ...cur, highlights: [...otherColor, ...merged] } };
       });
     },
     [setStore],
@@ -208,7 +278,14 @@ export function useRunnerAnnotations(slug: string): UseRunnerAnnotations {
       setStore((prev) =>
         prev[qid] !== undefined
           ? prev
-          : { ...prev, [qid]: { highlights: a.highlights, note: a.note } },
+          : {
+              ...prev,
+              [qid]: {
+                // Coerce legacy (colorless) saved highlights to the default color.
+                highlights: a.highlights.map((h) => ({ ...h, color: coerceColor(h.color) })),
+                note: a.note,
+              },
+            },
       );
     },
     [setStore],

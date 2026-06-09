@@ -20,7 +20,7 @@
 import type { JSX } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
-import { mergeRanges, type AnnotField, type Highlight } from "./annotations";
+import { HIGHLIGHT_FILL, coerceColor, type AnnotField, type Highlight } from "./annotations";
 
 // --- inline math ($…$ / $$…$$) ----------------------------------------------
 // Math is stored as LaTeX inside `$…$` delimiters. We split a text run into
@@ -118,18 +118,26 @@ function renderMarks(
   ranges: Highlight[],
   onRemove?: (field: AnnotField, offset: number) => void,
 ): JSX.Element {
-  const local = mergeRanges(
-    ranges
-      .map((r) => ({ start: r.start - baseOffset, end: r.end - baseOffset }))
-      .filter((r) => r.end > 0 && r.start < text.length),
-  );
+  // Color-aware: keep each range's color (addHighlight guarantees ranges in a
+  // field are non-overlapping across colors, so we sort rather than merge —
+  // merging would flatten distinct colors into one).
+  const local = ranges
+    .map((r) => ({
+      start: r.start - baseOffset,
+      end: r.end - baseOffset,
+      color: r.color,
+    }))
+    .filter((r) => r.end > 0 && r.start < text.length)
+    .sort((a, b) => a.start - b.start);
   if (local.length === 0 || !text) return <>{text}</>;
   const out: JSX.Element[] = [];
   let pos = 0;
   local.forEach((r, idx) => {
-    const s = Math.max(0, Math.min(r.start, text.length));
+    const s = Math.max(pos, Math.min(r.start, text.length));
     const e = Math.max(s, Math.min(r.end, text.length));
+    if (e <= s) return; // skip a range fully behind the cursor (defensive)
     if (s > pos) out.push(<span key={`t${idx}`}>{text.slice(pos, s)}</span>);
+    const fill = HIGHLIGHT_FILL[coerceColor(r.color)].mark;
     out.push(
       <mark
         key={`m${idx}`}
@@ -138,7 +146,8 @@ function renderMarks(
           if (!sel || sel.isCollapsed) onRemove?.(field, baseOffset + s);
         }}
         title="Click to remove highlight"
-        className="cursor-pointer rounded-sm bg-amber-200/70 text-inherit box-decoration-clone dark:bg-amber-300/40 dark:text-inherit"
+        style={{ backgroundColor: fill }}
+        className="cursor-pointer rounded-sm text-inherit box-decoration-clone"
       >
         {text.slice(s, e)}
       </mark>,

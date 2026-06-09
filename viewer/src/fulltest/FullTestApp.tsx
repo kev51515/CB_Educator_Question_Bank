@@ -24,7 +24,13 @@ import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
 import { TestPreviewRunner } from "./TestPreviewRunner";
 import { ProctorChat } from "./ProctorChat";
-import { captureSelectionHighlight, useRunnerAnnotations, type Highlight } from "./annotations";
+import {
+  captureSelectionHighlight,
+  useRunnerAnnotations,
+  type Highlight,
+  type HighlightColor,
+} from "./annotations";
+import { HighlighterBar, highlighterCursor } from "./HighlighterBar";
 import { ResultView } from "./ResultView";
 import {
   clearCachedAnswers,
@@ -169,8 +175,15 @@ function FullTestRunner() {
   const [calcOpen, setCalcOpen] = useState(false);
   const [confirmExit, setConfirmExit] = useState(false);
   const [notesOpen, setNotesOpen] = useState(false);
+  // Active highlighter color (null = highlighter off). Picked from HighlighterBar.
+  const [hlColor, setHlColor] = useState<HighlightColor | null>(null);
   // Bluebook-style study tools: per-question highlights + a note (localStorage).
   const annot = useRunnerAnnotations(slug);
+  // Stable refs so the document-level highlight handler reads fresh values
+  // without re-binding every render.
+  const qIdRef = useRef<string | null>(null);
+  const addHighlightRef = useRef(annot.addHighlight);
+  addHighlightRef.current = annot.addHighlight;
   const [marked, setMarked] = useState<Set<string>>(new Set());
   const [navOpen, setNavOpen] = useState(false);
   const [timerHidden, setTimerHidden] = useState(false);
@@ -425,7 +438,26 @@ function FullTestRunner() {
   useEffect(() => {
     currentModuleRef.current = moduleMeta?.position ?? null;
     currentQuestionRef.current = questions[index]?.number ?? null;
+    qIdRef.current = questions[index]?.id ?? null;
   }, [moduleMeta, questions, index]);
+
+  // Highlighter: while a color is active, a mouseup that leaves a text
+  // selection inside a passage/stem field paints it in that color. Click-to-
+  // remove on an existing mark is handled in passageRender. Best-effort.
+  useEffect(() => {
+    if (phase !== "module" || hlColor == null) return;
+    const onUp = () => {
+      const qid = qIdRef.current;
+      if (!qid) return;
+      const hl = captureSelectionHighlight(hlColor);
+      if (hl) {
+        addHighlightRef.current(qid, hl);
+        window.getSelection()?.removeAllRanges();
+      }
+    };
+    document.addEventListener("mouseup", onUp);
+    return () => document.removeEventListener("mouseup", onUp);
+  }, [phase, hlColor]);
 
   // Integrity telemetry while taking a module: paste / copy / leaving fullscreen.
   // In 'soft' mode this is detection-only (the proctor sees live counts, nothing
@@ -1133,41 +1165,13 @@ function FullTestRunner() {
       {/* ── Study tools: highlight + notes ── */}
       {q && (
         <div className="flex shrink-0 items-center gap-2 border-b border-slate-200 bg-slate-50 px-5 py-1.5 dark:border-slate-800 dark:bg-slate-900/60">
-          <button
-            type="button"
-            // Keep the text selection alive — a plain button click would
-            // collapse it before onClick runs.
-            onMouseDown={(e) => e.preventDefault()}
-            onClick={() => {
-              const hl = captureSelectionHighlight();
-              if (hl) {
-                annot.addHighlight(q.id, hl);
-                window.getSelection()?.removeAllRanges();
-              } else {
-                toast.info("Select text first", "Drag across the passage or question, then tap Highlight.");
-              }
-            }}
-            className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium text-slate-600 transition hover:bg-amber-50 hover:text-amber-700 dark:text-slate-300 dark:hover:bg-amber-950/30 dark:hover:text-amber-300"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <path d="m9 11-6 6v3h3l6-6M22 6 18 2l-7 7 4 4 7-7Z" />
-            </svg>
-            Highlight
-          </button>
-          {/* Always mounted (invisible when empty) so the first highlight
-              doesn't pop the button in and shift the toolbar — no layout shift. */}
-          <button
-            type="button"
-            onClick={() => annot.clearHighlights(q.id)}
-            aria-hidden={annot.get(q.id).highlights.length === 0}
-            tabIndex={annot.get(q.id).highlights.length === 0 ? -1 : 0}
-            className={[
-              "rounded-md px-2.5 py-1 text-xs font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800",
-              annot.get(q.id).highlights.length > 0 ? "" : "invisible pointer-events-none",
-            ].join(" ")}
-          >
-            Clear ({annot.get(q.id).highlights.length})
-          </button>
+          <HighlighterBar
+            active={hlColor}
+            onPick={(c) => setHlColor((prev) => (prev === c ? null : c))}
+            onClear={() => annot.clearHighlights(q.id)}
+            count={annot.get(q.id).highlights.length}
+          />
+          <span className="mx-1 h-4 w-px bg-slate-200 dark:bg-slate-700" aria-hidden />
           <button
             type="button"
             onClick={() => setNotesOpen((v) => !v)}
@@ -1199,7 +1203,10 @@ function FullTestRunner() {
       )}
 
       {/* ── Body: fills the viewport; only the panes scroll → no layout shift ── */}
-      <main className="min-h-0 flex-1">
+      <main
+        className="min-h-0 flex-1"
+        style={hlColor ? { cursor: highlighterCursor(hlColor) } : undefined}
+      >
         {q && (
           <QuestionPane
             key={q.id}
