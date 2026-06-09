@@ -26,6 +26,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRovingTabIndex } from "@/hooks";
 import { supabase } from "@/lib/supabase";
+import { downloadCsv } from "@/lib/csv";
 import { useToast } from "@/components/Toast";
 import type { ProfileRole } from "@/lib/profile";
 import { SkeletonRows } from "@/components/Skeleton";
@@ -200,6 +201,23 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
     setView({ filter: DEFAULT_FILTER, sort: DEFAULT_SORT });
   };
 
+  // Export the FULL roster (every page, not just what's loaded) so an admin can
+  // pull the user list into a spreadsheet for records / outreach.
+  const exportCsv = async (): Promise<void> => {
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("email, display_name, role, created_at")
+      .order("created_at", { ascending: true });
+    if (error) {
+      toast.error("Export failed", getErrorMessage(error));
+      return;
+    }
+    const header = ["Email", "Name", "Role", "Joined"];
+    const rows = (data ?? []).map((u) => [u.email, u.display_name ?? "", u.role, u.created_at]);
+    downloadCsv(`users-${new Date().toISOString().slice(0, 10)}.csv`, [header, ...rows]);
+    toast.success("Exported", `${rows.length} user${rows.length === 1 ? "" : "s"}`);
+  };
+
   // Roving-tabindex keyboard nav (Arrow/Home/End) for the role-filter tablist.
   const { getTabProps } = useRovingTabIndex<HTMLButtonElement>({
     count: ROLE_FILTERS.length,
@@ -288,6 +306,13 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
             className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline min-h-[40px] px-2"
           >
             Refresh
+          </button>
+          <button
+            type="button"
+            onClick={() => void exportCsv()}
+            className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline min-h-[40px] px-2"
+          >
+            Export CSV
           </button>
           {hasActiveTriage && (
             <button

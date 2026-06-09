@@ -10,6 +10,8 @@ Dates are the work date. Migration numbers in parentheses where relevant.
 ## 2026-06-09
 
 ### Added
+- **Admin: export full user roster to CSV** from the All Users view (email, name,
+  role, joined) — fetches every page, not just the loaded one. Reuses `lib/csv.ts`.
 - **Admin "View as" role preview.** An admin can switch the rendered role
   (Admin / Educator / Student) from the account badge menu to see those
   experiences; a persistent amber banner ("Previewing as … — Return to admin
