@@ -25,6 +25,7 @@ import {
 import {
   CourseCard,
   EmptyState,
+  KebabMenu,
   useToast,
   useOptimistic,
   type KebabMenuOption,
@@ -32,6 +33,21 @@ import {
 import { SkeletonCard } from "@/components/Skeleton";
 import { useProfile } from "@/lib/profile";
 import { coursePath, courseModulesPath } from "@/lib/routes";
+import { useCourseOrganization, type CourseTag } from "./courseOrg";
+import { CourseOrgSidebar, type FolderCounts } from "./CourseOrgSidebar";
+import { CourseTagFilterBar } from "./CourseTagFilterBar";
+import { CourseOrganizeModal } from "./CourseOrganizeModal";
+import { TagChip } from "./CourseOrgBits";
+
+type CourseView = "grid" | "list";
+const VIEW_KEY = "staff.courses.view";
+function readView(): CourseView {
+  try {
+    return window.localStorage.getItem(VIEW_KEY) === "list" ? "list" : "grid";
+  } catch {
+    return "grid";
+  }
+}
 
 // Join code generator (same as TeacherConsole's). 8 chars from a confusable-
 // excluding alphabet, dash-split for legibility. DB has a unique constraint;
@@ -129,6 +145,22 @@ export function AllClassesView() {
   const { profile } = useProfile();
   const navigate = useNavigate();
   const toast = useToast();
+
+  // Per-teacher organization layer (folders + tags, migration 0188).
+  const orgApi = useCourseOrganization(profile?.id);
+  const { org } = orgApi;
+  const [folderFilter, setFolderFilter] = useState<string>("all"); // "all" | "unfiled" | folderId
+  const [tagFilter, setTagFilter] = useState<Set<string>>(() => new Set());
+  const [view, setViewState] = useState<CourseView>(readView);
+  const setView = useCallback((v: CourseView) => {
+    setViewState(v);
+    try {
+      window.localStorage.setItem(VIEW_KEY, v);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+  const [organizeTarget, setOrganizeTarget] = useState<AdminClass | null>(null);
 
   // Focus the inline input the moment it appears.
   useEffect(() => {
@@ -265,6 +297,135 @@ export function AllClassesView() {
     });
   }, [classes, search, filter]);
 
+  // Folder counts reflect the current scope+search (independent of which folder
+  // or tags are selected) so the rail shows a stable distribution.
+  const folderCounts = useMemo<FolderCounts>(() => {
+    const byFolder: Record<string, number> = {};
+    let unfiled = 0;
+    for (const c of filtered) {
+      const fid = org.folderOf.get(c.id);
+      if (fid) byFolder[fid] = (byFolder[fid] ?? 0) + 1;
+      else unfiled += 1;
+    }
+    return { all: filtered.length, unfiled, byFolder };
+  }, [filtered, org.folderOf]);
+
+  // The grid: scope+search, then the selected folder, then any-of the tag filter.
+  const visible = useMemo(() => {
+    return filtered.filter((c) => {
+      if (folderFilter === "unfiled" && org.folderOf.has(c.id)) return false;
+      if (folderFilter !== "all" && folderFilter !== "unfiled" && org.folderOf.get(c.id) !== folderFilter)
+        return false;
+      if (tagFilter.size > 0) {
+        const ts = org.tagsOf.get(c.id) ?? [];
+        if (!ts.some((t) => tagFilter.has(t))) return false;
+      }
+      return true;
+    });
+  }, [filtered, folderFilter, tagFilter, org.folderOf, org.tagsOf]);
+
+  const tagById = useMemo(() => new Map(org.tags.map((t) => [t.id, t])), [org.tags]);
+  const tagsForCourse = useCallback(
+    (id: string): CourseTag[] =>
+      (org.tagsOf.get(id) ?? [])
+        .map((tid) => tagById.get(tid))
+        .filter((t): t is CourseTag => !!t),
+    [org.tagsOf, tagById],
+  );
+
+  const toggleTagFilter = useCallback((id: string) => {
+    setTagFilter((cur) => {
+      const next = new Set(cur);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }, []);
+
+  // The inline "create a course" card — shared by the grid and list layouts.
+  const inlineCreateCard = (
+    <div className="rounded-xl bg-white dark:bg-slate-900 ring-2 ring-indigo-400 shadow-sm p-4 flex flex-col gap-3 min-h-[180px]">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          void onInlineCommit();
+        }}
+        className="flex flex-col gap-3"
+      >
+        <input
+          ref={inlineInputRef}
+          type="text"
+          value={inlineName}
+          onChange={(e) => setInlineName(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") {
+              e.preventDefault();
+              setInlineCreating(false);
+              setInlineName("");
+            }
+          }}
+          disabled={inlineBusy}
+          placeholder="Course name — Enter to create, Esc to cancel"
+          className="w-full bg-transparent text-base font-semibold text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none border-b border-slate-200 dark:border-slate-800 pb-1 disabled:opacity-50"
+        />
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Saved as draft. You'll land on the new course's Modules page.
+        </p>
+        <div className="grid grid-cols-2 gap-2">
+          {([
+            { value: "class", title: "Class", blurb: "SAT prep" },
+            { value: "counseling", title: "Counseling", blurb: "College advising" },
+            { value: "pickleball_player", title: "Pickleball: Players", blurb: "Coach players" },
+            { value: "pickleball_coach", title: "Pickleball: Coaches", blurb: "Develop coaches" },
+          ] as const).map((opt) => {
+            const active = inlineType === opt.value;
+            return (
+              <button
+                key={opt.value}
+                type="button"
+                aria-pressed={active}
+                disabled={inlineBusy}
+                onClick={() => setInlineType(opt.value)}
+                className={`text-left rounded-lg border px-2.5 py-1.5 transition-colors disabled:opacity-50 ${
+                  active
+                    ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/50 ring-1 ring-indigo-500"
+                    : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700"
+                }`}
+              >
+                <span className="block text-xs font-semibold text-slate-900 dark:text-slate-100">
+                  {opt.title}
+                </span>
+                <span className="block text-[10px] text-slate-500 dark:text-slate-400">
+                  {opt.blurb}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        <div className="flex items-center gap-2 mt-auto">
+          <button
+            type="submit"
+            disabled={inlineBusy || inlineName.trim().length === 0}
+            className="rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-3 py-1.5 disabled:opacity-50"
+          >
+            {inlineBusy ? "Creating…" : "Create"}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setInlineCreating(false);
+              setInlineName("");
+            }}
+            disabled={inlineBusy}
+            className="rounded-md px-2.5 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 disabled:opacity-50"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+
   return (
     <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6 space-y-4">
       <header className="flex items-center justify-between gap-3 flex-wrap">
@@ -301,156 +462,134 @@ export function AllClassesView() {
         </div>
       </header>
 
-      <div className="flex items-center gap-2 flex-wrap">
-        {(["active", "archived", "templates"] as const).map((key) => {
-          const active = filter === key;
-          const label =
-            key === "active" ? "Active" : key === "archived" ? "Archived" : "Templates";
-          return (
-            <button
-              key={key}
-              type="button"
-              onClick={() => setFilter(key)}
-              className={
-                "rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors " +
-                (active
-                  ? "bg-indigo-600 text-white ring-indigo-600"
-                  : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800")
-              }
-            >
-              {label}
-            </button>
-          );
-        })}
-      </div>
+      <div className="flex flex-col gap-6 lg:flex-row">
+        <aside className="lg:w-60 lg:flex-none">
+          <CourseOrgSidebar
+            folders={org.folders}
+            counts={folderCounts}
+            selected={folderFilter}
+            onSelect={setFolderFilter}
+            onCreate={orgApi.createFolder}
+            onRename={orgApi.renameFolder}
+            onRecolor={orgApi.recolorFolder}
+            onDelete={orgApi.deleteFolder}
+          />
+        </aside>
 
-      {error && (
-        <div role="alert" className="rounded-lg bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-4 py-3 text-sm text-rose-700 dark:text-rose-300">
-          {error}
-        </div>
-      )}
-
-      {loading ? (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <SkeletonCard className="h-44" />
-          <SkeletonCard className="h-44" />
-          <SkeletonCard className="h-44" />
-        </div>
-      ) : filtered.length === 0 && !inlineCreating ? (
-        <EmptyState
-          title={classes.length === 0 ? "No courses yet" : "No courses match this filter"}
-          body={
-            classes.length === 0
-              ? "Click + Course to create the first one."
-              : "Try clearing the search or adjusting the filter."
-          }
-          cta={
-            classes.length === 0
-              ? {
-                  label: "+ Course",
-                  onClick: () => setInlineCreating(true),
-                }
-              : undefined
-          }
-          framed
-        />
-      ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {inlineCreating && (
-            <div className="rounded-xl bg-white dark:bg-slate-900 ring-2 ring-indigo-400 shadow-sm p-4 flex flex-col gap-3 min-h-[180px]">
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  void onInlineCommit();
-                }}
-                className="flex flex-col gap-3"
-              >
-                <input
-                  ref={inlineInputRef}
-                  type="text"
-                  value={inlineName}
-                  onChange={(e) => setInlineName(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Escape") {
-                      e.preventDefault();
-                      setInlineCreating(false);
-                      setInlineName("");
-                    }
-                  }}
-                  disabled={inlineBusy}
-                  placeholder="Course name — Enter to create, Esc to cancel"
-                  className="w-full bg-transparent text-base font-semibold text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none border-b border-slate-200 dark:border-slate-800 pb-1 disabled:opacity-50"
-                />
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Saved as draft. You'll land on the new course's Modules page.
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  {([
-                    { value: "class", title: "Class", blurb: "SAT prep" },
-                    { value: "counseling", title: "Counseling", blurb: "College advising" },
-                    { value: "pickleball_player", title: "Pickleball: Players", blurb: "Coach players" },
-                    { value: "pickleball_coach", title: "Pickleball: Coaches", blurb: "Develop coaches" },
-                  ] as const).map((opt) => {
-                    const active = inlineType === opt.value;
-                    return (
-                      <button
-                        key={opt.value}
-                        type="button"
-                        aria-pressed={active}
-                        disabled={inlineBusy}
-                        onClick={() => setInlineType(opt.value)}
-                        className={`text-left rounded-lg border px-2.5 py-1.5 transition-colors disabled:opacity-50 ${
-                          active
-                            ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/50 ring-1 ring-indigo-500"
-                            : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700"
-                        }`}
-                      >
-                        <span className="block text-xs font-semibold text-slate-900 dark:text-slate-100">
-                          {opt.title}
-                        </span>
-                        <span className="block text-[10px] text-slate-500 dark:text-slate-400">
-                          {opt.blurb}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-                <div className="flex items-center gap-2 mt-auto">
+        <div className="min-w-0 flex-1 space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2 flex-wrap">
+              {(["active", "archived", "templates"] as const).map((key) => {
+                const active = filter === key;
+                const label =
+                  key === "active" ? "Active" : key === "archived" ? "Archived" : "Templates";
+                return (
                   <button
-                    type="submit"
-                    disabled={inlineBusy || inlineName.trim().length === 0}
-                    className="rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-3 py-1.5 disabled:opacity-50"
-                  >
-                    {inlineBusy ? "Creating…" : "Create"}
-                  </button>
-                  <button
+                    key={key}
                     type="button"
-                    onClick={() => {
-                      setInlineCreating(false);
-                      setInlineName("");
-                    }}
-                    disabled={inlineBusy}
-                    className="rounded-md px-2.5 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 disabled:opacity-50"
+                    onClick={() => setFilter(key)}
+                    className={
+                      "rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors " +
+                      (active
+                        ? "bg-indigo-600 text-white ring-indigo-600"
+                        : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800")
+                    }
                   >
-                    Cancel
+                    {label}
                   </button>
-                </div>
-              </form>
+                );
+              })}
+            </div>
+            <ViewToggle view={view} onChange={setView} />
+          </div>
+
+          <CourseTagFilterBar
+            tags={org.tags}
+            selected={tagFilter}
+            onToggle={toggleTagFilter}
+            onClear={() => setTagFilter(new Set())}
+            onDelete={(id) => {
+              // Drop it from the active filter too, or the (now-gone) id would
+              // silently hide every course.
+              setTagFilter((cur) => {
+                if (!cur.has(id)) return cur;
+                const next = new Set(cur);
+                next.delete(id);
+                return next;
+              });
+              void orgApi.deleteTag(id);
+            }}
+          />
+
+          {error && (
+            <div role="alert" className="rounded-lg bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-4 py-3 text-sm text-rose-700 dark:text-rose-300">
+              {error}
             </div>
           )}
-          {filtered.map((c) => (
-            <AdminCourseCardRow
-              key={c.id}
-              course={c}
-              onNavigate={() => navigate(coursePath(c.short_code))}
-              onEdit={() => setEditTarget(c)}
-              onDuplicate={() => setDuplicateSource({ id: c.id, name: c.name })}
-              onDelete={() => setDeleteTarget(c)}
-              formatDate={formatDate}
+
+          {loading ? (
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              <SkeletonCard className="h-44" />
+              <SkeletonCard className="h-44" />
+              <SkeletonCard className="h-44" />
+            </div>
+          ) : visible.length === 0 && !inlineCreating ? (
+            <EmptyState
+              title={classes.length === 0 ? "No courses yet" : "No courses match this view"}
+              body={
+                classes.length === 0
+                  ? "Click + Course to create the first one."
+                  : "Try a different folder, clearing the tags, or adjusting the filter."
+              }
+              cta={
+                classes.length === 0
+                  ? {
+                      label: "+ Course",
+                      onClick: () => setInlineCreating(true),
+                    }
+                  : undefined
+              }
+              framed
             />
-          ))}
+          ) : view === "list" ? (
+            <div className="space-y-2">
+              {inlineCreating && inlineCreateCard}
+              {visible.map((c) => (
+                <AdminCourseCardRow
+                  key={c.id}
+                  course={c}
+                  view="list"
+                  tags={tagsForCourse(c.id)}
+                  onNavigate={() => navigate(coursePath(c.short_code))}
+                  onEdit={() => setEditTarget(c)}
+                  onDuplicate={() => setDuplicateSource({ id: c.id, name: c.name })}
+                  onDelete={() => setDeleteTarget(c)}
+                  onOrganize={() => setOrganizeTarget(c)}
+                  formatDate={formatDate}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              {inlineCreating && inlineCreateCard}
+              {visible.map((c) => (
+                <AdminCourseCardRow
+                  key={c.id}
+                  course={c}
+                  view="grid"
+                  tags={tagsForCourse(c.id)}
+                  onNavigate={() => navigate(coursePath(c.short_code))}
+                  onEdit={() => setEditTarget(c)}
+                  onDuplicate={() => setDuplicateSource({ id: c.id, name: c.name })}
+                  onDelete={() => setDeleteTarget(c)}
+                  onOrganize={() => setOrganizeTarget(c)}
+                  formatDate={formatDate}
+                />
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
 
       <DuplicateCourseModal
         open={!!duplicateSource}
@@ -527,6 +666,59 @@ export function AllClassesView() {
           onCancel={() => setDeleteTarget(null)}
         />
       )}
+
+      {organizeTarget && (
+        <CourseOrganizeModal
+          course={{ id: organizeTarget.id, name: organizeTarget.name }}
+          org={org}
+          onSetFolder={orgApi.setCourseFolder}
+          onCreateFolder={orgApi.createFolder}
+          onToggleTag={orgApi.toggleCourseTag}
+          onCreateTag={orgApi.createTag}
+          onClose={() => setOrganizeTarget(null)}
+        />
+      )}
+    </div>
+  );
+}
+
+/** Grid / list view switch, persisted to localStorage by the caller. */
+function ViewToggle({
+  view,
+  onChange,
+}: {
+  view: CourseView;
+  onChange: (v: CourseView) => void;
+}): JSX.Element {
+  return (
+    <div className="flex rounded-lg bg-slate-100 p-0.5 dark:bg-slate-800" role="group" aria-label="Layout">
+      {(
+        [
+          { key: "grid", label: "Grid", icon: <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" /> },
+          { key: "list", label: "List", icon: <path d="M8 6h12M8 12h12M8 18h12M3.5 6h.01M3.5 12h.01M3.5 18h.01" /> },
+        ] as const
+      ).map((opt) => {
+        const active = view === opt.key;
+        return (
+          <button
+            key={opt.key}
+            type="button"
+            aria-pressed={active}
+            title={`${opt.label} view`}
+            onClick={() => onChange(opt.key)}
+            className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition ${
+              active
+                ? "bg-white text-slate-900 shadow-sm dark:bg-slate-700 dark:text-slate-100"
+                : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+            }`}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              {opt.icon}
+            </svg>
+            {opt.label}
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -537,19 +729,25 @@ export function AllClassesView() {
  */
 interface AdminCourseCardRowProps {
   course: AdminClass;
+  view: CourseView;
+  tags: CourseTag[];
   onNavigate: () => void;
   onEdit: () => void;
   onDuplicate: () => void;
   onDelete: () => void;
+  onOrganize: () => void;
   formatDate: (iso: string) => string;
 }
 
 function AdminCourseCardRow({
   course,
+  view,
+  tags,
   onNavigate,
   onEdit,
   onDuplicate,
   onDelete,
+  onOrganize,
   formatDate,
 }: AdminCourseCardRowProps) {
   const [archivedOpt, applyArchive] = useOptimistic<boolean>(course.archived);
@@ -604,6 +802,7 @@ function AdminCourseCardRow({
 
   const kebab: KebabMenuOption[] = [
     { label: "Open", onSelect: onNavigate },
+    { label: "Tags & folder…", onSelect: onOrganize },
     { label: "Edit", onSelect: onEdit },
     { label: "Duplicate", onSelect: onDuplicate },
     {
@@ -612,6 +811,86 @@ function AdminCourseCardRow({
     },
     { label: "Delete…", destructive: true, onSelect: onDelete },
   ];
+
+  const tagChips =
+    tags.length > 0 ? (
+      <span className="mt-1.5 flex flex-wrap gap-1">
+        {tags.map((t) => (
+          <TagChip key={t.id} name={t.name} color={t.color} small />
+        ))}
+      </span>
+    ) : null;
+
+  if (view === "list") {
+    return (
+      <div
+        className={`group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 transition hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 ${
+          archivedOpt && !course.is_template ? "opacity-70" : ""
+        }`}
+      >
+        <button
+          type="button"
+          onClick={onNavigate}
+          className="flex min-w-0 flex-1 items-center gap-3 text-left"
+          aria-label={`Open course ${course.name}`}
+        >
+          <span
+            className={`grid h-9 w-9 flex-none place-items-center rounded-lg text-sm font-bold ${
+              tone === "indigo"
+                ? "bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300"
+                : tone === "slate"
+                  ? "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+                  : "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
+            }`}
+            aria-hidden
+          >
+            {course.name.trim().charAt(0).toUpperCase() || "?"}
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="flex items-center gap-2">
+              <span className="truncate font-semibold text-slate-900 dark:text-slate-100">
+                {course.name}
+              </span>
+              {course.course_type !== "class" && (
+                <span className="flex-none rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  {courseTypeLabel(normalizeCourseType(course.course_type))}
+                </span>
+              )}
+            </span>
+            <span className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
+              <span>{course.teacher_name ?? "—"}</span>
+              <span aria-hidden>·</span>
+              <span>
+                {course.member_count} {course.member_count === 1 ? "student" : "students"}
+              </span>
+              <span aria-hidden>·</span>
+              <span>
+                {course.assignment_count}{" "}
+                {course.assignment_count === 1 ? "assignment" : "assignments"}
+              </span>
+              {tags.map((t) => (
+                <TagChip key={t.id} name={t.name} color={t.color} small />
+              ))}
+            </span>
+          </span>
+        </button>
+        <span
+          className={`flex-none rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+            tone === "indigo"
+              ? "bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300"
+              : tone === "slate"
+                ? "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+                : "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
+          }`}
+        >
+          {statusLabel}
+        </span>
+        <div className="flex-none">
+          <KebabMenu options={kebab} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <CourseCard
@@ -629,15 +908,18 @@ function AdminCourseCardRow({
       status={{ label: statusLabel, tone }}
       kebab={kebab}
       meta={
-        <span>
-          <span className="font-medium text-slate-700 dark:text-slate-200">
-            {course.teacher_name ?? "—"}
-          </span>
-          {course.teacher_email && (
-            <span className="ml-1 text-slate-500 dark:text-slate-400">
-              · {course.teacher_email}
+        <span className="block">
+          <span className="block">
+            <span className="font-medium text-slate-700 dark:text-slate-200">
+              {course.teacher_name ?? "—"}
             </span>
-          )}
+            {course.teacher_email && (
+              <span className="ml-1 text-slate-500 dark:text-slate-400">
+                · {course.teacher_email}
+              </span>
+            )}
+          </span>
+          {tagChips}
         </span>
       }
       metrics={[
