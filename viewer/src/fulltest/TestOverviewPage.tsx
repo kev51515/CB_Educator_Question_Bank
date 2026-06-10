@@ -41,12 +41,15 @@ import {
   fmtMins,
   pctOf,
   toLiveInfo,
+  rosterComparator,
   InterventionModal,
   StatCard,
   RosterRowView,
   type LiveInfo,
   type ModuleRow,
   type RosterRow,
+  type RosterSortKey,
+  type SortDir,
   type TestRow,
 } from "@/fulltest/test-overview";
 
@@ -233,6 +236,25 @@ export function TestOverviewPage(): JSX.Element {
   const filteredRows = useMemo(
     () => (courseFilter === "all" ? rows : rows.filter((r) => r.course_id === courseFilter)),
     [rows, courseFilter],
+  );
+
+  // --- roster table sorting ---
+  const [sortKey, setSortKey] = useState<RosterSortKey>("submitted");
+  const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const defaultDirFor = (k: RosterSortKey): SortDir => (k === "name" || k === "status" ? "asc" : "desc");
+  const onSort = useCallback((k: RosterSortKey) => {
+    setSortKey((prev) => {
+      if (prev === k) {
+        setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+      } else {
+        setSortDir(defaultDirFor(k));
+      }
+      return k;
+    });
+  }, []);
+  const sortedRows = useMemo(
+    () => [...filteredRows].sort(rosterComparator(sortKey, sortDir)),
+    [filteredRows, sortKey, sortDir],
   );
 
   // --- derived cohort stats (scoped to the visible course) ---
@@ -948,33 +970,48 @@ export function TestOverviewPage(): JSX.Element {
             No students in this course yet.
           </p>
         ) : (
-          <ul className="divide-y divide-slate-100 dark:divide-slate-800 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
-            {filteredRows.map((row) => {
-              const lr = live.get(row.student_id);
-              return (
-                <RosterRowView
-                  key={row.student_id}
-                  row={row}
-                  live={lr}
-                  isAdmin={isAdmin}
-                  reviewLoadingId={reviewLoadingId}
-                  rowBusy={rowBusy}
-                  pauseBusy={pauseBusy}
-                  hasNewMessage={lr?.run_id ? newMsgRuns.has(lr.run_id) : false}
-                  onReview={onReview}
-                  onReplay={(runId) => navigate(testReplayPath(slug, runId))}
-                  onToggleRelease={onToggleRow}
-                  onSetPause={onSetPause}
-                  onOpenChat={openChat}
-                  onEnd={(r, runId) => setConfirmAction({ kind: "end", row: r, runId })}
-                  onReset={(r) => {
-                    setConfirmText("");
-                    setConfirmAction({ kind: "reset", row: r });
-                  }}
-                />
-              );
-            })}
-          </ul>
+          <div className="overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200 dark:border-slate-800 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  <SortHeader label="Student" sortKey="name" active={sortKey} dir={sortDir} onSort={onSort} />
+                  <SortHeader label="Status" sortKey="status" active={sortKey} dir={sortDir} onSort={onSort} />
+                  <SortHeader label="Timing" sortKey="submitted" active={sortKey} dir={sortDir} onSort={onSort} />
+                  <SortHeader label="Score" sortKey="score" active={sortKey} dir={sortDir} onSort={onSort} />
+                  <th scope="col" className="py-3 px-3 text-right font-medium">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                {sortedRows.map((row) => {
+                  const lr = live.get(row.student_id);
+                  return (
+                    <RosterRowView
+                      key={row.student_id}
+                      row={row}
+                      live={lr}
+                      isAdmin={isAdmin}
+                      reviewLoadingId={reviewLoadingId}
+                      rowBusy={rowBusy}
+                      pauseBusy={pauseBusy}
+                      hasNewMessage={lr?.run_id ? newMsgRuns.has(lr.run_id) : false}
+                      onReview={onReview}
+                      onReplay={(runId) => navigate(testReplayPath(slug, runId))}
+                      onToggleRelease={onToggleRow}
+                      onSetPause={onSetPause}
+                      onOpenChat={openChat}
+                      onEnd={(r, runId) => setConfirmAction({ kind: "end", row: r, runId })}
+                      onReset={(r) => {
+                        setConfirmText("");
+                        setConfirmAction({ kind: "reset", row: r });
+                      }}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         )}
       </section>
 
@@ -1074,6 +1111,51 @@ export function TestOverviewPage(): JSX.Element {
         </div>
       )}
     </div>
+  );
+}
+
+/** Sortable `<th>` for the roster table — a button that toggles sort + shows a
+ *  chevron caret (flips with dir) on the active column. */
+function SortHeader({
+  label,
+  sortKey,
+  active,
+  dir,
+  onSort,
+}: {
+  label: string;
+  sortKey: RosterSortKey;
+  active: RosterSortKey;
+  dir: SortDir;
+  onSort: (k: RosterSortKey) => void;
+}): JSX.Element {
+  const isActive = active === sortKey;
+  return (
+    <th
+      scope="col"
+      aria-sort={isActive ? (dir === "asc" ? "ascending" : "descending") : "none"}
+      className="py-3 px-3 font-medium"
+    >
+      <button
+        type="button"
+        onClick={() => onSort(sortKey)}
+        className="inline-flex min-h-[36px] items-center gap-1 rounded text-xs uppercase tracking-wide text-slate-500 transition-colors hover:text-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-slate-400 dark:hover:text-slate-200"
+      >
+        {label}
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          aria-hidden
+          className={`transition-opacity ${isActive ? "opacity-100" : "opacity-0"} ${
+            isActive && dir === "asc" ? "rotate-180" : ""
+          }`}
+          fill="currentColor"
+        >
+          <path d="M5 7L1.5 3h7L5 7z" />
+        </svg>
+      </button>
+    </th>
   );
 }
 
