@@ -34,6 +34,14 @@ Imported the ten official College Board **linear** Digital SAT practice tests as
 **"CB OG #1"–"CB OG #10"** (slugs `cb-og-1`…`cb-og-10`, ordinals 7–16). Migrations
 `0164`–`0173` (one per test) + `0189` (figures). All live on prod + `main`.
 
+**Verified end-to-end** (`.work/cb-og/verify-take.mjs <slug>`): a disposable
+staff user takes the full test through the real RPC flow (`start_test` →
+`get_test_module` ×4 → `submit_test_module` ×4 → `get_test_result`) submitting
+the official key. **CB OG #3 = 120/120** (RW 66/66, Math 54/54), grids graded
+incl. multi-answer, no answer-key leak — proving the seeded `correct_answer`
+matches the key and the structure is intact. (start_test's 0141 enrollment gate
+only blocks non-staff, so a staff taker needs no course setup.)
+
 - **Format:** linear = **120 questions** each (66 RW: 33/module ×2; 54 Math:
   27/module ×2 — more than the 98-Q adaptive tests). Verified on prod: 120 rows
   per test (106 mcq + 14 grid), **0 missing answers**.
