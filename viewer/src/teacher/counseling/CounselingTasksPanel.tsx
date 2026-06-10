@@ -137,6 +137,11 @@ export function CounselingTasksPanel({ courseId, studentId }: Props) {
       toast.error("Couldn't update task", error.message);
       return;
     }
+    toast.success(
+      next.status === "done"
+        ? `Marked "${task.title}" done`
+        : `Reopened "${task.title}"`,
+    );
     void load();
   };
 
