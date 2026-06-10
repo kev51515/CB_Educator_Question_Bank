@@ -19,7 +19,7 @@
  * inline ResultView, the same RPCs the completion modal uses.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/lib/profile";
 import { useToast } from "@/components/Toast";
@@ -86,7 +86,14 @@ export function TestOverviewPage(): JSX.Element {
   // This narrows the page to one course's students + stats at a time. Persisted
   // per-slug so a teacher's last selection survives reloads.
   const courseFilterKey = `test-overview.course.${slug}`;
+  // A deep link from a course's Modules page carries ?course=<courseId>; that
+  // takes priority over the persisted last-selection so a teacher arriving from
+  // a specific course lands on that course. If the id isn't in the roster once
+  // rows load, the guard below resets to "all".
+  const [searchParams] = useSearchParams();
   const [courseFilter, setCourseFilter] = useState<string | "all">(() => {
+    const fromUrl = searchParams.get("course");
+    if (fromUrl) return fromUrl;
     try {
       return localStorage.getItem(`test-overview.course.${slug}`) ?? "all";
     } catch {
