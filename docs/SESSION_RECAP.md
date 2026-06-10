@@ -1,5 +1,34 @@
 # Session Recap
 
+## CB OG #1–#10 — 10 College Board practice tests imported, with figures (2026-06-11) — DEPLOYED
+
+Imported the ten official College Board **linear** Digital SAT practice tests as
+**"CB OG #1"–"CB OG #10"** (slugs `cb-og-1`…`cb-og-10`, ordinals 7–16). Migrations
+`0164`–`0173` (one per test) + `0189` (figures). All live on prod + `main`.
+
+- **Format:** linear = **120 questions** each (66 RW: 33/module ×2; 54 Math:
+  27/module ×2 — more than the 98-Q adaptive tests). Verified on prod: 120 rows
+  per test (106 mcq + 14 grid), **0 missing answers**.
+- **Pipeline** (`.work/cb-og/`, memory `cb-og-import-pipeline`): `pdftoppm`
+  page renders → **4 parallel transcription subagents per test** (one per
+  module) read the page images (two-column layout) → JSON → `build-cbog.mjs`
+  emits an idempotent seed migration. **Official answer keys** parsed from
+  `pdf/Key/SAT_Practice_Test_N_Answer_Key.pdf` (the key is authoritative for
+  question type — letter ⇒ mcq, number ⇒ grid — auto-correcting agent
+  misclassifications). Grid-ins use `accepted` arrays incl. multi-answer
+  (e.g. `["29/3","9.666","9.667"]`).
+- **Figures (95):** graphs / geometry / charts cropped from the source PDFs via
+  `pdftoppm -r 200 -x -y -W -H` region-crop (one agent per test; they locate the
+  figure by question number and re-trim until clean). Saved under
+  `data/tests/cb-og-N/figures/mM-qN.png` (served via the `viewer/public/data`
+  symlink, deployed by Cloudflare Pages). `0189` sets `test_questions.figure` +
+  `passage_alt` + clean `passage`. Tables stay as inline text. The runner already
+  renders `figure` (`QuestionPane` `<img>`).
+- **Math reference sheet:** new `ReferenceSheet.tsx` (standard SAT formula card,
+  non-modal floating panel) + a **Reference** button next to the Calculator in
+  the runner (test mode + staff preview, math modules) and next to "Explain" in
+  review mode.
+
 ## Test occurrences — per-module deployment finalized + verified (2026-06-10) — DEPLOYED
 
 The "assign a test per module" model is complete and verified end-to-end. An
