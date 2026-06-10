@@ -12,7 +12,8 @@
  *      and call `quick_start_with_code`, which stamps name+email onto the
  *      just-created profile and enrolls them. No password.
  *
- *  • SEAT code (a bare, non-guessable 6-letter login code, e.g. "KMCZQR",
+ *  • SEAT code (a bare, non-guessable 6-letter login code, e.g. "CWXKHR" —
+ *      6 distinct letters from the confusable-free set A–Z minus I/L/O/Q,
  *      minted by admin_create_student) → CLAIM a pre-created seat.
  *      The teacher already made this student ("Bob") via admin_create_student,
  *      so we do NOT mint a new profile and we do NOT ask for a name (the teacher
@@ -53,7 +54,8 @@ interface QuickStartScreenProps {
  * Course short_code spec (per CLAUDE.md migrations 0038–0040):
  *   - exactly 6 characters
  *   - alphabet A-Z and 2-9 (excludes O/0/I/1/L confusables)
- * A personal login code is also a bare 6-letter code (e.g. "KMCZQR"); since it
+ * A personal login code is also a bare 6-letter code (e.g. "CWXKHR" — 6 distinct
+ * letters from the confusable-free set A–Z minus I/L/O/Q); since it
  * is shape-identical to a course code, `peek_join_code` decides seat vs course.
  * The "-NN" dash shape below is LEGACY (no longer how login codes are minted);
  * SEAT_RE is kept only so any old dash-form code still routes to the claim flow.

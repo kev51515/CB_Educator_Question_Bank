@@ -45,7 +45,7 @@ Do these in order, top to bottom, one sitting. The whole thing is ~90 minutes if
 
 ## 2. Cloudflare Pages deployment
 
-The viewer is a static SPA. Cloudflare Pages auto-builds it from Git. Set up via the Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick the repo, then configure:
+The viewer is a static SPA. **Deploys are git-driven: commit → push to `main` → Cloudflare Pages auto-builds `viewer/` and deploys.** There is no manual deploy step for a normal release. (Cloudflare Pages does not post GitHub deployment statuses, so a missing GitHub "deployment" is normal — the build runs on Cloudflare's side.) Set up via the Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick the repo, then configure:
 
 | Setting | Value |
 |---|---|
@@ -398,9 +398,13 @@ When something breaks, classify first, then act. The triage cost of treating eve
 | **2** | One feature broken; students can still use most flows | Leaderboard wrong, one question type rendering badly, teacher dashboard slow | Fix within 24 hours. Communicate to affected users. |
 | **3** | Cosmetic or minor | Typo, slightly-off colors, edge-case error message wording | Backlog. Fix in the next scheduled release. |
 
+### Hotfix / forward-fix
+
+A frontend hotfix ships the same way every release does: **commit → push to `main` → Cloudflare Pages auto-builds + deploys.** There is no manual deploy step. (No GitHub "deployment" status appears — that's normal; the build runs on Cloudflare's side.)
+
 ### Rollback procedure
 
-**Frontend (Cloudflare Pages)**: the project → **Deployments** → choose a known-good previous deploy → **Rollback to this deployment**. Instant. This is your fastest panic button. Get comfortable doing it once now, on a Sunday, with no pressure.
+**Frontend (Cloudflare Pages)**: the project → **Deployments** → choose a known-good previous deploy → **Rollback to this deployment**. Instant. This is your fastest panic button — faster than push-and-wait-for-a-build when you need the bleeding stopped *now*. Get comfortable doing it once now, on a Sunday, with no pressure.
 
 **Database (Supabase)**: There is **no trivial rollback for migrations**. Migrations are forward-only. If you push a bad migration:
 

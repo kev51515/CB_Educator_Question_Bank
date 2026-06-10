@@ -7,7 +7,7 @@ This guide covers deploying the CB Educator Question Bank to production. The cur
 Recommended stack:
 
 - **Supabase Cloud** for Postgres, Auth, and (eventually) Storage. The local schema in `supabase/migrations/` ships to cloud unchanged via `supabase db push`.
-- **Cloudflare Pages** for the `viewer/` SPA. Auto-builds Vite on push to `main`, generous free tier (unlimited bandwidth/requests for static assets), preview deploys per PR at `*.pages.dev`, automatic HTTPS.
+- **Cloudflare Pages** for the `viewer/` SPA. **Deploys are git-driven: push to `main` → Cloudflare Pages builds `viewer/` and deploys automatically.** There is no manual deploy step for a normal release. Generous free tier (unlimited bandwidth/requests for static assets), preview deploys per PR at `*.pages.dev`, automatic HTTPS.
 - **Railway** is overkill today (no Node server to host) but becomes the right answer the day you fold in a real backend (`sat_questions/` Express API, cron jobs, queues).
 
 ## Architecture
@@ -106,6 +106,10 @@ Upgrade to **Pro ($25/mo)** when you need:
 Pricing changes — confirm at https://supabase.com/pricing before committing.
 
 ## Frontend hosting — Cloudflare Pages
+
+> **Deploys are git-driven.** Push to `main` → Cloudflare Pages builds `viewer/` and deploys automatically. There is no manual deploy step for a normal release (the `wrangler pages deploy` CLI below is only a fallback). The connect-to-Git setup (root `viewer`, build `npm run build`, output `dist`) is the deploy mechanism — once it's wired, shipping = pushing.
+>
+> Note: Cloudflare Pages does **not** post GitHub deployment statuses, so the absence of a GitHub "deployment" entry is normal and expected — the build runs on Cloudflare's side, not on GitHub.
 
 Cloudflare Pages builds Vite directly from the repo. Setup:
 
@@ -256,9 +260,11 @@ Pick one error tracker before launch. Debugging RLS issues from user reports alo
 
 ## CI/CD recommendations
 
+> **CI does not deploy.** The GitHub Actions workflow below only type-checks, lints, builds, and (eventually) smokes — it exists to fail bad PRs. The actual deploy is done by **Cloudflare Pages** (not GitHub Actions) on every push to `main`. Don't add a deploy step to CI; pushing to `main` is the deploy.
+
 ### Branch policy
 
-- `main` is always deployable. Cloudflare Pages auto-deploys it.
+- `main` is always deployable. Cloudflare Pages auto-deploys it on push.
 - Feature work happens on branches; PR triggers a preview deploy.
 - Migrations get extra scrutiny: any PR touching `supabase/migrations/` needs a reviewer who has run `supabase db reset` locally to confirm it applies cleanly.
 
