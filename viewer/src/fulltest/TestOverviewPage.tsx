@@ -105,6 +105,7 @@ export function TestOverviewPage(): JSX.Element {
   // backing api (`setProctoringLevel`) may not exist yet — see onSetProctoring.
   const [proctoringLevel, setProctoringLevel] = useState<ProctoringUiLevel>("standard");
   const [proctoringBusy, setProctoringBusy] = useState(false);
+  const [retakeBusy, setRetakeBusy] = useState(false);
 
   // Register the real test name with the global breadcrumb bar (no-ops until
   // both the slug and title are known; cleans up on unmount).
@@ -119,7 +120,7 @@ export function TestOverviewPage(): JSX.Element {
       try {
         const { data: t } = await supabase
           .from("tests")
-          .select("id, slug, title, short_title, total_questions")
+          .select("id, slug, title, short_title, total_questions, retake_policy")
           .eq("slug", slug)
           .maybeSingle();
         if (!alive) return;
@@ -431,6 +432,30 @@ export function TestOverviewPage(): JSX.Element {
     }
   };
 
+  // Per-test retake policy (0141): one_attempt (default; grant extra per student
+  // via Allow retake) vs unlimited (replayable practice test).
+  const onSetRetakePolicy = async (
+    next: "one_attempt" | "unlimited",
+  ): Promise<void> => {
+    if (!test || test.retake_policy === next) return;
+    setRetakeBusy(true);
+    const { error } = await supabase.rpc("set_test_retake_policy", {
+      p_slug: slug,
+      p_policy: next,
+    });
+    setRetakeBusy(false);
+    if (error) {
+      toast.error("Couldn't update retake policy", errMsg(error, "Try again."));
+      return;
+    }
+    setTest((prev) => (prev ? { ...prev, retake_policy: next } : prev));
+    toast.success(
+      next === "unlimited"
+        ? "Practice mode — students can retake this test freely"
+        : "One attempt — grant extra attempts per student",
+    );
+  };
+
   // --- not-found / loading shells ---
   if (notFound) {
     return (
@@ -516,6 +541,45 @@ export function TestOverviewPage(): JSX.Element {
                 <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-500">
                   Proctoring:{" "}
                   {PROCTORING_OPTIONS.find((o) => o.value === proctoringLevel)?.hint}
+                </p>
+              </div>
+            )}
+
+            {isAdmin && (
+              <div className="mt-3">
+                <div
+                  role="radiogroup"
+                  aria-label="Retake policy"
+                  className="inline-flex items-stretch rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-slate-50 dark:bg-slate-800/60 p-0.5"
+                >
+                  {([
+                    { value: "one_attempt", label: "One attempt" },
+                    { value: "unlimited", label: "Unlimited (practice)" },
+                  ] as const).map((opt) => {
+                    const active = (test?.retake_policy ?? "one_attempt") === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        role="radio"
+                        aria-checked={active}
+                        disabled={retakeBusy || !test}
+                        onClick={() => void onSetRetakePolicy(opt.value)}
+                        className={`min-h-[36px] rounded-md px-3 text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-60 ${
+                          active
+                            ? "bg-indigo-600 text-white shadow-sm"
+                            : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                        }`}
+                      >
+                        {opt.label}
+                      </button>
+                    );
+                  })}
+                </div>
+                <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-500">
+                  {(test?.retake_policy ?? "one_attempt") === "unlimited"
+                    ? "Students can start a fresh attempt any time (practice test)."
+                    : "One attempt; grant extra attempts per student from their run row."}
                 </p>
               </div>
             )}
