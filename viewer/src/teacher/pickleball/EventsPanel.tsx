@@ -457,7 +457,16 @@ export function EventsPanel({ courseId }: { courseId: string }) {
           const list = (prev[eventId] ?? []).filter((r) => r.id !== created.id);
           return { ...prev, [eventId]: [...list, created] };
         });
-        toast.success("Player enrolled", playerName(created.player_id));
+        // The override RPC lands the player on the waitlist when the event is
+        // full, so branch the confirmation on the returned row's state.
+        if (created.state === "waitlisted") {
+          toast.success(
+            "Event full — player added to the waitlist",
+            playerName(created.player_id),
+          );
+        } else {
+          toast.success("Player enrolled", playerName(created.player_id));
+        }
         return true;
       } catch (err) {
         if (aliveRef.current) toast.error("Couldn't enrol player", friendlyError(err));

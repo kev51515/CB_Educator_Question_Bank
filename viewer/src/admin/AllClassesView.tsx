@@ -32,6 +32,8 @@ import {
 } from "@/components";
 import { SkeletonCard } from "@/components/Skeleton";
 import { useProfile } from "@/lib/profile";
+import { useDomain } from "@/lib/DomainProvider";
+import { DOMAINS, DOMAIN_VOCAB, domainOf, type Domain } from "@/lib/domain";
 import { coursePath, courseModulesPath } from "@/lib/routes";
 import { COURSE_DND_MIME, useCourseOrganization, type CourseTag } from "./courseOrg";
 import { CourseOrgSidebar, type FolderCounts } from "./CourseOrgSidebar";
@@ -46,6 +48,38 @@ function readView(): CourseView {
     return window.localStorage.getItem(VIEW_KEY) === "list" ? "list" : "grid";
   } catch {
     return "grid";
+  }
+}
+
+// Domain focus filter — defaults to the user's active domain, persisted per
+// user. Composes ON TOP of the scope (active/archived/templates), folder, and
+// tag filters. "all" is the escape hatch.
+type DomainFilter = "all" | Domain;
+const DOMAIN_FILTER_PREFIX = "dashboard.domainFilter:";
+
+function asDomainFilter(raw: unknown): DomainFilter | null {
+  if (raw === "all") return "all";
+  if (raw === "academic" || raw === "counseling" || raw === "coaching") {
+    return raw;
+  }
+  return null;
+}
+function loadDomainFilter(userId: string): DomainFilter | null {
+  if (!userId || typeof window === "undefined") return null;
+  try {
+    return asDomainFilter(
+      window.localStorage.getItem(`${DOMAIN_FILTER_PREFIX}${userId}`),
+    );
+  } catch {
+    return null;
+  }
+}
+function saveDomainFilter(userId: string, value: DomainFilter): void {
+  if (!userId || typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(`${DOMAIN_FILTER_PREFIX}${userId}`, value);
+  } catch {
+    /* quota / disabled storage */
   }
 }
 
@@ -143,6 +177,7 @@ export function AllClassesView() {
   const inlineInputRef = useRef<HTMLInputElement | null>(null);
 
   const { profile } = useProfile();
+  const { domain: activeDomain } = useDomain();
   const navigate = useNavigate();
   const toast = useToast();
 
@@ -161,6 +196,45 @@ export function AllClassesView() {
     }
   }, []);
   const [organizeTarget, setOrganizeTarget] = useState<AdminClass | null>(null);
+
+  // Domain focus filter. `null` = not yet hydrated; resolved by the effect
+  // below to the persisted choice, else the active domain (focus mode).
+  const userId = profile?.id ?? "";
+  const [domainFilter, setDomainFilterState] = useState<DomainFilter | null>(
+    null,
+  );
+
+  // Which domains actually have at least one course (across all scopes) —
+  // drives the chip row so we never show a chip that yields nothing.
+  const domainsWithCourses = useMemo(() => {
+    const present = new Set<Domain>();
+    for (const c of classes) present.add(domainOf(c.course_type));
+    return DOMAINS.filter((d) => present.has(d));
+  }, [classes]);
+
+  useEffect(() => {
+    if (!userId) {
+      setDomainFilterState(null);
+      return;
+    }
+    if (classes.length === 0) return; // wait for courses before resolving
+    const present = new Set(domainsWithCourses);
+    const stored = loadDomainFilter(userId);
+    if (stored && (stored === "all" || present.has(stored))) {
+      setDomainFilterState(stored);
+      return;
+    }
+    setDomainFilterState(present.has(activeDomain) ? activeDomain : "all");
+  }, [userId, classes.length, domainsWithCourses, activeDomain]);
+
+  const selectDomainFilter = useCallback(
+    (value: DomainFilter) => {
+      setDomainFilterState(value);
+      if (userId) saveDomainFilter(userId, value);
+    },
+    [userId],
+  );
+  const effectiveDomainFilter: DomainFilter = domainFilter ?? "all";
 
   // Focus the inline input the moment it appears.
   useEffect(() => {
@@ -291,11 +365,17 @@ export function AllClassesView() {
     };
     return classes.filter((c) => {
       if (!inFilter(c)) return false;
+      if (
+        effectiveDomainFilter !== "all" &&
+        domainOf(c.course_type) !== effectiveDomainFilter
+      ) {
+        return false;
+      }
       if (!q) return true;
       const haystack = `${c.name} ${c.teacher_name ?? ""} ${c.teacher_email}`.toLowerCase();
       return haystack.includes(q);
     });
-  }, [classes, search, filter]);
+  }, [classes, search, filter, effectiveDomainFilter]);
 
   // Folder counts reflect the current scope+search (independent of which folder
   // or tags are selected) so the rail shows a stable distribution.
@@ -511,6 +591,35 @@ export function AllClassesView() {
         </aside>
 
         <div className="min-w-0 flex-1 space-y-4">
+          {domainsWithCourses.length > 1 && (
+            <div
+              className="flex flex-wrap items-center gap-2"
+              role="group"
+              aria-label="Filter courses by domain"
+            >
+              {(["all", ...domainsWithCourses] as const).map((key) => {
+                const active = effectiveDomainFilter === key;
+                const label =
+                  key === "all" ? "All" : DOMAIN_VOCAB[key].homeNoun;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => selectDomainFilter(key)}
+                    className={
+                      "rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors min-h-[40px] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
+                      (active
+                        ? "bg-indigo-600 text-white ring-indigo-600"
+                        : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800")
+                    }
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          )}
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2 flex-wrap">
               {(["active", "archived", "templates"] as const).map((key) => {
@@ -569,11 +678,19 @@ export function AllClassesView() {
             </div>
           ) : visible.length === 0 && !inlineCreating ? (
             <EmptyState
-              title={classes.length === 0 ? "No courses yet" : "No courses match this view"}
+              title={
+                classes.length === 0
+                  ? "No courses yet"
+                  : effectiveDomainFilter !== "all" && visible.length === 0
+                    ? `No ${DOMAIN_VOCAB[effectiveDomainFilter].homeNoun.toLowerCase()} courses match this view`
+                    : "No courses match this view"
+              }
               body={
                 classes.length === 0
                   ? "Click + Course to create the first one."
-                  : "Try a different folder, clearing the tags, or adjusting the filter."
+                  : effectiveDomainFilter !== "all"
+                    ? "Switch to All to see your other courses, or adjust the folder, tags, or scope."
+                    : "Try a different folder, clearing the tags, or adjusting the filter."
               }
               cta={
                 classes.length === 0
@@ -581,7 +698,12 @@ export function AllClassesView() {
                       label: "+ Course",
                       onClick: () => setInlineCreating(true),
                     }
-                  : undefined
+                  : effectiveDomainFilter !== "all"
+                    ? {
+                        label: "Show all courses",
+                        onClick: () => selectDomainFilter("all"),
+                      }
+                    : undefined
               }
               framed
             />

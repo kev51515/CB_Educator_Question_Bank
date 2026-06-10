@@ -32,6 +32,13 @@ import { SkeletonCard } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { CourseCard, CardActionIcon } from "@/components/CourseCard";
 import { useOptimistic, useToast, type KebabMenuOption } from "@/components";
+import { useDomain } from "@/lib/DomainProvider";
+import {
+  DOMAINS,
+  DOMAIN_VOCAB,
+  domainOf,
+  type Domain,
+} from "@/lib/domain";
 import { ClassFormModal, type EditableClass } from "@/teacher/ClassFormModal";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { DuplicateCourseModal } from "@/teacher/DuplicateCourseModal";
@@ -54,6 +61,45 @@ import { CohortSummaryWidget } from "./CohortSummaryWidget";
 // runaway growth from stale IDs that point at deleted courses.
 const PIN_STORAGE_PREFIX = "teacher.dashboard.pinnedCourses:";
 const PIN_LRU_CAP = 50;
+
+// ---------------------------------------------------------------------------
+// Domain focus filter
+// ---------------------------------------------------------------------------
+// "Focus mode": default the course list to just the user's active domain
+// (a Coach lands on coaching courses) with an escape hatch to "All". The
+// selection is "all" or a specific Domain, persisted per-user so reloads keep
+// the same focus. Composes ON TOP of the published/unpublished split.
+type DomainFilter = "all" | Domain;
+const DOMAIN_FILTER_PREFIX = "dashboard.domainFilter:";
+
+const domainFilterKey = (userId: string): string =>
+  `${DOMAIN_FILTER_PREFIX}${userId}`;
+
+function asDomainFilter(raw: unknown): DomainFilter | null {
+  if (raw === "all") return "all";
+  if (raw === "academic" || raw === "counseling" || raw === "coaching") {
+    return raw;
+  }
+  return null;
+}
+
+function loadDomainFilter(userId: string): DomainFilter | null {
+  if (!userId || typeof window === "undefined") return null;
+  try {
+    return asDomainFilter(window.localStorage.getItem(domainFilterKey(userId)));
+  } catch {
+    return null;
+  }
+}
+
+function saveDomainFilter(userId: string, value: DomainFilter): void {
+  if (!userId || typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(domainFilterKey(userId), value);
+  } catch {
+    /* quota / disabled storage — selection just won't persist */
+  }
+}
 
 const pinStorageKey = (userId: string): string =>
   `${PIN_STORAGE_PREFIX}${userId}`;
@@ -314,6 +360,7 @@ export function DashboardPage() {
   const navigate = useNavigate();
   const toast = useToast();
   const { profile } = useProfile();
+  const { domain: activeDomain } = useDomain();
   // The "release test results" nudge is a test-content surface — gated.
   const canQbank = canAccessQuestionBank(profile?.email);
   const { classes, loading, error, refresh } = useTeacherClasses(
@@ -363,6 +410,61 @@ export function DashboardPage() {
   }, [userId]);
 
   const pinnedSet = useMemo(() => new Set(pinnedIds), [pinnedIds]);
+
+  // -------------------------------------------------------------------------
+  // Domain focus filter
+  // -------------------------------------------------------------------------
+  // `null` = not yet hydrated; resolved by the effect below to the persisted
+  // choice, else the user's active domain (focus mode), else "all".
+  const [domainFilter, setDomainFilterState] = useState<DomainFilter | null>(
+    null,
+  );
+
+  // Which domains actually have at least one course — drives the chip row so
+  // we never show a chip that would yield an empty list.
+  const domainsWithCourses = useMemo(() => {
+    const present = new Set<Domain>();
+    for (const c of classes) present.add(domainOf(c.course_type));
+    return DOMAINS.filter((d) => present.has(d));
+  }, [classes]);
+
+  // Hydrate the focus choice once the user + their courses are known. If the
+  // stored / active-domain choice has no courses, fall back to "all" so the
+  // user never lands on a blank focus.
+  useEffect(() => {
+    if (!userId) {
+      setDomainFilterState(null);
+      return;
+    }
+    if (classes.length === 0) return; // wait for courses before resolving
+    const present = new Set(domainsWithCourses);
+    const stored = loadDomainFilter(userId);
+    if (stored && (stored === "all" || present.has(stored))) {
+      setDomainFilterState(stored);
+      return;
+    }
+    // No usable stored choice → focus the active domain if it has courses.
+    setDomainFilterState(present.has(activeDomain) ? activeDomain : "all");
+  }, [userId, classes.length, domainsWithCourses, activeDomain]);
+
+  const selectDomainFilter = useCallback(
+    (value: DomainFilter) => {
+      setDomainFilterState(value);
+      if (userId) saveDomainFilter(userId, value);
+    },
+    [userId],
+  );
+
+  // The effective filter while still hydrating shows everything (avoids a
+  // flash of an over-narrowed list before the choice resolves).
+  const effectiveDomainFilter: DomainFilter = domainFilter ?? "all";
+
+  const domainScopedClasses = useMemo(() => {
+    if (effectiveDomainFilter === "all") return classes;
+    return classes.filter(
+      (c) => domainOf(c.course_type) === effectiveDomainFilter,
+    );
+  }, [classes, effectiveDomainFilter]);
 
   const togglePin = useCallback(
     (course: TeacherClass) => {
@@ -414,7 +516,7 @@ export function DashboardPage() {
   const { published, unpublished } = useMemo(() => {
     const pub: TeacherClass[] = [];
     const unp: TeacherClass[] = [];
-    for (const c of classes) {
+    for (const c of domainScopedClasses) {
       if (c.archived) unp.push(c);
       else pub.push(c);
     }
@@ -422,7 +524,7 @@ export function DashboardPage() {
       published: sortPinnedFirst(pub),
       unpublished: sortPinnedFirst(unp),
     };
-  }, [classes, sortPinnedFirst]);
+  }, [domainScopedClasses, sortPinnedFirst]);
 
   return (
     <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-slate-50 dark:bg-slate-950">
@@ -462,6 +564,36 @@ export function DashboardPage() {
           )}
         </header>
 
+        {!loading && !error && domainsWithCourses.length > 1 && (
+          <div
+            className="flex flex-wrap items-center gap-2"
+            role="group"
+            aria-label="Filter courses by domain"
+          >
+            {(["all", ...domainsWithCourses] as const).map((key) => {
+              const active = effectiveDomainFilter === key;
+              const label =
+                key === "all" ? "All" : DOMAIN_VOCAB[key].homeNoun;
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => selectDomainFilter(key)}
+                  className={
+                    "rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors min-h-[40px] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
+                    (active
+                      ? "bg-indigo-600 text-white ring-indigo-600"
+                      : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800")
+                  }
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         {profile?.id && <NeedsAttentionPanel teacherId={profile.id} />}
 
         {profile?.id && canQbank && <TestReleaseNudge />}
@@ -497,6 +629,37 @@ export function DashboardPage() {
             framed
           />
         )}
+
+        {!loading &&
+          !error &&
+          classes.length > 0 &&
+          published.length === 0 &&
+          unpublished.length === 0 && (
+            <EmptyState
+              title={
+                effectiveDomainFilter === "all"
+                  ? "No courses yet"
+                  : `No ${DOMAIN_VOCAB[effectiveDomainFilter].homeNoun.toLowerCase()} courses yet`
+              }
+              body={
+                effectiveDomainFilter === "all"
+                  ? "Create a course or join one to get started."
+                  : "Switch to All to see your other courses, or create one here."
+              }
+              cta={{
+                label:
+                  effectiveDomainFilter === "all"
+                    ? "Browse courses"
+                    : "Show all courses",
+                onClick: () =>
+                  effectiveDomainFilter === "all"
+                    ? navigate(ROUTES.COURSES)
+                    : selectDomainFilter("all"),
+              }}
+              icon="sparkles"
+              framed
+            />
+          )}
 
         {!loading && !error && published.length > 0 && (
           <section className="space-y-3">

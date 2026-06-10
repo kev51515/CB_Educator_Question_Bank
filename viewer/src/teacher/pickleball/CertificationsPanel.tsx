@@ -19,6 +19,69 @@ import { useClassRoster, type RosterStudent } from "@/teacher/useClassRoster";
 
 const CERT_BUCKET = "pickleball-certs";
 const EXPIRING_SOON_DAYS = 60;
+const SIGNED_URL_TTL = 3600; // 1 hour
+
+/**
+ * Resolve the storage object path for a stored cert file reference.
+ *
+ * The `pickleball-certs` bucket is private, so we mint short-lived signed URLs
+ * on demand. `file_url` historically stored a *public* URL
+ * (…/object/public/pickleball-certs/<path>); newer rows may store just the
+ * object path. Both must resolve. An external http(s) link that is NOT in our
+ * bucket is returned as-is (null path → open verbatim).
+ *
+ * Returns the bucket-relative object path, or null when the value should be
+ * opened directly (external link).
+ */
+function certObjectPath(fileUrl: string): string | null {
+  const trimmed = fileUrl.trim();
+  if (trimmed === "") return null;
+  // Public or signed Supabase storage URL for our bucket.
+  const marker = `/${CERT_BUCKET}/`;
+  for (const seg of [
+    `/object/public${marker}`,
+    `/object/sign${marker}`,
+    `/object${marker}`,
+  ]) {
+    const idx = trimmed.indexOf(seg);
+    if (idx !== -1) {
+      const after = trimmed.slice(idx + seg.length);
+      // Drop any query string (signed URLs carry ?token=…).
+      const path = after.split("?")[0];
+      return path !== "" ? decodeURIComponent(path) : null;
+    }
+  }
+  // A bare object path (no scheme) → treat as in-bucket.
+  if (!/^https?:\/\//i.test(trimmed)) {
+    return trimmed.replace(/^\/+/, "");
+  }
+  // External link not in our bucket → open verbatim.
+  return null;
+}
+
+/**
+ * Open a cert file: mint a signed URL for in-bucket objects, else open the
+ * external link directly. Returns true on success, false on (already-toasted)
+ * failure so callers can decide whether to navigate.
+ */
+async function openCertFile(
+  fileUrl: string,
+  onError: (msg: string) => void,
+): Promise<void> {
+  const path = certObjectPath(fileUrl);
+  if (path === null) {
+    window.open(fileUrl, "_blank", "noopener,noreferrer");
+    return;
+  }
+  const { data, error } = await supabase.storage
+    .from(CERT_BUCKET)
+    .createSignedUrl(path, SIGNED_URL_TTL);
+  if (error || !data?.signedUrl) {
+    onError("Could not open the certificate file.");
+    return;
+  }
+  window.open(data.signedUrl, "_blank", "noopener,noreferrer");
+}
 
 interface CertRow {
   id: string;
@@ -177,8 +240,9 @@ function CertEditorModal({
           toast.error(`Upload failed: ${upErr.message}`);
           return;
         }
-        const { data } = supabase.storage.from(CERT_BUCKET).getPublicUrl(path);
-        onChange({ ...draft, file_url: data.publicUrl });
+        // Bucket is private — store the object path, not a public URL.
+        // Files are served later via short-lived signed URLs (openCertFile).
+        onChange({ ...draft, file_url: path });
         toast.success("Certificate file uploaded.");
       } catch {
         toast.error("Upload failed.");
@@ -307,14 +371,15 @@ function CertEditorModal({
                 className={FIELD_INPUT}
               />
               {draft.file_url && (
-                <a
-                  href={draft.file_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() =>
+                    void openCertFile(draft.file_url, (m) => toast.error(m))
+                  }
                   className="mt-1 inline-block text-xs font-medium text-indigo-600 dark:text-indigo-300 hover:underline"
                 >
                   Open current file
-                </a>
+                </button>
               )}
             </div>
           </div>
@@ -349,12 +414,14 @@ function CoachCertGroup({
   onAdd,
   onEdit,
   onDelete,
+  onOpenFile,
 }: {
   coach: RosterStudent;
   certs: CertRow[];
   onAdd: () => void;
   onEdit: (cert: CertRow) => void;
   onDelete: (cert: CertRow) => void;
+  onOpenFile: (fileUrl: string) => void;
 }): React.ReactElement {
   const name = coach.display_name ?? coach.email;
   return (
@@ -422,10 +489,9 @@ function CoachCertGroup({
                     .join(" · ")}
                 </p>
                 {cert.file_url && (
-                  <a
-                    href={cert.file_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => onOpenFile(cert.file_url as string)}
                     className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-indigo-600 dark:text-indigo-300 hover:underline"
                   >
                     <svg
@@ -443,7 +509,7 @@ function CoachCertGroup({
                       <polyline points="14 2 14 8 20 8" />
                     </svg>
                     View certificate
-                  </a>
+                  </button>
                 )}
               </div>
               <div className="flex shrink-0 items-center gap-1 opacity-0 transition group-hover:opacity-100 focus-within:opacity-100">
@@ -687,6 +753,9 @@ export function CertificationsPanel({
           onAdd={() => setDraft(emptyDraft(coach.student_id))}
           onEdit={(cert) => setDraft(rowToDraft(cert))}
           onDelete={(cert) => setPendingDelete(cert)}
+          onOpenFile={(fileUrl) =>
+            void openCertFile(fileUrl, (m) => toast.error(m))
+          }
         />
       ))}
 

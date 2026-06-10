@@ -70,12 +70,30 @@ function fmtScore(n: number): string {
   return Number.isInteger(n) ? n.toFixed(1) : String(n);
 }
 
-function average(scores: Record<string, number>): number | null {
+// Skills are scored 1.0–5.0; the overall level uses the
+// USA-Pickleball/DUPR 2.0–5.5 band. These two scales are NOT the same, so the
+// raw skill average must be re-mapped onto the level band before suggesting it.
+const SKILL_MIN = 1;
+const SKILL_MAX = 5;
+const LEVEL_MIN = 2.0;
+const LEVEL_MAX = 5.5;
+
+// Raw mean of the graded 1–5 skill scores (rounded to nearest half-step).
+function skillAverage(scores: Record<string, number>): number | null {
   const vals = Object.values(scores).filter((v) => Number.isFinite(v));
   if (vals.length === 0) return null;
   const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
-  // Round to nearest half-step.
   return Math.round(avg * 2) / 2;
+}
+
+// Map a 1–5 skill average onto the 2.0–5.5 overall-level band (linear),
+// rounded to the nearest 0.5 and clamped to the band.
+function skillAvgToLevel(avg: number | null): number | null {
+  if (avg == null) return null;
+  const mapped =
+    LEVEL_MIN + ((avg - SKILL_MIN) / (SKILL_MAX - SKILL_MIN)) * (LEVEL_MAX - LEVEL_MIN);
+  const rounded = Math.round(mapped * 2) / 2;
+  return Math.min(LEVEL_MAX, Math.max(LEVEL_MIN, rounded));
 }
 
 // ─── Segmented score control ────────────────────────────────────────────────
@@ -297,7 +315,8 @@ export function AssessmentsPanel({ courseId }: { courseId: string }) {
     void loadSeries(playerId);
   };
 
-  const suggested = useMemo(() => average(scores), [scores]);
+  const skillAvg = useMemo(() => skillAverage(scores), [scores]);
+  const suggested = useMemo(() => skillAvgToLevel(skillAvg), [skillAvg]);
   const hasOverride = overrideLevel.trim() !== "";
   const effectiveLevel = hasOverride ? Number(overrideLevel) : suggested;
 
@@ -457,6 +476,14 @@ export function AssessmentsPanel({ courseId }: { courseId: string }) {
 
                 {/* Skill scores */}
                 <div className="space-y-3 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 p-3">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                      Per-skill scores
+                    </span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400">
+                      Scale 1.0–5.0 (0.5 steps)
+                    </span>
+                  </div>
                   {PICKLEBALL_SKILLS.map((skill) => (
                     <ScoreControl
                       key={skill.slug}
@@ -472,7 +499,10 @@ export function AssessmentsPanel({ courseId }: { courseId: string }) {
                 <div className="space-y-2 rounded-xl bg-slate-50 dark:bg-slate-800/40 p-3">
                   <div className="flex items-center justify-between gap-3">
                     <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                      Overall level
+                      Overall level{" "}
+                      <span className="font-normal text-slate-500 dark:text-slate-400">
+                        (2.0–5.5)
+                      </span>
                     </span>
                     <span className="text-xs text-slate-500 dark:text-slate-400">
                       Suggested:{" "}
@@ -488,15 +518,15 @@ export function AssessmentsPanel({ courseId }: { courseId: string }) {
                     <input
                       id="pk-assess-override"
                       type="number"
-                      min={1}
-                      max={5}
+                      min={LEVEL_MIN}
+                      max={LEVEL_MAX}
                       step="0.5"
                       inputMode="decimal"
                       value={overrideLevel}
                       onChange={(e) => setOverrideLevel(e.target.value)}
                       placeholder={
                         suggested == null
-                          ? "Override"
+                          ? "Override level (2.0–5.5)"
                           : `Override (${fmtScore(suggested)})`
                       }
                       className={`${inputCls} min-h-[40px] max-w-[180px]`}

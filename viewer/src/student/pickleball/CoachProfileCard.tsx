@@ -24,6 +24,59 @@ import { useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 
+const CERT_BUCKET = "pickleball-certs";
+const SIGNED_URL_TTL = 3600; // 1 hour
+
+/**
+ * Resolve the storage object path for a stored cert file reference.
+ *
+ * The `pickleball-certs` bucket is private, so cert files are served via
+ * short-lived signed URLs. `file_url` may hold a legacy public URL
+ * (…/object/public/pickleball-certs/<path>) or, for newer rows, just the
+ * object path. Both resolve. An external http(s) link not in our bucket is
+ * returned as null so it's opened verbatim.
+ */
+function certObjectPath(fileUrl: string): string | null {
+  const trimmed = fileUrl.trim();
+  if (trimmed === "") return null;
+  const marker = `/${CERT_BUCKET}/`;
+  for (const seg of [
+    `/object/public${marker}`,
+    `/object/sign${marker}`,
+    `/object${marker}`,
+  ]) {
+    const idx = trimmed.indexOf(seg);
+    if (idx !== -1) {
+      const path = trimmed.slice(idx + seg.length).split("?")[0];
+      return path !== "" ? decodeURIComponent(path) : null;
+    }
+  }
+  if (!/^https?:\/\//i.test(trimmed)) {
+    return trimmed.replace(/^\/+/, "");
+  }
+  return null;
+}
+
+/** Mint a signed URL for in-bucket cert files; open external links verbatim. */
+async function openCertFile(
+  fileUrl: string,
+  onError: (msg: string) => void,
+): Promise<void> {
+  const path = certObjectPath(fileUrl);
+  if (path === null) {
+    window.open(fileUrl, "_blank", "noopener,noreferrer");
+    return;
+  }
+  const { data, error } = await supabase.storage
+    .from(CERT_BUCKET)
+    .createSignedUrl(path, SIGNED_URL_TTL);
+  if (error || !data?.signedUrl) {
+    onError("Could not open the certificate file.");
+    return;
+  }
+  window.open(data.signedUrl, "_blank", "noopener,noreferrer");
+}
+
 export interface CoachProfile {
   id: string;
   course_id: string;
@@ -424,7 +477,12 @@ export function CoachProfileCard({
             cta={{ label: "Add profile", onClick: startEdit }}
           />
         </div>
-        <CertSection certs={certs} />
+        <CertSection
+          certs={certs}
+          onOpenFile={(fileUrl) =>
+            void openCertFile(fileUrl, (m) => toast.error(m))
+          }
+        />
       </div>
     );
   }
@@ -513,12 +571,23 @@ export function CoachProfileCard({
         )}
       </div>
 
-      <CertSection certs={certs} />
+      <CertSection
+        certs={certs}
+        onOpenFile={(fileUrl) =>
+          void openCertFile(fileUrl, (m) => toast.error(m))
+        }
+      />
     </div>
   );
 }
 
-function CertSection({ certs }: { certs: Certification[] }): React.ReactElement {
+function CertSection({
+  certs,
+  onOpenFile,
+}: {
+  certs: Certification[];
+  onOpenFile: (fileUrl: string) => void;
+}): React.ReactElement {
   return (
     <div className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 p-6">
       <h2 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
@@ -557,10 +626,9 @@ function CertSection({ certs }: { certs: Certification[] }): React.ReactElement 
                   .join(" · ")}
               </p>
               {cert.file_url && (
-                <a
-                  href={cert.file_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() => onOpenFile(cert.file_url as string)}
                   className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-indigo-600 dark:text-indigo-300 hover:underline"
                 >
                   <svg
@@ -578,7 +646,7 @@ function CertSection({ certs }: { certs: Certification[] }): React.ReactElement 
                     <polyline points="14 2 14 8 20 8" />
                   </svg>
                   View certificate
-                </a>
+                </button>
               )}
             </li>
           ))}
