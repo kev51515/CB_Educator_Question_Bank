@@ -2,12 +2,13 @@
 
 Status: **planning** · Author: AI session 2026-06-10 · Owner decisions locked (see below)
 
-> **Migration renumber (2026-06-10):** `main` reached `0158` (LINE integration + parallel
-> session merged), colliding with the original `0150`–`0158` numbering below. Pickleball
-> migrations were renumbered to **`0159`–`0167`** (order preserved): course_types `0159`,
-> player_profiles `0160`, lessons `0161`, coach_core `0162`, coach_dev `0163`, chat `0164`,
-> assessments `0165`, drills_homework `0166`, coach_efficiency `0167`. Re-check the live head
-> again before merge — the parallel session may advance `main` further.
+> **Reconciled with `main` (2026-06-10):** `main` was merged in (clean — it touched none
+> of the files this branch edits), and the full pickleball + domain migration set was
+> renumbered to **`0160`–`0172`** above main's live head (`0159_line_dispatch_cron`):
+> course_types `0160`, player_profiles `0161`, lessons `0162`, coach_core `0163`, coach_dev
+> `0164`, chat `0165`, assessments `0166`, drills_homework `0167`, coach_efficiency `0168`,
+> coach_development `0169`, evaluations `0170`, events `0171`, domain_layer `0172`. Branch is
+> now mergeable + cloud-pushable. (If `main` advances again before push, re-merge + renumber.)
 
 A pickleball coaching academy layered onto the LMS as **two new `course_type`
 values**, following the same end-to-end pattern that added `counseling` (0133+):
