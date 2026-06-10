@@ -84,12 +84,33 @@ export function UpgradeAccountModal({
       aria-modal="true"
       aria-labelledby="upgrade-account-title"
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm px-4"
+      onClick={!busy ? onClose : undefined}
     >
       <div
         ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-5"
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-5"
       >
-        <header className="space-y-1">
+        <button
+          type="button"
+          onClick={onClose}
+          disabled={busy}
+          aria-label="Close"
+          className="absolute right-3 top-3 inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 disabled:opacity-60"
+        >
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.75}
+            strokeLinecap="round"
+            className="h-5 w-5"
+            aria-hidden="true"
+          >
+            <path d="M5 5l10 10M15 5L5 15" />
+          </svg>
+        </button>
+        <header className="space-y-1 pr-10">
           <h2
             id="upgrade-account-title"
             className="text-lg font-semibold text-slate-900 dark:text-slate-100"

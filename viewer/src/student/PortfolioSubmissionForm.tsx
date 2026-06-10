@@ -811,7 +811,7 @@ export function PortfolioSubmissionForm({
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`Submission for ${item.title}`}
+      aria-labelledby="portfolio-form-title"
       className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
       onClick={() => {
         if (!busy) onClose();
@@ -819,11 +819,34 @@ export function PortfolioSubmissionForm({
     >
       <div
         ref={panelRef}
-        className="w-full max-w-xl rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4 max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-xl rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <header className="space-y-1">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-3 top-3 flex min-h-[40px] min-w-[40px] items-center justify-center rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:text-slate-500 dark:hover:text-slate-300 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+        <header className="space-y-1 pr-10">
+          <h2
+            id="portfolio-form-title"
+            className="text-lg font-semibold text-slate-900 dark:text-slate-100"
+          >
             {item.title}
           </h2>
           {item.prompt && (

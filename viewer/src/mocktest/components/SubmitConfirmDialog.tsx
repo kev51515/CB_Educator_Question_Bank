@@ -1,9 +1,13 @@
 /**
  * SubmitConfirmDialog — modal overlay asking the user to confirm test submit.
  *
- * Shows answered/unanswered/flagged counts. Closing via Escape is handled by
- * the parent (TestPhase) keydown listener.
+ * Shows answered/unanswered/flagged counts. Focus is trapped via useFocusTrap
+ * (which also restores focus to the opener on close). Escape closes the dialog
+ * (locally + via the parent TestPhase keydown listener).
  */
+import { useRef } from "react";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
+
 interface SubmitConfirmDialogProps {
   answeredCount: number;
   unansweredCount: number;
@@ -21,14 +25,47 @@ export function SubmitConfirmDialog({
   onConfirm,
   onCancel,
 }: SubmitConfirmDialogProps) {
+  const panelRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(panelRef, true);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="confirm-submit-title"
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          e.stopPropagation();
+          onCancel();
+        }
+      }}
     >
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl w-full max-w-sm p-6 flex flex-col gap-4">
+      <div
+        ref={panelRef}
+        className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl w-full max-w-sm p-6 flex flex-col gap-4"
+      >
+        <button
+          type="button"
+          onClick={onCancel}
+          aria-label="Close"
+          className="absolute top-2 right-2 inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
         <div className="flex items-start gap-3">
           <span className="text-amber-700 dark:text-amber-300 leading-none" aria-hidden="true">
             <svg

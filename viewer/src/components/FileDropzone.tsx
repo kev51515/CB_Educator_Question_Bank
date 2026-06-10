@@ -289,7 +289,7 @@ export function FileDropzone({
         tabIndex={disabled ? -1 : 0}
         aria-disabled={disabled}
         aria-label="File drop area"
-        className={dropAreaClass}
+        className={`${dropAreaClass} focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950`}
         onClick={openPicker}
         onKeyDown={onKeyDown}
         onDragEnter={onDragEnter}
