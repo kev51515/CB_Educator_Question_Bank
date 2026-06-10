@@ -60,10 +60,12 @@ export interface GetModuleResult {
   saved_eliminations?: Record<string, Letter[]>;
   /** Question ids flagged Mark-for-Review (resume). */
   saved_marks?: string[];
-  /** Per-question highlight ranges (resume). */
+  /** Per-question highlight ranges (resume). `field` is "passage" | "stem" |
+   *  "choice:A".."choice:D"; kept loose here because it's a persisted shape the
+   *  runner coerces (see annotations.ts `AnnotField`). */
   saved_highlights?: Record<
     string,
-    { field: "passage" | "stem"; start: number; end: number }[]
+    { field: string; start: number; end: number; color?: string }[]
   >;
   /** Per-question notes (resume). */
   saved_notes?: Record<string, string>;
@@ -119,6 +121,18 @@ export interface TestResult {
   /** Per-module timing keyed by position ("1".."4"). */
   module_timing?: Record<string, ModuleTiming>;
   questions: ResultQuestion[];
+}
+
+/**
+ * Per-question pacing: the student's time on a question vs. the class average,
+ * from `get_test_question_times` (0143). `class_n` is how many classmates'
+ * runs the average is over (0 → no comparison available). All times in ms.
+ */
+export interface QuestionTime {
+  question_id: string;
+  your_time_ms: number | null;
+  class_avg_ms: number | null;
+  class_n: number;
 }
 
 /** A catalog row (from the public `tests` table). */

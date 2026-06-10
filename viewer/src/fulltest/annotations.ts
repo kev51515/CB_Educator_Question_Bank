@@ -11,7 +11,9 @@
 import { useCallback } from "react";
 import { useLocalStorageJSON } from "@/hooks";
 
-export type AnnotField = "passage" | "stem";
+export type ChoiceLetter = "A" | "B" | "C" | "D";
+/** A highlightable region: the passage, the stem, or one answer choice. */
+export type AnnotField = "passage" | "stem" | `choice:${ChoiceLetter}`;
 
 /** The 5 highlighter colors offered in the runner's highlighter bar. */
 export type HighlightColor = "yellow" | "green" | "blue" | "pink" | "orange";
@@ -156,6 +158,12 @@ function fieldElementOf(container: Node): HTMLElement | null {
   return (el?.closest("[data-annot-field]") as HTMLElement | null) ?? null;
 }
 
+const CHOICE_FIELD_RE = /^choice:[A-D]$/;
+/** Is `f` a valid annotation field string? (passage | stem | choice:A..D) */
+export function isAnnotField(f: string | null | undefined): f is AnnotField {
+  return f === "passage" || f === "stem" || (typeof f === "string" && CHOICE_FIELD_RE.test(f));
+}
+
 /**
  * Read the current text selection and turn it into a Highlight, IFF it lies
  * entirely within one annotation field. Returns null otherwise (nothing
@@ -174,7 +182,7 @@ export function captureSelectionHighlight(
   if (!startField || startField !== endField) return null;
 
   const field = startField.getAttribute("data-annot-field");
-  if (field !== "passage" && field !== "stem") return null;
+  if (!isAnnotField(field)) return null;
 
   const start = offsetWithin(startField, range.startContainer, range.startOffset);
   const end = offsetWithin(startField, range.endContainer, range.endOffset);

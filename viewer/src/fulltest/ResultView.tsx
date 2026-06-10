@@ -5,13 +5,15 @@
  * once the run is submitted, when the server safely returns the answer key
  * alongside the student's response (`get_test_result`).
  */
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "@/lib/routes";
+import { getQuestionTimes } from "./api";
+import { PacingPanel, fmtMs, paceTone } from "./PacingPanel";
 import { QuestionPane } from "./QuestionPane";
 import { scaledFromSectionScores } from "./satScore";
 import { band, orderDomains, orderSections, pctOf, sectionLabel } from "./skills";
-import type { ResultQuestion, TestResult } from "./types";
+import type { QuestionTime, ResultQuestion, TestResult } from "./types";
 
 const SCALED_NOTE =
   "Estimated from your raw section scores on a representative Digital SAT curve. " +
@@ -21,6 +23,30 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
   const navigate = useNavigate();
   const pct = result.total > 0 ? Math.round((result.score / result.total) * 100) : 0;
   const scaled = scaledFromSectionScores(result.section_scores);
+
+  // Per-question pacing vs. the class (best-effort: a failed/empty fetch just
+  // means the comparison stays hidden — never blocks the review screen).
+  const [times, setTimes] = useState<QuestionTime[]>([]);
+  useEffect(() => {
+    let alive = true;
+    getQuestionTimes(result.run_id)
+      .then((t) => {
+        if (alive) setTimes(t);
+      })
+      .catch(() => {
+        /* non-critical — pacing comparison simply won't render */
+      });
+    return () => {
+      alive = false;
+    };
+  }, [result.run_id]);
+
+  // Keyed lookup for the inline per-question pace pill in the review list.
+  const timeById = useMemo(() => {
+    const m = new Map<string, QuestionTime>();
+    for (const t of times) m.set(t.question_id, t);
+    return m;
+  }, [times]);
 
   // A single-section test (RW-only or Math-only) has no 1600 composite, but its
   // one section's estimated 200–800 score is far more meaningful than raw, so
@@ -118,12 +144,14 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
 
         <TimingCard result={result} />
 
+        <PacingPanel times={times} questions={result.questions} />
+
         <div className="mt-6 space-y-4">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
             Review
           </h2>
           {result.questions.map((rq) => (
-            <ReviewCard key={rq.id} rq={rq} />
+            <ReviewCard key={rq.id} rq={rq} time={timeById.get(rq.id) ?? null} />
           ))}
         </div>
 
@@ -335,7 +363,29 @@ function TimingCard({ result }: { result: TestResult }) {
   );
 }
 
-function ReviewCard({ rq }: { rq: ResultQuestion }) {
+/** Inline "you vs. class" time pill for a single review card. Renders nothing
+ *  when there's no class comparison for the question. Colour follows the same
+ *  faster/even/slower coding as the PacingPanel strip (reused via paceTone). */
+function PacePill({ time }: { time: QuestionTime | null }) {
+  if (!time || time.class_n <= 0 || time.class_avg_ms == null) return null;
+  const tone = paceTone(time.your_time_ms, time.class_avg_ms);
+  const cls =
+    tone === "fast"
+      ? "bg-emerald-50 text-emerald-700 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900"
+      : tone === "slow"
+        ? "bg-amber-50 text-amber-700 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900"
+        : "bg-slate-50 text-slate-600 ring-slate-200 dark:bg-slate-800/60 dark:text-slate-300 dark:ring-slate-700";
+  return (
+    <span
+      className={`rounded-full px-2 py-0.5 text-[11px] font-medium tabular-nums ring-1 ${cls}`}
+      title={`You ${fmtMs(time.your_time_ms)} · class avg ${fmtMs(time.class_avg_ms)}`}
+    >
+      You {fmtMs(time.your_time_ms)} · class {fmtMs(time.class_avg_ms)}
+    </span>
+  );
+}
+
+function ReviewCard({ rq, time }: { rq: ResultQuestion; time: QuestionTime | null }) {
   const correct = rq.is_correct === true;
   const blank = !rq.your_answer;
   const yourText =
@@ -372,15 +422,18 @@ function ReviewCard({ rq }: { rq: ResultQuestion }) {
             </span>
           )}
         </span>
-        <span
-          className={[
-            "rounded-full px-2.5 py-0.5 text-xs font-semibold",
-            correct
-              ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
-              : "bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300",
-          ].join(" ")}
-        >
-          {correct ? "Correct" : blank ? "Skipped" : "Incorrect"}
+        <span className="flex items-center gap-2">
+          <PacePill time={time} />
+          <span
+            className={[
+              "rounded-full px-2.5 py-0.5 text-xs font-semibold",
+              correct
+                ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
+                : "bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300",
+            ].join(" ")}
+          >
+            {correct ? "Correct" : blank ? "Skipped" : "Incorrect"}
+          </span>
         </span>
       </div>
 
