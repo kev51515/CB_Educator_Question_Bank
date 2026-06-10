@@ -60,8 +60,150 @@ function pushMsg(token: string, to: string, text: string) {
   return linePost(token, "/message/push", { to, messages: [{ type: "text", text }] });
 }
 
-// Issue a linkToken for this user and DM them the LMS link page.
-async function startLink(token: string, linkBase: string, userId: string, replyToken?: string) {
+// A clean "Connect account" Flex card — heading, friendly bilingual blurb, and
+// a styled button that opens the link page. Tweak the copy/colors here to taste.
+function buildLinkFlex(url: string): unknown {
+  return {
+    type: "flex",
+    altText: "連結 OmniLMS 帳號 · Connect your OmniLMS account",
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      body: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "20px",
+        contents: [
+          { type: "text", text: "連結你的帳號 🔗", weight: "bold", size: "xl", color: "#111827" },
+          { type: "text", text: "Connect your account", size: "sm", color: "#6B7280", margin: "xs" },
+          {
+            type: "text",
+            text: "綁定後即可在 LINE 收到作業提醒、成績與公告。",
+            wrap: true, size: "sm", color: "#374151", margin: "lg",
+          },
+          {
+            type: "text",
+            text: "Get reminders, grades, and announcements right here on LINE.",
+            wrap: true, size: "xs", color: "#9CA3AF", margin: "sm",
+          },
+          {
+            type: "button",
+            style: "primary",
+            color: "#4F46E5",
+            height: "sm",
+            margin: "xl",
+            action: { type: "uri", label: "開始連結 · Connect", uri: url },
+          },
+          {
+            type: "text",
+            text: "可能需要先登入 · Sign-in may be required",
+            size: "xxs", color: "#9CA3AF", align: "center", margin: "md", wrap: true,
+          },
+        ],
+      },
+    },
+  };
+}
+
+// A short success card, shown right after linking completes.
+function buildSuccessFlex(): unknown {
+  return {
+    type: "flex",
+    altText: "🎉 已成功連結帳號 · Your account is now linked",
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      body: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "20px",
+        contents: [
+          { type: "text", text: "🎉 已連結帳號", weight: "bold", size: "lg", color: "#059669" },
+          { type: "text", text: "You're all set", size: "sm", color: "#6B7280", margin: "xs" },
+          {
+            type: "text",
+            text: "之後的作業提醒、成績與公告都會傳到這裡。",
+            wrap: true, size: "sm", color: "#374151", margin: "lg",
+          },
+          {
+            type: "text",
+            text: "Reminders, grades, and announcements will arrive here from now on.",
+            wrap: true, size: "xs", color: "#9CA3AF", margin: "sm",
+          },
+        ],
+      },
+    },
+  };
+}
+
+// Send one message object via reply (preferred) or push fallback.
+async function sendMessage(token: string, message: unknown, replyToken?: string, userId?: string) {
+  if (replyToken) await linePost(token, "/message/reply", { replyToken, messages: [message] });
+  else if (userId) await linePost(token, "/message/push", { to: userId, messages: [message] });
+}
+
+// A warmer welcome card for when someone first adds the Official Account:
+// a colored header + greeting, then the same Connect button.
+function buildWelcomeFlex(url: string): unknown {
+  return {
+    type: "flex",
+    altText: "歡迎加入 OmniLMS · Welcome — connect your account",
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#4F46E5",
+        paddingAll: "20px",
+        contents: [
+          { type: "text", text: "歡迎加入 OmniLMS 👋", weight: "bold", size: "lg", color: "#FFFFFF", wrap: true },
+          { type: "text", text: "Welcome to OmniLMS", size: "sm", color: "#C7D2FE", margin: "xs" },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "20px",
+        contents: [
+          {
+            type: "text",
+            text: "綁定帳號後，作業提醒 📚、成績 ✅ 與公告 📢 都會直接傳到這裡。",
+            wrap: true, size: "sm", color: "#374151",
+          },
+          {
+            type: "text",
+            text: "Link your account to get reminders, grades, and announcements right here.",
+            wrap: true, size: "xs", color: "#9CA3AF", margin: "md",
+          },
+          {
+            type: "button",
+            style: "primary",
+            color: "#4F46E5",
+            height: "sm",
+            margin: "xl",
+            action: { type: "uri", label: "開始連結 · Connect", uri: url },
+          },
+          {
+            type: "text",
+            text: "可能需要先登入 · Sign-in may be required",
+            size: "xxs", color: "#9CA3AF", align: "center", margin: "md", wrap: true,
+          },
+        ],
+      },
+    },
+  };
+}
+
+// Issue a linkToken for this user and send a card — the welcome card on first
+// follow, otherwise the plain Connect card.
+async function startLink(
+  token: string,
+  linkBase: string,
+  userId: string,
+  replyToken?: string,
+  welcome = false,
+) {
   const r = await linePost(token, `/user/${userId}/linkToken`, {});
   if (!r.ok) {
     if (replyToken) await replyMsg(token, replyToken, "無法開始連結，請稍後再試。Could not start linking — please try again.");
@@ -69,9 +211,7 @@ async function startLink(token: string, linkBase: string, userId: string, replyT
   }
   const { linkToken } = await r.json();
   const url = `${linkBase}/line/link?linkToken=${encodeURIComponent(linkToken)}`;
-  const msg = `請點此完成帳號連結（需登入）。Tap to finish linking (login required):\n${url}`;
-  if (replyToken) await replyMsg(token, replyToken, msg);
-  else await pushMsg(token, userId, msg);
+  await sendMessage(token, welcome ? buildWelcomeFlex(url) : buildLinkFlex(url), replyToken, userId);
 }
 
 Deno.serve(async (req) => {
@@ -106,7 +246,7 @@ Deno.serve(async (req) => {
     const replyToken: string | undefined = ev?.replyToken;
     try {
       if (ev.type === "follow" && userId) {
-        await startLink(TOKEN, LINK_BASE, userId, replyToken);
+        await startLink(TOKEN, LINK_BASE, userId, replyToken, true); // welcome card
       } else if (ev.type === "message" && ev.message?.type === "text" && userId) {
         const text = String(ev.message.text ?? "").trim().toLowerCase();
         if (LINK_TRIGGERS.some((t) => text.includes(t))) {
@@ -124,13 +264,13 @@ Deno.serve(async (req) => {
             p_display_name: (prof?.displayName as string) ?? null,
           });
           const ok = !error && data;
-          if (replyToken) {
+          if (ok) {
+            await sendMessage(TOKEN, buildSuccessFlex(), replyToken, userId);
+          } else if (replyToken) {
             await replyMsg(
               TOKEN,
               replyToken,
-              ok
-                ? "已成功連結帳號。Your account is now linked."
-                : "連結失敗，請從應用程式重試。Link failed — please retry from the app.",
+              "連結失敗，請從應用程式重試。Link failed — please retry from the app.",
             );
           }
         } else if (replyToken) {
