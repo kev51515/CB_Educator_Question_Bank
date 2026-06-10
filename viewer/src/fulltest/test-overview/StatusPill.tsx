@@ -91,14 +91,17 @@ export function StatusPill({
 
 type ActionTone = "neutral" | "primary" | "warn" | "danger";
 
+// Solid-looking buttons (tinted fill + ring) so actions read as clickable
+// controls, not plain text. Grouped controls (ActionGroup) pass `ring-0` to
+// drop the individual ring — the group supplies the outer ring + dividers.
 const ACTION: Record<ActionTone, string> = {
   neutral:
-    "text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700/60 dark:hover:text-slate-100",
+    "ring-1 ring-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900 dark:ring-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700",
   primary:
-    "text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700 dark:text-indigo-300 dark:hover:bg-indigo-950/50",
-  warn: "text-amber-700 hover:bg-amber-50 dark:text-amber-300 dark:hover:bg-amber-950/50",
+    "ring-1 ring-indigo-300 bg-indigo-600 text-white hover:bg-indigo-700 dark:ring-indigo-500 dark:bg-indigo-600 dark:hover:bg-indigo-500",
+  warn: "ring-1 ring-amber-300 bg-amber-50 text-amber-800 hover:bg-amber-100 dark:ring-amber-700 dark:bg-amber-950/40 dark:text-amber-200 dark:hover:bg-amber-900/50",
   danger:
-    "text-rose-600 hover:bg-rose-50 hover:text-rose-700 dark:text-rose-300 dark:hover:bg-rose-950/50",
+    "ring-1 ring-rose-300 bg-rose-50 text-rose-700 hover:bg-rose-100 dark:ring-rose-700 dark:bg-rose-950/40 dark:text-rose-200 dark:hover:bg-rose-900/50",
 };
 
 export function RowAction({
@@ -109,7 +112,7 @@ export function RowAction({
   return (
     <button
       type="button"
-      className={`inline-flex min-h-[32px] items-center justify-center rounded-md px-2.5 py-1 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:pointer-events-none disabled:opacity-50 ${ACTION[tone]} ${className}`}
+      className={`inline-flex min-h-[32px] items-center justify-center rounded-md px-3 py-1 text-xs font-semibold shadow-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-indigo-500 disabled:pointer-events-none disabled:opacity-50 ${ACTION[tone]} ${className}`}
       {...rest}
     />
   );
