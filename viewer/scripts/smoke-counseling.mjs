@@ -183,6 +183,33 @@ async function main() {
           : bad("expected a deadline reminder notification", JSON.stringify(data));
       }
     }
+    step("colleges catalog + student self-service (0139)");
+    {
+      const { error } = await sClient.from("colleges").select("id").limit(1);
+      error ? bad("student reads colleges catalog", error.message) : ok("student reads colleges catalog");
+    }
+    {
+      const { error } = await cClient.from("colleges").insert({ name: `Bogus U ${TAG}` });
+      error ? ok("non-admin can't write catalog") : bad("counselor catalog insert should be rejected");
+    }
+    {
+      const { data, error } = await sClient.from("college_applications")
+        .insert({ course_id: course.id, student_id: student.id, college_name: "Self-added U", tier: "target", status: "considering" })
+        .select("id").maybeSingle();
+      if (error) bad("student adds own college", error.message);
+      else {
+        ok("student adds own college");
+        const upd = await sClient.from("college_applications").update({ status: "in_progress" }).eq("id", data.id);
+        upd.error ? bad("student updates own college", upd.error.message) : ok("student updates own college");
+        const del = await sClient.from("college_applications").delete().eq("id", data.id);
+        del.error ? bad("student deletes own college", del.error.message) : ok("student deletes own college");
+      }
+    }
+    {
+      const { error } = await sClient.from("college_applications")
+        .insert({ course_id: course.id, student_id: counselor.id, college_name: "Hijack U", tier: "target" });
+      error ? ok("student can't add a college for another user") : bad("cross-student insert should be rejected");
+    }
   } finally {
     step("cleanup");
     await cleanup().catch((e) => console.log("  ..    cleanup error", e.message));

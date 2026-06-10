@@ -16,3 +16,4 @@ export { AdminStatsPage } from "./AdminStatsPage";
 export { AdminUsersPage } from "./AdminUsersPage";
 export { AdminInvitesPage } from "./AdminInvitesPage";
 export { AdminAuditPage } from "./AdminAuditPage";
+export { AdminCollegesPage } from "./AdminCollegesPage";

@@ -25,6 +25,7 @@ import {
   AdminInvitesPage,
   AdminStatsPage,
   AdminUsersPage,
+  AdminCollegesPage,
 } from "@/admin";
 
 export interface AccountRoutesProps {
@@ -149,6 +150,7 @@ export function AccountRoutes({
                 </p>
                 <SidebarLink to={`${basePath}/admin/stats`} label="Stats" />
                 <SidebarLink to={`${basePath}/admin/users`} label="Users" />
+                <SidebarLink to={`${basePath}/admin/colleges`} label="Colleges" />
                 <SidebarLink to={`${basePath}/admin/invites`} label="Invite codes" />
                 <SidebarLink to={`${basePath}/admin/audit`} label="Audit log" />
               </div>
@@ -198,6 +200,7 @@ export function AccountRoutes({
                     path="admin/users"
                     element={<AdminUsersPage currentUserId={profile.id} />}
                   />
+                  <Route path="admin/colleges" element={<AdminCollegesPage />} />
                   <Route path="admin/invites" element={<AdminInvitesPage />} />
                   <Route path="admin/audit" element={<AdminAuditPage />} />
                 </>
