@@ -1,0 +1,351 @@
+/**
+ * EditTestModulesModal
+ * ====================
+ * Edit which modules of a full-length test a Modules link deploys. A full-test
+ * link is stored as a `module_items` row with url `/test/<slug>` (full test) or
+ * `/test/<slug>?m=<first>-<last>` (a contiguous subset — see migration 0156:
+ * the run is keyed by the module range, so changing the range starts a fresh
+ * run for the new range; students who already submitted keep their result).
+ *
+ * The picker mirrors the `full_test` section of inline-add.tsx: per-module
+ * checkboxes + "All / R&W only / Math only" preset pills; the deployed set must
+ * be a non-empty CONTIGUOUS range (amber hint + disabled Save otherwise).
+ */
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { supabase } from "@/lib/supabase";
+import { testRunPath } from "@/lib/routes";
+import { useToast } from "@/components/Toast";
+import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { SkeletonRows } from "@/components/Skeleton";
+import type { ModuleItem } from "@/teacher/useCourseModules";
+
+interface FtModule {
+  position: number;
+  section: string;
+  label: string;
+  time_limit_seconds: number;
+  question_count: number;
+}
+
+interface EditTestModulesModalProps {
+  item: ModuleItem;
+  onClose: () => void;
+  onSaved: () => void;
+}
+
+/** Parse the test slug + current `?m=<first>-<last>` range from a link URL. */
+function parseLink(url: string | null): { slug: string; range: [number, number] | null } {
+  const u = url ?? "";
+  // url is `/test/<slug>` or `/test/<slug>?m=<first>-<last>`. `.slice(6)` drops
+  // the leading "/test/" prefix, then split off any path tail + query string.
+  const slug = u.slice(6).split("/")[0].split("?")[0];
+  const m = u.match(/[?&]m=(\d+)-(\d+)/);
+  const range: [number, number] | null = m
+    ? [Number.parseInt(m[1], 10), Number.parseInt(m[2], 10)]
+    : null;
+  return { slug, range };
+}
+
+export function EditTestModulesModal({ item, onClose, onSaved }: EditTestModulesModalProps) {
+  const toast = useToast();
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  useFocusTrap(panelRef, true);
+  useEscapeKey(onClose);
+
+  const { slug, range } = useMemo(() => parseLink(item.url), [item.url]);
+
+  const [modules, setModules] = useState<FtModule[]>([]);
+  const [loaded, setLoaded] = useState(false);
+  const [deployed, setDeployed] = useState<Set<number>>(new Set());
+  const [saving, setSaving] = useState(false);
+
+  // Fetch the test's modules (two-step: tests by slug → test_modules by id),
+  // then pre-select the current range (or all modules if the link is full).
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      const { data: t } = await supabase
+        .from("tests")
+        .select("id")
+        .eq("slug", slug)
+        .single();
+      if (!alive) return;
+      if (!t) {
+        setModules([]);
+        setDeployed(new Set());
+        setLoaded(true);
+        return;
+      }
+      const { data } = await supabase
+        .from("test_modules")
+        .select("position, section, label, time_limit_seconds, question_count")
+        .eq("test_id", t.id)
+        .order("position");
+      if (!alive) return;
+      const mods = (data ?? []) as FtModule[];
+      setModules(mods);
+      if (range) {
+        const [first, last] = range;
+        setDeployed(
+          new Set(mods.filter((m) => m.position >= first && m.position <= last).map((m) => m.position)),
+        );
+      } else {
+        setDeployed(new Set(mods.map((m) => m.position)));
+      }
+      setLoaded(true);
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [slug, range]);
+
+  // Deployed positions are valid only as a non-empty CONTIGUOUS range (the run
+  // walks first→last). Mirrors inline-add.tsx's ftContiguous logic.
+  const deployedSorted = useMemo(
+    () => [...deployed].sort((a, b) => a - b),
+    [deployed],
+  );
+  const contiguous = useMemo(() => {
+    if (deployedSorted.length === 0) return false;
+    return (
+      deployedSorted[deployedSorted.length - 1] - deployedSorted[0] + 1 ===
+      deployedSorted.length
+    );
+  }, [deployedSorted]);
+  const isSubset = modules.length > 0 && deployed.size < modules.length;
+
+  const toggleModule = (position: number): void => {
+    setDeployed((prev) => {
+      const next = new Set(prev);
+      if (next.has(position)) next.delete(position);
+      else next.add(position);
+      return next;
+    });
+  };
+  const setBySection = (section: string | "all"): void => {
+    if (section === "all") {
+      setDeployed(new Set(modules.map((m) => m.position)));
+    } else {
+      setDeployed(
+        new Set(modules.filter((m) => m.section === section).map((m) => m.position)),
+      );
+    }
+  };
+  const sections = useMemo(
+    () => Array.from(new Set(modules.map((m) => m.section))),
+    [modules],
+  );
+  const sectionActive = (section: string): boolean => {
+    const ps = modules.filter((m) => m.section === section).map((m) => m.position);
+    return ps.length > 0 && ps.length === deployed.size && ps.every((p) => deployed.has(p));
+  };
+
+  // Unified chip style — matches inline-add.tsx (mobile tap target ≥40px).
+  const chipClass = (active: boolean): string =>
+    "rounded-full px-3 py-1.5 text-xs md:py-0.5 md:text-[11px] font-medium transition-colors text-center " +
+    (active
+      ? "bg-indigo-600 text-white ring-1 ring-indigo-600"
+      : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 hover:text-indigo-700 dark:hover:text-indigo-200");
+
+  const canSave = !saving && deployed.size > 0 && contiguous;
+
+  const onSave = useCallback(async (): Promise<void> => {
+    if (deployed.size === 0) {
+      toast.warning("Pick at least one module to deploy");
+      return;
+    }
+    if (isSubset && !contiguous) {
+      toast.warning(
+        "Modules must be contiguous",
+        "Pick a continuous range — e.g. Reading & Writing (M1–M2) or Math (M1–M2).",
+      );
+      return;
+    }
+    const first = deployedSorted[0];
+    const last = deployedSorted[deployedSorted.length - 1];
+    // A strict subset encodes the range in the link URL as `?m=<first>-<last>`
+    // so it launches its own run with its own report (0156). A full selection
+    // uses the plain /test/<slug> link.
+    const newUrl =
+      isSubset && first != null
+        ? `${testRunPath(slug)}?m=${first}-${last}`
+        : testRunPath(slug);
+    setSaving(true);
+    try {
+      const { error } = await supabase
+        .from("module_items")
+        .update({ url: newUrl })
+        .eq("id", item.id);
+      if (error) {
+        toast.error("Couldn't update modules", error.message);
+        return;
+      }
+      toast.success(
+        "Modules updated",
+        isSubset ? `${item.title} · modules ${first}–${last}` : `${item.title} · full test`,
+      );
+      onSaved();
+      onClose();
+    } finally {
+      setSaving(false);
+    }
+  }, [
+    deployed.size,
+    isSubset,
+    contiguous,
+    deployedSorted,
+    slug,
+    item.id,
+    item.title,
+    onSaved,
+    onClose,
+    toast,
+  ]);
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="edit-test-modules-title"
+      className="fixed inset-0 z-[60] flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        ref={panelRef}
+        className="w-full max-w-md max-h-[85vh] overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <header className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h2
+              id="edit-test-modules-title"
+              className="text-lg font-semibold text-slate-900 dark:text-slate-100 truncate"
+            >
+              Edit modules
+            </h2>
+            <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{item.title}</p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
+          >
+            ✕
+          </button>
+        </header>
+
+        {!loaded ? (
+          <SkeletonRows count={4} rowClassName="h-10" />
+        ) : modules.length === 0 ? (
+          <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
+            Couldn't load this test's modules.
+          </p>
+        ) : (
+          <div className="space-y-2.5">
+            <div className="space-y-1.5 rounded-md ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-2.5">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <span className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  Modules to deploy
+                </span>
+                <div className="flex gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setBySection("all")}
+                    aria-pressed={deployed.size === modules.length}
+                    disabled={saving}
+                    className={chipClass(deployed.size === modules.length)}
+                  >
+                    All
+                  </button>
+                  {sections.includes("reading-writing") && (
+                    <button
+                      type="button"
+                      onClick={() => setBySection("reading-writing")}
+                      aria-pressed={sectionActive("reading-writing")}
+                      disabled={saving}
+                      className={chipClass(sectionActive("reading-writing"))}
+                    >
+                      R&amp;W only
+                    </button>
+                  )}
+                  {sections.includes("math") && (
+                    <button
+                      type="button"
+                      onClick={() => setBySection("math")}
+                      aria-pressed={sectionActive("math")}
+                      disabled={saving}
+                      className={chipClass(sectionActive("math"))}
+                    >
+                      Math only
+                    </button>
+                  )}
+                </div>
+              </div>
+              <ul className="space-y-0.5">
+                {modules.map((m) => {
+                  const on = deployed.has(m.position);
+                  return (
+                    <li key={m.position}>
+                      <label
+                        className={
+                          "flex items-center gap-2 rounded-md px-1.5 py-1.5 text-sm cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60 " +
+                          (on ? "" : "opacity-50")
+                        }
+                      >
+                        <input
+                          type="checkbox"
+                          checked={on}
+                          onChange={() => toggleModule(m.position)}
+                          disabled={saving}
+                          className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                          aria-label={`Deploy ${m.label}`}
+                        />
+                        <span className="font-medium text-slate-800 dark:text-slate-200">
+                          {m.label}
+                        </span>
+                        <span className="text-[11px] text-slate-400 dark:text-slate-500">
+                          {m.section === "math" ? "Math" : "R&W"} · {m.question_count}q ·{" "}
+                          {Math.round(m.time_limit_seconds / 60)}m
+                        </span>
+                      </label>
+                    </li>
+                  );
+                })}
+              </ul>
+              {deployed.size > 0 && !contiguous && (
+                <p className="text-[11px] text-amber-700 dark:text-amber-300">
+                  Pick a continuous range — e.g. R&amp;W (M1–M2) or Math (M1–M2).
+                </p>
+              )}
+            </div>
+
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+              Changing the modules affects students who haven't taken it yet;
+              students who already submitted keep their existing result.
+            </p>
+
+            <div className="flex items-center justify-end gap-2 pt-1">
+              <button
+                type="button"
+                onClick={onClose}
+                disabled={saving}
+                className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => void onSave()}
+                disabled={!canSave}
+                className="rounded-md px-3 py-1.5 text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {saving ? "Saving…" : "Save"}
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
