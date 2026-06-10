@@ -1,5 +1,30 @@
 # Session Recap
 
+## Test occurrences — per-module deployment finalized + verified (2026-06-10) — DEPLOYED
+
+The "assign a test per module" model is complete and verified end-to-end. An
+occurrence = a Modules link with `{module range (?m=first-last), available-from
+date, title}`, each its own run + report, scoped per course.
+
+- **0161** `window_dates_only` — the link's range is the sole deployment truth;
+  `test_module_windows` now carries only the open DATE (unifies the two old
+  mechanisms; #3).
+- **0162** `set_module_open_date` — one "Available from" date per occurrence,
+  set from the Add/Edit-modules modal. Retired the per-module `TestScheduleEditor`.
+- **Module-item edit functions** — each item's ellipsis has Rename (now opens the
+  field directly via `InlineRename` `autoEdit`) + Edit modules (rewrites `?m=`).
+- **Fixes:** student subset link 404 (`?m=` was URL-encoded into the slug in
+  `ModuleItemRowView`); single-module subset misleading scaled score (suppressed
+  for incomplete sections in `satScore`); runner intro now scopes to the run's
+  range; course-card kebab clipped by `overflow-hidden`.
+- **Verified:** new `viewer/scripts/verify-subset-deployment.mjs` drives BOTH
+  occurrences against the REAL Class B + `dsat-june-2026-asia` via a disposable
+  enrolled student (9/9: M1=27 RW only, M2 independent run, re-open returns the
+  right report). smoke-subset-runs 8/8, windows 18/18, clickthrough 42/0.
+  Data: Class B's "Module 1" link was a legacy plain link (full test) → forced
+  to `?m=1-1`.
+
+
 ## Branch `feat/line-integration` (2026-06-10) — LINE Official Account binding + notifications — DEPLOYED
 
 Bind a LINE account (students, teachers, guardians) so the LMS pushes reminders,
