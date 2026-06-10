@@ -1,5 +1,43 @@
 # Session Recap
 
+## Branch `feat/test-access-policy` (2026-06-10) — test access/retakes, underline, mobile UX
+
+Worked on a NON-production branch (nothing pushed to main; migration 0141 + the
+underline data seed are NOT applied to Remote — they run on merge).
+
+- **Test access + retakes — migration 0141 (NOT applied; applies on merge).**
+  (a) Enrollment gate on `start_test`: a non-staff caller must be enrolled in a
+  course that links the test, else `not_enrolled` (gates take + resume; staff
+  exempt). Closes the bookmarked-`/test/<slug>` hole — a student removed from a
+  course (or whose course was deleted) can no longer take/continue, but their
+  OWN released result stays viewable (`get_test_result` is ownership-based).
+  (b) Per-test `tests.retake_policy` (`one_attempt` default | `unlimited`
+  practice) + staff toggle on the test-overview header. Smoke:
+  `scripts/smoke-test-access.mjs` (kept out of smoke-all until applied).
+- **Underline rendering + data.** `passageRender` now renders author `<u>…</u>`
+  offset-safely (inner text stays highlightable). OCR + the Canvas QTI both
+  dropped the underline from 15 questions that ask about "the underlined
+  portion/sentence/claim". `scripts/seed-underline-spans.mjs` (anchor-based,
+  idempotent, exact-by-construction) restores the 14 PROSE spans — each read
+  from its source page PDF; **dry-run 14/14 exact-match**. NOT run on the branch
+  (it UPDATEs live content; apply on merge). nov-2023 1-11 is excluded (its
+  "underlined claim" is baked into the graph image, not text-fixable).
+- **Mobile UX pass — 25 student files, 3 commits.** 16px inputs (no iOS
+  auto-zoom), >=44px tap targets, narrow-screen stacking across the first page +
+  auth, shell/bottom-nav, full-test runner, assignment runner, course/dashboard,
+  counseling cards, inbox, account. Mobile-first with `sm:`/`md:` guards so
+  desktop is unchanged. (Audited via a workflow; fixes applied directly after a
+  server rate limit blocked the subagent fix phase. Codebase was already largely
+  mobile-aware, so only genuine gaps were changed.)
+- **Courses card text selection.** `CourseCard` renders the clickable card as a
+  `role="button"` div with `select-text` (not a native `<button>`, whose text is
+  unselectable), so course names/codes can be copied; a plain click still
+  navigates, a drag-select doesn't.
+
+To ship: merge -> `cd viewer && npm run db:push` (applies 0141) -> `npm run
+smoke:test-access` -> `node --env-file-if-exists=../.env scripts/seed-underline-spans.mjs`
+(applies the underline spans) -> add `smoke:test-access` to `smoke-all.mjs`.
+
 ## Latest (2026-06-09) — autonomous polish pass: reusable hooks, student UX, keyboard a11y
 
 A self-directed improvement run in the student / shared-hooks / admin layer
