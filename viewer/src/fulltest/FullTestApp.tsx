@@ -316,7 +316,20 @@ function FullTestRunner() {
     let alive = true;
     (async () => {
       try {
-        const s = await startTest(slug);
+        // A subset link is `/test/<slug>?m=<first>-<last>` — scope the run to
+        // that module range so it's an independent attempt (0156). No ?m = the
+        // full test / metered run.
+        const mParam = new URLSearchParams(location.search).get("m");
+        let mFirst: number | null = null;
+        let mLast: number | null = null;
+        if (mParam && /^\d+-\d+$/.test(mParam)) {
+          const [f, l] = mParam.split("-").map((n) => Number.parseInt(n, 10));
+          if (Number.isFinite(f) && Number.isFinite(l)) {
+            mFirst = f;
+            mLast = l;
+          }
+        }
+        const s = await startTest(slug, mFirst, mLast);
         if (!alive) return;
         setStart(s);
         // Don't fetch the result here — the "result" phase render decides what
@@ -331,7 +344,7 @@ function FullTestRunner() {
     return () => {
       alive = false;
     };
-  }, [slug]);
+  }, [slug, location.search]);
 
   // --- load a module --------------------------------------------------------
   const loadModule = useCallback(

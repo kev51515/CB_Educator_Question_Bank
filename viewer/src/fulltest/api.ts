@@ -54,8 +54,19 @@ function mapError(
   return new TestApiError(code, FRIENDLY[code], error?.details ?? error?.hint ?? undefined);
 }
 
-export async function startTest(slug: string): Promise<StartTestResult> {
-  const { data, error } = await supabase.rpc("start_test", { p_slug: slug });
+export async function startTest(
+  slug: string,
+  first?: number | null,
+  last?: number | null,
+): Promise<StartTestResult> {
+  // first/last scope the run to a module subset (a `?m=<first>-<last>` link),
+  // so the same test assigned for different modules launches independent runs
+  // (0156). Omitted = the full test / metered single run (unchanged behavior).
+  const { data, error } = await supabase.rpc("start_test", {
+    p_slug: slug,
+    p_first: first ?? null,
+    p_last: last ?? null,
+  });
   if (error) throw mapError(error);
   return data as StartTestResult;
 }

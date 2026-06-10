@@ -899,7 +899,7 @@ function ModuleCard({
                   // the per-test OVERVIEW (results + live status), same tab.
                   <Link
                     to={`${testOverviewPath(
-                      item.url.slice(6).split("/")[0],
+                      item.url.slice(6).split("/")[0].split("?")[0],
                     )}?course=${classId}`}
                     title="Open the proctor view — results & live status"
                     className="flex-1 text-sm text-indigo-600 dark:text-indigo-400 hover:underline truncate"
