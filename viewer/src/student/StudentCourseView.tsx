@@ -33,6 +33,12 @@ import { useProfile } from "@/lib/profile";
 import { StudentCounselingProfileCard } from "./counseling/StudentCounselingProfileCard";
 import { StudentCollegeListCard } from "./counseling/StudentCollegeListCard";
 import { StudentCounselingTasksCard } from "./counseling/StudentCounselingTasksCard";
+import { PlayerProfileCard } from "./pickleball/PlayerProfileCard";
+import { PlayerLessonsTimeline } from "./pickleball/PlayerLessonsTimeline";
+import { CoachProfileCard } from "./pickleball/CoachProfileCard";
+import { CoachDevelopmentCard } from "./pickleball/CoachDevelopmentCard";
+import { CoachHoursCard } from "./pickleball/CoachHoursCard";
+import { ChatPanel } from "@/components/pickleball/ChatPanel";
 import {
   type AssignmentMeta,
   type CourseRow,
@@ -439,8 +445,11 @@ export function StudentCourseView(): JSX.Element {
                 )}
               </div>
 
-              {/* SAT/class quick-stats — not meaningful for a counseling course. */}
-              {course.course_type !== "counseling" && (
+              {/* SAT/class quick-stats — not meaningful for a counseling or
+                  pickleball course. */}
+              {course.course_type !== "counseling" &&
+                course.course_type !== "pickleball_player" &&
+                course.course_type !== "pickleball_coach" && (
               <div
                 className="grid grid-cols-1 sm:grid-cols-2 gap-3"
                 role="group"
@@ -517,10 +526,37 @@ export function StudentCourseView(): JSX.Element {
               </section>
             )}
 
+            {/* Pickleball — Players track: profile + lessons timeline + chat. */}
+            {course.course_type === "pickleball_player" && profile?.id && (
+              <section className="space-y-4">
+                <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+                  My pickleball
+                </h2>
+                <PlayerProfileCard courseId={course.id} studentId={profile.id} />
+                <PlayerLessonsTimeline courseId={course.id} studentId={profile.id} />
+                <ChatPanel courseId={course.id} selfId={profile.id} canModerate={false} />
+              </section>
+            )}
+
+            {/* Pickleball — Coaches track: profile + development + hours + chat. */}
+            {course.course_type === "pickleball_coach" && profile?.id && (
+              <section className="space-y-4">
+                <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+                  My coaching
+                </h2>
+                <CoachProfileCard courseId={course.id} studentId={profile.id} />
+                <CoachDevelopmentCard courseId={course.id} studentId={profile.id} />
+                <CoachHoursCard courseId={course.id} studentId={profile.id} />
+                <ChatPanel courseId={course.id} selfId={profile.id} />
+              </section>
+            )}
+
             {modules.length === 0 ? (
-              // Counseling courses are driven by the counseling section above,
+              // Counseling + pickleball courses are driven by the sections above,
               // not modules — don't show a "nothing published" modules notice.
-              course.course_type === "counseling" ? null : (
+              course.course_type === "counseling" ||
+              course.course_type === "pickleball_player" ||
+              course.course_type === "pickleball_coach" ? null : (
                 <div className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 p-8 text-center space-y-2">
                   <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
                     Nothing published yet

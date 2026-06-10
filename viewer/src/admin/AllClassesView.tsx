@@ -16,7 +16,12 @@ import { supabase } from "@/lib/supabase";
 import { DuplicateCourseModal } from "@/teacher/DuplicateCourseModal";
 import { ClassFormModal, type EditableClass } from "@/teacher/ClassFormModal";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
-import type { CourseType } from "@/teacher/useTeacherClasses";
+import {
+  courseTypeLabel,
+  isPickleball,
+  normalizeCourseType,
+  type CourseType,
+} from "@/teacher/useTeacherClasses";
 import {
   CourseCard,
   EmptyState,
@@ -171,7 +176,7 @@ export function AllClassesView() {
           // bare course URL; classes go straight to Modules.
           if (shortCode) {
             navigate(
-              inlineType === "counseling"
+              inlineType === "counseling" || isPickleball(inlineType)
                 ? coursePath(shortCode)
                 : courseModulesPath(shortCode),
             );
@@ -223,7 +228,7 @@ export function AllClassesView() {
         join_code: row.join_code,
         archived: row.archived,
         is_template: row.is_template ?? false,
-        course_type: row.course_type === "counseling" ? "counseling" : "class",
+        course_type: normalizeCourseType(row.course_type),
         created_at: row.created_at,
         teacher_id: row.teacher_id,
         teacher_name: row.teacher?.display_name ?? null,
@@ -383,6 +388,8 @@ export function AllClassesView() {
                   {([
                     { value: "class", title: "Class", blurb: "SAT prep" },
                     { value: "counseling", title: "Counseling", blurb: "College advising" },
+                    { value: "pickleball_player", title: "Pickleball: Players", blurb: "Coach players" },
+                    { value: "pickleball_coach", title: "Pickleball: Coaches", blurb: "Develop coaches" },
                   ] as const).map((opt) => {
                     const active = inlineType === opt.value;
                     return (
@@ -614,7 +621,11 @@ function AdminCourseCardRow({
       muted={archivedOpt && !course.is_template}
       onClick={onNavigate}
       ariaLabel={`Open course ${course.name}`}
-      tag={course.course_type === "counseling" ? "Counseling" : undefined}
+      tag={
+        course.course_type === "class"
+          ? undefined
+          : courseTypeLabel(normalizeCourseType(course.course_type))
+      }
       status={{ label: statusLabel, tone }}
       kebab={kebab}
       meta={

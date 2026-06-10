@@ -62,6 +62,18 @@ import { QuickCreatePalette } from "./QuickCreatePalette";
 import { ROUTES, classPath, coursePath } from "@/lib/routes";
 import { SkeletonRows } from "@/components/Skeleton";
 import { useToast } from "@/components/Toast";
+import { isPickleball } from "./useTeacherClasses";
+import {
+  PlayersPanel,
+  LessonsPanel,
+  ProgramsPanel,
+  CoachesPanel,
+  CertificationsPanel,
+  DevelopmentPanel,
+  HoursPanel,
+  CoachProgramsPanel,
+} from "@/teacher/pickleball";
+import { ChatPanel } from "@/components/pickleball/ChatPanel";
 
 interface RegeneratedClassRow {
   id: string;
@@ -105,6 +117,18 @@ const TABS: ReadonlyArray<TabDef> = [
   // Resources
   { to: "materials", label: "Materials" },
   { to: "portfolio", label: "Portfolio" },
+  // Pickleball — player track
+  { to: "players", label: "Players" },
+  { to: "lessons", label: "Lessons" },
+  { to: "programs", label: "Programs" },
+  // Pickleball — coach track
+  { to: "coaches", label: "Coaches" },
+  { to: "certifications", label: "Certifications" },
+  { to: "development", label: "Development" },
+  { to: "hours", label: "Hours" },
+  { to: "coach-programs", label: "Programs" },
+  // Pickleball — shared
+  { to: "chat", label: "Chat" },
   // Manage
   { to: "settings", label: "Settings" },
 ];
@@ -125,7 +149,38 @@ export function ClassLayout() {
 
   // Portfolio is a counseling surface — only on counseling courses (0133).
   const isCounseling = cls?.course_type === "counseling";
+  const courseType = cls?.course_type ?? "class";
+  const isPickle = isPickleball(courseType);
+  const isPicklePlayer = courseType === "pickleball_player";
+  const isPickleCoach = courseType === "pickleball_coach";
   const visibleTabs = useMemo(() => {
+    if (isPicklePlayer || isPickleCoach) {
+      const byTo = new Map(TABS.map((t) => [t.to, t]));
+      const PICKLE_PLAYER_ORDER = [
+        "players",
+        "lessons",
+        "programs",
+        "roster",
+        "chat",
+        "announcements",
+        "materials",
+        "settings",
+      ];
+      const PICKLE_COACH_ORDER = [
+        "coaches",
+        "certifications",
+        "development",
+        "hours",
+        "coach-programs",
+        "roster",
+        "chat",
+        "announcements",
+        "materials",
+        "settings",
+      ];
+      const order = isPicklePlayer ? PICKLE_PLAYER_ORDER : PICKLE_COACH_ORDER;
+      return order.map((to) => byTo.get(to)).filter((t): t is TabDef => !!t);
+    }
     if (isCounseling) {
       // Counseling courses get a purpose-built IA, not the class order. The
       // student's mental model is: see the overall plan first (Modules =
@@ -155,7 +210,7 @@ export function ClassLayout() {
       if (t.to === "portfolio" || t.to === "caseload") return false;
       return true;
     });
-  }, [canQbank, isCounseling]);
+  }, [canQbank, isCounseling, isPicklePlayer, isPickleCoach]);
 
   // Publish the real course name to the global breadcrumb bar. NO-OPs until
   // both key + label are truthy, so calling it unconditionally before the
@@ -444,7 +499,18 @@ export function ClassLayout() {
             <Route
               index
               element={
-                <Navigate to={isCounseling ? "caseload" : "modules"} replace />
+                <Navigate
+                  to={
+                    isPicklePlayer
+                      ? "players"
+                      : isPickleCoach
+                        ? "coaches"
+                        : isCounseling
+                          ? "caseload"
+                          : "modules"
+                  }
+                  replace
+                />
               }
             />
             <Route path="modules" element={<ModulesPage />} />
@@ -492,6 +558,103 @@ export function ClassLayout() {
               element={
                 canQbank && !isCounseling ? (
                   <ClassSkillsView />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            {/* Pickleball — player track */}
+            <Route
+              path="players"
+              element={
+                isPicklePlayer ? (
+                  <PlayersPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="lessons"
+              element={
+                isPicklePlayer ? (
+                  <LessonsPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="programs"
+              element={
+                isPicklePlayer ? (
+                  <ProgramsPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            {/* Pickleball — coach track */}
+            <Route
+              path="coaches"
+              element={
+                isPickleCoach ? (
+                  <CoachesPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="certifications"
+              element={
+                isPickleCoach ? (
+                  <CertificationsPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="development"
+              element={
+                isPickleCoach ? (
+                  <DevelopmentPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="hours"
+              element={
+                isPickleCoach ? (
+                  <HoursPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="coach-programs"
+              element={
+                isPickleCoach ? (
+                  <CoachProgramsPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            {/* Pickleball — shared community chat (staff can moderate) */}
+            <Route
+              path="chat"
+              element={
+                isPickle ? (
+                  <ChatPanel
+                    courseId={cls.id}
+                    selfId={profile?.id ?? ""}
+                    canModerate
+                  />
                 ) : (
                   <Navigate to={classPath(cls.short_code)} replace />
                 )

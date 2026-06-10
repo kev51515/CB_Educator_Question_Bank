@@ -15,7 +15,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProfile } from "@/lib/profile";
 import { canAccessQuestionBank } from "@/lib/access";
-import { useTeacherClasses, type TeacherClass } from "@/teacher/useTeacherClasses";
+import {
+  courseTypeLabel,
+  useTeacherClasses,
+  type TeacherClass,
+} from "@/teacher/useTeacherClasses";
 import {
   coursePath,
   courseAssignmentsPath,
@@ -221,7 +225,11 @@ function DashboardCard({
       paletteSeed={course.id}
       name={course.name}
       description={course.description}
-      tag={course.course_type === "counseling" ? "Counseling" : undefined}
+      tag={
+        course.course_type === "class"
+          ? undefined
+          : courseTypeLabel(course.course_type)
+      }
       metrics={[
         {
           label: course.member_count === 1 ? "student" : "students",

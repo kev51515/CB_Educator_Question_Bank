@@ -485,6 +485,8 @@ export function CourseSettings() {
             {([
               { value: "class", title: "Class", blurb: "Modules, assignments, grades, skills." },
               { value: "counseling", title: "Counseling", blurb: "Portfolio, caseload, college advising." },
+              { value: "pickleball_player", title: "Pickleball: Players", blurb: "Coach players — profiles, lessons, recaps, programs, chat." },
+              { value: "pickleball_coach", title: "Pickleball: Coaches", blurb: "Develop coaches — certifications, hours, programs taught, chat." },
             ] as const).map((opt) => {
               const active = cls.course_type === opt.value;
               return (

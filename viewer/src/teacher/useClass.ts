@@ -11,7 +11,7 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import type { TeacherClass } from "./useTeacherClasses";
+import { normalizeCourseType, type TeacherClass } from "./useTeacherClasses";
 
 export interface UseClass {
   cls: TeacherClass | null;
@@ -104,7 +104,7 @@ export function useClass(classId: string | null | undefined): UseClass {
         join_code: row.join_code,
         archived: row.archived,
         is_template: row.is_template ?? false,
-        course_type: row.course_type === "counseling" ? "counseling" : "class",
+        course_type: normalizeCourseType(row.course_type),
         created_at: row.created_at,
         updated_at: row.updated_at,
         member_count: row.course_memberships?.[0]?.count ?? 0,

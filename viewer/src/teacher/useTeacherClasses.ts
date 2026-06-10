@@ -11,8 +11,55 @@
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
-/** A normal teaching Class vs a college/career Counseling course (0133). */
-export type CourseType = "class" | "counseling";
+/**
+ * A normal teaching Class, a college/career Counseling course (0133), or one of
+ * the two Pickleball coaching course types (0150). course_type drives which
+ * tabs/features each course surfaces.
+ */
+export type CourseType =
+  | "class"
+  | "counseling"
+  | "pickleball_player"
+  | "pickleball_coach";
+
+/** Set of recognised course_type values for normalizing raw DB strings. */
+const COURSE_TYPES: readonly CourseType[] = [
+  "class",
+  "counseling",
+  "pickleball_player",
+  "pickleball_coach",
+];
+
+/**
+ * Coerce a raw `course_type` string from the DB into the typed union. Unknown
+ * values fall back to "class" (the historical default). Keeps all four valid
+ * values intact — do NOT collapse pickleball/counseling to class.
+ */
+export function normalizeCourseType(raw: string | null | undefined): CourseType {
+  return (COURSE_TYPES as readonly string[]).includes(raw ?? "")
+    ? (raw as CourseType)
+    : "class";
+}
+
+/** User-facing label for a course_type (Vocabulary canon). */
+export function courseTypeLabel(type: CourseType): string {
+  switch (type) {
+    case "counseling":
+      return "Counseling";
+    case "pickleball_player":
+      return "Pickleball: Players";
+    case "pickleball_coach":
+      return "Pickleball: Coaches";
+    case "class":
+    default:
+      return "Class";
+  }
+}
+
+/** True for either pickleball course type. */
+export function isPickleball(type: CourseType): boolean {
+  return type === "pickleball_player" || type === "pickleball_coach";
+}
 
 export interface TeacherClass {
   id: string;
@@ -99,7 +146,7 @@ export function useTeacherClasses(teacherId: string | null): UseTeacherClasses {
         join_code: row.join_code,
         archived: row.archived,
         is_template: row.is_template ?? false,
-        course_type: row.course_type === "counseling" ? "counseling" : "class",
+        course_type: normalizeCourseType(row.course_type),
         created_at: row.created_at,
         updated_at: row.updated_at,
         member_count: row.course_memberships?.[0]?.count ?? 0,

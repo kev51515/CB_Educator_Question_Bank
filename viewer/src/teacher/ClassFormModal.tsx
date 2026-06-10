@@ -650,6 +650,8 @@ export function ClassFormModal({
                   {([
                     { value: "class", title: "Class", blurb: "SAT prep — modules, assignments, grades, skills." },
                     { value: "counseling", title: "Counseling", blurb: "College & career — portfolio, applications, advising." },
+                    { value: "pickleball_player", title: "Pickleball: Players", blurb: "Coach players — profiles, lessons, recaps, programs, chat." },
+                    { value: "pickleball_coach", title: "Pickleball: Coaches", blurb: "Develop coaches — certifications, hours, programs taught, chat." },
                   ] as const).map((opt) => {
                     const active = courseType === opt.value;
                     return (

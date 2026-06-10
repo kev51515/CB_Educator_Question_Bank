@@ -28,7 +28,7 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import type { CourseType } from "./useTeacherClasses";
+import { normalizeCourseType, type CourseType } from "./useTeacherClasses";
 
 // --- Public types ----------------------------------------------------------
 
@@ -300,8 +300,7 @@ export function useStudentProfile(
         id: resolvedCourse.id,
         short_code: resolvedCourse.short_code,
         name: resolvedCourse.name,
-        course_type:
-          resolvedCourse.course_type === "counseling" ? "counseling" : "class",
+        course_type: normalizeCourseType(resolvedCourse.course_type),
       });
     } catch (err: unknown) {
       setHeaderError(getErrorMessage(err, "Failed to load course."));
