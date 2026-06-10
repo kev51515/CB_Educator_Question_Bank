@@ -11,6 +11,8 @@ export interface TestRow {
   title: string;
   short_title: string | null;
   total_questions: number | null;
+  /** 0141: 'one_attempt' (default; teacher grants extra) | 'unlimited' (practice). */
+  retake_policy: "one_attempt" | "unlimited";
 }
 export interface ModuleRow {
   position: number;
