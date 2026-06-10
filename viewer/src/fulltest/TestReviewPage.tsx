@@ -17,11 +17,12 @@
  * answer-key walkthrough. Full-screen takeover for projector/tablet use.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useBreadcrumbLabel } from "@/components";
 import { Skeleton } from "@/components/Skeleton";
 import { testOverviewPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
+import { ReferenceSheet } from "./ReferenceSheet";
 import { ReviewHeatmap } from "./ReviewHeatmap";
 import { ClassComparison } from "./ClassComparison";
 import { ModuleTabs } from "./ModuleTabs";
@@ -65,6 +66,20 @@ function writeReviewClass(slug: string, courseId: string | null): void {
 export function TestReviewPage(): JSX.Element {
   const { slug = "" } = useParams();
   const navigate = useNavigate();
+  // Occurrence context, passed from the course's test link / overview:
+  //   ?course=<id> pre-selects that course's class results (no cross-course mix)
+  //   ?m=<first>-<last> scopes the answer key + stats to that module range
+  // so a Module-1-only assignment reviews as Module 1 only, for that course.
+  const [searchParams] = useSearchParams();
+  const courseParam = searchParams.get("course");
+  const moduleRange = useMemo(() => {
+    const m = searchParams.get("m");
+    if (m && /^\d+-\d+$/.test(m)) {
+      const [f, l] = m.split("-").map((n) => Number.parseInt(n, 10));
+      if (Number.isFinite(f) && Number.isFinite(l)) return { first: f, last: l };
+    }
+    return null;
+  }, [searchParams]);
 
   const [modules, setModules] = useState<TestContentModule[]>([]);
   const [title, setTitle] = useState("");
@@ -79,6 +94,7 @@ export function TestReviewPage(): JSX.Element {
   const [forceStacked, setForceStacked] = useState(false);
   // "Explain" toggle: reveal per-choice rationale (which word is wrong + why).
   const [showRationale, setShowRationale] = useState(false);
+  const [refOpen, setRefOpen] = useState(false);
   // Whole-test class heatmap overlay (% correct per question, click to jump).
   const [heatmapOpen, setHeatmapOpen] = useState(false);
   // Cross-class comparison overlay (per-domain % correct, one column per class).
@@ -103,7 +119,15 @@ export function TestReviewPage(): JSX.Element {
       .then((tc) => {
         if (!alive) return;
         setTitle(tc.title);
-        setModules(tc.modules);
+        // Scope to the occurrence's module range so the answer key, nav, tabs,
+        // per-question stats + heatmap all show only the assigned modules.
+        setModules(
+          moduleRange
+            ? tc.modules.filter(
+                (m) => m.position >= moduleRange.first && m.position <= moduleRange.last,
+              )
+            : tc.modules,
+        );
       })
       .catch((e: unknown) => {
         if (alive) setError(e instanceof Error ? e.message : "Test not found.");
@@ -114,7 +138,7 @@ export function TestReviewPage(): JSX.Element {
     return () => {
       alive = false;
     };
-  }, [slug]);
+  }, [slug, moduleRange]);
 
   // --- load reviewable classes; inherit the educator's last class for this
   // test, else default to the one with the most submitters ---
@@ -127,7 +151,8 @@ export function TestReviewPage(): JSX.Element {
         setCourses(cs);
         const saved = readReviewClass(slug);
         const pick =
-          cs.find((c) => c.course_id === saved) ?? // honour their last choice
+          cs.find((c) => c.course_id === courseParam) ?? // course we came in through (deep-link)
+          cs.find((c) => c.course_id === saved) ?? // else their last choice
           cs.find((c) => c.taken > 0) ?? // else the class that actually sat it
           cs[0] ?? // else whatever's linked
           null;
@@ -139,7 +164,7 @@ export function TestReviewPage(): JSX.Element {
     return () => {
       alive = false;
     };
-  }, [slug]);
+  }, [slug, courseParam]);
 
   // --- load the chosen class's answers ---
   useEffect(() => {
@@ -251,6 +276,17 @@ export function TestReviewPage(): JSX.Element {
             <span className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">
               {title || "Loading…"}
             </span>
+            {moduleRange && (
+              <span
+                className="inline-flex flex-none items-center rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900"
+                title="Scoped to this course's assigned modules"
+              >
+                {modules.length === 1 && modules[0]
+                  ? modules[0].label
+                  : `Modules ${moduleRange.first}–${moduleRange.last}`}{" "}
+                only
+              </span>
+            )}
           </div>
 
           <div className="ml-auto flex items-center gap-2">
@@ -390,6 +426,25 @@ export function TestReviewPage(): JSX.Element {
                 <path d="M12 16v-4M12 8h.01" />
               </svg>
               Explain
+            </button>
+
+            {/* Math reference sheet — the standard SAT formula card, on demand. */}
+            <button
+              type="button"
+              onClick={() => setRefOpen((v) => !v)}
+              aria-pressed={refOpen}
+              title="Math reference sheet"
+              className={`inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-colors ${
+                refOpen
+                  ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300"
+                  : "text-slate-600 hover:bg-slate-200/60 dark:text-slate-300 dark:hover:bg-slate-800"
+              }`}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+              Reference
             </button>
 
             {/* Whole-test class heatmap (% correct per question, click to jump). */}
@@ -677,6 +732,7 @@ export function TestReviewPage(): JSX.Element {
           onClose={() => setCompareOpen(false)}
         />
       )}
+      <ReferenceSheet open={refOpen} onClose={() => setRefOpen(false)} />
     </div>
   );
 }

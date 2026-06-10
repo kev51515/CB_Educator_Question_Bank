@@ -12,15 +12,16 @@
  * hits zero the module auto-submits. Resuming re-enters at the server's
  * `current_module` with the server-authoritative remaining time.
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useToast } from "@/components";
+import { Skeleton, useToast } from "@/components";
 import { ROUTES } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
 import { captureError, trackEvent } from "@/lib/telemetry";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
+import { ReferenceSheet } from "./ReferenceSheet";
 import { QuestionPane } from "./QuestionPane";
 import { TestPreviewRunner } from "./TestPreviewRunner";
 import { ProctorChat } from "./ProctorChat";
@@ -230,6 +231,7 @@ function FullTestRunner() {
 
   const [result, setResult] = useState<TestResult | null>(null);
   const [calcOpen, setCalcOpen] = useState(false);
+  const [refOpen, setRefOpen] = useState(false);
   const [confirmExit, setConfirmExit] = useState(false);
   const [notesOpen, setNotesOpen] = useState(false);
   // Active highlighter color (null = highlighter off). Picked from HighlighterBar.
@@ -1000,6 +1002,66 @@ function FullTestRunner() {
     [runId, moduleMeta, proctorOn, questions],
   );
 
+  // Count answered questions in the active module. Recomputed only when the
+  // questions set or the answers map changes — not on every unrelated render
+  // (timer tick, highlighter toggle, nav-panel open). Behavior-identical to
+  // the prior inline `questions.filter((qq) => answers[qq.id]).length`.
+  const answeredCount = useMemo(
+    () => questions.filter((qq) => answers[qq.id]).length,
+    [questions, answers],
+  );
+
+  // Mark-for-review toggle. Memoized so the QuestionPane's onToggleMark prop is
+  // stable across renders that don't touch its deps. Behavior preserved exactly
+  // (read prior membership for the flag/unflag action log, then flip the set).
+  const toggleMark = useCallback(
+    (qid: string) => {
+      const wasMarked = marked.has(qid);
+      setMarked((prev) => {
+        const n = new Set(prev);
+        if (n.has(qid)) n.delete(qid);
+        else n.add(qid);
+        return n;
+      });
+      if (runId && proctorOn) {
+        const question = questions.find((qq) => qq.id === qid)?.number;
+        void logAction(runId, wasMarked ? "unflag" : "flag", {
+          question,
+          module: moduleMeta?.position,
+        });
+      }
+    },
+    [marked, runId, proctorOn, questions, moduleMeta],
+  );
+
+  // Strikethrough (eliminate-choice) toggle. Memoized for a stable prop; exact
+  // same behavior — flip the per-question eliminated set, log the action, and
+  // clear the selection if the student crossed out their currently-chosen
+  // answer (so an eliminated choice is never submitted as the response).
+  const toggleEliminate = useCallback(
+    (qid: string, letter: Letter) => {
+      const wasStruck = eliminated[qid]?.has(letter) ?? false;
+      setEliminated((prev) => {
+        const cur = new Set(prev[qid] ?? []);
+        if (cur.has(letter)) cur.delete(letter);
+        else cur.add(letter);
+        return { ...prev, [qid]: cur };
+      });
+      if (runId && proctorOn) {
+        const question = questions.find((qq) => qq.id === qid)?.number;
+        void logAction(runId, wasStruck ? "uneliminate" : "eliminate", {
+          question,
+          module: moduleMeta?.position,
+          meta: { choice: letter },
+        });
+      }
+      // Crossing out the choice the student had selected clears that selection,
+      // so an eliminated answer is never silently submitted as their response.
+      if (!wasStruck && answers[qid] === letter) setAnswer(qid, null);
+    },
+    [eliminated, runId, proctorOn, questions, moduleMeta, answers, setAnswer],
+  );
+
   // --- render ---------------------------------------------------------------
   if (endedByProctor) {
     return (
@@ -1072,7 +1134,22 @@ function FullTestRunner() {
   }
 
   if (phase === "loading") {
-    return <CenterCard><Spinner label="Loading…" /></CenterCard>;
+    // Skeleton mirroring the intro card (eyebrow · title · blurb · module rows
+    // · CTA) instead of "Loading…" text, per the project's UX bar.
+    return (
+      <CenterCard wide>
+        <Skeleton className="h-3.5 w-40 rounded" />
+        <Skeleton className="mt-2 h-7 w-3/4 rounded" />
+        <Skeleton className="mt-3 h-4 w-full rounded" />
+        <Skeleton className="mt-1.5 h-4 w-5/6 rounded" />
+        <div className="mt-5 space-y-2">
+          <Skeleton className="h-11 w-full rounded-lg" />
+          <Skeleton className="h-11 w-full rounded-lg" />
+          <Skeleton className="h-11 w-full rounded-lg" />
+        </div>
+        <Skeleton className="mt-6 h-12 w-full rounded-xl" />
+      </CenterCard>
+    );
   }
 
   if (phase === "error") {
@@ -1097,7 +1174,17 @@ function FullTestRunner() {
     // Wait until we know the role (and the fetched result) before deciding —
     // avoids flashing the student screen to someone who can see results.
     if (profileLoading || (canSeeResult && !result)) {
-      return <CenterCard><Spinner label="Processing your test…" /></CenterCard>;
+      // Skeleton mirroring the result/submitted card (badge circle · title ·
+      // blurb · CTA) instead of "Processing your test…" text, per the UX bar.
+      return (
+        <CenterCard>
+          <Skeleton className="mx-auto mb-4 h-14 w-14 rounded-full" />
+          <Skeleton className="mx-auto h-7 w-2/3 rounded" />
+          <Skeleton className="mx-auto mt-3 h-4 w-full rounded" />
+          <Skeleton className="mx-auto mt-1.5 h-4 w-4/5 rounded" />
+          <Skeleton className="mx-auto mt-6 h-11 w-36 rounded-lg" />
+        </CenterCard>
+      );
     }
     if (canSeeResult && result) {
       return <ResultView result={result} testTitle={start?.test.title ?? "Test"} />;
@@ -1287,44 +1374,7 @@ function FullTestRunner() {
 
   // phase === "module"
   const q = questions[index];
-  const answeredCount = questions.filter((qq) => answers[qq.id]).length;
   const lowTime = remaining <= 60;
-  const toggleMark = (qid: string) => {
-    const wasMarked = marked.has(qid);
-    setMarked((prev) => {
-      const n = new Set(prev);
-      if (n.has(qid)) n.delete(qid);
-      else n.add(qid);
-      return n;
-    });
-    if (runId && proctorOn) {
-      const question = questions.find((qq) => qq.id === qid)?.number;
-      void logAction(runId, wasMarked ? "unflag" : "flag", {
-        question,
-        module: moduleMeta?.position,
-      });
-    }
-  };
-  const toggleEliminate = (qid: string, letter: Letter) => {
-    const wasStruck = eliminated[qid]?.has(letter) ?? false;
-    setEliminated((prev) => {
-      const cur = new Set(prev[qid] ?? []);
-      if (cur.has(letter)) cur.delete(letter);
-      else cur.add(letter);
-      return { ...prev, [qid]: cur };
-    });
-    if (runId && proctorOn) {
-      const question = questions.find((qq) => qq.id === qid)?.number;
-      void logAction(runId, wasStruck ? "uneliminate" : "eliminate", {
-        question,
-        module: moduleMeta?.position,
-        meta: { choice: letter },
-      });
-    }
-    // Crossing out the choice the student had selected clears that selection,
-    // so an eliminated answer is never silently submitted as their response.
-    if (!wasStruck && answers[qid] === letter) setAnswer(qid, null);
-  };
 
   // Defensive: a module should always have questions. If the server returns an
   // empty set, don't render a "Question 1 of 0" runner that can submit nothing.
@@ -1422,6 +1472,25 @@ function FullTestRunner() {
               Calculator
             </button>
           )}
+          {moduleMeta?.section === "math" && (
+            <button
+              type="button"
+              onClick={() => setRefOpen((v) => !v)}
+              className={[
+                "inline-flex items-center gap-1.5 min-h-[44px] rounded-lg border px-3 py-1.5 text-sm font-medium transition",
+                refOpen
+                  ? "border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400 dark:bg-blue-950/50 dark:text-blue-300"
+                  : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
+              ].join(" ")}
+              title="Toggle math reference sheet"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+              Reference
+            </button>
+          )}
         </div>
       </header>
       <DesmosCalculator
@@ -1436,6 +1505,7 @@ function FullTestRunner() {
           setCalcOpen(false);
         }}
       />
+      <ReferenceSheet open={refOpen} onClose={() => setRefOpen(false)} />
 
       {/* ── Study tools: highlight + notes ── */}
       {q && (

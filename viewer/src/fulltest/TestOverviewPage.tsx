@@ -758,7 +758,16 @@ export function TestOverviewPage(): JSX.Element {
               <span aria-hidden>▶</span> Preview test
             </Link>
             <Link
-              to={testReviewPath(slug)}
+              to={`${testReviewPath(slug)}${
+                courseFilter !== "all" || moduleRange
+                  ? `?${[
+                      courseFilter !== "all" ? `course=${courseFilter}` : "",
+                      moduleRange ? `m=${moduleRange.first}-${moduleRange.last}` : "",
+                    ]
+                      .filter(Boolean)
+                      .join("&")}`
+                  : ""
+              }`}
               className="rounded-lg border border-slate-300 px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
             >
               Review Mode

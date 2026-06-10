@@ -19,8 +19,8 @@
  * Wave 8A's database contract (lock_at column, completion table, RPCs:
  * duplicate_module / move_item_to_module / toggle_module_publish /
  * toggle_item_publish / mark_item_complete) is assumed available at runtime.
- * If an RPC is missing in dev the error surfaces via `actionError` and the
- * UI continues to function for everything else.
+ * If an RPC is missing in dev the error surfaces via a transient toast and
+ * the UI continues to function for everything else.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -168,7 +168,6 @@ export function ModulesPage(): JSX.Element {
   const [lockingModule, setLockingModule] = useState<CourseModule | null>(null);
   const [movingItem, setMovingItem] = useState<ModuleItem | null>(null);
   const [movingModule, setMovingModule] = useState<ModuleNode | null>(null);
-  const [actionError, setActionError] = useState<string | null>(null);
 
   // Bulk-select state — checkboxes render on every module row when selectMode
   // is on, and the sticky action bar appears at the bottom when one or more
@@ -427,7 +426,6 @@ export function ModulesPage(): JSX.Element {
         .update({ name: next })
         .eq("id", moduleId);
       if (updError) {
-        setActionError(updError.message);
         toast.error("Couldn't rename module", updError.message);
         return;
       }
@@ -464,7 +462,6 @@ export function ModulesPage(): JSX.Element {
         p_module_id: moduleId,
       });
       if (rpcError) {
-        setActionError(rpcError.message);
         toast.error("Couldn't duplicate module", rpcError.message);
         return;
       }
@@ -481,7 +478,6 @@ export function ModulesPage(): JSX.Element {
         .update({ lock_at: iso })
         .eq("id", moduleId);
       if (updError) {
-        setActionError(updError.message);
         toast.error("Couldn't update lock date", updError.message);
         return;
       }
@@ -500,7 +496,6 @@ export function ModulesPage(): JSX.Element {
         p_position: position,
       });
       if (rpcError) {
-        setActionError(rpcError.message);
         toast.error("Couldn't move item", rpcError.message);
         return;
       }
@@ -518,7 +513,6 @@ export function ModulesPage(): JSX.Element {
       .delete()
       .eq("id", deletingModule.id);
     if (delError) {
-      setActionError(delError.message);
       toast.error("Couldn't delete module", delError.message);
       return;
     }
@@ -541,7 +535,6 @@ export function ModulesPage(): JSX.Element {
         p_new_position: newPosition,
       });
       if (rpcError) {
-        setActionError(rpcError.message);
         toast.error("Couldn't move module", rpcError.message);
         return false;
       }
@@ -680,7 +673,6 @@ export function ModulesPage(): JSX.Element {
           parent_module_id: parent.id,
         });
       if (insertError) {
-        setActionError(insertError.message);
         toast.error("Couldn't add submodule", insertError.message);
         return;
       }
@@ -777,7 +769,6 @@ export function ModulesPage(): JSX.Element {
           },
         );
         if (rpcError) {
-          setActionError(rpcError.message);
           toast.error("Couldn't reorder items", rpcError.message);
           return;
         }
@@ -797,7 +788,6 @@ export function ModulesPage(): JSX.Element {
         p_position: newPosition,
       });
       if (rpcError) {
-        setActionError(rpcError.message);
         toast.error("Couldn't move item", rpcError.message);
         return;
       }
@@ -827,7 +817,6 @@ export function ModulesPage(): JSX.Element {
         p_position: 0,
       });
       if (rpcError) {
-        setActionError(rpcError.message);
         toast.error("Couldn't move item", rpcError.message);
         return;
       }
@@ -864,7 +853,6 @@ export function ModulesPage(): JSX.Element {
       .update({ published: true })
       .in("id", ids);
     if (updError) {
-      setActionError(updError.message);
       toast.error("Couldn't publish modules", updError.message);
       return;
     }
@@ -887,7 +875,6 @@ export function ModulesPage(): JSX.Element {
         .in("id", ids);
       setBulkBusy(false);
       if (updError) {
-        setActionError(updError.message);
         toast.error(
           nextPublished
             ? "Couldn't publish modules"
@@ -921,7 +908,6 @@ export function ModulesPage(): JSX.Element {
     setBulkBusy(false);
     setBulkDeleteOpen(false);
     if (delError) {
-      setActionError(delError.message);
       toast.error("Couldn't delete modules", delError.message);
       return;
     }
@@ -1003,12 +989,12 @@ export function ModulesPage(): JSX.Element {
         </div>
       </div>
 
-      {(error || actionError) && (
+      {error && (
         <div
           role="alert"
           className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
         >
-          {error ?? actionError}
+          {error}
         </div>
       )}
 

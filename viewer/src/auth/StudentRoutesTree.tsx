@@ -5,6 +5,7 @@
  * lazy-loaded so a student's surfaces (and the test runner / KaTeX) load in
  * their own chunk instead of the main bundle. Behavior is unchanged.
  */
+import { lazy } from "react";
 import {
   Navigate,
   Route,
@@ -24,7 +25,15 @@ import {
 import { FullTestApp } from "@/fulltest";
 import { LineLinkPage } from "@/line";
 import { CalendarPage } from "@/calendar";
-import { InboxPage, ThreadView } from "@/inbox";
+// Lazy-loaded so the Inbox's TipTap/ProseMirror (MarkdownEditor) stack lands
+// in its own chunk instead of the critical-path bundle. The parent <Suspense
+// fallback={<LoadingScreen />}> in AuthGate covers these.
+const InboxPage = lazy(() =>
+  import("@/inbox/InboxPage").then((m) => ({ default: m.InboxPage })),
+);
+const ThreadView = lazy(() =>
+  import("@/inbox/ThreadView").then((m) => ({ default: m.ThreadView })),
+);
 import { MyFeedbackPage } from "@/student/MyFeedbackPage";
 import { StudentCourseView } from "@/student/StudentCourseView";
 import { StudentCoursesPage } from "@/student/StudentCoursesPage";

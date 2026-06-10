@@ -35,7 +35,7 @@ import {
 import { loadSource } from "@/mocktest/sources";
 import type { TestConfig, TestQuestion } from "@/mocktest";
 import { supabase } from "@/lib/supabase";
-import { useToast } from "@/components";
+import { Skeleton, useToast } from "@/components";
 import type { StudentAssignment } from "./useStudentAssignments";
 import { QBankAssignmentRunner } from "./QBankAssignmentRunner";
 
@@ -483,8 +483,27 @@ function MockTestAssignmentRunner({
 
   if (stage.kind === "loading") {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 text-sm text-slate-500 dark:text-slate-400">
-        Preparing your assignment…
+      <div className="min-h-screen flex items-start justify-center bg-slate-50 dark:bg-slate-950 px-4 py-10">
+        <div className="w-full max-w-2xl space-y-6">
+          {/* header bar: title + progress/timer */}
+          <div className="flex items-center justify-between gap-4">
+            <Skeleton className="h-7 w-48 rounded-lg" />
+            <Skeleton className="h-7 w-20 rounded-lg" />
+          </div>
+          {/* question card: prompt lines + answer rows */}
+          <div className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-5">
+            <div className="space-y-2.5">
+              <Skeleton className="h-5 w-full rounded" />
+              <Skeleton className="h-5 w-11/12 rounded" />
+              <Skeleton className="h-5 w-3/4 rounded" />
+            </div>
+            <div className="space-y-3 pt-2">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <Skeleton key={i} className="h-12 w-full rounded-xl" />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

@@ -10,7 +10,7 @@
  * handler/state bundle down via ModuleNodeViewProps. Behavior is unchanged
  * from the pre-extraction ModulesPage.
  */
-import { Fragment, useCallback, useMemo, useState } from "react";
+import { Fragment, memo, useCallback, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { testOverviewPath } from "@/lib/routes";
@@ -246,7 +246,7 @@ interface ModuleHeaderProps {
   onToggleSelected: () => void;
 }
 
-function ModuleCard({
+const ModuleCard = memo(function ModuleCard({
   node: module,
   depth,
   siblings,
@@ -1084,7 +1084,7 @@ function ModuleCard({
       )}
     </div>
   );
-}
+});
 
 // -----------------------------------------------------------------------------
 // Recursive tree node wrapper
@@ -1146,6 +1146,67 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
 
   const expanded = expandedFor(node.id);
 
+  // Per-node callbacks stabilized with useCallback so the memoized ModuleCard
+  // doesn't re-render every sibling/ancestor when one card toggles state.
+  // Each depends only on `node`/`siblings`/`siblingIndex` plus the (assumed
+  // stable) handler from props; if a parent handler identity changes the dep
+  // array picks it up, so behavior is preserved.
+  const handleToggleExpand = useCallback(
+    () => toggleExpanded(node.id),
+    [toggleExpanded, node.id],
+  );
+  const handleEdit = useCallback(() => onEditModule(node), [onEditModule, node]);
+  const handleDelete = useCallback(
+    () => onDeleteModule(node),
+    [onDeleteModule, node],
+  );
+  const handleTogglePublishCommit = useCallback(
+    () => onTogglePublishModule(node),
+    [onTogglePublishModule, node],
+  );
+  const handleAddItem = useCallback(() => onAddItem(node), [onAddItem, node]);
+  const handleAddSubmodule = useCallback(
+    () => onAddSubmodule(node),
+    [onAddSubmodule, node],
+  );
+  const handleRenameModule = useCallback(
+    (next: string) => onRenameModule(node, next),
+    [onRenameModule, node],
+  );
+  const handleDuplicateModule = useCallback(
+    () => onDuplicateModule(node),
+    [onDuplicateModule, node],
+  );
+  const handleLockModule = useCallback(
+    () => onLockModule(node),
+    [onLockModule, node],
+  );
+  const handleMoveModule = useCallback(
+    () => onMoveModule(node),
+    [onMoveModule, node],
+  );
+  const handleIndentModule = useCallback(
+    () => onIndentModule(node, siblings, siblingIndex),
+    [onIndentModule, node, siblings, siblingIndex],
+  );
+  const handleOutdentModule = useCallback(
+    () => onOutdentModule(node),
+    [onOutdentModule, node],
+  );
+  const handleKeyboardReorderModule = useCallback(
+    (direction: "up" | "down") =>
+      onKeyboardReorderModule(node, siblings, siblingIndex, direction),
+    [onKeyboardReorderModule, node, siblings, siblingIndex],
+  );
+  const handleModuleDragStart = useCallback(
+    () => onModuleDragStart(node),
+    [onModuleDragStart, node],
+  );
+  const handleToggleSelected = useCallback(
+    () => onToggleSelected(node.id),
+    [onToggleSelected, node.id],
+  );
+
   // Tree structure indication: no more loud indigo elbow connectors.
   // The vertical guide line in the children container + the row's indent +
   // chevron carry the hierarchy at a glance. Indigo is reserved for
@@ -1185,26 +1246,24 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
         classId={classId}
         usedAssignmentIds={usedAssignmentIds}
         onCancelInlineItem={onCancelInlineItem}
-        onToggleExpand={() => toggleExpanded(node.id)}
-        onEdit={() => onEditModule(node)}
-        onDelete={() => onDeleteModule(node)}
-        onTogglePublishCommit={() => onTogglePublishModule(node)}
-        onAddItem={() => onAddItem(node)}
-        onAddSubmodule={() => onAddSubmodule(node)}
+        onToggleExpand={handleToggleExpand}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+        onTogglePublishCommit={handleTogglePublishCommit}
+        onAddItem={handleAddItem}
+        onAddSubmodule={handleAddSubmodule}
         onOpenAssignment={onOpenAssignment}
         onRefresh={onRefresh}
-        onRenameModule={(next) => onRenameModule(node, next)}
-        onDuplicateModule={() => onDuplicateModule(node)}
-        onLockModule={() => onLockModule(node)}
-        onMoveModule={() => onMoveModule(node)}
-        onIndentModule={() => onIndentModule(node, siblings, siblingIndex)}
-        onOutdentModule={() => onOutdentModule(node)}
-        onKeyboardReorderModule={(direction) =>
-          onKeyboardReorderModule(node, siblings, siblingIndex, direction)
-        }
+        onRenameModule={handleRenameModule}
+        onDuplicateModule={handleDuplicateModule}
+        onLockModule={handleLockModule}
+        onMoveModule={handleMoveModule}
+        onIndentModule={handleIndentModule}
+        onOutdentModule={handleOutdentModule}
+        onKeyboardReorderModule={handleKeyboardReorderModule}
         onMoveItem={onMoveItem}
         onToggleItemCompleted={onToggleItemCompleted}
-        onModuleDragStart={() => onModuleDragStart(node)}
+        onModuleDragStart={handleModuleDragStart}
         onModuleDragEnd={onModuleDragEnd}
         onCommitDrop={onCommitDrop}
         onItemDragStart={onItemDragStart}
@@ -1213,7 +1272,7 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
         onItemDropOnEmptyModule={onItemDropOnEmptyModule}
         selectMode={selectMode}
         selected={isSelected(node.id)}
-        onToggleSelected={() => onToggleSelected(node.id)}
+        onToggleSelected={handleToggleSelected}
       />
       {(() => {
         // Render the children container if:

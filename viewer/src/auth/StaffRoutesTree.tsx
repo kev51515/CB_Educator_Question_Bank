@@ -5,6 +5,7 @@
  * extracted verbatim from AuthGate and lazy-loaded so the teacher console loads
  * in its own chunk — a student session never downloads it. Behavior unchanged.
  */
+import { lazy } from "react";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { ROUTES, testOverviewPath } from "@/lib/routes";
 import { canAccessQuestionBank } from "@/lib/access";
@@ -22,7 +23,15 @@ import {
 import { LineLinkPage } from "@/line";
 import { CalendarPage } from "@/calendar";
 import { DashboardPage } from "@/dashboard";
-import { InboxPage, ThreadView } from "@/inbox";
+// Lazy-loaded so the Inbox's TipTap/ProseMirror (MarkdownEditor) stack lands
+// in its own chunk instead of the critical-path bundle. The parent <Suspense
+// fallback={<LoadingScreen />}> in AuthGate covers these.
+const InboxPage = lazy(() =>
+  import("@/inbox/InboxPage").then((m) => ({ default: m.InboxPage })),
+);
+const ThreadView = lazy(() =>
+  import("@/inbox/ThreadView").then((m) => ({ default: m.ThreadView })),
+);
 import { QuestionBankPage } from "@/teacher/QuestionBankPage";
 import { QBankSubmissionLogPage } from "@/teacher/QBankSubmissionLogPage";
 import { StudentProfilePage } from "@/teacher/StudentProfilePage";

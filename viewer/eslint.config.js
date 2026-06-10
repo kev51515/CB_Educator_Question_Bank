@@ -37,6 +37,24 @@ export default defineConfig([
       "react-hooks/preserve-manual-memoization": "warn",
       "react-hooks/static-components": "warn",
       "react-hooks/immutability": "warn",
+      // --- Organization / size discipline (warn: surface, don't block CI) ---
+      // A file over the cap should be split into a folder (orchestrator index +
+      // *-hooks / *-ui / *-handlers / types) — see docs/CONVENTIONS.md.
+      "max-lines": ["warn", { max: 800, skipBlankLines: true, skipComments: true }],
+      // Prefer the `@/` alias for cross-folder imports; `../` parent traversal
+      // is discouraged (brittle on move, harder to read). Within-folder `./` is fine.
+      "no-restricted-imports": [
+        "warn",
+        {
+          patterns: [
+            {
+              group: ["../*"],
+              message:
+                "Use the @/ alias for cross-folder imports instead of ../ traversal (see docs/CONVENTIONS.md). Within-folder ./ imports are fine.",
+            },
+          ],
+        },
+      ],
     },
   },
   {
