@@ -79,7 +79,10 @@ Deno.serve(async (req) => {
   const SECRET = Deno.env.get("LINE_CHANNEL_SECRET") ?? "";
   const SUPA_URL = Deno.env.get("SUPABASE_URL") ?? "";
   const SERVICE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
-  const LINK_BASE = (Deno.env.get("LINE_LINK_BASE_URL") ?? "").replace(/\/$/, "");
+  // Normalize: a bare host (e.g. "pication.app") would render as plain,
+  // un-tappable text in LINE — force an https:// scheme and drop trailing slash.
+  let LINK_BASE = (Deno.env.get("LINE_LINK_BASE_URL") ?? "").trim().replace(/\/$/, "");
+  if (LINK_BASE && !/^https?:\/\//i.test(LINK_BASE)) LINK_BASE = "https://" + LINK_BASE;
 
   const body = await req.text();
   const sig = req.headers.get("x-line-signature") ?? "";
