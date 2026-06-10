@@ -110,6 +110,37 @@ export function TestOverviewPage(): JSX.Element {
       /* ignore quota / private-mode failures */
     }
   }, [courseFilterKey, courseFilter]);
+
+  // Occurrence scope: a `?m=<first>-<last>` deep-link (from a course's
+  // "Module N" test link) limits this page to that one assignment — only that
+  // module range's runs/scores/structure. Absent = the full test, test-wide.
+  const moduleRange = useMemo(() => {
+    const m = searchParams.get("m");
+    if (m && /^\d+-\d+$/.test(m)) {
+      const [f, l] = m.split("-").map((n) => Number.parseInt(n, 10));
+      if (Number.isFinite(f) && Number.isFinite(l)) return { first: f, last: l };
+    }
+    return null;
+  }, [searchParams]);
+
+  // Modules shown for this occurrence (all when test-wide; the range when a
+  // ?m= deep-link scopes the page to one assignment).
+  const scopedModules = useMemo(
+    () =>
+      moduleRange
+        ? modules.filter(
+            (m) => m.position >= moduleRange.first && m.position <= moduleRange.last,
+          )
+        : modules,
+    [modules, moduleRange],
+  );
+  const occurrenceLabel = useMemo(() => {
+    if (!moduleRange) return null;
+    if (scopedModules.length === 1) return scopedModules[0].label;
+    if (scopedModules.length > 1)
+      return `${scopedModules[0].label} – ${scopedModules[scopedModules.length - 1].label}`;
+    return `Modules ${moduleRange.first}–${moduleRange.last}`;
+  }, [scopedModules, moduleRange]);
   const [live, setLive] = useState<Map<string, LiveInfo>>(() => new Map());
   const [metaLoading, setMetaLoading] = useState(true);
   const [rosterLoading, setRosterLoading] = useState(true);
@@ -181,7 +212,11 @@ export function TestOverviewPage(): JSX.Element {
     setRosterLoading(true);
     try {
       const [rosterRes, liveRes] = await Promise.all([
-        supabase.rpc("test_roster_status", { p_slug: slug }),
+        supabase.rpc("test_roster_status", {
+          p_slug: slug,
+          p_first: moduleRange?.first ?? null,
+          p_last: moduleRange?.last ?? null,
+        }),
         supabase.rpc("test_live_progress", { p_slug: slug }),
       ]);
       if (rosterRes.error) {
@@ -205,7 +240,7 @@ export function TestOverviewPage(): JSX.Element {
     } finally {
       setRosterLoading(false);
     }
-  }, [slug, toast]);
+  }, [slug, toast, moduleRange]);
 
   useEffect(() => {
     void refreshRoster();
@@ -602,7 +637,15 @@ export function TestOverviewPage(): JSX.Element {
               <span className="inline-flex items-center rounded-full bg-indigo-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">
                 Full-length test
               </span>
-              <SectionBadge sections={deriveSections(modules)} />
+              <SectionBadge sections={deriveSections(scopedModules)} />
+              {occurrenceLabel && (
+                <span
+                  className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900"
+                  title="This view is limited to one assigned occurrence of the test"
+                >
+                  {occurrenceLabel} only
+                </span>
+              )}
             </span>
             {metaLoading ? (
               <Skeleton className="mt-2 h-7 w-72 rounded" />
@@ -612,10 +655,13 @@ export function TestOverviewPage(): JSX.Element {
               </h1>
             )}
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              {test?.total_questions ?? "—"} questions ·{" "}
-              {modules.length || 4} timed modules
-              {modules.length > 0 &&
-                ` · ${fmtMins(modules.reduce((a, m) => a + m.time_limit_seconds, 0))} total`}
+              {moduleRange
+                ? scopedModules.reduce((a, m) => a + (m.question_count ?? 0), 0)
+                : (test?.total_questions ?? "—")}{" "}
+              questions · {(moduleRange ? scopedModules.length : modules.length) || 4} timed
+              module{(moduleRange ? scopedModules.length : modules.length) === 1 ? "" : "s"}
+              {scopedModules.length > 0 &&
+                ` · ${fmtMins(scopedModules.reduce((a, m) => a + m.time_limit_seconds, 0))} total`}
             </p>
 
             {isAdmin && (
@@ -790,13 +836,13 @@ export function TestOverviewPage(): JSX.Element {
                 <Skeleton key={i} className="h-10 rounded-lg" />
               ))}
             </div>
-          ) : modules.length === 0 ? (
+          ) : scopedModules.length === 0 ? (
             <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
               Module metadata unavailable.
             </p>
           ) : (
             <ol className="mt-3 space-y-1.5">
-              {modules.map((m) => (
+              {scopedModules.map((m) => (
                 <li
                   key={m.position}
                   className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-3 py-2"

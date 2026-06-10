@@ -136,6 +136,17 @@ async function main() {
       const { error } = await s.rpc("start_test", { p_slug: slug, p_first: 3, p_last: 3 });
       rx(error, /not_enrolled/) ? ok("no ?m=3-3 link → not_enrolled") : bad("expected not_enrolled", error?.message ?? "no error");
     }
+    step("H: teacher roster scoped per occurrence (course + range)");
+    {
+      const tc = await signedIn(teacher);
+      const r1 = await tc.rpc("test_roster_status", { p_slug: slug, p_first: 1, p_last: 1 });
+      const r2 = await tc.rpc("test_roster_status", { p_slug: slug, p_first: 2, p_last: 2 });
+      const row1 = (r1.data ?? []).find((x) => x.student_id === student.id);
+      const row2 = (r2.data ?? []).find((x) => x.student_id === student.id);
+      (!r1.error && !r2.error && row1?.run_id === runA && row2?.run_id === runB && runA !== runB)
+        ? ok("M1 roster shows the M1 run; M2 roster shows the M2 run")
+        : bad("roster not scoped per occurrence", JSON.stringify({ r1: row1?.run_id, runA, r2: row2?.run_id, runB, e1: r1.error?.message, e2: r2.error?.message }));
+    }
   } finally {
     step("cleanup");
     await cleanup().catch((e) => console.log("  ..    cleanup error", e.message));
