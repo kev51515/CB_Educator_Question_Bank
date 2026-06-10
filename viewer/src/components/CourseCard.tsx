@@ -97,7 +97,10 @@ export function CourseCard({
     // `min-w-0` lets the card shrink below its content's intrinsic width inside
     // a grid/flex track (items default to min-width:auto) so a long course name
     // can't force horizontal overflow on narrow screens.
-    "group flex flex-col min-w-0 text-left rounded-xl overflow-hidden bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 " +
+    // `select-text` keeps the card's text selectable/copyable even when the
+    // whole card is clickable — a native <button> would make its text
+    // unselectable (UA user-select:none), so we render a role="button" div.
+    "group flex flex-col min-w-0 text-left select-text rounded-xl overflow-hidden bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 " +
     (onClick ? "hover:shadow-md hover:-translate-y-0.5 cursor-pointer " : "") +
     (muted ? "opacity-70 " : "");
 
@@ -171,37 +174,35 @@ export function CourseCard({
   );
 
   if (onClick) {
-    // When there's a kebab on the card we MUST render the outer as a div
-    // (with role="button") instead of a <button> — nested buttons are
-    // invalid HTML and most browsers will collapse the inner button.
-    if (kebab && kebab.length > 0) {
-      return (
-        <div
-          role="button"
-          tabIndex={0}
-          onClick={onClick}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              onClick();
-            }
-          }}
-          className={baseClass}
-          aria-label={ariaLabel ?? `Open course ${name}`}
-        >
-          {inner}
-        </div>
-      );
-    }
+    // Skip navigation when the click is really the end of a text selection
+    // (drag-to-select) — copying text off the card is normal interaction and
+    // shouldn't open the course. A plain click clears any selection on
+    // mousedown, so this only suppresses the synthetic click after a drag.
+    const activate = () => {
+      if (typeof window !== "undefined") {
+        const sel = window.getSelection();
+        if (sel && sel.toString().trim().length > 0) return;
+      }
+      onClick();
+    };
+    // Always a role="button" div (never a native <button>): a <button> makes
+    // its text unselectable, and it also can't legally nest the kebab's button.
     return (
-      <button
-        type="button"
-        onClick={onClick}
+      <div
+        role="button"
+        tabIndex={0}
+        onClick={activate}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onClick();
+          }
+        }}
         className={baseClass}
         aria-label={ariaLabel ?? `Open course ${name}`}
       >
         {inner}
-      </button>
+      </div>
     );
   }
   return <div className={baseClass}>{inner}</div>;
