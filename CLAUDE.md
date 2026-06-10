@@ -200,6 +200,15 @@ introduced this year. Run all before declaring any backend change done.
 `smoke-cascade.mjs` specifically guards the security/cascade contract
 from migration 0050 (privilege guard, audit-on-delete, idempotency).
 
+**Content QC — run after seeding ANY test.** `npm run check:content`
+(`viewer/scripts/check-test-content.mjs`) scans every `test_questions` row for
+the defects the OCR→seed pipeline introduces: a literal "blank" word beside the
+`___` gap, a mid-sentence gap whose choices carry a stray trailing period, a word
+duplicated before the gap AND in the choices ("seafloor seafloor"), `[a]`-style
+bracket artifacts, truncation / unbalanced quotes, missing gaps, and dropped
+open/close quotes on a choice. It exits non-zero on any flag. It must read 0
+before a seeded test is considered done (existing six are clean as of 0152).
+
 Migration rules:
 - **Every trigger function that INSERTs into another table must be
   `SECURITY DEFINER` with `SET search_path = public, auth`.** RLS will block

@@ -12,6 +12,7 @@
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:roles": "playwright test --config=playwright.role.config.ts",
     "smoke": "node --env-file-if-exists=../.env scripts/smoke-all.mjs",
+    "check:content": "node --env-file-if-exists=../.env scripts/check-test-content.mjs",
     "smoke:e2e": "node --env-file-if-exists=../.env scripts/smoke-e2e.mjs",
     "smoke:features": "node --env-file-if-exists=../.env scripts/smoke-features.mjs",
     "smoke:modules": "node --env-file-if-exists=../.env scripts/smoke-modules.mjs",
