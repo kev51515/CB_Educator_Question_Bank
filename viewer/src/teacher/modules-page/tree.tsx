@@ -772,6 +772,15 @@ function ModuleCard({
             // rather than the generic 🔗 link icon.
             const isFullTestLink =
               item.item_type === "link" && !!item.url?.startsWith("/test/");
+            // A subset link is /test/<slug>?m=<first>-<last>; carry that range
+            // to the overview so the proctor view is scoped to THIS occurrence
+            // (this course + these modules), not the test-wide aggregate.
+            const fullTestSlug = isFullTestLink
+              ? (item.url ?? "").slice(6).split("/")[0].split("?")[0]
+              : "";
+            const fullTestRange = isFullTestLink
+              ? (item.url ?? "").match(/[?&]m=(\d+-\d+)/)?.[1]
+              : undefined;
             // Inline rename is the canvas equivalent for "Edit" — kebab only
             // surfaces actions that are actually wired up.
             const itemKebab: KebabMenuOption[] = [
@@ -898,7 +907,9 @@ function ModuleCard({
                   // Teachers proctor, they don't sit the test — a test link opens
                   // the per-test OVERVIEW (results + live status), same tab.
                   <Link
-                    to={testOverviewPath(item.url.slice(6).split("/")[0])}
+                    to={`${testOverviewPath(fullTestSlug)}?course=${classId}${
+                      fullTestRange ? `&m=${fullTestRange}` : ""
+                    }`}
                     title="Open the proctor view — results & live status"
                     className="flex-1 text-sm text-indigo-600 dark:text-indigo-400 hover:underline truncate"
                   >

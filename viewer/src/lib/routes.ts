@@ -21,6 +21,10 @@ export const ROUTES = {
   SIGN_IN: "/signin",
   QUICK_START: "/quick-start",
   PASSWORD_RESET: "/password-reset",
+  // Role-agnostic LINE Account Link landing. The bot DMs the user
+  // `${LINE_LINK_BASE_URL}/line/link?linkToken=…`; renders inside the authed
+  // tree so only a signed-in user can mint a nonce and bind.
+  LINE_LINK: "/line/link",
 
   // Student
   // Student landing/home. The canonical student dashboard lives under a

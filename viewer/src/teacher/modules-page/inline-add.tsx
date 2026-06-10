@@ -657,57 +657,35 @@ export function InlineAddItemRow({
       }
       const chosen = fullTests.find((t) => t.slug === fullTestSlug);
       const payloadTitle = title.trim() || chosen?.title || "Full-length test";
+      // A strict module subset is encoded in the LINK URL as `?m=<first>-<last>`
+      // so it launches its OWN run with its OWN report (0156). Assign the same
+      // test twice — e.g. modules 1-1 and 2-2 — and each is an independent
+      // attempt rather than collapsing into one run. A full selection uses the
+      // plain /test/<slug> link.
+      const first = ftDeployedSorted[0];
+      const last = ftDeployedSorted[ftDeployedSorted.length - 1];
+      const url =
+        ftIsSubset && first != null
+          ? `${testRunPath(fullTestSlug)}?m=${first}-${last}`
+          : testRunPath(fullTestSlug);
       setBusy(true);
       try {
-        // Quick link: full-length tests aren't assignments, so store them as a
-        // link module_item pointing at the Bluebook runner (/test/:slug).
         const { error: insertError } = await supabase.from("module_items").insert({
           module_id: module.id,
           position: maxPosition + 1,
           item_type: "link",
           item_ref_id: null,
           title: payloadTitle,
-          url: testRunPath(fullTestSlug),
+          url,
         });
         if (insertError) {
           toast.error("Couldn't add Full-Test", insertError.message);
           return;
         }
-        // If the teacher chose a strict subset of modules, persist the
-        // deployment via set_test_module_windows (0144): every position gets a
-        // row with its deployed flag (excluded modules never appear for
-        // students; the run finalizes at the last deployed module). A full
-        // selection writes nothing — zero windows = the whole test, open now.
-        if (ftIsSubset) {
-          const windows = ftModules.map((m) => ({
-            position: m.position,
-            deployed: ftDeployed.has(m.position),
-            opens_at: null,
-          }));
-          const { error: winError } = await supabase.rpc("set_test_module_windows", {
-            p_course_id: classId,
-            p_slug: fullTestSlug,
-            p_windows: windows,
-          });
-          if (winError) {
-            // The link is already in place (= full test). Tell the teacher their
-            // subset didn't apply so they can fix it from the test overview.
-            toast.warning(
-              "Added as the full test",
-              "Couldn't limit the modules — set them from the test's schedule.",
-            );
-          } else {
-            toast.success("Full-Test added", `${payloadTitle} · ${ftDeployed.size} of ${ftModules.length} modules`);
-            if (keepOpen) {
-              resetPerItemFields();
-              onCommittedKeepOpen();
-            } else {
-              onCommitted();
-            }
-            return;
-          }
-        }
-        toast.success("Full-Test added", payloadTitle);
+        toast.success(
+          "Full-Test added",
+          ftIsSubset ? `${payloadTitle} · modules ${first}–${last}` : payloadTitle,
+        );
         if (keepOpen) {
           resetPerItemFields();
           onCommittedKeepOpen();

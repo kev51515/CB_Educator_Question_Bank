@@ -16,7 +16,7 @@ focus) layered on top of a familiar Canvas-aligned classroom workflow.
 End-state inspirations:
 - **Canvas LMS** for structure (Courses / Modules / Assignments / Discussions
   / Files / People / Calendar / Inbox / Account)
-- **Linear / Notion / Vercel Dashboard** for interaction quality and polish
+- **Linear / Notion / Cloudflare Dashboard** for interaction quality and polish
 
 ---
 
@@ -199,6 +199,15 @@ The smoke suite (`viewer/scripts/smoke-all.mjs` runs all 5 sub-suites:
 introduced this year. Run all before declaring any backend change done.
 `smoke-cascade.mjs` specifically guards the security/cascade contract
 from migration 0050 (privilege guard, audit-on-delete, idempotency).
+
+**Content QC — run after seeding ANY test.** `npm run check:content`
+(`viewer/scripts/check-test-content.mjs`) scans every `test_questions` row for
+the defects the OCR→seed pipeline introduces: a literal "blank" word beside the
+`___` gap, a mid-sentence gap whose choices carry a stray trailing period, a word
+duplicated before the gap AND in the choices ("seafloor seafloor"), `[a]`-style
+bracket artifacts, truncation / unbalanced quotes, missing gaps, and dropped
+open/close quotes on a choice. It exits non-zero on any flag. It must read 0
+before a seeded test is considered done (existing six are clean as of 0152).
 
 Migration rules:
 - **Every trigger function that INSERTs into another table must be
@@ -405,6 +414,8 @@ The slug alphabet is A-Z and 2-9 (excludes O/0/I/1/L confusables). Unique constr
 4. `docs/DESIGN_PRINCIPLES.md` — the UX bar (this is the standard the user
    has explicitly asked us to hold)
 5. `docs/LMS_ROADMAP.md` — what's next
+6. `docs/STACKS.md` — the canonical tech stack + hosting. **Read before any
+   deploy/infra/ops work — the host is Cloudflare Pages, not Vercel.**
 
 Then look at one example of each kind of surface you'll touch:
 - Modules page (`viewer/src/teacher/ModulesPage.tsx`) for the UX bar

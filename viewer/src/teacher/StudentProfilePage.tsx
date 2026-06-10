@@ -30,6 +30,7 @@ import { getInitials, type TrajectoryPoint } from "./studentProfileHelpers";
 import { ProfileHeader } from "./ProfileHeader";
 import { Section } from "./StudentProfileSection";
 import { PrivateNotesSection } from "./PrivateNotesSection";
+import { GuardiansSection } from "./GuardiansSection";
 import { StudentTestReportPanel } from "./StudentTestReportPanel";
 import { StudentTestRunsPanel } from "./StudentTestRunsPanel";
 import { useProfile } from "@/lib/profile";
@@ -217,6 +218,9 @@ export function StudentProfilePage(): JSX.Element {
             courseId={course?.id ?? null}
             studentId={header.id}
           />
+
+          {/* Guardian (parent) accounts — coded login + LINE notifications. */}
+          <GuardiansSection studentId={header.id} />
 
           {/* Full-length test coaching report + results — gated to educators
               with test/Question-Bank access. */}

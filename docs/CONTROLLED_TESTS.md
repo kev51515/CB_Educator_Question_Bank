@@ -15,8 +15,10 @@ Teachers create students directly from a course roster (`/courses/:id/people`)
 
 - **Add student** → `admin_create_student(course, name, password)` mints an
   `auth.users` row (synthetic email `<code>@students.local`, bcrypt password)
-  + a per-course code `roster_code` like `KQAZNP-04`. The student signs in with
-  that **code + password** (the sign-in screen maps the code → synthetic email).
+  + a bare, non-guessable code mirrored into `roster_code` like `CWXKHR`
+  (6 distinct letters from the confusable-free set A–Z minus I/L/O/Q). The
+  student signs in with that **code + password** (the sign-in screen maps the
+  code → synthetic email).
   Returns the code + password to hand out (shown once).
   - Codes skip already-taken values, so removing then re-adding a student never
     collides on the freed code/email (0084/0085).

@@ -30,6 +30,13 @@ export interface RosterRow {
   submitted_at: string | null;
   results_released_at: string | null;
   has_in_progress: boolean;
+  /**
+   * 0142: roster is one row per (student, course) — these identify which
+   * course this enrolment row belongs to, so the overview can filter by
+   * course when the same test is assigned to several.
+   */
+  course_id: string;
+  course_name: string;
 }
 /** Live snapshot per student (test_live_progress) merged into the roster. */
 export interface LiveInfo {
@@ -142,5 +149,74 @@ export function fmtMins(seconds: number): string {
 export function fmtAwaySecs(sec: number): string {
   const s = Math.max(0, Math.round(sec));
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
+// --- roster sorting --------------------------------------------------------
+
+export type RosterSortKey = "name" | "status" | "submitted" | "score";
+export type SortDir = "asc" | "desc";
+
+/**
+ * Status bucket for sort ordering. Lower sorts first under "asc":
+ * taken-released (0) < taken-hidden (1) < in-progress (2) < not-started (3).
+ */
+function statusBucket(r: RosterRow): number {
+  if (r.run_id !== null) return r.results_released_at !== null ? 0 : 1;
+  if (r.has_in_progress) return 2;
+  return 3;
+}
+
+/** Has the student taken (submitted) the test? Not-taken rows pin to bottom. */
+function isTaken(r: RosterRow): boolean {
+  return r.run_id !== null;
+}
+
+/**
+ * Comparator factory for the roster table. Not-taken rows (run_id null) are
+ * always pinned to the BOTTOM for the score + submitted keys regardless of
+ * direction; name + status sort the whole set by `sortDir`. Ties fall back to
+ * a stable student-name compare.
+ */
+export function rosterComparator(
+  sortKey: RosterSortKey,
+  sortDir: SortDir,
+): (a: RosterRow, b: RosterRow) => number {
+  const dir = sortDir === "asc" ? 1 : -1;
+  const byName = (a: RosterRow, b: RosterRow): number =>
+    (a.student_name ?? "").localeCompare(b.student_name ?? "");
+
+  return (a, b) => {
+    if (sortKey === "name") {
+      return byName(a, b) * dir;
+    }
+
+    if (sortKey === "status") {
+      const diff = statusBucket(a) - statusBucket(b);
+      if (diff !== 0) return diff * dir;
+      return byName(a, b);
+    }
+
+    if (sortKey === "score") {
+      // Not-taken rows always sink to the bottom regardless of dir.
+      const aTaken = isTaken(a);
+      const bTaken = isTaken(b);
+      if (aTaken !== bTaken) return aTaken ? -1 : 1;
+      if (!aTaken && !bTaken) return byName(a, b);
+      const ap = pctOf(a.score, a.total) ?? -1;
+      const bp = pctOf(b.score, b.total) ?? -1;
+      if (ap !== bp) return (ap - bp) * dir;
+      return byName(a, b);
+    }
+
+    // submitted
+    const aTaken = isTaken(a);
+    const bTaken = isTaken(b);
+    if (aTaken !== bTaken) return aTaken ? -1 : 1;
+    if (!aTaken && !bTaken) return byName(a, b);
+    const at = a.submitted_at ? Date.parse(a.submitted_at) : 0;
+    const bt = b.submitted_at ? Date.parse(b.submitted_at) : 0;
+    if (at !== bt) return (at - bt) * dir;
+    return byName(a, b);
+  };
 }
 

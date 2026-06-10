@@ -327,6 +327,9 @@ function Prompt({
 >) {
   const rationaleEmpty =
     showRationale && (!rationale || Object.keys(rationale).length === 0);
+  // Track the mousedown point so a drag-select to highlight choice text doesn't
+  // register as a click that toggles the answer (see the choice row onClick).
+  const dragRef = useRef<{ x: number; y: number } | null>(null);
   return (
     <div className="space-y-5">
       <p
@@ -365,10 +368,31 @@ function Prompt({
               return (
                 <li key={letter} className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      disabled={disabled || struck}
-                      onClick={() => onChange(selected ? null : letter)}
+                    {/* A <div role=button> (not a real <button>) so the choice
+                        text inside stays selectable — native button text can't
+                        be highlighted. The drag-vs-click guard below keeps a
+                        highlight drag from toggling the answer. */}
+                    <div
+                      role="button"
+                      tabIndex={disabled || struck ? -1 : 0}
+                      aria-pressed={selected}
+                      aria-disabled={disabled || struck}
+                      onMouseDown={(e) => { dragRef.current = { x: e.clientX, y: e.clientY }; }}
+                      onClick={(e) => {
+                        const d = dragRef.current; dragRef.current = null;
+                        // A drag (text selection to highlight) must not toggle the answer.
+                        if (d && Math.hypot(e.clientX - d.x, e.clientY - d.y) > 6) return;
+                        const sel = window.getSelection();
+                        if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) return;
+                        if (disabled || struck) return;
+                        onChange(selected ? null : letter);
+                      }}
+                      onKeyDown={(e) => {
+                        if ((e.key === "Enter" || e.key === " ") && !(disabled || struck)) {
+                          e.preventDefault();
+                          onChange(selected ? null : letter);
+                        }
+                      }}
                       className={[
                         "flex flex-1 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left transition",
                         isKey
@@ -399,8 +423,9 @@ function Prompt({
                         {letter}
                       </span>
                       <span
+                        data-annot-field={`choice:${letter}`}
                         className={[
-                          "text-[16px] leading-relaxed",
+                          "select-text text-[16px] leading-relaxed",
                           struck
                             ? "text-slate-400 line-through dark:text-slate-500"
                             : "text-slate-800 dark:text-slate-200",
@@ -410,7 +435,13 @@ function Prompt({
                         {wrong ? (
                           <HighlightedChoiceText text={text} wrong={wrong} />
                         ) : (
-                          <RichInline text={text} />
+                          renderText(
+                            text,
+                            0,
+                            `choice:${letter}`,
+                            (highlights ?? []).filter((h) => h.field === `choice:${letter}`),
+                            onRemoveHighlight,
+                          )
                         )}
                       </span>
                       {isKey && (
@@ -418,7 +449,7 @@ function Prompt({
                           ✓ Correct
                         </span>
                       )}
-                    </button>
+                    </div>
 
                     {choiceStats && (
                       <ChoiceCountPill

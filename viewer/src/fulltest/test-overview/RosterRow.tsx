@@ -2,10 +2,11 @@
  * test-overview/RosterRow
  * =======================
  * One student's row in the live-test roster on TestOverviewPage. Renders the
- * three states — submitted (taken), in-progress, not-started — with their
- * status pills, proctoring signals, and admin action controls (Review /
- * release, Message, Pause·End·Reset). Pure presentational: all mutations are
- * delegated to callbacks so the page owns the data + RPCs.
+ * three states — submitted (taken), in-progress, not-started — as a `<tr>` of
+ * cells (Student / Status / Timing / Score / Actions) with their status pills,
+ * proctoring signals, and admin action controls (Review / release, Message,
+ * Pause·End·Reset). Pure presentational: all mutations are delegated to
+ * callbacks so the page owns the data + RPCs.
  */
 import {
   fmtAwaySecs,
@@ -60,53 +61,132 @@ export function RosterRowView({
   const flagReasons = lr?.flag_reasons ?? [];
   const integrity = fmtIntegrity(lr?.integrity);
   const name = row.student_name ?? "Student";
+  const startedIso = lr?.started_at ?? null;
+  const durationMin =
+    taken && startedIso && row.submitted_at
+      ? Math.max(
+          0,
+          Math.round(
+            (new Date(row.submitted_at).getTime() - new Date(startedIso).getTime()) / 60000,
+          ),
+        )
+      : null;
 
   return (
-    <li className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3 bg-white dark:bg-slate-900 transition-colors hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
-      <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">{name}</p>
+    <tr className="divide-x divide-slate-100 bg-white transition-colors hover:bg-slate-50/70 dark:divide-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800/40">
+      {/* Student */}
+      <td className="py-3 px-3 align-middle">
+        <span className="block max-w-[16rem] truncate text-sm font-medium text-slate-900 dark:text-slate-100">
+          {name}
+        </span>
+      </td>
+
+      {/* Status */}
+      <td className="py-3 px-3 align-middle">
+        <div className="flex flex-wrap items-center gap-1.5">
+          {taken ? (
+            <>
+              <StatusPill
+                tone={released ? "released" : "hidden"}
+                label={released ? "Released" : "Hidden"}
+              />
+              {flagged && (
+                <StatusPill
+                  tone="alert"
+                  label="Needs review"
+                  title={
+                    flagReasons.length
+                      ? flagReasons.map(flagLabel).join(" · ")
+                      : "Flagged for review — open Review to see the proctoring timeline"
+                  }
+                />
+              )}
+            </>
+          ) : row.has_in_progress ? (
+            <>
+              <StatusPill
+                tone={lr?.paused ? "paused" : "live"}
+                pulse={!lr?.paused}
+                label={lr?.paused ? "Paused" : "In progress"}
+              />
+              {flagged && (
+                <StatusPill
+                  tone="alert"
+                  label="Needs review"
+                  title={flagReasons.length ? flagReasons.map(flagLabel).join(" · ") : "Flagged for review"}
+                />
+              )}
+              {away > 0 && (
+                <StatusPill
+                  tone="warn"
+                  label={`Left tab ${away}×${awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}`}
+                  title="Times the student left the test tab"
+                />
+              )}
+              {integrity && (
+                <StatusPill tone="alert" label={integrity} title="Integrity signals during the test" />
+              )}
+            </>
+          ) : (
+            <StatusPill tone="idle" label="Not started" />
+          )}
+        </div>
+      </td>
+
+      {/* Timing */}
+      <td className="py-3 px-3 align-middle">
         {taken ? (
-          <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-            started {fmtTime(lr?.started_at ?? null)} → submitted {fmtTime(row.submitted_at)}
-            {row.score != null &&
-              row.total != null &&
-              ` · ${row.score}/${row.total}${pct != null ? ` (${pct}%)` : ""}`}
-          </p>
+          <div className="flex flex-col gap-0.5">
+            <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-slate-600 dark:text-slate-300">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-slate-400 dark:text-slate-500">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+              <span className="tabular-nums">{fmtTime(lr?.started_at ?? null)}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-slate-300 dark:text-slate-600">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+              <span className="tabular-nums">{fmtTime(row.submitted_at)}</span>
+            </span>
+            {durationMin != null && (
+              <span className="pl-[18px] text-[11px] tabular-nums text-slate-400 dark:text-slate-500">
+                took {durationMin} min
+              </span>
+            )}
+          </div>
         ) : row.has_in_progress ? (
-          <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+          <span className="text-xs text-slate-500 dark:text-slate-400">
             {lr?.module_label ?? "In progress"}
             {lr?.current_question != null && ` · Q${lr.current_question}`}
             {lr?.answered != null &&
               lr?.module_questions != null &&
               ` · ${lr.answered}/${lr.module_questions} answered`}
             {lr?.started_at && ` · started ${fmtTime(lr.started_at)}`}
-          </p>
+          </span>
         ) : (
-          <p className="mt-0.5 text-xs text-slate-400 dark:text-slate-500">
-            Hasn't opened the test yet
-          </p>
+          <span className="text-xs text-slate-400 dark:text-slate-500">Hasn't opened yet</span>
         )}
-      </div>
+      </td>
 
-      <div className="ml-auto flex flex-wrap items-center justify-end gap-2">
-        {taken ? (
-          <>
-            <StatusPill
-              tone={released ? "released" : "hidden"}
-              label={released ? "Released" : "Hidden"}
-            />
-            {flagged && (
-              <StatusPill
-                tone="alert"
-                label="Needs review"
-                title={
-                  flagReasons.length
-                    ? flagReasons.map(flagLabel).join(" · ")
-                    : "Flagged for review — open Review to see the proctoring timeline"
-                }
-              />
+      {/* Score */}
+      <td className="py-3 px-3 align-middle">
+        {taken && row.score != null && row.total != null ? (
+          <span className="whitespace-nowrap text-sm tabular-nums text-slate-700 dark:text-slate-200">
+            {row.score}/{row.total}
+            {pct != null && (
+              <span className="text-slate-400 dark:text-slate-500"> ({pct}%)</span>
             )}
-            <div className="inline-flex items-center gap-1">
+          </span>
+        ) : (
+          <span className="text-sm text-slate-400 dark:text-slate-500">—</span>
+        )}
+      </td>
+
+      {/* Actions */}
+      <td className="py-3 px-3 align-middle">
+        <div className="flex flex-wrap items-center justify-end gap-2">
+          {taken ? (
+            <>
               <RowAction
                 tone="primary"
                 onClick={() => onReview(row)}
@@ -135,96 +215,72 @@ export function RosterRowView({
                   {rowBusy === row.run_id ? "…" : released ? "Hide results" : "Release to student"}
                 </RowAction>
               )}
-            </div>
-          </>
-        ) : row.has_in_progress ? (
-          <>
-            <StatusPill
-              tone={lr?.paused ? "paused" : "live"}
-              pulse={!lr?.paused}
-              label={lr?.paused ? "Paused" : "In progress"}
-            />
-            {flagged && (
-              <StatusPill
-                tone="alert"
-                label="Needs review"
-                title={flagReasons.length ? flagReasons.map(flagLabel).join(" · ") : "Flagged for review"}
-              />
-            )}
-            {away > 0 && (
-              <StatusPill
-                tone="warn"
-                label={`Left tab ${away}×${awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}`}
-                title="Times the student left the test tab"
-              />
-            )}
-            {integrity && (
-              <StatusPill tone="alert" label={integrity} title="Integrity signals during the test" />
-            )}
-            {lr?.run_id && (
-              <RowAction
-                onClick={() => onReplay(lr.run_id ?? "")}
-                title="Replay this student's actions so far"
-              >
-                Replay
-              </RowAction>
-            )}
-            {isAdmin && lr?.run_id && (
-              <RowAction
-                tone="primary"
-                className="relative"
-                onClick={() => onOpenChat(lr.run_id ?? "", name)}
-                title="Message this student (they can reply while paused)"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="mr-1 h-3.5 w-3.5">
-                  <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z" />
-                </svg>
-                Message
-                {hasNewMessage && (
-                  <span
-                    aria-label="new message"
-                    className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white dark:ring-slate-900"
-                  />
-                )}
-              </RowAction>
-            )}
-            {isAdmin && (
-              <ActionGroup>
-                {lr?.run_id && (
-                  <RowAction
-                    className="rounded-none"
-                    disabled={pauseBusy === lr.run_id}
-                    onClick={() => onSetPause(lr.run_id ?? "", !lr.paused, name)}
-                    title={lr.paused ? "Resume this student's timer" : "Freeze this student's timer"}
-                  >
-                    {pauseBusy === lr.run_id ? "…" : lr.paused ? "Resume" : "Pause"}
-                  </RowAction>
-                )}
-                {lr?.run_id && (
-                  <RowAction
-                    tone="warn"
-                    className="rounded-none"
-                    onClick={() => onEnd(row, lr.run_id ?? undefined)}
-                    title="End this student's test now — grades their answers as-is"
-                  >
-                    End
-                  </RowAction>
-                )}
+            </>
+          ) : row.has_in_progress ? (
+            <>
+              {lr?.run_id && (
                 <RowAction
-                  tone="danger"
-                  className="rounded-none"
-                  onClick={() => onReset(row)}
-                  title="Wipe their attempt so they can start fresh (requires confirmation)"
+                  onClick={() => onReplay(lr.run_id ?? "")}
+                  title="Replay this student's actions so far"
                 >
-                  Reset
+                  Replay
                 </RowAction>
-              </ActionGroup>
-            )}
-          </>
-        ) : (
-          <StatusPill tone="idle" label="Not started" />
-        )}
-      </div>
-    </li>
+              )}
+              {isAdmin && lr?.run_id && (
+                <RowAction
+                  tone="primary"
+                  className="relative"
+                  onClick={() => onOpenChat(lr.run_id ?? "", name)}
+                  title="Message this student (they can reply while paused)"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="mr-1 h-3.5 w-3.5">
+                    <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z" />
+                  </svg>
+                  Message
+                  {hasNewMessage && (
+                    <span
+                      aria-label="new message"
+                      className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white dark:ring-slate-900"
+                    />
+                  )}
+                </RowAction>
+              )}
+              {isAdmin && (
+                <ActionGroup>
+                  {lr?.run_id && (
+                    <RowAction
+                      className="rounded-none ring-0 shadow-none"
+                      disabled={pauseBusy === lr.run_id}
+                      onClick={() => onSetPause(lr.run_id ?? "", !lr.paused, name)}
+                      title={lr.paused ? "Resume this student's timer" : "Freeze this student's timer"}
+                    >
+                      {pauseBusy === lr.run_id ? "…" : lr.paused ? "Resume" : "Pause"}
+                    </RowAction>
+                  )}
+                  {lr?.run_id && (
+                    <RowAction
+                      tone="warn"
+                      className="rounded-none ring-0 shadow-none"
+                      onClick={() => onEnd(row, lr.run_id ?? undefined)}
+                      title="End this student's test now — grades their answers as-is"
+                    >
+                      End
+                    </RowAction>
+                  )}
+                  <RowAction
+                    tone="danger"
+                    className="rounded-none ring-0 shadow-none"
+                    onClick={() => onReset(row)}
+                    title="Wipe their attempt so they can start fresh (requires confirmation)"
+                  >
+                    Reset
+                  </RowAction>
+                </ActionGroup>
+              )}
+            </>
+          ) : null}
+        </div>
+      </td>
+    </tr>
   );
 }
