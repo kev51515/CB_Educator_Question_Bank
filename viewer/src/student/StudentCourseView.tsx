@@ -40,6 +40,7 @@ import { ProgressCard } from "./pickleball/ProgressCard";
 import { HomeworkCard } from "./pickleball/HomeworkCard";
 import { CoachProfileCard } from "./pickleball/CoachProfileCard";
 import { CoachDevelopmentCard } from "./pickleball/CoachDevelopmentCard";
+import { CoachEvaluationsCard } from "./pickleball/CoachEvaluationsCard";
 import { CoachHoursCard } from "./pickleball/CoachHoursCard";
 import { ChatPanel } from "@/components/pickleball/ChatPanel";
 import {
@@ -552,6 +553,7 @@ export function StudentCourseView(): JSX.Element {
                 </h2>
                 <CoachProfileCard courseId={course.id} studentId={profile.id} />
                 <CoachDevelopmentCard courseId={course.id} studentId={profile.id} />
+                <CoachEvaluationsCard courseId={course.id} studentId={profile.id} />
                 <CoachHoursCard courseId={course.id} studentId={profile.id} />
                 <ChatPanel courseId={course.id} selfId={profile.id} />
               </section>

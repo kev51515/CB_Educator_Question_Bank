@@ -12,5 +12,7 @@ export { ProgramsPanel } from "./ProgramsPanel";
 export { CoachesPanel } from "./CoachesPanel";
 export { CertificationsPanel } from "./CertificationsPanel";
 export { DevelopmentPanel } from "./DevelopmentPanel";
+export { ShadowLogsPanel } from "./ShadowLogsPanel";
+export { EvaluationsPanel } from "./EvaluationsPanel";
 export { HoursPanel } from "./HoursPanel";
 export { CoachProgramsPanel } from "./CoachProgramsPanel";

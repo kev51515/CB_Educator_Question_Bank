@@ -73,6 +73,8 @@ import {
   CoachesPanel,
   CertificationsPanel,
   DevelopmentPanel,
+  ShadowLogsPanel,
+  EvaluationsPanel,
   HoursPanel,
   CoachProgramsPanel,
 } from "@/teacher/pickleball";
@@ -131,6 +133,8 @@ const TABS: ReadonlyArray<TabDef> = [
   { to: "coaches", label: "Coaches" },
   { to: "certifications", label: "Certifications" },
   { to: "development", label: "Development" },
+  { to: "shadowing", label: "Shadowing" },
+  { to: "evaluations", label: "Evaluations" },
   { to: "hours", label: "Hours" },
   { to: "coach-programs", label: "Programs" },
   // Pickleball — shared
@@ -179,6 +183,8 @@ export function ClassLayout() {
         "coaches",
         "certifications",
         "development",
+        "shadowing",
+        "evaluations",
         "hours",
         "coach-programs",
         "roster",
@@ -659,6 +665,26 @@ export function ClassLayout() {
               element={
                 isPickleCoach ? (
                   <DevelopmentPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="shadowing"
+              element={
+                isPickleCoach ? (
+                  <ShadowLogsPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="evaluations"
+              element={
+                isPickleCoach ? (
+                  <EvaluationsPanel courseId={cls.id} />
                 ) : (
                   <Navigate to={classPath(cls.short_code)} replace />
                 )

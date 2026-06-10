@@ -20,6 +20,8 @@ import {
   useToast,
 } from "@/components";
 
+type StepType = "cert" | "hours" | "shadow" | "manual";
+
 interface DevStep {
   id: string;
   course_id: string;
@@ -31,7 +33,24 @@ interface DevStep {
   due_on: string | null;
   completed_at: string | null;
   created_at: string;
+  step_type: StepType | null;
+  auto_threshold: number | null;
+  auto_program_id: string | null;
+  auto_completed: boolean | null;
 }
+
+interface ProgramRow {
+  id: string;
+  name: string;
+  archived: boolean;
+  sort_order: number;
+}
+
+const STEP_TYPE_LABELS: Record<Exclude<StepType, "manual">, string> = {
+  hours: "teaching hours",
+  shadow: "signed-off shadow sessions",
+  cert: "certifications",
+};
 
 const RPC_ERROR_LABELS: Record<string, string> = {
   not_authenticated: "Please sign in again.",
@@ -65,8 +84,21 @@ export function DevelopmentPanel({ courseId }: { courseId: string }) {
   const { roster, loading: rosterLoading } = useClassRoster(courseId);
   const [selectedCoach, setSelectedCoach] = useState<string | null>(null);
   const [steps, setSteps] = useState<DevStep[]>([]);
+  const [programs, setPrograms] = useState<ProgramRow[]>([]);
+  const [progress, setProgress] = useState<{
+    hours: Record<string, number>; // program_id ("" = all) -> total hours
+    shadows: number; // signed-off shadow count
+    certs: number; // certification count
+  }>({ hours: {}, shadows: 0, certs: 0 });
   const [loading, setLoading] = useState(false);
   const aliveRef = useRef(true);
+
+  // Auto-completion config (per-step)
+  const [configId, setConfigId] = useState<string | null>(null);
+  const [cfgType, setCfgType] = useState<StepType>("manual");
+  const [cfgThreshold, setCfgThreshold] = useState("");
+  const [cfgProgramId, setCfgProgramId] = useState<string>("");
+  const [savingCfg, setSavingCfg] = useState(false);
 
   // New-step form
   const [newTitle, setNewTitle] = useState("");
@@ -94,6 +126,67 @@ export function DevelopmentPanel({ courseId }: { courseId: string }) {
       setSelectedCoach(roster[0].student_id);
     }
   }, [roster, selectedCoach]);
+
+  // Load the course program catalog once (for the 'hours' auto-rule filter).
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      const { data } = await supabase
+        .from("pickleball_programs")
+        .select("id, name, archived, sort_order")
+        .eq("course_id", courseId)
+        .order("sort_order", { ascending: true });
+      if (alive) setPrograms((data ?? []) as ProgramRow[]);
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [courseId]);
+
+  // Load the coach's progress signals so auto-steps can show "37/100 hrs".
+  const loadProgress = useCallback(async () => {
+    if (!selectedCoach) {
+      setProgress({ hours: {}, shadows: 0, certs: 0 });
+      return;
+    }
+    const [hoursRes, shadowRes, certRes] = await Promise.all([
+      supabase
+        .from("pickleball_hours_log")
+        .select("hours, program_id")
+        .eq("course_id", courseId)
+        .eq("coach_id", selectedCoach),
+      supabase
+        .from("pickleball_shadow_logs")
+        .select("id")
+        .eq("course_id", courseId)
+        .eq("coach_id", selectedCoach)
+        .eq("signed_off", true),
+      supabase
+        .from("pickleball_certifications")
+        .select("id")
+        .eq("course_id", courseId)
+        .eq("coach_id", selectedCoach),
+    ]);
+    if (!aliveRef.current) return;
+    const hours: Record<string, number> = {};
+    for (const row of (hoursRes.data ?? []) as {
+      hours: number | null;
+      program_id: string | null;
+    }[]) {
+      const h = Number(row.hours) || 0;
+      hours[""] = (hours[""] ?? 0) + h;
+      if (row.program_id) hours[row.program_id] = (hours[row.program_id] ?? 0) + h;
+    }
+    setProgress({
+      hours,
+      shadows: (shadowRes.data ?? []).length,
+      certs: (certRes.data ?? []).length,
+    });
+  }, [courseId, selectedCoach]);
+
+  useEffect(() => {
+    void loadProgress();
+  }, [loadProgress]);
 
   const loadSteps = useCallback(async () => {
     if (!selectedCoach) {
@@ -216,6 +309,87 @@ export function DevelopmentPanel({ courseId }: { courseId: string }) {
     } finally {
       if (aliveRef.current) setSavingEdit(false);
     }
+  }
+
+  function beginConfig(step: DevStep) {
+    setConfigId(step.id);
+    setCfgType((step.step_type as StepType) ?? "manual");
+    setCfgThreshold(
+      step.auto_threshold != null ? String(step.auto_threshold) : "",
+    );
+    setCfgProgramId(step.auto_program_id ?? "");
+  }
+
+  async function saveConfig(step: DevStep) {
+    const isAuto = cfgType !== "manual";
+    const thresholdNum = Number(cfgThreshold);
+    if (isAuto && (!Number.isFinite(thresholdNum) || thresholdNum <= 0)) {
+      toast.error("Enter a positive goal.");
+      return;
+    }
+    setSavingCfg(true);
+    try {
+      const { data, error } = await supabase.rpc("pk_set_devstep_auto", {
+        p_id: step.id,
+        p_step_type: cfgType,
+        p_auto_threshold: isAuto ? thresholdNum : null,
+        p_auto_program_id: cfgType === "hours" ? cfgProgramId || null : null,
+      });
+      if (error) {
+        toast.error(rpcMessage(error));
+        return;
+      }
+      if (aliveRef.current && data) {
+        setSteps((prev) =>
+          prev.map((s) => (s.id === step.id ? (data as DevStep) : s)),
+        );
+        setConfigId(null);
+        toast.success(isAuto ? "Auto-completion set." : "Auto-completion cleared.");
+      }
+    } finally {
+      if (aliveRef.current) setSavingCfg(false);
+    }
+  }
+
+  // Current progress count for an auto step, in its own unit.
+  function stepProgress(step: DevStep): number {
+    if (step.step_type === "hours") {
+      return progress.hours[step.auto_program_id ?? ""] ?? 0;
+    }
+    if (step.step_type === "shadow") return progress.shadows;
+    if (step.step_type === "cert") return progress.certs;
+    return 0;
+  }
+
+  const cfgProgramName = useCallback(
+    (id: string | null): string => {
+      if (!id) return "teaching hours";
+      const p = programs.find((x) => x.id === id);
+      return p ? `${p.name} hours` : "teaching hours";
+    },
+    [programs],
+  );
+
+  function autoSummary(step: DevStep): string | null {
+    if (
+      !step.step_type ||
+      step.step_type === "manual" ||
+      step.auto_threshold == null
+    ) {
+      return null;
+    }
+    const unit = step.step_type === "hours" ? "hrs" : "";
+    const done = stepProgress(step).toLocaleString(undefined, {
+      maximumFractionDigits: 1,
+    });
+    const goal = step.auto_threshold.toLocaleString(undefined, {
+      maximumFractionDigits: 1,
+    });
+    const label =
+      step.step_type === "hours"
+        ? cfgProgramName(step.auto_program_id)
+        : STEP_TYPE_LABELS[step.step_type];
+    return `${done}/${goal}${unit ? " " + unit : ""} ${label}`.trim();
   }
 
   const openCount = steps.filter((s) => s.status === "open").length;
@@ -412,27 +586,147 @@ export function DevelopmentPanel({ courseId }: { courseId: string }) {
                                 Target: {formatDate(step.due_on)}
                               </p>
                             )}
+                            {autoSummary(step) && (
+                              <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                                <span className="inline-flex items-center rounded-full bg-sky-100 dark:bg-sky-900/40 px-2 py-0.5 text-[11px] font-medium text-sky-700 dark:text-sky-300">
+                                  Auto
+                                </span>
+                                <span
+                                  className={`text-xs tabular-nums ${
+                                    done
+                                      ? "text-emerald-600 dark:text-emerald-400"
+                                      : "text-slate-500 dark:text-slate-400"
+                                  }`}
+                                >
+                                  {autoSummary(step)}
+                                </span>
+                                {done && step.auto_completed && (
+                                  <span className="text-[11px] text-slate-400">
+                                    (auto-completed)
+                                  </span>
+                                )}
+                              </div>
+                            )}
                           </div>
-                          <button
-                            type="button"
-                            onClick={() => beginEdit(step)}
-                            aria-label="Edit next step"
-                            className="opacity-0 transition group-hover:opacity-100 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
-                          >
-                            <svg
-                              viewBox="0 0 24 24"
-                              className="h-4 w-4"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth={1.8}
+                          <div className="flex shrink-0 items-center gap-1">
+                            <button
+                              type="button"
+                              onClick={() => beginConfig(step)}
+                              aria-label="Configure auto-completion"
+                              title="Auto-completion"
+                              className={`transition hover:text-slate-600 dark:hover:text-slate-200 ${
+                                step.step_type &&
+                                step.step_type !== "manual"
+                                  ? "text-sky-500"
+                                  : "opacity-0 text-slate-400 group-hover:opacity-100"
+                              }`}
                             >
-                              <path
-                                d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+                              <svg
+                                viewBox="0 0 24 24"
+                                className="h-4 w-4"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth={1.8}
+                              >
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => beginEdit(step)}
+                              aria-label="Edit next step"
+                              className="opacity-0 transition group-hover:opacity-100 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                            >
+                              <svg
+                                viewBox="0 0 24 24"
+                                className="h-4 w-4"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth={1.8}
+                              >
+                                <path
+                                  d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                      {configId === step.id && !editing && (
+                        <div className="mt-3 space-y-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 p-3">
+                          <p className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                            Auto-complete this step when a goal is met
+                          </p>
+                          <div className="grid gap-2 sm:grid-cols-2">
+                            <select
+                              value={cfgType}
+                              onChange={(e) =>
+                                setCfgType(e.target.value as StepType)
+                              }
+                              aria-label="Completion rule"
+                              className="min-h-[40px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
+                            >
+                              <option value="manual">Manual (check off by hand)</option>
+                              <option value="hours">Teaching hours reach…</option>
+                              <option value="shadow">Signed-off shadows reach…</option>
+                              <option value="cert">Certifications reach…</option>
+                            </select>
+                            {cfgType !== "manual" && (
+                              <input
+                                type="number"
+                                min="0"
+                                step={cfgType === "hours" ? "0.5" : "1"}
+                                value={cfgThreshold}
+                                onChange={(e) => setCfgThreshold(e.target.value)}
+                                placeholder={
+                                  cfgType === "hours" ? "e.g. 100" : "e.g. 5"
+                                }
+                                aria-label="Goal amount"
+                                className="min-h-[40px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
                               />
-                            </svg>
-                          </button>
+                            )}
+                          </div>
+                          {cfgType === "hours" && (
+                            <select
+                              value={cfgProgramId}
+                              onChange={(e) => setCfgProgramId(e.target.value)}
+                              aria-label="Program filter"
+                              className="min-h-[40px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
+                            >
+                              <option value="">All programs</option>
+                              {programs
+                                .filter((p) => !p.archived)
+                                .map((p) => (
+                                  <option key={p.id} value={p.id}>
+                                    {p.name} only
+                                  </option>
+                                ))}
+                            </select>
+                          )}
+                          <div className="flex gap-2">
+                            <button
+                              type="button"
+                              onClick={() => void saveConfig(step)}
+                              disabled={savingCfg}
+                              className="min-h-[40px] rounded-lg bg-emerald-600 px-3 text-sm font-medium text-white hover:bg-emerald-700 disabled:opacity-50"
+                            >
+                              {savingCfg ? "Saving…" : "Save rule"}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setConfigId(null)}
+                              className="min-h-[40px] rounded-lg border border-slate-300 dark:border-slate-700 px-3 text-sm"
+                            >
+                              Cancel
+                            </button>
+                          </div>
                         </div>
                       )}
                     </li>
