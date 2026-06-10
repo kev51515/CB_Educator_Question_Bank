@@ -7,7 +7,21 @@
 import { useEffect, useRef, useState } from "react";
 import { KebabMenu } from "@/components";
 import { ColorPicker } from "./CourseOrgBits";
-import { colorClasses, ORG_COLORS, type CourseFolder, type OrgColor } from "./courseOrg";
+import {
+  colorClasses,
+  COURSE_DND_MIME,
+  ORG_COLORS,
+  type CourseFolder,
+  type OrgColor,
+} from "./courseOrg";
+
+/** Pull a dragged course id off a drag event, or null if the drag isn't one. */
+function readCourseDrag(e: React.DragEvent): string | null {
+  if (!e.dataTransfer.types.includes(COURSE_DND_MIME)) return null;
+  // `getData` is empty during dragover in some browsers; presence of the type
+  // is enough to accept the drop, and the id is read on drop where it's available.
+  return e.dataTransfer.getData(COURSE_DND_MIME) || "";
+}
 
 export interface FolderCounts {
   all: number;
@@ -24,6 +38,12 @@ interface Props {
   onRename: (id: string, name: string) => void;
   onRecolor: (id: string, color: OrgColor) => void;
   onDelete: (id: string) => void;
+  /** Fired when a course card is dropped onto a folder row (folderId) or the
+   *  "Unfiled" row (null). Wired only while a course drag is in flight. */
+  onDropCourse: (courseId: string, folderId: string | null) => void;
+  /** True while a course card is being dragged anywhere on the page — drives
+   *  the "drop here" affordance so rows don't light up when nothing's moving. */
+  courseDragActive: boolean;
 }
 
 export function CourseOrgSidebar({
@@ -35,12 +55,17 @@ export function CourseOrgSidebar({
   onRename,
   onRecolor,
   onDelete,
+  onDropCourse,
+  courseDragActive,
 }: Props): JSX.Element {
   const [creating, setCreating] = useState(false);
   const [newName, setNewName] = useState("");
   const [newColor, setNewColor] = useState<OrgColor>(ORG_COLORS[0]);
   const [busy, setBusy] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  // Which row is the active drop target ("unfiled" | folderId), so only the
+  // hovered row shows its highlight ring.
+  const [dropTarget, setDropTarget] = useState<string | null>(null);
 
   useEffect(() => {
     if (creating) inputRef.current?.focus();
@@ -77,6 +102,22 @@ export function CourseOrgSidebar({
         onClick={() => onSelect("unfiled")}
         icon={<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />}
         dashed
+        dropActive={courseDragActive}
+        dropHover={dropTarget === "unfiled"}
+        onCourseDragOver={(e) => {
+          if (readCourseDrag(e) === null) return;
+          e.preventDefault();
+          e.dataTransfer.dropEffect = "move";
+          setDropTarget("unfiled");
+        }}
+        onCourseDragLeave={() => setDropTarget((cur) => (cur === "unfiled" ? null : cur))}
+        onCourseDrop={(e) => {
+          const id = readCourseDrag(e);
+          setDropTarget(null);
+          if (!id) return;
+          e.preventDefault();
+          onDropCourse(id, null);
+        }}
       />
 
       {folders.length > 0 && (
@@ -95,6 +136,22 @@ export function CourseOrgSidebar({
           onDelete={() => {
             if (selected === f.id) onSelect("all");
             onDelete(f.id);
+          }}
+          dropActive={courseDragActive}
+          dropHover={dropTarget === f.id}
+          onCourseDragOver={(e) => {
+            if (readCourseDrag(e) === null) return;
+            e.preventDefault();
+            e.dataTransfer.dropEffect = "move";
+            setDropTarget(f.id);
+          }}
+          onCourseDragLeave={() => setDropTarget((cur) => (cur === f.id ? null : cur))}
+          onCourseDrop={(e) => {
+            const id = readCourseDrag(e);
+            setDropTarget(null);
+            if (!id) return;
+            e.preventDefault();
+            onDropCourse(id, f.id);
           }}
         />
       ))}
@@ -169,6 +226,11 @@ function PseudoRow({
   onClick,
   icon,
   dashed,
+  dropActive,
+  dropHover,
+  onCourseDragOver,
+  onCourseDragLeave,
+  onCourseDrop,
 }: {
   label: string;
   count: number;
@@ -176,16 +238,33 @@ function PseudoRow({
   onClick: () => void;
   icon: JSX.Element;
   dashed?: boolean;
+  /** True while a course is being dragged anywhere — shows the "drop here" cue. */
+  dropActive?: boolean;
+  /** True when this row is the hovered drop target — shows the ring. */
+  dropHover?: boolean;
+  onCourseDragOver?: (e: React.DragEvent) => void;
+  onCourseDragLeave?: (e: React.DragEvent) => void;
+  onCourseDrop?: (e: React.DragEvent) => void;
 }): JSX.Element {
+  const droppable = !!onCourseDrop;
   return (
     <button
       type="button"
       onClick={onClick}
       aria-current={active ? "true" : undefined}
-      className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm transition-colors ${
+      onDragOver={onCourseDragOver}
+      onDragLeave={onCourseDragLeave}
+      onDrop={onCourseDrop}
+      className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm transition-all ${
         active
           ? "bg-slate-200/70 font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-100"
           : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+      } ${
+        droppable && dropHover
+          ? "ring-2 ring-indigo-500 ring-inset bg-indigo-50 dark:bg-indigo-950/40"
+          : droppable && dropActive
+            ? "ring-1 ring-dashed ring-indigo-300 dark:ring-indigo-800"
+            : ""
       }`}
     >
       <svg
@@ -217,6 +296,11 @@ function FolderRow({
   onRename,
   onRecolor,
   onDelete,
+  dropActive,
+  dropHover,
+  onCourseDragOver,
+  onCourseDragLeave,
+  onCourseDrop,
 }: {
   folder: CourseFolder;
   count: number;
@@ -225,6 +309,13 @@ function FolderRow({
   onRename: (name: string) => void;
   onRecolor: (c: OrgColor) => void;
   onDelete: () => void;
+  /** True while a course is being dragged anywhere — shows the "drop here" cue. */
+  dropActive: boolean;
+  /** True when this row is the hovered drop target — shows the ring. */
+  dropHover: boolean;
+  onCourseDragOver: (e: React.DragEvent) => void;
+  onCourseDragLeave: (e: React.DragEvent) => void;
+  onCourseDrop: (e: React.DragEvent) => void;
 }): JSX.Element {
   const [renaming, setRenaming] = useState(false);
   const [draft, setDraft] = useState(folder.name);
@@ -242,7 +333,18 @@ function FolderRow({
 
   return (
     <div
-      className={`group rounded-lg ${active ? "bg-slate-200/70 dark:bg-slate-800" : "hover:bg-slate-100 dark:hover:bg-slate-800/70"}`}
+      onDragOver={onCourseDragOver}
+      onDragLeave={onCourseDragLeave}
+      onDrop={onCourseDrop}
+      className={`group rounded-lg transition-all ${
+        active ? "bg-slate-200/70 dark:bg-slate-800" : "hover:bg-slate-100 dark:hover:bg-slate-800/70"
+      } ${
+        dropHover
+          ? "ring-2 ring-indigo-500 ring-inset bg-indigo-50 dark:bg-indigo-950/40"
+          : dropActive
+            ? "ring-1 ring-dashed ring-indigo-300 dark:ring-indigo-800"
+            : ""
+      }`}
     >
       <div className="flex items-center gap-1 px-1">
         {renaming ? (

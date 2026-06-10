@@ -33,7 +33,7 @@ import {
 import { SkeletonCard } from "@/components/Skeleton";
 import { useProfile } from "@/lib/profile";
 import { coursePath, courseModulesPath } from "@/lib/routes";
-import { useCourseOrganization, type CourseTag } from "./courseOrg";
+import { COURSE_DND_MIME, useCourseOrganization, type CourseTag } from "./courseOrg";
 import { CourseOrgSidebar, type FolderCounts } from "./CourseOrgSidebar";
 import { CourseTagFilterBar } from "./CourseTagFilterBar";
 import { CourseOrganizeModal } from "./CourseOrganizeModal";
@@ -342,6 +342,38 @@ export function AllClassesView() {
     });
   }, []);
 
+  // ---- drag a course into a folder (native HTML5 DnD) -----------------------
+  // `draggingId` powers the source card's "dragging" visual; it's also a proxy
+  // for "a course drag is in flight" so the folder rail only lights up while a
+  // course is actually moving.
+  const [draggingId, setDraggingId] = useState<string | null>(null);
+
+  const onCourseDragStart = useCallback(
+    (course: AdminClass, e: React.DragEvent) => {
+      e.dataTransfer.setData(COURSE_DND_MIME, course.id);
+      e.dataTransfer.effectAllowed = "move";
+      setDraggingId(course.id);
+    },
+    [],
+  );
+  const onCourseDragEnd = useCallback(() => setDraggingId(null), []);
+
+  const onDropCourse = useCallback(
+    (courseId: string, folderId: string | null) => {
+      setDraggingId(null);
+      // No-op if it's already where it landed (avoids a pointless toast).
+      const current = org.folderOf.get(courseId) ?? null;
+      if (current === folderId) return;
+      void orgApi.setCourseFolder(courseId, folderId);
+      const folderName = folderId
+        ? (org.folders.find((f) => f.id === folderId)?.name ?? "folder")
+        : null;
+      if (folderName) toast.success(`Moved to ${folderName}`);
+      else toast.success("Removed from folder");
+    },
+    [org.folderOf, org.folders, orgApi, toast],
+  );
+
   // The inline "create a course" card — shared by the grid and list layouts.
   const inlineCreateCard = (
     <div className="rounded-xl bg-white dark:bg-slate-900 ring-2 ring-indigo-400 shadow-sm p-4 flex flex-col gap-3 min-h-[180px]">
@@ -473,6 +505,8 @@ export function AllClassesView() {
             onRename={orgApi.renameFolder}
             onRecolor={orgApi.recolorFolder}
             onDelete={orgApi.deleteFolder}
+            onDropCourse={onDropCourse}
+            courseDragActive={draggingId !== null}
           />
         </aside>
 
@@ -560,6 +594,9 @@ export function AllClassesView() {
                   course={c}
                   view="list"
                   tags={tagsForCourse(c.id)}
+                  dragging={draggingId === c.id}
+                  onDragStart={(e) => onCourseDragStart(c, e)}
+                  onDragEnd={onCourseDragEnd}
                   onNavigate={() => navigate(coursePath(c.short_code))}
                   onEdit={() => setEditTarget(c)}
                   onDuplicate={() => setDuplicateSource({ id: c.id, name: c.name })}
@@ -578,6 +615,9 @@ export function AllClassesView() {
                   course={c}
                   view="grid"
                   tags={tagsForCourse(c.id)}
+                  dragging={draggingId === c.id}
+                  onDragStart={(e) => onCourseDragStart(c, e)}
+                  onDragEnd={onCourseDragEnd}
                   onNavigate={() => navigate(coursePath(c.short_code))}
                   onEdit={() => setEditTarget(c)}
                   onDuplicate={() => setDuplicateSource({ id: c.id, name: c.name })}
@@ -731,6 +771,10 @@ interface AdminCourseCardRowProps {
   course: AdminClass;
   view: CourseView;
   tags: CourseTag[];
+  /** True while THIS card is the one being dragged — dims it. */
+  dragging: boolean;
+  onDragStart: (e: React.DragEvent) => void;
+  onDragEnd: () => void;
   onNavigate: () => void;
   onEdit: () => void;
   onDuplicate: () => void;
@@ -743,6 +787,9 @@ function AdminCourseCardRow({
   course,
   view,
   tags,
+  dragging,
+  onDragStart,
+  onDragEnd,
   onNavigate,
   onEdit,
   onDuplicate,
@@ -824,9 +871,12 @@ function AdminCourseCardRow({
   if (view === "list") {
     return (
       <div
-        className={`group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 transition hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 ${
+        draggable
+        onDragStart={onDragStart}
+        onDragEnd={onDragEnd}
+        className={`group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 transition hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 cursor-grab active:cursor-grabbing ${
           archivedOpt && !course.is_template ? "opacity-70" : ""
-        }`}
+        } ${dragging ? "opacity-50 ring-2 ring-indigo-400" : ""}`}
       >
         <button
           type="button"
@@ -893,6 +943,14 @@ function AdminCourseCardRow({
   }
 
   return (
+    <div
+      draggable
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
+      className={`cursor-grab active:cursor-grabbing transition-opacity ${
+        dragging ? "opacity-50" : ""
+      }`}
+    >
     <CourseCard
       paletteSeed={course.id}
       name={course.name}
@@ -949,5 +1007,6 @@ function AdminCourseCardRow({
         ) : undefined
       }
     />
+    </div>
   );
 }
