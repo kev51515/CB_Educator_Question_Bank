@@ -159,9 +159,14 @@ function renderMarks(
     out.push(
       <mark
         key={`m${idx}`}
-        onClick={() => {
+        onClick={(e) => {
           const sel = window.getSelection();
-          if (!sel || sel.isCollapsed) onRemove?.(field, baseOffset + s);
+          if (!sel || sel.isCollapsed) {
+            // Choices wrap their text in a role=button row; stop the click from
+            // bubbling so removing a highlight doesn't also toggle the answer.
+            e.stopPropagation();
+            onRemove?.(field, baseOffset + s);
+          }
         }}
         title="Click to remove highlight"
         style={{ backgroundColor: fill }}

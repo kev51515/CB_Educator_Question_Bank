@@ -219,7 +219,7 @@ See `docs/PROCTORING.md` for the full stack + SEB integration plan. Shipped in c
 | Teacher invite code management | ✓ Built | `AdminInviteCodesPage.tsx`, plus `is_staff` lets teachers manage too (0009) |
 | Multi-tenant orgs / schools | ○ Not built | L; `organizations` root + `organization_id` on `classes` + RLS rewrite. Cheap if done before 100+ classes |
 | White-label / branding | ○ Not built | M; per-org logo/colors via `organizations.branding jsonb` |
-| Custom domains | ○ Not built | M; Vercel project alias + per-org subdomain |
+| Custom domains | ○ Not built | M; Cloudflare Pages custom domain + per-org subdomain |
 | Billing / subscriptions | ○ Not built | L; Stripe + `subscriptions` table + entitlements |
 | Anonymous user cleanup | ✓ Built | `cleanup-anon-users` Edge Function + cron binding in `0031_cron_schedules.sql` |
 | Audit log | ✓ Built | See A — `0022_audit_log.sql` + `0027_audit_more.sql` |

@@ -13,6 +13,7 @@
 import { supabase } from "@/lib/supabase";
 import type {
   GetModuleResult,
+  QuestionTime,
   StartTestResult,
   SubmitModuleResult,
   TestQuestion,
@@ -209,8 +210,8 @@ export interface ActionMeta {
   to?: string | null;
   /** eliminate/uneliminate */
   choice?: string | null;
-  /** highlight_add/remove */
-  field?: "passage" | "stem" | null;
+  /** highlight_add/remove — "passage" | "stem" | "choice:A".."choice:D" */
+  field?: string | null;
   start?: number | null;
   end?: number | null;
   offset?: number | null;
@@ -414,6 +415,19 @@ export async function getResult(runId: string): Promise<TestResult> {
   });
   if (error) throw mapError(error);
   return data as TestResult;
+}
+
+/**
+ * Per-question pacing vs. the run's class (migration 0143). One row per question
+ * the student answered, with their time + the cohort average. Best-effort on the
+ * caller's side (pacing is a non-critical embellishment of the review screen),
+ * but THROWS here so callers can choose to swallow — keeping this wrapper
+ * consistent with the deliberate-action RPCs above.
+ */
+export async function getQuestionTimes(runId: string): Promise<QuestionTime[]> {
+  const { data, error } = await supabase.rpc("get_test_question_times", { p_run_id: runId });
+  if (error) throw mapError(error);
+  return (data ?? []) as QuestionTime[];
 }
 
 // --- Local answer cache (failsafe for the active, unsubmitted module) --------

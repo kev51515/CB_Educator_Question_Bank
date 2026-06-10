@@ -1,44 +1,109 @@
 # Session Recap
 
-## Branch `feat/test-access-policy` (2026-06-10) — test access/retakes, underline, mobile UX
+## Branch `feat/test-access-policy` (2026-06-10) — partial/scheduled module deployment + reconciliation
 
-Worked on a NON-production branch (nothing pushed to main; migration 0141 + the
-underline data seed are NOT applied to Remote — they run on merge).
+Teacher-controlled metering: deploy a full test's modules over days and/or as a
+permanent subset (e.g. R&W only). Migrations **0143–0146** (test_module_windows,
+window-admin RPCs, two start_test hotfixes) applied to Remote; the one-run
+invariant (`test_runs_one_active`) is untouched so a student can never "take the
+same test twice".
 
-- **Test access + retakes — migration 0141 (NOT applied; applies on merge).**
-  (a) Enrollment gate on `start_test`: a non-staff caller must be enrolled in a
-  course that links the test, else `not_enrolled` (gates take + resume; staff
-  exempt). Closes the bookmarked-`/test/<slug>` hole — a student removed from a
-  course (or whose course was deleted) can no longer take/continue, but their
-  OWN released result stays viewable (`get_test_result` is ownership-based).
-  (b) Per-test `tests.retake_policy` (`one_attempt` default | `unlimited`
-  practice) + staff toggle on the test-overview header. Smoke:
-  `scripts/smoke-test-access.mjs` (kept out of smoke-all until applied).
-- **Underline rendering + data.** `passageRender` now renders author `<u>…</u>`
-  offset-safely (inner text stays highlightable). OCR + the Canvas QTI both
-  dropped the underline from 15 questions that ask about "the underlined
-  portion/sentence/claim". `scripts/seed-underline-spans.mjs` (anchor-based,
-  idempotent, exact-by-construction) restores the 14 PROSE spans — each read
-  from its source page PDF; **dry-run 14/14 exact-match**. NOT run on the branch
-  (it UPDATEs live content; apply on merge). nov-2023 1-11 is excluded (its
-  "underlined claim" is baked into the graph image, not text-fixable).
-- **Mobile UX pass — 25 student files, 3 commits.** 16px inputs (no iOS
-  auto-zoom), >=44px tap targets, narrow-screen stacking across the first page +
-  auth, shell/bottom-nav, full-test runner, assignment runner, course/dashboard,
-  counseling cards, inbox, account. Mobile-first with `sm:`/`md:` guards so
-  desktop is unchanged. (Audited via a workflow; fixes applied directly after a
-  server rate limit blocked the subagent fix phase. Codebase was already largely
-  mobile-aware, so only genuine gaps were changed.)
-- **Courses card text selection.** `CourseCard` renders the clickable card as a
-  `role="button"` div with `select-text` (not a native `<button>`, whose text is
-  unselectable), so course names/codes can be copied; a plain click still
-  navigates, a drag-select doesn't.
+- **Phase 1 (backend).** `test_module_windows(course,test,position,deployed,opens_at)`;
+  `test_runs` gains `course_id` + `scheduled_first/last_position` snapshots;
+  `start_test`/`get_test_module`/`submit_test_module` gate on the window, re-anchor
+  the per-module timer on a multi-day resume, finalize at the deployed range.
+  Teacher RPCs `set/get_test_module_windows` + `finalize_metered_run`.
+- **Phase 2 (teacher UI).** `TestScheduleEditor` in `AssignTestModal`; module
+  selection also in the Modules-page inline **Add Full-Test** flow.
+- **Phase 3 (student UI).** New `locked` phase in `FullTestApp`: "this section opens
+  <when>" instead of a generic error.
+- **Verified on cloud:** smoke-test-windows 18/18, smoke-locked-module 10/10,
+  smoke-test-access 9/9, clickthrough 42/0, edges 10/10, tsc + vite build clean.
+- **Reconciliation.** Merged `main` in; the parallel session's
+  `0143_test_question_times.sql` was **renumbered 0143 → 0147** (cloud already had
+  0143–0146); `0148` carried over. Code auto-merged; three docs hand-merged.
 
-To ship: merge -> `cd viewer && npm run db:push` (applies 0141) -> `npm run
-smoke:test-access` -> `node --env-file-if-exists=../.env scripts/seed-underline-spans.mjs`
-(applies the underline spans) -> add `smoke:test-access` to `smoke-all.mjs`.
+## 2026-06-10 (deploy cut) — test-access gate, retake policy, underline, mobile UX
 
-## Latest (2026-06-09) — autonomous polish pass: reusable hooks, student UX, keyboard a11y
+Merged to `main` (cherry-picked from `feat/test-access-policy`; the parallel
+branch's `0143–0146` module-windows + Phase 2 UI were intentionally EXCLUDED from
+this cut). Host is **Cloudflare Pages** (NOT Vercel) — it auto-builds the
+`viewer/` Vite SPA on every push to `main`, so this code deploys automatically.
+
+- **Test access + retakes — migration 0141 (already LIVE on remote;** the
+  parallel session applied it with their chain — `tests.retake_policy` exists).
+  Enrollment gate on `start_test` (non-staff must be enrolled in a course linking
+  the test, else `not_enrolled`; gates take + resume; staff exempt) — a
+  removed/deleted-course student can no longer take/continue, but their own
+  released result stays viewable. Per-test `tests.retake_policy`
+  (`one_attempt` | `unlimited` practice) + staff toggle. Smoke `smoke:test-access`.
+- **Underline rendering + data (live).** `passageRender` renders `<u>…</u>`
+  offset-safely; `seed-underline-spans.mjs` (anchor-based, exact-by-construction)
+  wraps the 14 prose spans (nov-2023 1-11 figure-baked, excluded). Data applied
+  to remote after the renderer's CF Pages build went live (the seed is idempotent;
+  re-run safe). Briefly reverted mid-deploy during a host mixup, then re-applied.
+- **Mobile UX pass (25 student files).** 16px inputs (no iOS auto-zoom), ≥44px
+  tap targets, narrow-screen stacking across first page/auth, chrome, full-test
+  runner, assignment runner, course/counseling/inbox/account — mobile-first,
+  desktop unchanged.
+- **Courses card** text is selectable/copyable (role=button div, not a native
+  `<button>`); click still navigates.
+
+## Latest (2026-06-10) — login-code claim fix, highlighter on answer choices, per-question pacing
+
+Three shipments to `main` (DB live on prod via psql; SPA build green on CI).
+Built in isolated worktrees off `main` to stay clear of a parallel session
+live-editing `fulltest/`.
+
+- **Auth — bare login codes reach seat-claim (`0142`, commit `5afcf67`).** A
+  managed student's bare 6-char `login_code` (e.g. `KMCZQR`) was misread by
+  `QuickStartScreen`'s shape heuristic as a *course* code → it never reached
+  `claim_student_seat`, so first login dead-ended ("Couldn't load your
+  profile"). New `peek_join_code(code) → 'seat'|'course'|'none'` classifies a
+  typed code server-side (callable pre-auth; returns only the classification,
+  never row data). QuickStart now debounce-resolves a bare code and routes a
+  personal code to the claim flow (email+password). The dash-less personal-code
+  format is kept on purpose. Verified end-to-end on a disposable seat.
+
+- **Full-test highlighter now works on answer choices (commit `c8dd290`).** Was
+  passage + stem only. `AnnotField` extended with `choice:A`..`choice:D`
+  (`captureSelectionHighlight` accepts them); each choice is now a
+  `role="button"` `<div>` (native button text can't be selected) with a
+  drag-vs-click guard so highlighting a choice doesn't toggle the answer, plus
+  full keyboard support; the highlight-remove click `stopPropagation`s.
+
+- **Per-question pacing vs class in student review (`0143`, commits `c8dd290`
+  + `439f6f8`).** Per-question time lives as `dwell` events in
+  `test_run_events` (the `time_ms` column is unused) — `get_test_question_times`
+  sums dwell seconds, maps `(module, question#) → question_id`, and averages
+  over course peers (falls back to all when <3; viewer excluded). UI in
+  `ResultView` (student-only once results released): a `PacingPanel` overview
+  (colour-coded per-question time-bar strip + totals) and an inline `PacePill`
+  on each review card. **Partial-test safe:** per-question pills compare only
+  students who did that question; panel totals sum over the shared "you both
+  did" set, never apples-to-oranges across different question counts.
+
+Operational: per request, wiped all student users + test data and rebuilt
+Class A's 9-student roster (the 2 college-counseling students were kept), and
+populated **Class B** with the 10 '27-SAT-B names.
+
+- **Dash-less login codes — `admin_create_student` fixed (`0148`).** The
+  "non-guessable login codes" wave only re-keyed existing rows; the generator
+  still emitted `<short_code>-NN`, so every *new* student regressed to a dash
+  code. Rewrote the generator to mint a bare 6-distinct-letter code (A–Z minus
+  I/O/L, e.g. `KMCZQR`) — no dash, no course prefix; `peek_join_code` (0142)
+  already routes these. Re-minted Class B's 10 seats to bare codes. Also swept
+  the docs (ARCHITECTURE/SCHEMA/CONTROLLED_TESTS + QuickStart comments) that
+  still showed the old `<COURSE>-NN` examples.
+
+**Migration ledger note:** `supabase_migrations.schema_migrations` is recorded
+through `0140`; `0141` (parallel session) / `0142` / `0143` ran live via direct
+`psql` but aren't registered. All three are idempotent `CREATE OR REPLACE`, so a
+later `supabase db push` re-applies them cleanly. **Frontend deploys to Cloudflare Pages** — the built `viewer/dist` artifact
+deploys to Cloudflare Pages; the CI build job is green, so the SPA is
+deploy-ready.
+
+## 2026-06-09 — autonomous polish pass: reusable hooks, student UX, keyboard a11y
 
 A self-directed improvement run in the student / shared-hooks / admin layer
 (deliberately clear of the `fulltest/` + teacher-skills surfaces a parallel
@@ -964,9 +1029,9 @@ All four are deployed and registered through pg_cron in migration 0031.
 ## What still needs your hands
 
 - Rotate the database password, service-role key, and Resend API key before going public.
-- Run `vercel login` then `vercel --prod` to deploy the viewer app.
+- Push to `main` (or run `npx wrangler pages deploy viewer/dist --project-name=<project>`) to deploy the viewer app to Cloudflare Pages.
 - Sign up for Sentry and PostHog and drop the DSN and project key into env.
-- Point a custom domain at the Vercel deployment.
+- Point a custom domain at the Cloudflare Pages deployment.
 - Verify a Resend sender domain — currently sending from `onboarding@resend.dev`, which is fine for smoke but not for real students.
 
 ## Architectural decisions made this session

@@ -1,14 +1,19 @@
 /**
  * QuickStartScreen
  * ================
- * One entry point, two flows — chosen automatically by the SHAPE of the code:
+ * One entry point, two flows. A personal login code and a course code are
+ * BOTH bare 6-char codes (shape-identical), so the flow is resolved
+ * server-side via `peek_join_code` ('seat' | 'course' | 'none') rather than
+ * by shape. (A legacy "-NN" dash shape is still parsed for backward-compat —
+ * see SEAT_RE below — but is no longer how login codes are distributed.)
  *
  *  • COURSE code ("Y8M3KP", 6 chars) → frictionless quick-start.
  *      Student types course code + name + email. We mint an anonymous session
  *      and call `quick_start_with_code`, which stamps name+email onto the
  *      just-created profile and enrolls them. No password.
  *
- *  • SEAT code ("Y8M3KP-01", course code + "-NN") → CLAIM a pre-created seat.
+ *  • SEAT code (a bare, non-guessable 6-letter login code, e.g. "KMCZQR",
+ *      minted by admin_create_student) → CLAIM a pre-created seat.
  *      The teacher already made this student ("Bob") via admin_create_student,
  *      so we do NOT mint a new profile and we do NOT ask for a name (the teacher
  *      owns it — cf. migration 0093). Instead the student sets their own email +
@@ -48,13 +53,16 @@ interface QuickStartScreenProps {
  * Course short_code spec (per CLAUDE.md migrations 0038–0040):
  *   - exactly 6 characters
  *   - alphabet A-Z and 2-9 (excludes O/0/I/1/L confusables)
- * A SEAT code appends "-NN" (a 1–3 digit ordinal that CAN contain 0/1).
+ * A personal login code is also a bare 6-letter code (e.g. "KMCZQR"); since it
+ * is shape-identical to a course code, `peek_join_code` decides seat vs course.
+ * The "-NN" dash shape below is LEGACY (no longer how login codes are minted);
+ * SEAT_RE is kept only so any old dash-form code still routes to the claim flow.
  */
 const CODE_LENGTH = 6;
 const COURSE_RE = /^[A-HJ-NP-Z2-9]{6}$/;
-// Require the dash so a 6-char course code with an accidental trailing digit
-// (e.g. "AB23CD1") isn't misread as a seat code — seat codes are always
-// distributed with the dash ("Y8M3KP-01").
+// Legacy backward-compat: a "-NN" dash shape (no longer distributed) is still
+// recognised as a seat code. Requiring the dash keeps a 6-char course code with
+// an accidental trailing digit (e.g. "AB23CD1") from being misread as a seat.
 const SEAT_RE = /^([A-HJ-NP-Z2-9]{6})-([0-9]{1,3})$/;
 /** Keep letters, digits and a dash while typing; uppercase; cap length. */
 const ENTRY_SCRUB = /[^A-Z0-9-]/g;
