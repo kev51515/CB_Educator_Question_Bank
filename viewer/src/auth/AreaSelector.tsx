@@ -112,7 +112,7 @@ export function AreaSelector() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-12">
       <div className="mx-auto max-w-5xl">
-        <header className="mb-10 flex items-start justify-between gap-4">
+        <header className="mb-10 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center sm:gap-4">
           <div>
             <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
               Welcome back
@@ -127,7 +127,7 @@ export function AreaSelector() {
           <button
             type="button"
             onClick={() => void signOut()}
-            className="rounded-lg px-3 py-1.5 text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60"
+            className="inline-flex items-center min-h-[44px] rounded-lg px-4 py-2 text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60"
           >
             Sign out
           </button>
@@ -173,11 +173,11 @@ export function AreaSelector() {
           {/* Right rail — "My courses" pinned to the top of the column. */}
           <aside className="space-y-3 lg:sticky lg:top-6">
             <MyClassesPanel refreshToken={classesRefreshToken} />
-            <div className="flex justify-end">
+            <div className="flex justify-center sm:justify-end">
               <button
                 type="button"
                 onClick={() => setJoinOpen(true)}
-                className="rounded-lg bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium text-indigo-700 dark:text-indigo-300 hover:bg-white dark:hover:bg-slate-900 transition"
+                className="inline-flex items-center min-h-[44px] rounded-lg bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium text-indigo-700 dark:text-indigo-300 hover:bg-white dark:hover:bg-slate-900 transition"
               >
                 Join a course
               </button>

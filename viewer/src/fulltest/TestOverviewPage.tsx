@@ -19,7 +19,7 @@
  * inline ResultView, the same RPCs the completion modal uses.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/lib/profile";
 import { useToast } from "@/components/Toast";
@@ -41,12 +41,15 @@ import {
   fmtMins,
   pctOf,
   toLiveInfo,
+  rosterComparator,
   InterventionModal,
   StatCard,
   RosterRowView,
   type LiveInfo,
   type ModuleRow,
   type RosterRow,
+  type RosterSortKey,
+  type SortDir,
   type TestRow,
 } from "@/fulltest/test-overview";
 
@@ -81,6 +84,32 @@ export function TestOverviewPage(): JSX.Element {
   const [test, setTest] = useState<TestRow | null>(null);
   const [modules, setModules] = useState<ModuleRow[]>([]);
   const [rows, setRows] = useState<RosterRow[]>([]);
+  // Per-course filter (0142): the same full-length test can be assigned to
+  // several courses, so the roster RPC returns one row per (student, course).
+  // This narrows the page to one course's students + stats at a time. Persisted
+  // per-slug so a teacher's last selection survives reloads.
+  const courseFilterKey = `test-overview.course.${slug}`;
+  // A deep link from a course's Modules page carries ?course=<courseId>; that
+  // takes priority over the persisted last-selection so a teacher arriving from
+  // a specific course lands on that course. If the id isn't in the roster once
+  // rows load, the guard below resets to "all".
+  const [searchParams] = useSearchParams();
+  const [courseFilter, setCourseFilter] = useState<string | "all">(() => {
+    const fromUrl = searchParams.get("course");
+    if (fromUrl) return fromUrl;
+    try {
+      return localStorage.getItem(`test-overview.course.${slug}`) ?? "all";
+    } catch {
+      return "all";
+    }
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem(courseFilterKey, courseFilter);
+    } catch {
+      /* ignore quota / private-mode failures */
+    }
+  }, [courseFilterKey, courseFilter]);
   const [live, setLive] = useState<Map<string, LiveInfo>>(() => new Map());
   const [metaLoading, setMetaLoading] = useState(true);
   const [rosterLoading, setRosterLoading] = useState(true);
@@ -105,6 +134,7 @@ export function TestOverviewPage(): JSX.Element {
   // backing api (`setProctoringLevel`) may not exist yet — see onSetProctoring.
   const [proctoringLevel, setProctoringLevel] = useState<ProctoringUiLevel>("standard");
   const [proctoringBusy, setProctoringBusy] = useState(false);
+  const [retakeBusy, setRetakeBusy] = useState(false);
 
   // Register the real test name with the global breadcrumb bar (no-ops until
   // both the slug and title are known; cleans up on unmount).
@@ -119,7 +149,7 @@ export function TestOverviewPage(): JSX.Element {
       try {
         const { data: t } = await supabase
           .from("tests")
-          .select("id, slug, title, short_title, total_questions")
+          .select("id, slug, title, short_title, total_questions, retake_policy")
           .eq("slug", slug)
           .maybeSingle();
         if (!alive) return;
@@ -181,8 +211,55 @@ export function TestOverviewPage(): JSX.Element {
     void refreshRoster();
   }, [refreshRoster]);
 
-  // --- derived cohort stats ---
+  // --- per-course filter derivations ---
+  // Distinct courses present in the roster, sorted by name. The filter UI only
+  // renders when there's more than one (a single-course test needs no filter).
+  const courses = useMemo(() => {
+    const byId = new Map<string, { id: string; name: string; count: number }>();
+    for (const r of rows) {
+      if (!r.course_id) continue;
+      const existing = byId.get(r.course_id);
+      if (existing) existing.count += 1;
+      else byId.set(r.course_id, { id: r.course_id, name: r.course_name ?? "Course", count: 1 });
+    }
+    return Array.from(byId.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [rows]);
+
+  // If a previously-selected course is no longer in the roster (e.g. the test
+  // was unassigned from it), fall back to "all" rather than showing nothing.
+  useEffect(() => {
+    if (courseFilter !== "all" && !courses.some((c) => c.id === courseFilter)) {
+      setCourseFilter("all");
+    }
+  }, [courses, courseFilter]);
+
+  const filteredRows = useMemo(
+    () => (courseFilter === "all" ? rows : rows.filter((r) => r.course_id === courseFilter)),
+    [rows, courseFilter],
+  );
+
+  // --- roster table sorting ---
+  const [sortKey, setSortKey] = useState<RosterSortKey>("submitted");
+  const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const defaultDirFor = (k: RosterSortKey): SortDir => (k === "name" || k === "status" ? "asc" : "desc");
+  const onSort = useCallback((k: RosterSortKey) => {
+    setSortKey((prev) => {
+      if (prev === k) {
+        setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+      } else {
+        setSortDir(defaultDirFor(k));
+      }
+      return k;
+    });
+  }, []);
+  const sortedRows = useMemo(
+    () => [...filteredRows].sort(rosterComparator(sortKey, sortDir)),
+    [filteredRows, sortKey, sortDir],
+  );
+
+  // --- derived cohort stats (scoped to the visible course) ---
   const stats = useMemo(() => {
+    const rows = filteredRows;
     const assigned = rows.length;
     const taken = rows.filter((r) => r.run_id !== null);
     const inProgress = rows.filter((r) => r.run_id === null && r.has_in_progress).length;
@@ -207,23 +284,61 @@ export function TestOverviewPage(): JSX.Element {
       if (b) b.n += 1;
     }
     return { assigned, taken: taken.length, inProgress, notStarted, released, avg, top, low, bands };
-  }, [rows]);
+  }, [filteredRows]);
 
   const allReleased = stats.taken > 0 && stats.released === stats.taken;
 
   // --- actions ---
+  // Release / hide all results for the *visible* roster. When viewing "All
+  // courses" we use the test-wide RPC (one round-trip). When a single course is
+  // selected we scope to just that course's submitted runs by calling the
+  // per-run release RPC for each — so a teacher releasing Course A's scores
+  // doesn't accidentally reveal Course B's.
   const onBulk = async (released: boolean): Promise<void> => {
     setBulkBusy(true);
     try {
-      const { data, error } = await supabase.rpc("release_test_results_for_teacher", {
-        p_slug: slug,
-        p_released: released,
-      });
-      if (error) {
-        toast.error("Couldn't update", error.message);
-        return;
+      if (courseFilter === "all") {
+        const { data, error } = await supabase.rpc("release_test_results_for_teacher", {
+          p_slug: slug,
+          p_released: released,
+        });
+        if (error) {
+          toast.error("Couldn't update", error.message);
+          return;
+        }
+        toast.success(
+          released ? `Released ${data} result${data === 1 ? "" : "s"}` : "Results hidden",
+        );
+      } else {
+        // Only act on rows whose released state actually needs to change.
+        const targets = filteredRows.filter(
+          (r) => r.run_id !== null && (r.results_released_at !== null) !== released,
+        );
+        if (targets.length === 0) {
+          toast.info(released ? "Nothing to release" : "Nothing to hide");
+          return;
+        }
+        const results = await Promise.all(
+          targets.map((r) =>
+            supabase.rpc("release_test_results", {
+              p_run_id: r.run_id as string,
+              p_released: released,
+            }),
+          ),
+        );
+        const failed = results.filter((res) => res.error).length;
+        const ok = targets.length - failed;
+        if (failed > 0) {
+          toast.error(
+            "Some updates failed",
+            `${ok} of ${targets.length} ${released ? "released" : "hidden"}.`,
+          );
+        } else {
+          toast.success(
+            released ? `Released ${ok} result${ok === 1 ? "" : "s"}` : "Results hidden",
+          );
+        }
       }
-      toast.success(released ? `Released ${data} result${data === 1 ? "" : "s"}` : "Results hidden");
       await refreshRoster();
     } catch (e: unknown) {
       toast.error("Couldn't update", errMsg(e, "Try again."));
@@ -431,6 +546,30 @@ export function TestOverviewPage(): JSX.Element {
     }
   };
 
+  // Per-test retake policy (0141): one_attempt (default; grant extra per student
+  // via Allow retake) vs unlimited (replayable practice test).
+  const onSetRetakePolicy = async (
+    next: "one_attempt" | "unlimited",
+  ): Promise<void> => {
+    if (!test || test.retake_policy === next) return;
+    setRetakeBusy(true);
+    const { error } = await supabase.rpc("set_test_retake_policy", {
+      p_slug: slug,
+      p_policy: next,
+    });
+    setRetakeBusy(false);
+    if (error) {
+      toast.error("Couldn't update retake policy", errMsg(error, "Try again."));
+      return;
+    }
+    setTest((prev) => (prev ? { ...prev, retake_policy: next } : prev));
+    toast.success(
+      next === "unlimited"
+        ? "Practice mode — students can retake this test freely"
+        : "One attempt — grant extra attempts per student",
+    );
+  };
+
   // --- not-found / loading shells ---
   if (notFound) {
     return (
@@ -516,6 +655,45 @@ export function TestOverviewPage(): JSX.Element {
                 <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-500">
                   Proctoring:{" "}
                   {PROCTORING_OPTIONS.find((o) => o.value === proctoringLevel)?.hint}
+                </p>
+              </div>
+            )}
+
+            {isAdmin && (
+              <div className="mt-3">
+                <div
+                  role="radiogroup"
+                  aria-label="Retake policy"
+                  className="inline-flex items-stretch rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-slate-50 dark:bg-slate-800/60 p-0.5"
+                >
+                  {([
+                    { value: "one_attempt", label: "One attempt" },
+                    { value: "unlimited", label: "Unlimited (practice)" },
+                  ] as const).map((opt) => {
+                    const active = (test?.retake_policy ?? "one_attempt") === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        role="radio"
+                        aria-checked={active}
+                        disabled={retakeBusy || !test}
+                        onClick={() => void onSetRetakePolicy(opt.value)}
+                        className={`min-h-[36px] rounded-md px-3 text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-60 ${
+                          active
+                            ? "bg-indigo-600 text-white shadow-sm"
+                            : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                        }`}
+                      >
+                        {opt.label}
+                      </button>
+                    );
+                  })}
+                </div>
+                <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-500">
+                  {(test?.retake_policy ?? "one_attempt") === "unlimited"
+                    ? "Students can start a fresh attempt any time (practice test)."
+                    : "One attempt; grant extra attempts per student from their run row."}
                 </p>
               </div>
             )}
@@ -680,6 +858,50 @@ export function TestOverviewPage(): JSX.Element {
         </section>
       </div>
 
+      {/* per-course filter — only when the test spans more than one course */}
+      {courses.length > 1 && (
+        <section
+          aria-label="Filter by course"
+          className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-5 py-4"
+        >
+          <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            Course
+          </h2>
+          <div
+            role="radiogroup"
+            aria-label="Filter students by course"
+            className="flex flex-wrap items-center gap-1.5"
+          >
+            {([{ id: "all", name: "All courses", count: rows.length }, ...courses]).map((c) => {
+              const active = courseFilter === c.id;
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  role="radio"
+                  aria-checked={active}
+                  onClick={() => setCourseFilter(c.id)}
+                  className={`inline-flex min-h-[40px] items-center gap-1.5 rounded-full px-3.5 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
+                    active
+                      ? "bg-indigo-600 text-white shadow-sm"
+                      : "ring-1 ring-slate-300 text-slate-600 hover:bg-slate-50 dark:ring-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+                  }`}
+                >
+                  <span className="truncate max-w-[14rem]">{c.name}</span>
+                  <span
+                    className={`tabular-nums text-xs ${
+                      active ? "text-indigo-100" : "text-slate-400 dark:text-slate-500"
+                    }`}
+                  >
+                    {c.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* student roster */}
       <section className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -743,34 +965,53 @@ export function TestOverviewPage(): JSX.Element {
             body="Add this test to a course's Modules to assign it — then completion and scores show up here."
             cta={{ label: "Assign to course", onClick: () => setAssignOpen(true) }}
           />
+        ) : filteredRows.length === 0 ? (
+          <p className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+            No students in this course yet.
+          </p>
         ) : (
-          <ul className="divide-y divide-slate-100 dark:divide-slate-800 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
-            {rows.map((row) => {
-              const lr = live.get(row.student_id);
-              return (
-                <RosterRowView
-                  key={row.student_id}
-                  row={row}
-                  live={lr}
-                  isAdmin={isAdmin}
-                  reviewLoadingId={reviewLoadingId}
-                  rowBusy={rowBusy}
-                  pauseBusy={pauseBusy}
-                  hasNewMessage={lr?.run_id ? newMsgRuns.has(lr.run_id) : false}
-                  onReview={onReview}
-                  onReplay={(runId) => navigate(testReplayPath(slug, runId))}
-                  onToggleRelease={onToggleRow}
-                  onSetPause={onSetPause}
-                  onOpenChat={openChat}
-                  onEnd={(r, runId) => setConfirmAction({ kind: "end", row: r, runId })}
-                  onReset={(r) => {
-                    setConfirmText("");
-                    setConfirmAction({ kind: "reset", row: r });
-                  }}
-                />
-              );
-            })}
-          </ul>
+          <div className="overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200 dark:border-slate-800 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  <SortHeader label="Student" sortKey="name" active={sortKey} dir={sortDir} onSort={onSort} />
+                  <SortHeader label="Status" sortKey="status" active={sortKey} dir={sortDir} onSort={onSort} />
+                  <SortHeader label="Timing" sortKey="submitted" active={sortKey} dir={sortDir} onSort={onSort} />
+                  <SortHeader label="Score" sortKey="score" active={sortKey} dir={sortDir} onSort={onSort} />
+                  <th scope="col" className="py-3 px-3 text-right font-medium">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                {sortedRows.map((row) => {
+                  const lr = live.get(row.student_id);
+                  return (
+                    <RosterRowView
+                      key={row.student_id}
+                      row={row}
+                      live={lr}
+                      isAdmin={isAdmin}
+                      reviewLoadingId={reviewLoadingId}
+                      rowBusy={rowBusy}
+                      pauseBusy={pauseBusy}
+                      hasNewMessage={lr?.run_id ? newMsgRuns.has(lr.run_id) : false}
+                      onReview={onReview}
+                      onReplay={(runId) => navigate(testReplayPath(slug, runId))}
+                      onToggleRelease={onToggleRow}
+                      onSetPause={onSetPause}
+                      onOpenChat={openChat}
+                      onEnd={(r, runId) => setConfirmAction({ kind: "end", row: r, runId })}
+                      onReset={(r) => {
+                        setConfirmText("");
+                        setConfirmAction({ kind: "reset", row: r });
+                      }}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         )}
       </section>
 
@@ -870,6 +1111,51 @@ export function TestOverviewPage(): JSX.Element {
         </div>
       )}
     </div>
+  );
+}
+
+/** Sortable `<th>` for the roster table — a button that toggles sort + shows a
+ *  chevron caret (flips with dir) on the active column. */
+function SortHeader({
+  label,
+  sortKey,
+  active,
+  dir,
+  onSort,
+}: {
+  label: string;
+  sortKey: RosterSortKey;
+  active: RosterSortKey;
+  dir: SortDir;
+  onSort: (k: RosterSortKey) => void;
+}): JSX.Element {
+  const isActive = active === sortKey;
+  return (
+    <th
+      scope="col"
+      aria-sort={isActive ? (dir === "asc" ? "ascending" : "descending") : "none"}
+      className="py-3 px-3 font-medium"
+    >
+      <button
+        type="button"
+        onClick={() => onSort(sortKey)}
+        className="inline-flex min-h-[36px] items-center gap-1 rounded text-xs uppercase tracking-wide text-slate-500 transition-colors hover:text-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-slate-400 dark:hover:text-slate-200"
+      >
+        {label}
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          aria-hidden
+          className={`transition-opacity ${isActive ? "opacity-100" : "opacity-0"} ${
+            isActive && dir === "asc" ? "rotate-180" : ""
+          }`}
+          fill="currentColor"
+        >
+          <path d="M5 7L1.5 3h7L5 7z" />
+        </svg>
+      </button>
+    </th>
   );
 }
 

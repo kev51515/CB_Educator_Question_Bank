@@ -108,7 +108,7 @@ export function AccountUpgradeBanner({
         aria-label="Upgrade your account"
         className="fixed top-0 inset-x-0 z-40 bg-amber-50 dark:bg-amber-950/60 border-b border-amber-200 dark:border-amber-900 text-amber-900 dark:text-amber-200 print:hidden"
       >
-        <div className="max-w-3xl mx-auto px-4 py-2 flex items-center justify-between gap-3 text-sm">
+        <div className="max-w-3xl mx-auto px-4 py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3 text-sm">
           <span className="truncate">
             You're signed in as a guest. Save your progress across devices and never lose your work — add an email + password.
           </span>
@@ -117,7 +117,7 @@ export function AccountUpgradeBanner({
               type="button"
               onClick={() => setModalOpen(true)}
               aria-label="Upgrade to a permanent account with email and password"
-              className="min-h-[40px] rounded-md bg-amber-600 hover:bg-amber-700 text-white px-3 py-1 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-1"
+              className="inline-flex items-center justify-center min-h-[44px] rounded-md bg-amber-600 hover:bg-amber-700 text-white px-3 py-1 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-1"
             >
               Upgrade →
             </button>
@@ -126,7 +126,7 @@ export function AccountUpgradeBanner({
               onClick={handleDismiss}
               aria-label="Dismiss for 24 hours"
               title="Dismiss for 24 hours"
-              className="min-h-[40px] min-w-[40px] inline-flex items-center justify-center rounded-md text-amber-900 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-900/40 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-1"
+              className="min-h-[44px] min-w-[44px] self-end sm:self-auto inline-flex items-center justify-center rounded-md text-amber-900 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-900/40 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-1"
             >
               <span aria-hidden="true" className="text-lg leading-none">×</span>
             </button>

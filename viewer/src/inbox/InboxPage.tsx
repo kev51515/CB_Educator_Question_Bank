@@ -449,7 +449,7 @@ export function InboxPage() {
           <button
             type="button"
             onClick={() => setShowNew(true)}
-            className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5"
+            className="inline-flex items-center min-h-[44px] rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5"
           >
             New
           </button>

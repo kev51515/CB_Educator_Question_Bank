@@ -212,11 +212,11 @@ Most items are done. What's listed below is either shipped (✓) or remaining.
 
 ## 7. Costs at three scale points
 
-| Scale | Supabase | Vercel | Estimated monthly |
+| Scale | Supabase | Cloudflare Pages | Estimated monthly |
 |---|---|---|---|
-| 1 class, ~30 students | Free | Hobby (free) | $0 |
-| 1 school, ~500 students | Pro ($25) | Pro ($20) | ~$45–60 |
-| 10 schools, ~5000 students | Pro + Compute add-on ($25 + ~$60) | Pro ($20) | ~$110–180 |
+| 1 class, ~30 students | Free | Free | $0 |
+| 1 school, ~500 students | Pro ($25) | Free | ~$25–40 |
+| 10 schools, ~5000 students | Pro + Compute add-on ($25 + ~$60) | Free | ~$85–145 |
 
 Dominant cost drivers at scale: Postgres compute (the assignment-attempts table grows quickly with multi-attempt support), Storage egress on materials, and email send volume from section 4.2 (Resend free tier is 3K/mo; budget ~$20/mo at 5K students).
 

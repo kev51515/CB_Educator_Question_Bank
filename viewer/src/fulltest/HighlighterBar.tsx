@@ -82,7 +82,7 @@ export function HighlighterBar({ active, onPick, onClear, count }: HighlighterBa
               title={`${HIGHLIGHT_LABEL[c]} highlighter`}
               style={{ backgroundColor: HIGHLIGHT_FILL[c].swatch }}
               className={[
-                "h-5 w-5 rounded-full transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white",
+                "h-10 w-10 sm:h-5 sm:w-5 rounded-full transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white",
                 isActive
                   ? "ring-2 ring-offset-2 ring-slate-900 dark:ring-white dark:ring-offset-slate-900 scale-110"
                   : "ring-1 ring-black/10 hover:scale-110",

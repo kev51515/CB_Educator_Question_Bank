@@ -1,7 +1,11 @@
 -- =============================================================================
--- Migration: 0143_test_question_times.sql
+-- Migration: 0147_test_question_times.sql  (renumbered from 0143)
 -- Description: Per-question pacing — a student's time on each question vs. the
 --              average of their classmates on the SAME test.
+--
+-- NOTE: renumbered 0143 → 0147 during the feat/test-access-policy merge — the
+-- cloud DB had already applied 0143–0146 (test_module_windows + start_test) on
+-- that branch, so 0143 was taken. Migration body is otherwise unchanged.
 --
 -- WHERE THE TIME COMES FROM
 -- -------------------------

@@ -24,41 +24,40 @@ Do these in order, top to bottom, one sitting. The whole thing is ~90 minutes if
 5. **Verify migrations applied**: in Supabase SQL Editor, run `\dt` (or `select tablename from pg_tables where schemaname='public';`). You should see `profiles`, `classes`, `class_memberships`, `teacher_invite_codes`, `memberships`, `attempts`. Why: catches a half-applied migration before students hit it.
 6. **Enable email auth + email confirmation**: Authentication → Providers → Email → on; Authentication → Sign In / Up → Confirm email → on. Why: without confirmation, signups are an account-takeover vector.
 7. **Enable anonymous auth (optional, recommended)**: Authentication → Providers → Anonymous → on. Why: lets prospects try a mock test without an account, then convert. The cleanup function below garbage-collects them.
-8. **Set Site URL and Redirect URLs** at Authentication → URL Configuration. Site URL = your production domain (e.g. `https://satprep.example.com`). Redirect URLs allowlist must include the production domain, any preview deploys (`https://*.vercel.app`), and `http://localhost:5173` for dev. Why: confirmation emails embed Site URL — if it is wrong, every confirmation link is broken.
+8. **Set Site URL and Redirect URLs** at Authentication → URL Configuration. Site URL = your production domain (e.g. `https://satprep.example.com`). Redirect URLs allowlist must include the production domain, any preview deploys (`https://*.pages.dev`), and `http://localhost:5173` for dev. Why: confirmation emails embed Site URL — if it is wrong, every confirmation link is broken.
 9. **Set up Resend + custom SMTP** per [SMTP_SETUP.md](./SMTP_SETUP.md). Why: the Supabase default SMTP relay silently drops anything past 4 emails/hour. You will hit this in your first class.
 10. **Verify the domain DNS in Resend** (SPF, DKIM x3, DMARC). Why: without DKIM, Gmail dumps you in spam.
 11. **Send a test email from the Supabase SMTP page**, then sign up a real test address and confirm the link works end-to-end. Why: catches the most common launch-day failure (the "I never got the email" report from student #1).
-12. **Deploy the frontend to Vercel** per Section 2 below. Why: Vite + Vercel is zero-config, free, and has the slickest preview deploys.
-13. **Add `vercel.json` with the SPA rewrite** per Section 2. Why: without it, deep-linking to `/courses/abc` returns 404 on refresh.
-14. **Attach the custom domain in Vercel** per Section 3. Why: students should never see a `*.vercel.app` URL.
-15. **Set environment variables in Vercel** per Section 2 and redeploy. Why: the build inlines `VITE_*` env vars; missing values produce a broken app that loads but can't reach Supabase.
+12. **Deploy the frontend to Cloudflare Pages** per Section 2 below. Why: Cloudflare Pages auto-builds Vite on push, is free, and gives preview deploys per PR.
+13. **Confirm the SPA rewrite ships** per Section 2 (it already lives in `viewer/public/_redirects`). Why: without it, deep-linking to `/courses/abc` returns 404 on refresh.
+14. **Attach the custom domain in Cloudflare Pages** per Section 3. Why: students should never see a `*.pages.dev` URL.
+15. **Set environment variables in Cloudflare Pages** per Section 2 and redeploy. Why: the build inlines `VITE_*` env vars; missing values produce a broken app that loads but can't reach Supabase.
 16. **Deploy the cleanup edge function** per Section 4. Why: anonymous users will accumulate forever otherwise — by month three you'll have 10k orphan rows.
 17. **Schedule the cleanup cron job** per Section 4. Why: deployed-but-unscheduled functions don't actually run.
 18. **Run the prod smoke test** per Section 7. Why: this is the gate. 13 PASS + 1 SKIP or you do not open the door.
-19. **Wire up Sentry**: create a free Sentry project (React platform), copy the DSN into Vercel as `VITE_SENTRY_DSN`, redeploy. Why: students will not report errors clearly. Sentry will tell you what broke and on which line.
-20. **Wire up PostHog**: create a free PostHog project, copy the key and host into Vercel as `VITE_POSTHOG_KEY` and `VITE_POSTHOG_HOST`, redeploy. Why: you need a signup-to-first-attempt funnel before you can tell whether the product works.
+19. **Wire up Sentry**: create a free Sentry project (React platform), copy the DSN into Cloudflare Pages as `VITE_SENTRY_DSN`, redeploy. Why: students will not report errors clearly. Sentry will tell you what broke and on which line.
+20. **Wire up PostHog**: create a free PostHog project, copy the key and host into Cloudflare Pages as `VITE_POSTHOG_KEY` and `VITE_POSTHOG_HOST`, redeploy. Why: you need a signup-to-first-attempt funnel before you can tell whether the product works.
 21. **Bootstrap the first admin** per [DEPLOYMENT.md § First admin bootstrap](./DEPLOYMENT.md). Why: the app ships with no default admin; without this step you cannot mint teacher invite codes.
 22. **Create one real student test account** and run through the daily workflows in [USER_GUIDE.md](./USER_GUIDE.md) start to finish. Why: smoke tests pass with synthetic data; humans find the broken things.
 23. **Run a one-class soft launch** with 1–2 trusted students before the first real cohort. See Section 8.
 
 ---
 
-## 2. Vercel deployment
+## 2. Cloudflare Pages deployment
 
-The viewer is a static SPA. Vercel is the path of least resistance.
+The viewer is a static SPA. **Deploys are git-driven: commit → push to `main` → Cloudflare Pages auto-builds `viewer/` and deploys.** There is no manual deploy step for a normal release. (Cloudflare Pages does not post GitHub deployment statuses, so a missing GitHub "deployment" is normal — the build runs on Cloudflare's side.) Set up via the Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick the repo, then configure:
 
 | Setting | Value |
 |---|---|
-| Framework preset | Vite |
-| Root Directory | `viewer` |
-| Build Command | `npm run build` |
-| Output Directory | `dist` |
-| Install Command | `npm install` |
-| Node version | 22 (Vercel default; `viewer/package.json` does not pin an `engines` range, so accept the default) |
+| Root directory | `viewer` |
+| Build command | `npm run build` (`tsc -b && vite build`) |
+| Output directory | `dist` |
+
+Auto-deploys on push to `main`; branch/PR pushes get preview deployments at `*.pages.dev`. For a direct/CLI deploy: `npx wrangler pages deploy viewer/dist --project-name=<project>`.
 
 ### Environment variables
 
-Set all of these in Vercel → Project → Settings → Environment Variables. Scope to **Production, Preview, and Development** unless noted.
+Set all of these in Cloudflare Pages → Settings → Environment variables. Scope to **Production and Preview** unless noted.
 
 | Variable | Source | Notes |
 |---|---|---|
@@ -68,40 +67,33 @@ Set all of these in Vercel → Project → Settings → Environment Variables. S
 | `VITE_POSTHOG_KEY` | PostHog → Project Settings → Project API Key | Optional in dev; required in prod |
 | `VITE_POSTHOG_HOST` | Usually `https://us.i.posthog.com` (US) or `https://eu.i.posthog.com` (EU) | Match the region you signed up in |
 
-`SUPABASE_SERVICE_ROLE_KEY` does **not** belong in Vercel — anything `VITE_*` ends up in the JS bundle. The service role key is only ever in your local shell or auto-injected into edge functions.
+`SUPABASE_SERVICE_ROLE_KEY` does **not** belong in Cloudflare Pages — anything `VITE_*` ends up in the JS bundle. The service role key is only ever in your local shell or auto-injected into edge functions.
 
 ### SPA fallback — CRITICAL
 
-React Router uses client-side routing. Without this rewrite, `https://yourdomain/courses/abc` returns 404 on refresh because Vercel looks for `/courses/abc.html`, which doesn't exist.
+React Router uses client-side routing. Without a rewrite, `https://yourdomain/courses/abc` returns 404 on refresh because the host looks for `/courses/abc.html`, which doesn't exist.
 
-Create `vercel.json` at the **repo root** (not inside `viewer/`):
+The SPA rewrite already lives in the repo at **`viewer/public/_redirects`**:
 
-```json
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
+```
+/*  /index.html  200
 ```
 
-The rewrite serves `index.html` for any path; React Router then takes over and renders the right route. Verify against current Vercel docs (`vercel.com/docs/projects/project-configuration`) before launch in case the schema has shifted.
+Cloudflare Pages reads `_redirects` from the build output automatically — there's nothing to configure. The rewrite serves `index.html` for any path; React Router then takes over and renders the right route.
 
-Test after deploying: open `https://yourdomain/courses/anything-fake` directly. You should see the app's 404 page (rendered by React Router), not Vercel's 404 page. If you see Vercel's 404, the rewrite is missing or misplaced.
+Test after deploying: open `https://yourdomain/courses/anything-fake` directly. You should see the app's 404 page (rendered by React Router), not the host's 404 page. If you see the host's 404, the `_redirects` file didn't ship in `viewer/dist`.
 
 ---
 
-## 3. Custom domain on Vercel
+## 3. Custom domain on Cloudflare Pages
 
-1. Vercel → Project → Settings → Domains → Add → enter your domain.
-2. Vercel shows the DNS records to add. Two cases:
-   - **Apex domain** (`satprep.example.com`): add an A record pointing to `76.76.21.21` (Vercel's anycast IP — verify against current docs).
-   - **Subdomain**: add a CNAME pointing to `cname.vercel-dns.com`.
-3. Add the records at your registrar's DNS panel. Cloudflare Registrar: DNS tab → Add record. Set the proxy status to **DNS only** (gray cloud) initially — Vercel handles HTTPS, and the orange-cloud proxy will fight it.
-4. Wait ~5 minutes for propagation. Vercel auto-provisions a Let's Encrypt cert once DNS resolves.
-5. **Update Supabase**: Authentication → URL Configuration → Site URL = the new domain. Redirect URLs → include the new domain.
-6. **Re-test signup**: brand-new email, check that the confirmation link points to the new domain and works on click.
+1. Cloudflare Pages → the project → **Custom domains → Set up a custom domain** → enter your domain.
+2. Because DNS is already on Cloudflare, the required records are added automatically and HTTPS is provisioned automatically — there's nothing to paste at a registrar and no proxy/cert toggles to manage.
+3. Wait a few minutes for the certificate to go live.
+4. **Update Supabase**: Authentication → URL Configuration → Site URL = the new domain. Redirect URLs → include the new domain.
+5. **Re-test signup**: brand-new email, check that the confirmation link points to the new domain and works on click.
 
-If step 6 fails, your Site URL is still pointing at Vercel's default URL or localhost. Fix and re-test before sending a single real invite.
+If step 5 fails, your Site URL is still pointing at the `*.pages.dev` default URL or localhost. Fix and re-test before sending a single real invite.
 
 ---
 
@@ -164,7 +156,7 @@ Dashboard → Settings → API → Roll service_role key. The edge function read
 
 ### Supabase anon key
 
-Only rotate if leaked AND you believe RLS was misconfigured at the same time (a leaked anon key with sound RLS is not a meaningful incident — that's what RLS exists for). To rotate: Dashboard → Settings → API → Roll anon key, then update `VITE_SUPABASE_ANON_KEY` in Vercel and trigger a redeploy.
+Only rotate if leaked AND you believe RLS was misconfigured at the same time (a leaked anon key with sound RLS is not a meaningful incident — that's what RLS exists for). To rotate: Dashboard → Settings → API → Roll anon key, then update `VITE_SUPABASE_ANON_KEY` in Cloudflare Pages and trigger a redeploy.
 
 ### Resend API key
 
@@ -172,7 +164,7 @@ Resend → API Keys → revoke the old key, create a new one with "Sending acces
 
 ### Sentry / PostHog keys
 
-Their dashboards → project settings → rotate. Update Vercel env vars. Redeploy.
+Their dashboards → project settings → rotate. Update Cloudflare Pages env vars. Redeploy.
 
 ### After any rotation
 
@@ -370,7 +362,7 @@ retries (instrumented in `FullTestApp.tsx` `doSubmitModule` catch; global
 `unhandledrejection`/`error` handlers added in `main.tsx` so async failures stop
 being invisible). This is the one failure that silently loses graded work.
 
-**Configure (after `VITE_SENTRY_DSN` / `VITE_POSTHOG_KEY` are set on Vercel at
+**Configure (after `VITE_SENTRY_DSN` / `VITE_POSTHOG_KEY` are set on Cloudflare Pages at
 build time):** a **PostHog alert** that pages on **`test_submit_failed` count ≥ 1
 over 5 minutes** — a single occurrence = a real student losing work in real time,
 so alert on *any* occurrence, not a threshold. (Sentry will also raise the
@@ -406,9 +398,13 @@ When something breaks, classify first, then act. The triage cost of treating eve
 | **2** | One feature broken; students can still use most flows | Leaderboard wrong, one question type rendering badly, teacher dashboard slow | Fix within 24 hours. Communicate to affected users. |
 | **3** | Cosmetic or minor | Typo, slightly-off colors, edge-case error message wording | Backlog. Fix in the next scheduled release. |
 
+### Hotfix / forward-fix
+
+A frontend hotfix ships the same way every release does: **commit → push to `main` → Cloudflare Pages auto-builds + deploys.** There is no manual deploy step. (No GitHub "deployment" status appears — that's normal; the build runs on Cloudflare's side.)
+
 ### Rollback procedure
 
-**Frontend (Vercel)**: Project → Deployments → find a known-good previous deployment → click the `…` menu → Promote to Production. Instant. This is your fastest panic button. Get comfortable doing it once now, on a Sunday, with no pressure.
+**Frontend (Cloudflare Pages)**: the project → **Deployments** → choose a known-good previous deploy → **Rollback to this deployment**. Instant. This is your fastest panic button — faster than push-and-wait-for-a-build when you need the bleeding stopped *now*. Get comfortable doing it once now, on a Sunday, with no pressure.
 
 **Database (Supabase)**: There is **no trivial rollback for migrations**. Migrations are forward-only. If you push a bad migration:
 
@@ -428,10 +424,10 @@ If the bad migration corrupted data (not just schema), restore from backup — t
 
 | Stage | Students / classes | Stack | Approx. monthly |
 |---|---|---|---|
-| Today | 1–30 students, 1 class | Supabase Free, Vercel Free, Resend Free, Sentry Free, PostHog Free | **$0** |
+| Today | 1–30 students, 1 class | Supabase Free, Cloudflare Pages Free, Resend Free, Sentry Free, PostHog Free | **$0** |
 | Pilot | 50–200 students, 1–5 classes | Supabase Pro ($25), everything else free | **~$25** |
 | Growth | 200–1000 students, 5–20 classes | Supabase Pro + small compute ($25 + ~$30), Resend Pro ($20), rest free | **~$75** |
-| Scale | 1000+ students | Bigger Supabase compute, possibly Vercel Pro for teammates, Sentry paid tier | **$200–500** |
+| Scale | 1000+ students | Bigger Supabase compute, Cloudflare Pages still free, Sentry paid tier | **$200–500** |
 
 Upgrade triggers in order of likelihood:
 
@@ -449,7 +445,7 @@ See [DEPLOYMENT.md § Cost projection at scale](./DEPLOYMENT.md) for the deeper 
 Honest signposting. When the thing that's broken is not yours to fix:
 
 - **Supabase outage** → https://status.supabase.com. If they're down, you're down. Their support is responsive on email; Pro tier gets priority. There is nothing useful you can do — communicate to students that the app is unavailable and check the status page every 15 minutes.
-- **Vercel outage** → https://www.vercel-status.com. Same playbook. The static SPA is on a CDN, so partial outages may still work for cached users.
+- **Cloudflare Pages outage** → https://www.cloudflarestatus.com. Same playbook. The static SPA is on a CDN, so partial outages may still work for cached users.
 - **DNS / domain issue** → your registrar's support. Cloudflare is responsive on chat. Namecheap is slower. Symptoms: domain stops resolving, cert renewal fails, MX records flap.
 - **Stuck on a migration that won't apply** → Supabase Discord (https://discord.supabase.com), #help channel. Post the migration SQL and the error message verbatim. Response is usually within an hour during business hours.
 - **Sentry showing errors from a third-party script** → ignore unless it's reproducible. Browser extensions, ad blockers, and bot scrapers generate a constant background of noise.

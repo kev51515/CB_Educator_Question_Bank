@@ -57,7 +57,44 @@ import type {
   TestResult,
 } from "./types";
 
-type Phase = "loading" | "intro" | "module" | "break" | "submitting" | "result" | "error";
+type Phase = "loading" | "intro" | "module" | "break" | "locked" | "submitting" | "result" | "error";
+
+/**
+ * Format an ISO timestamp into a friendly "opens in 18 hours" / "opens Tuesday"
+ * relative phrase. No reusable formatter exists in the repo (grepped lib +
+ * fulltest), so this small helper lives here. Past/now times read "opens now".
+ */
+function formatOpensRelative(iso: string): string {
+  const target = new Date(iso).getTime();
+  if (Number.isNaN(target)) return "";
+  const diffMs = target - Date.now();
+  if (diffMs <= 0) return "opens now";
+  const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
+  const mins = Math.round(diffMs / 60000);
+  if (mins < 60) return `opens ${rtf.format(mins, "minute")}`;
+  const hours = Math.round(diffMs / 3_600_000);
+  if (hours < 24) return `opens ${rtf.format(hours, "hour")}`;
+  const days = Math.round(diffMs / 86_400_000);
+  if (days <= 6) {
+    // Within a week: name the weekday ("opens Tuesday") — friendlier than "in 3 days".
+    const weekday = new Date(target).toLocaleDateString(undefined, { weekday: "long" });
+    return `opens ${weekday}`;
+  }
+  return `opens ${rtf.format(days, "day")}`;
+}
+
+/** Absolute local form for the open time, e.g. "Tue, Jun 11, 9:00 AM". */
+function formatOpensAbsolute(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleString(undefined, {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
 
 /**
  * Recover the runner's mount base from the path it was opened with, so the
@@ -157,6 +194,13 @@ function FullTestRunner() {
 
   const [phase, setPhase] = useState<Phase>("loading");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  // Set when a module is gated by scheduled release (0143): not yet open, or
+  // not part of this course's metered assignment. Drives the "locked" screen.
+  const [lockedInfo, setLockedInfo] = useState<{
+    position: number;
+    opensAt: string | null;
+    reason: "not_yet_open" | "not_deployed";
+  } | null>(null);
   const [start, setStart] = useState<StartTestResult | null>(null);
   // Set when a proctor force-submits this run out from under the student.
   const [endedByProctor, setEndedByProctor] = useState(false);
@@ -364,6 +408,18 @@ function FullTestRunner() {
         setRemaining(m.seconds_remaining);
         setPhase("module");
       } catch (e) {
+        if (
+          e instanceof TestApiError &&
+          (e.code === "module_not_yet_open" || e.code === "module_not_deployed")
+        ) {
+          setLockedInfo({
+            position,
+            opensAt: e.detail ?? null,
+            reason: e.code === "module_not_yet_open" ? "not_yet_open" : "not_deployed",
+          });
+          setPhase("locked");
+          return;
+        }
         setErrorMsg(e instanceof TestApiError ? e.message : "Could not load this section.");
         setPhase("error");
       }
@@ -393,6 +449,19 @@ function FullTestRunner() {
         // ResultView (result fetched lazily below); students get the neutral
         // submitted screen and never fetch scores/answers.
         setPhase("result");
+      } else if (
+        res.next_module_opens_at &&
+        new Date(res.next_module_opens_at).getTime() > Date.now()
+      ) {
+        // Next module is scheduled for the future (0143) — show the locked
+        // screen instead of the break/"start next section" CTA.
+        setStart((prev) => (prev ? { ...prev, current_module: res.next_module ?? prev.current_module } : prev));
+        setLockedInfo({
+          position: res.next_module ?? 0,
+          opensAt: res.next_module_opens_at ?? null,
+          reason: "not_yet_open",
+        });
+        setPhase("locked");
       } else {
         setStart((prev) => (prev ? { ...prev, current_module: res.next_module ?? prev.current_module } : prev));
         setPhase("break");
@@ -1047,24 +1116,46 @@ function FullTestRunner() {
         </p>
         <h1 className="mt-1 text-2xl font-bold text-slate-900 dark:text-slate-100">{start.test.title}</h1>
         <p className="mt-2 text-slate-600 dark:text-slate-400">
-          {start.test.total_questions} questions · {start.modules.length} timed modules.
+          {start.test.total_questions} questions ·{" "}
+          {start.modules.filter((m) => m.deployed !== false).length} timed modules.
           Each module is timed and submitted on its own; you can't return to a
           previous module once you move on — just like the real Digital SAT.
         </p>
         <ol className="mt-5 space-y-2">
-          {start.modules.map((m) => (
-            <li
-              key={m.position}
-              className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-900"
-            >
-              <span className="font-medium text-slate-800 dark:text-slate-200">
-                {m.position}. {m.label}
-              </span>
-              <span className="text-slate-500 dark:text-slate-400">
-                {m.question_count} q · {Math.round(m.time_limit_seconds / 60)} min
-              </span>
-            </li>
-          ))}
+          {start.modules.map((m) => {
+            const included = m.deployed !== false;
+            const opensFuture =
+              !!m.opens_at && new Date(m.opens_at).getTime() > Date.now();
+            return (
+              <li
+                key={m.position}
+                className={`flex items-center justify-between rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-900 ${included ? "" : "opacity-50"}`}
+              >
+                <span className="flex min-w-0 items-center gap-2">
+                  <span className="font-medium text-slate-800 dark:text-slate-200">
+                    {m.position}. {m.label}
+                  </span>
+                  {!included && (
+                    <span className="rounded bg-slate-100 px-1.5 py-0.5 text-xs font-medium text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+                      Not included
+                    </span>
+                  )}
+                  {included && opensFuture && m.opens_at && (
+                    <span className="inline-flex items-center gap-1 rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 7v5l3 2" />
+                      </svg>
+                      {formatOpensRelative(m.opens_at)}
+                    </span>
+                  )}
+                </span>
+                <span className="shrink-0 text-slate-500 dark:text-slate-400">
+                  {m.question_count} q · {Math.round(m.time_limit_seconds / 60)} min
+                </span>
+              </li>
+            );
+          })}
         </ol>
         {lockdownUnsupported && <LockdownNotice className="mt-5" />}
         <button
@@ -1073,6 +1164,55 @@ function FullTestRunner() {
           className="mt-6 w-full rounded-xl bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-700"
         >
           {resuming ? `Resume — Module ${start.current_module}` : "Begin test"}
+        </button>
+      </CenterCard>
+    );
+  }
+
+  if (phase === "locked" && lockedInfo) {
+    const lockedModule = start?.modules.find((m) => m.position === lockedInfo.position);
+    const showSaved = lockedInfo.position > (start?.first_position ?? 1);
+    return (
+      <CenterCard>
+        <div
+          aria-hidden
+          className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-300"
+        >
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+          </svg>
+        </div>
+        <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+          {lockedInfo.reason === "not_yet_open"
+            ? "This section isn't open yet"
+            : "This section isn't part of your assignment"}
+        </h1>
+        {lockedModule && (
+          <p className="mt-2 font-medium text-slate-700 dark:text-slate-300">
+            {lockedModule.label}
+          </p>
+        )}
+        {lockedInfo.reason === "not_yet_open" && lockedInfo.opensAt && (
+          <p className="mt-1 text-slate-600 dark:text-slate-400">
+            <span className="font-medium text-slate-800 dark:text-slate-200">
+              {formatOpensRelative(lockedInfo.opensAt)}
+            </span>
+            {" — "}
+            {formatOpensAbsolute(lockedInfo.opensAt)}
+          </p>
+        )}
+        {showSaved && (
+          <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
+            Your previous answers are saved.
+          </p>
+        )}
+        <button
+          type="button"
+          onClick={() => navigate(ROUTES.HOME)}
+          className="mt-6 w-full rounded-xl bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
+        >
+          Back to my course
         </button>
       </CenterCard>
     );
@@ -1210,7 +1350,7 @@ function FullTestRunner() {
           <button
             type="button"
             onClick={() => setConfirmExit(true)}
-            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="inline-flex items-center gap-1.5 min-h-[44px] rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
             title="Save your progress and leave — the section timer keeps running"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -1233,7 +1373,7 @@ function FullTestRunner() {
                 }
               }}
               className={[
-                "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-medium transition",
+                "inline-flex items-center gap-1.5 min-h-[44px] rounded-lg border px-3 py-1.5 text-sm font-medium transition",
                 calcOpen
                   ? "border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400 dark:bg-blue-950/50 dark:text-blue-300"
                   : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
@@ -1370,7 +1510,7 @@ function FullTestRunner() {
             type="button"
             onClick={() => setNavOpen((o) => !o)}
             aria-expanded={navOpen}
-            className="flex items-center gap-2 rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white dark:bg-slate-200 dark:text-slate-900"
+            className="inline-flex items-center gap-2 min-h-[44px] rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white dark:bg-slate-200 dark:text-slate-900"
           >
             Question {index + 1} of {questions.length}
             <svg
@@ -1392,7 +1532,7 @@ function FullTestRunner() {
             type="button"
             disabled={index === 0}
             onClick={() => setIndex((i) => Math.max(0, i - 1))}
-            className="rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-700 disabled:opacity-40 dark:border-slate-600 dark:text-slate-200"
+            className="min-h-[44px] rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-700 disabled:opacity-40 dark:border-slate-600 dark:text-slate-200"
           >
             Back
           </button>
@@ -1400,7 +1540,7 @@ function FullTestRunner() {
             <button
               type="button"
               onClick={() => setIndex((i) => Math.min(questions.length - 1, i + 1))}
-              className="rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+              className="min-h-[44px] rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
             >
               Next
             </button>
@@ -1408,7 +1548,7 @@ function FullTestRunner() {
             <button
               type="button"
               onClick={() => setPendingSectionSubmit({ blanks: questions.length - answeredCount })}
-              className="rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+              className="min-h-[44px] rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
             >
               Submit
             </button>
@@ -1550,8 +1690,15 @@ function FullTestRunner() {
           student exits fullscreen mid-test. The only way out is back into
           fullscreen — the button calls requestFullscreen() inside its click
           handler (required for a transient activation). The timer is NOT
-          paused; the section clock keeps running behind the overlay. */}
-      {fsLockout && (
+          paused; the section clock keeps running behind the overlay.
+
+          BUT suppress it while the submit-section or exit dialog is open: the
+          browser exits fullscreen on Esc (unpreventable), and the lockout
+          (z-80) would otherwise slam on top of the submit window (z-50) and
+          trap the student at the end of the test, unable to finish. Keeping
+          the lockout hidden lets them complete the submit; it reappears if
+          they cancel back into the still-running section. */}
+      {fsLockout && !pendingSectionSubmit && !confirmExit && (
         <FullscreenLockout onReturn={enterFullscreen} />
       )}
     </div>

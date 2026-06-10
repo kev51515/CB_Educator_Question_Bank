@@ -28,22 +28,30 @@ const FRIENDLY: Record<string, string> = {
   run_already_submitted: "This test has already been submitted.",
   run_not_submitted: "Results aren't available until the test is submitted.",
   module_out_of_order: "That section isn't available yet.",
+  module_not_yet_open: "That section isn't open yet.",
+  module_not_deployed: "That section isn't part of this assignment.",
 };
 
 export class TestApiError extends Error {
   code: string;
-  constructor(code: string, message?: string) {
+  /** Postgres error DETAIL (e.g. the ISO opens_at for module_not_yet_open). */
+  detail?: string;
+  constructor(code: string, message?: string, detail?: string) {
     super(message ?? FRIENDLY[code] ?? code);
     this.code = code;
+    this.detail = detail;
     this.name = "TestApiError";
   }
 }
 
-function mapError(error: { message?: string } | null): TestApiError {
+function mapError(
+  error: { message?: string; details?: string | null; hint?: string | null } | null,
+): TestApiError {
   const raw = (error?.message ?? "unknown_error").trim();
   // PostgREST surfaces a RAISE EXCEPTION 'code' as the message text.
   const code = Object.keys(FRIENDLY).find((c) => raw === c || raw.includes(c)) ?? raw;
-  return new TestApiError(code, FRIENDLY[code]);
+  // RAISE ... USING DETAIL lands in supabase `error.details`.
+  return new TestApiError(code, FRIENDLY[code], error?.details ?? error?.hint ?? undefined);
 }
 
 export async function startTest(slug: string): Promise<StartTestResult> {
@@ -97,7 +105,9 @@ export async function submitModule(
     if (
       code === "run_already_submitted" ||
       code === "module_out_of_order" ||
-      code === "not_authorized"
+      code === "not_authorized" ||
+      code === "module_not_yet_open" ||
+      code === "module_not_deployed"
     ) {
       throw lastErr;
     }

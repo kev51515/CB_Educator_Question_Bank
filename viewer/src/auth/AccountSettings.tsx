@@ -375,7 +375,7 @@ export function AccountSettings({
               maxLength={100}
               aria-invalid={nameError !== null}
               aria-describedby={nameError ? "display-name-error" : undefined}
-              className={`w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
+              className={`w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-base sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
                 nameError
                   ? "border-rose-400 dark:border-rose-500 focus:ring-rose-500"
                   : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
@@ -399,7 +399,7 @@ export function AccountSettings({
               <button
                 type="submit"
                 disabled={nameBusy || !nameValid}
-                className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[40px]"
+                className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[44px]"
               >
                 {nameBusy ? "Saving…" : "Save"}
               </button>
@@ -432,7 +432,7 @@ export function AccountSettings({
                 onChange={(e) => setNewEmail(e.target.value)}
                 autoComplete="email"
                 aria-describedby="email-change-hint"
-                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-base sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="new@example.com"
               />
               <p
@@ -446,14 +446,14 @@ export function AccountSettings({
                 <button
                   type="button"
                   onClick={() => setShowEmailForm(false)}
-                  className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 min-h-[40px]"
+                  className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 min-h-[44px]"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={emailBusy}
-                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-4 py-2 min-h-[40px]"
+                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-4 py-2 min-h-[44px]"
                 >
                   {emailBusy ? "Sending…" : "Send confirmation"}
                 </button>
@@ -500,7 +500,7 @@ export function AccountSettings({
                   autoComplete="new-password"
                   minLength={8}
                   aria-describedby="password-strength-hint"
-                  className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-base sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   placeholder="At least 8 characters"
                 />
                 {/* Strength meter */}
@@ -545,7 +545,7 @@ export function AccountSettings({
                   aria-invalid={
                     confirmPassword.length > 0 && confirmPassword !== newPassword
                   }
-                  className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-base sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   placeholder="Repeat password"
                 />
                 {confirmPassword.length > 0 && confirmPassword !== newPassword && (
@@ -562,14 +562,14 @@ export function AccountSettings({
                     setNewPassword("");
                     setConfirmPassword("");
                   }}
-                  className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 min-h-[40px]"
+                  className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 min-h-[44px]"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={passwordSubmitDisabled}
-                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[40px]"
+                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[44px]"
                 >
                   {pwBusy ? "Saving…" : "Update password"}
                 </button>
@@ -595,7 +595,7 @@ export function AccountSettings({
             // Sibling-relative so it works under either role prefix
             // (/educator/account/* or /student/account/*).
             to="../notification-preferences"
-            className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 min-h-[40px]"
+            className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 min-h-[44px]"
           >
             Manage
           </Link>
@@ -615,7 +615,7 @@ export function AccountSettings({
               disabled={exportBusy}
               title="Plain JSON, no encryption"
               aria-describedby="export-hint"
-              className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[40px]"
+              className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[44px]"
             >
               {exportBusy && (
                 <svg
@@ -674,7 +674,7 @@ export function AccountSettings({
             onClick={() => {
               void onSignOut();
             }}
-            className="rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 min-h-[40px]"
+            className="rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 min-h-[44px]"
           >
             Sign out
           </button>

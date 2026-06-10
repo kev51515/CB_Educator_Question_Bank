@@ -249,7 +249,7 @@ function ChoiceCountPill({
         }
         title={count === 0 ? "No one chose this" : "Show who chose this"}
         className={[
-          "inline-flex min-w-[2.25rem] items-center justify-center rounded-full px-2.5 py-1 text-sm font-semibold tabular-nums transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-indigo-500",
+          "inline-flex min-w-[2.75rem] items-center justify-center rounded-full px-2.5 py-2.5 text-sm font-semibold tabular-nums transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-indigo-500 sm:min-w-[2.25rem] sm:py-1",
           isKey
             ? "bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200 hover:bg-emerald-200 dark:bg-emerald-900/50 dark:text-emerald-300 dark:ring-emerald-800"
             : count > 0

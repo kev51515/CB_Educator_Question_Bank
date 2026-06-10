@@ -29,11 +29,14 @@ import { HIGHLIGHT_FILL, coerceColor, type AnnotField, type Highlight } from "./
 // mark logic. The `looksLikeMath` guard keeps "$50"-style currency as text.
 
 interface MathSegment {
-  type: "text" | "inline" | "display";
+  type: "text" | "inline" | "display" | "underline";
   content: string;
   /** Absolute offset of this segment's source span within the parent string. */
   srcStart: number;
 }
+
+/** Length of the opening `<u>` marker — the underline content starts here. */
+const U_OPEN = 3;
 
 /**
  * Math content is delimited deliberately (`$…$`) in our data, so a span is math
@@ -65,6 +68,21 @@ function parseMathSegments(input: string): MathSegment[] {
     }
   };
   while (i < input.length) {
+    // Underline: author markup `<u>…</u>`. Like math, the segment owns its full
+    // source span (so offsets after it still map), but unlike math the inner
+    // text stays highlightable — renderText re-marks it at srcStart + `<u>`.
+    if (input[i] === "<" && input.slice(i, i + U_OPEN).toLowerCase() === "<u>") {
+      const close = input.toLowerCase().indexOf("</u>", i + U_OPEN);
+      if (close !== -1) {
+        flush(i);
+        segs.push({ type: "underline", content: input.slice(i + U_OPEN, close), srcStart: i });
+        i = close + 4; // past "</u>"
+        textStart = i;
+        continue;
+      }
+      i += 1;
+      continue;
+    }
     if (input[i] === "$" && input[i + 1] === "$") {
       const close = input.indexOf("$$", i + 2);
       if (close !== -1 && close > i + 2) {
@@ -324,6 +342,24 @@ export function renderText(
           <span key={idx} data-annot-offset={baseOffset + seg.srcStart}>
             {renderMarks(seg.content, baseOffset + seg.srcStart, field, ranges, onRemove)}
           </span>
+        ) : seg.type === "underline" ? (
+          // Underlined run stays highlightable: data-annot-offset points past the
+          // `<u>` marker so inner selections map to raw offsets; the marker chars
+          // themselves carry no text node (so they're skipped) yet the segment's
+          // source span covers them, keeping everything after it aligned.
+          <u
+            key={idx}
+            className="underline decoration-1 underline-offset-2"
+            data-annot-offset={baseOffset + seg.srcStart + U_OPEN}
+          >
+            {renderMarks(
+              seg.content,
+              baseOffset + seg.srcStart + U_OPEN,
+              field,
+              ranges,
+              onRemove,
+            )}
+          </u>
         ) : (
           <MathSpan key={idx} latex={seg.content} display={seg.type === "display"} />
         ),
@@ -344,6 +380,10 @@ export function RichInline({ text }: { text: string }): JSX.Element {
       {segs.map((seg, idx) =>
         seg.type === "text" ? (
           <span key={idx}>{seg.content}</span>
+        ) : seg.type === "underline" ? (
+          <u key={idx} className="underline decoration-1 underline-offset-2">
+            {seg.content}
+          </u>
         ) : (
           <MathSpan key={idx} latex={seg.content} display={seg.type === "display"} />
         ),

@@ -1,5 +1,78 @@
 # Session Recap
 
+## Branch `feat/test-access-policy` (2026-06-10) — test-overview per-course views + data isolation
+
+Follow-ups on the metered-test work, all on `feat/test-access-policy`:
+
+- **Per-course filter on the test-overview** (`0149` + TestOverviewPage). A test
+  assigned to multiple courses showed all students aggregated. `test_roster_status`
+  now returns `course_id`/`course_name` (one row per student-course); the page has a
+  course-filter pill row (persisted per-slug), and stats / score distribution /
+  roster / submitted-released counts all derive from the filtered rows. Release-all
+  is scoped to the visible course so releasing Course A never reveals Course B.
+- **Deep-link** (tree.tsx + TestOverviewPage). Opening a full-test from a course's
+  Modules page lands on the overview pre-filtered to that course
+  (`/educator/tests/<slug>?course=<id>`; `?course=` wins over localStorage).
+- **Cross-course data isolation** (`0150`). `get_test_question_times` pacing cohort
+  is now scoped to the run's course (`test_runs.course_id`, 0143) with the prior
+  <3-peers fallback-to-all removed — students and teacher-review never see
+  cross-course timings.
+- **Sortable students table** (RosterRow + TestOverviewPage). The roster card list is
+  now a sortable table (Student / Status / Timing / Score / Actions; default
+  submitted-desc; not-taken rows pin to the bottom). All per-row actions + proctor
+  controls preserved.
+- **In progress:** keep the student in fullscreen while the end-of-test submit
+  window is shown (proctoring lockout currently triggers on the fullscreen drop).
+
+## Branch `feat/test-access-policy` (2026-06-10) — partial/scheduled module deployment + reconciliation
+
+Teacher-controlled metering: deploy a full test's modules over days and/or as a
+permanent subset (e.g. R&W only). Migrations **0143–0146** (test_module_windows,
+window-admin RPCs, two start_test hotfixes) applied to Remote; the one-run
+invariant (`test_runs_one_active`) is untouched so a student can never "take the
+same test twice".
+
+- **Phase 1 (backend).** `test_module_windows(course,test,position,deployed,opens_at)`;
+  `test_runs` gains `course_id` + `scheduled_first/last_position` snapshots;
+  `start_test`/`get_test_module`/`submit_test_module` gate on the window, re-anchor
+  the per-module timer on a multi-day resume, finalize at the deployed range.
+  Teacher RPCs `set/get_test_module_windows` + `finalize_metered_run`.
+- **Phase 2 (teacher UI).** `TestScheduleEditor` in `AssignTestModal`; module
+  selection also in the Modules-page inline **Add Full-Test** flow.
+- **Phase 3 (student UI).** New `locked` phase in `FullTestApp`: "this section opens
+  <when>" instead of a generic error.
+- **Verified on cloud:** smoke-test-windows 18/18, smoke-locked-module 10/10,
+  smoke-test-access 9/9, clickthrough 42/0, edges 10/10, tsc + vite build clean.
+- **Reconciliation.** Merged `main` in; the parallel session's
+  `0143_test_question_times.sql` was **renumbered 0143 → 0147** (cloud already had
+  0143–0146); `0148` carried over. Code auto-merged; three docs hand-merged.
+
+## 2026-06-10 (deploy cut) — test-access gate, retake policy, underline, mobile UX
+
+Merged to `main` (cherry-picked from `feat/test-access-policy`; the parallel
+branch's `0143–0146` module-windows + Phase 2 UI were intentionally EXCLUDED from
+this cut). Host is **Cloudflare Pages** (NOT Vercel) — it auto-builds the
+`viewer/` Vite SPA on every push to `main`, so this code deploys automatically.
+
+- **Test access + retakes — migration 0141 (already LIVE on remote;** the
+  parallel session applied it with their chain — `tests.retake_policy` exists).
+  Enrollment gate on `start_test` (non-staff must be enrolled in a course linking
+  the test, else `not_enrolled`; gates take + resume; staff exempt) — a
+  removed/deleted-course student can no longer take/continue, but their own
+  released result stays viewable. Per-test `tests.retake_policy`
+  (`one_attempt` | `unlimited` practice) + staff toggle. Smoke `smoke:test-access`.
+- **Underline rendering + data (live).** `passageRender` renders `<u>…</u>`
+  offset-safely; `seed-underline-spans.mjs` (anchor-based, exact-by-construction)
+  wraps the 14 prose spans (nov-2023 1-11 figure-baked, excluded). Data applied
+  to remote after the renderer's CF Pages build went live (the seed is idempotent;
+  re-run safe). Briefly reverted mid-deploy during a host mixup, then re-applied.
+- **Mobile UX pass (25 student files).** 16px inputs (no iOS auto-zoom), ≥44px
+  tap targets, narrow-screen stacking across first page/auth, chrome, full-test
+  runner, assignment runner, course/counseling/inbox/account — mobile-first,
+  desktop unchanged.
+- **Courses card** text is selectable/copyable (role=button div, not a native
+  `<button>`); click still navigates.
+
 ## Latest (2026-06-10) — login-code claim fix, highlighter on answer choices, per-question pacing
 
 Three shipments to `main` (DB live on prod via psql; SPA build green on CI).
@@ -35,14 +108,24 @@ live-editing `fulltest/`.
   did" set, never apples-to-oranges across different question counts.
 
 Operational: per request, wiped all student users + test data and rebuilt
-Class A's 9-student roster (the 2 college-counseling students were kept).
+Class A's 9-student roster (the 2 college-counseling students were kept), and
+populated **Class B** with the 10 '27-SAT-B names.
+
+- **Dash-less login codes — `admin_create_student` fixed (`0148`).** The
+  "non-guessable login codes" wave only re-keyed existing rows; the generator
+  still emitted `<short_code>-NN`, so every *new* student regressed to a dash
+  code. Rewrote the generator to mint a bare 6-distinct-letter code (A–Z minus
+  I/O/L, e.g. `KMCZQR`) — no dash, no course prefix; `peek_join_code` (0142)
+  already routes these. Re-minted Class B's 10 seats to bare codes. Also swept
+  the docs (ARCHITECTURE/SCHEMA/CONTROLLED_TESTS + QuickStart comments) that
+  still showed the old `<COURSE>-NN` examples.
 
 **Migration ledger note:** `supabase_migrations.schema_migrations` is recorded
 through `0140`; `0141` (parallel session) / `0142` / `0143` ran live via direct
 `psql` but aren't registered. All three are idempotent `CREATE OR REPLACE`, so a
-later `supabase db push` re-applies them cleanly. **Frontend deploy is manual**
-— no Vercel git-integration is connected (no GitHub deployment statuses); the
-CI build job is green, so the SPA is deploy-ready.
+later `supabase db push` re-applies them cleanly. **Frontend deploys to Cloudflare Pages** — the built `viewer/dist` artifact
+deploys to Cloudflare Pages; the CI build job is green, so the SPA is
+deploy-ready.
 
 ## 2026-06-09 — autonomous polish pass: reusable hooks, student UX, keyboard a11y
 
@@ -970,9 +1053,9 @@ All four are deployed and registered through pg_cron in migration 0031.
 ## What still needs your hands
 
 - Rotate the database password, service-role key, and Resend API key before going public.
-- Run `vercel login` then `vercel --prod` to deploy the viewer app.
+- Push to `main` (or run `npx wrangler pages deploy viewer/dist --project-name=<project>`) to deploy the viewer app to Cloudflare Pages.
 - Sign up for Sentry and PostHog and drop the DSN and project key into env.
-- Point a custom domain at the Vercel deployment.
+- Point a custom domain at the Cloudflare Pages deployment.
 - Verify a Resend sender domain — currently sending from `onboarding@resend.dev`, which is fine for smoke but not for real students.
 
 ## Architectural decisions made this session

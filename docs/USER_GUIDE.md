@@ -50,7 +50,7 @@ Run through this once, in order, before you invite anyone.
 
 10. **Go live.**
     - Local dev: `npm run dev` in `viewer/`.
-    - Deployed: push to the branch wired to Vercel/Cloudflare Pages. See [DEPLOYMENT.md](./DEPLOYMENT.md) for the build settings.
+    - Deployed: push to `main`, which Cloudflare Pages auto-builds. See [DEPLOYMENT.md](./DEPLOYMENT.md) for the build settings.
 
 You are now ready to write assignments.
 
@@ -246,7 +246,7 @@ You do not need a NOC. A 60-second daily glance is enough.
 - **Supabase → Reports → Database:** look at slow query list. If something appears repeatedly above 500ms, file a ticket against it.
 - **Supabase → Authentication → Users:** scroll to most recent. Look for anonymous pileup, weird email patterns (`asdf@asdf.com` × 20 = a student is testing your sign-up flow, or a bot found you).
 - **Supabase → Logs:** filter to "error" level. Expect zero on a normal day.
-- **Vercel/Cloudflare dashboard:** deploy status, build logs if you just shipped.
+- **Cloudflare Pages dashboard:** deploy status, build logs if you just shipped.
 - **Frontend errors:** not wired up yet. When you go beyond a handful of students, install Sentry (`@sentry/react`) or PostHog and pipe browser errors out. See the roadmap.
 
 ---

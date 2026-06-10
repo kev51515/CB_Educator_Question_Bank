@@ -223,6 +223,95 @@ export function InlineAddItemRow({
   // Full-Test picker: the full-length tests catalog + the chosen slug.
   const { tests: fullTests } = useFullTests(itemType === "full_test");
   const [fullTestSlug, setFullTestSlug] = useState("");
+  // Module selection for a Full-Test: the teacher picks WHICH modules to deploy
+  // to this course (e.g. Reading & Writing only). Defaults to all modules. A
+  // strict subset is persisted via set_test_module_windows (0144) after the
+  // link is created. `ftModules` is the chosen test's module list.
+  interface FtModule {
+    position: number;
+    section: string;
+    label: string;
+    time_limit_seconds: number;
+    question_count: number;
+  }
+  const [ftModules, setFtModules] = useState<FtModule[]>([]);
+  const [ftDeployed, setFtDeployed] = useState<Set<number>>(new Set());
+
+  // Load the chosen test's modules so the teacher can pick a subset. Defaults
+  // every module selected (= full test, no windows written).
+  useEffect(() => {
+    if (itemType !== "full_test" || !fullTestSlug) {
+      setFtModules([]);
+      setFtDeployed(new Set());
+      return;
+    }
+    let alive = true;
+    void (async () => {
+      const { data: t } = await supabase
+        .from("tests")
+        .select("id")
+        .eq("slug", fullTestSlug)
+        .single();
+      if (!alive) return;
+      if (!t) {
+        setFtModules([]);
+        setFtDeployed(new Set());
+        return;
+      }
+      const { data } = await supabase
+        .from("test_modules")
+        .select("position, section, label, time_limit_seconds, question_count")
+        .eq("test_id", t.id)
+        .order("position");
+      if (!alive) return;
+      const mods = (data ?? []) as FtModule[];
+      setFtModules(mods);
+      setFtDeployed(new Set(mods.map((m) => m.position)));
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [itemType, fullTestSlug]);
+
+  // Deployed positions are valid only as a non-empty CONTIGUOUS range (the run
+  // walks first→last; set_test_module_windows enforces this server-side too).
+  const ftDeployedSorted = useMemo(
+    () => [...ftDeployed].sort((a, b) => a - b),
+    [ftDeployed],
+  );
+  const ftContiguous = useMemo(() => {
+    if (ftDeployedSorted.length === 0) return false;
+    return (
+      ftDeployedSorted[ftDeployedSorted.length - 1] - ftDeployedSorted[0] + 1 ===
+      ftDeployedSorted.length
+    );
+  }, [ftDeployedSorted]);
+  const ftIsSubset = ftModules.length > 0 && ftDeployed.size < ftModules.length;
+  const toggleFtModule = (position: number): void => {
+    setFtDeployed((prev) => {
+      const next = new Set(prev);
+      if (next.has(position)) next.delete(position);
+      else next.add(position);
+      return next;
+    });
+  };
+  const setFtBySection = (section: string | "all"): void => {
+    if (section === "all") {
+      setFtDeployed(new Set(ftModules.map((m) => m.position)));
+    } else {
+      setFtDeployed(
+        new Set(ftModules.filter((m) => m.section === section).map((m) => m.position)),
+      );
+    }
+  };
+  const ftSections = useMemo(
+    () => Array.from(new Set(ftModules.map((m) => m.section))),
+    [ftModules],
+  );
+  const ftSectionActive = (section: string): boolean => {
+    const ps = ftModules.filter((m) => m.section === section).map((m) => m.position);
+    return ps.length > 0 && ps.length === ftDeployed.size && ps.every((p) => ftDeployed.has(p));
+  };
 
   // Practice Test picker state — teacher PICKS from their cross-course
   // mocktest library rather than configuring source/preset/time/questions
@@ -554,30 +643,79 @@ export function InlineAddItemRow({
         toast.warning("Pick a full-length test");
         return;
       }
+      // Guard the module selection before we touch the DB.
+      if (ftModules.length > 0 && ftDeployed.size === 0) {
+        toast.warning("Pick at least one module to deploy");
+        return;
+      }
+      if (ftIsSubset && !ftContiguous) {
+        toast.warning(
+          "Modules must be contiguous",
+          "Pick a continuous range — e.g. Reading & Writing (M1–M2) or Math (M1–M2).",
+        );
+        return;
+      }
       const chosen = fullTests.find((t) => t.slug === fullTestSlug);
       const payloadTitle = title.trim() || chosen?.title || "Full-length test";
       setBusy(true);
-      // Quick link: full-length tests aren't assignments, so store them as a
-      // link module_item pointing at the Bluebook runner (/test/:slug).
-      const { error: insertError } = await supabase.from("module_items").insert({
-        module_id: module.id,
-        position: maxPosition + 1,
-        item_type: "link",
-        item_ref_id: null,
-        title: payloadTitle,
-        url: testRunPath(fullTestSlug),
-      });
-      setBusy(false);
-      if (insertError) {
-        toast.error("Couldn't add Full-Test", insertError.message);
-        return;
-      }
-      toast.success("Full-Test added", payloadTitle);
-      if (keepOpen) {
-        resetPerItemFields();
-        onCommittedKeepOpen();
-      } else {
-        onCommitted();
+      try {
+        // Quick link: full-length tests aren't assignments, so store them as a
+        // link module_item pointing at the Bluebook runner (/test/:slug).
+        const { error: insertError } = await supabase.from("module_items").insert({
+          module_id: module.id,
+          position: maxPosition + 1,
+          item_type: "link",
+          item_ref_id: null,
+          title: payloadTitle,
+          url: testRunPath(fullTestSlug),
+        });
+        if (insertError) {
+          toast.error("Couldn't add Full-Test", insertError.message);
+          return;
+        }
+        // If the teacher chose a strict subset of modules, persist the
+        // deployment via set_test_module_windows (0144): every position gets a
+        // row with its deployed flag (excluded modules never appear for
+        // students; the run finalizes at the last deployed module). A full
+        // selection writes nothing — zero windows = the whole test, open now.
+        if (ftIsSubset) {
+          const windows = ftModules.map((m) => ({
+            position: m.position,
+            deployed: ftDeployed.has(m.position),
+            opens_at: null,
+          }));
+          const { error: winError } = await supabase.rpc("set_test_module_windows", {
+            p_course_id: classId,
+            p_slug: fullTestSlug,
+            p_windows: windows,
+          });
+          if (winError) {
+            // The link is already in place (= full test). Tell the teacher their
+            // subset didn't apply so they can fix it from the test overview.
+            toast.warning(
+              "Added as the full test",
+              "Couldn't limit the modules — set them from the test's schedule.",
+            );
+          } else {
+            toast.success("Full-Test added", `${payloadTitle} · ${ftDeployed.size} of ${ftModules.length} modules`);
+            if (keepOpen) {
+              resetPerItemFields();
+              onCommittedKeepOpen();
+            } else {
+              onCommitted();
+            }
+            return;
+          }
+        }
+        toast.success("Full-Test added", payloadTitle);
+        if (keepOpen) {
+          resetPerItemFields();
+          onCommittedKeepOpen();
+        } else {
+          onCommitted();
+        }
+      } finally {
+        setBusy(false);
       }
       return;
     }
@@ -868,6 +1006,92 @@ export function InlineAddItemRow({
               </div>
             );
           })()}
+
+          {/* Module selection — pick which modules to deploy to this course.
+              All selected = the full test. A contiguous subset (e.g. R&W only)
+              writes set_test_module_windows after the link is created. */}
+          {fullTestSlug && ftModules.length > 1 && (
+            <div className="space-y-1.5 rounded-md ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-2.5">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <span className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  Modules to deploy
+                </span>
+                <div className="flex gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setFtBySection("all")}
+                    aria-pressed={ftDeployed.size === ftModules.length}
+                    disabled={busy}
+                    className={chipClass(ftDeployed.size === ftModules.length)}
+                  >
+                    All
+                  </button>
+                  {ftSections.includes("reading-writing") && (
+                    <button
+                      type="button"
+                      onClick={() => setFtBySection("reading-writing")}
+                      aria-pressed={ftSectionActive("reading-writing")}
+                      disabled={busy}
+                      className={chipClass(ftSectionActive("reading-writing"))}
+                    >
+                      R&amp;W only
+                    </button>
+                  )}
+                  {ftSections.includes("math") && (
+                    <button
+                      type="button"
+                      onClick={() => setFtBySection("math")}
+                      aria-pressed={ftSectionActive("math")}
+                      disabled={busy}
+                      className={chipClass(ftSectionActive("math"))}
+                    >
+                      Math only
+                    </button>
+                  )}
+                </div>
+              </div>
+              <ul className="space-y-0.5">
+                {ftModules.map((m) => {
+                  const on = ftDeployed.has(m.position);
+                  return (
+                    <li key={m.position}>
+                      <label
+                        className={
+                          "flex items-center gap-2 rounded-md px-1.5 py-1.5 text-sm cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60 " +
+                          (on ? "" : "opacity-50")
+                        }
+                      >
+                        <input
+                          type="checkbox"
+                          checked={on}
+                          onChange={() => toggleFtModule(m.position)}
+                          disabled={busy}
+                          className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                          aria-label={`Deploy ${m.label}`}
+                        />
+                        <span className="font-medium text-slate-800 dark:text-slate-200">
+                          {m.label}
+                        </span>
+                        <span className="text-[11px] text-slate-400 dark:text-slate-500">
+                          {m.section === "math" ? "Math" : "R&W"} · {m.question_count}q ·{" "}
+                          {Math.round(m.time_limit_seconds / 60)}m
+                        </span>
+                      </label>
+                    </li>
+                  );
+                })}
+              </ul>
+              {ftDeployed.size > 0 && !ftContiguous && (
+                <p className="text-[11px] text-amber-700 dark:text-amber-300">
+                  Pick a continuous range — e.g. R&amp;W (M1–M2) or Math (M1–M2).
+                </p>
+              )}
+              <p className="text-[11px] text-slate-400 dark:text-slate-500">
+                All modules = the full test. Deselect to deploy a subset (e.g. Reading &amp;
+                Writing only). Set per-module release dates from the test&apos;s schedule after adding.
+              </p>
+            </div>
+          )}
         </div>
       )}
 

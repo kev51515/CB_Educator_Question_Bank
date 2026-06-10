@@ -143,7 +143,7 @@ function goalsHasText(goals: string): boolean {
 }
 
 const FIELD_CLASS =
-  "w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500";
+  "w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-base sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500";
 const LABEL_CLASS =
   "text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400";
 const HINT_CLASS = "text-xs text-slate-400 dark:text-slate-500";

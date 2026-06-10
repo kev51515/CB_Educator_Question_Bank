@@ -43,6 +43,16 @@ async function main() {
     { auth: { autoRefreshToken: false, persistSession: false } });
   await client.auth.signInWithPassword({ email, password: PW });
 
+  // 0141 enrollment gate: a non-staff caller must be enrolled in a course that
+  // links this test. Build a disposable course + Modules link + enrolment.
+  const { data: course } = await service.from("courses")
+    .insert({ name: `Edge ${TS}`, teacher_id: cu.user.id }).select("id").single();
+  const { data: mod } = await service.from("course_modules")
+    .insert({ course_id: course.id, name: "M", position: 0 }).select("id").single();
+  await service.from("module_items").insert(
+    { module_id: mod.id, item_type: "link", url: `/test/${SLUG}`, title: "Edge", position: 0 });
+  await service.from("course_memberships").insert({ course_id: course.id, student_id: cu.user.id });
+
   const { data: start } = await client.rpc("start_test", { p_slug: SLUG });
   const runId = start.run_id;
   console.log(`run=${runId} modules=${start.modules.length}`);
@@ -100,6 +110,11 @@ async function main() {
   expectErr(await client.rpc("submit_test_module",
     { p_run_id: runId, p_position: 1, p_answers: {} }), "run_already_submitted");
 
+  await service.from("test_runs").delete().eq("user_id", cu.user.id);
+  await service.from("module_items").delete().eq("module_id", mod.id);
+  await service.from("course_modules").delete().eq("id", mod.id);
+  await service.from("course_memberships").delete().eq("course_id", course.id);
+  await service.from("courses").delete().eq("id", course.id);
   await service.auth.admin.deleteUser(cu.user.id).catch(() => {});
 
   console.log(`\n${pass} pass / ${fail} fail`);
