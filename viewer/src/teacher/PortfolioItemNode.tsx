@@ -542,37 +542,79 @@ export function PortfolioItemNodeRow({
           >
             <TypeIcon type={node.item_type} />
           </span>
-          <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 truncate">
-                {node.title}
-              </h3>
-              <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700">
-                {TYPE_LABELS[node.item_type]}
-              </span>
-              {node.required && (
-                <span className="rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-100 dark:ring-indigo-900">
-                  Required
+          {cb.canEdit ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                cb.onEdit(node);
+              }}
+              aria-label={`Edit "${node.title}"`}
+              className="group min-w-0 flex-1 text-left cursor-pointer"
+            >
+              <div className="flex items-center gap-2 flex-wrap">
+                <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 truncate group-hover:underline">
+                  {node.title}
+                </h3>
+                <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700">
+                  {TYPE_LABELS[node.item_type]}
                 </span>
+                {node.required && (
+                  <span className="rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-100 dark:ring-indigo-900">
+                    Required
+                  </span>
+                )}
+                {node.due_at && (
+                  <span className="rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-0.5 text-[10px] font-medium text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-900">
+                    Due {formatRelative(node.due_at)}
+                  </span>
+                )}
+                {hasChildren && (
+                  <span className="rounded-full bg-slate-50 dark:bg-slate-800/60 px-2 py-0.5 text-[10px] font-medium text-slate-500 dark:text-slate-400 ring-1 ring-slate-200 dark:ring-slate-700">
+                    {node.children.length} sub-item
+                    {node.children.length === 1 ? "" : "s"}
+                  </span>
+                )}
+              </div>
+              {node.prompt && (
+                <p className="mt-1.5 text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap line-clamp-3">
+                  {node.prompt}
+                </p>
               )}
-              {node.due_at && (
-                <span className="rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-0.5 text-[10px] font-medium text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-900">
-                  Due {formatRelative(node.due_at)}
+            </button>
+          ) : (
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 truncate">
+                  {node.title}
+                </h3>
+                <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700">
+                  {TYPE_LABELS[node.item_type]}
                 </span>
-              )}
-              {hasChildren && (
-                <span className="rounded-full bg-slate-50 dark:bg-slate-800/60 px-2 py-0.5 text-[10px] font-medium text-slate-500 dark:text-slate-400 ring-1 ring-slate-200 dark:ring-slate-700">
-                  {node.children.length} sub-item
-                  {node.children.length === 1 ? "" : "s"}
-                </span>
+                {node.required && (
+                  <span className="rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-100 dark:ring-indigo-900">
+                    Required
+                  </span>
+                )}
+                {node.due_at && (
+                  <span className="rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-0.5 text-[10px] font-medium text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-900">
+                    Due {formatRelative(node.due_at)}
+                  </span>
+                )}
+                {hasChildren && (
+                  <span className="rounded-full bg-slate-50 dark:bg-slate-800/60 px-2 py-0.5 text-[10px] font-medium text-slate-500 dark:text-slate-400 ring-1 ring-slate-200 dark:ring-slate-700">
+                    {node.children.length} sub-item
+                    {node.children.length === 1 ? "" : "s"}
+                  </span>
+                )}
+              </div>
+              {node.prompt && (
+                <p className="mt-1.5 text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap line-clamp-3">
+                  {node.prompt}
+                </p>
               )}
             </div>
-            {node.prompt && (
-              <p className="mt-1.5 text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap line-clamp-3">
-                {node.prompt}
-              </p>
-            )}
-          </div>
+          )}
           {cb.canEdit && (
             <div className="flex items-center gap-1 shrink-0">
               <KebabMenu options={kebab} />

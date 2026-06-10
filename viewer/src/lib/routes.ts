@@ -114,6 +114,8 @@ export const ROUTES = {
   COURSE_MATERIALS: "/educator/courses/:courseId/materials",
   COURSE_GRADES: "/educator/courses/:courseId/grades",
   COURSE_PORTFOLIO: "/educator/courses/:courseId/portfolio",
+  // Counseling caseload dashboard (counseling courses only — see 0135).
+  COURSE_CASELOAD: "/educator/courses/:courseId/caseload",
   COURSE_DISCUSSIONS: "/educator/courses/:courseId/discussions",
   COURSE_DISCUSSION: "/educator/courses/:courseId/discussions/:topicId",
   COURSE_SETTINGS: "/educator/courses/:courseId/settings",
@@ -246,6 +248,10 @@ export function courseAssignmentAttemptPath(
 
 export function coursePeoplePath(courseId: string): string {
   return buildPath(ROUTES.COURSE_PEOPLE, { courseId });
+}
+
+export function courseCaseloadPath(courseId: string): string {
+  return buildPath(ROUTES.COURSE_CASELOAD, { courseId });
 }
 
 /**

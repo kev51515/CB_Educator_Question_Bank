@@ -34,6 +34,7 @@ interface CollegeApplication {
   course_id: string;
   student_id: string;
   college_name: string;
+  college_id: string | null;
   tier: Tier | null;
   plan: Plan | null;
   deadline: string | null;
@@ -42,6 +43,13 @@ interface CollegeApplication {
   submitted_at: string | null;
   created_at: string;
   updated_at: string;
+}
+
+interface CollegeMatch {
+  id: string;
+  name: string;
+  city: string | null;
+  state: string | null;
 }
 
 const TIER_OPTIONS: Tier[] = ["reach", "target", "safety", "likely"];
@@ -95,6 +103,10 @@ function formatDeadline(date: string | null): string {
   });
 }
 
+function matchSubtitle(m: CollegeMatch): string {
+  return [m.city, m.state].filter(Boolean).join(", ");
+}
+
 export function CollegeApplicationsPanel({
   courseId,
   studentId,
@@ -119,8 +131,12 @@ export function CollegeApplicationsPanel({
   );
   const [removing, setRemoving] = useState(false);
 
-  // Add-a-college form state.
-  const [name, setName] = useState("");
+  // Add-a-college form state: a typeahead against the shared `public.colleges`
+  // catalog (with a free-text fallback) plus tier/plan/deadline that apply to
+  // whatever the counselor adds.
+  const [query, setQuery] = useState("");
+  const [matches, setMatches] = useState<CollegeMatch[]>([]);
+  const [searching, setSearching] = useState(false);
   const [tier, setTier] = useState<Tier | "">("");
   const [plan, setPlan] = useState<Plan | "">("");
   const [deadline, setDeadline] = useState("");
@@ -149,10 +165,48 @@ export function CollegeApplicationsPanel({
     void load();
   }, [load]);
 
+  // Catalog search — debounced so we don't fire a query on every keystroke.
+  useEffect(() => {
+    const q = query.trim();
+    if (!q) {
+      setMatches([]);
+      setSearching(false);
+      return;
+    }
+    setSearching(true);
+    const handle = setTimeout(() => {
+      void (async () => {
+        const { data, error } = await supabase
+          .from("colleges")
+          .select("id,name,city,state")
+          .ilike("name", `%${q}%`)
+          .order("name")
+          .limit(8);
+        if (!aliveRef.current) return;
+        setSearching(false);
+        if (error) {
+          setMatches([]);
+          return;
+        }
+        setMatches((data ?? []) as CollegeMatch[]);
+      })();
+    }, 200);
+    return () => clearTimeout(handle);
+  }, [query]);
+
   const count = apps.length;
   const countLabel = useMemo(
     () => `${count} ${count === 1 ? "college" : "colleges"}`,
     [count],
+  );
+
+  // Colleges already on the list (by catalog id) so we can hide dupes.
+  const usedCollegeIds = useMemo(
+    () =>
+      new Set(
+        apps.map((a) => a.college_id).filter((id): id is string => !!id),
+      ),
+    [apps],
   );
 
   const onChangeStatus = async (
@@ -199,9 +253,11 @@ export function CollegeApplicationsPanel({
     void load();
   };
 
-  const onAdd = async (e: React.FormEvent): Promise<void> => {
-    e.preventDefault();
-    const trimmed = name.trim();
+  const insertCollege = async (
+    collegeName: string,
+    collegeId: string | null,
+  ): Promise<void> => {
+    const trimmed = collegeName.trim();
     if (!trimmed) {
       toast.error("Add a college", "Enter a college name first.");
       return;
@@ -211,6 +267,7 @@ export function CollegeApplicationsPanel({
       course_id: courseId,
       student_id: studentId,
       college_name: trimmed,
+      college_id: collegeId,
       tier: tier || null,
       plan: plan || null,
       deadline: deadline || null,
@@ -222,7 +279,8 @@ export function CollegeApplicationsPanel({
       toast.error("Couldn't add college", error.message);
       return;
     }
-    setName("");
+    setQuery("");
+    setMatches([]);
     setTier("");
     setPlan("");
     setDeadline("");
@@ -232,6 +290,14 @@ export function CollegeApplicationsPanel({
 
   const selectClass =
     "rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500";
+
+  const trimmedQuery = query.trim();
+  const visibleMatches = matches.filter((m) => !usedCollegeIds.has(m.id));
+  const showFreeText =
+    !!trimmedQuery &&
+    !visibleMatches.some(
+      (m) => m.name.toLowerCase() === trimmedQuery.toLowerCase(),
+    );
 
   return (
     <section className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white/80 dark:bg-slate-900/60 px-5 py-5 space-y-4">
@@ -317,26 +383,12 @@ export function CollegeApplicationsPanel({
         </ul>
       )}
 
-      {/* Add a college */}
-      <form
-        onSubmit={(e) => {
-          void onAdd(e);
-        }}
-        className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4"
-      >
+      {/* Add a college — catalog typeahead with a free-text fallback. */}
+      <div className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4">
         <label className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
           Add a college
         </label>
         <div className="flex flex-wrap items-center gap-2">
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="College name"
-            aria-label="College name"
-            required
-            className="min-w-[12rem] flex-1 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
           <label className="sr-only" htmlFor="add-tier">
             Tier
           </label>
@@ -380,15 +432,76 @@ export function CollegeApplicationsPanel({
             aria-label="Deadline"
             className={`${selectClass} min-h-[40px]`}
           />
-          <button
-            type="submit"
-            disabled={adding || !name.trim()}
-            className="min-h-[40px] shrink-0 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 disabled:opacity-50"
-          >
-            {adding ? "Adding…" : "Add"}
-          </button>
         </div>
-      </form>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search for a college by name…"
+          aria-label="Search for a college to add"
+          disabled={adding}
+          className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+        />
+        {trimmedQuery && (
+          <div className="max-h-60 overflow-auto rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 divide-y divide-slate-100 dark:divide-slate-800">
+            {searching && visibleMatches.length === 0 ? (
+              <p className="px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
+                Searching…
+              </p>
+            ) : (
+              <>
+                {visibleMatches.map((m) => (
+                  <button
+                    key={m.id}
+                    type="button"
+                    disabled={adding}
+                    onClick={() => {
+                      void insertCollege(m.name, m.id);
+                    }}
+                    className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50"
+                  >
+                    <span className="min-w-0">
+                      <span className="block truncate text-sm font-medium text-slate-900 dark:text-slate-100">
+                        {m.name}
+                      </span>
+                      {matchSubtitle(m) && (
+                        <span className="block truncate text-xs text-slate-500 dark:text-slate-400">
+                          {matchSubtitle(m)}
+                        </span>
+                      )}
+                    </span>
+                    <span className="shrink-0 text-xs font-medium text-indigo-600 dark:text-indigo-400">
+                      Add
+                    </span>
+                  </button>
+                ))}
+                {showFreeText && (
+                  <button
+                    type="button"
+                    disabled={adding}
+                    onClick={() => {
+                      void insertCollege(trimmedQuery, null);
+                    }}
+                    className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50"
+                  >
+                    <span className="min-w-0 truncate text-sm text-slate-700 dark:text-slate-300">
+                      Add &ldquo;{trimmedQuery}&rdquo;
+                    </span>
+                    <span className="shrink-0 text-xs font-medium text-indigo-600 dark:text-indigo-400">
+                      {adding ? "Adding…" : "Add"}
+                    </span>
+                  </button>
+                )}
+                {!searching && visibleMatches.length === 0 && !showFreeText && (
+                  <p className="px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
+                    No matching colleges.
+                  </p>
+                )}
+              </>
+            )}
+          </div>
+        )}
+      </div>
 
       {confirmRemove && (
         <ConfirmDialog

@@ -23,7 +23,7 @@ import { useBreadcrumbLabel } from "@/components";
 import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
 import { useToast } from "@/components/Toast";
-import { coursePeoplePath, ROUTES } from "@/lib/routes";
+import { courseCaseloadPath, coursePeoplePath, ROUTES } from "@/lib/routes";
 import { useStudentProfile } from "./useStudentProfile";
 import type { StudentAttemptRow } from "./useStudentProfile";
 import { getInitials, type TrajectoryPoint } from "./studentProfileHelpers";
@@ -79,12 +79,16 @@ export function StudentProfilePage(): JSX.Element {
   useBreadcrumbLabel(studentId, header?.display_name);
   useBreadcrumbLabel(courseRef, course?.name);
 
-  // Route back to the roster — prefer the short_code in the URL once we
-  // know it, else fall back to the raw URL param.
-  const rosterHref = useMemo(
-    () => coursePeoplePath(course?.short_code ?? courseRef),
-    [course?.short_code, courseRef],
-  );
+  // Route back to where the counselor/teacher came from — counseling courses
+  // open this profile from the Caseload dashboard, normal classes from the
+  // roster. Prefer the short_code in the URL once we know it, else fall back
+  // to the raw URL param.
+  const isCounseling = course?.course_type === "counseling";
+  const backHref = useMemo(() => {
+    const ref = course?.short_code ?? courseRef;
+    return isCounseling ? courseCaseloadPath(ref) : coursePeoplePath(ref);
+  }, [isCounseling, course?.short_code, courseRef]);
+  const backLabel = isCounseling ? "Back to caseload" : "Back to roster";
 
   const linkCourseRef = course?.short_code ?? courseRef;
 
@@ -150,11 +154,11 @@ export function StudentProfilePage(): JSX.Element {
       <nav className="flex items-center gap-2 text-sm">
         <button
           type="button"
-          onClick={() => navigate(rosterHref)}
+          onClick={() => navigate(backHref)}
           className="inline-flex items-center gap-1 rounded-md min-h-[40px] px-2 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
         >
           <span aria-hidden>←</span>
-          <span>Back to roster</span>
+          <span>{backLabel}</span>
         </button>
       </nav>
 
@@ -179,8 +183,8 @@ export function StudentProfilePage(): JSX.Element {
             title="Student not found"
             body="This student isn't in the course, or you don't have access to their profile."
             cta={{
-              label: "Back to roster",
-              onClick: () => navigate(rosterHref),
+              label: backLabel,
+              onClick: () => navigate(backHref),
             }}
           />
         </div>

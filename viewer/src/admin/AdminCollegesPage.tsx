@@ -162,6 +162,19 @@ export function AdminCollegesPage() {
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, formOpen);
 
+  // Close the form on Escape (modal contract).
+  useEffect(() => {
+    if (!formOpen) return;
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.key === "Escape" && !saving) {
+        setFormOpen(false);
+        setEditing(null);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [formOpen, saving]);
+
   const load = useCallback(async (): Promise<void> => {
     setLoading(true);
     const { data, error } = await supabase

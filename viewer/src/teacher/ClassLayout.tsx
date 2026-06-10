@@ -125,16 +125,37 @@ export function ClassLayout() {
 
   // Portfolio is a counseling surface — only on counseling courses (0133).
   const isCounseling = cls?.course_type === "counseling";
-  const visibleTabs = useMemo(
-    () =>
-      TABS.filter((t) => {
-        // Skills is SAT-test-derived — not relevant to counseling courses.
-        if (t.to === "skills") return canQbank && !isCounseling;
-        if (t.to === "portfolio" || t.to === "caseload") return isCounseling;
-        return true;
-      }),
-    [canQbank, isCounseling],
-  );
+  const visibleTabs = useMemo(() => {
+    if (isCounseling) {
+      // Counseling courses get a purpose-built IA, not the class order. The
+      // student's mental model is: see the overall plan first (Modules =
+      // timeline/structure the counselor lays out), then the sub-items of that
+      // plan (Portfolio = essays/recs/college artifacts), then the working
+      // surfaces (Caseload, Overview, People, comms, Materials, Settings).
+      // Assignments/Grades/Skills are test-class concepts and don't apply.
+      const COUNSELING_ORDER = [
+        "modules",
+        "portfolio",
+        "caseload",
+        "overview",
+        "roster",
+        "announcements",
+        "discussions",
+        "materials",
+        "settings",
+      ];
+      const byTo = new Map(TABS.map((t) => [t.to, t]));
+      return COUNSELING_ORDER.map((to) => byTo.get(to)).filter(
+        (t): t is TabDef => !!t,
+      );
+    }
+    // Normal class: hide the counseling-only tabs; Skills follows Q-bank access.
+    return TABS.filter((t) => {
+      if (t.to === "skills") return canQbank;
+      if (t.to === "portfolio" || t.to === "caseload") return false;
+      return true;
+    });
+  }, [canQbank, isCounseling]);
 
   // Publish the real course name to the global breadcrumb bar. NO-OPs until
   // both key + label are truthy, so calling it unconditionally before the
