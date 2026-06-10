@@ -19,6 +19,12 @@ import { ErrorBoundary, ToastProvider } from "@/components";
 import { AuthGate } from "@/auth";
 import { registerServiceWorker } from "./registerSW";
 import { captureError, initTelemetry } from "@/lib/telemetry";
+import { stashPendingLinkTokenFromUrl } from "@/line/linkResume";
+
+// LINE opens /line/link?linkToken=… in its in-app browser (no LMS session).
+// Capture the token NOW, before AuthGate can redirect to sign-in and drop it;
+// AuthGate resumes to /line/link once authenticated.
+stashPendingLinkTokenFromUrl();
 
 // Global safety net for async failures. The ErrorBoundary only catches errors
 // thrown during React render; awaited promise rejections (the bulk of this
