@@ -128,6 +128,12 @@ export function ModulesPage(): JSX.Element {
   const { profile } = useProfile();
   const classId: string | null = cls?.id ?? null;
   const { modules, loading, error, refresh, patchModule } = useCourseModules(classId);
+  // Ref mirror of `modules` so the drop-commit handlers (which can fire on a
+  // quick second drag, before their useCallback closures re-bind to the
+  // post-refresh `modules`) read the LATEST module list instead of the stale
+  // render-time snapshot. Same ref-mirror discipline as dropTargetRef etc.
+  const modulesRef = useRef(modules);
+  modulesRef.current = modules;
 
   const toast = useToast();
   const isStudent = profile?.role === "student";
@@ -568,6 +574,32 @@ export function ModulesPage(): JSX.Element {
         else newPosition = target.position === "before" ? anchorIdx : anchorIdx + 1;
       }
       const draggedId = draggedModuleId;
+      // EDGE: no-op drop — dropping a module back into its current slot. The
+      // resolver already rejects self/descendant, but NOT "drop adjacent to
+      // self" (e.g. drop after the sibling immediately above, or before the
+      // sibling immediately below, which both resolve to the module's own
+      // current slot). Firing move_module here would round-trip a no-change RPC
+      // and show a misleading "Module moved" toast. Detect same-parent +
+      // same-resolved-slot and bail before the network call. Account for the
+      // self-removal index shift: among the current siblings the module sits at
+      // `currentIdx`; an insert position of `currentIdx` or `currentIdx + 1`
+      // both land it back where it started once it's spliced out first.
+      if (!target.asChild) {
+        const dragged = flatNodes.find((n) => n.id === draggedId);
+        const currentParentId = dragged?.parent_module_id ?? null;
+        if (currentParentId === target.parentId) {
+          const currentIdx = siblings.findIndex((s) => s.id === draggedId);
+          if (
+            currentIdx >= 0 &&
+            (newPosition === currentIdx || newPosition === currentIdx + 1)
+          ) {
+            setDraggedModuleId(null);
+            setDropTarget(null);
+            dropBusyRef.current = false;
+            return;
+          }
+        }
+      }
       setDraggedModuleId(null);
       setDropTarget(null);
       try {
@@ -579,7 +611,7 @@ export function ModulesPage(): JSX.Element {
         dropBusyRef.current = false;
       }
     },
-    [callMoveModule, childrenByParent, draggedModuleId, setDraggedModuleId, setDropTarget, triggerPulse],
+    [callMoveModule, childrenByParent, draggedModuleId, flatNodes, setDraggedModuleId, setDropTarget, triggerPulse],
   );
 
   const onIndentModule = useCallback(
@@ -723,108 +755,149 @@ export function ModulesPage(): JSX.Element {
   // list or a target (moduleId, position).
   const commitItemDrop = useCallback(
     async (target: ItemDropTarget): Promise<void> => {
-      if (!draggedItem) return;
-      const draggedId = draggedItem.id;
-      const sourceModuleId = draggedItem.module_id;
-      const targetModuleId = target.moduleId;
-      const anchorItemId = target.anchorItemId;
-      const targetModule = modules.find((m) => m.id === targetModuleId);
-      if (!targetModule) {
-        setDraggedItem(null);
-        setItemDropTarget(null);
-        return;
-      }
-      const anchorIdx = targetModule.items.findIndex(
-        (i) => i.id === anchorItemId,
-      );
-      if (anchorIdx < 0) {
-        setDraggedItem(null);
-        setItemDropTarget(null);
-        return;
-      }
-      // Always clear the drag/indicator state before the network round-trip so
-      // a slow RPC doesn't leave a stale ghost indicator on the previous row.
-      setDraggedItem(null);
-      setItemDropTarget(null);
-
-      if (sourceModuleId === targetModuleId) {
-        // Same-module reorder via reorder_module_items.
-        const fromIndex = targetModule.items.findIndex(
-          (i) => i.id === draggedId,
+      // Read the dragged item + module list from refs (not the closure's
+      // render-time state) so a quick second drop after a refresh resolves
+      // against the LATEST data — the closure deps can still point at the
+      // prior render. Mirrors the dropTargetRef discipline used in the hot
+      // onDragOver handlers.
+      const dragged = draggedItemRef.current;
+      if (!dragged) return;
+      // Concurrent-drop guard: ignore re-fires while a previous RPC is in
+      // flight (slow network + rapid second drag → 2 RPCs racing, the second
+      // reading stale server state). Same guard commitDrop uses.
+      if (dropBusyRef.current) return;
+      dropBusyRef.current = true;
+      try {
+        const draggedId = dragged.id;
+        const sourceModuleId = dragged.module_id;
+        const targetModuleId = target.moduleId;
+        const anchorItemId = target.anchorItemId;
+        const targetModule = modulesRef.current.find(
+          (m) => m.id === targetModuleId,
         );
-        if (fromIndex < 0) return;
-        const next = targetModule.items.slice();
-        const [moved] = next.splice(fromIndex, 1);
-        // Re-find anchor after splice (it may have shifted by one).
-        const adjAnchorIdx = next.findIndex((i) => i.id === anchorItemId);
-        const insertAt =
-          target.position === "before" ? adjAnchorIdx : adjAnchorIdx + 1;
-        next.splice(insertAt, 0, moved);
-        const orderedIds = next.map((i) => i.id);
-        const { error: rpcError } = await supabase.rpc(
-          "reorder_module_items",
-          {
-            p_module_id: targetModuleId,
-            p_ordered_ids: orderedIds,
-          },
-        );
-        if (rpcError) {
-          toast.error("Couldn't reorder items", rpcError.message);
+        if (!targetModule) {
+          setDraggedItem(null);
+          setItemDropTarget(null);
           return;
         }
-        toast.success("Items reordered");
-        await refresh();
-        triggerPulse(draggedId);
-        return;
-      }
-
-      // Cross-module move via move_item_to_module. Position is 0-based among
-      // destination items (anchor index ± 1 depending on before/after).
-      const newPosition =
-        target.position === "before" ? anchorIdx : anchorIdx + 1;
-      const { error: rpcError } = await supabase.rpc("move_item_to_module", {
-        p_item_id: draggedId,
-        p_target_module_id: targetModuleId,
-        p_position: newPosition,
-      });
-      if (rpcError) {
-        toast.error("Couldn't move item", rpcError.message);
-        return;
-      }
-      toast.success("Item moved");
-      await refresh();
-      triggerPulse(draggedId);
-    },
-    [draggedItem, modules, refresh, setItemDropTarget, toast],
-  );
-
-  // Empty-module drop: append the dragged item as the first/only item in the
-  // target module. Uses move_item_to_module with position 0.
-  const commitItemDropOnEmptyModule = useCallback(
-    async (targetModuleId: string): Promise<void> => {
-      if (!draggedItem) return;
-      const draggedId = draggedItem.id;
-      if (draggedItem.module_id === targetModuleId) {
+        const anchorIdx = targetModule.items.findIndex(
+          (i) => i.id === anchorItemId,
+        );
+        if (anchorIdx < 0) {
+          setDraggedItem(null);
+          setItemDropTarget(null);
+          return;
+        }
+        // Always clear the drag/indicator state before the network round-trip so
+        // a slow RPC doesn't leave a stale ghost indicator on the previous row.
         setDraggedItem(null);
         setItemDropTarget(null);
-        return;
+
+        if (sourceModuleId === targetModuleId) {
+          // Same-module reorder via reorder_module_items.
+          const fromIndex = targetModule.items.findIndex(
+            (i) => i.id === draggedId,
+          );
+          if (fromIndex < 0) return;
+          const next = targetModule.items.slice();
+          const [moved] = next.splice(fromIndex, 1);
+          // Re-find anchor after splice (it may have shifted by one).
+          const adjAnchorIdx = next.findIndex((i) => i.id === anchorItemId);
+          const insertAt =
+            target.position === "before" ? adjAnchorIdx : adjAnchorIdx + 1;
+          next.splice(insertAt, 0, moved);
+          const orderedIds = next.map((i) => i.id);
+          const { error: rpcError } = await supabase.rpc(
+            "reorder_module_items",
+            {
+              p_module_id: targetModuleId,
+              p_ordered_ids: orderedIds,
+            },
+          );
+          if (rpcError) {
+            toast.error("Couldn't reorder items", rpcError.message);
+            return;
+          }
+          toast.success("Items reordered");
+          await refresh();
+          triggerPulse(draggedId);
+          return;
+        }
+
+        // Cross-module move via move_item_to_module. Position is 0-based among
+        // destination items (anchor index ± 1 depending on before/after).
+        const newPosition =
+          target.position === "before" ? anchorIdx : anchorIdx + 1;
+        const { error: rpcError } = await supabase.rpc("move_item_to_module", {
+          p_item_id: draggedId,
+          p_target_module_id: targetModuleId,
+          p_position: newPosition,
+        });
+        if (rpcError) {
+          toast.error("Couldn't move item", rpcError.message);
+          return;
+        }
+        toast.success("Item moved");
+        await refresh();
+        triggerPulse(draggedId);
+      } finally {
+        dropBusyRef.current = false;
       }
-      setDraggedItem(null);
-      setItemDropTarget(null);
-      const { error: rpcError } = await supabase.rpc("move_item_to_module", {
-        p_item_id: draggedId,
-        p_target_module_id: targetModuleId,
-        p_position: 0,
-      });
-      if (rpcError) {
-        toast.error("Couldn't move item", rpcError.message);
-        return;
-      }
-      toast.success("Item moved");
-      await refresh();
-      triggerPulse(draggedId);
     },
-    [draggedItem, refresh, setDraggedItem, setItemDropTarget, toast, triggerPulse],
+    [refresh, setDraggedItem, setItemDropTarget, toast, triggerPulse],
+  );
+
+  // Module-level item drop: drop an item onto a module (empty, non-empty, or
+  // even collapsed) and land it in that module. Used by the empty-list zone
+  // (position 0) and by the module-header drop target (#6: a collapsed or
+  // non-empty module accepts a cross-module item drop, appending to the end so
+  // existing items aren't displaced). Cross-module only — a same-module drop
+  // here is a no-op (no anchor to reorder against).
+  const commitItemDropOnEmptyModule = useCallback(
+    async (
+      targetModuleId: string,
+      where: "start" | "end" = "start",
+    ): Promise<void> => {
+      // Read from refs (see commitItemDrop) so a rapid second drop resolves
+      // against the latest data, not a stale render-time closure.
+      const dragged = draggedItemRef.current;
+      if (!dragged) return;
+      // Concurrent-drop guard — same as commitDrop / commitItemDrop.
+      if (dropBusyRef.current) return;
+      dropBusyRef.current = true;
+      try {
+        const draggedId = dragged.id;
+        if (dragged.module_id === targetModuleId) {
+          // Same-module drop onto its own header/empty zone: nothing to do.
+          setDraggedItem(null);
+          setItemDropTarget(null);
+          return;
+        }
+        setDraggedItem(null);
+        setItemDropTarget(null);
+        // Append lands AFTER the module's current items; insert-at-start uses 0.
+        const targetModule = modulesRef.current.find(
+          (m) => m.id === targetModuleId,
+        );
+        const newPosition =
+          where === "end" ? targetModule?.items.length ?? 0 : 0;
+        const { error: rpcError } = await supabase.rpc("move_item_to_module", {
+          p_item_id: draggedId,
+          p_target_module_id: targetModuleId,
+          p_position: newPosition,
+        });
+        if (rpcError) {
+          toast.error("Couldn't move item", rpcError.message);
+          return;
+        }
+        toast.success("Item moved");
+        await refresh();
+        triggerPulse(draggedId);
+      } finally {
+        dropBusyRef.current = false;
+      }
+    },
+    [refresh, setDraggedItem, setItemDropTarget, toast, triggerPulse],
   );
 
   // ---- Toolbar actions ----
