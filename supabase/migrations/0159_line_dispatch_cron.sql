@@ -1,5 +1,5 @@
 -- =============================================================================
--- Migration: 0158_line_dispatch_cron.sql
+-- Migration: 0159_line_dispatch_cron.sql  (renumbered from 0158 — roster_status_range holds 0158 on cloud)
 -- Schedules the line-dispatch edge function (every minute) to drain line_outbox
 -- to the LINE push API. Mirrors 0031's pattern exactly: pg_cron + pg_net
 -- net.http_post to /functions/v1/line-dispatch with a Bearer token read from
