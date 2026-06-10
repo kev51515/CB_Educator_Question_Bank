@@ -180,13 +180,58 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
   }, []);
 
   const parsed = useMemo(() => parseEntry(code), [code]);
-  const isSeat = parsed.mode === "seat";
+
+  // A bare 6-char code is AMBIGUOUS: it can be a course join/short code OR a
+  // managed student's personal login code — both are 6 chars in the same
+  // alphabet, so shape alone can't tell them apart. Ask the server which it is
+  // (peek_join_code) so we route to the right flow and show the right fields.
+  // A "COURSECODE-NN" dash form is unambiguous (always a seat) and skips the
+  // round-trip. We intentionally keep the dash-less personal-code format.
+  const [resolvedKind, setResolvedKind] = useState<"seat" | "course" | "none" | null>(
+    null,
+  );
+  const [resolving, setResolving] = useState(false);
+
+  useEffect(() => {
+    if (parsed.mode !== "course") {
+      setResolvedKind(null);
+      setResolving(false);
+      return;
+    }
+    const probe = parsed.courseCode;
+    let cancelled = false;
+    setResolving(true);
+    const timer = setTimeout(() => {
+      void (async () => {
+        const { data, error: rpcErr } = await supabase.rpc("peek_join_code", {
+          p_code: probe,
+        });
+        if (cancelled) return;
+        setResolvedKind(
+          rpcErr || typeof data !== "string"
+            ? "none"
+            : (data as "seat" | "course" | "none"),
+        );
+        setResolving(false);
+      })();
+    }, 300);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [parsed]);
+
+  // Effective flow: a dash seat, OR a bare code the server resolved to a seat.
+  const isSeat =
+    parsed.mode === "seat" || (parsed.mode === "course" && resolvedKind === "seat");
   const codeValid = parsed.mode !== "empty";
   const emailsMatch =
     email.trim().toLowerCase() === confirmEmail.trim().toLowerCase();
 
   const canSubmit = useMemo(() => {
-    if (busy || succeeded || !codeValid) return false;
+    // Block submit while we're still resolving a bare code — we don't yet know
+    // whether to demand a password (seat) or not (course).
+    if (busy || succeeded || !codeValid || resolving) return false;
     if (isSeat)
       return (
         email.trim().length > 0 &&
@@ -195,7 +240,7 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
         password.length >= 6
       );
     return name.trim().length > 0 && email.trim().length > 0;
-  }, [busy, succeeded, codeValid, isSeat, name, email, confirmEmail, emailsMatch, password]);
+  }, [busy, succeeded, codeValid, resolving, isSeat, name, email, confirmEmail, emailsMatch, password]);
 
   const codeRef = useRef<HTMLInputElement | null>(null);
   const nameRef = useRef<HTMLInputElement | null>(null);
@@ -298,7 +343,10 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
       setError("Enter the code your teacher gave you.");
       return;
     }
-    if (p.mode === "seat") {
+    // Effective flow — a dash seat, or a bare code the server resolved to a seat.
+    const seatFlow =
+      p.mode === "seat" || (p.mode === "course" && resolvedKind === "seat");
+    if (seatFlow) {
       if (!email.trim()) {
         setError("Please enter your email.");
         return;
@@ -346,10 +394,12 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
       }
       anonStarted = true;
 
-      keepSession =
-        p.mode === "seat"
-          ? await submitSeat(p.seatCode)
-          : await submitCourse(p.courseCode);
+      // For a dash seat the padded `seatCode` is the login_code; for a bare
+      // personal code the typed (scrubbed/uppercased) string is the login_code.
+      const seatCode = p.mode === "seat" ? p.seatCode : scrubEntry(code);
+      keepSession = seatFlow
+        ? await submitSeat(seatCode)
+        : await submitCourse((p as { courseCode: string }).courseCode);
     } catch (err: unknown) {
       if (aliveRef.current) setError(getErrorMessage(err));
     } finally {
@@ -487,9 +537,11 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
                 id="quickstart-code-hint"
                 className="mt-1 block text-xs text-stone-500 dark:text-stone-400"
               >
-                {isSeat
-                  ? "Your teacher already set your name — you just need email & password."
-                  : "6 characters — letters and numbers (no O, 0, I, 1, or L)."}
+                {resolving
+                  ? "Checking your code…"
+                  : isSeat
+                    ? "Your teacher already set your name — you just need email & password."
+                    : "6 characters — letters and numbers (no O, 0, I, 1, or L)."}
               </span>
             </label>
 
