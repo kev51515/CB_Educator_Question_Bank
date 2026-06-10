@@ -61,7 +61,17 @@ live-editing `fulltest/`.
   did" set, never apples-to-oranges across different question counts.
 
 Operational: per request, wiped all student users + test data and rebuilt
-Class A's 9-student roster (the 2 college-counseling students were kept).
+Class A's 9-student roster (the 2 college-counseling students were kept), and
+populated **Class B** with the 10 '27-SAT-B names.
+
+- **Dash-less login codes — `admin_create_student` fixed (`0148`).** The
+  "non-guessable login codes" wave only re-keyed existing rows; the generator
+  still emitted `<short_code>-NN`, so every *new* student regressed to a dash
+  code. Rewrote the generator to mint a bare 6-distinct-letter code (A–Z minus
+  I/O/L, e.g. `KMCZQR`) — no dash, no course prefix; `peek_join_code` (0142)
+  already routes these. Re-minted Class B's 10 seats to bare codes. Also swept
+  the docs (ARCHITECTURE/SCHEMA/CONTROLLED_TESTS + QuickStart comments) that
+  still showed the old `<COURSE>-NN` examples.
 
 **Migration ledger note:** `supabase_migrations.schema_migrations` is recorded
 through `0140`; `0141` (parallel session) / `0142` / `0143` ran live via direct
