@@ -79,12 +79,24 @@ type SectionScores = Record<string, { correct: number; total: number }> | null |
 /**
  * Build an estimated scaled report from the run's section_scores
  * (`{ "reading-writing": {correct,total}, math: {correct,total} }`).
+ *
+ * A section is only scaled when the run covered the WHOLE section — the
+ * anchor curves map a full-section raw (R&W out of 54, Math out of 44) onto
+ * 200–800. A partial-section subset (e.g. one of two R&W modules, ~27 Qs) can't
+ * be placed on that curve, so we return null for it (the surface shows the raw
+ * correct/total instead of a misleading estimate). `total` is the composite,
+ * null unless BOTH full sections are present.
  */
+function sectionScaledIfComplete(section: SatSection, entry: { correct: number; total: number } | undefined): number | null {
+  if (!entry || typeof entry.correct !== "number" || typeof entry.total !== "number") return null;
+  // Require the full section's question count before scaling.
+  if (entry.total < SECTION_MAX_RAW[section]) return null;
+  return sectionScaled(section, entry.correct);
+}
+
 export function scaledFromSectionScores(scores: SectionScores): ScaledReport {
-  const rwRaw = scores?.["reading-writing"]?.correct;
-  const mathRaw = scores?.["math"]?.correct;
-  const rw = typeof rwRaw === "number" ? sectionScaled("reading-writing", rwRaw) : null;
-  const math = typeof mathRaw === "number" ? sectionScaled("math", mathRaw) : null;
+  const rw = sectionScaledIfComplete("reading-writing", scores?.["reading-writing"]);
+  const math = sectionScaledIfComplete("math", scores?.["math"]);
   const total = rw !== null && math !== null ? rw + math : null;
   return { rw, math, total };
 }

@@ -1122,21 +1122,31 @@ function FullTestRunner() {
 
   if (phase === "intro" && start) {
     const resuming = start.current_module > 1 || (start.answered ?? 0) > 0;
+    // A module is in scope for THIS run when it's inside the run's range
+    // (first..last — a `?m=` subset link) AND deployed (a metered/windows
+    // subset). Header counts + the "Begin" target reflect only those.
+    const rangeFirst = start.first_position ?? 1;
+    const rangeLast = start.last_position ?? Number.MAX_SAFE_INTEGER;
+    const inScope = (m: { position: number; deployed?: boolean }): boolean =>
+      m.position >= rangeFirst && m.position <= rangeLast && m.deployed !== false;
+    const scopedModules = start.modules.filter(inScope);
+    const scopedQuestions = scopedModules.reduce((a, m) => a + m.question_count, 0);
+    const isSubset = scopedModules.length < start.modules.length;
     return (
       <CenterCard wide>
         <p className="text-sm font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-400">
-          Full-length practice test
+          {isSubset ? "Practice test — selected modules" : "Full-length practice test"}
         </p>
         <h1 className="mt-1 text-2xl font-bold text-slate-900 dark:text-slate-100">{start.test.title}</h1>
         <p className="mt-2 text-slate-600 dark:text-slate-400">
-          {start.test.total_questions} questions ·{" "}
-          {start.modules.filter((m) => m.deployed !== false).length} timed modules.
+          {scopedQuestions || start.test.total_questions} questions ·{" "}
+          {scopedModules.length} timed module{scopedModules.length === 1 ? "" : "s"}.
           Each module is timed and submitted on its own; you can't return to a
           previous module once you move on — just like the real Digital SAT.
         </p>
         <ol className="mt-5 space-y-2">
           {start.modules.map((m) => {
-            const included = m.deployed !== false;
+            const included = inScope(m);
             const opensFuture =
               !!m.opens_at && new Date(m.opens_at).getTime() > Date.now();
             return (
