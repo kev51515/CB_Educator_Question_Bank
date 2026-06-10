@@ -105,6 +105,37 @@ function buildLinkFlex(url: string): unknown {
   };
 }
 
+// A short success card, shown right after linking completes.
+function buildSuccessFlex(): unknown {
+  return {
+    type: "flex",
+    altText: "🎉 已成功連結帳號 · Your account is now linked",
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      body: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "20px",
+        contents: [
+          { type: "text", text: "🎉 已連結帳號", weight: "bold", size: "lg", color: "#059669" },
+          { type: "text", text: "You're all set", size: "sm", color: "#6B7280", margin: "xs" },
+          {
+            type: "text",
+            text: "之後的作業提醒、成績與公告都會傳到這裡。",
+            wrap: true, size: "sm", color: "#374151", margin: "lg",
+          },
+          {
+            type: "text",
+            text: "Reminders, grades, and announcements will arrive here from now on.",
+            wrap: true, size: "xs", color: "#9CA3AF", margin: "sm",
+          },
+        ],
+      },
+    },
+  };
+}
+
 // Send one message object via reply (preferred) or push fallback.
 async function sendMessage(token: string, message: unknown, replyToken?: string, userId?: string) {
   if (replyToken) await linePost(token, "/message/reply", { replyToken, messages: [message] });
@@ -233,13 +264,13 @@ Deno.serve(async (req) => {
             p_display_name: (prof?.displayName as string) ?? null,
           });
           const ok = !error && data;
-          if (replyToken) {
+          if (ok) {
+            await sendMessage(TOKEN, buildSuccessFlex(), replyToken, userId);
+          } else if (replyToken) {
             await replyMsg(
               TOKEN,
               replyToken,
-              ok
-                ? "🎉 已成功連結帳號！Your account is now linked."
-                : "連結失敗，請從應用程式重試。Link failed — please retry from the app.",
+              "連結失敗，請從應用程式重試。Link failed — please retry from the app.",
             );
           }
         } else if (replyToken) {
