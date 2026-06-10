@@ -30,7 +30,8 @@ import { supabase } from "@/lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
 import { ROUTES } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
-import { studentLabel } from "@/lib/domain";
+import { domainOf, studentLabel } from "@/lib/domain";
+import { useDomain } from "@/lib/DomainProvider";
 import { StudentCounselingProfileCard } from "./counseling/StudentCounselingProfileCard";
 import { StudentCollegeListCard } from "./counseling/StudentCollegeListCard";
 import { StudentCounselingTasksCard } from "./counseling/StudentCounselingTasksCard";
@@ -103,6 +104,14 @@ export function StudentCourseView(): JSX.Element {
   const { profile } = useProfile();
 
   const [course, setCourse] = useState<CourseRow | null>(null);
+
+  // Theme the accent by the course's domain while viewing it (e.g. a Player in
+  // a pickleball course sees orange), reverting on leave.
+  const { previewDomain } = useDomain();
+  useEffect(() => {
+    if (course?.course_type) previewDomain(domainOf(course.course_type));
+    return () => previewDomain(null);
+  }, [course?.course_type, previewDomain]);
   const [modules, setModules] = useState<ModuleRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

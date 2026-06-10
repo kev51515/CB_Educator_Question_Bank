@@ -22,7 +22,7 @@
  * internally. That matches how the existing routeViews.tsx ClassLayout
  * stub is wired, and means no AuthGate changes are needed.
  */
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { KebabMenu, type KebabMenuOption, useBreadcrumbLabel } from "@/components";
 import {
   Navigate,
@@ -33,6 +33,8 @@ import {
 } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/lib/profile";
+import { useDomain } from "@/lib/DomainProvider";
+import { domainOf } from "@/lib/domain";
 import { canAccessQuestionBank } from "@/lib/access";
 import { useClass } from "./useClass";
 import {
@@ -158,6 +160,15 @@ export function ClassLayout() {
   const canQbank = canAccessQuestionBank(profile?.email);
 
   const { cls, loading, error, notFound, refresh, patch } = useClass(classId);
+
+  // Theme the accent by the COURSE's domain while inside it (a coach/player
+  // viewing a pickleball course sees orange even if their saved domain differs),
+  // reverting to the saved domain on leave.
+  const { previewDomain } = useDomain();
+  useEffect(() => {
+    if (cls?.course_type) previewDomain(domainOf(cls.course_type));
+    return () => previewDomain(null);
+  }, [cls?.course_type, previewDomain]);
 
   // Portfolio is a counseling surface — only on counseling courses (0133).
   const isCounseling = cls?.course_type === "counseling";

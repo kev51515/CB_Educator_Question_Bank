@@ -6,9 +6,9 @@ lives in [`PICKLEBALL_REQUIREMENTS_v3.md`](./PICKLEBALL_REQUIREMENTS_v3.md); the
 plan in [`PLAN_PICKLEBALL.md`](./PLAN_PICKLEBALL.md); the domain/theming layer in
 [`PLAN_DOMAIN_LAYER.md`](./PLAN_DOMAIN_LAYER.md).
 
-**Status: DEPLOYED to prod 2026-06-11** (migrations `0174`–`0186`) + merged to `main`
-(Cloudflare build). Structurally smoke-validated on prod (constraints, triggers, views,
-notification fan-out). Full auth/RLS smoke (`smoke-pickleball.mjs`) pending.
+**Status: DEPLOYED to prod 2026-06-11** (migrations `0174`–`0191`) + merged to `main`
+(Cloudflare build). Validated on prod: structural smoke + **`smoke-pickleball.mjs` 28/28
+green** (auth/RLS/RPC/waitlist/auto-step). Follow-ups complete (see bottom).
 
 ## What it is
 
@@ -83,13 +83,24 @@ Student/Advisee/**Player**/**Coach-in-training**) and **accent color** (indigo /
 `DomainSwitcher` in both shells. `set_my_domain` self-updates only the caller's row;
 `profiles.role` + RLS untouched. `domainOf(course_type)` maps the verticals.
 
-## Follow-ups (not done)
-- `smoke-pickleball.mjs` — auth/RLS/RPC/waitlist end-to-end (structural smoke passed; RPC+RLS
-  layer not yet exercised with real auth).
-- Tighten `pickleball-certs` bucket → private + signed URLs (currently public).
-- Student in-course accent follows `profile.domain` (educator-derived), not enrollment.
-- Minor: assessment per-skill scale (1–5) vs overall/DUPR (2.0–5.5); override-enroll toast
-  doesn't reflect a waitlist landing; homework player-UPDATE policy is column-broad.
+## Follow-ups — DONE
+- ✅ `smoke-pickleball.mjs` (`npm run smoke:pickleball`) — auth/RLS/RPC/waitlist/auto-step
+  end-to-end, **28/28 green on prod**. Structural psql-rollback smoke also green.
+- ✅ Whole-app **domain theming**: Tailwind `indigo`+`accent` driven by `--accent-*` channel
+  vars, so switching domain re-themes the entire app (academic=indigo / counseling=emerald /
+  coaching=orange), opacity + dark included.
+- ✅ `pickleball-certs` bucket **private** (0190) + UI uses 1h **signed URLs**; storage RLS is
+  now **course-path-scoped** (0191): path `<course_id>/<coach_id>/<file>`, access =
+  educator-of-course OR admin OR the coach themself.
+- ✅ **Per-course accent**: inside a course the accent themes by the course's domain
+  (`previewDomain` on ClassLayout + StudentCourseView), reverting on leave — a Player in a
+  pickleball course sees orange regardless of their saved domain.
+- ✅ Assessment 1–5 skill avg → **2.0–5.5 band** remap; override-enroll **waitlist toast**;
+  homework broad player-UPDATE policy **dropped** (writes via `pk_set_homework_status` only).
+
+## Open (minor)
+- Storage path-scoping is course-level, not per-cert-row; fine for this model.
+- (none blocking.)
 
 ## History note — the migration-number race
 Built on the `feat/pickleball-coaching` worktree off a pre-LINE base. `main` advanced

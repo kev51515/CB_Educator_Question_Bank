@@ -195,12 +195,14 @@ function ExpiryBadge({ expiresOn }: { expiresOn: string | null }): React.ReactEl
 }
 
 function CertEditorModal({
+  courseId,
   draft,
   onChange,
   busy,
   onSave,
   onCancel,
 }: {
+  courseId: string;
   draft: CertDraft;
   onChange: (d: CertDraft) => void;
   busy: boolean;
@@ -232,7 +234,9 @@ function CertEditorModal({
       setUploading(true);
       try {
         const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-        const path = `${draft.coach_id}/${Date.now()}-${safe}`;
+        // Path leads with course_id so storage RLS can scope by course
+        // (educator-of-course) then coach_id (coach reads/writes own).
+        const path = `${courseId}/${draft.coach_id}/${Date.now()}-${safe}`;
         const { error: upErr } = await supabase.storage
           .from(CERT_BUCKET)
           .upload(path, file, { upsert: false });
@@ -761,6 +765,7 @@ export function CertificationsPanel({
 
       {draft && (
         <CertEditorModal
+          courseId={courseId}
           draft={draft}
           onChange={setDraft}
           busy={saving}

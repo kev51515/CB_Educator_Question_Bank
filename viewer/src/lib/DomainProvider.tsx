@@ -41,6 +41,14 @@ interface DomainContextValue {
   domain: Domain;
   vocab: (typeof DOMAIN_VOCAB)[Domain];
   setDomain: (next: Domain) => void;
+  /**
+   * Temporarily theme by a specific domain WITHOUT changing the user's saved
+   * domain — used when a user is inside a course so the accent matches the
+   * course's vertical (a coach/player viewing a pickleball course sees orange
+   * even if their saved domain is academic). Pass null to revert to the saved
+   * active domain (call on unmount).
+   */
+  previewDomain: (next: Domain | null) => void;
 }
 
 const DomainContext = createContext<DomainContextValue | null>(null);
@@ -84,9 +92,15 @@ export function DomainProvider({ children }: { children: ReactNode }) {
   const { profile } = useProfile();
   const toast = useToast();
 
-  // The active domain. Starts on the safe default and reconciles once we learn
-  // the profile (and, if needed, the derived default).
+  // The active (saved) domain. Starts on the safe default and reconciles once
+  // we learn the profile (and, if needed, the derived default).
   const [domain, setDomainState] = useState<Domain>("academic");
+
+  // Transient per-course theme override (null = use the saved domain). The ref
+  // mirrors it so setDomain's synchronous re-theme doesn't flash past an active
+  // preview (e.g. switching global domain while inside a course).
+  const [preview, setPreview] = useState<Domain | null>(null);
+  const previewRef = useRef<Domain | null>(null);
 
   // Guards a stale async derive from clobbering a newer one (rapid sign-in /
   // sign-out, profile refetch).
@@ -126,10 +140,16 @@ export function DomainProvider({ children }: { children: ReactNode }) {
     })();
   }, [profile?.id, profile?.domain]);
 
-  // Paint the accent ramp whenever the active domain changes.
+  // Paint the accent ramp whenever the effective domain changes — a course
+  // preview overrides the saved domain while it's set.
   useEffect(() => {
-    applyAccent(domain);
-  }, [domain]);
+    applyAccent(preview ?? domain);
+  }, [preview, domain]);
+
+  const previewDomain = useCallback((next: Domain | null) => {
+    previewRef.current = next;
+    setPreview(next);
+  }, []);
 
   const setDomain = useCallback(
     (next: Domain) => {
@@ -137,8 +157,9 @@ export function DomainProvider({ children }: { children: ReactNode }) {
         if (prev === next) return prev;
         // Optimistic: re-theme immediately, then persist. On failure, roll back.
         // (applyAccent also runs via the effect above, but call it here so the
-        // re-theme is synchronous with the click even before the effect flushes.)
-        applyAccent(next);
+        // re-theme is synchronous with the click even before the effect flushes.
+        // An active course preview still wins so we don't flash the global accent.)
+        applyAccent(previewRef.current ?? next);
         void (async () => {
           const { error } = await supabase.rpc("set_my_domain", {
             p_domain: next,
@@ -156,8 +177,8 @@ export function DomainProvider({ children }: { children: ReactNode }) {
   );
 
   const value = useMemo<DomainContextValue>(
-    () => ({ domain, vocab: DOMAIN_VOCAB[domain], setDomain }),
-    [domain, setDomain],
+    () => ({ domain, vocab: DOMAIN_VOCAB[domain], setDomain, previewDomain }),
+    [domain, setDomain, previewDomain],
   );
 
   return (
@@ -177,5 +198,6 @@ export function useDomain(): DomainContextValue {
     domain: "academic",
     vocab: DOMAIN_VOCAB.academic,
     setDomain: () => {},
+    previewDomain: () => {},
   };
 }
