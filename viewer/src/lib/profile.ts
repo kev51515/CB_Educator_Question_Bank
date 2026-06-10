@@ -43,6 +43,22 @@ function getErrorMessage(error: unknown): string {
 }
 
 /**
+ * Postgres transient errors that are safe to retry verbatim: 40P01 deadlock
+ * detected, 40001 serialization failure. The profile read is a plain SELECT, so
+ * a deadlock only ever means it was the momentary victim of a concurrent write
+ * (a seed, a cascade delete) — retrying clears it. We surface the error only
+ * after a few quick attempts so a blip never shows the user "Couldn't load your
+ * profile". */
+const TRANSIENT_DB_CODES = new Set(["40P01", "40001"]);
+function isTransientDbError(e: { code?: string; message?: string } | null): boolean {
+  if (!e) return false;
+  return (
+    TRANSIENT_DB_CODES.has(e.code ?? "") ||
+    /deadlock detected|could not serialize/i.test(e.message ?? "")
+  );
+}
+
+/**
  * Narrow + validate a Supabase row into a Profile. We're defensive here
  * because supabase-js returns `unknown`-shaped data and we want a clean
  * runtime guarantee that downstream consumers can rely on.
@@ -90,23 +106,32 @@ export function useProfile(): UseProfile {
     setLoading(true);
     setError(null);
     try {
-      const { data, error: queryError } = await supabase
-        .from("profiles")
-        .select("id, email, display_name, role, created_at, updated_at, managed, login_code")
-        .eq("id", userId)
-        .single();
-      if (queryError) {
-        setProfile(null);
-        setError(queryError.message);
-        return;
+      // Retry transient DB errors (deadlock / serialization) a few times with a
+      // short backoff before surfacing — see isTransientDbError.
+      let queryError: { code?: string; message?: string } | null = null;
+      for (let attempt = 0; attempt < 4; attempt++) {
+        const res = await supabase
+          .from("profiles")
+          .select("id, email, display_name, role, created_at, updated_at, managed, login_code")
+          .eq("id", userId)
+          .single();
+        queryError = res.error;
+        if (!queryError) {
+          const parsed = toProfile(res.data);
+          if (!parsed) {
+            setProfile(null);
+            setError("Profile data was malformed.");
+            return;
+          }
+          setProfile(parsed);
+          return;
+        }
+        if (!isTransientDbError(queryError)) break;
+        // 150ms, 300ms, 450ms (+jitter) — fast enough to feel instant.
+        await new Promise((r) => setTimeout(r, 150 * (attempt + 1) + Math.random() * 120));
       }
-      const parsed = toProfile(data);
-      if (!parsed) {
-        setProfile(null);
-        setError("Profile data was malformed.");
-        return;
-      }
-      setProfile(parsed);
+      setProfile(null);
+      setError(queryError?.message ?? "Couldn't load your profile.");
     } catch (err: unknown) {
       setProfile(null);
       setError(getErrorMessage(err));
