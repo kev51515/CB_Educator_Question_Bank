@@ -1,5 +1,29 @@
 # Session Recap
 
+## Branch `feat/test-access-policy` (2026-06-10) — test-overview per-course views + data isolation
+
+Follow-ups on the metered-test work, all on `feat/test-access-policy`:
+
+- **Per-course filter on the test-overview** (`0149` + TestOverviewPage). A test
+  assigned to multiple courses showed all students aggregated. `test_roster_status`
+  now returns `course_id`/`course_name` (one row per student-course); the page has a
+  course-filter pill row (persisted per-slug), and stats / score distribution /
+  roster / submitted-released counts all derive from the filtered rows. Release-all
+  is scoped to the visible course so releasing Course A never reveals Course B.
+- **Deep-link** (tree.tsx + TestOverviewPage). Opening a full-test from a course's
+  Modules page lands on the overview pre-filtered to that course
+  (`/educator/tests/<slug>?course=<id>`; `?course=` wins over localStorage).
+- **Cross-course data isolation** (`0150`). `get_test_question_times` pacing cohort
+  is now scoped to the run's course (`test_runs.course_id`, 0143) with the prior
+  <3-peers fallback-to-all removed — students and teacher-review never see
+  cross-course timings.
+- **Sortable students table** (RosterRow + TestOverviewPage). The roster card list is
+  now a sortable table (Student / Status / Timing / Score / Actions; default
+  submitted-desc; not-taken rows pin to the bottom). All per-row actions + proctor
+  controls preserved.
+- **In progress:** keep the student in fullscreen while the end-of-test submit
+  window is shown (proctoring lockout currently triggers on the fullscreen drop).
+
 ## Branch `feat/test-access-policy` (2026-06-10) — partial/scheduled module deployment + reconciliation
 
 Teacher-controlled metering: deploy a full test's modules over days and/or as a
