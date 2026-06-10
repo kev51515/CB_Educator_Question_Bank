@@ -13,6 +13,7 @@
 import { supabase } from "@/lib/supabase";
 import type {
   GetModuleResult,
+  PacingCohortRow,
   QuestionTime,
   StartTestResult,
   SubmitModuleResult,
@@ -439,6 +440,19 @@ export async function getQuestionTimes(runId: string): Promise<QuestionTime[]> {
   const { data, error } = await supabase.rpc("get_test_question_times", { p_run_id: runId });
   if (error) throw mapError(error);
   return (data ?? []) as QuestionTime[];
+}
+
+/**
+ * Per-question pacing distribution for the teacher pace chart (migration 0187):
+ * this run's time per question plus the average pace of the fastest-25% and
+ * slowest-25% cohorts (course-scoped, viewer excluded). One row per question
+ * that either this run or the class has dwell data for. THROWS so the caller
+ * can choose to swallow — pacing is an embellishment, not a core surface.
+ */
+export async function getPacingCohort(runId: string): Promise<PacingCohortRow[]> {
+  const { data, error } = await supabase.rpc("get_test_pacing_cohort", { p_run_id: runId });
+  if (error) throw mapError(error);
+  return (data ?? []) as PacingCohortRow[];
 }
 
 // --- Local answer cache (failsafe for the active, unsubmitted module) --------

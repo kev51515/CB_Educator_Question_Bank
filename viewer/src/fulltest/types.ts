@@ -145,6 +145,23 @@ export interface QuestionTime {
   class_n: number;
 }
 
+/**
+ * Per-question pacing distribution, from `get_test_pacing_cohort` (0187). Like
+ * {@link QuestionTime} but adds the two reference curves the teacher pace chart
+ * draws: `fast_avg_ms` = the mean time of the FASTEST 25% of classmates on this
+ * question, `slow_avg_ms` = the mean of the SLOWEST 25% (stable cohorts ranked
+ * by total test time). `class_n` is the peer-cohort size — the client requires
+ * it to be >= 4 before drawing the fast/slow curves. All times in ms.
+ */
+export interface PacingCohortRow {
+  question_id: string;
+  your_time_ms: number | null;
+  fast_avg_ms: number | null;
+  slow_avg_ms: number | null;
+  class_avg_ms: number | null;
+  class_n: number;
+}
+
 /** A catalog row (from the public `tests` table). */
 export interface TestCatalogEntry {
   slug: string;
