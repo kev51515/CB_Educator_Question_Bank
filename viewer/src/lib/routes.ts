@@ -130,6 +130,7 @@ export const ROUTES = {
   NOTIFICATION_PREFS: "/educator/account/notification-preferences",
   ACCOUNT_ADMIN_STATS: "/educator/account/admin/stats",
   ACCOUNT_ADMIN_USERS: "/educator/account/admin/users",
+  ACCOUNT_ADMIN_COLLEGES: "/educator/account/admin/colleges",
   ACCOUNT_ADMIN_INVITES: "/educator/account/admin/invites",
   ACCOUNT_ADMIN_AUDIT: "/educator/account/admin/audit",
 

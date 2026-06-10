@@ -24,7 +24,11 @@ import {
 import { Breadcrumbs, BreadcrumbProvider } from "@/components";
 import { ROUTES } from "@/lib/routes";
 import { StudentBadge } from "./StudentBadge";
-import { ViewAsMenuItems, useViewAs } from "./viewAs";
+import {
+  WorkspaceMenuItems,
+  WorkspaceSwitcher,
+  useWorkspace,
+} from "./workspace";
 import { NotificationBell } from "@/notifications";
 import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
@@ -133,10 +137,11 @@ export function StaffShell() {
   // Question Bank (+ its global Submissions log) is owned by a specific subset
   // of educators — others don't see the rail entries at all. See lib/access.ts.
   const canQbank = canAccessQuestionBank(profile?.email);
-  // An admin viewing their own (not previewing another role) gets the Admin
-  // label + an Admin rail entry into the admin tools.
-  const viewAs = useViewAs();
-  const showAdmin = profile?.role === "admin" && !viewAs;
+  // Admins hold two real workspaces (Educator / Admin) switched in-shell; the
+  // active one drives which nav the rail shows. Non-admins are always educator.
+  const isAdmin = profile?.role === "admin";
+  const workspace = useWorkspace();
+  const adminWorkspace = isAdmin && workspace === "admin";
 
   const [paletteOpen, setPaletteOpen] = useState(false);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
@@ -251,8 +256,8 @@ export function StaffShell() {
 
   // Rail items as data so the user can drag-reorder them (persisted per user
   // by ReorderableNavRail). Question Bank + Submissions only appear for the
-  // allow-listed educators (see lib/access.ts).
-  const navItems: NavRailItem[] = [
+  // allow-listed educators (see lib/access.ts). The Educator workspace's nav:
+  const educatorNav: NavRailItem[] = [
     {
       id: "dashboard",
       to: ROUTES.DASHBOARD,
@@ -340,24 +345,89 @@ export function StaffShell() {
         </svg>
       ),
     },
-    // Admin tools — only for an admin in their own (non-preview) view.
-    ...(showAdmin
-      ? ([
-          {
-            id: "admin",
-            to: ROUTES.ACCOUNT_ADMIN_STATS,
-            label: "Admin",
-            isActive: (p: string) => p.includes("/account/admin"),
-            icon: (
-              <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
-            ),
-          },
-        ] as NavRailItem[])
-      : []),
   ];
+
+  // The Admin workspace's nav — the system power-tools. These routes live under
+  // /educator/account/admin/* (see AccountRoutes) and stay gated on the real
+  // admin role; the workspace only surfaces them as primary nav.
+  const adminNav: NavRailItem[] = [
+    {
+      id: "admin-stats",
+      to: ROUTES.ACCOUNT_ADMIN_STATS,
+      label: "Stats",
+      isActive: (p: string) => p.startsWith(ROUTES.ACCOUNT_ADMIN_STATS),
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 3v18h18" />
+          <rect x={7} y={11} width={3} height={6} />
+          <rect x={13} y={7} width={3} height={10} />
+        </svg>
+      ),
+    },
+    {
+      id: "admin-users",
+      to: ROUTES.ACCOUNT_ADMIN_USERS,
+      label: "Users",
+      isActive: (p: string) => p.startsWith(ROUTES.ACCOUNT_ADMIN_USERS),
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <circle cx={9} cy={8} r={3.5} />
+          <path d="M3 21a6 6 0 0 1 12 0" />
+          <path d="M16 4a3.5 3.5 0 0 1 0 7M18 21a6 6 0 0 0-3-5.2" />
+        </svg>
+      ),
+    },
+    {
+      id: "admin-colleges",
+      to: ROUTES.ACCOUNT_ADMIN_COLLEGES,
+      label: "Colleges",
+      isActive: (p: string) => p.startsWith(ROUTES.ACCOUNT_ADMIN_COLLEGES),
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3 2 8l10 5 10-5z" />
+          <path d="M6 10.5V16c0 1.1 2.7 3 6 3s6-1.9 6-3v-5.5" />
+        </svg>
+      ),
+    },
+    {
+      id: "admin-invites",
+      to: ROUTES.ACCOUNT_ADMIN_INVITES,
+      label: "Invite codes",
+      isActive: (p: string) => p.startsWith(ROUTES.ACCOUNT_ADMIN_INVITES),
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <rect x={3} y={5} width={18} height={14} rx={2} />
+          <path d="m3 7 9 6 9-6" />
+        </svg>
+      ),
+    },
+    {
+      id: "admin-audit",
+      to: ROUTES.ACCOUNT_ADMIN_AUDIT,
+      label: "Audit log",
+      isActive: (p: string) => p.startsWith(ROUTES.ACCOUNT_ADMIN_AUDIT),
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 5h6M9 5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2" />
+          <path d="M9 11h6M9 15h4" />
+        </svg>
+      ),
+    },
+    {
+      id: "account",
+      to: ROUTES.ACCOUNT,
+      label: "Account",
+      isActive: isAccountRouteActive,
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <circle cx={12} cy={8} r={4} />
+          <path d="M4 21a8 8 0 0 1 16 0" />
+        </svg>
+      ),
+    },
+  ];
+
+  const navItems: NavRailItem[] = adminWorkspace ? adminNav : educatorNav;
 
   return (
     <BreadcrumbProvider>
@@ -386,19 +456,25 @@ export function StaffShell() {
               collapsed ? "md:hidden" : "",
             ].join(" ")}
           >
-            <p
-              aria-hidden={collapsed}
-              className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate"
-            >
-              {showAdmin ? "Admin" : "Educator"}
-            </p>
+            {isAdmin ? (
+              <WorkspaceSwitcher />
+            ) : (
+              <p
+                aria-hidden={collapsed}
+                className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate"
+              >
+                Educator
+              </p>
+            )}
           </div>
 
           {/* Drag-reorderable nav items (order persists per user). */}
           <ReorderableNavRail
             items={navItems}
             collapsed={collapsed}
-            userId={userId}
+            // Scope the saved order per workspace so the Educator and Admin
+            // rails don't clobber each other's drag order.
+            userId={isAdmin ? `${userId ?? "anon"}:${workspace}` : userId}
           />
 
           {/* Spacer pushes the collapse toggle to the bottom of the rail. */}
@@ -481,7 +557,7 @@ export function StaffShell() {
         }}
         onSignOut={signOut}
         showSwitchArea={false}
-        menuExtra={<ViewAsMenuItems />}
+        menuExtra={<WorkspaceMenuItems />}
       />
 
       {/* Global ⌘/Ctrl+K command palette. We pass the LMS command registry
