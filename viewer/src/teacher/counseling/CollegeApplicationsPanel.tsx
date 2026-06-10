@@ -16,6 +16,17 @@ import { useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "../ConfirmDialog";
 import { ApplicationDocsChecklist } from "./ApplicationDocsChecklist";
+import {
+  type CatalogCollege,
+  deadlineUrgency,
+  effectiveDeadline,
+  formatAdmitRate,
+  formatRequirements,
+  formatTypeSize,
+  listCatalogDeadlines,
+  tierBalance,
+  useCollegeCatalog,
+} from "./collegeAppHelpers";
 
 type Tier = "reach" | "target" | "safety" | "likely";
 type Plan = "ED" | "ED2" | "EA" | "REA" | "RD" | "rolling";
@@ -107,6 +118,306 @@ function matchSubtitle(m: CollegeMatch): string {
   return [m.city, m.state].filter(Boolean).join(", ");
 }
 
+// Format a YYYY-MM-DD catalog deadline as a short, year-aware label.
+function shortDate(date: string): string {
+  const d = new Date(`${date}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return date;
+  return d.toLocaleDateString(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
+type SortKey = "deadline" | "status" | "name";
+
+const SORT_OPTIONS: { key: SortKey; label: string }[] = [
+  { key: "deadline", label: "Deadline" },
+  { key: "status", label: "Status" },
+  { key: "name", label: "Name" },
+];
+
+// Deterministic status ordering for the "status" sort (workflow order).
+const STATUS_ORDER: Status[] = [
+  "considering",
+  "in_progress",
+  "submitted",
+  "waitlisted",
+  "deferred",
+  "accepted",
+  "enrolled",
+  "rejected",
+];
+
+/**
+ * ApplicationBalanceHeader — the reach/target/safety/likely summary with a thin
+ * proportion bar and (when unbalanced) a gentle advice line. Shared between the
+ * counselor + student surfaces via the exported component below.
+ */
+export function ApplicationBalanceHeader({
+  apps,
+}: {
+  apps: { tier: Tier | null }[];
+}) {
+  const balance = tierBalance(apps);
+  if (balance.total === 0) return null;
+
+  const SEGMENTS: { tier: Tier; count: number; bar: string }[] = [
+    { tier: "reach", count: balance.reach, bar: "bg-rose-400 dark:bg-rose-500" },
+    {
+      tier: "target",
+      count: balance.target,
+      bar: "bg-indigo-400 dark:bg-indigo-500",
+    },
+    {
+      tier: "safety",
+      count: balance.safety,
+      bar: "bg-emerald-400 dark:bg-emerald-500",
+    },
+    {
+      tier: "likely",
+      count: balance.likely,
+      bar: "bg-amber-400 dark:bg-amber-500",
+    },
+  ];
+  const classified = balance.reach + balance.target + balance.safety + balance.likely;
+
+  return (
+    <div className="space-y-2 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 bg-slate-50/60 dark:bg-slate-900/40 px-3 py-2.5">
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+          Application balance
+        </span>
+        {SEGMENTS.map((s) => (
+          <span
+            key={s.tier}
+            className={`inline-flex items-center gap-1 rounded-full ring-1 px-2 py-0.5 text-[11px] font-medium capitalize ${tierChipClass(s.tier)}`}
+          >
+            {s.tier}
+            <span className="tabular-nums font-semibold">{s.count}</span>
+          </span>
+        ))}
+      </div>
+      {classified > 0 && (
+        <div
+          className="flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800"
+          aria-hidden
+        >
+          {SEGMENTS.filter((s) => s.count > 0).map((s) => (
+            <div
+              key={s.tier}
+              className={s.bar}
+              style={{ width: `${(s.count / classified) * 100}%` }}
+            />
+          ))}
+        </div>
+      )}
+      {balance.advice && (
+        <p className="flex items-start gap-1.5 text-xs text-amber-700 dark:text-amber-300">
+          <svg
+            width={14}
+            height={14}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="mt-0.5 shrink-0"
+            aria-hidden
+          >
+            <path d="M12 9v4M12 17h.01" />
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+          </svg>
+          <span>{balance.advice}</span>
+        </p>
+      )}
+    </div>
+  );
+}
+
+/**
+ * CatalogDetail — the rich catalog block revealed when a row is expanded and the
+ * application has a `college_id`. Surfaces admit rate, type/size, website, the
+ * per-plan deadlines, essay prompts, and humanized requirements. Shared between
+ * both surfaces via export.
+ */
+export function CatalogDetail({
+  college,
+}: {
+  college: CatalogCollege | undefined;
+}) {
+  if (!college) {
+    return (
+      <p className="text-xs italic text-slate-500 dark:text-slate-400">
+        No catalog details (free-text entry).
+      </p>
+    );
+  }
+
+  const admit = formatAdmitRate(college.admit_rate);
+  const typeSize = formatTypeSize(college.type, college.size);
+  const deadlines = listCatalogDeadlines(college.deadlines);
+  const prompts = college.essay_prompts ?? [];
+  const requirements = formatRequirements(college.requirements);
+
+  return (
+    <div className="space-y-3 text-xs text-slate-600 dark:text-slate-300">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+        {admit && (
+          <span className="inline-flex items-center gap-1">
+            <span className="font-semibold text-slate-700 dark:text-slate-200">
+              {admit}
+            </span>
+          </span>
+        )}
+        {typeSize && <span>{typeSize}</span>}
+        {college.common_app && (
+          <span className="rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-900">
+            Common App
+          </span>
+        )}
+        {college.website && (
+          <a
+            href={college.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+          >
+            Website
+            <svg
+              width={11}
+              height={11}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <path d="M15 3h6v6M10 14 21 3" />
+            </svg>
+          </a>
+        )}
+      </div>
+
+      {deadlines.length > 0 && (
+        <div className="space-y-1">
+          <p className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+            Deadlines
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {deadlines.map((d) => (
+              <span
+                key={d.plan}
+                className="inline-flex items-center gap-1 rounded-full ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-800 px-2 py-0.5 text-[11px]"
+              >
+                <span className="font-semibold text-slate-700 dark:text-slate-200">
+                  {d.plan}
+                </span>
+                <span className="text-slate-500 dark:text-slate-400">
+                  {shortDate(d.date)}
+                </span>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {prompts.length > 0 && (
+        <div className="space-y-1">
+          <p className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+            Essay prompts
+          </p>
+          <ul className="space-y-1">
+            {prompts.map((p, i) => (
+              <li
+                key={i}
+                className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-2 py-1.5 ring-1 ring-slate-200/70 dark:ring-slate-800"
+              >
+                <span className="text-slate-700 dark:text-slate-200">
+                  {p.prompt}
+                </span>
+                {typeof p.words === "number" && p.words > 0 && (
+                  <span className="ml-1 text-slate-500 dark:text-slate-400">
+                    ({p.words} words)
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {requirements.length > 0 && (
+        <div className="space-y-1">
+          <p className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+            Requirements
+          </p>
+          <ul className="flex flex-wrap gap-1.5">
+            {requirements.map((r, i) => (
+              <li
+                key={i}
+                className="rounded-full ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-800 px-2 py-0.5 text-[11px] text-slate-600 dark:text-slate-300"
+              >
+                {r}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {!admit &&
+        !typeSize &&
+        deadlines.length === 0 &&
+        prompts.length === 0 &&
+        requirements.length === 0 && (
+          <p className="italic text-slate-500 dark:text-slate-400">
+            Catalog entry has no additional details yet.
+          </p>
+        )}
+    </div>
+  );
+}
+
+// A small chevron toggle used to expand/collapse a row's catalog detail.
+function ExpandToggle({
+  expanded,
+  onToggle,
+  label,
+}: {
+  expanded: boolean;
+  onToggle: () => void;
+  label: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-expanded={expanded}
+      aria-label={`${expanded ? "Collapse" : "Expand"} details for ${label}`}
+      className="flex min-h-[40px] min-w-[40px] shrink-0 items-center justify-center rounded-md text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800 dark:hover:text-slate-300"
+    >
+      <svg
+        width={16}
+        height={16}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={`transition-transform ${expanded ? "rotate-90" : ""}`}
+        aria-hidden
+      >
+        <path d="M9 18l6-6-6-6" />
+      </svg>
+    </button>
+  );
+}
+
 export function CollegeApplicationsPanel({
   courseId,
   studentId,
@@ -130,6 +441,8 @@ export function CollegeApplicationsPanel({
     null,
   );
   const [removing, setRemoving] = useState(false);
+  const [sortKey, setSortKey] = useState<SortKey>("deadline");
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   // Add-a-college form state: a typeahead against the shared `public.colleges`
   // catalog (with a free-text fallback) plus tier/plan/deadline that apply to
@@ -208,6 +521,45 @@ export function CollegeApplicationsPanel({
       ),
     [apps],
   );
+
+  // Batch-fetch the rich catalog rows for every linked college on the list, so
+  // an expanded row can surface admit rate / deadlines / essays / requirements.
+  const linkedIds = useMemo(
+    () => apps.map((a) => a.college_id),
+    [apps],
+  );
+  const { byId: catalogById } = useCollegeCatalog(linkedIds);
+
+  // Apply the active sort. `deadline` uses the effective deadline (app's own,
+  // else the catalog fallback) so rows order the way the chips read.
+  const sortedApps = useMemo(() => {
+    const copy = [...apps];
+    copy.sort((a, b) => {
+      if (sortKey === "name") {
+        return a.college_name.localeCompare(b.college_name);
+      }
+      if (sortKey === "status") {
+        const ai = STATUS_ORDER.indexOf(a.status);
+        const bi = STATUS_ORDER.indexOf(b.status);
+        if (ai !== bi) return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+        return a.college_name.localeCompare(b.college_name);
+      }
+      // deadline ascending, nulls last
+      const ad = effectiveDeadline(a, a.college_id ? catalogById[a.college_id] : undefined);
+      const bd = effectiveDeadline(b, b.college_id ? catalogById[b.college_id] : undefined);
+      if (ad && bd) {
+        if (ad !== bd) return ad < bd ? -1 : 1;
+        return a.college_name.localeCompare(b.college_name);
+      }
+      if (ad) return -1;
+      if (bd) return 1;
+      return a.college_name.localeCompare(b.college_name);
+    });
+    return copy;
+  }, [apps, sortKey, catalogById]);
+
+  const toggleExpanded = (id: string): void =>
+    setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
 
   const onChangeStatus = async (
     app: CollegeApplication,
@@ -306,11 +658,35 @@ export function CollegeApplicationsPanel({
           College list
         </h3>
         {!loading && (
-          <span className="shrink-0 text-xs font-medium text-slate-500 dark:text-slate-400">
-            {countLabel}
-          </span>
+          <div className="flex shrink-0 items-center gap-2">
+            {apps.length > 1 && (
+              <>
+                <label className="sr-only" htmlFor="college-sort">
+                  Sort colleges
+                </label>
+                <select
+                  id="college-sort"
+                  value={sortKey}
+                  onChange={(e) => setSortKey(e.target.value as SortKey)}
+                  className={`${selectClass} min-h-[36px] text-xs`}
+                >
+                  {SORT_OPTIONS.map((o) => (
+                    <option key={o.key} value={o.key}>
+                      Sort: {o.label}
+                    </option>
+                  ))}
+                </select>
+              </>
+            )}
+            <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+              {countLabel}
+            </span>
+          </div>
         )}
       </div>
+
+      {/* Application balance summary. */}
+      {!loading && apps.length > 0 && <ApplicationBalanceHeader apps={apps} />}
 
       {/* List */}
       {loading ? (
@@ -321,65 +697,102 @@ export function CollegeApplicationsPanel({
         </p>
       ) : (
         <ul className="space-y-2">
-          {apps.map((app) => (
-            <li
-              key={app.id}
-              className="flex flex-wrap items-center justify-between gap-3 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 px-3 py-2.5"
-            >
-              <div className="flex min-w-0 flex-wrap items-center gap-2">
-                <span className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">
-                  {app.college_name}
-                </span>
-                {app.tier && (
-                  <span
-                    className={`shrink-0 rounded-full ring-1 px-2 py-0.5 text-[11px] font-medium capitalize ${tierChipClass(app.tier)}`}
+          {sortedApps.map((app) => {
+            const catalog = app.college_id
+              ? catalogById[app.college_id]
+              : undefined;
+            const isOpen = !!expanded[app.id];
+            const dueDate = effectiveDeadline(app, catalog);
+            const urgency = deadlineUrgency(dueDate);
+            return (
+              <li
+                key={app.id}
+                className="flex flex-wrap items-center justify-between gap-3 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 px-3 py-2.5"
+              >
+                <div className="flex min-w-0 flex-1 items-start gap-2">
+                  <ExpandToggle
+                    expanded={isOpen}
+                    onToggle={() => toggleExpanded(app.id)}
+                    label={app.college_name}
+                  />
+                  <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                    <div className="flex min-w-0 flex-wrap items-center gap-2">
+                      <span className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">
+                        {app.college_name}
+                      </span>
+                      {app.tier && (
+                        <span
+                          className={`shrink-0 rounded-full ring-1 px-2 py-0.5 text-[11px] font-medium capitalize ${tierChipClass(app.tier)}`}
+                        >
+                          {app.tier}
+                        </span>
+                      )}
+                      {app.plan && (
+                        <span className="shrink-0 text-xs font-medium text-slate-600 dark:text-slate-300">
+                          {app.plan}
+                        </span>
+                      )}
+                      <span className="shrink-0 text-xs text-slate-500 dark:text-slate-400">
+                        {formatDeadline(dueDate)}
+                      </span>
+                      {urgency && (
+                        <span
+                          className={`shrink-0 rounded-full ring-1 px-2 py-0.5 text-[11px] font-medium ${urgency.className}`}
+                        >
+                          {urgency.label}
+                        </span>
+                      )}
+                    </div>
+                    {app.notes && (
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        {app.notes}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex shrink-0 items-center gap-2">
+                  <label className="sr-only" htmlFor={`status-${app.id}`}>
+                    Status for {app.college_name}
+                  </label>
+                  <select
+                    id={`status-${app.id}`}
+                    value={app.status}
+                    disabled={busyId === app.id}
+                    onChange={(e) => {
+                      void onChangeStatus(app, e.target.value as Status);
+                    }}
+                    className={`${selectClass} min-h-[40px] disabled:opacity-50`}
                   >
-                    {app.tier}
-                  </span>
-                )}
-                {app.plan && (
-                  <span className="shrink-0 text-xs font-medium text-slate-600 dark:text-slate-300">
-                    {app.plan}
-                  </span>
-                )}
-                <span className="shrink-0 text-xs text-slate-500 dark:text-slate-400">
-                  {formatDeadline(app.deadline)}
-                </span>
-              </div>
+                    {STATUS_OPTIONS.map((s) => (
+                      <option key={s} value={s}>
+                        {STATUS_LABEL[s]}
+                      </option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    onClick={() => setConfirmRemove(app)}
+                    aria-label={`Remove ${app.college_name}`}
+                    className="min-h-[40px] shrink-0 rounded-md ring-1 ring-rose-300 dark:ring-rose-800 bg-rose-50 dark:bg-rose-950/40 px-2.5 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-900/40"
+                  >
+                    Remove
+                  </button>
+                </div>
 
-              <div className="flex shrink-0 items-center gap-2">
-                <label className="sr-only" htmlFor={`status-${app.id}`}>
-                  Status for {app.college_name}
-                </label>
-                <select
-                  id={`status-${app.id}`}
-                  value={app.status}
-                  disabled={busyId === app.id}
-                  onChange={(e) => {
-                    void onChangeStatus(app, e.target.value as Status);
-                  }}
-                  className={`${selectClass} min-h-[40px] disabled:opacity-50`}
-                >
-                  {STATUS_OPTIONS.map((s) => (
-                    <option key={s} value={s}>
-                      {STATUS_LABEL[s]}
-                    </option>
-                  ))}
-                </select>
-                <button
-                  type="button"
-                  onClick={() => setConfirmRemove(app)}
-                  aria-label={`Remove ${app.college_name}`}
-                  className="min-h-[40px] shrink-0 rounded-md ring-1 ring-rose-300 dark:ring-rose-800 bg-rose-50 dark:bg-rose-950/40 px-2.5 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-900/40"
-                >
-                  Remove
-                </button>
-              </div>
-
-              {/* Per-application document checklist ("missing docs"). */}
-              <ApplicationDocsChecklist appId={app.id} />
-            </li>
-          ))}
+                {/* Expanded catalog detail + per-application document
+                    checklist. Mounted only when the row is expanded so each
+                    row's `select('documents')` query fires lazily, not on
+                    initial render (avoids an N+1 on load). */}
+                {isOpen && (
+                  <div className="w-full border-t border-slate-100 dark:border-slate-800 pt-2.5">
+                    <CatalogDetail college={catalog} />
+                    <ApplicationDocsChecklist appId={app.id} />
+                  </div>
+                )}
+              </li>
+            );
+          })}
         </ul>
       )}
 

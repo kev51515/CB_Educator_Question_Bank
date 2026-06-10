@@ -37,16 +37,22 @@ export function ApplicationDocsChecklist({ appId }: { appId: string }) {
   const [adding, setAdding] = useState("");
 
   const load = useCallback(async (): Promise<void> => {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("college_applications")
       .select("documents")
       .eq("id", appId)
       .maybeSingle();
     if (!aliveRef.current) return;
+    if (error) {
+      toast.error("Couldn't load documents", error.message);
+      setDocs([]);
+      setLoading(false);
+      return;
+    }
     const d = (data?.documents ?? []) as Doc[];
     setDocs(Array.isArray(d) ? d : []);
     setLoading(false);
-  }, [appId]);
+  }, [appId, toast]);
   useEffect(() => {
     void load();
   }, [load]);
@@ -80,12 +86,52 @@ export function ApplicationDocsChecklist({ appId }: { appId: string }) {
 
   if (loading) return null;
   const missing = docs.filter((d) => !d.done).length;
+  const total = docs.length;
+  const done = total - missing;
+  const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+  const allDone = total > 0 && missing === 0;
 
   return (
-    <div className="w-full mt-1 flex flex-wrap items-center gap-1.5 border-t border-slate-100 dark:border-slate-800 pt-2">
-      <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
-        Docs
-      </span>
+    <div className="w-full mt-1 space-y-2 border-t border-slate-100 dark:border-slate-800 pt-2">
+      {/* Progress indicator + thin completion bar. */}
+      {total > 0 && (
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+            Docs
+          </span>
+          <span
+            className={`text-[11px] font-semibold tabular-nums ${
+              allDone
+                ? "text-emerald-600 dark:text-emerald-400"
+                : "text-slate-600 dark:text-slate-300"
+            }`}
+          >
+            {done}/{total} done
+          </span>
+          <div
+            className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800"
+            role="progressbar"
+            aria-valuenow={pct}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label={`Documents ${pct}% complete`}
+          >
+            <div
+              className={`h-full rounded-full transition-all ${
+                allDone ? "bg-emerald-500" : "bg-indigo-500"
+              }`}
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+        </div>
+      )}
+
+      <div className="flex flex-wrap items-center gap-1.5">
+      {total === 0 && (
+        <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+          Docs
+        </span>
+      )}
       {missing > 0 && (
         <span className="rounded-full bg-amber-100 dark:bg-amber-950/50 px-1.5 py-0.5 text-[11px] font-semibold text-amber-700 dark:text-amber-300">
           {missing} missing
@@ -112,7 +158,7 @@ export function ApplicationDocsChecklist({ appId }: { appId: string }) {
             type="button"
             onClick={() => remove(i)}
             aria-label={`Remove ${d.label}`}
-            className="text-slate-400 hover:text-rose-500"
+            className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center text-slate-400 hover:text-rose-500"
           >
             <svg width={10} height={10} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" aria-hidden>
               <path d="M6 6l12 12M18 6L6 18" />
@@ -139,6 +185,7 @@ export function ApplicationDocsChecklist({ appId }: { appId: string }) {
           <option key={s} value={s} />
         ))}
       </datalist>
+      </div>
     </div>
   );
 }

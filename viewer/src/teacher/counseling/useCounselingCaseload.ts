@@ -33,7 +33,10 @@ export interface CaseloadTotals {
 
 export interface Caseload {
   students: CaseloadStudent[];
-  totals: CaseloadTotals;
+  // The RPC always returns a totals object for a real course, but the local
+  // fallback below seeds it null before the first round-trip resolves; callers
+  // must tolerate null (use optional chaining + defaults).
+  totals: CaseloadTotals | null;
 }
 
 interface UseCounselingCaseload {

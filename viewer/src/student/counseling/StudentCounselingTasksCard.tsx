@@ -12,6 +12,9 @@
  * tasks sort first, then by due date ascending (nulls last). A past-due open
  * task gets a rose "Overdue" chip. Done tasks render line-through + muted.
  *
+ * A "N of M done" progress summary with a thin completion bar mirrors the
+ * counselor-side panel so the student sees their own momentum at a glance.
+ *
  * Conventions copied from CourseSharingControls.tsx: `@/lib/supabase`,
  * `useToast`, the `aliveRef` mounted-guard for every setState-after-await,
  * `SkeletonRows`, and slate/indigo dark-mode ring-1 cards. No emojis.
@@ -20,6 +23,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
 
 interface CounselingTask {
   id: string;
@@ -112,6 +116,14 @@ export function StudentCounselingTasksCard({ courseId, studentId }: Props) {
     });
   }, [tasks]);
 
+  // Progress summary across all assigned tasks.
+  const total = tasks.length;
+  const doneCount = useMemo(
+    () => tasks.filter((t) => t.status === "done").length,
+    [tasks],
+  );
+  const pctDone = total === 0 ? 0 : Math.round((doneCount / total) * 100);
+
   const onToggle = async (task: CounselingTask): Promise<void> => {
     setBusyId(task.id);
     const nextDone = task.status !== "done";
@@ -131,16 +143,42 @@ export function StudentCounselingTasksCard({ courseId, studentId }: Props) {
 
   return (
     <section className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white/80 dark:bg-slate-900/60 px-5 py-5 space-y-4">
-      <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-700 dark:text-slate-200">
-        My tasks
-      </h3>
+      <div className="flex items-center justify-between gap-3">
+        <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-700 dark:text-slate-200">
+          My tasks
+        </h3>
+        {!loading && total > 0 && (
+          <span className="shrink-0 text-xs font-medium text-slate-500 dark:text-slate-400">
+            {doneCount} of {total} done
+          </span>
+        )}
+      </div>
+
+      {/* Progress bar — visible whenever there's at least one task. */}
+      {!loading && total > 0 && (
+        <div
+          className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800"
+          role="progressbar"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={pctDone}
+          aria-label={`${doneCount} of ${total} tasks done`}
+        >
+          <div
+            className="h-full rounded-full bg-emerald-500 transition-[width] duration-300"
+            style={{ width: `${pctDone}%` }}
+          />
+        </div>
+      )}
 
       {loading ? (
         <SkeletonRows count={3} />
       ) : sorted.length === 0 ? (
-        <p className="text-sm text-slate-500 dark:text-slate-400">
-          No tasks assigned yet.
-        </p>
+        <EmptyState
+          icon="check"
+          title="No tasks assigned yet"
+          body="When your counselor assigns counseling to-dos, they'll show up here for you to check off."
+        />
       ) : (
         <ul className="space-y-2">
           {sorted.map((task) => {

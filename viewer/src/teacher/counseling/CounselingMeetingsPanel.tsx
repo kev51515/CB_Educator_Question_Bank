@@ -11,13 +11,17 @@
  * most recent meeting is first.
  *
  * UI: a "Log a meeting" form at the top (date + summary + next steps), then a
- * chronological list. Each entry can be edited inline or removed (with a
- * destructive ConfirmDialog).
+ * vertical TIMELINE (most-recent-first) with a connecting rail and a node per
+ * meeting. Each entry shows the met_on date prominently, the summary, and a
+ * clearly-labeled "Next steps" callout when present. Entries can be edited
+ * inline or removed (with a destructive ConfirmDialog). The empty state offers
+ * a CTA that focuses the summary field to log the first meeting.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
 import { ConfirmDialog } from "../ConfirmDialog";
 
 interface Meeting {
@@ -58,6 +62,19 @@ function formatMetOn(value: string): string {
   });
 }
 
+/** Compact two-line date parts (e.g. "MAR" / "14") for a timeline node. */
+function metOnParts(value: string): { month: string; day: string } | null {
+  const [y, m, d] = value.split("-").map((n) => parseInt(n, 10));
+  if (!y || !m || !d) return null;
+  const date = new Date(y, m - 1, d);
+  return {
+    month: date
+      .toLocaleDateString(undefined, { month: "short" })
+      .toUpperCase(),
+    day: String(d),
+  };
+}
+
 const inputCls =
   "w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500";
 
@@ -79,6 +96,7 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
   const [newSummary, setNewSummary] = useState("");
   const [newNextSteps, setNewNextSteps] = useState("");
   const [saving, setSaving] = useState(false);
+  const newSummaryRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Per-row edit + delete state.
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -220,6 +238,7 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
           </label>
           <textarea
             id="counseling-new-summary"
+            ref={newSummaryRef}
             value={newSummary}
             onChange={(e) => setNewSummary(e.target.value)}
             rows={3}
@@ -257,22 +276,45 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
         </div>
       </div>
 
-      {/* List */}
+      {/* Timeline (most-recent-first) */}
       {loading ? (
         <SkeletonRows count={3} />
       ) : meetings.length === 0 ? (
-        <p className="text-sm text-slate-500 dark:text-slate-400">
-          No meetings logged yet.
-        </p>
+        <EmptyState
+          icon="pencil"
+          title="No meetings logged yet"
+          body="Keep a private running record of every counseling conversation. Log your first meeting to start the timeline."
+          cta={{
+            label: "Log first meeting",
+            onClick: () => {
+              newSummaryRef.current?.focus();
+              newSummaryRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            },
+          }}
+        />
       ) : (
-        <ul className="space-y-3">
+        <ol className="relative space-y-4 pl-7">
+          {/* Vertical rail behind the timeline nodes. */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-[10px] top-1 bottom-1 w-px bg-slate-200 dark:bg-slate-800"
+          />
           {meetings.map((m) => {
             const isEditing = editingId === m.id;
+            const parts = metOnParts(m.met_on);
             return (
-              <li
-                key={m.id}
-                className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 p-4 space-y-2"
-              >
+              <li key={m.id} className="relative">
+                {/* Timeline node aligned to the rail. */}
+                <span
+                  aria-hidden
+                  className="absolute -left-7 top-3 flex h-[21px] w-[21px] items-center justify-center rounded-full bg-white dark:bg-slate-900 ring-2 ring-indigo-400 dark:ring-indigo-500"
+                >
+                  <span className="h-2 w-2 rounded-full bg-indigo-500" />
+                </span>
+                <div className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 p-4 space-y-2">
                 {isEditing ? (
                   <div className="space-y-2">
                     <div>
@@ -343,9 +385,21 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
                 ) : (
                   <>
                     <div className="flex items-start justify-between gap-3">
-                      <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                        {formatMetOn(m.met_on)}
-                      </p>
+                      <div className="flex items-baseline gap-2">
+                        {parts && (
+                          <span className="inline-flex items-baseline gap-1 rounded-md bg-indigo-50 dark:bg-indigo-950/40 px-2 py-0.5 text-indigo-700 dark:text-indigo-300">
+                            <span className="text-[11px] font-semibold uppercase tracking-wide">
+                              {parts.month}
+                            </span>
+                            <span className="text-base font-bold leading-none">
+                              {parts.day}
+                            </span>
+                          </span>
+                        )}
+                        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                          {formatMetOn(m.met_on)}
+                        </p>
+                      </div>
                       <div className="flex shrink-0 items-center gap-2">
                         <button
                           type="button"
@@ -373,19 +427,22 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
                       </p>
                     )}
                     {m.next_steps && (
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
-                        <span className="font-medium text-slate-600 dark:text-slate-300">
-                          Next steps:
-                        </span>{" "}
-                        <span className="whitespace-pre-wrap">{m.next_steps}</span>
-                      </p>
+                      <div className="rounded-lg border-l-2 border-emerald-400 dark:border-emerald-500 bg-emerald-50/70 dark:bg-emerald-950/30 px-3 py-2">
+                        <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+                          Next steps
+                        </p>
+                        <p className="mt-0.5 whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-300">
+                          {m.next_steps}
+                        </p>
+                      </div>
                     )}
                   </>
                 )}
+                </div>
               </li>
             );
           })}
-        </ul>
+        </ol>
       )}
 
       {pendingDelete && (

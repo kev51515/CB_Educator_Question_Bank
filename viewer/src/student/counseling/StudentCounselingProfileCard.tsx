@@ -4,26 +4,50 @@
  * The STUDENT-facing editable form for THEIR OWN college-counseling profile
  * within a course. One row per (course, student) in the `counseling_profiles`
  * table (UNIQUE(course_id, student_id)); the viewer is the STUDENT and RLS lets
- * a student SELECT/INSERT/UPDATE their own row. The row may not exist yet —
- * that's normal and is treated as an empty profile until the first save UPSERTs
- * it.
+ * a student SELECT/INSERT/UPDATE their own row (INSERT added in migration 0136).
+ * The row may not exist yet — that's normal and is treated as an empty profile
+ * until the first save UPSERTs it.
  *
  * Mirrors the counselor-side CounselingProfilePanel: a single editable form
- * (not inline-per-field) with one dirty-gated "Save" button. Scalar fields
- * (grad year, GPA, intended major, goals) plus SAT/ACT folded into the
- * `test_scores` jsonb object, plus an editable `activities` jsonb list (add/
- * remove rows with name/role/hours). Saving UPDATEs by id when a row exists,
- * else INSERTs (with course_id + student_id), then refetches + toasts.
+ * (not inline-per-field) with one dirty-gated "Save" button. The student CAN
+ * edit goals, activities, test scores, intended major, grad year and GPA.
+ * Scalar fields plus a rich Goals editor (MarkdownEditor), a structured SAT/ACT
+ * block folded into the `test_scores` jsonb ({ sat:{total,ebrw,math},
+ * act:{composite} }), an editable `activities` jsonb list, and a
+ * profile-completeness meter. Saving UPDATEs by id when a row exists, else
+ * INSERTs (with course_id + student_id), then refetches + toasts.
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useToast } from "@/components";
+import { useToast, MarkdownEditor } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 
 interface Activity {
   name: string;
   role?: string;
   hours_per_week?: number;
+}
+
+/** Form-only activity row: a synthetic stable client id for React keys (never persisted). */
+interface ActivityRow extends Activity {
+  _id: string;
+}
+
+/**
+ * Structured test scores. The jsonb is intentionally free-form in the schema,
+ * so we read defensively and only write the keys we have a value for.
+ */
+interface SatScores {
+  total?: number;
+  ebrw?: number;
+  math?: number;
+}
+interface ActScores {
+  composite?: number;
+}
+interface TestScores {
+  sat?: SatScores;
+  act?: ActScores;
 }
 
 interface ProfileRow {
@@ -35,25 +59,29 @@ interface ProfileRow {
   intended_major: string | null;
   goals: string | null;
   activities: Activity[];
-  test_scores: { sat?: number; act?: number };
+  test_scores: TestScores | null;
 }
 
 interface FormState {
   gradYear: string;
   gpa: string;
   intendedMajor: string;
-  sat: string;
-  act: string;
+  satTotal: string;
+  satEbrw: string;
+  satMath: string;
+  actComposite: string;
   goals: string;
-  activities: Activity[];
+  activities: ActivityRow[];
 }
 
 const EMPTY_FORM: FormState = {
   gradYear: "",
   gpa: "",
   intendedMajor: "",
-  sat: "",
-  act: "",
+  satTotal: "",
+  satEbrw: "",
+  satMath: "",
+  actComposite: "",
   goals: "",
   activities: [],
 };
@@ -71,17 +99,36 @@ function toTextOrNull(raw: string): string | null {
   return s === "" ? null : s;
 }
 
+/** A jsonb number value may arrive as number or numeric-string. */
+function readNum(v: unknown): string {
+  if (v == null) return "";
+  if (typeof v === "number") return Number.isFinite(v) ? String(v) : "";
+  if (typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v))) {
+    return String(Number(v));
+  }
+  return "";
+}
+
+/**
+ * Goals may be stored as plain text by an older save, or as HTML once the rich
+ * editor wrote it. The MarkdownEditor accepts either transparently, so we just
+ * pass the stored string straight through.
+ */
 function rowToForm(row: ProfileRow | null): FormState {
   if (!row) return { ...EMPTY_FORM, activities: [] };
+  const ts = (row.test_scores ?? {}) as TestScores;
   return {
     gradYear: row.grad_year == null ? "" : String(row.grad_year),
     gpa: row.gpa == null ? "" : String(row.gpa),
     intendedMajor: row.intended_major ?? "",
-    sat: row.test_scores?.sat == null ? "" : String(row.test_scores.sat),
-    act: row.test_scores?.act == null ? "" : String(row.test_scores.act),
+    satTotal: readNum(ts.sat?.total),
+    satEbrw: readNum(ts.sat?.ebrw),
+    satMath: readNum(ts.sat?.math),
+    actComposite: readNum(ts.act?.composite),
     goals: row.goals ?? "",
     activities: Array.isArray(row.activities)
       ? row.activities.map((a) => ({
+          _id: crypto.randomUUID(),
           name: a?.name ?? "",
           role: a?.role ?? "",
           hours_per_week: a?.hours_per_week,
@@ -90,10 +137,24 @@ function rowToForm(row: ProfileRow | null): FormState {
   };
 }
 
+/** A textual goals value — MarkdownEditor emits HTML, so strip tags for "filled?" checks. */
+function goalsHasText(goals: string): boolean {
+  return goals.replace(/<[^>]*>/g, "").trim() !== "";
+}
+
 const FIELD_CLASS =
   "w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500";
 const LABEL_CLASS =
   "text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400";
+const HINT_CLASS = "text-xs text-slate-400 dark:text-slate-500";
+const WARN_CLASS = "text-xs text-amber-600 dark:text-amber-400";
+
+/** Inline range hint that turns amber when an out-of-range value is present. */
+function rangeWarn(raw: string, lo: number, hi: number): string | null {
+  const n = toNumOrNull(raw);
+  if (n == null) return null;
+  return n < lo || n > hi ? `Expected ${lo}–${hi}` : null;
+}
 
 export function StudentCounselingProfileCard({
   courseId,
@@ -152,7 +213,10 @@ export function StudentCounselingProfileCard({
   const addActivity = (): void => {
     setForm((prev) => ({
       ...prev,
-      activities: [...prev.activities, { name: "", role: "", hours_per_week: undefined }],
+      activities: [
+        ...prev.activities,
+        { _id: crypto.randomUUID(), name: "", role: "", hours_per_week: undefined },
+      ],
     }));
     setDirty(true);
   };
@@ -173,10 +237,32 @@ export function StudentCounselingProfileCard({
     setDirty(true);
   };
 
+  // Completeness: count how many of the key fields are filled.
+  const completeness = useMemo(() => {
+    const hasActivity = form.activities.some((a) => a.name.trim() !== "");
+    const hasScore =
+      toNumOrNull(form.satTotal) != null ||
+      toNumOrNull(form.satEbrw) != null ||
+      toNumOrNull(form.satMath) != null ||
+      toNumOrNull(form.actComposite) != null;
+    const checks: boolean[] = [
+      form.gradYear.trim() !== "",
+      form.gpa.trim() !== "",
+      form.intendedMajor.trim() !== "",
+      goalsHasText(form.goals),
+      hasActivity,
+      hasScore,
+    ];
+    const filled = checks.filter(Boolean).length;
+    return { filled, total: checks.length, pct: Math.round((filled / checks.length) * 100) };
+  }, [form]);
+
   const onSave = async (): Promise<void> => {
     setSaving(true);
 
-    // Normalise activities: drop fully-blank rows, coerce hours to number|undefined.
+    // Normalise activities: drop the synthetic _id, drop fully-blank rows, coerce
+    // hours to number|undefined. The mapped `out` object intentionally omits `_id`
+    // so the persisted jsonb stays { name, role, hours_per_week } only.
     const activities: Activity[] = form.activities
       .map((a) => {
         const name = a.name.trim();
@@ -184,7 +270,7 @@ export function StudentCounselingProfileCard({
         const hours =
           a.hours_per_week == null || Number.isNaN(a.hours_per_week)
             ? undefined
-            : Number(a.hours_per_week);
+            : Math.max(0, Number(a.hours_per_week));
         const out: Activity = { name };
         if (role) out.role = role;
         if (hours != null) out.hours_per_week = hours;
@@ -192,19 +278,33 @@ export function StudentCounselingProfileCard({
       })
       .filter((a) => a.name !== "" || a.role || a.hours_per_week != null);
 
-    const test_scores: { sat?: number; act?: number } = {};
-    const sat = toNumOrNull(form.sat);
-    const act = toNumOrNull(form.act);
-    if (sat != null) test_scores.sat = sat;
-    if (act != null) test_scores.act = act;
+    // Structured test scores — only include keys we actually have.
+    const sat: SatScores = {};
+    const satTotal = toNumOrNull(form.satTotal);
+    const satEbrw = toNumOrNull(form.satEbrw);
+    const satMath = toNumOrNull(form.satMath);
+    if (satTotal != null) sat.total = satTotal;
+    if (satEbrw != null) sat.ebrw = satEbrw;
+    if (satMath != null) sat.math = satMath;
+
+    const act: ActScores = {};
+    const actComposite = toNumOrNull(form.actComposite);
+    if (actComposite != null) act.composite = actComposite;
+
+    const test_scores: TestScores = {};
+    if (Object.keys(sat).length > 0) test_scores.sat = sat;
+    if (Object.keys(act).length > 0) test_scores.act = act;
 
     const fields = {
       grad_year: toNumOrNull(form.gradYear),
       gpa: toNumOrNull(form.gpa),
       intended_major: toTextOrNull(form.intendedMajor),
-      goals: toTextOrNull(form.goals),
+      // MarkdownEditor emits HTML; persist null when there's no real text (an
+      // empty editor leaves behind "<p></p>"/"<p><br></p>" which is non-null).
+      goals: goalsHasText(form.goals) ? form.goals : null,
       activities,
-      test_scores,
+      // Store null rather than {} when no scores are present (consistent with goals/gpa).
+      test_scores: Object.keys(test_scores).length > 0 ? test_scores : null,
     };
 
     const { error } = rowId
@@ -225,22 +325,64 @@ export function StudentCounselingProfileCard({
     void load();
   };
 
+  const satTotalWarn = rangeWarn(form.satTotal, 400, 1600);
+  const satEbrwWarn = rangeWarn(form.satEbrw, 200, 800);
+  const satMathWarn = rangeWarn(form.satMath, 200, 800);
+  const actWarn = rangeWarn(form.actComposite, 1, 36);
+
   return (
     <section className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white/80 dark:bg-slate-900/60 px-5 py-5 space-y-4">
-      <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
-        My profile
-      </h3>
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+          My profile
+        </h3>
+      </div>
 
       {loading ? (
-        <SkeletonRows count={3} />
+        <SkeletonRows count={4} />
       ) : (
-        <div className="space-y-5">
+        <div className="space-y-6">
+          {/* Completeness meter */}
+          <div className="space-y-1.5">
+            <div className="flex items-center justify-between">
+              <span className={LABEL_CLASS}>Profile completeness</span>
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                {completeness.pct}% complete
+              </span>
+            </div>
+            <div
+              className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800"
+              role="progressbar"
+              aria-valuenow={completeness.pct}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-label="Profile completeness"
+            >
+              <div
+                className={`h-full rounded-full transition-[width] duration-300 ${
+                  completeness.pct >= 100
+                    ? "bg-emerald-500"
+                    : completeness.pct >= 50
+                      ? "bg-indigo-500"
+                      : "bg-amber-500"
+                }`}
+                style={{ width: `${completeness.pct}%` }}
+              />
+            </div>
+            <p className={HINT_CLASS}>
+              {completeness.filled} of {completeness.total} key fields filled — a complete
+              profile helps your counselor plan with you.
+            </p>
+          </div>
+
           {/* Scalar fields */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <label className="block space-y-1.5">
               <span className={LABEL_CLASS}>Grad year</span>
               <input
                 type="number"
+                min={2020}
+                max={2035}
                 value={form.gradYear}
                 onChange={(e) => update("gradYear", e.target.value)}
                 placeholder="2027"
@@ -252,6 +394,8 @@ export function StudentCounselingProfileCard({
               <span className={LABEL_CLASS}>GPA</span>
               <input
                 type="number"
+                min={0}
+                max={5}
                 step="0.01"
                 value={form.gpa}
                 onChange={(e) => update("gpa", e.target.value)}
@@ -270,28 +414,61 @@ export function StudentCounselingProfileCard({
                 className={FIELD_CLASS}
               />
             </label>
+          </div>
 
-            <label className="block space-y-1.5">
-              <span className={LABEL_CLASS}>SAT</span>
-              <input
-                type="number"
-                value={form.sat}
-                onChange={(e) => update("sat", e.target.value)}
-                placeholder="1500"
-                className={FIELD_CLASS}
-              />
-            </label>
-
-            <label className="block space-y-1.5">
-              <span className={LABEL_CLASS}>ACT</span>
-              <input
-                type="number"
-                value={form.act}
-                onChange={(e) => update("act", e.target.value)}
-                placeholder="34"
-                className={FIELD_CLASS}
-              />
-            </label>
+          {/* Test scores */}
+          <div className="space-y-3">
+            <span className={LABEL_CLASS}>Test scores</span>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <label className="block space-y-1.5">
+                <span className={HINT_CLASS}>SAT total</span>
+                <input
+                  type="number"
+                  value={form.satTotal}
+                  onChange={(e) => update("satTotal", e.target.value)}
+                  placeholder="1500"
+                  aria-label="SAT total score"
+                  className={FIELD_CLASS}
+                />
+                {satTotalWarn ? <span className={WARN_CLASS}>{satTotalWarn}</span> : null}
+              </label>
+              <label className="block space-y-1.5">
+                <span className={HINT_CLASS}>SAT EBRW</span>
+                <input
+                  type="number"
+                  value={form.satEbrw}
+                  onChange={(e) => update("satEbrw", e.target.value)}
+                  placeholder="750"
+                  aria-label="SAT EBRW score"
+                  className={FIELD_CLASS}
+                />
+                {satEbrwWarn ? <span className={WARN_CLASS}>{satEbrwWarn}</span> : null}
+              </label>
+              <label className="block space-y-1.5">
+                <span className={HINT_CLASS}>SAT Math</span>
+                <input
+                  type="number"
+                  value={form.satMath}
+                  onChange={(e) => update("satMath", e.target.value)}
+                  placeholder="750"
+                  aria-label="SAT Math score"
+                  className={FIELD_CLASS}
+                />
+                {satMathWarn ? <span className={WARN_CLASS}>{satMathWarn}</span> : null}
+              </label>
+              <label className="block space-y-1.5">
+                <span className={HINT_CLASS}>ACT composite</span>
+                <input
+                  type="number"
+                  value={form.actComposite}
+                  onChange={(e) => update("actComposite", e.target.value)}
+                  placeholder="34"
+                  aria-label="ACT composite score"
+                  className={FIELD_CLASS}
+                />
+                {actWarn ? <span className={WARN_CLASS}>{actWarn}</span> : null}
+              </label>
+            </div>
           </div>
 
           {/* Activities list */}
@@ -299,13 +476,14 @@ export function StudentCounselingProfileCard({
             <span className={LABEL_CLASS}>Activities</span>
             {form.activities.length === 0 ? (
               <p className="text-sm text-slate-500 dark:text-slate-400">
-                No activities yet.
+                No activities yet. Add your extracurriculars, leadership roles, and how many
+                hours a week you spend on each.
               </p>
             ) : (
               <ul className="space-y-2">
                 {form.activities.map((a, idx) => (
                   <li
-                    key={idx}
+                    key={a._id}
                     className="flex flex-col gap-2 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 px-3 py-3 sm:flex-row sm:items-center"
                   >
                     <input
@@ -326,11 +504,12 @@ export function StudentCounselingProfileCard({
                     />
                     <input
                       type="number"
+                      min={0}
                       value={a.hours_per_week == null ? "" : String(a.hours_per_week)}
                       onChange={(e) => {
                         const v = e.target.value.trim();
                         updateActivity(idx, {
-                          hours_per_week: v === "" ? undefined : Number(v),
+                          hours_per_week: v === "" ? undefined : Math.max(0, Number(v)),
                         });
                       }}
                       placeholder="Hrs/wk"
@@ -379,17 +558,16 @@ export function StudentCounselingProfileCard({
             </button>
           </div>
 
-          {/* Goals */}
-          <label className="block space-y-1.5">
+          {/* Goals (rich text) */}
+          <div className="space-y-1.5">
             <span className={LABEL_CLASS}>Goals</span>
-            <textarea
+            <MarkdownEditor
               value={form.goals}
-              onChange={(e) => update("goals", e.target.value)}
-              rows={4}
-              placeholder="Your goals, target schools, notes…"
-              className={`${FIELD_CLASS} resize-y`}
+              onChange={(html) => update("goals", html)}
+              placeholder="Your goals, dream schools, what you want to study, anything you want your counselor to know…"
+              minHeight={140}
             />
-          </label>
+          </div>
 
           {/* Save */}
           <div className="flex justify-end">
