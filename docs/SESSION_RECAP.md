@@ -1,5 +1,37 @@
 # Session Recap
 
+## Branch `feat/line-integration` (2026-06-10) — LINE Official Account binding + notifications — DEPLOYED
+
+Bind a LINE account (students, teachers, guardians) so the LMS pushes reminders,
+grades, and announcements to LINE. Built + deployed to prod this session.
+
+- **Backend** (migrations `0153` line tables + trigger + RPCs, `0154` guardian
+  enum, `0155` guardian provisioning, `0159` line-dispatch cron, `0160`
+  cron-token fix). LINE is a second delivery channel: a trigger on
+  `notifications` INSERT mirrors every notification to a `line_outbox` queue
+  (recipient + their linked guardians, per-kind opt-out), drained every minute
+  by the `line-dispatch` edge function.
+- **Binding** is the chat-initiated LINE Account Link **nonce** flow (no LINE
+  Login channel needed): add the OA → type "link" → bot DMs
+  `${LINE_LINK_BASE_URL}/line/link?linkToken=…` → `/line/link` mints a nonce →
+  LINE accountLink dialog → `line-webhook` finalizes (HMAC-verified).
+- **Guardians** = coded-login profiles (`role='guardian'`) attached to a student
+  via `guardian_students`; created from the teacher's StudentProfilePage
+  (`GuardiansSection`). They sign in like students and bind their own LINE.
+- **Frontend**: `viewer/src/line/` (`LineLinkPage`, `LineConnectCard` in Account
+  Settings, `useLineLink`) + `GuardiansSection`.
+- **Edge functions** deploy Docker-less: `--no-verify-jwt --use-api` (no-verify-jwt
+  is required so the cron's Bearer token / the webhook's signature reach the
+  function's own guard). Secrets: `LINE_CHANNEL_ACCESS_TOKEN`,
+  `LINE_CHANNEL_SECRET`, `LINE_LINK_BASE_URL`, `CRON_TOKEN`.
+- **Two bugs caught in live test + fixed:** (1) the cron-token GUC couldn't be
+  set by the managed role → cron 403'd → switched to a `private.cron_secrets`
+  table (0160; also fixed the long-broken email reminders); (2) a bare
+  `LINE_LINK_BASE_URL` (`pication.app` without scheme) rendered as un-tappable
+  plain text in LINE → `line-webhook` now forces an `https://` prefix.
+- **OA**: basic id `@344jlwxn`; app origin `https://pication.app`;
+  `VITE_LINE_OA_URL=https://line.me/R/ti/p/@344jlwxn` set in Cloudflare Pages.
+
 ## Branch `feat/test-access-policy` (2026-06-10) — test-overview per-course views + data isolation
 
 Follow-ups on the metered-test work, all on `feat/test-access-policy`:
