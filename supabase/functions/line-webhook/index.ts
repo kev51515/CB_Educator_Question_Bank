@@ -60,7 +60,58 @@ function pushMsg(token: string, to: string, text: string) {
   return linePost(token, "/message/push", { to, messages: [{ type: "text", text }] });
 }
 
-// Issue a linkToken for this user and DM them the LMS link page.
+// A clean "Connect account" Flex card — heading, friendly bilingual blurb, and
+// a styled button that opens the link page. Tweak the copy/colors here to taste.
+function buildLinkFlex(url: string): unknown {
+  return {
+    type: "flex",
+    altText: "連結 OmniLMS 帳號 · Connect your OmniLMS account",
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      body: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "20px",
+        contents: [
+          { type: "text", text: "連結你的帳號", weight: "bold", size: "xl", color: "#111827" },
+          { type: "text", text: "Connect your account", size: "sm", color: "#6B7280", margin: "xs" },
+          {
+            type: "text",
+            text: "綁定後即可在 LINE 收到作業提醒、成績與公告。",
+            wrap: true, size: "sm", color: "#374151", margin: "lg",
+          },
+          {
+            type: "text",
+            text: "Get reminders, grades, and announcements right here on LINE.",
+            wrap: true, size: "xs", color: "#9CA3AF", margin: "sm",
+          },
+          {
+            type: "button",
+            style: "primary",
+            color: "#4F46E5",
+            height: "sm",
+            margin: "xl",
+            action: { type: "uri", label: "開始連結 · Connect", uri: url },
+          },
+          {
+            type: "text",
+            text: "可能需要先登入 · Sign-in may be required",
+            size: "xxs", color: "#9CA3AF", align: "center", margin: "md", wrap: true,
+          },
+        ],
+      },
+    },
+  };
+}
+
+// Send one message object via reply (preferred) or push fallback.
+async function sendMessage(token: string, message: unknown, replyToken?: string, userId?: string) {
+  if (replyToken) await linePost(token, "/message/reply", { replyToken, messages: [message] });
+  else if (userId) await linePost(token, "/message/push", { to: userId, messages: [message] });
+}
+
+// Issue a linkToken for this user and send them the Connect card.
 async function startLink(token: string, linkBase: string, userId: string, replyToken?: string) {
   const r = await linePost(token, `/user/${userId}/linkToken`, {});
   if (!r.ok) {
@@ -69,9 +120,7 @@ async function startLink(token: string, linkBase: string, userId: string, replyT
   }
   const { linkToken } = await r.json();
   const url = `${linkBase}/line/link?linkToken=${encodeURIComponent(linkToken)}`;
-  const msg = `請點此完成帳號連結（需登入）。Tap to finish linking (login required):\n${url}`;
-  if (replyToken) await replyMsg(token, replyToken, msg);
-  else await pushMsg(token, userId, msg);
+  await sendMessage(token, buildLinkFlex(url), replyToken, userId);
 }
 
 Deno.serve(async (req) => {
