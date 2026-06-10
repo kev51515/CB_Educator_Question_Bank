@@ -9,6 +9,7 @@ export { BriefingsPanel } from "./BriefingsPanel";
 export { AssessmentsPanel } from "./AssessmentsPanel";
 export { DrillsPanel } from "./DrillsPanel";
 export { ProgramsPanel } from "./ProgramsPanel";
+export { EventsPanel } from "./EventsPanel";
 export { CoachesPanel } from "./CoachesPanel";
 export { CertificationsPanel } from "./CertificationsPanel";
 export { DevelopmentPanel } from "./DevelopmentPanel";

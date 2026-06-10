@@ -70,6 +70,7 @@ import {
   AssessmentsPanel,
   DrillsPanel,
   ProgramsPanel,
+  EventsPanel,
   CoachesPanel,
   CertificationsPanel,
   DevelopmentPanel,
@@ -129,6 +130,7 @@ const TABS: ReadonlyArray<TabDef> = [
   { to: "progress", label: "Progress" },
   { to: "drills", label: "Drills" },
   { to: "programs", label: "Programs" },
+  { to: "events", label: "Events" },
   // Pickleball — coach track
   { to: "coaches", label: "Coaches" },
   { to: "certifications", label: "Certifications" },
@@ -173,6 +175,7 @@ export function ClassLayout() {
         "progress",
         "drills",
         "programs",
+        "events",
         "roster",
         "chat",
         "announcements",
@@ -634,6 +637,16 @@ export function ClassLayout() {
               element={
                 isPicklePlayer ? (
                   <ProgramsPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="events"
+              element={
+                isPicklePlayer ? (
+                  <EventsPanel courseId={cls.id} />
                 ) : (
                   <Navigate to={classPath(cls.short_code)} replace />
                 )
