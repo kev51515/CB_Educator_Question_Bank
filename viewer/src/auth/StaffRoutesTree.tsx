@@ -19,6 +19,7 @@ import {
   TestOverviewPage,
   ReplayPage,
 } from "@/fulltest";
+import { LineLinkPage } from "@/line";
 import { CalendarPage } from "@/calendar";
 import { DashboardPage } from "@/dashboard";
 import { InboxPage, ThreadView } from "@/inbox";
@@ -65,6 +66,9 @@ export default function StaffRoutesTree({ account }: { account: AccountContext }
         path={`${ROUTES.TEST_RUN}/*`}
         element={<RedirectBareTestToOverview />}
       />
+      {/* LINE Account Link landing — full-viewport, outside the shell; mints a
+          nonce and redirects out to LINE's accountLink dialog. */}
+      <Route path={ROUTES.LINE_LINK} element={<LineLinkPage />} />
       <Route element={<StaffShell />}>
         <Route
           path={ROUTES.HOME}

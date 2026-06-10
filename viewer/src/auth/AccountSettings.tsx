@@ -31,6 +31,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components";
+import { LineConnectCard } from "@/line";
 import type { Profile } from "@/lib/profile";
 import type { AuthResult } from "./session";
 
@@ -329,6 +330,7 @@ export function AccountSettings({
             them to reset it for you.
           </p>
         </section>
+        <LineConnectCard />
       </div>
     );
   }
@@ -575,6 +577,9 @@ export function AccountSettings({
             </form>
           )}
         </section>
+
+        {/* LINE binding + per-type LINE delivery prefs */}
+        <LineConnectCard />
 
         {/* Notification preferences — link to dedicated page */}
         <section className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 flex items-center justify-between gap-3">
