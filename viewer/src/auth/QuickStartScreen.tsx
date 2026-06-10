@@ -663,7 +663,7 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
                   key={opt.role}
                   type="button"
                   onClick={() => onSwitchToSignIn(opt.role)}
-                  className="group flex w-full items-center gap-3.5 rounded-2xl border border-stone-300/80 bg-white/60 px-4 py-3.5 text-left shadow-sm transition hover:border-stone-900/30 hover:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/30 dark:hover:bg-white/[0.07]"
+                  className="group flex w-full items-center gap-2 rounded-2xl border border-stone-300/80 bg-white/60 px-4 py-3.5 text-left shadow-sm transition hover:border-stone-900/30 hover:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] sm:gap-3.5 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/30 dark:hover:bg-white/[0.07]"
                 >
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900">
                     <svg

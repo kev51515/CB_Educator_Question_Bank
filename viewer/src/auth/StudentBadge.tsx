@@ -83,11 +83,14 @@ export function StudentBadge({
   }, [open]);
 
   return (
-    <div ref={ref} className="fixed bottom-3 right-3 z-50 print:hidden">
+    <div
+      ref={ref}
+      className="fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] right-[calc(0.75rem+env(safe-area-inset-right))] z-50 print:hidden"
+    >
       {open && (
         <div
           role="menu"
-          className="mb-2 w-56 rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden"
+          className="mb-2 w-56 max-w-[calc(100vw-1.5rem)] rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden"
         >
           <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-800">
             <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">Signed in as</p>
@@ -109,7 +112,7 @@ export function StudentBadge({
                 setOpen(false);
                 onSwitchArea();
               }}
-              className="block w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+              className="block w-full text-left px-4 py-3 min-h-[44px] text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
             >
               Switch area
             </button>
@@ -121,7 +124,7 @@ export function StudentBadge({
               setOpen(false);
               navigate(inboxPath);
             }}
-            className="block w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+            className="block w-full text-left px-4 py-3 min-h-[44px] text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             Inbox
           </button>
@@ -132,7 +135,7 @@ export function StudentBadge({
               setOpen(false);
               navigate(accountPath);
             }}
-            className="block w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+            className="block w-full text-left px-4 py-3 min-h-[44px] text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             Account settings
           </button>
@@ -143,7 +146,7 @@ export function StudentBadge({
               setOpen(false);
               onSignOut();
             }}
-            className="block w-full text-left px-4 py-2 text-sm text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40"
+            className="block w-full text-left px-4 py-3 min-h-[44px] text-sm text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40"
           >
             Sign out
           </button>
@@ -159,7 +162,7 @@ export function StudentBadge({
             ? `Account menu for ${studentName} (${roleLine})`
             : `Account menu for ${studentName}`
         }
-        className="flex items-center gap-2 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 pl-1 pr-3 py-1 hover:ring-indigo-400 dark:hover:ring-indigo-500 transition"
+        className="flex items-center gap-2 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 pl-1 pr-3 py-1.5 min-h-[44px] hover:ring-indigo-400 dark:hover:ring-indigo-500 transition"
       >
         <span className="h-7 w-7 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white grid place-items-center text-sm font-semibold">
           {initial}

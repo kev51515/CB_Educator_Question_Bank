@@ -278,7 +278,7 @@ export function AuthScreen({
             <div
               role="radiogroup"
               aria-label="Sign in as"
-              className="mb-5 grid grid-cols-2 gap-1 rounded-xl bg-stone-100 p-1 dark:bg-white/5"
+              className="mb-5 grid grid-cols-2 gap-2 sm:gap-1 rounded-xl bg-stone-100 p-1 dark:bg-white/5"
             >
               {(["student", "educator"] as const).map((value) => (
                 <button

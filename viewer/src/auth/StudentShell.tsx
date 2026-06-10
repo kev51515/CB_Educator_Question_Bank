@@ -608,7 +608,7 @@ function StudentMobileTabBar({ homePath }: { homePath: string }) {
             aria-current={active ? "page" : undefined}
             aria-label={tab.label}
             className={
-              "flex-1 min-h-[56px] flex flex-col items-center justify-center gap-0.5 py-2 transition-colors " +
+              "flex-1 min-h-[56px] flex flex-col items-center justify-center gap-1 py-2 transition-colors " +
               (active
                 ? "text-indigo-600 dark:text-indigo-400"
                 : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200")
