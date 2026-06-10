@@ -103,6 +103,7 @@ export { useOptimistic } from "./useOptimistic";
 export { SafeHtml } from "./SafeHtml";
 export { EmptyState } from "./EmptyState";
 export { Skeleton, SkeletonRows } from "./Skeleton";
+export { StarRating, type StarRatingProps } from "./StarRating";
 export { ShortcutHelpOverlay } from "./ShortcutHelpOverlay";
 export type { ShortcutHelpOverlayProps } from "./ShortcutHelpOverlay";
 export { ShortcutsHelp } from "./ShortcutsHelp";

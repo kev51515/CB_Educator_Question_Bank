@@ -22,21 +22,43 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useToast } from "@/components";
+import { useToast, StarRating } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "../ConfirmDialog";
+import {
+  fetchGradingSettings,
+  gradeState,
+  type GradingSettings,
+  type GradableTask,
+} from "./grading";
 
-interface CounselingTask {
-  id: string;
+/**
+ * A counseling task row including the star-grading columns (migration 0140).
+ * A SELECT of "*" returns them, so the existing single query already loads
+ * everything; we just widen the type so the grading UI is type-safe.
+ */
+interface CounselingTask extends GradableTask {
   course_id: string;
   student_id: string;
   title: string;
   details: string | null;
-  due_date: string | null;
-  status: "open" | "done";
   completed_at: string | null;
   created_at: string;
   updated_at: string;
+}
+
+/** Map a grade-RPC error code to a friendly toast message. */
+function friendlyGradeError(message: string): string {
+  switch (message) {
+    case "not_submitted":
+      return "The student hasn't submitted this task yet.";
+    case "invalid_quality":
+      return "That star rating is out of range for this course.";
+    case "not_authorized":
+      return "You're not allowed to grade this task.";
+    default:
+      return message;
+  }
 }
 
 interface Props {
@@ -97,6 +119,18 @@ export function CounselingTasksPanel({ courseId, studentId }: Props) {
   const [confirmTask, setConfirmTask] = useState<CounselingTask | null>(null);
   const [removeBusy, setRemoveBusy] = useState(false);
 
+  // Star-grading settings for this course (falls back to defaults if no row).
+  const [settings, setSettings] = useState<GradingSettings | null>(null);
+
+  // Per-task in-progress grading state, keyed by task id. `quality` is the
+  // QUALITY star count (0..quality_max) the counselor is about to save;
+  // `feedback` is the editable feedback draft. Seeded lazily from the row.
+  const [quality, setQuality] = useState<Record<string, number>>({});
+  const [feedback, setFeedback] = useState<Record<string, string>>({});
+  // Which task's grade is currently being saved / whose gradable toggle is busy.
+  const [gradeBusyId, setGradeBusyId] = useState<string | null>(null);
+  const [toggleBusyId, setToggleBusyId] = useState<string | null>(null);
+
   // Add-form state.
   const [newTitle, setNewTitle] = useState("");
   const [newDue, setNewDue] = useState("");
@@ -130,6 +164,19 @@ export function CounselingTasksPanel({ courseId, studentId }: Props) {
   useEffect(() => {
     void load();
   }, [load]);
+
+  // Load this course's grading settings once per course (defaults if no row).
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      const s = await fetchGradingSettings(courseId);
+      if (!alive || !aliveRef.current) return;
+      setSettings(s);
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [courseId]);
 
   const today = todayISODate();
 
@@ -246,15 +293,206 @@ export function CounselingTasksPanel({ courseId, studentId }: Props) {
     void load();
   };
 
+  /** Save a counselor grade for a (submitted) task via grade_counseling_task. */
+  const onSaveGrade = async (task: CounselingTask): Promise<void> => {
+    const qMax = settings?.quality_max_stars ?? 0;
+    const q = Math.min(
+      quality[task.id] ?? task.quality_stars ?? 0,
+      qMax,
+    );
+    const fb = (feedback[task.id] ?? task.feedback ?? "").trim();
+    setGradeBusyId(task.id);
+    const { error } = await supabase.rpc("grade_counseling_task", {
+      p_task_id: task.id,
+      p_quality_stars: q,
+      p_feedback: fb || null,
+    });
+    if (!aliveRef.current) return;
+    setGradeBusyId(null);
+    if (error) {
+      toast.error("Couldn't save grade", friendlyGradeError(error.message));
+      return;
+    }
+    // Drop the local draft so the control reflects the saved row (and, after a
+    // later resubmit clears the grade, doesn't pre-seed the old quality/feedback).
+    setQuality((prev) => {
+      const n = { ...prev };
+      delete n[task.id];
+      return n;
+    });
+    setFeedback((prev) => {
+      const n = { ...prev };
+      delete n[task.id];
+      return n;
+    });
+    toast.success(`Graded "${task.title}"`);
+    void load();
+  };
+
+  /** Flip a task's `gradable` flag directly (counselor RLS allows the update). */
+  const onToggleGradable = async (task: CounselingTask): Promise<void> => {
+    const next = !task.gradable;
+    setToggleBusyId(task.id);
+    const { error } = await supabase
+      .from("counseling_tasks")
+      .update({ gradable: next })
+      .eq("id", task.id);
+    if (!aliveRef.current) return;
+    setToggleBusyId(null);
+    if (error) {
+      toast.error("Couldn't update task", error.message);
+      return;
+    }
+    toast.success(
+      next
+        ? `"${task.title}" is now a graded deliverable`
+        : `"${task.title}" reverted to a plain task`,
+    );
+    void load();
+  };
+
+  /**
+   * The star-grading area for a single gradable task. Only rendered when
+   * settings.enabled && task.gradable. Mirrors the lifecycle contract:
+   *   not_submitted  -> "Awaiting submission" hint (the student submits).
+   *   awaiting_grade -> provisional punctuality stars + a grading control.
+   *   graded         -> current stars + feedback + re-grade control.
+   */
+  const renderGradingArea = (task: CounselingTask): JSX.Element | null => {
+    if (!settings) return null;
+    const state = gradeState(task);
+    const maxStars = settings.max_stars;
+    const punctuality = task.punctuality_stars ?? 0;
+    const onTime = task.submission_on_time;
+
+    const stateChip = (
+      <span
+        className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ring-1 ${
+          state === "graded"
+            ? "bg-emerald-50 dark:bg-emerald-950/40 ring-emerald-300 dark:ring-emerald-800 text-emerald-700 dark:text-emerald-300"
+            : state === "awaiting_grade"
+              ? "bg-amber-50 dark:bg-amber-950/40 ring-amber-300 dark:ring-amber-800 text-amber-700 dark:text-amber-300"
+              : "bg-slate-50 dark:bg-slate-800 ring-slate-200 dark:ring-slate-700 text-slate-600 dark:text-slate-300"
+        }`}
+      >
+        {state === "graded"
+          ? "Graded"
+          : state === "awaiting_grade"
+            ? "Awaiting grade"
+            : "Not submitted"}
+      </span>
+    );
+
+    const punctualityChip =
+      state !== "not_submitted" && onTime !== null ? (
+        <span
+          className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ring-1 ${
+            onTime
+              ? "bg-emerald-50 dark:bg-emerald-950/40 ring-emerald-300 dark:ring-emerald-800 text-emerald-700 dark:text-emerald-300"
+              : "bg-rose-50 dark:bg-rose-950/40 ring-rose-300 dark:ring-rose-800 text-rose-700 dark:text-rose-300"
+          }`}
+        >
+          {onTime ? "On time" : "Late"}
+        </span>
+      ) : null;
+
+    return (
+      <div className="mt-2 space-y-2 rounded-lg ring-1 ring-amber-200/70 dark:ring-amber-900/50 bg-amber-50/40 dark:bg-amber-950/20 px-3 py-2.5">
+        <div className="flex flex-wrap items-center gap-1.5">
+          {stateChip}
+          {punctualityChip}
+        </div>
+
+        {state === "not_submitted" ? (
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Awaiting submission — the student earns punctuality stars when they
+            submit.
+          </p>
+        ) : (
+          <div className="space-y-2">
+            {state === "graded" && (
+              <StarRating
+                value={task.stars ?? 0}
+                lockedCount={punctuality}
+                max={maxStars}
+                size="sm"
+                label={`${task.stars ?? 0} of ${maxStars} stars`}
+              />
+            )}
+            <div className="flex flex-wrap items-center gap-2">
+              {(() => {
+                const draftQuality = quality[task.id] ?? task.quality_stars ?? 0;
+                // Never render past the cap (e.g. if a settings change shrank
+                // max_stars below an old punctuality+quality sum) — the DB also
+                // clamps on save, but the control must agree with the label.
+                const displayStars = Math.min(
+                  punctuality + draftQuality,
+                  maxStars,
+                );
+                return (
+                  <>
+                    <StarRating
+                      interactive
+                      lockedCount={punctuality}
+                      value={displayStars}
+                      max={maxStars}
+                      size="md"
+                      onChange={(q) =>
+                        setQuality((prev) => ({ ...prev, [task.id]: q }))
+                      }
+                    />
+                    <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+                      {displayStars} of {maxStars} stars
+                    </span>
+                  </>
+                );
+              })()}
+            </div>
+            <textarea
+              value={feedback[task.id] ?? task.feedback ?? ""}
+              onChange={(e) =>
+                setFeedback((prev) => ({ ...prev, [task.id]: e.target.value }))
+              }
+              placeholder="Feedback for the student (optional)…"
+              aria-label={`Feedback for "${task.title}"`}
+              rows={2}
+              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            <button
+              type="button"
+              disabled={gradeBusyId === task.id}
+              onClick={() => {
+                void onSaveGrade(task);
+              }}
+              className="min-h-[40px] rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {gradeBusyId === task.id
+                ? "Saving…"
+                : state === "graded"
+                  ? "Update grade"
+                  : "Save grade"}
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   /** One task row, shared by the open + done groups. */
   const renderTaskRow = (task: CounselingTask): JSX.Element => {
     const done = task.status === "done";
     const overdue = !done && task.due_date !== null && task.due_date < today;
+    // Show the grading area only when this course has grading on AND this task
+    // is flagged as a graded deliverable. Otherwise it's a plain open/done task.
+    const showGrading = !!settings?.enabled && task.gradable;
+    // The gradable toggle is offered whenever the course has grading enabled.
+    const showGradableToggle = !!settings?.enabled;
     return (
       <li
         key={task.id}
-        className="flex items-start gap-3 rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 px-3 py-2.5"
+        className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 px-3 py-2.5"
       >
+        <div className="flex items-start gap-3">
         <button
           type="button"
           role="checkbox"
@@ -329,6 +567,47 @@ export function CounselingTasksPanel({ courseId, studentId }: Props) {
         >
           Remove
         </button>
+        </div>
+
+        {/* Gradable toggle — only when this course has star grading enabled. */}
+        {showGradableToggle && (
+          <div className="mt-2 flex items-center justify-end">
+            <button
+              type="button"
+              role="switch"
+              aria-checked={task.gradable}
+              aria-label={
+                task.gradable
+                  ? `Stop grading "${task.title}"`
+                  : `Make "${task.title}" a graded deliverable`
+              }
+              disabled={toggleBusyId === task.id}
+              onClick={() => {
+                void onToggleGradable(task);
+              }}
+              className="inline-flex min-h-[40px] items-center gap-2 rounded-md px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 disabled:opacity-50"
+            >
+              <span>Gradable</span>
+              <span
+                className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors ${
+                  task.gradable
+                    ? "bg-indigo-600"
+                    : "bg-slate-300 dark:bg-slate-700"
+                }`}
+                aria-hidden
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
+                    task.gradable ? "translate-x-4" : "translate-x-0.5"
+                  }`}
+                />
+              </span>
+            </button>
+          </div>
+        )}
+
+        {/* Star-grading area for a graded deliverable. */}
+        {showGrading && renderGradingArea(task)}
       </li>
     );
   };
@@ -345,6 +624,14 @@ export function CounselingTasksPanel({ courseId, studentId }: Props) {
           </span>
         )}
       </div>
+
+      {/* Subtle hint when star grading is off for this course. */}
+      {!loading && settings && !settings.enabled && (
+        <p className="text-xs text-slate-400 dark:text-slate-500">
+          Star grading is off for this course — turn it on in Course Settings to
+          grade deliverables.
+        </p>
+      )}
 
       {/* Progress bar — visible whenever there's at least one task. */}
       {!loading && total > 0 && (

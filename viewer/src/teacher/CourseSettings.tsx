@@ -25,6 +25,7 @@ import { useToast, MarkdownEditor, useOptimistic } from "@/components";
 import { useClassContext } from "./classLayoutContext";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { CourseSharingControls } from "./CourseSharingControls";
+import { CounselingGradingSettings } from "./counseling/CounselingGradingSettings";
 import type { CourseType } from "./useTeacherClasses";
 import { ROUTES } from "@/lib/routes";
 
@@ -519,6 +520,16 @@ export function CourseSettings() {
         >
           <CourseSharingControls courseId={cls.id} />
         </SettingsCard>
+
+        {/* 6b. Grading (counseling courses only) */}
+        {cls.course_type === "counseling" && (
+          <SettingsCard
+            title="Grading"
+            description="Control the star scheme for gradable counseling tasks: the on-time baseline, how much quality can lift it, and the resubmission policy."
+          >
+            <CounselingGradingSettings courseId={cls.id} />
+          </SettingsCard>
+        )}
 
         {/* 6. Danger zone */}
         <section className="rounded-2xl ring-1 bg-rose-50/40 dark:bg-rose-950/20 ring-rose-200 dark:ring-rose-900 px-5 py-5 space-y-4">
