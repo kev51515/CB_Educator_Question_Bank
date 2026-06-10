@@ -14,6 +14,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
+// Touch support for native HTML5 drag-and-drop. Native DnD doesn't fire on
+// touch devices; this polyfill (side-effect import — it self-installs a
+// singleton on `document`) synthesizes drag events from touch so every
+// existing `draggable` surface (Modules reorder, course→folder filing, the
+// portfolio tree, …) works on tablets/phones. Drag SOURCES are restricted to
+// grip handles so the polyfill's touchstart preventDefault doesn't kill normal
+// list scrolling (a touch on the row body never lands on a draggable element).
+import "drag-drop-touch";
 import App from "./App.tsx";
 import { ErrorBoundary, ToastProvider } from "@/components";
 import { DomainProvider } from "@/lib/DomainProvider";

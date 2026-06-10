@@ -931,6 +931,47 @@ function AdminCourseCardRow({
       ? "Archived"
       : "Active";
 
+  // The card/row element, captured so the grip can use the WHOLE card as the
+  // native drag preview (calling setDragImage(cardEl, …)) instead of the tiny
+  // grip glyph that would otherwise be the drag source.
+  const cardRef = useRef<HTMLDivElement | null>(null);
+
+  // Grip is the ONLY drag source — touching the card body still scrolls the
+  // list (the drag-drop-touch polyfill only preventDefault()s touchstart on
+  // `draggable` elements, so keeping the card non-draggable preserves scroll).
+  const handleGripDragStart = (e: React.DragEvent) => {
+    if (cardRef.current) {
+      e.dataTransfer.setDragImage(cardRef.current, 24, 24);
+    }
+    onDragStart(e);
+  };
+
+  const grip = (extraClass: string) => (
+    <span
+      draggable
+      role="button"
+      tabIndex={0}
+      aria-label={`Drag to move ${course.name} into a folder`}
+      onDragStart={handleGripDragStart}
+      onDragEnd={onDragEnd}
+      onClick={(e) => e.stopPropagation()}
+      onMouseDown={(e) => e.stopPropagation()}
+      className={
+        "flex-none cursor-grab active:cursor-grabbing touch-none select-none rounded-md p-1 text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:text-slate-500 dark:hover:text-slate-300 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
+        extraClass
+      }
+    >
+      <svg width="14" height="16" viewBox="0 0 14 16" fill="currentColor" aria-hidden>
+        <circle cx="4" cy="3" r="1.5" />
+        <circle cx="10" cy="3" r="1.5" />
+        <circle cx="4" cy="8" r="1.5" />
+        <circle cx="10" cy="8" r="1.5" />
+        <circle cx="4" cy="13" r="1.5" />
+        <circle cx="10" cy="13" r="1.5" />
+      </svg>
+    </span>
+  );
+
   const toast = useToast();
   const toggleArchive = () => {
     const willArchive = !archivedOpt;
@@ -993,13 +1034,12 @@ function AdminCourseCardRow({
   if (view === "list") {
     return (
       <div
-        draggable
-        onDragStart={onDragStart}
-        onDragEnd={onDragEnd}
-        className={`group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 transition hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 cursor-grab active:cursor-grabbing ${
+        ref={cardRef}
+        className={`group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 transition hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 ${
           archivedOpt && !course.is_template ? "opacity-70" : ""
         } ${dragging ? "opacity-50 ring-2 ring-indigo-400" : ""}`}
       >
+        {grip("self-center")}
         <button
           type="button"
           onClick={onNavigate}
@@ -1066,13 +1106,12 @@ function AdminCourseCardRow({
 
   return (
     <div
-      draggable
-      onDragStart={onDragStart}
-      onDragEnd={onDragEnd}
-      className={`cursor-grab active:cursor-grabbing transition-opacity ${
-        dragging ? "opacity-50" : ""
-      }`}
+      ref={cardRef}
+      className={`relative transition-opacity ${dragging ? "opacity-50" : ""}`}
     >
+      {grip(
+        "absolute left-2 top-2 z-10 bg-white/90 dark:bg-slate-900/90 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm",
+      )}
     <CourseCard
       paletteSeed={course.id}
       name={course.name}

@@ -10,7 +10,7 @@
  * handler/state bundle down via ModuleNodeViewProps. Behavior is unchanged
  * from the pre-extraction ModulesPage.
  */
-import { Fragment, memo, useCallback, useMemo, useState } from "react";
+import { Fragment, memo, useCallback, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { testOverviewPath } from "@/lib/routes";
@@ -315,6 +315,13 @@ const ModuleCard = memo(function ModuleCard({
   // lands the item in this module (appended after existing items).
   const [itemHeaderHover, setItemHeaderHover] = useState(false);
 
+  // Refs to the outer card/row containers so the GRIP (the actual drag source,
+  // for touch-scroll safety) can render a drag PREVIEW of the whole card/row
+  // rather than the tiny grip button. The module grip uses the single card
+  // ref; item grips use a per-item Map keyed by item id.
+  const moduleContainerRef = useRef<HTMLDivElement | null>(null);
+  const itemContainerRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+
   const onToggleItemPublished = useCallback(
     async (item: ModuleItem): Promise<void> => {
       // Prefer the server-authoritative RPC; fall back to a direct UPDATE if
@@ -504,6 +511,7 @@ const ModuleCard = memo(function ModuleCard({
         </div>
       )}
       <div
+        ref={moduleContainerRef}
         className={`${depth > 0 ? "rounded-xl" : "rounded-2xl"} bg-white dark:bg-slate-900 ring-1 overflow-visible transition-colors ${
           isNestTargetParent
             ? "ring-2 ring-indigo-500 bg-indigo-50/40 dark:bg-indigo-950/30"
@@ -511,15 +519,11 @@ const ModuleCard = memo(function ModuleCard({
               ? "ring-2 ring-indigo-500 animate-pulse"
               : "ring-slate-200 dark:ring-slate-800"
         } ${isDragging ? "opacity-40" : ""}`}
-        draggable={canEdit}
-        onDragStart={(e) => {
-          // Stop propagation so a nested drag handle doesn't fire twice.
-          e.stopPropagation();
-          onModuleDragStart();
-        }}
-        onDragEnd={() => {
-          onModuleDragEnd();
-        }}
+        // NOTE: the drag SOURCE (draggable + onDragStart/onDragEnd) lives on the
+        // grip button below, NOT this container — so touching the card body
+        // still scrolls on touch devices (the drag-drop-touch polyfill
+        // preventDefaults touchstart on any `draggable` element). This div
+        // stays a drop TARGET only.
         onDragOver={(e) => {
           if (!dragActive || !draggedModuleId) return;
           e.preventDefault();
@@ -619,6 +623,21 @@ const ModuleCard = memo(function ModuleCard({
                 tabIndex={0}
                 aria-label={`Reorder ${module.name}. ${positionContext}${hint}.`}
                 title="Drag to reorder, or focus and press Alt+↑ / Alt+↓"
+                // Drag SOURCE: only the grip starts a module drag, so the rest
+                // of the card body remains scrollable on touch devices.
+                draggable={canEdit}
+                onDragStart={(e) => {
+                  // Stop propagation so an ancestor drag handle doesn't fire twice.
+                  e.stopPropagation();
+                  // Render a preview of the whole card, not the tiny grip.
+                  if (moduleContainerRef.current) {
+                    e.dataTransfer.setDragImage(moduleContainerRef.current, 16, 16);
+                  }
+                  onModuleDragStart();
+                }}
+                onDragEnd={() => {
+                  onModuleDragEnd();
+                }}
                 onKeyDown={(e) => {
                   // Only react to Alt-modified arrows + Esc. Bail otherwise
                   // so Tab / Shift+Tab and other shortcuts pass through.
@@ -641,7 +660,8 @@ const ModuleCard = memo(function ModuleCard({
                 // Stop drag-handle clicks from toggling the row's expand
                 // chevron sitting next to it.
                 onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center justify-center flex-none rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
+                style={{ touchAction: "none" }}
+                className="min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 inline-flex items-center justify-center flex-none rounded-sm cursor-grab active:cursor-grabbing focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
               >
                 <DragHandle className="text-slate-500" compact={depth > 0} />
               </button>
@@ -891,12 +911,15 @@ const ModuleCard = memo(function ModuleCard({
                   </div>
                 )}
               <div
-                draggable={canEdit}
-                onDragStart={(e) => {
-                  e.stopPropagation();
-                  onItemDragStart(item);
+                ref={(el) => {
+                  // Track each row's container element so its grip can render a
+                  // drag preview of the whole row. Clean up on unmount.
+                  if (el) itemContainerRefs.current.set(item.id, el);
+                  else itemContainerRefs.current.delete(item.id);
                 }}
-                onDragEnd={onItemDragEnd}
+                // Drag SOURCE lives on the item grip button below, NOT this
+                // row container — keeps touch-scroll working over the row body.
+                // This div stays a drop TARGET only.
                 onDragOver={(e) => {
                   if (!draggedItemId) return;
                   e.preventDefault();
@@ -944,7 +967,30 @@ const ModuleCard = memo(function ModuleCard({
                 }`}
                 style={{ paddingLeft: `${0.75 + item.indent * 1.25}rem` }}
               >
-                {canEdit && <DragHandle className="text-slate-400 flex-none" />}
+                {canEdit && (
+                  <button
+                    type="button"
+                    data-item-grip={item.id}
+                    aria-label={`Drag to reorder ${item.title}`}
+                    title="Drag to reorder"
+                    // Drag SOURCE: only the grip starts an item drag, so the
+                    // rest of the row stays scrollable on touch devices.
+                    draggable={canEdit}
+                    onDragStart={(e) => {
+                      e.stopPropagation();
+                      const el = itemContainerRefs.current.get(item.id);
+                      // Preview the whole row, not the tiny grip.
+                      if (el) e.dataTransfer.setDragImage(el, 16, 16);
+                      onItemDragStart(item);
+                    }}
+                    onDragEnd={onItemDragEnd}
+                    onClick={(e) => e.stopPropagation()}
+                    style={{ touchAction: "none" }}
+                    className="min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 inline-flex items-center justify-center flex-none rounded-sm cursor-grab active:cursor-grabbing focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
+                  >
+                    <DragHandle className="text-slate-400" />
+                  </button>
+                )}
                 {isFullTestLink ? (
                   <span className="flex-none inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
                     Test
