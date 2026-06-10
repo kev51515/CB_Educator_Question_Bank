@@ -189,9 +189,18 @@ export function testRunPath(slug: string): string {
 }
 
 /** The student-facing runner URL (`/student/test/:slug`). Navigate students
- *  here directly to skip the bare-link redirect hop. */
+ *  here directly to skip the bare-link redirect hop.
+ *
+ *  Defensive: a stored test link is `/test/<slug>?m=<first>-<last>`, and callers
+ *  sometimes hand us the whole `slug?m=…` string. buildPath would `encodeURI`
+ *  the `?`/`=` INTO the slug (`…asia%3Fm%3D2-2`) and the runner couldn't find
+ *  the test. Split any query off the slug here and re-append it as a real query
+ *  so every caller is safe regardless. */
 export function studentTestRunPath(slug: string): string {
-  return buildPath(ROUTES.STUDENT_TEST_RUN, { slug });
+  const q = slug.indexOf("?");
+  const bare = q >= 0 ? slug.slice(0, q) : slug;
+  const query = q >= 0 ? slug.slice(q) : "";
+  return buildPath(ROUTES.STUDENT_TEST_RUN, { slug: bare }) + query;
 }
 
 /** Staff preview of the runner — the role-prefixed run view under the test's

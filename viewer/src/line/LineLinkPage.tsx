@@ -13,6 +13,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/lib/profile";
 import { ROUTES } from "@/lib/routes";
+import { peekPendingLinkToken, clearPendingLinkToken } from "./linkResume";
 
 const ACCOUNT_LINK_DIALOG = "https://access.line.me/dialog/bot/accountLink";
 
@@ -20,7 +21,8 @@ type Status = "working" | "error";
 
 export function LineLinkPage() {
   const [params] = useSearchParams();
-  const linkToken = params.get("linkToken") ?? "";
+  // From the URL, or the value stashed at boot before the sign-in redirect.
+  const linkToken = params.get("linkToken") ?? peekPendingLinkToken() ?? "";
   const { profile } = useProfile();
   const [status, setStatus] = useState<Status>("working");
   const [message, setMessage] = useState("");
@@ -47,6 +49,7 @@ export function LineLinkPage() {
           setMessage(error?.message ?? "Could not start linking. Please try again.");
           return;
         }
+        clearPendingLinkToken(); // consumed — don't resume again
         const url =
           `${ACCOUNT_LINK_DIALOG}?linkToken=${encodeURIComponent(linkToken)}` +
           `&nonce=${encodeURIComponent(String(nonce))}`;

@@ -48,6 +48,7 @@ import { AuthScreen } from "./AuthScreen";
 import { QuickStartScreen } from "./QuickStartScreen";
 import { PasswordResetScreen } from "./PasswordResetScreen";
 import { ROUTES } from "@/lib/routes";
+import { peekPendingLinkToken } from "@/line/linkResume";
 import { supabase } from "@/lib/supabase";
 import type { AccountContext } from "./routeTreeTypes";
 
@@ -312,6 +313,25 @@ function AuthGateImpl() {
     updatePassword,
     onSignOut: signOut,
   };
+
+  // Resume a LINE account-link that began before sign-in: LINE's in-app browser
+  // had no session, so the token was stashed at boot and the user bounced to
+  // sign-in. Now authed, send them to /line/link to finish (the page consumes +
+  // clears the token, then redirects out to LINE). The guard avoids a loop once
+  // we're already there.
+  const pendingLineToken = peekPendingLinkToken();
+  if (
+    pendingLineToken &&
+    typeof window !== "undefined" &&
+    !window.location.pathname.startsWith("/line/link")
+  ) {
+    return (
+      <Navigate
+        to={`${ROUTES.LINE_LINK}?linkToken=${encodeURIComponent(pendingLineToken)}`}
+        replace
+      />
+    );
+  }
 
   return (
     <Suspense fallback={<LoadingScreen />}>

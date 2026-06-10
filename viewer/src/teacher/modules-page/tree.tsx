@@ -10,7 +10,7 @@
  * handler/state bundle down via ModuleNodeViewProps. Behavior is unchanged
  * from the pre-extraction ModulesPage.
  */
-import { Fragment, useCallback, useMemo } from "react";
+import { Fragment, useCallback, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { testOverviewPath } from "@/lib/routes";
@@ -33,6 +33,7 @@ import {
 } from "./parts";
 import { InlineRename } from "./editors";
 import { InlineAddItemRow } from "./inline-add";
+import { EditTestModulesModal } from "./EditTestModulesModal";
 
 // -----------------------------------------------------------------------------
 // Module card
@@ -302,6 +303,11 @@ function ModuleCard({
   // Question Bank item types are hidden in the add-item menu for non-allow-listed
   // educators; keep the empty-state hint consistent with what they can add.
   const canQbank = canAccessQuestionBank(profile?.email);
+
+  // Per-item inline rename (works for link items too — see the kebab "Rename"
+  // option below) and the full-test "Edit modules" picker modal.
+  const [renamingItemId, setRenamingItemId] = useState<string | null>(null);
+  const [editModulesItem, setEditModulesItem] = useState<ModuleItem | null>(null);
 
   const onToggleItemPublished = useCallback(
     async (item: ModuleItem): Promise<void> => {
@@ -785,6 +791,23 @@ function ModuleCard({
             // surfaces actions that are actually wired up.
             const itemKebab: KebabMenuOption[] = [
               {
+                // Inline rename for ALL item types. For a full-test link the
+                // title normally renders as a <Link> (can't click-to-edit in
+                // place), so this kebab entry flips it into an InlineRename.
+                label: "Rename",
+                onSelect: () => setRenamingItemId(item.id),
+              },
+              ...(isFullTestLink
+                ? [
+                    {
+                      // Change WHICH modules of the test this link deploys
+                      // (its ?m=<first>-<last> range). Full-test links only.
+                      label: "Edit modules",
+                      onSelect: () => setEditModulesItem(item),
+                    } as KebabMenuOption,
+                  ]
+                : []),
+              {
                 label: "Indent",
                 disabled: item.indent >= 5,
                 hint: item.indent >= 5 ? "Already at the deepest level" : "Nest one level deeper",
@@ -893,7 +916,27 @@ function ModuleCard({
                 ) : (
                   <ItemTypeIcon type={item.item_type} />
                 )}
-                {isAssignment ? (
+                {canEdit && renamingItemId === item.id ? (
+                  // Kebab "Rename" flips ANY item into an inline editor — even
+                  // a full-test link, whose title otherwise renders as a <Link>
+                  // and can't be click-to-renamed in place.
+                  <InlineRename
+                    value={item.title}
+                    disabled={false}
+                    autoEdit
+                    onCancel={() => setRenamingItemId(null)}
+                    onSave={async (next) => {
+                      await onRenameItem(item, next);
+                      setRenamingItemId(null);
+                    }}
+                    className="flex-1"
+                    titleClassName={
+                      item.item_type === "header"
+                        ? "text-sm font-semibold text-slate-700 dark:text-slate-200"
+                        : "text-sm text-slate-700 dark:text-slate-200"
+                    }
+                  />
+                ) : isAssignment ? (
                   <button
                     type="button"
                     onClick={() => {
@@ -1028,6 +1071,16 @@ function ModuleCard({
             draggedName={draggedName}
           />
         </div>
+      )}
+      {editModulesItem && (
+        <EditTestModulesModal
+          item={editModulesItem}
+          courseId={classId}
+          onClose={() => setEditModulesItem(null)}
+          onSaved={() => {
+            void onRefresh();
+          }}
+        />
       )}
     </div>
   );

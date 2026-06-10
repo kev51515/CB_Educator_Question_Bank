@@ -11,7 +11,6 @@ import { useToast } from "@/components/Toast";
 import { useEscapeKey, useFocusTrap } from "@/hooks";
 import { SkeletonRows } from "@/components/Skeleton";
 import { SectionBadge } from "./testSections";
-import { TestScheduleEditor } from "./TestScheduleEditor";
 import type { Section } from "./types";
 
 interface CourseRow {
@@ -44,7 +43,6 @@ export function AssignTestModal({ slug, title, sections, onClose }: AssignTestMo
   const [loaded, setLoaded] = useState(false);
   const [assignedIds, setAssignedIds] = useState<Set<string>>(new Set());
   const [busyId, setBusyId] = useState<string | null>(null);
-  const [scheduling, setScheduling] = useState<CourseRow | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -91,11 +89,8 @@ export function AssignTestModal({ slug, title, sections, onClose }: AssignTestMo
         setAssignedIds((prev) => new Set(prev).add(course.id));
         toast.success(
           res.already ? "Already assigned" : "Assigned",
-          `${title} → ${course.name}`,
+          `${title} → ${course.name} · set modules & open date from the course's Modules page`,
         );
-        // Expand straight into the schedule step so the teacher can choose how
-        // many modules to deploy and when.
-        setScheduling(course);
       } catch (err: unknown) {
         toast.error("Couldn't assign", getErrorMessage(err, "Try again."));
       } finally {
@@ -115,7 +110,7 @@ export function AssignTestModal({ slug, title, sections, onClose }: AssignTestMo
     >
       <div
         ref={panelRef}
-        className={`w-full ${scheduling ? "max-w-lg" : "max-w-md"} max-h-[85vh] overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4`}
+        className="w-full max-w-md max-h-[85vh] overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
         onClick={(e) => e.stopPropagation()}
       >
         <header className="flex items-start justify-between gap-3">
@@ -138,14 +133,7 @@ export function AssignTestModal({ slug, title, sections, onClose }: AssignTestMo
           </button>
         </header>
 
-        {scheduling ? (
-          <TestScheduleEditor
-            courseId={scheduling.id}
-            courseName={scheduling.name}
-            slug={slug}
-            onBack={() => setScheduling(null)}
-          />
-        ) : !loaded ? (
+        {!loaded ? (
           <SkeletonRows count={3} rowClassName="h-11" />
         ) : courses.length === 0 ? (
           <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
@@ -171,18 +159,9 @@ export function AssignTestModal({ slug, title, sections, onClose }: AssignTestMo
                     )}
                   </div>
                   {done ? (
-                    <div className="flex flex-none items-center gap-2">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
-                        ✓ Assigned
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setScheduling(course)}
-                        className="rounded-md min-h-[36px] px-2.5 py-1.5 text-xs font-semibold text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-900 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                      >
-                        Schedule
-                      </button>
-                    </div>
+                    <span className="inline-flex flex-none items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
+                      ✓ Assigned
+                    </span>
                   ) : (
                     <button
                       type="button"
