@@ -1,10 +1,27 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { visualizer } from "rollup-plugin-visualizer";
 import path from "node:path";
+
+// `ANALYZE=1 npm run build` emits dist/stats.html (chunk treemap). Off by
+// default so normal/CI builds are byte-identical.
+const analyze = !!process.env.ANALYZE;
 
 // `@/foo` → `src/foo`. Keep in sync with `paths` in tsconfig.app.json.
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    ...(analyze
+      ? [
+          visualizer({
+            filename: "dist/stats.html",
+            gzipSize: true,
+            brotliSize: true,
+            template: "treemap",
+          }),
+        ]
+      : []),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

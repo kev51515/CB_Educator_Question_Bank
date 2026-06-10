@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": [
+    "src/main.tsx",
+    "scripts/**/*.mjs",
+    "e2e/**/*.{ts,tsx}",
+    "vite.config.ts",
+    "eslint.config.js",
+    "playwright*.config.ts"
+  ],
+  "project": ["src/**/*.{ts,tsx}"],
+  "ignore": ["src/**/*.d.ts"],
+  "ignoreBinaries": ["supabase"],
+  "ignoreExportsUsedInFile": true
+}
