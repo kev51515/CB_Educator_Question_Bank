@@ -41,22 +41,23 @@ body {
      defaults to 0 everywhere else (e.g. the student shell). */
   --app-chrome-top: 0px;
 
-  /* Domain accent ramp. Tailwind's `accent-*` utilities map to these vars
-     (tailwind.config.js). Seeded here with the academic = indigo default so
-     `accent-*` renders correctly before DomainProvider runs; the provider
-     overwrites these on document.documentElement per the active domain
-     (academic=indigo, counseling=emerald, coaching=orange). */
-  --accent-50: #eef2ff;
-  --accent-100: #e0e7ff;
-  --accent-200: #c7d2fe;
-  --accent-300: #a5b4fc;
-  --accent-400: #818cf8;
-  --accent-500: #6366f1;
-  --accent-600: #4f46e5;
-  --accent-700: #4338ca;
-  --accent-800: #3730a3;
-  --accent-900: #312e81;
-  --accent-950: #1e1b4b;
+  /* Domain accent ramp, in "R G B" CHANNEL form (Tailwind's `accent`/`indigo`
+     map to `rgb(var(--accent-N) / <alpha-value>)`, so channels are required for
+     the /opacity modifier). Seeded with the academic = indigo default so the
+     app renders correctly before DomainProvider runs; the provider overwrites
+     these on document.documentElement per active domain (academic=indigo,
+     counseling=emerald, coaching=orange). */
+  --accent-50: 238 242 255;
+  --accent-100: 224 231 255;
+  --accent-200: 199 210 254;
+  --accent-300: 165 180 252;
+  --accent-400: 129 140 248;
+  --accent-500: 99 102 241;
+  --accent-600: 79 70 229;
+  --accent-700: 67 56 202;
+  --accent-800: 55 48 163;
+  --accent-900: 49 46 129;
+  --accent-950: 30 27 75;
 }
 .dark {
   --bg-primary: #111113;
@@ -145,10 +146,9 @@ body {
 .dark .bg-ink-300 { background-color: var(--border-secondary) !important; }
 .dark .hover\:bg-ink-50:hover { background-color: var(--bg-secondary) !important; }
 .dark .hover\:bg-ink-100:hover { background-color: var(--bg-tertiary) !important; }
-/* Dark-mode accent tint derives from the active --accent-* var (via color-mix)
-   so it re-themes per domain (was a frozen iOS-blue rgba). */
-.dark .bg-accent-50 { background-color: color-mix(in srgb, var(--accent-500) 12%, transparent) !important; }
-.dark .bg-accent-50\/60 { background-color: color-mix(in srgb, var(--accent-500) 8%, transparent) !important; }
+/* (Removed the legacy .dark .bg-accent-50 overrides — accent/indigo are now
+   channel-driven via rgb(var(--accent-N) / <alpha>), so opacity tints re-theme
+   per domain natively in both light and dark mode.) */
 .dark [data-tooltip]::after { background: #3e3f47; }
 
 /* Native MathML — keep inline math on the same line as surrounding text. */

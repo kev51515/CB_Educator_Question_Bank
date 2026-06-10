@@ -52,18 +52,31 @@ function asDomain(raw: unknown): Domain | null {
     : null;
 }
 
+/** "#4f46e5" → "79 70 229" (the "R G B" channel form Tailwind's
+ * `rgb(var(--accent-N) / <alpha-value>)` needs so the /opacity modifier works). */
+function hexToChannels(hex: string): string | null {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex.trim());
+  if (!m) return null;
+  const n = parseInt(m[1], 16);
+  return `${(n >> 16) & 255} ${(n >> 8) & 255} ${n & 255}`;
+}
+
 /**
  * Write a domain's accent ramp onto the document root as `--accent-*` CSS
- * custom properties. Tailwind's `accent` color maps to these vars, so this is
- * what makes `accent-600` etc. re-theme live.
+ * custom properties (in "R G B" channel form). Tailwind's `accent` AND `indigo`
+ * colors both map to these vars, so this re-themes the whole app — every
+ * `indigo-*` / `accent-*` utility, opacity modifiers included — live when the
+ * active domain changes. Also stamps `data-domain` on the root for any
+ * domain-scoped CSS / debugging.
  */
 function applyAccent(domain: Domain): void {
   if (typeof document === "undefined") return;
   const root = document.documentElement;
+  root.dataset.domain = domain;
   const ramp = DOMAIN_ACCENT[domain];
   for (const stop of ACCENT_STOPS) {
-    const hex = ramp[stop];
-    if (hex) root.style.setProperty(`--accent-${stop}`, hex);
+    const ch = hexToChannels(ramp[stop] ?? "");
+    if (ch) root.style.setProperty(`--accent-${stop}`, ch);
   }
 }
 

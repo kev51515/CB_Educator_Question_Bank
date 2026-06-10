@@ -27,18 +27,37 @@ export default {
         // properties set by DomainProvider onto :root; index.css seeds the
         // indigo (academic) default so accent-* works before the provider runs.
         // See lib/domain.ts + lib/DomainProvider.tsx.
+        // `--accent-*` are in "R G B" channel form (set by DomainProvider) so
+        // the `/opacity` modifier works. `indigo` is REMAPPED onto the same
+        // vars: the app is styled with indigo-* as its brand primary, so this
+        // re-themes every existing indigo usage by active domain (academic=
+        // indigo, counseling=emerald, coaching=orange) with no per-component
+        // edits. Fixed indigo (e.g. the domain dots) uses explicit hex.
         accent: {
-          50: "var(--accent-50)",
-          100: "var(--accent-100)",
-          200: "var(--accent-200)",
-          300: "var(--accent-300)",
-          400: "var(--accent-400)",
-          500: "var(--accent-500)",
-          600: "var(--accent-600)",
-          700: "var(--accent-700)",
-          800: "var(--accent-800)",
-          900: "var(--accent-900)",
-          950: "var(--accent-950)",
+          50: "rgb(var(--accent-50) / <alpha-value>)",
+          100: "rgb(var(--accent-100) / <alpha-value>)",
+          200: "rgb(var(--accent-200) / <alpha-value>)",
+          300: "rgb(var(--accent-300) / <alpha-value>)",
+          400: "rgb(var(--accent-400) / <alpha-value>)",
+          500: "rgb(var(--accent-500) / <alpha-value>)",
+          600: "rgb(var(--accent-600) / <alpha-value>)",
+          700: "rgb(var(--accent-700) / <alpha-value>)",
+          800: "rgb(var(--accent-800) / <alpha-value>)",
+          900: "rgb(var(--accent-900) / <alpha-value>)",
+          950: "rgb(var(--accent-950) / <alpha-value>)",
+        },
+        indigo: {
+          50: "rgb(var(--accent-50) / <alpha-value>)",
+          100: "rgb(var(--accent-100) / <alpha-value>)",
+          200: "rgb(var(--accent-200) / <alpha-value>)",
+          300: "rgb(var(--accent-300) / <alpha-value>)",
+          400: "rgb(var(--accent-400) / <alpha-value>)",
+          500: "rgb(var(--accent-500) / <alpha-value>)",
+          600: "rgb(var(--accent-600) / <alpha-value>)",
+          700: "rgb(var(--accent-700) / <alpha-value>)",
+          800: "rgb(var(--accent-800) / <alpha-value>)",
+          900: "rgb(var(--accent-900) / <alpha-value>)",
+          950: "rgb(var(--accent-950) / <alpha-value>)",
         },
       },
       fontFamily: {
