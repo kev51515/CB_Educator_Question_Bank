@@ -49,11 +49,19 @@ grades, and announcements to LINE. Built + deployed to prod this session.
   is required so the cron's Bearer token / the webhook's signature reach the
   function's own guard). Secrets: `LINE_CHANNEL_ACCESS_TOKEN`,
   `LINE_CHANNEL_SECRET`, `LINE_LINK_BASE_URL`, `CRON_TOKEN`.
-- **Two bugs caught in live test + fixed:** (1) the cron-token GUC couldn't be
-  set by the managed role → cron 403'd → switched to a `private.cron_secrets`
-  table (0160; also fixed the long-broken email reminders); (2) a bare
-  `LINE_LINK_BASE_URL` (`pication.app` without scheme) rendered as un-tappable
-  plain text in LINE → `line-webhook` now forces an `https://` prefix.
+- **Four bugs caught in live testing + fixed:** (1) cron-token GUC couldn't be
+  set by the managed role → cron 403'd → token moved to a `private.cron_secrets`
+  table (0160; also fixed long-broken email reminders); (2) a bare
+  `LINE_LINK_BASE_URL` (`pication.app`, no scheme) rendered as un-tappable plain
+  text → `line-webhook` now forces `https://`; (3) the `linkToken` was dropped
+  when LINE's session-less in-app browser hit AuthGate's sign-in redirect →
+  token stashed at boot + resumed after login (`line/linkResume.ts` + AuthGate);
+  (4) `create_line_link_nonce` couldn't find `gen_random_bytes` (pgcrypto lives
+  in `extensions`) → search_path fixed (0163, applied via psql).
+- **Messaging is Flex cards** (`buildWelcomeFlex` / `buildLinkFlex` /
+  `buildSuccessFlex` in line-webhook): a branded welcome card on follow, a
+  Connect card on "link", a success card on completion — bilingual zh/en,
+  tasteful emojis, indigo brand button.
 - **OA**: basic id `@344jlwxn`; app origin `https://pication.app`;
   `VITE_LINE_OA_URL=https://line.me/R/ti/p/@344jlwxn` set in Cloudflare Pages.
 
