@@ -30,6 +30,7 @@ import { supabase } from "@/lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
 import { ROUTES } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
+import { studentLabel } from "@/lib/domain";
 import { StudentCounselingProfileCard } from "./counseling/StudentCounselingProfileCard";
 import { StudentCollegeListCard } from "./counseling/StudentCollegeListCard";
 import { StudentCounselingTasksCard } from "./counseling/StudentCounselingTasksCard";
@@ -423,9 +424,14 @@ export function StudentCourseView(): JSX.Element {
                 <p className="text-xs uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
                   Course · {course.short_code}
                 </p>
-                <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
-                  {course.name}
-                </h1>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
+                    {course.name}
+                  </h1>
+                  <span className="inline-flex items-center rounded-full bg-accent-50 dark:bg-accent-950/40 px-2.5 py-0.5 text-xs font-medium text-accent-700 dark:text-accent-300 ring-1 ring-accent-200/60 dark:ring-accent-800/60">
+                    {studentLabel(course.course_type)}
+                  </span>
+                </div>
                 {(() => {
                   const tname = teacherName(course);
                   return (

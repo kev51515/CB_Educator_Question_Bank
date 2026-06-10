@@ -145,8 +145,10 @@ body {
 .dark .bg-ink-300 { background-color: var(--border-secondary) !important; }
 .dark .hover\:bg-ink-50:hover { background-color: var(--bg-secondary) !important; }
 .dark .hover\:bg-ink-100:hover { background-color: var(--bg-tertiary) !important; }
-.dark .bg-accent-50 { background-color: rgba(0,122,255,0.1) !important; }
-.dark .bg-accent-50\/60 { background-color: rgba(0,122,255,0.08) !important; }
+/* Dark-mode accent tint derives from the active --accent-* var (via color-mix)
+   so it re-themes per domain (was a frozen iOS-blue rgba). */
+.dark .bg-accent-50 { background-color: color-mix(in srgb, var(--accent-500) 12%, transparent) !important; }
+.dark .bg-accent-50\/60 { background-color: color-mix(in srgb, var(--accent-500) 8%, transparent) !important; }
 .dark [data-tooltip]::after { background: #3e3f47; }
 
 /* Native MathML — keep inline math on the same line as surrounding text. */
