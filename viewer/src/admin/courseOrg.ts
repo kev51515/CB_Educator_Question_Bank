@@ -59,6 +59,12 @@ export const ORG_COLORS = [
 ] as const;
 export type OrgColor = (typeof ORG_COLORS)[number];
 
+// ---- drag-and-drop -----------------------------------------------------------
+// MIME type carried by a course being dragged onto a folder rail row. Native
+// HTML5 DnD (no library — matches the rest of the codebase). The folder rail
+// rows check for this type on dragover so unrelated drags don't light them up.
+export const COURSE_DND_MIME = "application/x-course-id";
+
 interface ColorClasses {
   chip: string; // tag chip (bg + text + ring)
   dot: string; // small swatch (bg)
