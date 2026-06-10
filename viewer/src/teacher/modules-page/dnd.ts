@@ -96,13 +96,18 @@ export function resolveDropTarget(
   }
 
   // Bottom half — cursor X picks the depth.
-  // Layout: row's content starts at `rowRect.left + (anchorDepth * INDENT_PX)`
-  // (approximate, accounting for the children container's inset padding —
-  // currently `ml-6 p-3` for the tinted submodule block). We pick a simpler
-  // bias: each indent step LEFT of the row's left edge = -1 depth, each
-  // indent step RIGHT of (rowLeft + INDENT_PX) = nest.
+  // `rowRect.left` already includes this row's per-depth inset: each nesting
+  // level is rendered inside an `ml-6` (DEPTH_INDENT_PX) tinted container, so a
+  // depth-N row's left edge sits N indents to the right of the top-level
+  // origin. Measuring `cursorX - rowRect.left` would therefore double-count
+  // depth — the nest/outdent bands would trigger at the wrong cursor X for any
+  // row at depth ≥ 1. Subtract the known indent so the step is measured from a
+  // DEPTH-INDEPENDENT origin (the top-level content origin), matching the
+  // intent: each indent step LEFT of that origin = -1 depth, each step RIGHT
+  // of the first indent = nest.
+  const contentOrigin = rowRect.left - anchorDepth * DEPTH_INDENT_PX;
   const stepFromLeft = Math.floor(
-    (cursorX - rowRect.left) / DEPTH_INDENT_PX,
+    (cursorX - contentOrigin) / DEPTH_INDENT_PX,
   );
 
   if (stepFromLeft >= 1) {

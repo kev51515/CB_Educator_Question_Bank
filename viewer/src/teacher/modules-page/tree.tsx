@@ -180,7 +180,7 @@ export interface ModuleNodeViewProps {
   onItemDragEnd: () => void;
   onCommitItemDrop: (target: ItemDropTarget) => Promise<void>;
   // Empty-list drop: drop onto a module that has zero items.
-  onItemDropOnEmptyModule: (moduleId: string) => Promise<void>;
+  onItemDropOnEmptyModule: (moduleId: string, where?: "start" | "end") => Promise<void>;
   // Bulk-select wiring
   selectMode: boolean;
   isSelected: (moduleId: string) => boolean;
@@ -239,7 +239,7 @@ interface ModuleHeaderProps {
   onItemDragStart: (item: ModuleItem) => void;
   onItemDragEnd: () => void;
   onCommitItemDrop: (target: ItemDropTarget) => Promise<void>;
-  onItemDropOnEmptyModule: (moduleId: string) => Promise<void>;
+  onItemDropOnEmptyModule: (moduleId: string, where?: "start" | "end") => Promise<void>;
   // Bulk-select wiring
   selectMode: boolean;
   selected: boolean;
@@ -308,6 +308,12 @@ const ModuleCard = memo(function ModuleCard({
   // option below) and the full-test "Edit modules" picker modal.
   const [renamingItemId, setRenamingItemId] = useState<string | null>(null);
   const [editModulesItem, setEditModulesItem] = useState<ModuleItem | null>(null);
+  // #6: header-level item drop. The empty-list "Drop here as first item" zone
+  // only renders for an EXPANDED, EMPTY module — so a collapsed module, or a
+  // module that already has items, had no cross-module item drop target. This
+  // flag lights up the header row while an item is dragged over it; dropping
+  // lands the item in this module (appended after existing items).
+  const [itemHeaderHover, setItemHeaderHover] = useState(false);
 
   const onToggleItemPublished = useCallback(
     async (item: ModuleItem): Promise<void> => {
@@ -557,10 +563,40 @@ const ModuleCard = memo(function ModuleCard({
       >
       <div
         className={`flex items-center gap-2 ${depth > 0 ? "px-2.5 py-2" : "px-3 py-3"} border-b border-slate-200 dark:border-slate-800 transition-colors ${
-          isNestTargetParent
-            ? "bg-indigo-100 dark:bg-indigo-950/60"
-            : "bg-slate-50/50 dark:bg-slate-900/50"
+          itemHeaderHover
+            ? "bg-indigo-100 dark:bg-indigo-950/60 ring-2 ring-inset ring-indigo-400"
+            : isNestTargetParent
+              ? "bg-indigo-100 dark:bg-indigo-950/60"
+              : "bg-slate-50/50 dark:bg-slate-900/50"
         } ${isDragging ? "animate-pulse" : ""}`}
+        // #6: cross-module item drop onto the module HEADER. Only active while
+        // an item is being dragged (draggedItemId set) AND it isn't already in
+        // this module. preventDefault marks the row as a valid drop target;
+        // stopPropagation keeps the card's module-DnD onDragOver from also
+        // processing this event.
+        onDragOver={(e) => {
+          if (!canEdit || !draggedItemId) return;
+          const isOwnItem = module.items.some((i) => i.id === draggedItemId);
+          if (isOwnItem) return;
+          e.preventDefault();
+          e.stopPropagation();
+          if (!itemHeaderHover) setItemHeaderHover(true);
+        }}
+        onDragLeave={(e) => {
+          if (!draggedItemId) return;
+          const next = e.relatedTarget;
+          if (next instanceof Node && e.currentTarget.contains(next)) return;
+          if (itemHeaderHover) setItemHeaderHover(false);
+        }}
+        onDrop={(e) => {
+          if (!canEdit || !draggedItemId) return;
+          const isOwnItem = module.items.some((i) => i.id === draggedItemId);
+          if (isOwnItem) return;
+          e.preventDefault();
+          e.stopPropagation();
+          setItemHeaderHover(false);
+          void onItemDropOnEmptyModule(module.id, "end");
+        }}
       >
         {canEdit && (
           (() => {
