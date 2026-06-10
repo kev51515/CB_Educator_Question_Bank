@@ -117,11 +117,7 @@ export function AuthScreen({
     setError(null);
     setNotice(null);
     if (!signInEmail.trim() || !signInPassword) {
-      setError(
-        signInRole === "student"
-          ? "Please enter your student code and password."
-          : "Please enter your email and password.",
-      );
+      setError("Please enter your email and password.");
       return;
     }
     setBusy(true);
@@ -260,7 +256,7 @@ export function AuthScreen({
                 ? signInMode === "reset"
                   ? "Enter your email and we'll send you a reset link."
                   : signInRole === "student"
-                    ? "Joining for the first time? Use your class code. Already have a login? Sign in below."
+                    ? "Joining for the first time? Use your class code. Returning? Sign in with your email below."
                     : "Sign in with your email and password."
                 : "Accounts are invitation-only — here's how to get one."}
             </p>
@@ -363,29 +359,25 @@ export function AuthScreen({
           {tab === "signin" && signInMode === "password" && (
             <form onSubmit={onSignInSubmit} className="space-y-4">
               <label className="block">
-                <span className={labelCls}>
-                  {signInRole === "student" ? "Student code" : "Email"}
-                </span>
+                <span className={labelCls}>Email</span>
                 <input
                   ref={signInEmailRef}
-                  type={signInRole === "student" ? "text" : "email"}
+                  // type="text" (not "email"): the QR/login-link prefill can carry
+                  // a managed-student code, which strict email validation would
+                  // block on submit. resolveLoginEmail() accepts an email as-is or
+                  // maps a bare code to its address.
+                  type="text"
+                  inputMode="email"
                   value={signInEmail}
                   onChange={(e) => setSignInEmail(e.target.value)}
-                  autoComplete={signInRole === "student" ? "username" : "email"}
-                  spellCheck={signInRole === "student" ? false : undefined}
-                  className={
-                    signInRole === "student"
-                      ? `${inputCls} font-mono tracking-wide uppercase`
-                      : inputCls
-                  }
-                  placeholder={
-                    signInRole === "student" ? "e.g. ABCDEF" : "you@example.com"
-                  }
+                  autoComplete="email"
+                  className={inputCls}
+                  placeholder="you@example.com"
                 />
                 {signInRole === "student" && (
                   <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
-                    The login code your teacher gave you — not the class code.
-                    Scanned a QR? It fills in automatically.
+                    Sign in with your email and password — not the class code.
+                    Scanned a QR from your teacher? It fills in automatically.
                   </span>
                 )}
               </label>
