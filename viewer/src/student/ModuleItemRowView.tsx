@@ -145,15 +145,22 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
     }
     // Full tests open in-place (the runner owns the tab); external links open new.
     if (isFullTestLink) {
-      // Stored as the role-agnostic `/test/<slug>`; navigate straight to the
-      // role-prefixed student runner so the address bar shows the role (and we
-      // skip the bare-link redirect hop).
-      const testSlug = (item.url ?? "").replace(/^\/test\//, "").split("/")[0];
+      // Stored as the role-agnostic `/test/<slug>` (optionally with a
+      // `?m=<first>-<last>` module-subset query). Split the slug from the query
+      // — passing the whole thing to studentTestRunPath would URL-encode the `?`
+      // into the slug (`…asia%3Fm%3D2-2`) and the runner couldn't find the test.
+      // Navigate to the role-prefixed student runner, PRESERVING the ?m= query.
+      const afterPrefix = (item.url ?? "").replace(/^\/test\//, "");
+      const testSlug = afterPrefix.split("/")[0].split("?")[0];
+      const qIndex = afterPrefix.indexOf("?");
+      const testQuery = qIndex >= 0 ? afterPrefix.slice(qIndex) : "";
       return (
         <button
           type="button"
           onClick={() =>
-            navigate(testSlug ? studentTestRunPath(testSlug) : item.url ?? "")
+            navigate(
+              testSlug ? `${studentTestRunPath(testSlug)}${testQuery}` : item.url ?? "",
+            )
           }
           className={`${rowBase} ${interactive} text-left`}
           style={{ paddingLeft: padLeft }}
