@@ -126,7 +126,7 @@ Recommend Resend unless you have a reason not to.
 
 **"I want to see what emails Supabase tried to send."** Free tier Supabase does not log this. Use the **resend.com/emails** dashboard — every send attempt shows up there regardless of outcome.
 
-**Confirmation link points to `localhost:5173` or a Vercel preview URL.** The Site URL is wrong. Set it at **Authentication → URL Configuration → Site URL** to your production URL. Add any other valid redirects to the **Redirect URLs** allowlist.
+**Confirmation link points to `localhost:5173` or a `*.pages.dev` preview URL.** The Site URL is wrong. Set it at **Authentication → URL Configuration → Site URL** to your production URL. Add any other valid redirects to the **Redirect URLs** allowlist.
 
 **Users report the link expired immediately.** The link is single-use. If a corporate spam filter pre-fetches it for safety scanning, it gets consumed before the user clicks. Workaround: switch that template to OTP codes (`{{ .Token }}`) instead of magic links.
 
@@ -148,7 +148,7 @@ Before pointing real students at the app, confirm all of these:
 
 - [ ] Custom SMTP enabled in Supabase, test email received
 - [ ] End-to-end signup test produces a confirmation in <30 seconds
-- [ ] **Site URL** at Authentication → URL Configuration matches the production domain (no `localhost`, no `*.vercel.app` preview URL)
+- [ ] **Site URL** at Authentication → URL Configuration matches the production domain (no `localhost`, no `*.pages.dev` preview URL)
 - [ ] **Redirect URLs** allowlist contains every URL the app actually uses for callbacks
 - [ ] Email confirmation policy is intentional — currently **OFF** for the teacher-controlled model (see [Disabling Email Confirmation](#disabling-email-confirmation)). Turn it **on** only if you add email-based self-signup or password reset, and wire SMTP first.
 - [ ] Resend API key is named clearly (e.g. `supabase-prod`), with sending-only scope

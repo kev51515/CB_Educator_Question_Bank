@@ -62,9 +62,9 @@ Class A's 9-student roster (the 2 college-counseling students were kept).
 **Migration ledger note:** `supabase_migrations.schema_migrations` is recorded
 through `0140`; `0141` (parallel session) / `0142` / `0143` ran live via direct
 `psql` but aren't registered. All three are idempotent `CREATE OR REPLACE`, so a
-later `supabase db push` re-applies them cleanly. **Frontend deploy is manual**
-— no Vercel git-integration is connected (no GitHub deployment statuses); the
-CI build job is green, so the SPA is deploy-ready.
+later `supabase db push` re-applies them cleanly. **Frontend deploys to Cloudflare Pages** — the built `viewer/dist` artifact
+deploys to Cloudflare Pages; the CI build job is green, so the SPA is
+deploy-ready.
 
 ## 2026-06-09 — autonomous polish pass: reusable hooks, student UX, keyboard a11y
 
@@ -992,9 +992,9 @@ All four are deployed and registered through pg_cron in migration 0031.
 ## What still needs your hands
 
 - Rotate the database password, service-role key, and Resend API key before going public.
-- Run `vercel login` then `vercel --prod` to deploy the viewer app.
+- Push to `main` (or run `npx wrangler pages deploy viewer/dist --project-name=<project>`) to deploy the viewer app to Cloudflare Pages.
 - Sign up for Sentry and PostHog and drop the DSN and project key into env.
-- Point a custom domain at the Vercel deployment.
+- Point a custom domain at the Cloudflare Pages deployment.
 - Verify a Resend sender domain — currently sending from `onboarding@resend.dev`, which is fine for smoke but not for real students.
 
 ## Architectural decisions made this session

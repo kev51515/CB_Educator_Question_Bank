@@ -248,7 +248,7 @@ When adding a new scheduled task: write the function under `supabase/functions/<
 - **In-app navigation uses `useNavigate()` / `<Link>` / `<NavLink>`** — never `window.location` or hash mutations. The legacy `#account` hash listener is gone.
 - **Local UI state** (modals, form values) stays in `useState` — only navigation moved to the URL. Nested routes (e.g. `AccountRoutes`) live in the page component.
 - **Deeplinks** use URL `?code=` and `#code=` params, read by `getPrefillCode()` in `AuthGate`. After session lands, the param is stripped via `window.history.replaceState`.
-- **Production deploys** must serve `index.html` for unknown paths (SPA fallback). Vite dev does this; Vercel/Cloudflare/Netlify need their own rewrite config.
+- **Production deploys** must serve `index.html` for unknown paths (SPA fallback). Vite dev does this; on Cloudflare Pages the rewrite lives in `viewer/public/_redirects` (`/*  /index.html  200`).
 
 ### 5f. Error handling
 

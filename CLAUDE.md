@@ -16,7 +16,7 @@ focus) layered on top of a familiar Canvas-aligned classroom workflow.
 End-state inspirations:
 - **Canvas LMS** for structure (Courses / Modules / Assignments / Discussions
   / Files / People / Calendar / Inbox / Account)
-- **Linear / Notion / Vercel Dashboard** for interaction quality and polish
+- **Linear / Notion / Cloudflare Dashboard** for interaction quality and polish
 
 ---
 
@@ -405,6 +405,8 @@ The slug alphabet is A-Z and 2-9 (excludes O/0/I/1/L confusables). Unique constr
 4. `docs/DESIGN_PRINCIPLES.md` — the UX bar (this is the standard the user
    has explicitly asked us to hold)
 5. `docs/LMS_ROADMAP.md` — what's next
+6. `docs/STACKS.md` — the canonical tech stack + hosting. **Read before any
+   deploy/infra/ops work — the host is Cloudflare Pages, not Vercel.**
 
 Then look at one example of each kind of surface you'll touch:
 - Modules page (`viewer/src/teacher/ModulesPage.tsx`) for the UX bar
