@@ -22,6 +22,7 @@ import {
   StudentTestRunGuard,
 } from "./routeViews";
 import { FullTestApp } from "@/fulltest";
+import { LineLinkPage } from "@/line";
 import { CalendarPage } from "@/calendar";
 import { InboxPage, ThreadView } from "@/inbox";
 import { MyFeedbackPage } from "@/student/MyFeedbackPage";
@@ -71,6 +72,9 @@ export default function StudentRoutesTree({
         path={`${ROUTES.TEST_RUN}/*`}
         element={<RedirectBareTestToStudent />}
       />
+      {/* LINE Account Link landing — full-viewport, outside the shell; it just
+          mints a nonce and redirects out to LINE's accountLink dialog. */}
+      <Route path={ROUTES.LINE_LINK} element={<LineLinkPage />} />
       <Route element={<StudentShell />}>
         {/* `/` redirects to the prefixed landing so the URL bar shows the
             role (and the personal code, when the account has one). The
