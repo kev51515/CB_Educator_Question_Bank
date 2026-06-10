@@ -100,13 +100,17 @@ export function CourseCard({
     // `select-text` keeps the card's text selectable/copyable even when the
     // whole card is clickable — a native <button> would make its text
     // unselectable (UA user-select:none), so we render a role="button" div.
-    "group flex flex-col min-w-0 text-left select-text rounded-xl overflow-hidden bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 " +
+    // NOTE: no `overflow-hidden` — it would clip the kebab dropdown (the card's
+    // rounded corners are handled by rounded-xl here + rounded-t-xl on the
+    // gradient header; the content has no background so the bottom corners stay
+    // rounded). z-index alone can't escape an ancestor's overflow clip.
+    "group flex flex-col min-w-0 text-left select-text rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 " +
     (onClick ? "hover:shadow-md hover:-translate-y-0.5 cursor-pointer " : "") +
     (muted ? "opacity-70 " : "");
 
   const inner = (
     <>
-      <div className={`relative h-20 w-full bg-gradient-to-br ${palette}`} aria-hidden={!kebab}>
+      <div className={`relative h-20 w-full rounded-t-xl bg-gradient-to-br ${palette}`} aria-hidden={!kebab}>
         {kebab && kebab.length > 0 && (
           <div
             className="absolute top-2 right-2 z-10"
