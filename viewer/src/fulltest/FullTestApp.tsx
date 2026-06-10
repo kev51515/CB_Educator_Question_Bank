@@ -171,7 +171,15 @@ export function FullTestApp() {
 }
 
 function FullTestRunner() {
-  const { slug = "" } = useParams();
+  const { slug: rawSlug = "" } = useParams();
+  // Self-heal a malformed deep link: an older client could navigate to a URL
+  // where the `?m=<first>-<last>` query got URL-encoded INTO the slug
+  // (`…asia%3Fm%3D1-1`), which React Router then decodes back into the slug
+  // param as `…asia?m=1-1`. Strip any embedded query so start_test receives the
+  // real slug, and recover the range from it (the range parser below reads
+  // `embeddedQuery` when location.search is empty).
+  const slug = rawSlug.split("?")[0];
+  const embeddedQuery = rawSlug.includes("?") ? rawSlug.slice(rawSlug.indexOf("?")) : "";
   const navigate = useNavigate();
   const location = useLocation();
   const toast = useToast();
@@ -179,7 +187,11 @@ function FullTestRunner() {
   // effect rewrites it, so an incoming deep link (…/section/n/q/m) survives long
   // enough for loadModule to restore that question.
   const openedPathRef = useRef<string>(
-    typeof window !== "undefined" ? window.location.pathname : "",
+    typeof window !== "undefined"
+      ? // Strip a misencoded `?m=…`/`%3Fm%3D…` that leaked into the pathname so
+        // the runner base + deep-link restore stay clean (self-heal — see slug above).
+        window.location.pathname.replace(/(%3[Ff]|\?).*$/, "")
+      : "",
   );
   // The role-prefixed mount base (e.g. /student/test/<slug>), captured once
   // from the opening path so URL-sync keeps the runner under its own route.
@@ -319,7 +331,7 @@ function FullTestRunner() {
         // A subset link is `/test/<slug>?m=<first>-<last>` — scope the run to
         // that module range so it's an independent attempt (0156). No ?m = the
         // full test / metered run.
-        const mParam = new URLSearchParams(location.search).get("m");
+        const mParam = new URLSearchParams(location.search || embeddedQuery).get("m");
         let mFirst: number | null = null;
         let mLast: number | null = null;
         if (mParam && /^\d+-\d+$/.test(mParam)) {
@@ -344,7 +356,7 @@ function FullTestRunner() {
     return () => {
       alive = false;
     };
-  }, [slug, location.search]);
+  }, [slug, location.search, embeddedQuery]);
 
   // --- load a module --------------------------------------------------------
   const loadModule = useCallback(
