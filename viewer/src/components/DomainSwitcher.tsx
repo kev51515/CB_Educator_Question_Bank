@@ -45,14 +45,31 @@ function DomainDot({ domain }: { domain: Domain }) {
   );
 }
 
+/** Menu width — keep in sync with the `w-52` on the menu (52 × 4px = 208). */
+const MENU_WIDTH = 208;
+
 export function DomainSwitcher() {
   const { domain, setDomain } = useDomain();
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
+  // Horizontal alignment of the popup. Default right-aligned (correct for a
+  // top-bar control), but flip to left-aligned when the trigger sits so close
+  // to the left edge that a right-aligned menu would spill off-screen — which
+  // is exactly what happens in the narrow left nav rail. Computed on open from
+  // the trigger's viewport position so BOTH mount contexts stay on-screen.
+  const [align, setAlign] = useState<"left" | "right">("right");
 
   const rootRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  const computeAlign = (): "left" | "right" => {
+    const r = triggerRef.current?.getBoundingClientRect();
+    if (!r) return "right";
+    // A right-aligned menu starts at (trigger.right − MENU_WIDTH). If that would
+    // land off (or within 8px of) the left viewport edge, left-align instead.
+    return r.right - MENU_WIDTH < 8 ? "left" : "right";
+  };
 
   // Outside-click + Escape to close; restore focus to the trigger on Escape.
   useEffect(() => {
@@ -85,6 +102,7 @@ export function DomainSwitcher() {
   }, [open, activeIndex]);
 
   const openMenu = (focusIndex: number): void => {
+    setAlign(computeAlign());
     setOpen(true);
     setActiveIndex(focusIndex);
   };
@@ -170,7 +188,7 @@ export function DomainSwitcher() {
         <div
           role="menu"
           aria-label="Switch domain"
-          className="absolute right-0 z-50 mt-2 w-52 overflow-hidden rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700"
+          className={`absolute ${align === "left" ? "left-0" : "right-0"} z-50 mt-2 w-52 overflow-hidden rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700`}
         >
           <p className="px-3 pt-2.5 pb-1 text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
             Domain
