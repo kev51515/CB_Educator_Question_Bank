@@ -105,16 +105,14 @@ import {
 import { useIndexedDBCache } from "./IndexedDBCache";
 import type { Command } from "@/components/CommandPalette";
 import { useRegisterBankCommands } from "@/lib/BankCommandsContext";
-
-/** Font-size step offsets from baseline (16px stem). 0 = default. */
-const FONT_STEP_PX = 1;
-const FONT_MIN = -2;
-const FONT_MAX = 3;
-
-/** How many items to prefetch on either side of the selected question. */
-const PREFETCH_RANGE = 1;
-/** Maximum questions kept in memory (≈1 MB worst case). */
-const CACHE_MAX = 200;
+import {
+  CACHE_MAX,
+  FONT_MAX,
+  FONT_MIN,
+  FONT_STEP_PX,
+  PREFETCH_RANGE,
+} from "./app/constants";
+import { buildBankCommands } from "./app/commands";
 
 function App() {
   // Hydrate from URL hash so deep-links restore filters + selected id
@@ -704,207 +702,44 @@ function App() {
   // the list whenever the underlying handlers/state change; the store
   // takes care of pushing the new array to the palette and clears the
   // registration on unmount so these don't leak onto LMS routes.
-  const bankCommands = useMemo<Command[]>(() => {
-    const cmds: Command[] = [
-      {
-        id: "bank-random-question",
-        label: "Random question",
-        keywords: "shuffle pick any",
-        group: "Command",
-        run: () => {
-          if (finalFiltered.length > 0) {
-            const r = Math.floor(Math.random() * finalFiltered.length);
-            setSelectedId(finalFiltered[r].id);
-          }
-        },
-      },
-      {
-        id: "bank-reset-filters",
-        label: "Reset filters",
-        keywords: "clear all defaults",
-        group: "Command",
-        run: () => onReset(),
-      },
-      {
-        id: "bank-toggle-bookmark",
-        label: "Toggle bookmark on current question",
-        keywords: "star save favorite",
-        group: "Command",
-        run: () => {
-          if (selectedId) {
-            const was = isBookmarked(selectedId);
-            toggleBookmark(selectedId);
-            showToast(was ? "Removed bookmark" : "Bookmarked");
-          }
-        },
-      },
-      {
-        id: "bank-toggle-done",
-        label: "Toggle done on current question",
-        keywords: "complete finished check",
-        group: "Command",
-        run: () => {
-          if (selectedId) {
-            const was = isDone(selectedId);
-            toggleDone(selectedId);
-            showToast(was ? "Marked as not done" : "Marked done");
-          }
-        },
-      },
-      {
-        id: "bank-toggle-selection",
-        label: "Toggle current question in print set",
-        keywords: "select add remove",
-        group: "Command",
-        run: () => {
-          if (selectedId) {
-            const was = isSelected(selectedId);
-            toggleSelected(selectedId);
-            showToast(was ? "Removed from print set" : "Added to print set");
-          }
-        },
-      },
-      {
-        id: "bank-toggle-answer",
-        label: "Show / hide answer",
-        keywords: "reveal solution",
-        group: "Command",
-        run: () => setShowAnswer((v) => !v),
-      },
-      {
-        id: "bank-toggle-rationale",
-        label: "Show / hide rationale",
-        keywords: "explanation reveal",
-        group: "Command",
-        run: () => setShowRationale((v) => !v),
-      },
-      {
-        id: "bank-print-selected",
-        label: "Print selected questions",
-        keywords: "worksheet output",
-        group: "Command",
-        run: () => {
-          void printSelected();
-        },
-      },
-      {
-        id: "bank-export-pdf",
-        label: "Export selected as PDF",
-        keywords: "download save",
-        group: "Command",
-        run: () => {
-          void exportPdf();
-        },
-      },
-      {
-        id: "bank-open-print-drawer",
-        label: "Open print set drawer",
-        keywords: "manage selected",
-        group: "Command",
-        run: () => modals.open("printDrawer"),
-      },
-      {
-        id: "bank-open-compare",
-        label: "Open compare view",
-        keywords: "side by side diff",
-        group: "Command",
-        run: () => modals.open("compare"),
-      },
-      {
-        id: "bank-open-stats",
-        label: "Open stats panel",
-        keywords: "statistics distribution",
-        group: "Command",
-        run: () => modals.open("stats"),
-      },
-      {
-        id: "bank-open-dashboard",
-        label: "Open progress dashboard",
-        keywords: "progress overview",
-        group: "Command",
-        run: () => modals.open("dashboard"),
-      },
-      {
-        id: "bank-open-quick-build",
-        label: "Open quick build wizard",
-        keywords: "build worksheet generate",
-        group: "Command",
-        run: () => modals.open("quickBuild"),
-      },
-      {
-        id: "bank-open-timer",
-        label: "Start timed practice",
-        keywords: "timer session test",
-        group: "Command",
-        run: () => modals.open("timerSetup"),
-      },
-      {
-        id: "bank-open-knowledge-graph",
-        label: "Open knowledge graph",
-        keywords: "skills map visualization",
-        group: "Command",
-        run: () => modals.open("graph"),
-      },
-      {
-        id: "bank-open-reading",
-        label: "Open reading mode",
-        keywords: "focus read passage",
-        group: "Command",
-        run: () => modals.open("reading"),
-      },
-      {
-        id: "bank-open-a11y",
-        label: "Open accessibility panel",
-        keywords: "a11y accessible options",
-        group: "Command",
-        run: () => modals.open("a11y"),
-      },
-      {
-        id: "bank-toggle-dark-mode",
-        label: "Toggle dark mode",
-        keywords: "theme light night",
-        group: "Command",
-        run: () => toggleDark(),
-      },
-      {
-        id: "bank-open-help",
-        label: "Show keyboard shortcuts",
-        keywords: "help cheatsheet keys",
-        group: "Command",
-        run: () => modals.open("help"),
-      },
-      {
-        id: "bank-copy-link",
-        label: "Copy link to current question",
-        keywords: "share url",
-        group: "Command",
-        run: () => {
-          navigator.clipboard
-            ?.writeText(window.location.href)
-            .then(
-              () => showToast("Link copied"),
-              () => showToast("Copy failed"),
-            );
-        },
-      },
-    ];
-    return cmds;
-  }, [
-    finalFiltered,
-    selectedId,
-    isBookmarked,
-    toggleBookmark,
-    isDone,
-    toggleDone,
-    isSelected,
-    toggleSelected,
-    onReset,
-    printSelected,
-    exportPdf,
-    modals,
-    toggleDark,
-    showToast,
-  ]);
+  const bankCommands = useMemo<Command[]>(
+    () =>
+      buildBankCommands({
+        finalFiltered,
+        selectedId,
+        isBookmarked,
+        toggleBookmark,
+        isDone,
+        toggleDone,
+        isSelected,
+        toggleSelected,
+        onReset,
+        printSelected,
+        exportPdf,
+        modals,
+        toggleDark,
+        showToast,
+        setSelectedId,
+        setShowAnswer,
+        setShowRationale,
+      }),
+    [
+      finalFiltered,
+      selectedId,
+      isBookmarked,
+      toggleBookmark,
+      isDone,
+      toggleDone,
+      isSelected,
+      toggleSelected,
+      onReset,
+      printSelected,
+      exportPdf,
+      modals,
+      toggleDark,
+      showToast,
+    ],
+  );
 
   useRegisterBankCommands(bankCommands);
 
