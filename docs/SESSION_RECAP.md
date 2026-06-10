@@ -33,7 +33,7 @@ Built in isolated worktrees off `main` to stay clear of a parallel session
 live-editing `fulltest/`.
 
 - **Auth — bare login codes reach seat-claim (`0142`, commit `5afcf67`).** A
-  managed student's bare 6-char `login_code` (e.g. `KMCZQR`) was misread by
+  managed student's bare 6-char `login_code` (e.g. `CWXKHR`) was misread by
   `QuickStartScreen`'s shape heuristic as a *course* code → it never reached
   `claim_student_seat`, so first login dead-ended ("Couldn't load your
   profile"). New `peek_join_code(code) → 'seat'|'course'|'none'` classifies a
@@ -67,11 +67,17 @@ populated **Class B** with the 10 '27-SAT-B names.
 - **Dash-less login codes — `admin_create_student` fixed (`0148`).** The
   "non-guessable login codes" wave only re-keyed existing rows; the generator
   still emitted `<short_code>-NN`, so every *new* student regressed to a dash
-  code. Rewrote the generator to mint a bare 6-distinct-letter code (A–Z minus
-  I/O/L, e.g. `KMCZQR`) — no dash, no course prefix; `peek_join_code` (0142)
-  already routes these. Re-minted Class B's 10 seats to bare codes. Also swept
-  the docs (ARCHITECTURE/SCHEMA/CONTROLLED_TESTS + QuickStart comments) that
-  still showed the old `<COURSE>-NN` examples.
+  code. Rewrote the generator to mint a bare 6-distinct-letter code — no dash,
+  no course prefix; `peek_join_code` (0142) already routes these. Re-minted
+  Class B's seats to bare codes. Also swept the docs
+  (ARCHITECTURE/SCHEMA/CONTROLLED_TESTS + QuickStart comments) that still showed
+  the old `<COURSE>-NN` examples.
+- **Drop visually-confusing letters from the code (`0150`).** Tightened the
+  alphabet to **A–Z minus I, L, O, Q** (`ABCDEFGHJKMNPRSTUVWXYZ`, e.g. `CWXKHR`)
+  — `Q` was confusable with `O`. Re-keyed every existing managed `login_code`
+  containing a now-excluded letter IN PLACE (auth email+password, identities,
+  profile, roster_code in lockstep, preserving id + work); 0 confusable codes
+  remain. Docs note the confusable-free alphabet.
 
 **Migration ledger note:** `supabase_migrations.schema_migrations` is recorded
 through `0140`; `0141` (parallel session) / `0142` / `0143` ran live via direct

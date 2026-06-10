@@ -64,8 +64,9 @@ created_at, updated_at, is_template, short_code`
 
 **course_memberships** — `id, course_id, student_id, joined_at, roster_code,
 roster_seq` (`roster_code`/`roster_seq` from 0067: a teacher-created managed seat
-gets a global non-guessable code like `KMCZQR` mirrored into `roster_code`
-(`roster_seq` still orders the seat, but the code no longer encodes it);
+gets a global non-guessable code like `CWXKHR` mirrored into `roster_code`
+(6 distinct letters from the confusable-free set A–Z minus I/L/O/Q;
+`roster_seq` still orders the seat, but the code no longer encodes it);
 **NULL `roster_code` ⇒ the student
 self-joined via the shared class code** — the distinction `code_redemptions`/the
 roster "Code activity" panel rely on.)
