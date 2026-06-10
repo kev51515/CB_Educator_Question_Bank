@@ -403,7 +403,7 @@ export function StudentCounselingTasksCard({ courseId, studentId }: Props) {
                   {useGrading && (
                     <div className="mt-2.5 space-y-2">
                       {state === "not_submitted" && (
-                        <div className="flex flex-wrap items-center gap-2.5">
+                        <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center">
                           <button
                             type="button"
                             disabled={busy}

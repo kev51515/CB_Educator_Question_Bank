@@ -398,7 +398,7 @@ export function StudentAttemptReview({
                       <button
                         type="button"
                         onClick={() => handleFilterChange("all")}
-                        className="inline-flex items-center min-h-[40px] rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5 motion-safe:transition-colors"
+                        className="inline-flex items-center min-h-[44px] rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5 motion-safe:transition-colors"
                       >
                         Show all
                       </button>
@@ -455,7 +455,7 @@ function FilterPill({ label, count, active, tone, onClick }: FilterPillProps) {
       aria-selected={active}
       onClick={onClick}
       className={[
-        "inline-flex items-center min-h-[40px] rounded-md text-xs font-medium px-3 py-1.5 motion-safe:transition-colors",
+        "inline-flex items-center min-h-[44px] rounded-md text-xs font-medium px-3 py-1.5 motion-safe:transition-colors",
         active ? activeClasses[tone] : inactiveClasses,
       ].join(" ")}
     >

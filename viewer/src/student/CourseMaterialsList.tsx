@@ -332,7 +332,7 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
                   type="button"
                   onClick={() => setQuery("")}
                   aria-label="Clear search"
-                  className="absolute inset-y-0 right-0 inline-flex items-center justify-center w-9 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 motion-safe:transition-colors"
+                  className="absolute inset-y-0 right-0 inline-flex items-center justify-center w-11 min-w-[44px] text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 motion-safe:transition-colors"
                 >
                   <span aria-hidden>×</span>
                 </button>
