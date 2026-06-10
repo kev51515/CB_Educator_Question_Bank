@@ -5,6 +5,7 @@
  */
 export { PlayersPanel } from "./PlayersPanel";
 export { LessonsPanel } from "./LessonsPanel";
+export { BriefingsPanel } from "./BriefingsPanel";
 export { AssessmentsPanel } from "./AssessmentsPanel";
 export { DrillsPanel } from "./DrillsPanel";
 export { ProgramsPanel } from "./ProgramsPanel";

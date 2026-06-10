@@ -35,6 +35,7 @@ import { StudentCollegeListCard } from "./counseling/StudentCollegeListCard";
 import { StudentCounselingTasksCard } from "./counseling/StudentCounselingTasksCard";
 import { PlayerProfileCard } from "./pickleball/PlayerProfileCard";
 import { PlayerLessonsTimeline } from "./pickleball/PlayerLessonsTimeline";
+import { LessonCheckinCard } from "./pickleball/LessonCheckinCard";
 import { ProgressCard } from "./pickleball/ProgressCard";
 import { HomeworkCard } from "./pickleball/HomeworkCard";
 import { CoachProfileCard } from "./pickleball/CoachProfileCard";
@@ -536,6 +537,7 @@ export function StudentCourseView(): JSX.Element {
                 </h2>
                 <PlayerProfileCard courseId={course.id} studentId={profile.id} />
                 <ProgressCard courseId={course.id} studentId={profile.id} />
+                <LessonCheckinCard courseId={course.id} studentId={profile.id} />
                 <PlayerLessonsTimeline courseId={course.id} studentId={profile.id} />
                 <HomeworkCard courseId={course.id} studentId={profile.id} />
                 <ChatPanel courseId={course.id} selfId={profile.id} canModerate={false} />
