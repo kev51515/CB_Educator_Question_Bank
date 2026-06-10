@@ -15,6 +15,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { testRunPath } from "@/lib/routes";
 import { useToast } from "@/components/Toast";
+import { SmartDatePicker } from "@/components";
 import { useEscapeKey, useFocusTrap } from "@/hooks";
 import { SkeletonRows } from "@/components/Skeleton";
 import type { ModuleItem } from "@/teacher/useCourseModules";
@@ -29,6 +30,7 @@ interface FtModule {
 
 interface EditTestModulesModalProps {
   item: ModuleItem;
+  courseId: string;
   onClose: () => void;
   onSaved: () => void;
 }
@@ -46,7 +48,7 @@ function parseLink(url: string | null): { slug: string; range: [number, number] 
   return { slug, range };
 }
 
-export function EditTestModulesModal({ item, onClose, onSaved }: EditTestModulesModalProps) {
+export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditTestModulesModalProps) {
   const toast = useToast();
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, true);
@@ -58,6 +60,11 @@ export function EditTestModulesModal({ item, onClose, onSaved }: EditTestModules
   const [loaded, setLoaded] = useState(false);
   const [deployed, setDeployed] = useState<Set<number>>(new Set());
   const [saving, setSaving] = useState(false);
+  // One "Available from" open date for the whole occurrence (NULL = open now).
+  // Seeded from the current occurrence's first in-range position's opens_at.
+  const [opensAt, setOpensAt] = useState<string | null>(null);
+  // Count of students who already submitted a run for the CURRENT module range.
+  const [submittedCount, setSubmittedCount] = useState(0);
 
   // Fetch the test's modules (two-step: tests by slug → test_modules by id),
   // then pre-select the current range (or all modules if the link is full).
@@ -84,20 +91,55 @@ export function EditTestModulesModal({ item, onClose, onSaved }: EditTestModules
       if (!alive) return;
       const mods = (data ?? []) as FtModule[];
       setModules(mods);
+      // The current occurrence's range: the parsed `?m=first-last`, or the full
+      // module span when the link is a plain /test/<slug>.
+      let curFirst: number;
+      let curLast: number;
       if (range) {
         const [first, last] = range;
+        curFirst = first;
+        curLast = last;
         setDeployed(
           new Set(mods.filter((m) => m.position >= first && m.position <= last).map((m) => m.position)),
         );
       } else {
-        setDeployed(new Set(mods.map((m) => m.position)));
+        const positions = mods.map((m) => m.position);
+        curFirst = positions.length ? Math.min(...positions) : 1;
+        curLast = positions.length ? Math.max(...positions) : 1;
+        setDeployed(new Set(positions));
       }
+
+      // Seed the open date from the FIRST in-range position's opens_at.
+      const { data: windows } = await supabase.rpc("get_test_module_windows", {
+        p_course_id: courseId,
+        p_slug: slug,
+      });
+      if (!alive) return;
+      const firstRow = (windows as { position: number; opens_at: string | null }[] | null)?.find(
+        (w) => w.position === curFirst,
+      );
+      setOpensAt(firstRow?.opens_at ?? null);
+
+      // Guard: how many students already submitted a run for the current range
+      // in THIS course (rows with a non-null run_id).
+      const { data: roster } = await supabase.rpc("test_roster_status", {
+        p_slug: slug,
+        p_first: curFirst,
+        p_last: curLast,
+      });
+      if (!alive) return;
+      const rosterRows =
+        (roster as { course_id: string; run_id: string | null }[] | null) ?? [];
+      setSubmittedCount(
+        rosterRows.filter((r) => r.course_id === courseId && r.run_id != null).length,
+      );
+
       setLoaded(true);
     })();
     return () => {
       alive = false;
     };
-  }, [slug, range]);
+  }, [slug, range, courseId]);
 
   // Deployed positions are valid only as a non-empty CONTIGUOUS range (the run
   // walks first→last). Mirrors inline-add.tsx's ftContiguous logic.
@@ -180,6 +222,19 @@ export function EditTestModulesModal({ item, onClose, onSaved }: EditTestModules
         toast.error("Couldn't update modules", error.message);
         return;
       }
+      // Write the single "Available from" date across the new range (NULL =
+      // open now). The link is already saved; a scheduling failure shouldn't
+      // block the modules update — warn but still treat the save as done.
+      const { error: dateError } = await supabase.rpc("set_module_open_date", {
+        p_course_id: courseId,
+        p_slug: slug,
+        p_first: first,
+        p_last: last,
+        p_opens_at: opensAt,
+      });
+      if (dateError) {
+        toast.warning("Modules saved, but the date didn't update", dateError.message);
+      }
       toast.success(
         "Modules updated",
         isSubset ? `${item.title} · modules ${first}–${last}` : `${item.title} · full test`,
@@ -195,6 +250,8 @@ export function EditTestModulesModal({ item, onClose, onSaved }: EditTestModules
     contiguous,
     deployedSorted,
     slug,
+    courseId,
+    opensAt,
     item.id,
     item.title,
     onSaved,
@@ -319,6 +376,24 @@ export function EditTestModulesModal({ item, onClose, onSaved }: EditTestModules
                 </p>
               )}
             </div>
+
+            {/* One open date for the whole occurrence. NULL = open now. */}
+            <div className="block">
+              <SmartDatePicker
+                label="Available from (optional)"
+                value={opensAt}
+                onChange={setOpensAt}
+                allowClear
+              />
+            </div>
+
+            {submittedCount > 0 && (
+              <p className="rounded-md bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-[11px] text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-800">
+                {submittedCount} student{submittedCount === 1 ? "" : "s"} already took the
+                current modules. Changing the modules won&apos;t affect their results —
+                new attempts use the new set.
+              </p>
+            )}
 
             <p className="text-[11px] text-slate-500 dark:text-slate-400">
               Changing the modules affects students who haven't taken it yet;

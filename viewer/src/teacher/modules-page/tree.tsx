@@ -923,6 +923,8 @@ function ModuleCard({
                   <InlineRename
                     value={item.title}
                     disabled={false}
+                    autoEdit
+                    onCancel={() => setRenamingItemId(null)}
                     onSave={async (next) => {
                       await onRenameItem(item, next);
                       setRenamingItemId(null);
@@ -1073,6 +1075,7 @@ function ModuleCard({
       {editModulesItem && (
         <EditTestModulesModal
           item={editModulesItem}
+          courseId={classId}
           onClose={() => setEditModulesItem(null)}
           onSaved={() => {
             void onRefresh();

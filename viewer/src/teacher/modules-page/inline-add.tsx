@@ -236,6 +236,9 @@ export function InlineAddItemRow({
   }
   const [ftModules, setFtModules] = useState<FtModule[]>([]);
   const [ftDeployed, setFtDeployed] = useState<Set<number>>(new Set());
+  // One "Available from" open date for the whole occurrence (NULL = open now),
+  // written via set_module_open_date after the link is inserted.
+  const [ftOpensAt, setFtOpensAt] = useState<string | null>(null);
 
   // Load the chosen test's modules so the teacher can pick a subset. Defaults
   // every module selected (= full test, no windows written).
@@ -450,6 +453,7 @@ export function InlineAddItemRow({
     setPsTitleDirty(false);
     setPsQuery("");
     setPsHighlightIdx(0);
+    setFtOpensAt(null);
   };
 
   const submit = async (keepOpen: boolean = false): Promise<void> => {
@@ -681,6 +685,23 @@ export function InlineAddItemRow({
         if (insertError) {
           toast.error("Couldn't add Full-Test", insertError.message);
           return;
+        }
+        // Write the single "Available from" date across the deployed range
+        // (full test = min..max position). Skip if not set (= open now). A
+        // scheduling failure shouldn't fail the add — warn but keep going.
+        if (ftOpensAt) {
+          const firstPos = first ?? ftDeployedSorted[0];
+          const lastPos = last ?? ftDeployedSorted[ftDeployedSorted.length - 1];
+          const { error: dateError } = await supabase.rpc("set_module_open_date", {
+            p_course_id: classId,
+            p_slug: fullTestSlug,
+            p_first: firstPos,
+            p_last: lastPos,
+            p_opens_at: ftOpensAt,
+          });
+          if (dateError) {
+            toast.warning("Added, but the date didn't update", dateError.message);
+          }
         }
         toast.success(
           "Full-Test added",
@@ -1066,8 +1087,20 @@ export function InlineAddItemRow({
               )}
               <p className="text-[11px] text-slate-400 dark:text-slate-500">
                 All modules = the full test. Deselect to deploy a subset (e.g. Reading &amp;
-                Writing only). Set per-module release dates from the test&apos;s schedule after adding.
+                Writing only).
               </p>
+            </div>
+          )}
+
+          {/* One open date for the whole occurrence. NULL = open now. */}
+          {fullTestSlug && (
+            <div className="block">
+              <SmartDatePicker
+                label="Available from (optional)"
+                value={ftOpensAt}
+                onChange={setFtOpensAt}
+                allowClear
+              />
             </div>
           )}
         </div>

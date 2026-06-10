@@ -16,6 +16,13 @@ interface InlineRenameProps {
   onSave: (next: string) => Promise<void>;
   className?: string;
   titleClassName?: string;
+  /** Start directly in the editing field (e.g. when opened from a "Rename"
+   *  menu item, where showing a click-to-edit title would look like nothing
+   *  happened). */
+  autoEdit?: boolean;
+  /** Called when an autoEdit rename is dismissed (Esc / unchanged blur) so the
+   *  parent can drop the rename state and restore the normal display. */
+  onCancel?: () => void;
 }
 
 /**
@@ -28,8 +35,10 @@ export function InlineRename({
   onSave,
   className,
   titleClassName,
+  autoEdit = false,
+  onCancel,
 }: InlineRenameProps): JSX.Element {
-  const [editing, setEditing] = useState(false);
+  const [editing, setEditing] = useState(autoEdit);
   const [draft, setDraft] = useState(value);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -49,6 +58,7 @@ export function InlineRename({
     if (!trimmed || trimmed === value) {
       setEditing(false);
       setDraft(value);
+      onCancel?.();
       return;
     }
     try {
@@ -75,6 +85,7 @@ export function InlineRename({
             e.preventDefault();
             setDraft(value);
             setEditing(false);
+            onCancel?.();
           }
         }}
         onBlur={() => {
