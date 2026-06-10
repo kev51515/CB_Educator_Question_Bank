@@ -78,6 +78,19 @@ populated **Class B** with the 10 '27-SAT-B names.
   containing a now-excluded letter IN PLACE (auth email+password, identities,
   profile, roster_code in lockstep, preserving id + work); 0 confusable codes
   remain. Docs note the confusable-free alphabet.
+- **Formalized test-content QC + fixed `dsat-june-2026-asia` (`0152`).** New
+  `viewer/scripts/check-test-content.mjs` (`npm run check:content`) scans every
+  `test_questions` row for OCR→seed defects (literal "blank" beside the gap,
+  mid-sentence stray choice periods, a word duplicated before the gap AND in the
+  choices like "seafloor seafloor", `[a]` bracket artifacts, truncation /
+  unbalanced quotes, missing gaps, dropped open/close quotes). Documented in
+  CLAUDE.md as a post-seed gate (must read 0). It found 9 real defects, all in
+  Test #2 (`dsat-june-2026-asia` — M1 Q12/Q16/Q18/Q19/Q20, M2 Q1/Q2/Q10/Q19),
+  fixed by `0152` via targeted regex/jsonb (no full-text retype). Three parallel
+  agents verified that **every flag in the other five tests was a false
+  positive** (periods inside closing quotes, two-underscore `__` gaps,
+  quotation choices). `check:content` now reads **0/456**. ⚠️ Q16's passage may
+  still be truncated in the source seed — verify vs the original PDF.
 
 **Migration ledger note:** `supabase_migrations.schema_migrations` is recorded
 through `0140`; `0141` (parallel session) / `0142` / `0143` ran live via direct
