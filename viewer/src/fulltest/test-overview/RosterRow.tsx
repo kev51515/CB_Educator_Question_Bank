@@ -61,9 +61,19 @@ export function RosterRowView({
   const flagReasons = lr?.flag_reasons ?? [];
   const integrity = fmtIntegrity(lr?.integrity);
   const name = row.student_name ?? "Student";
+  const startedIso = lr?.started_at ?? null;
+  const durationMin =
+    taken && startedIso && row.submitted_at
+      ? Math.max(
+          0,
+          Math.round(
+            (new Date(row.submitted_at).getTime() - new Date(startedIso).getTime()) / 60000,
+          ),
+        )
+      : null;
 
   return (
-    <tr className="bg-white dark:bg-slate-900 transition-colors hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
+    <tr className="divide-x divide-slate-100 bg-white transition-colors hover:bg-slate-50/70 dark:divide-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800/40">
       {/* Student */}
       <td className="py-3 px-3 align-middle">
         <span className="block max-w-[16rem] truncate text-sm font-medium text-slate-900 dark:text-slate-100">
@@ -126,9 +136,24 @@ export function RosterRowView({
       {/* Timing */}
       <td className="py-3 px-3 align-middle">
         {taken ? (
-          <span className="text-xs text-slate-500 dark:text-slate-400">
-            started {fmtTime(lr?.started_at ?? null)} → submitted {fmtTime(row.submitted_at)}
-          </span>
+          <div className="flex flex-col gap-0.5">
+            <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-slate-600 dark:text-slate-300">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-slate-400 dark:text-slate-500">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+              <span className="tabular-nums">{fmtTime(lr?.started_at ?? null)}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-slate-300 dark:text-slate-600">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+              <span className="tabular-nums">{fmtTime(row.submitted_at)}</span>
+            </span>
+            {durationMin != null && (
+              <span className="pl-[18px] text-[11px] tabular-nums text-slate-400 dark:text-slate-500">
+                took {durationMin} min
+              </span>
+            )}
+          </div>
         ) : row.has_in_progress ? (
           <span className="text-xs text-slate-500 dark:text-slate-400">
             {lr?.module_label ?? "In progress"}
@@ -224,7 +249,7 @@ export function RosterRowView({
                 <ActionGroup>
                   {lr?.run_id && (
                     <RowAction
-                      className="rounded-none"
+                      className="rounded-none ring-0 shadow-none"
                       disabled={pauseBusy === lr.run_id}
                       onClick={() => onSetPause(lr.run_id ?? "", !lr.paused, name)}
                       title={lr.paused ? "Resume this student's timer" : "Freeze this student's timer"}
@@ -235,7 +260,7 @@ export function RosterRowView({
                   {lr?.run_id && (
                     <RowAction
                       tone="warn"
-                      className="rounded-none"
+                      className="rounded-none ring-0 shadow-none"
                       onClick={() => onEnd(row, lr.run_id ?? undefined)}
                       title="End this student's test now — grades their answers as-is"
                     >
@@ -244,7 +269,7 @@ export function RosterRowView({
                   )}
                   <RowAction
                     tone="danger"
-                    className="rounded-none"
+                    className="rounded-none ring-0 shadow-none"
                     onClick={() => onReset(row)}
                     title="Wipe their attempt so they can start fresh (requires confirmation)"
                   >

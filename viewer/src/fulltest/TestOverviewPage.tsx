@@ -227,11 +227,16 @@ export function TestOverviewPage(): JSX.Element {
 
   // If a previously-selected course is no longer in the roster (e.g. the test
   // was unassigned from it), fall back to "all" rather than showing nothing.
+  // GUARD: only validate once the roster has actually loaded — `courses` is
+  // derived from `rows`, which is empty during the initial fetch, so running
+  // this while loading would wrongly clear a deep-linked ?course= before the
+  // rows arrive (the bug that made a course-filtered link show every course).
   useEffect(() => {
+    if (rosterLoading || courses.length === 0) return;
     if (courseFilter !== "all" && !courses.some((c) => c.id === courseFilter)) {
       setCourseFilter("all");
     }
-  }, [courses, courseFilter]);
+  }, [courses, courseFilter, rosterLoading]);
 
   const filteredRows = useMemo(
     () => (courseFilter === "all" ? rows : rows.filter((r) => r.course_id === courseFilter)),
@@ -973,7 +978,7 @@ export function TestOverviewPage(): JSX.Element {
           <div className="overflow-x-auto rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 dark:border-slate-800 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                <tr className="divide-x divide-slate-200 border-b border-slate-200 bg-slate-50/70 text-left text-xs uppercase tracking-wide text-slate-500 dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-800/40 dark:text-slate-400">
                   <SortHeader label="Student" sortKey="name" active={sortKey} dir={sortDir} onSort={onSort} />
                   <SortHeader label="Status" sortKey="status" active={sortKey} dir={sortDir} onSort={onSort} />
                   <SortHeader label="Timing" sortKey="submitted" active={sortKey} dir={sortDir} onSort={onSort} />
