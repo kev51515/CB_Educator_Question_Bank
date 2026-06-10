@@ -164,6 +164,100 @@ async function main() {
       "Draft an outline this week; email the AP CS and Math teachers about recommendations."),
   ]);
 
+  // ===== Course-level tabs (this is a demo course, so we clear + reseed) ====
+  await svc.from("course_announcements").delete().eq("course_id", courseId);
+  await svc.from("course_materials").delete().eq("course_id", courseId);
+  await svc.from("discussion_topics").delete().eq("course_id", courseId); // cascades posts
+  await svc.from("portfolio_templates").delete().eq("course_id", courseId); // cascades items/subs/feedback
+
+  // ----- Announcements --------------------------------------------------
+  const ann = (title, body, pinned) => ({
+    course_id: courseId, author_id: counselor, title, body,
+    pinned, published: true, publish_at: null,
+  });
+  await svc.from("course_announcements").insert([
+    ann("Welcome to College Counseling", "This is our hub for everything college + career. Check the Materials tab for key links, keep your Portfolio up to date, and watch here for deadlines and workshops. Questions any time — message me in the Inbox.", true),
+    ann("Juniors: let's map your fall timeline", "If you're in 11th grade, please finalize your college list and line up two teacher recommendations before the summer ends. Book a meeting with me if you haven't yet.", false),
+    ann("Financial Aid 101 — workshop next month", "We'll walk through the FAFSA, CSS Profile, and scholarship search together. Bring a parent/guardian if you can. Details to follow.", false),
+  ]);
+
+  // ----- Materials (links) ----------------------------------------------
+  const mat = (title, url, description, position) => ({
+    course_id: courseId, uploader_id: counselor, kind: "link", title, url,
+    description: description ?? null, position, published: true,
+    file_path: null, file_size: null, mime_type: null,
+  });
+  await svc.from("course_materials").insert([
+    mat("Common App", "https://www.commonapp.org", "Where most applications are submitted — create your account early.", 0),
+    mat("FAFSA — Federal Student Aid", "https://studentaid.gov/h/apply-for-aid/fafsa", "The federal financial-aid form. Opens in the fall.", 1),
+    mat("College Scorecard", "https://collegescorecard.ed.gov", "Compare cost, outcomes, and admissions data.", 2),
+    mat("BigFuture Scholarship Search", "https://bigfuture.collegeboard.org/pay-for-college", "Find scholarships that fit you.", 3),
+    mat("Personal Statement — prompts & tips", "https://www.commonapp.org/apply/essay-prompts", "This year's Common App essay prompts.", 4),
+  ]);
+
+  // ----- Discussions ----------------------------------------------------
+  const { data: topics } = await svc.from("discussion_topics")
+    .insert([
+      { course_id: courseId, author_id: counselor, title: "Introduce yourself + your top career interest", body: "Drop a quick intro: your grade, an activity you love, and one career or major you're curious about right now.", pinned: true, locked: false },
+      { course_id: courseId, author_id: counselor, title: "Summer plans — what are you up to?", body: "Internship, job, volunteering, a class, a project? Share what you're doing this summer — it all counts.", pinned: false, locked: false },
+    ])
+    .select("id, title");
+  const topicId = (t) => topics.find((x) => x.title === t)?.id;
+  const post = (topic, sid, body) => ({ topic_id: topicId(topic), author_id: sid, body, parent_post_id: null });
+  await svc.from("discussion_posts").insert([
+    post("Introduce yourself + your top career interest", mayaId, "Hi! I'm Maya, 9th grade. I play JV soccer and I'm in Science Club — pretty into biology so far. Curious about anything medical or environmental."),
+    post("Introduce yourself + your top career interest", ethanId, "Hey everyone, Ethan, 11th grade. I captain the robotics team and founded our coding club. Aiming for computer science / ML."),
+    post("Summer plans — what are you up to?", ethanId, "Doing a machine-learning research internship at a university lab this summer, plus prepping for a possible SAT retake."),
+  ]);
+
+  // ----- Portfolio ------------------------------------------------------
+  const { data: tmpl } = await svc.from("portfolio_templates")
+    .insert({ course_id: courseId, name: "College Application Portfolio", description: "Build the core pieces of your application here — we'll refine them together.", published: true })
+    .select("id").single();
+  const item = (position, title, item_type, opts = {}) => ({
+    template_id: tmpl.id, position, title, item_type,
+    prompt: opts.prompt ?? null, required: opts.required ?? true,
+    due_at: null, settings: {}, parent_item_id: null,
+  });
+  const { data: items } = await svc.from("portfolio_items")
+    .insert([
+      item(1, "Activities list", "long_text", { prompt: "List your activities with role and hours/week, most important first." }),
+      item(2, "Brag sheet", "long_text", { prompt: "Strengths, accomplishments, and stories your recommenders can use." }),
+      item(3, "Resume", "link", { prompt: "Link to your resume (Google Doc or PDF).", required: false }),
+      item(4, "Personal statement draft", "long_text", { prompt: "Your Common App personal essay draft." }),
+      item(5, "Intended major + why", "short_text", { prompt: "What do you want to study, and why?" }),
+    ])
+    .select("id, title");
+  const itemId = (t) => items.find((x) => x.title === t)?.id;
+  const sub = (itemTitle, sid, opts = {}) => ({
+    item_id: itemId(itemTitle), student_id: sid,
+    status: opts.status ?? "draft",
+    submitted_at: opts.status === "submitted" ? new Date().toISOString() : null,
+    value_text: opts.value_text ?? null, value_url: opts.value_url ?? null,
+    value_file_path: null, value_file_size: null, value_file_mime: null,
+    value_number: null, value_date: null, value_choice: null, value_multi_choice: null,
+  });
+  const { data: subs } = await svc.from("portfolio_submissions")
+    .insert([
+      // Ethan — well along.
+      sub("Activities list", ethanId, { status: "submitted", value_text: "Robotics Team — Captain (10 hrs/wk)\nVarsity Tennis — Co-captain (8 hrs/wk)\nUniversity ML Research Lab — Summer intern (20 hrs/wk)\nCoding Club — Founder & President (4 hrs/wk)\nPeer Math Tutoring — Volunteer (3 hrs/wk)" }),
+      sub("Brag sheet", ethanId, { status: "submitted", value_text: "Built and led a 12-person robotics team to regionals. Founded a coding club that now mentors 30+ younger students. Co-authored a research poster on an ML side project." }),
+      sub("Resume", ethanId, { status: "submitted", value_url: "https://docs.google.com/document/d/EXAMPLE-ethan-resume" }),
+      sub("Personal statement draft", ethanId, { status: "draft", value_text: "When I started the coding club, only three people showed up. By spring we had thirty... (working draft — needs a stronger middle)." }),
+      sub("Intended major + why", ethanId, { status: "submitted", value_text: "Computer Science — I love building things that scale and teaching others to do the same." }),
+      // Maya — just getting started.
+      sub("Activities list", mayaId, { status: "draft", value_text: "Science Club (member), JV Soccer (defender), Library volunteer (weekends)." }),
+      sub("Intended major + why", mayaId, { status: "draft", value_text: "Not sure yet — interested in biology and the environment." }),
+    ])
+    .select("id, item_id, student_id");
+  const psSub = subs.find((s) => s.item_id === itemId("Personal statement draft") && s.student_id === ethanId);
+  if (psSub) {
+    await svc.from("portfolio_feedback").insert({
+      submission_id: psSub.id, author_id: counselor,
+      body: "Strong, specific opening. Tighten the middle paragraph and land on what you learned about leadership — then this is in great shape.",
+    });
+  }
+
   console.log("\nSeeded:");
   console.log(`  • Maya Chen   (9th, 'class of 2030)  → maya.chen.demo@example.com`);
   console.log(`  • Ethan Park  (11th, 'class of 2028) → ethan.park.demo@example.com`);
