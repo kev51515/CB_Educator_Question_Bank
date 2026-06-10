@@ -1,5 +1,33 @@
 # Session Recap
 
+## Pickleball coaching — two course types, full coaching suite (2026-06-11) — DEPLOYED
+
+New **pickleball coaching** vertical layered onto the LMS as two `course_type` values
+(`pickleball_player`, `pickleball_coach`), the same pattern as `counseling`. Migrations
+**`0174`–`0186`** live on prod + merged to `main` (Cloudflare). Canonical doc:
+[`PICKLEBALL.md`](./PICKLEBALL.md); vision [`PICKLEBALL_REQUIREMENTS_v3.md`](./PICKLEBALL_REQUIREMENTS_v3.md).
+
+- **Player track:** profiles (DUPR/goal/…), lessons (markdown plan/recap + recap video by
+  link **and** upload), programs, **assessments** (immutable 10-skill snapshots + level-up
+  vs program band), **drills + homework**, **briefing card + injury check-in**, **events &
+  clinics** (capacity, server-side skill-gate, race-safe FIFO waitlist), community chat.
+- **Coach track:** profiles, certifications, **development plan with auto-completing steps**
+  (hours/shadow/cert threshold → auto-done + notify via DB triggers), hours log + totals,
+  **shadow logs** (mentor sign-off), **admin evaluations**, programs-taught, chat.
+- **Domain layer:** `profiles.domain` (academic/counseling/coaching) drives per-vertical
+  **vocabulary** (Teacher/Counselor/**Coach**; Student/Advisee/**Player**) + **accent color**
+  (indigo/emerald/orange) + a switcher. Presentation/routing only — `role` + RLS untouched.
+- **DB:** 19 `pickleball_*` tables, 42 `pk_*` RPCs (SECURITY DEFINER + RLS educator-full /
+  subject-own), realtime chat publication, storage buckets `pickleball-videos`/`-certs`.
+- **Verified:** structural smoke on prod (constraints, the hours→devstep auto-complete
+  trigger, hours-totals view, injury notification fan-out) — all green, rolled back.
+- **Built via subagent workflows** in an isolated git worktree (`feat/pickleball-coaching`)
+  to avoid disturbing the parallel session's shared tree. `main` raced `0146`→`0189` during
+  the build; final clean block `0174`–`0186`; prod push gated on a 13/13 `db push --dry-run`
+  (it matches by numeric prefix, so a same-numbered parallel migration would silently skip).
+- **Follow-ups:** `smoke-pickleball.mjs` (auth/RLS/RPC end-to-end — in progress); lock the
+  `pickleball-certs` bucket to private + signed URLs; minor per-increment QA notes (see PICKLEBALL.md).
+
 ## CB OG #1–#10 — 10 College Board practice tests imported, with figures (2026-06-11) — DEPLOYED
 
 Imported the ten official College Board **linear** Digital SAT practice tests as
