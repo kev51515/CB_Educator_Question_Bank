@@ -1690,8 +1690,15 @@ function FullTestRunner() {
           student exits fullscreen mid-test. The only way out is back into
           fullscreen — the button calls requestFullscreen() inside its click
           handler (required for a transient activation). The timer is NOT
-          paused; the section clock keeps running behind the overlay. */}
-      {fsLockout && (
+          paused; the section clock keeps running behind the overlay.
+
+          BUT suppress it while the submit-section or exit dialog is open: the
+          browser exits fullscreen on Esc (unpreventable), and the lockout
+          (z-80) would otherwise slam on top of the submit window (z-50) and
+          trap the student at the end of the test, unable to finish. Keeping
+          the lockout hidden lets them complete the submit; it reappears if
+          they cancel back into the still-running section. */}
+      {fsLockout && !pendingSectionSubmit && !confirmExit && (
         <FullscreenLockout onReturn={enterFullscreen} />
       )}
     </div>
