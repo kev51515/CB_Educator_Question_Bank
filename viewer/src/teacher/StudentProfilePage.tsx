@@ -36,6 +36,7 @@ import { useProfile } from "@/lib/profile";
 import { canAccessQuestionBank } from "@/lib/access";
 import { CounselingProfilePanel } from "./counseling/CounselingProfilePanel";
 import { CollegeApplicationsPanel } from "./counseling/CollegeApplicationsPanel";
+import { StudentDeadlinesTimeline } from "./counseling/StudentDeadlinesTimeline";
 import { CounselingTasksPanel } from "./counseling/CounselingTasksPanel";
 import { CounselingMeetingsPanel } from "./counseling/CounselingMeetingsPanel";
 import { CounselorAiCard } from "./counseling/CounselorAiCard";
@@ -231,6 +232,7 @@ export function StudentProfilePage(): JSX.Element {
               </h2>
               <CounselingProfilePanel courseId={course.id} studentId={header.id} />
               <CollegeApplicationsPanel courseId={course.id} studentId={header.id} />
+              <StudentDeadlinesTimeline courseId={course.id} studentId={header.id} />
               <CounselingTasksPanel courseId={course.id} studentId={header.id} />
               <CounselingMeetingsPanel courseId={course.id} studentId={header.id} />
               <CounselorAiCard courseId={course.id} />

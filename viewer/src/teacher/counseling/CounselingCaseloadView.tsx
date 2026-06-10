@@ -17,6 +17,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useClassContext } from "../classLayoutContext";
+import { CaseloadDeadlinesTimeline } from "./CaseloadDeadlinesTimeline";
 import { courseStudentProfilePath, coursePeoplePath } from "@/lib/routes";
 import { SkeletonRows } from "@/components/Skeleton";
 import { useToast } from "@/components";
@@ -456,6 +457,9 @@ export function CounselingCaseloadView() {
           in this counseling course.
         </p>
       </header>
+
+      {/* "Who has what due when" — every student's upcoming deadlines in order. */}
+      <CaseloadDeadlinesTimeline courseId={cls.id} />
 
       {error && (
         <p className="rounded-lg bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-3 py-2 text-sm text-rose-700 dark:text-rose-300">
