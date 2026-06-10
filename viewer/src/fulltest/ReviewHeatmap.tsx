@@ -22,6 +22,8 @@
 import { useMemo, useRef, useState } from "react";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { downloadCsv } from "@/lib/csv";
+import { PacingHeatmapTab } from "./PacingHeatmapTab";
+import type { PacingQuestionRef } from "./PacingChart";
 import { band, BANDS, isChoiceLetter, LEGEND_GRADIENT, orderDomains, orderSections, sectionLabel } from "./skills";
 import type { TestContentModule } from "./testContent";
 
@@ -42,8 +44,12 @@ interface Props {
   onClose: () => void;
   courseTitle?: string | null;
   taken?: number;
-  /** test slug, for the CSV filename */
+  /** test slug, for the CSV filename + the pacing roster fetch */
   slug?: string;
+  /** selected course (null = all classes) — scopes the pacing roster */
+  courseId?: string | null;
+  /** module range scoping (Module-1-only review, etc.) for the pacing roster */
+  moduleRange?: { first: number; last: number } | null;
 }
 
 interface Cell {
@@ -82,9 +88,26 @@ export function ReviewHeatmap({
   courseTitle,
   taken,
   slug,
+  courseId,
+  moduleRange,
 }: Props): JSX.Element {
   const dialogRef = useRef<HTMLDivElement>(null);
   useFocusTrap(dialogRef, true);
+
+  // Ordered question refs for the pacing chart (test order, with module labels).
+  const pacingQuestions = useMemo<PacingQuestionRef[]>(
+    () =>
+      modules.flatMap((m) =>
+        m.questions.map((q) => ({
+          id: q.id,
+          number: q.number,
+          module: m.position,
+          moduleLabel: m.label,
+        })),
+      ),
+    [modules],
+  );
+  const pacingAvailable = !!slug && pacingQuestions.length > 0;
 
   const jump = (c: Cell) => {
     onJump(c.mIdx, c.qIdx);
@@ -171,7 +194,7 @@ export function ReviewHeatmap({
     return w;
   }, [skill]);
 
-  const [view, setViewState] = useState<"question" | "skill">(() => {
+  const [view, setViewState] = useState<"question" | "skill" | "pacing">(() => {
     if (!hasDomains) return "question";
     try {
       return window.localStorage.getItem(VIEW_KEY) === "question" ? "question" : "skill";
@@ -179,8 +202,10 @@ export function ReviewHeatmap({
       return "skill";
     }
   });
-  const setView = (v: "question" | "skill") => {
+  const setView = (v: "question" | "skill" | "pacing") => {
     setViewState(v);
+    // Pacing is a transient pivot — don't persist it as the default grouping.
+    if (v === "pacing") return;
     try {
       window.localStorage.setItem(VIEW_KEY, v);
     } catch {
@@ -188,6 +213,23 @@ export function ReviewHeatmap({
     }
   };
   const anyData = overall != null;
+
+  // Tabs: the correctness groupings (By skill / By question) plus Pacing when a
+  // roster is fetchable. Pacing can show even before any answers are graded.
+  const tabs = useMemo<Array<{ key: "skill" | "question" | "pacing"; label: string }>>(() => {
+    const t: Array<{ key: "skill" | "question" | "pacing"; label: string }> = [];
+    if (hasDomains && anyData) {
+      t.push({ key: "skill", label: "By skill" });
+      t.push({ key: "question", label: "By question" });
+    } else if (anyData) {
+      t.push({ key: "question", label: "By question" });
+    }
+    if (pacingAvailable) t.push({ key: "pacing", label: "Pacing" });
+    return t;
+  }, [hasDomains, anyData, pacingAvailable]);
+  // Fall back to the first available tab if the persisted view isn't offered
+  // (e.g. a no-responses-yet test where only Pacing is reachable).
+  const effView = tabs.some((t) => t.key === view) ? view : tabs[0]?.key ?? view;
 
   return (
     <div
@@ -237,22 +279,22 @@ export function ReviewHeatmap({
             </div>
 
             <div className="flex shrink-0 items-center gap-2">
-              {hasDomains && anyData && (
+              {tabs.length > 1 && (
                 <div className="flex rounded-lg bg-slate-100 p-0.5 text-xs font-medium dark:bg-slate-800" role="tablist" aria-label="Heatmap grouping">
-                  {(["skill", "question"] as const).map((v) => (
+                  {tabs.map((t) => (
                     <button
-                      key={v}
+                      key={t.key}
                       type="button"
                       role="tab"
-                      aria-selected={view === v}
-                      onClick={() => setView(v)}
+                      aria-selected={effView === t.key}
+                      onClick={() => setView(t.key)}
                       className={`rounded-md px-3 py-1 transition-colors ${
-                        view === v
+                        effView === t.key
                           ? "bg-white text-slate-900 shadow-sm dark:bg-slate-700 dark:text-slate-100"
                           : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
                       }`}
                     >
-                      {v === "skill" ? "By skill" : "By question"}
+                      {t.label}
                     </button>
                   ))}
                 </div>
@@ -343,13 +385,20 @@ export function ReviewHeatmap({
 
         {/* ---- scrollable body ---- */}
         <div className="min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-7">
-          {!anyData ? (
+          {effView === "pacing" ? (
+            <PacingHeatmapTab
+              slug={slug ?? ""}
+              courseId={courseId ?? null}
+              moduleRange={moduleRange ?? null}
+              questions={pacingQuestions}
+            />
+          ) : !anyData ? (
             <div className="grid h-full place-items-center">
               <p className="max-w-sm rounded-xl bg-slate-50 px-6 py-8 text-center text-sm text-slate-500 ring-1 ring-slate-200 dark:bg-slate-800/40 dark:text-slate-400 dark:ring-slate-800">
                 No responses yet — the heatmap fills in once students submit this test.
               </p>
             </div>
-          ) : view === "skill" ? (
+          ) : effView === "skill" ? (
             <div className="space-y-5">
               {weakest && (
                 <p className="text-xs text-slate-500 dark:text-slate-400">

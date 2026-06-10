@@ -16,6 +16,7 @@ import { useToast } from "@/components/Toast";
 import { ROUTES, buildPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
 import ProctorTimeline from "./ProctorTimeline";
+import { PacingChartCard, type PacingQuestionRef } from "./PacingChart";
 import { getRunReplay, type ReplayData } from "./api";
 import {
   reconstructAt,
@@ -85,6 +86,18 @@ export function ReplayPage(): JSX.Element {
   }, [data, events, startMs]);
 
   const qIndex = useMemo(() => buildQuestionIndex(data?.modules ?? []), [data]);
+  const pacingQuestions = useMemo<PacingQuestionRef[]>(
+    () =>
+      (data?.modules ?? []).flatMap((m) =>
+        m.questions.map((q) => ({
+          id: q.id,
+          number: q.number,
+          module: m.position,
+          moduleLabel: m.label ?? `Module ${m.position}`,
+        })),
+      ),
+    [data],
+  );
   const dwell = useMemo(() => buildDwell(events, startMs), [events, startMs]);
   const maxDwell = useMemo(() => dwell.reduce((mx, d) => Math.max(mx, d.seconds), 0), [dwell]);
   const state = useMemo(() => reconstructAt(events, tMs, startMs), [events, tMs, startMs]);
@@ -284,6 +297,15 @@ export function ReplayPage(): JSX.Element {
             currentKey={curKey}
             onJump={(ms) => jumpTo(ms)}
           />
+
+          {/* Pace per question vs. fastest/slowest 25% of the class */}
+          {pacingQuestions.length > 0 && (
+            <PacingChartCard
+              runId={runId}
+              questions={pacingQuestions}
+              studentName={run.student_name}
+            />
+          )}
 
           {/* Reconstructed question (read-only) */}
           {curNote.trim() && (

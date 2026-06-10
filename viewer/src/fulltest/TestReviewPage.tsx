@@ -720,6 +720,8 @@ export function TestReviewPage(): JSX.Element {
           courseTitle={selectedCourse?.title ?? null}
           taken={selectedCourse?.taken}
           slug={slug}
+          courseId={courseId}
+          moduleRange={moduleRange}
         />
       )}
 
