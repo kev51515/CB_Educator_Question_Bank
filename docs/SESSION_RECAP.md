@@ -1,5 +1,27 @@
 # Session Recap
 
+## 2026-06-10 (deploy cut) — test-access gate, retake policy, underline, mobile UX
+
+Shipped to main + deployed (cherry-picked from `feat/test-access-policy`; the
+parallel branch's `0143–0146` module-windows + Phase 2 UI were intentionally
+EXCLUDED from this cut):
+
+- **Test access + retakes — migration 0141 (applied).** Enrollment gate on
+  `start_test` (non-staff must be enrolled in a course linking the test, else
+  `not_enrolled`; gates take + resume; staff exempt) — a removed/deleted-course
+  student can no longer take/continue, but their own released result stays
+  viewable. Per-test `tests.retake_policy` (`one_attempt` | `unlimited`
+  practice) + staff toggle on the test overview. Smoke `smoke:test-access`.
+- **Underline rendering + data.** `passageRender` renders `<u>…</u>`
+  offset-safely; `seed-underline-spans.mjs` (anchor-based, exact-by-construction)
+  restores the 14 prose underline spans (nov-2023 1-11 figure-baked, excluded).
+- **Mobile UX pass (25 student files).** 16px inputs (no iOS auto-zoom), ≥44px
+  tap targets, narrow-screen stacking across first page/auth, chrome, full-test
+  runner, assignment runner, course/counseling/inbox/account — mobile-first,
+  desktop unchanged.
+- **Courses card** text is selectable/copyable (role=button div, not a native
+  `<button>`); click still navigates.
+
 ## Latest (2026-06-10) — login-code claim fix, highlighter on answer choices, per-question pacing
 
 Three shipments to `main` (DB live on prod via psql; SPA build green on CI).
