@@ -81,6 +81,25 @@ export function TestOverviewPage(): JSX.Element {
   const [test, setTest] = useState<TestRow | null>(null);
   const [modules, setModules] = useState<ModuleRow[]>([]);
   const [rows, setRows] = useState<RosterRow[]>([]);
+  // Per-course filter (0142): the same full-length test can be assigned to
+  // several courses, so the roster RPC returns one row per (student, course).
+  // This narrows the page to one course's students + stats at a time. Persisted
+  // per-slug so a teacher's last selection survives reloads.
+  const courseFilterKey = `test-overview.course.${slug}`;
+  const [courseFilter, setCourseFilter] = useState<string | "all">(() => {
+    try {
+      return localStorage.getItem(`test-overview.course.${slug}`) ?? "all";
+    } catch {
+      return "all";
+    }
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem(courseFilterKey, courseFilter);
+    } catch {
+      /* ignore quota / private-mode failures */
+    }
+  }, [courseFilterKey, courseFilter]);
   const [live, setLive] = useState<Map<string, LiveInfo>>(() => new Map());
   const [metaLoading, setMetaLoading] = useState(true);
   const [rosterLoading, setRosterLoading] = useState(true);
@@ -182,8 +201,36 @@ export function TestOverviewPage(): JSX.Element {
     void refreshRoster();
   }, [refreshRoster]);
 
-  // --- derived cohort stats ---
+  // --- per-course filter derivations ---
+  // Distinct courses present in the roster, sorted by name. The filter UI only
+  // renders when there's more than one (a single-course test needs no filter).
+  const courses = useMemo(() => {
+    const byId = new Map<string, { id: string; name: string; count: number }>();
+    for (const r of rows) {
+      if (!r.course_id) continue;
+      const existing = byId.get(r.course_id);
+      if (existing) existing.count += 1;
+      else byId.set(r.course_id, { id: r.course_id, name: r.course_name ?? "Course", count: 1 });
+    }
+    return Array.from(byId.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [rows]);
+
+  // If a previously-selected course is no longer in the roster (e.g. the test
+  // was unassigned from it), fall back to "all" rather than showing nothing.
+  useEffect(() => {
+    if (courseFilter !== "all" && !courses.some((c) => c.id === courseFilter)) {
+      setCourseFilter("all");
+    }
+  }, [courses, courseFilter]);
+
+  const filteredRows = useMemo(
+    () => (courseFilter === "all" ? rows : rows.filter((r) => r.course_id === courseFilter)),
+    [rows, courseFilter],
+  );
+
+  // --- derived cohort stats (scoped to the visible course) ---
   const stats = useMemo(() => {
+    const rows = filteredRows;
     const assigned = rows.length;
     const taken = rows.filter((r) => r.run_id !== null);
     const inProgress = rows.filter((r) => r.run_id === null && r.has_in_progress).length;
@@ -208,23 +255,61 @@ export function TestOverviewPage(): JSX.Element {
       if (b) b.n += 1;
     }
     return { assigned, taken: taken.length, inProgress, notStarted, released, avg, top, low, bands };
-  }, [rows]);
+  }, [filteredRows]);
 
   const allReleased = stats.taken > 0 && stats.released === stats.taken;
 
   // --- actions ---
+  // Release / hide all results for the *visible* roster. When viewing "All
+  // courses" we use the test-wide RPC (one round-trip). When a single course is
+  // selected we scope to just that course's submitted runs by calling the
+  // per-run release RPC for each — so a teacher releasing Course A's scores
+  // doesn't accidentally reveal Course B's.
   const onBulk = async (released: boolean): Promise<void> => {
     setBulkBusy(true);
     try {
-      const { data, error } = await supabase.rpc("release_test_results_for_teacher", {
-        p_slug: slug,
-        p_released: released,
-      });
-      if (error) {
-        toast.error("Couldn't update", error.message);
-        return;
+      if (courseFilter === "all") {
+        const { data, error } = await supabase.rpc("release_test_results_for_teacher", {
+          p_slug: slug,
+          p_released: released,
+        });
+        if (error) {
+          toast.error("Couldn't update", error.message);
+          return;
+        }
+        toast.success(
+          released ? `Released ${data} result${data === 1 ? "" : "s"}` : "Results hidden",
+        );
+      } else {
+        // Only act on rows whose released state actually needs to change.
+        const targets = filteredRows.filter(
+          (r) => r.run_id !== null && (r.results_released_at !== null) !== released,
+        );
+        if (targets.length === 0) {
+          toast.info(released ? "Nothing to release" : "Nothing to hide");
+          return;
+        }
+        const results = await Promise.all(
+          targets.map((r) =>
+            supabase.rpc("release_test_results", {
+              p_run_id: r.run_id as string,
+              p_released: released,
+            }),
+          ),
+        );
+        const failed = results.filter((res) => res.error).length;
+        const ok = targets.length - failed;
+        if (failed > 0) {
+          toast.error(
+            "Some updates failed",
+            `${ok} of ${targets.length} ${released ? "released" : "hidden"}.`,
+          );
+        } else {
+          toast.success(
+            released ? `Released ${ok} result${ok === 1 ? "" : "s"}` : "Results hidden",
+          );
+        }
       }
-      toast.success(released ? `Released ${data} result${data === 1 ? "" : "s"}` : "Results hidden");
       await refreshRoster();
     } catch (e: unknown) {
       toast.error("Couldn't update", errMsg(e, "Try again."));
@@ -744,6 +829,50 @@ export function TestOverviewPage(): JSX.Element {
         </section>
       </div>
 
+      {/* per-course filter — only when the test spans more than one course */}
+      {courses.length > 1 && (
+        <section
+          aria-label="Filter by course"
+          className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 px-5 py-4"
+        >
+          <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            Course
+          </h2>
+          <div
+            role="radiogroup"
+            aria-label="Filter students by course"
+            className="flex flex-wrap items-center gap-1.5"
+          >
+            {([{ id: "all", name: "All courses", count: rows.length }, ...courses]).map((c) => {
+              const active = courseFilter === c.id;
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  role="radio"
+                  aria-checked={active}
+                  onClick={() => setCourseFilter(c.id)}
+                  className={`inline-flex min-h-[40px] items-center gap-1.5 rounded-full px-3.5 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
+                    active
+                      ? "bg-indigo-600 text-white shadow-sm"
+                      : "ring-1 ring-slate-300 text-slate-600 hover:bg-slate-50 dark:ring-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+                  }`}
+                >
+                  <span className="truncate max-w-[14rem]">{c.name}</span>
+                  <span
+                    className={`tabular-nums text-xs ${
+                      active ? "text-indigo-100" : "text-slate-400 dark:text-slate-500"
+                    }`}
+                  >
+                    {c.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* student roster */}
       <section className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -807,9 +936,13 @@ export function TestOverviewPage(): JSX.Element {
             body="Add this test to a course's Modules to assign it — then completion and scores show up here."
             cta={{ label: "Assign to course", onClick: () => setAssignOpen(true) }}
           />
+        ) : filteredRows.length === 0 ? (
+          <p className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+            No students in this course yet.
+          </p>
         ) : (
           <ul className="divide-y divide-slate-100 dark:divide-slate-800 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
-            {rows.map((row) => {
+            {filteredRows.map((row) => {
               const lr = live.get(row.student_id);
               return (
                 <RosterRowView

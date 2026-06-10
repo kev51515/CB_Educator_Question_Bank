@@ -30,6 +30,13 @@ export interface RosterRow {
   submitted_at: string | null;
   results_released_at: string | null;
   has_in_progress: boolean;
+  /**
+   * 0142: roster is one row per (student, course) — these identify which
+   * course this enrolment row belongs to, so the overview can filter by
+   * course when the same test is assigned to several.
+   */
+  course_id: string;
+  course_name: string;
 }
 /** Live snapshot per student (test_live_progress) merged into the roster. */
 export interface LiveInfo {
