@@ -22,15 +22,23 @@ export default {
           800: "#1d1d20",
           900: "#000000",
         },
-        // SF / iOS system blue
+        // Domain accent — re-themes live per active domain (academic=indigo,
+        // counseling=emerald, coaching=orange). The ramp maps to CSS custom
+        // properties set by DomainProvider onto :root; index.css seeds the
+        // indigo (academic) default so accent-* works before the provider runs.
+        // See lib/domain.ts + lib/DomainProvider.tsx.
         accent: {
-          50: "#eff8ff",
-          100: "#dbedff",
-          200: "#bfe0ff",
-          400: "#3b9eff",
-          500: "#0a84ff",
-          600: "#007aff",
-          700: "#0064d3",
+          50: "var(--accent-50)",
+          100: "var(--accent-100)",
+          200: "var(--accent-200)",
+          300: "var(--accent-300)",
+          400: "var(--accent-400)",
+          500: "var(--accent-500)",
+          600: "var(--accent-600)",
+          700: "var(--accent-700)",
+          800: "var(--accent-800)",
+          900: "var(--accent-900)",
+          950: "var(--accent-950)",
         },
       },
       fontFamily: {

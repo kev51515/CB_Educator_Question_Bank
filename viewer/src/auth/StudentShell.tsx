@@ -25,6 +25,7 @@ import { useStudentSession } from "./session";
 import { useProfile } from "@/lib/profile";
 import { CommandPalette, type Command } from "@/components/CommandPalette";
 import { ShortcutsHelp } from "@/components/ShortcutsHelp";
+import { DomainSwitcher } from "@/components";
 import {
   STUDENT_RECENT_COMMANDS_CAP,
   readStudentRecentCommandIds,
@@ -98,7 +99,7 @@ function railLinkClass({ isActive }: { isActive: boolean }): string {
   return [
     "flex items-center gap-3 px-3 py-3 min-h-[44px] rounded-lg text-sm font-medium transition-colors w-full",
     isActive
-      ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-200 ring-1 ring-indigo-200 dark:ring-indigo-900"
+      ? "bg-accent-50 text-accent-700 dark:bg-accent-950/60 dark:text-accent-200 ring-1 ring-accent-200 dark:ring-accent-900"
       : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800",
   ].join(" ");
 }
@@ -273,6 +274,13 @@ export function StudentShell() {
             >
               Student
             </p>
+            {/* Domain switcher — re-themes the accent + relabels vocabulary
+                live. Hidden when the rail is collapsed (icon-only). */}
+            {!collapsed && (
+              <div className="mt-2">
+                <DomainSwitcher />
+              </div>
+            )}
           </div>
 
           <NavLink
@@ -610,7 +618,7 @@ function StudentMobileTabBar({ homePath }: { homePath: string }) {
             className={
               "flex-1 min-h-[56px] flex flex-col items-center justify-center gap-1 py-2 transition-colors " +
               (active
-                ? "text-indigo-600 dark:text-indigo-400"
+                ? "text-accent-600 dark:text-accent-400"
                 : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200")
             }
           >

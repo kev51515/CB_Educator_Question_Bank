@@ -16,6 +16,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.tsx";
 import { ErrorBoundary, ToastProvider } from "@/components";
+import { DomainProvider } from "@/lib/DomainProvider";
 import { AuthGate } from "@/auth";
 import { registerServiceWorker } from "./registerSW";
 import { captureError, initTelemetry } from "@/lib/telemetry";
@@ -51,9 +52,15 @@ createRoot(document.getElementById("root")!).render(
     <ErrorBoundary>
       <BrowserRouter>
         <ToastProvider>
-          <AuthGate>
-            <App />
-          </AuthGate>
+          {/* DomainProvider owns the active product-vertical domain (vocabulary
+              + live accent theme). It sits inside ToastProvider (it toasts on a
+              failed switch) and wraps AuthGate so BOTH the educator and student
+              shells render under it and re-theme with the active domain. */}
+          <DomainProvider>
+            <AuthGate>
+              <App />
+            </AuthGate>
+          </DomainProvider>
         </ToastProvider>
       </BrowserRouter>
     </ErrorBoundary>

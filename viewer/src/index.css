@@ -40,6 +40,23 @@ body {
      page-level sticky headers and full-height panes can offset beneath it;
      defaults to 0 everywhere else (e.g. the student shell). */
   --app-chrome-top: 0px;
+
+  /* Domain accent ramp. Tailwind's `accent-*` utilities map to these vars
+     (tailwind.config.js). Seeded here with the academic = indigo default so
+     `accent-*` renders correctly before DomainProvider runs; the provider
+     overwrites these on document.documentElement per the active domain
+     (academic=indigo, counseling=emerald, coaching=orange). */
+  --accent-50: #eef2ff;
+  --accent-100: #e0e7ff;
+  --accent-200: #c7d2fe;
+  --accent-300: #a5b4fc;
+  --accent-400: #818cf8;
+  --accent-500: #6366f1;
+  --accent-600: #4f46e5;
+  --accent-700: #4338ca;
+  --accent-800: #3730a3;
+  --accent-900: #312e81;
+  --accent-950: #1e1b4b;
 }
 .dark {
   --bg-primary: #111113;

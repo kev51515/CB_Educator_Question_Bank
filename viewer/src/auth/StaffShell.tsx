@@ -21,7 +21,9 @@ import {
   useState,
   type CSSProperties,
 } from "react";
-import { Breadcrumbs, BreadcrumbProvider } from "@/components";
+import { Breadcrumbs, BreadcrumbProvider, DomainSwitcher } from "@/components";
+import { useDomain } from "@/lib/DomainProvider";
+import { educatorLabel } from "@/lib/domain";
 import { ROUTES } from "@/lib/routes";
 import { StudentBadge } from "./StudentBadge";
 import {
@@ -142,6 +144,10 @@ export function StaffShell() {
   const isAdmin = profile?.role === "admin";
   const workspace = useWorkspace();
   const adminWorkspace = isAdmin && workspace === "admin";
+
+  // Active product-vertical domain (Teacher / Counselor / Coach) — drives the
+  // header label + the DomainSwitcher chip in the rail.
+  const { domain } = useDomain();
 
   const [paletteOpen, setPaletteOpen] = useState(false);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
@@ -463,8 +469,17 @@ export function StaffShell() {
                 aria-hidden={collapsed}
                 className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate"
               >
-                Educator
+                {educatorLabel(domain)}
               </p>
+            )}
+            {/* Domain switcher (Academic / Counseling / Coaching). Re-themes
+                the accent + relabels educator vocabulary live. Hidden when the
+                admin workspace is active, where the WorkspaceSwitcher owns this
+                header slot. */}
+            {!adminWorkspace && (
+              <div className="mt-2">
+                <DomainSwitcher />
+              </div>
             )}
           </div>
 
@@ -528,7 +543,7 @@ export function StaffShell() {
                 aria-expanded={!collapsed}
                 aria-controls="staff-shell-sidebar"
                 title={collapsed ? "Expand sidebar (⌘B)" : "Collapse sidebar (⌘B)"}
-                className="hidden md:inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100 motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                className="hidden md:inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100 motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
               >
                 <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                   <rect x={3} y={4} width={18} height={16} rx={2} />

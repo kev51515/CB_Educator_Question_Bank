@@ -40,6 +40,7 @@ export { useChoiceNotes } from "./ChoiceAnalysis";
 export * from "./CommandPalette";
 export * from "./ConfidenceRating";
 export * from "./DarkModeToggle";
+export { DomainSwitcher } from "./DomainSwitcher";
 export * from "./Detail";
 export * from "./DetailEmptyStates";
 export * from "./DetailFootnote";

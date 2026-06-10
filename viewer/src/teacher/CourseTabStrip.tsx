@@ -58,7 +58,7 @@ function applyOrder(tabs: CourseTab[], ids: string[]): CourseTab[] {
 function tabClass({ isActive }: { isActive: boolean }): string {
   return `whitespace-nowrap min-h-[40px] md:min-h-0 inline-flex items-center px-3 py-2.5 md:py-2 text-sm font-medium border-b-2 transition-colors ${
     isActive
-      ? "border-indigo-600 text-indigo-700 dark:text-indigo-300"
+      ? "border-accent-600 text-accent-700 dark:text-accent-300"
       : "border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700"
   }`;
 }

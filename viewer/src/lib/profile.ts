@@ -13,6 +13,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { AuthChangeEvent, Session as SupabaseAuthSession } from "@supabase/supabase-js";
 import { supabase } from "./supabase";
+import type { Domain } from "./domain";
 
 export type ProfileRole = "student" | "teacher" | "admin";
 
@@ -27,6 +28,12 @@ export interface Profile {
   managed: boolean;
   /** The login username for managed students (e.g. "KQAZNP-04"); else null. */
   login_code: string | null;
+  /**
+   * The user's active product-vertical domain ('academic' | 'counseling' |
+   * 'coaching'), or null when unset (the client derives a default). Drives
+   * vocabulary + accent theming. See lib/domain.ts + migration 0171.
+   */
+  domain: Domain | null;
 }
 
 export interface UseProfile {
@@ -65,6 +72,10 @@ function toProfile(row: unknown): Profile | null {
     typeof r.display_name === "string" || r.display_name === null ? r.display_name : null;
   const loginCode =
     typeof r.login_code === "string" ? r.login_code : null;
+  const domain =
+    r.domain === "academic" || r.domain === "counseling" || r.domain === "coaching"
+      ? r.domain
+      : null;
   return {
     id: r.id,
     email: r.email,
@@ -74,6 +85,7 @@ function toProfile(row: unknown): Profile | null {
     updated_at: r.updated_at,
     managed: r.managed === true,
     login_code: loginCode,
+    domain,
   };
 }
 
@@ -92,7 +104,7 @@ export function useProfile(): UseProfile {
     try {
       const { data, error: queryError } = await supabase
         .from("profiles")
-        .select("id, email, display_name, role, created_at, updated_at, managed, login_code")
+        .select("id, email, display_name, role, created_at, updated_at, managed, login_code, domain")
         .eq("id", userId)
         .single();
       if (queryError) {
