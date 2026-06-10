@@ -1210,7 +1210,7 @@ function FullTestRunner() {
           <button
             type="button"
             onClick={() => setConfirmExit(true)}
-            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="inline-flex items-center gap-1.5 min-h-[44px] rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
             title="Save your progress and leave — the section timer keeps running"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -1233,7 +1233,7 @@ function FullTestRunner() {
                 }
               }}
               className={[
-                "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-medium transition",
+                "inline-flex items-center gap-1.5 min-h-[44px] rounded-lg border px-3 py-1.5 text-sm font-medium transition",
                 calcOpen
                   ? "border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400 dark:bg-blue-950/50 dark:text-blue-300"
                   : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
@@ -1370,7 +1370,7 @@ function FullTestRunner() {
             type="button"
             onClick={() => setNavOpen((o) => !o)}
             aria-expanded={navOpen}
-            className="flex items-center gap-2 rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white dark:bg-slate-200 dark:text-slate-900"
+            className="inline-flex items-center gap-2 min-h-[44px] rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white dark:bg-slate-200 dark:text-slate-900"
           >
             Question {index + 1} of {questions.length}
             <svg
@@ -1392,7 +1392,7 @@ function FullTestRunner() {
             type="button"
             disabled={index === 0}
             onClick={() => setIndex((i) => Math.max(0, i - 1))}
-            className="rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-700 disabled:opacity-40 dark:border-slate-600 dark:text-slate-200"
+            className="min-h-[44px] rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-700 disabled:opacity-40 dark:border-slate-600 dark:text-slate-200"
           >
             Back
           </button>
@@ -1400,7 +1400,7 @@ function FullTestRunner() {
             <button
               type="button"
               onClick={() => setIndex((i) => Math.min(questions.length - 1, i + 1))}
-              className="rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+              className="min-h-[44px] rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
             >
               Next
             </button>
@@ -1408,7 +1408,7 @@ function FullTestRunner() {
             <button
               type="button"
               onClick={() => setPendingSectionSubmit({ blanks: questions.length - answeredCount })}
-              className="rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+              className="min-h-[44px] rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
             >
               Submit
             </button>

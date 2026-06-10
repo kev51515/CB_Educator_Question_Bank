@@ -373,7 +373,7 @@ export function QBankAssignmentRunner({
         <button
           type="button"
           onClick={onExit}
-          className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-1.5 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+          className="min-h-11 inline-flex items-center rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-1.5 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
         >
           Back
         </button>
@@ -388,14 +388,14 @@ export function QBankAssignmentRunner({
             <button
               type="button"
               onClick={handleRestoreStaged}
-              className="rounded-md bg-amber-600 hover:bg-amber-700 text-white text-xs font-medium px-3 py-1.5"
+              className="min-h-11 inline-flex items-center rounded-md bg-amber-600 hover:bg-amber-700 text-white text-xs font-medium px-3 py-1.5"
             >
               Restore
             </button>
             <button
               type="button"
               onClick={handleDismissStaged}
-              className="rounded-md ring-1 ring-amber-300 dark:ring-amber-800 text-xs font-medium px-3 py-1.5 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-900/40"
+              className="min-h-11 inline-flex items-center rounded-md ring-1 ring-amber-300 dark:ring-amber-800 text-xs font-medium px-3 py-1.5 text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-900/40"
             >
               Dismiss
             </button>
@@ -425,14 +425,14 @@ export function QBankAssignmentRunner({
               <button
                 type="button"
                 onClick={handleRetry}
-                className="rounded-md bg-rose-600 hover:bg-rose-700 text-white text-xs font-medium px-3 py-1.5"
+                className="min-h-11 inline-flex items-center rounded-md bg-rose-600 hover:bg-rose-700 text-white text-xs font-medium px-3 py-1.5"
               >
                 Retry
               </button>
               <button
                 type="button"
                 onClick={handleDownloadAnswers}
-                className="rounded-md ring-1 ring-rose-300 dark:ring-rose-800 text-xs font-medium px-3 py-1.5 text-rose-900 dark:text-rose-100 hover:bg-rose-100 dark:hover:bg-rose-900/40"
+                className="min-h-11 inline-flex items-center rounded-md ring-1 ring-rose-300 dark:ring-rose-800 text-xs font-medium px-3 py-1.5 text-rose-900 dark:text-rose-100 hover:bg-rose-100 dark:hover:bg-rose-900/40"
               >
                 Download answers
               </button>
