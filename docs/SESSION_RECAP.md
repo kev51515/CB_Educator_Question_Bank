@@ -1,6 +1,50 @@
 # Session Recap
 
-## Latest (2026-06-09) — autonomous polish pass: reusable hooks, student UX, keyboard a11y
+## Latest (2026-06-10) — login-code claim fix, highlighter on answer choices, per-question pacing
+
+Three shipments to `main` (DB live on prod via psql; SPA build green on CI).
+Built in isolated worktrees off `main` to stay clear of a parallel session
+live-editing `fulltest/`.
+
+- **Auth — bare login codes reach seat-claim (`0142`, commit `5afcf67`).** A
+  managed student's bare 6-char `login_code` (e.g. `KMCZQR`) was misread by
+  `QuickStartScreen`'s shape heuristic as a *course* code → it never reached
+  `claim_student_seat`, so first login dead-ended ("Couldn't load your
+  profile"). New `peek_join_code(code) → 'seat'|'course'|'none'` classifies a
+  typed code server-side (callable pre-auth; returns only the classification,
+  never row data). QuickStart now debounce-resolves a bare code and routes a
+  personal code to the claim flow (email+password). The dash-less personal-code
+  format is kept on purpose. Verified end-to-end on a disposable seat.
+
+- **Full-test highlighter now works on answer choices (commit `c8dd290`).** Was
+  passage + stem only. `AnnotField` extended with `choice:A`..`choice:D`
+  (`captureSelectionHighlight` accepts them); each choice is now a
+  `role="button"` `<div>` (native button text can't be selected) with a
+  drag-vs-click guard so highlighting a choice doesn't toggle the answer, plus
+  full keyboard support; the highlight-remove click `stopPropagation`s.
+
+- **Per-question pacing vs class in student review (`0143`, commits `c8dd290`
+  + `439f6f8`).** Per-question time lives as `dwell` events in
+  `test_run_events` (the `time_ms` column is unused) — `get_test_question_times`
+  sums dwell seconds, maps `(module, question#) → question_id`, and averages
+  over course peers (falls back to all when <3; viewer excluded). UI in
+  `ResultView` (student-only once results released): a `PacingPanel` overview
+  (colour-coded per-question time-bar strip + totals) and an inline `PacePill`
+  on each review card. **Partial-test safe:** per-question pills compare only
+  students who did that question; panel totals sum over the shared "you both
+  did" set, never apples-to-oranges across different question counts.
+
+Operational: per request, wiped all student users + test data and rebuilt
+Class A's 9-student roster (the 2 college-counseling students were kept).
+
+**Migration ledger note:** `supabase_migrations.schema_migrations` is recorded
+through `0140`; `0141` (parallel session) / `0142` / `0143` ran live via direct
+`psql` but aren't registered. All three are idempotent `CREATE OR REPLACE`, so a
+later `supabase db push` re-applies them cleanly. **Frontend deploy is manual**
+— no Vercel git-integration is connected (no GitHub deployment statuses); the
+CI build job is green, so the SPA is deploy-ready.
+
+## 2026-06-09 — autonomous polish pass: reusable hooks, student UX, keyboard a11y
 
 A self-directed improvement run in the student / shared-hooks / admin layer
 (deliberately clear of the `fulltest/` + teacher-skills surfaces a parallel
