@@ -5,8 +5,26 @@
 (schema + window helper + student RPCs), 0144 (teacher admin RPCs), 0145/0146
 (start_test hotfixes) are applied to Remote. Verified: `smoke-test-windows`
 18/18, `smoke-test-access` 9/9, `clickthrough-practice-test` 42/0,
-`clickthrough-practice-test-edges` 10/10, `tsc -b` clean. Phases 2 (teacher UI)
-and 3 (student UI) remain. All blocker/high adversarial findings resolved (§7).
+`clickthrough-practice-test-edges` 10/10, `tsc -b` clean. All blocker/high
+adversarial findings resolved (§7).
+
+**Phase 3 (student runner LOCKED-module UI) is now IMPLEMENTED.**
+- A new `locked` phase in `FullTestApp.tsx` renders "this section opens
+  &lt;when&gt;" instead of the generic error screen — the open time is read from
+  the `module_not_yet_open` error DETAIL (on fetch) and from submit's
+  `next_module_opens_at` (after a module submits).
+- `api.ts` gained friendly codes for `module_not_yet_open` /
+  `module_not_deployed` and now threads `error.details` through so the locked
+  screen can surface the ISO open time.
+- `types.ts` gained `opens_at` (per-module), `deployed`, and
+  `next_module_opens_at` fields.
+- Teacher **module selection** was added to the Modules-page inline
+  "Add Full-Test" flow: a teacher picks which modules to deploy (e.g. R&amp;W
+  only), which writes `set_test_module_windows`.
+
+Verified: `tsc -b` clean, `smoke-locked-module` green. Phase 2 (full teacher
+schedule UI — AssignTestModal step + ModuleScheduleCard + roster levers) is the
+remaining work.
 
 > **Scope change from the original draft:** v1 ships **permanent module subsets**
 > (e.g. RW-only = positions 1–2 as a complete 2-module test) in addition to

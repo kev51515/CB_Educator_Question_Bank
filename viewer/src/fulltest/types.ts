@@ -17,6 +17,10 @@ export interface ModuleMeta {
   label: string;
   time_limit_seconds: number;
   question_count: number;
+  /** ISO time this module's window opens (scheduled release, 0143); null = open now. */
+  opens_at?: string | null;
+  /** False when this module isn't part of the course's metered assignment. */
+  deployed?: boolean;
 }
 
 export interface StartTestResult {
@@ -28,6 +32,10 @@ export interface StartTestResult {
   results_released?: boolean;
   /** answers already recorded for this run (drafts + graded); drives the resume label */
   answered?: number;
+  /** Lowest released module position for this course's metered assignment (0143). */
+  first_position?: number;
+  /** Highest released module position for this course's metered assignment (0143). */
+  last_position?: number;
   test: {
     slug: string;
     title: string;
@@ -78,6 +86,8 @@ export interface SubmitModuleResult {
   total?: number;
   run_id?: string;
   timed_out?: boolean;
+  /** ISO time the next module's window opens (scheduled release, 0143); null = open now. */
+  next_module_opens_at?: string | null;
 }
 
 /** A question in the post-submission review — includes the key. */
