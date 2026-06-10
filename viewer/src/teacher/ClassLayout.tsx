@@ -66,6 +66,8 @@ import { isPickleball } from "./useTeacherClasses";
 import {
   PlayersPanel,
   LessonsPanel,
+  AssessmentsPanel,
+  DrillsPanel,
   ProgramsPanel,
   CoachesPanel,
   CertificationsPanel,
@@ -120,6 +122,8 @@ const TABS: ReadonlyArray<TabDef> = [
   // Pickleball — player track
   { to: "players", label: "Players" },
   { to: "lessons", label: "Lessons" },
+  { to: "progress", label: "Progress" },
+  { to: "drills", label: "Drills" },
   { to: "programs", label: "Programs" },
   // Pickleball — coach track
   { to: "coaches", label: "Coaches" },
@@ -159,6 +163,8 @@ export function ClassLayout() {
       const PICKLE_PLAYER_ORDER = [
         "players",
         "lessons",
+        "progress",
+        "drills",
         "programs",
         "roster",
         "chat",
@@ -579,6 +585,26 @@ export function ClassLayout() {
               element={
                 isPicklePlayer ? (
                   <LessonsPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="progress"
+              element={
+                isPicklePlayer ? (
+                  <AssessmentsPanel courseId={cls.id} />
+                ) : (
+                  <Navigate to={classPath(cls.short_code)} replace />
+                )
+              }
+            />
+            <Route
+              path="drills"
+              element={
+                isPicklePlayer ? (
+                  <DrillsPanel courseId={cls.id} />
                 ) : (
                   <Navigate to={classPath(cls.short_code)} replace />
                 )
