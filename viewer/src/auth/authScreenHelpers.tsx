@@ -84,7 +84,7 @@ export function Wordmark({ tone }: { tone: "light" | "dark" }) {
 
 /** Stone, soft-ring text input. */
 export const inputCls =
-  "mt-1.5 w-full rounded-xl border border-stone-300/80 bg-white/70 px-3.5 py-2.5 text-[15px] text-stone-900 placeholder:text-stone-400 shadow-sm transition focus:border-stone-900 focus:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:text-stone-100 dark:placeholder:text-stone-500 dark:focus:border-white/40 dark:focus:ring-white/10";
+  "mt-1.5 w-full rounded-xl border border-stone-300/80 bg-white/70 px-3.5 py-2.5 text-base sm:text-[15px] text-stone-900 placeholder:text-stone-400 shadow-sm transition focus:border-stone-900 focus:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:text-stone-100 dark:placeholder:text-stone-500 dark:focus:border-white/40 dark:focus:ring-white/10";
 /** Field label. */
 export const labelCls = "block text-[13px] font-medium text-stone-600 dark:text-stone-300";
 /** Near-black (cream in dark) primary action button. */

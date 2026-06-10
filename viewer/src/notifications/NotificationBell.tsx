@@ -318,7 +318,7 @@ export function NotificationBell() {
             ? `Notifications, ${unreadCount} unread`
             : "Notifications"
         }
-        className="relative inline-flex items-center justify-center h-9 w-9 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition"
+        className="relative inline-flex items-center justify-center h-11 w-11 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition"
       >
         <svg
           width={20}
@@ -350,7 +350,7 @@ export function NotificationBell() {
           tabIndex={-1}
           onKeyDown={onMenuKeyDown}
           className={[
-            "absolute mt-2 w-80 max-w-[calc(100vw-1.5rem)] max-h-[28rem] overflow-y-auto rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700 z-50 focus:outline-none",
+            "absolute mt-2 w-[calc(100vw-1rem)] sm:w-80 max-w-[calc(100vw-1.5rem)] max-h-[28rem] overflow-y-auto rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700 z-50 focus:outline-none",
             side === "right" ? "right-0 origin-top-right" : "left-0 origin-top-left",
             measured ? "" : "invisible",
           ].join(" ")}
@@ -369,7 +369,7 @@ export function NotificationBell() {
                   onClick={() => {
                     void markAllRead();
                   }}
-                  className="text-xs text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium inline-flex items-center justify-center min-h-[40px] px-2 -my-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                  className="text-xs text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium inline-flex items-center justify-center min-h-[44px] px-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
                 >
                   Mark all read
                 </button>
@@ -466,7 +466,7 @@ export function NotificationBell() {
                 void markAllRead();
               }}
               disabled={unreadCount === 0}
-              className="ml-auto text-sm text-indigo-600 dark:text-indigo-400 hover:underline disabled:text-slate-400 disabled:hover:no-underline disabled:cursor-not-allowed py-2.5 md:py-1"
+              className="ml-auto inline-flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:underline disabled:text-slate-400 disabled:hover:no-underline disabled:cursor-not-allowed min-h-[44px] md:min-h-0 px-2 md:px-0 py-2.5 md:py-1"
             >
               Mark all as read
             </button>

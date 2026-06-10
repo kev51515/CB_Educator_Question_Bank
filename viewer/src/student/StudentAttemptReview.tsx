@@ -374,7 +374,7 @@ export function StudentAttemptReview({
                       onClick={jumpToNextProblem}
                       disabled={totalProblems === 0}
                       aria-label="Jump to next wrong answer"
-                      className="inline-flex items-center gap-1 min-h-[40px] rounded-md text-xs font-medium px-3 py-1.5 bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 motion-safe:transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex items-center gap-1 min-h-11 rounded-md text-xs font-medium px-3 py-1.5 bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 motion-safe:transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Next <span aria-hidden="true">▼</span>
                     </button>
