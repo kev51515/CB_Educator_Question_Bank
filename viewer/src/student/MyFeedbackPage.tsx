@@ -594,7 +594,7 @@ export function MyFeedbackPage() {
                       aria-selected={active}
                       onClick={() => setFilter(pill.key)}
                       {...getTabProps(idx)}
-                      className={`inline-flex min-h-[40px] items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 ${
+                      className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 ${
                         active
                           ? pill.activePalette
                           : "bg-white/80 text-slate-700 ring-slate-200 hover:bg-white dark:bg-slate-900/60 dark:text-slate-200 dark:ring-slate-700 dark:hover:bg-slate-900"

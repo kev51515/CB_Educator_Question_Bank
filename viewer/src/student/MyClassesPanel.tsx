@@ -245,7 +245,7 @@ function SortDropdown({ sort, onChange }: SortDropdownProps) {
           const next = e.target.value;
           if (isSortKey(next)) onChange(next);
         }}
-        className="appearance-none rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 pl-2 pr-7 py-1.5 min-h-[40px] text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 motion-safe:transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/60"
+        className="appearance-none rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 pl-2 pr-7 py-1.5 min-h-[44px] text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 motion-safe:transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/60"
       >
         {SORT_OPTIONS.map((opt) => (
           <option key={opt.key} value={opt.key}>
