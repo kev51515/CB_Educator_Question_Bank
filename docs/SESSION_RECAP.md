@@ -2,19 +2,23 @@
 
 ## 2026-06-10 (deploy cut) — test-access gate, retake policy, underline, mobile UX
 
-Shipped to main + deployed (cherry-picked from `feat/test-access-policy`; the
-parallel branch's `0143–0146` module-windows + Phase 2 UI were intentionally
-EXCLUDED from this cut):
+Merged to `main` (cherry-picked from `feat/test-access-policy`; the parallel
+branch's `0143–0146` module-windows + Phase 2 UI were intentionally EXCLUDED from
+this cut). Host is **Cloudflare Pages** (NOT Vercel) — it auto-builds the
+`viewer/` Vite SPA on every push to `main`, so this code deploys automatically.
 
-- **Test access + retakes — migration 0141 (applied).** Enrollment gate on
-  `start_test` (non-staff must be enrolled in a course linking the test, else
-  `not_enrolled`; gates take + resume; staff exempt) — a removed/deleted-course
-  student can no longer take/continue, but their own released result stays
-  viewable. Per-test `tests.retake_policy` (`one_attempt` | `unlimited`
-  practice) + staff toggle on the test overview. Smoke `smoke:test-access`.
-- **Underline rendering + data.** `passageRender` renders `<u>…</u>`
+- **Test access + retakes — migration 0141 (already LIVE on remote;** the
+  parallel session applied it with their chain — `tests.retake_policy` exists).
+  Enrollment gate on `start_test` (non-staff must be enrolled in a course linking
+  the test, else `not_enrolled`; gates take + resume; staff exempt) — a
+  removed/deleted-course student can no longer take/continue, but their own
+  released result stays viewable. Per-test `tests.retake_policy`
+  (`one_attempt` | `unlimited` practice) + staff toggle. Smoke `smoke:test-access`.
+- **Underline rendering + data (live).** `passageRender` renders `<u>…</u>`
   offset-safely; `seed-underline-spans.mjs` (anchor-based, exact-by-construction)
-  restores the 14 prose underline spans (nov-2023 1-11 figure-baked, excluded).
+  wraps the 14 prose spans (nov-2023 1-11 figure-baked, excluded). Data applied
+  to remote after the renderer's CF Pages build went live (the seed is idempotent;
+  re-run safe). Briefly reverted mid-deploy during a host mixup, then re-applied.
 - **Mobile UX pass (25 student files).** 16px inputs (no iOS auto-zoom), ≥44px
   tap targets, narrow-screen stacking across first page/auth, chrome, full-test
   runner, assignment runner, course/counseling/inbox/account — mobile-first,
