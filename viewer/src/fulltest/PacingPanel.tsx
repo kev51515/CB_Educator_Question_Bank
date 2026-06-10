@@ -63,26 +63,39 @@ export function PacingPanel({
       .map((q) => ({ q, t: byId.get(q.id) ?? null }))
       .filter((r): r is { q: ResultQuestion; t: QuestionTime } => r.t != null);
 
-    const comparable = rows.filter((r) => r.t.class_n > 0 && r.t.class_avg_ms != null);
+    // A fair head-to-head needs BOTH your time and a class average on the SAME
+    // question. A student who took only a portion of the test (teacher-assigned
+    // subset) — or simply didn't finish — is therefore compared only on the
+    // questions they and the class both did; the totals sum over exactly that
+    // shared set, never apples-to-oranges across different question counts.
+    const comparable = rows.filter(
+      (r) => r.t.class_n > 0 && r.t.class_avg_ms != null && r.t.your_time_ms != null,
+    );
     if (comparable.length === 0) return null;
 
     let yourTotal = 0;
     let classTotal = 0;
     let slowCount = 0;
-    let maxYours = 0;
     let maxN = 0;
-    for (const r of rows) {
-      const y = r.t.your_time_ms ?? 0;
-      yourTotal += y;
-      maxYours = Math.max(maxYours, y);
-    }
     for (const r of comparable) {
+      yourTotal += r.t.your_time_ms ?? 0;
       classTotal += r.t.class_avg_ms ?? 0;
       maxN = Math.max(maxN, r.t.class_n);
       // "notably slower" = your time > 1.5× the class average on that question.
       if ((r.t.your_time_ms ?? 0) > (r.t.class_avg_ms ?? 0) * 1.5) slowCount += 1;
     }
-    return { rows, yourTotal, classTotal, slowCount, maxYours, maxN };
+    // The strip shows every question you spent time on (your whole pacing
+    // shape), scaled to your own slowest question.
+    const maxYours = rows.reduce((m, r) => Math.max(m, r.t.your_time_ms ?? 0), 0);
+    return {
+      rows,
+      comparedCount: comparable.length,
+      yourTotal,
+      classTotal,
+      slowCount,
+      maxYours,
+      maxN,
+    };
   }, [times, questions]);
 
   if (!view) return null;
@@ -94,14 +107,16 @@ export function PacingPanel({
           Pacing vs. your class
         </h2>
         <span className="text-[11px] text-slate-400 dark:text-slate-500">
-          averaged over {view.maxN} classmate{view.maxN === 1 ? "" : "s"}
+          {view.comparedCount} question{view.comparedCount === 1 ? "" : "s"} you both did
+          {" · "}avg of {view.maxN} classmate{view.maxN === 1 ? "" : "s"}
         </span>
       </div>
 
-      {/* Summary chips — same rounded ring aesthetic as the result hero. */}
+      {/* Summary chips — same rounded ring aesthetic as the result hero. Totals
+          are over the shared "you both did" set so a partial test compares fairly. */}
       <div className="mt-4 flex flex-wrap gap-3">
-        <Chip label="Your total time" value={fmtMs(view.yourTotal)} />
-        <Chip label="Class avg total" value={fmtMs(view.classTotal)} />
+        <Chip label="Your time" value={fmtMs(view.yourTotal)} />
+        <Chip label="Class avg" value={fmtMs(view.classTotal)} />
         <Chip
           label="Slower than class"
           value={`${view.slowCount}`}
