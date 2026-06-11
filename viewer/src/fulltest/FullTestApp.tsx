@@ -162,6 +162,12 @@ function elimToPayload(
  * educator route is staff-only, so no role wait is needed); computed once so a
  * later URL rewrite can't flip the dispatch mid-life.
  */
+// Strict-mode fullscreen-exit debounce: a transient exit that re-enters within
+// this window is treated as a bounce — no overlay, no logged event. Tuned so a
+// genuine exit still locks down quickly, while Esc-bounces / OS overlays don't
+// thrash. See onFsChange.
+const FS_EXIT_DEBOUNCE_MS = 1000;
+
 export function FullTestApp() {
   const isPreview = useRef(
     typeof window !== "undefined" &&
@@ -320,6 +326,12 @@ function FullTestRunner() {
   const [fsLockout, setFsLockout] = useState(false);
   // Stamp when fullscreen was exited so we can log the duration outside on return.
   const fsExitedAtRef = useRef<number | null>(null);
+  // Debounce fullscreen-exit: a transient exit (Esc bounce, OS overlay, a brief
+  // flip) that returns within FS_EXIT_DEBOUNCE_MS logs nothing and never raises
+  // the lockout overlay — kills the exit→re-enter thrash observed at submit
+  // time. A sustained exit raises the overlay and logs exactly one event.
+  const fsExitTimerRef = useRef<number | null>(null);
+  const fsExitLoggedRef = useRef(false);
 
   // Helpers to read the current module/question for proctor-event context.
   const currentModuleRef = useRef<number | null>(null);
@@ -685,19 +697,36 @@ function FullTestRunner() {
       // Only meaningful when we're enforcing lockdown on a capable device.
       if (!strict || !supportsFullscreen) return;
       if (!document.fullscreenElement) {
-        // Exited fullscreen mid-test → raise the blocking overlay and stamp the
-        // time so we can log how long they were outside on return.
+        // Exited fullscreen. Defer the overlay + log behind a short timer: a
+        // bounce that re-enters within the window is swallowed (no overlay, no
+        // event). Only a sustained exit raises the blocking overlay and logs a
+        // single fullscreen_exit, stamping the time for the return duration.
         fsExitedAtRef.current = Date.now();
-        setFsLockout(true);
-        void logProctorEvent(runId, "fullscreen_exit", ctx());
+        if (fsExitTimerRef.current != null) window.clearTimeout(fsExitTimerRef.current);
+        fsExitTimerRef.current = window.setTimeout(() => {
+          fsExitTimerRef.current = null;
+          fsExitLoggedRef.current = true;
+          setFsLockout(true);
+          void logProctorEvent(runId, "fullscreen_exit", ctx());
+        }, FS_EXIT_DEBOUNCE_MS);
       } else {
-        // Returned to fullscreen → drop the overlay and log the re-entry with
-        // the duration spent outside.
+        // Returned to fullscreen.
+        if (fsExitTimerRef.current != null) {
+          // Re-entered before the debounce fired → transient bounce; swallow it.
+          window.clearTimeout(fsExitTimerRef.current);
+          fsExitTimerRef.current = null;
+          fsExitedAtRef.current = null;
+          return;
+        }
+        // No pending timer: either we already logged a sustained exit (pair it
+        // with an enter + duration) or nothing was ever logged (nothing to do).
+        if (!fsExitLoggedRef.current) return;
         const exitedAt = fsExitedAtRef.current;
         const durationSeconds = exitedAt
           ? Math.round((Date.now() - exitedAt) / 1000)
           : undefined;
         fsExitedAtRef.current = null;
+        fsExitLoggedRef.current = false;
         setFsLockout(false);
         void logProctorEvent(runId, "fullscreen_enter", { ...ctx(), durationSeconds });
       }
@@ -715,6 +744,10 @@ function FullTestRunner() {
       document.removeEventListener("contextmenu", onContextMenu);
       document.removeEventListener("selectstart", onSelectStart);
       document.removeEventListener("fullscreenchange", onFsChange);
+      if (fsExitTimerRef.current != null) {
+        window.clearTimeout(fsExitTimerRef.current);
+        fsExitTimerRef.current = null;
+      }
     };
   }, [phase, runId, proctorOn, strict, supportsFullscreen]);
 
@@ -822,23 +855,53 @@ function FullTestRunner() {
   // On return-to-visible (after >5s hidden), re-fetch the server-authoritative
   // remaining time and recompute the deadline; if the server says 0, warn the
   // student before the auto-submit fires.
-  const lastVisibleAt = useRef(Date.now());
+  // Null until the tab is actually hidden, then the timestamp of that hide.
+  // A visible event with no recorded hide (stray fire, or a bfcache pageshow)
+  // is NOT a tab-switch and must not log a phantom multi-minute 'away' — the
+  // old code seeded this with Date.now() at mount, so any unpaired visible
+  // event reported (now − mount) as away time.
+  const hiddenAtRef = useRef<number | null>(null);
   // Proctor context captured at the moment the tab was hidden, so the 'away'
   // event reports the module/question the student left from (not where they
   // happen to land after returning).
   const awayCtxRef = useRef<{ module?: number; question?: number }>({});
   useEffect(() => {
     if (phase !== "module" || !runId || !moduleMeta) return;
+
+    // Re-fetch the server-authoritative remaining time and recompute the local
+    // deadline (the wall clock may have jumped during a sleep/hide/restore).
+    const resyncClock = async () => {
+      try {
+        const data = await getModule(runId, moduleMeta.position);
+        if (data.seconds_remaining <= 0) {
+          toast.warning(
+            "Your section ran out of time while the tab was hidden — submitting your answers now.",
+          );
+        }
+        setDeadline(Date.now() + data.seconds_remaining * 1000);
+        setRemaining(data.seconds_remaining);
+      } catch (e) {
+        // A proctor force-submitted this run — surface a clean "ended" screen.
+        if (String((e as Error)?.message ?? "").includes("run_already_submitted")) {
+          setEndedByProctor(true);
+        }
+        /* else non-fatal: keep the existing deadline */
+      }
+    };
+
     const onVisibility = () => {
       if (document.hidden) {
-        lastVisibleAt.current = Date.now();
+        hiddenAtRef.current = Date.now();
         awayCtxRef.current = {
           module: currentModuleRef.current ?? undefined,
           question: currentQuestionRef.current ?? undefined,
         };
         return;
       }
-      const hiddenMs = Date.now() - lastVisibleAt.current;
+      const hiddenAt = hiddenAtRef.current;
+      hiddenAtRef.current = null;
+      if (hiddenAt == null) return; // became visible without a recorded hide — ignore
+      const hiddenMs = Date.now() - hiddenAt;
       // Integrity: a real "left the tab" (≥2s) → log an 'away' event with the
       // duration away + the position the student left from (proctorOn gates it).
       if (proctorOn && hiddenMs >= 2000) {
@@ -848,31 +911,23 @@ function FullTestRunner() {
           question: awayCtxRef.current.question,
         });
       }
-      if (hiddenMs <= 5000) return;
-      void (async () => {
-        try {
-          const data = await getModule(runId, moduleMeta.position);
-          if (data.seconds_remaining <= 0) {
-            toast.warning(
-              "Your section ran out of time while the tab was hidden — submitting your answers now.",
-            );
-          }
-          setDeadline(Date.now() + data.seconds_remaining * 1000);
-          setRemaining(data.seconds_remaining);
-        } catch (e) {
-          // A proctor force-submitted this run — surface a clean "ended" screen.
-          if (String((e as Error)?.message ?? "").includes("run_already_submitted")) {
-            setEndedByProctor(true);
-          }
-          /* else non-fatal: keep the existing deadline */
-        }
-      })();
+      if (hiddenMs > 5000) void resyncClock();
     };
+
+    // bfcache restore (back/forward, mobile app-switch resume): the page was
+    // frozen and wall-clock advanced, but no visibilitychange→hidden fired in
+    // this page's life. Resync the clock so the deadline isn't stale, but do
+    // NOT log an 'away' — there's no reliable hidden duration and a restore is
+    // not a tab-switch. (Keeps Wave 21I F1's sleep/wake resync intent.)
+    const onPageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) void resyncClock();
+    };
+
     document.addEventListener("visibilitychange", onVisibility);
-    window.addEventListener("pageshow", onVisibility);
+    window.addEventListener("pageshow", onPageShow);
     return () => {
       document.removeEventListener("visibilitychange", onVisibility);
-      window.removeEventListener("pageshow", onVisibility);
+      window.removeEventListener("pageshow", onPageShow);
     };
   }, [phase, runId, moduleMeta, toast, proctorOn]);
 
@@ -1748,6 +1803,11 @@ function FullTestRunner() {
           confirmPhrase="submit"
           confirmLabel="Submit section"
           destructive
+          // Strict mode: Esc both closes this dialog AND natively exits
+          // fullscreen, which would re-raise the lockout overlay and start an
+          // exit→re-enter thrash at submit time. Keep it open on Esc so the
+          // !pendingSectionSubmit guard stays true; Cancel/Submit still work.
+          dismissible={!strict}
           onConfirm={async () => {
             setPendingSectionSubmit(null);
             // Flush the 2.5s-debounced draft (highlights / notes / mark-for-
@@ -1773,6 +1833,7 @@ function FullTestRunner() {
             </p>
           }
           confirmLabel="Save &amp; exit"
+          dismissible={!strict}
           onConfirm={() => {
             setConfirmExit(false);
             saveDraftNow(); // flush the current module's draft before leaving

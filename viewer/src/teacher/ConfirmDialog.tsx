@@ -27,6 +27,14 @@ interface ConfirmDialogProps {
   confirmDisabled?: boolean;
   /** When set, the user must type this exact phrase (case-insensitive) to enable Confirm. */
   confirmPhrase?: string;
+  /**
+   * When false, Esc and backdrop-click no longer close the dialog (only the
+   * explicit Cancel/Confirm buttons do). Used by the strict-mode test runner:
+   * a single Esc both closes this dialog AND natively exits fullscreen, which
+   * would otherwise un-suppress the fullscreen lockout overlay and trap the
+   * student in an exit→re-enter loop at submit time. Defaults to true.
+   */
+  dismissible?: boolean;
   onConfirm: () => void;
   onCancel: () => void;
 }
@@ -39,6 +47,7 @@ export function ConfirmDialog({
   busy,
   confirmDisabled,
   confirmPhrase,
+  dismissible = true,
   onConfirm,
   onCancel,
 }: ConfirmDialogProps) {
@@ -57,6 +66,7 @@ export function ConfirmDialog({
     <ResponsiveModal
       open
       onClose={onCancel}
+      dismissible={dismissible}
       title={title}
       size="sm"
       footer={
