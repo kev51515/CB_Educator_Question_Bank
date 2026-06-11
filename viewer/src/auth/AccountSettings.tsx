@@ -37,6 +37,84 @@ import type { Profile } from "@/lib/profile";
 import type { AuthResult } from "./session";
 
 /**
+ * EmailNotificationsSection — master switch for the Resend email channel
+ * (migration 0196: profiles.email_notifications gates the email_outbox
+ * enqueue trigger server-side). Self-contained fetch/update so the shared
+ * Profile type doesn't need churn; the "profiles: own row update" policy
+ * covers the write. Managed students never receive email regardless
+ * (synthetic addresses), so this section is hidden for them at the call site.
+ */
+function EmailNotificationsSection({ userId }: { userId: string }): JSX.Element {
+  const toast = useToast();
+  const [enabled, setEnabled] = useState<boolean | null>(null); // null = loading
+  const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      const { data } = await supabase
+        .from("profiles")
+        .select("email_notifications")
+        .eq("id", userId)
+        .maybeSingle();
+      if (alive) setEnabled((data?.email_notifications as boolean | undefined) ?? true);
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [userId]);
+
+  const toggle = async (): Promise<void> => {
+    if (enabled === null || busy) return;
+    const next = !enabled;
+    setEnabled(next); // optimistic
+    setBusy(true);
+    const { error } = await supabase
+      .from("profiles")
+      .update({ email_notifications: next })
+      .eq("id", userId);
+    setBusy(false);
+    if (error) {
+      setEnabled(!next); // roll back
+      toast.error("Couldn't update email notifications. Please try again.");
+    } else {
+      toast.success(next ? "Email notifications on" : "Email notifications off");
+    }
+  };
+
+  return (
+    <section className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 flex items-center justify-between gap-3">
+      <div>
+        <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+          Email notifications
+        </h2>
+        <p className="text-sm text-slate-500 dark:text-slate-400">
+          Announcements, grades, feedback, and messages — sent to your account
+          email.
+        </p>
+      </div>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={enabled === true}
+        disabled={enabled === null || busy}
+        onClick={() => void toggle()}
+        className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 ${
+          enabled ? "bg-indigo-600" : "bg-slate-300 dark:bg-slate-700"
+        } ${enabled === null ? "opacity-50" : ""}`}
+        aria-label="Toggle email notifications"
+      >
+        <span
+          className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${
+            enabled ? "translate-x-6" : "translate-x-1"
+          }`}
+        />
+      </button>
+    </section>
+  );
+}
+
+/**
  * Appearance — UI theme picker (Ivy Ledger redesign, June 2026).
  * Local-only preference (localStorage via lib/theme.ts), applies instantly,
  * no server round-trip. Offered to every account type, so it renders in both
@@ -669,6 +747,10 @@ export function AccountSettings({
 
         {/* UI theme (Classic / Ivy Ledger) */}
         <AppearanceSection />
+
+        {/* Email channel master switch (managed students are excluded
+            server-side — synthetic addresses — so no section for them). */}
+        {!profile.managed && <EmailNotificationsSection userId={profile.id} />}
 
         {/* LINE binding + per-type LINE delivery prefs */}
         <LineConnectCard />
