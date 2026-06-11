@@ -27,6 +27,20 @@ export default {
           800: "rgb(var(--ink-800) / <alpha-value>)",
           900: "rgb(var(--ink-900) / <alpha-value>)",
         },
+        // Runner accent — Bluebook blue in classic, navy under .theme-ivy.
+        // Used by the full-test runner's interactive chrome ONLY.
+        runner: {
+          50: "rgb(var(--runner-50) / <alpha-value>)",
+          100: "rgb(var(--runner-100) / <alpha-value>)",
+          200: "rgb(var(--runner-200) / <alpha-value>)",
+          300: "rgb(var(--runner-300) / <alpha-value>)",
+          400: "rgb(var(--runner-400) / <alpha-value>)",
+          500: "rgb(var(--runner-500) / <alpha-value>)",
+          600: "rgb(var(--runner-600) / <alpha-value>)",
+          700: "rgb(var(--runner-700) / <alpha-value>)",
+          800: "rgb(var(--runner-800) / <alpha-value>)",
+          900: "rgb(var(--runner-900) / <alpha-value>)",
+        },
         slate: {
           50: "rgb(var(--slate-50) / <alpha-value>)",
           100: "rgb(var(--slate-100) / <alpha-value>)",

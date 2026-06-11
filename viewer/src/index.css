@@ -74,6 +74,22 @@ body {
   --ink-800: 29 29 32;
   --ink-900: 0 0 0;
 
+  /* Runner accent — the full-test runner's interactive color (selection
+     rings, current-question chips, primary buttons). Classic = Tailwind blue
+     (the Bluebook-style look students know); .theme-ivy = the navy ramp so
+     the runner stays coherent with the Ivy identity. Tailwind `runner-*`
+     maps to these (tailwind.config.js). */
+  --runner-50: 239 246 255;
+  --runner-100: 219 234 254;
+  --runner-200: 191 219 254;
+  --runner-300: 147 197 253;
+  --runner-400: 96 165 250;
+  --runner-500: 59 130 246;
+  --runner-600: 37 99 235;
+  --runner-700: 29 78 216;
+  --runner-800: 30 64 175;
+  --runner-900: 30 58 138;
+
   /* Theme font vars — classic = the existing system stacks (no change);
      .theme-ivy swaps these. display/passage default to the UI stack so the
      `font-display` / `font-passage` utilities are safe no-ops in classic. */
@@ -166,6 +182,18 @@ body {
 .theme-ivy body {
   color: #1b2a4a;
   background: #fbfaf7;
+}
+.theme-ivy {
+  --runner-50: 242 245 251;
+  --runner-100: 227 233 245;
+  --runner-200: 197 209 234;
+  --runner-300: 159 178 217;
+  --runner-400: 110 137 192;
+  --runner-500: 71 99 163;
+  --runner-600: 36 64 126;
+  --runner-700: 26 47 97;
+  --runner-800: 20 37 76;
+  --runner-900: 16 29 59;
 }
 .theme-ivy ::selection {
   background: rgba(36, 64, 126, 0.16);
@@ -668,3 +696,76 @@ body {
     text-align: right;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════════
+   Ivy Ledger theme recipes (June 2026 redesign — lib/theme.ts toggles
+   .theme-ivy on <html>). Every class here is inert in the classic theme
+   so components can adopt them without forking. Spec:
+   design-explorations/ivy-ledger/ivy.css
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Flagship page h1s. Classic: no-op (keeps the existing text-2xl look).
+   Ivy: Newsreader display at 30px — the signature editorial moment. */
+.theme-ivy .page-title {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 1.875rem;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* The signature double-hairline rule under page headers. Hidden in classic. */
+.ivy-rule { display: none; }
+.theme-ivy .ivy-rule {
+  display: block;
+  height: 4px;
+  border-top: 1px solid rgb(var(--slate-300));
+  border-bottom: 1px solid rgb(var(--slate-300));
+  margin-top: 14px;
+}
+
+/* Ceremonial gold numerals — scores/averages at display size ONLY (>=18px),
+   max ~2 per screen. Classic: inherits surrounding styles untouched. */
+.theme-ivy .ceremonial {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  color: #94701f;
+  font-variant-numeric: tabular-nums;
+}
+.theme-ivy.dark .ceremonial { color: #d9b45b; }
+
+/* Perceptible warm card elevation (classic shadow-card untouched). */
+.theme-ivy .shadow-card {
+  box-shadow: 0 1px 2px rgba(27, 42, 74, 0.05), 0 3px 10px rgba(27, 42, 74, 0.06);
+}
+.theme-ivy.dark .shadow-card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* KaTeX optical-size equalization beside the Literata passage face (CM's
+   x-height is smaller; without this inline math looks shrunken). */
+.theme-ivy .katex { font-size: 1.07em; }
+
+/* Warm chrome details. */
+.theme-ivy kbd {
+  background: #f5f3ec;
+  border-color: #e9e6de;
+  color: #44516b;
+  font-family: var(--font-mono-ui);
+}
+.theme-ivy .thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #d3cfc2;
+  background-clip: content-box;
+  border: 3px solid transparent;
+}
+.theme-ivy .thin-scrollbar { scrollbar-color: #d3cfc2 transparent; }
+.theme-ivy .q-html { color: rgb(var(--slate-900)); }
+.theme-ivy .q-html th { background: #f5f3ec; }
+.theme-ivy .q-html th,
+.theme-ivy .q-html td { border-color: #e9e6de; }
+.theme-ivy.dark .q-html { color: rgb(var(--slate-50)); }
+.theme-ivy.dark .q-html th { background: #1b2540; }
+.theme-ivy.dark .q-html th,
+.theme-ivy.dark .q-html td { border-color: #283455; }
