@@ -38,6 +38,47 @@ import {
   UUID_RE,
 } from "./helpers";
 
+// Quick-filter pill values for the thread list.
+type InboxFilter = "all" | "unread" | "pinned" | "muted";
+
+const INBOX_FILTERS: ReadonlyArray<{ value: InboxFilter; label: string }> = [
+  { value: "all", label: "All" },
+  { value: "unread", label: "Unread" },
+  { value: "pinned", label: "Pinned" },
+  { value: "muted", label: "Muted" },
+];
+
+const inboxFilterKey = (userId: string): string => `inbox.filter:${userId}`;
+
+function readInboxFilter(userId: string | null): InboxFilter {
+  if (!userId) return "all";
+  if (typeof window === "undefined") return "all";
+  try {
+    const raw = window.localStorage.getItem(inboxFilterKey(userId));
+    if (
+      raw === "all" ||
+      raw === "unread" ||
+      raw === "pinned" ||
+      raw === "muted"
+    ) {
+      return raw;
+    }
+    return "all";
+  } catch {
+    return "all";
+  }
+}
+
+function writeInboxFilter(userId: string | null, value: InboxFilter): void {
+  if (!userId) return;
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(inboxFilterKey(userId), value);
+  } catch {
+    // Best-effort UX state — swallow quota / storage errors.
+  }
+}
+
 export function InboxPage() {
   const { profile } = useProfile();
   const navigate = useNavigate();
@@ -56,6 +97,23 @@ export function InboxPage() {
   const composeConsumedRef = useRef<string | null>(null);
   const toast = useToast();
   const [query, setQuery] = useState("");
+  // Quick filter over the thread list, persisted per-user. Leverages the
+  // pin/mute state and the server-computed unread_count so the existing
+  // metadata is actually actionable from the rail.
+  const [filter, setFilter] = useState<InboxFilter>(() =>
+    readInboxFilter(currentUserId),
+  );
+  // Re-hydrate when the user changes (login, profile switch).
+  useEffect(() => {
+    setFilter(readInboxFilter(currentUserId));
+  }, [currentUserId]);
+  const selectFilter = useCallback(
+    (next: InboxFilter): void => {
+      setFilter(next);
+      writeInboxFilter(currentUserId, next);
+    },
+    [currentUserId],
+  );
   const searchInputRef = useRef<HTMLInputElement | null>(null);
   // Keyboard cursor across the thread list. -1 = no highlight.
   // This is separate from the "currently open" thread (driven by URL/threadId)
@@ -208,7 +266,7 @@ export function InboxPage() {
   // of the result set.
   const filteredThreads = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const base = q
+    const searched = q
       ? threads.filter((t) => {
           const name = (t.other.display_name ?? t.other.email ?? "")
             .toLowerCase();
@@ -218,12 +276,25 @@ export function InboxPage() {
           return name.includes(q) || snippet.includes(q);
         })
       : threads;
+    // Pill filter applies on top of search. Unread uses the server-computed
+    // unread_count, but mirrors the row's badge rule (muted threads don't
+    // count as unread). Pinned/Muted leverage the per-user persisted sets.
+    const base =
+      filter === "all"
+        ? searched
+        : searched.filter((t) => {
+            if (filter === "unread") {
+              return !mutedThreads.has(t.id) && t.unread_count > 0;
+            }
+            if (filter === "pinned") return pinnedThreads.has(t.id);
+            return mutedThreads.has(t.id);
+          });
     if (pinnedThreads.size === 0) return base;
     // Stable partition preserves upstream last_message_at desc within each group.
     const pinned = base.filter((t) => pinnedThreads.has(t.id));
     const rest = base.filter((t) => !pinnedThreads.has(t.id));
     return [...pinned, ...rest];
-  }, [threads, query, pinnedThreads]);
+  }, [threads, query, filter, pinnedThreads, mutedThreads]);
 
   // Human label for the open thread (other participant's name/email), passed
   // to ThreadView via the Outlet context so it can register a breadcrumb label.
@@ -511,6 +582,33 @@ export function InboxPage() {
             <kbd className="font-sans">/</kbd> Search
           </p>
         </div>
+        {/* Quick filters — leverage pin/mute/unread metadata. Persisted
+            per-user so the rail remembers the last view across reloads. */}
+        <div
+          role="group"
+          aria-label="Filter conversations"
+          className="px-3 py-2 border-b border-slate-200 dark:border-slate-800 flex flex-wrap gap-1.5"
+        >
+          {INBOX_FILTERS.map((f) => {
+            const active = filter === f.value;
+            return (
+              <button
+                key={f.value}
+                type="button"
+                aria-pressed={active}
+                onClick={() => selectFilter(f.value)}
+                className={[
+                  "inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
+                  active
+                    ? "bg-indigo-600 text-white"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700",
+                ].join(" ")}
+              >
+                {f.label}
+              </button>
+            );
+          })}
+        </div>
         <div
           ref={listContainerRef}
           tabIndex={0}
@@ -540,18 +638,31 @@ export function InboxPage() {
             filteredThreads.length === 0 && (
               <div className="px-4 py-6 text-center">
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                  No conversations match &ldquo;{query.trim()}&rdquo;
+                  {query.trim()
+                    ? `No conversations match “${query.trim()}”`
+                    : filter === "unread"
+                      ? "No unread conversations"
+                      : filter === "pinned"
+                        ? "No pinned conversations"
+                        : filter === "muted"
+                          ? "No muted conversations"
+                          : "No conversations"}
                 </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setQuery("");
-                    searchInputRef.current?.focus();
-                  }}
-                  className="mt-2 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
-                >
-                  Clear search
-                </button>
+                {(query.trim() || filter !== "all") && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (query.trim()) {
+                        setQuery("");
+                        searchInputRef.current?.focus();
+                      }
+                      if (filter !== "all") selectFilter("all");
+                    }}
+                    className="mt-2 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+                  >
+                    {query.trim() ? "Clear search" : "Clear filter"}
+                  </button>
+                )}
               </div>
             )}
           {filteredThreads.length > 0 && (

@@ -122,7 +122,7 @@ function ToastStack({ items, onClose }: { items: ToastMessage[]; onClose: (id: n
           key={t.id}
           role={assertive ? "alert" : "status"}
           aria-live={assertive ? "assertive" : "polite"}
-          className={`pointer-events-auto min-w-[280px] max-w-[400px] rounded-lg shadow-lg ring-1 px-4 py-3 ${variantClasses(t.variant)}`}
+          className={`pointer-events-auto w-[calc(100vw-1rem)] md:w-auto md:min-w-[280px] max-w-[400px] rounded-lg shadow-lg ring-1 px-4 py-3 ${variantClasses(t.variant)}`}
         >
           <div className="flex items-start gap-3">
             <span className="text-xl leading-none">{variantIcon(t.variant)}</span>

@@ -56,6 +56,16 @@ import {
 // Sort
 // -----------------------------------------------------------------------------
 
+// Tooltip text that pairs a human-friendly relative phrase with the precise
+// absolute timestamp — e.g. "2 days ago · 6/9/2026, 3:14:00 PM". Falls back to
+// the raw ISO string if it can't be parsed. The exact ISO still lives in the
+// `title`/`dateTime` attribute so it's machine-readable.
+function formatRelativeWithAbsolute(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return `${formatRelative(iso)} · ${d.toLocaleString()}`;
+}
+
 export function ClassRoster() {
   const { cls } = useClassContext();
   const { roster, loading, error, refresh } = useClassRoster(cls.id);
@@ -573,7 +583,7 @@ export function ClassRoster() {
                             <span className="truncate">{s.email}</span>
                             <span
                               className="inline-flex w-fit items-center rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300 ring-1 ring-emerald-200 dark:ring-emerald-800"
-                              title={`Code activated ${new Date(s.claimed_at).toLocaleString()}`}
+                              title={`Code activated ${formatRelativeWithAbsolute(s.claimed_at)}`}
                             >
                               Activated
                             </span>
@@ -590,11 +600,11 @@ export function ClassRoster() {
                         s.email
                       )}
                     </td>
-                    <td
-                      className="px-6 py-3 text-slate-500 dark:text-slate-400"
-                      title={new Date(s.joined_at).toLocaleString()}
-                    >
-                      <time dateTime={s.joined_at}>
+                    <td className="px-6 py-3 text-slate-500 dark:text-slate-400">
+                      <time
+                        dateTime={s.joined_at}
+                        title={formatRelativeWithAbsolute(s.joined_at)}
+                      >
                         {formatRelative(s.joined_at)}
                       </time>
                     </td>

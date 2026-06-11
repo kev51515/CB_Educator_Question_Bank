@@ -33,6 +33,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Skeleton } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
 import { useToast } from "@/components/Toast";
 
 interface SkillMasteryRow {
@@ -367,14 +368,11 @@ export function SkillHeatmap() {
         </div>
       )}
 
-      {!loading && error && (
-        <p className="mt-4 text-sm text-rose-600 dark:text-rose-400">{error}</p>
-      )}
-
       {!loading && !error && rows.length === 0 && (
-        <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
-          Complete assignments to see your skill mastery.
-        </p>
+        <EmptyState
+          title="No skill mastery yet"
+          body="Complete assignments to see your skill mastery."
+        />
       )}
 
       {!loading && !error && rows.length > 0 && (

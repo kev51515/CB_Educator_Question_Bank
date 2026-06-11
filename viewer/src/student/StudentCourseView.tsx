@@ -28,6 +28,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
+import { EmptyState } from "@/components/EmptyState";
 import { ROUTES } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
 import { domainOf, studentLabel } from "@/lib/domain";
@@ -677,9 +678,10 @@ export function StudentCourseView(): JSX.Element {
                       {!isCollapsed && (
                         <div id={bodyId} className="px-2 pb-2">
                           {items.length === 0 ? (
-                            <p className="px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
-                              No items in this module yet.
-                            </p>
+                            <EmptyState
+                              icon="inbox"
+                              title="No items in this module yet."
+                            />
                           ) : (
                             <ul className="space-y-0.5">
                               {items.map((it) => (

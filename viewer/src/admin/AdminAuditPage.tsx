@@ -70,6 +70,32 @@ interface AuditRowView extends AuditEvent {
 
 const PAGE_SIZE = 50;
 
+// localStorage key for the action filter. The actor / course / date-range
+// filters get their own persistence helpers in `@/admin/audit` (filters.ts);
+// the action filter is a plain string so we persist it inline here rather
+// than threading a fourth helper through the module barrel.
+const ACTION_FILTER_STORAGE_KEY = "admin.audit.actionFilter";
+
+function readPersistedActionFilter(): string {
+  try {
+    return window.localStorage.getItem(ACTION_FILTER_STORAGE_KEY) ?? "";
+  } catch {
+    return "";
+  }
+}
+
+function writePersistedActionFilter(value: string): void {
+  try {
+    if (value) {
+      window.localStorage.setItem(ACTION_FILTER_STORAGE_KEY, value);
+    } else {
+      window.localStorage.removeItem(ACTION_FILTER_STORAGE_KEY);
+    }
+  } catch {
+    /* localStorage unavailable (private mode / quota) — non-fatal. */
+  }
+}
+
 /**
  * Action-kind registry.
  *
@@ -129,7 +155,12 @@ export function AdminAuditPage() {
   const [error, setError] = useState<string | null>(null);
 
   // Filters (applied on Apply / Enter; debouncing not needed at 50/page).
-  const [actionFilter, setActionFilter] = useState<string>("");
+  // Persisted per-admin so a focused investigation against a single action
+  // kind sticks across reloads (matches the actor / course / date-range
+  // filters below).
+  const [actionFilter, setActionFilter] = useState<string>(() =>
+    readPersistedActionFilter(),
+  );
   // Actor filter — staff profile (teacher/admin) whose actions to scope to.
   // Persisted per-admin; stores both id (for query) and display name (for
   // chip + empty-state rendering without a second fetch on hydrate).
@@ -309,6 +340,12 @@ export function AdminAuditPage() {
   useEffect(() => {
     void refresh();
   }, [refresh]);
+
+  // Persist the active action filter across reloads. Admins auditing a single
+  // action kind shouldn't have to re-pick it every session.
+  useEffect(() => {
+    writePersistedActionFilter(actionFilter);
+  }, [actionFilter]);
 
   // Persist the active course filter across reloads. Admins auditing a single
   // course shouldn't have to re-pick it every session.
@@ -566,7 +603,7 @@ export function AdminAuditPage() {
               onChange={(e) => setActorSearch(e.target.value)}
               placeholder="Filter actors…"
               aria-label="Filter actor options"
-              className="min-h-[32px] rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              className="min-h-[40px] md:min-h-[32px] rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             />
             <div className="flex items-center gap-1">
               <select
@@ -663,7 +700,7 @@ export function AdminAuditPage() {
                   }}
                   aria-pressed={active}
                   className={
-                    "min-h-[32px] rounded-full px-3 py-1 text-xs font-medium border motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
+                    "min-h-[40px] md:min-h-[32px] rounded-full px-3 py-1 text-xs font-medium border motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
                     (active
                       ? "bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700"
                       : "bg-white dark:bg-slate-950 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800")

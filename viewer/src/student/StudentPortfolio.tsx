@@ -28,6 +28,7 @@ import {
 } from "./useStudentPortfolio";
 import { PortfolioSubmissionForm } from "./PortfolioSubmissionForm";
 import { SkeletonRows } from "@/components/Skeleton";
+import { EmptyState } from "@/components";
 
 /**
  * Per-type leaf icons. Inline line-SVGs (stroke=currentColor, 24x24 viewBox)
@@ -525,14 +526,12 @@ export function StudentPortfolio() {
   }
   if (items.length === 0) {
     return (
-      <div className="rounded-2xl bg-white/70 dark:bg-slate-900/50 ring-1 ring-dashed ring-slate-300 dark:ring-slate-700 px-6 py-10 text-center">
-        <p className="text-slate-600 dark:text-slate-300 font-medium">
-          No portfolio items yet
-        </p>
-        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Your teacher hasn't added any requirements to the portfolio.
-        </p>
-      </div>
+      <EmptyState
+        framed
+        icon="inbox"
+        title="No portfolio items yet"
+        body="Your teacher hasn't added any requirements to the portfolio."
+      />
     );
   }
 
@@ -645,21 +644,13 @@ export function StudentPortfolio() {
         </div>
 
         {visibleTree.length === 0 ? (
-          <div className="rounded-2xl bg-white/70 dark:bg-slate-900/50 ring-1 ring-dashed ring-slate-300 dark:ring-slate-700 px-6 py-10 text-center">
-            <p className="text-slate-600 dark:text-slate-300 font-medium">
-              No items match this filter
-            </p>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Try a different status or clear the filter.
-            </p>
-            <button
-              type="button"
-              onClick={() => setFilter("all")}
-              className="mt-4 inline-flex items-center rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 min-h-[40px]"
-            >
-              Show all
-            </button>
-          </div>
+          <EmptyState
+            framed
+            icon="check"
+            title="No items match this filter"
+            body="Try a different status or clear the filter."
+            cta={{ label: "Show all items", onClick: () => setFilter("all") }}
+          />
         ) : (
           <ul className="space-y-2">
             {sortedChildren(visibleTree, sortMode).map((node) => (

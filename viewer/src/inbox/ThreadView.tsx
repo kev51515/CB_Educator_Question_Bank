@@ -120,6 +120,19 @@ export function ThreadView() {
     })();
   }, [threadId, currentUserId]);
 
+  // Surface async message-load failures as a toast (transient feedback)
+  // rather than inline error text. Fires once per distinct error message.
+  const loadErrorRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!error) {
+      loadErrorRef.current = null;
+      return;
+    }
+    if (loadErrorRef.current === error) return;
+    loadErrorRef.current = error;
+    toast.error("Couldn't load messages", error);
+  }, [error, toast]);
+
   // Reset optimistic queue + unread snapshot when switching threads.
   useEffect(() => {
     setOptimistic([]);
@@ -299,9 +312,6 @@ export function ThreadView() {
             <Skeleton className="h-14 w-2/3 rounded-2xl ml-auto" />
             <Skeleton className="h-14 w-3/5 rounded-2xl" />
           </div>
-        )}
-        {error && (
-          <p className="text-sm text-rose-600 dark:text-rose-400">{error}</p>
         )}
         {!loading && !error && displayMessages.length === 0 && (
           <EmptyState

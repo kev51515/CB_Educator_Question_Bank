@@ -52,6 +52,12 @@ const FILTER_PILLS: ReadonlyArray<{ value: FilterValue; label: string }> = [
   { value: "file", label: "Files" },
 ];
 
+const SORT_PILLS: ReadonlyArray<{ value: SortValue; label: string }> = [
+  { value: "recent", label: "Recent" },
+  { value: "oldest", label: "Oldest" },
+  { value: "title", label: "A–Z" },
+];
+
 function isFilterValue(v: unknown): v is FilterValue {
   return v === "all" || v === "link" || v === "file";
 }
@@ -338,22 +344,32 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
                 </button>
               )}
             </div>
-            <label className="inline-flex items-center gap-2 shrink-0">
-              <span className="sr-only">Sort materials</span>
-              <select
-                value={view.sort}
-                onChange={(e) => {
-                  const next = e.target.value;
-                  if (isSortValue(next)) setView((v) => ({ ...v, sort: next }));
-                }}
-                aria-label="Sort materials"
-                className="h-10 rounded-xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 px-3 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:focus:ring-indigo-600 motion-safe:transition-colors"
-              >
-                <option value="recent">Most recent</option>
-                <option value="oldest">Oldest first</option>
-                <option value="title">Title (A–Z)</option>
-              </select>
-            </label>
+            <div
+              role="radiogroup"
+              aria-label="Sort materials"
+              className="inline-flex shrink-0 rounded-xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 p-0.5"
+            >
+              {SORT_PILLS.map((pill) => {
+                const active = view.sort === pill.value;
+                return (
+                  <button
+                    key={pill.value}
+                    type="button"
+                    role="radio"
+                    aria-checked={active}
+                    onClick={() => setView((v) => ({ ...v, sort: pill.value }))}
+                    className={[
+                      "inline-flex items-center justify-center min-h-9 px-3 rounded-[0.625rem] text-sm motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
+                      active
+                        ? "bg-indigo-600 text-white"
+                        : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800",
+                    ].join(" ")}
+                  >
+                    {pill.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div

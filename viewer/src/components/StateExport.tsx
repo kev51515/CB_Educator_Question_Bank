@@ -12,6 +12,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { IDENTITY } from "@/lib/designTokens";
 import { useFocusTrap } from "@/hooks";
+import { FileDropzone } from "./FileDropzone";
 import type { Tag } from "./TagSystem";
 import type { Annotation } from "./Annotations";
 import type { QuestionFlag } from "./QuestionFlags";
@@ -397,8 +398,8 @@ export function StateExportPanel({
   onApplied,
 }: StateExportPanelProps): JSX.Element | null {
   const dialogRef = useRef<HTMLDivElement | null>(null);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
+  const [importFiles, setImportFiles] = useState<File[]>([]);
   const [incoming, setIncoming] = useState<ExportedState | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
 
@@ -422,7 +423,7 @@ export function StateExportPanel({
     if (!open) {
       setIncoming(null);
       setParseError(null);
-      if (fileInputRef.current) fileInputRef.current.value = "";
+      setImportFiles([]);
     }
   }, [open]);
 
@@ -464,6 +465,19 @@ export function StateExportPanel({
     reader.onerror = () => setParseError("Could not read file");
     reader.readAsText(file);
   }, []);
+
+  const handleFilesChange = useCallback(
+    (files: File[]) => {
+      setImportFiles(files);
+      const file = files[0];
+      if (file) handleFile(file);
+      else {
+        setIncoming(null);
+        setParseError(null);
+      }
+    },
+    [handleFile],
+  );
 
   const handleMerge = useCallback(() => {
     if (!incoming) return;
@@ -558,17 +572,14 @@ export function StateExportPanel({
           <h3 className="text-[12px] font-semibold uppercase tracking-wide text-ink-500 mb-2">
             Import
           </h3>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="application/json,.json"
-            onChange={(e) => {
-              const file = e.target.files?.[0];
-              if (file) handleFile(file);
-            }}
-            className="block text-[12px] text-ink-700 mb-3"
-            aria-label="Choose backup file"
-          />
+          <div className="mb-3">
+            <FileDropzone
+              files={importFiles}
+              onChange={handleFilesChange}
+              accept=".json,application/json"
+              multiple={false}
+            />
+          </div>
 
           {parseError && (
             <p

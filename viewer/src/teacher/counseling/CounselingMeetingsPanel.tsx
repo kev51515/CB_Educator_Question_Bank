@@ -19,7 +19,7 @@
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useToast } from "@/components";
+import { useToast, MarkdownEditor, SmartDatePicker } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { ConfirmDialog } from "../ConfirmDialog";
@@ -41,8 +41,26 @@ interface Props {
 }
 
 function todayStr(): string {
-  // Local-date YYYY-MM-DD for an <input type="date"> default.
+  // Local-date YYYY-MM-DD persisted to `met_on`.
   const d = new Date();
+  const m = `${d.getMonth() + 1}`.padStart(2, "0");
+  const day = `${d.getDate()}`.padStart(2, "0");
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+
+/** `met_on` (YYYY-MM-DD) → local-noon ISO string for <SmartDatePicker>. */
+function dateStrToIso(value: string): string | null {
+  const [y, m, d] = value.split("-").map((n) => parseInt(n, 10));
+  if (!y || !m || !d) return null;
+  // Noon local avoids the picker's end-of-day rollover crossing a day boundary.
+  return new Date(y, m - 1, d, 12, 0, 0).toISOString();
+}
+
+/** <SmartDatePicker> ISO string → local YYYY-MM-DD for `met_on`. */
+function isoToDateStr(value: string | null): string {
+  if (!value) return "";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return "";
   const m = `${d.getMonth() + 1}`.padStart(2, "0");
   const day = `${d.getDate()}`.padStart(2, "0");
   return `${d.getFullYear()}-${m}-${day}`;
@@ -75,8 +93,34 @@ function metOnParts(value: string): { month: string; day: string } | null {
   };
 }
 
-const inputCls =
-  "w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500";
+/** True when a MarkdownEditor's HTML has no visible content (empty `<p>`s). */
+function isHtmlEmpty(html: string): boolean {
+  return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, "").trim().length === 0;
+}
+
+/**
+ * MeetingDateField
+ * ----------------
+ * Shared wrapper that bridges <SmartDatePicker> (ISO strings) and the
+ * `met_on` plain-date (YYYY-MM-DD) state used by both the add form and the
+ * inline editor, so the two date inputs don't duplicate the conversion glue.
+ */
+function MeetingDateField({
+  value,
+  onChange,
+}: {
+  value: string; // YYYY-MM-DD
+  onChange: (next: string) => void;
+}) {
+  return (
+    <SmartDatePicker
+      label="Date"
+      allowClear={false}
+      value={dateStrToIso(value)}
+      onChange={(iso) => onChange(isoToDateStr(iso) || todayStr())}
+    />
+  );
+}
 
 export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
   const toast = useToast();
@@ -96,7 +140,7 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
   const [newSummary, setNewSummary] = useState("");
   const [newNextSteps, setNewNextSteps] = useState("");
   const [saving, setSaving] = useState(false);
-  const newSummaryRef = useRef<HTMLTextAreaElement | null>(null);
+  const newFormRef = useRef<HTMLDivElement | null>(null);
 
   // Per-row edit + delete state.
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -136,8 +180,8 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
       course_id: courseId,
       student_id: studentId,
       met_on: newDate || todayStr(),
-      summary: newSummary.trim() || null,
-      next_steps: newNextSteps.trim() || null,
+      summary: isHtmlEmpty(newSummary) ? null : newSummary,
+      next_steps: isHtmlEmpty(newNextSteps) ? null : newNextSteps,
     });
     if (!aliveRef.current) return;
     setSaving(false);
@@ -170,8 +214,8 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
       .from("counseling_meetings")
       .update({
         met_on: editDate || todayStr(),
-        summary: editSummary.trim() || null,
-        next_steps: editNextSteps.trim() || null,
+        summary: isHtmlEmpty(editSummary) ? null : editSummary,
+        next_steps: isHtmlEmpty(editNextSteps) ? null : editNextSteps,
       })
       .eq("id", id);
     if (!aliveRef.current) return;
@@ -210,56 +254,34 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
       </h3>
 
       {/* Log a meeting */}
-      <div className="space-y-2 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-slate-50/60 dark:bg-slate-900/40 p-4">
+      <div
+        ref={newFormRef}
+        className="space-y-3 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-slate-50/60 dark:bg-slate-900/40 p-4"
+      >
         <p className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
           Log a meeting
         </p>
+        <MeetingDateField value={newDate} onChange={setNewDate} />
         <div>
-          <label
-            htmlFor="counseling-new-date"
-            className="block text-xs text-slate-500 dark:text-slate-400 mb-1"
-          >
-            Date
-          </label>
-          <input
-            id="counseling-new-date"
-            type="date"
-            value={newDate}
-            onChange={(e) => setNewDate(e.target.value)}
-            className={`${inputCls} min-h-[40px]`}
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="counseling-new-summary"
-            className="block text-xs text-slate-500 dark:text-slate-400 mb-1"
-          >
+          <label className="block text-xs text-slate-500 dark:text-slate-400 mb-1">
             Summary
           </label>
-          <textarea
-            id="counseling-new-summary"
-            ref={newSummaryRef}
+          <MarkdownEditor
             value={newSummary}
-            onChange={(e) => setNewSummary(e.target.value)}
-            rows={3}
+            onChange={setNewSummary}
             placeholder="What did you discuss?"
-            className={inputCls}
+            minHeight={96}
           />
         </div>
         <div>
-          <label
-            htmlFor="counseling-new-next"
-            className="block text-xs text-slate-500 dark:text-slate-400 mb-1"
-          >
+          <label className="block text-xs text-slate-500 dark:text-slate-400 mb-1">
             Next steps
           </label>
-          <textarea
-            id="counseling-new-next"
+          <MarkdownEditor
             value={newNextSteps}
-            onChange={(e) => setNewNextSteps(e.target.value)}
-            rows={2}
+            onChange={setNewNextSteps}
             placeholder="Agreed follow-ups (optional)"
-            className={inputCls}
+            minHeight={72}
           />
         </div>
         <div className="flex justify-end">
@@ -287,11 +309,13 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
           cta={{
             label: "Log first meeting",
             onClick: () => {
-              newSummaryRef.current?.focus();
-              newSummaryRef.current?.scrollIntoView({
+              newFormRef.current?.scrollIntoView({
                 behavior: "smooth",
                 block: "center",
               });
+              newFormRef.current
+                ?.querySelector<HTMLElement>('[contenteditable="true"]')
+                ?.focus();
             },
           }}
         />
@@ -316,50 +340,26 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
                 </span>
                 <div className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 p-4 space-y-2">
                 {isEditing ? (
-                  <div className="space-y-2">
+                  <div className="space-y-3">
+                    <MeetingDateField value={editDate} onChange={setEditDate} />
                     <div>
-                      <label
-                        htmlFor={`counseling-edit-date-${m.id}`}
-                        className="block text-xs text-slate-500 dark:text-slate-400 mb-1"
-                      >
-                        Date
-                      </label>
-                      <input
-                        id={`counseling-edit-date-${m.id}`}
-                        type="date"
-                        value={editDate}
-                        onChange={(e) => setEditDate(e.target.value)}
-                        className={`${inputCls} min-h-[40px]`}
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor={`counseling-edit-summary-${m.id}`}
-                        className="block text-xs text-slate-500 dark:text-slate-400 mb-1"
-                      >
+                      <label className="block text-xs text-slate-500 dark:text-slate-400 mb-1">
                         Summary
                       </label>
-                      <textarea
-                        id={`counseling-edit-summary-${m.id}`}
+                      <MarkdownEditor
                         value={editSummary}
-                        onChange={(e) => setEditSummary(e.target.value)}
-                        rows={3}
-                        className={inputCls}
+                        onChange={setEditSummary}
+                        minHeight={96}
                       />
                     </div>
                     <div>
-                      <label
-                        htmlFor={`counseling-edit-next-${m.id}`}
-                        className="block text-xs text-slate-500 dark:text-slate-400 mb-1"
-                      >
+                      <label className="block text-xs text-slate-500 dark:text-slate-400 mb-1">
                         Next steps
                       </label>
-                      <textarea
-                        id={`counseling-edit-next-${m.id}`}
+                      <MarkdownEditor
                         value={editNextSteps}
-                        onChange={(e) => setEditNextSteps(e.target.value)}
-                        rows={2}
-                        className={inputCls}
+                        onChange={setEditNextSteps}
+                        minHeight={72}
                       />
                     </div>
                     <div className="flex items-center justify-end gap-2 pt-1">
@@ -417,23 +417,25 @@ export function CounselingMeetingsPanel({ courseId, studentId }: Props) {
                         </button>
                       </div>
                     </div>
-                    {m.summary ? (
-                      <p className="whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-300">
-                        {m.summary}
-                      </p>
+                    {m.summary && !isHtmlEmpty(m.summary) ? (
+                      <div
+                        className="prose prose-sm dark:prose-invert max-w-none text-sm text-slate-700 dark:text-slate-300"
+                        dangerouslySetInnerHTML={{ __html: m.summary }}
+                      />
                     ) : (
                       <p className="text-sm italic text-slate-400 dark:text-slate-500">
                         No summary.
                       </p>
                     )}
-                    {m.next_steps && (
+                    {m.next_steps && !isHtmlEmpty(m.next_steps) && (
                       <div className="rounded-lg border-l-2 border-emerald-400 dark:border-emerald-500 bg-emerald-50/70 dark:bg-emerald-950/30 px-3 py-2">
                         <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
                           Next steps
                         </p>
-                        <p className="mt-0.5 whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-300">
-                          {m.next_steps}
-                        </p>
+                        <div
+                          className="prose prose-sm dark:prose-invert mt-0.5 max-w-none text-sm text-slate-700 dark:text-slate-300"
+                          dangerouslySetInnerHTML={{ __html: m.next_steps }}
+                        />
                       </div>
                     )}
                   </>

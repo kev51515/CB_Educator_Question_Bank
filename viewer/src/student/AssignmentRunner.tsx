@@ -106,15 +106,26 @@ interface AssignmentPolicyRow {
  * default JSON shape but the code itself is sufficient signal.
  */
 function describeStartError(message: string): string {
+  if (message.includes("not_authenticated")) {
+    return "Your session expired. Sign in again, then reopen this assignment.";
+  }
+  if (message.includes("not_authorized")) {
+    return "You don't have access to this assignment. Ask your teacher to add you to the course.";
+  }
   if (message.includes("not_enrolled")) {
-    return "You aren't enrolled in this assignment's course.";
+    return "You aren't enrolled in this assignment's course. Ask your teacher for the course join code, then try again.";
   }
   if (message.includes("not_open")) {
-    return "This assignment isn't open yet.";
+    return "This assignment isn't open yet. Check the due window with your teacher, then come back when it opens.";
+  }
+  if (message.includes("already_submitted")) {
+    return "You've already submitted this assignment. Open it from your assignments list to review your results.";
   }
   if (message.includes("invalid_questions")) {
-    return "Couldn't build a question set for this assignment.";
+    return "Couldn't build a question set for this assignment. Ask your teacher to check the source or difficulty settings.";
   }
+  // Unknown / unmapped code — surface the raw message so the student can
+  // report it, and Retry/Back remain available below.
   return message;
 }
 

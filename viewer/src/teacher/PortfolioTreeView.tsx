@@ -79,7 +79,7 @@ export function PortfolioTreeView({
       {draggedNode && (
         <div
           aria-hidden
-          className="h-12 mt-2 rounded-xl border-2 border-dashed border-indigo-300 dark:border-indigo-800 bg-indigo-50/30 dark:bg-indigo-950/20 flex items-center justify-center text-xs font-medium text-indigo-700 dark:text-indigo-300"
+          className="h-12 mt-2 rounded-xl border-2 border-dashed border-indigo-300 dark:border-indigo-800 bg-indigo-50/30 dark:bg-indigo-950/20 shadow-[0_0_0_3px_rgba(99,102,241,0.15)] flex items-center justify-center"
           onDragOver={(e) => {
             if (!draggedNode) return;
             e.preventDefault();
@@ -113,7 +113,9 @@ export function PortfolioTreeView({
             onCommitDrop(cur);
           }}
         >
-          Drop here to append at the end
+          <span className="inline-flex items-center rounded-full bg-indigo-600 px-3 py-1 text-xs font-medium text-white shadow-sm">
+            ↓ End of list
+          </span>
         </div>
       )}
     </div>

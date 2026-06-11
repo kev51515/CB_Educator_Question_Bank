@@ -105,14 +105,14 @@ export function PostNode({
                   setReplying(false);
                   setEditing(true);
                 }}
-                className="rounded-md px-2 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 min-h-[28px]"
+                className="rounded-md px-2 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 min-h-[40px] md:min-h-0"
               >
                 Edit
               </button>
               <button
                 type="button"
                 onClick={() => onDeletePost(node.post)}
-                className="rounded-md px-2 py-1 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 min-h-[28px]"
+                className="rounded-md px-2 py-1 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 min-h-[40px] md:min-h-0"
               >
                 Delete
               </button>

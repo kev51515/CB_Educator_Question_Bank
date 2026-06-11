@@ -118,7 +118,7 @@ export function InlineRename({
           height={12}
           viewBox="0 0 16 16"
           aria-hidden
-          className="opacity-60 group-hover:opacity-100 transition text-slate-400 flex-none"
+          className="opacity-60 group-hover:opacity-100 group-focus-visible:opacity-100 transition text-slate-400 flex-none"
         >
           <path
             fill="currentColor"

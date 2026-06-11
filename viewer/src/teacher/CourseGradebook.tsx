@@ -8,7 +8,7 @@
  * Reads existing tables: course_memberships, assignments, assignment_attempts.
  * No migration; no writes.
  */
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useClassContext } from "./classLayoutContext";
@@ -83,6 +83,40 @@ export function CourseGradebook() {
   useEffect(() => {
     writeFilter(courseId, filter);
   }, [courseId, filter]);
+
+  // Horizontal scroll-position restore for the (often wide) gradebook matrix.
+  // Persisted per-course in localStorage so navigating away and back — or a
+  // reload — returns to the same column the teacher was looking at. The search
+  // box stays transient (see `searchQuery` above); only scroll position is
+  // sticky here. Restore is gated on `loading` so it runs once the table has
+  // actually rendered its real width.
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const scrollKey = `gradebook.scrollLeft.${courseId}`;
+  useEffect(() => {
+    if (loading) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    let raw: string | null = null;
+    try {
+      raw = window.localStorage.getItem(scrollKey);
+    } catch {
+      raw = null;
+    }
+    const left = raw ? Number(raw) : 0;
+    if (Number.isFinite(left) && left > 0) {
+      el.scrollLeft = left;
+    }
+  }, [loading, scrollKey]);
+
+  const onTableScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    try {
+      window.localStorage.setItem(scrollKey, String(el.scrollLeft));
+    } catch {
+      /* localStorage unavailable (private mode / quota) — non-fatal */
+    }
+  }, [scrollKey]);
 
   useEffect(() => {
     let cancelled = false;
@@ -657,7 +691,11 @@ export function CourseGradebook() {
             sticky doesn't work reliably across browsers for
             `border-collapse` tables.
           */}
-          <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 overflow-x-auto">
+          <div
+            ref={scrollRef}
+            onScroll={onTableScroll}
+            className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 overflow-x-auto"
+          >
             <table className="min-w-full border-collapse">
               <thead>
                 <tr>
