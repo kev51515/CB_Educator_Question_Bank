@@ -236,7 +236,7 @@ export function CourseOverview() {
           ClassLayout chrome, so this strip is just a context recap + Refresh. */}
       <div className="flex items-center justify-between gap-3">
         <div className="min-w-0 flex items-center gap-2">
-          <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100 truncate">
+          <h1 className="page-title text-lg font-semibold text-slate-900 dark:text-slate-100 truncate">
             {cls.name}
           </h1>
           <span className="rounded-md bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-0.5 font-mono text-[11px] text-slate-600 dark:text-slate-300">
@@ -254,6 +254,8 @@ export function CourseOverview() {
           {refreshing ? "Refreshing…" : "Refresh"}
         </button>
       </div>
+
+      <div className="ivy-rule" aria-hidden="true" />
 
       {error && (
         <div
@@ -395,7 +397,7 @@ export function CourseOverview() {
             >
               <div className="flex items-baseline gap-3">
                 <span
-                  className={`text-4xl font-bold tabular-nums ${scoreBandClass(
+                  className={`ceremonial text-4xl font-bold tabular-nums ${scoreBandClass(
                     data.avgEffectiveScore30Days,
                   )}`}
                 >

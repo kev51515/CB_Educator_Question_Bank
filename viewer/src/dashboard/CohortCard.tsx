@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { type CohortRow } from "./useCohortSummary";
 import { courseModulesPath } from "@/lib/routes";
+import { useUiTheme } from "@/lib/theme";
 
 // ─── Score pill ───────────────────────────────────────────────────────────
 
@@ -9,7 +10,19 @@ interface ScorePillProps {
 }
 
 function ScorePill({ value }: ScorePillProps) {
+  const ivy = useUiTheme() === "ivy";
   if (value === null) {
+    if (ivy) {
+      // Ivy: quiet italic line instead of a grey pill (same copy + tooltip).
+      return (
+        <span
+          className="text-[11px] italic text-slate-500 dark:text-slate-400"
+          title="No graded attempts in the last 30 days"
+        >
+          No activity yet
+        </span>
+      );
+    }
     return (
       <span
         className="
@@ -25,6 +38,24 @@ function ScorePill({ value }: ScorePillProps) {
     );
   }
   const rounded = Math.round(value);
+  if (ivy) {
+    // Ivy: the 30-day average is the cohort card's ledger moment — a
+    // ceremonial display numeral instead of a tinted pill. Same copy
+    // ("Avg N%"), restructured as label + numeral.
+    return (
+      <span
+        className="inline-flex items-baseline gap-1.5"
+        title="Average score over the last 30 days"
+      >
+        <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
+          Avg
+        </span>
+        <span className="ceremonial text-[24px] leading-none tabular-nums">
+          {rounded}%
+        </span>
+      </span>
+    );
+  }
   let cls = "";
   if (value >= 80) {
     cls =
@@ -102,7 +133,7 @@ export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) 
             absolute top-2 right-2 z-10
             inline-flex items-center gap-1
             min-h-[40px] px-2.5 py-1
-            rounded-full text-[11px] font-semibold
+            rounded-full text-[11px] font-semibold tabular-nums
             bg-rose-100 text-rose-800
             dark:bg-rose-900/40 dark:text-rose-200
             hover:bg-rose-200 dark:hover:bg-rose-900/60
@@ -139,7 +170,7 @@ export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) 
         <div className="flex flex-wrap items-center gap-1.5">
           <span
             className="
-              inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium
+              inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium tabular-nums
               bg-slate-100 text-slate-700
               dark:bg-slate-800 dark:text-slate-200
             "
@@ -148,7 +179,7 @@ export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) 
           </span>
           <span
             className="
-              inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium
+              inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium tabular-nums
               bg-slate-100 text-slate-700
               dark:bg-slate-800 dark:text-slate-200
             "

@@ -270,6 +270,7 @@ function DashboardCard({
       <CourseCard
       paletteSeed={course.id}
       name={course.name}
+      domain={domainOf(course.course_type)}
       description={course.description}
       tag={
         course.course_type === "class"
@@ -531,7 +532,7 @@ export function DashboardPage() {
       <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6 space-y-8">
         <header className="flex items-end justify-between gap-3">
           <div className="space-y-1">
-            <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
+            <h1 className="page-title text-2xl font-semibold text-slate-900 dark:text-slate-100">
               Dashboard
             </h1>
             <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -563,6 +564,8 @@ export function DashboardPage() {
             </button>
           )}
         </header>
+
+        <div className="ivy-rule" aria-hidden="true" />
 
         {!loading && !error && domainsWithCourses.length > 1 && (
           <div
@@ -663,7 +666,7 @@ export function DashboardPage() {
 
         {!loading && !error && published.length > 0 && (
           <section className="space-y-3">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 tabular-nums">
               Published courses ({published.length})
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -686,7 +689,7 @@ export function DashboardPage() {
 
         {!loading && !error && unpublished.length > 0 && (
           <section className="space-y-3">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 tabular-nums">
               Unpublished ({unpublished.length})
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

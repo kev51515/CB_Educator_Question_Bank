@@ -435,7 +435,7 @@ export function StudentCourseView(): JSX.Element {
                   Course · {course.short_code}
                 </p>
                 <div className="flex flex-wrap items-center gap-2">
-                  <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
+                  <h1 className="page-title text-3xl font-bold text-slate-900 dark:text-slate-100">
                     {course.name}
                   </h1>
                   <span className="inline-flex items-center rounded-full bg-accent-50 dark:bg-accent-950/40 px-2.5 py-0.5 text-xs font-medium text-accent-700 dark:text-accent-300 ring-1 ring-accent-200/60 dark:ring-accent-800/60">
@@ -464,6 +464,7 @@ export function StudentCourseView(): JSX.Element {
                     {course.description}
                   </p>
                 )}
+                <div className="ivy-rule" aria-hidden="true" />
               </div>
 
               {/* SAT/class quick-stats — not meaningful for a counseling or
@@ -504,6 +505,7 @@ export function StudentCourseView(): JSX.Element {
                 />
                 <StatCard
                   label="My average"
+                  ceremonial
                   value={
                     statsLoading
                       ? null

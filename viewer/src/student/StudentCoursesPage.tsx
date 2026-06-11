@@ -18,7 +18,7 @@ export function StudentCoursesPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 py-6 sm:py-8">
       <div className="mb-5 flex items-center justify-between gap-3">
-        <h1 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+        <h1 className="page-title text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
           Courses
         </h1>
         <button
@@ -29,6 +29,7 @@ export function StudentCoursesPage() {
           + Join a class
         </button>
       </div>
+      <div className="ivy-rule mb-5" aria-hidden="true" />
 
       <MyClassesPanel refreshToken={refreshToken} />
 

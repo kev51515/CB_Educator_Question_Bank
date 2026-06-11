@@ -61,7 +61,7 @@ export function Section({
         <span
           className="
             inline-flex items-center justify-center min-w-[1.5rem] px-1.5
-            h-5 rounded-full text-xs font-medium
+            h-5 rounded-full text-xs font-medium tabular-nums
             bg-indigo-100 text-indigo-700
             dark:bg-indigo-900/60 dark:text-indigo-200
           "

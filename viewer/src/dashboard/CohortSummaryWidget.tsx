@@ -219,7 +219,7 @@ export function CohortSummaryWidget({ teacherId }: CohortSummaryWidgetProps) {
               aria-label={`${totalCohorts} cohort${totalCohorts === 1 ? "" : "s"}`}
               className="
                 inline-flex items-center justify-center min-w-[1.5rem] px-1.5
-                h-5 rounded-full text-xs font-semibold
+                h-5 rounded-full text-xs font-semibold tabular-nums
                 bg-slate-100 text-slate-700
                 dark:bg-slate-800 dark:text-slate-200
               "

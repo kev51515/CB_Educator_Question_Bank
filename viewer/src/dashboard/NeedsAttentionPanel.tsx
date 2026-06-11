@@ -206,7 +206,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
               aria-label={`${totalCount} items`}
               className="
                 inline-flex items-center justify-center min-w-[1.5rem] px-1.5
-                h-5 rounded-full text-xs font-semibold
+                h-5 rounded-full text-xs font-semibold tabular-nums
                 bg-indigo-600 text-white
                 dark:bg-indigo-500
               "

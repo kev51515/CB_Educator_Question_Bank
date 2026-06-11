@@ -315,6 +315,8 @@ export function AssignmentsPage({
             onCreate={() => setShowCreate(true)}
           />
 
+          <div className="ivy-rule" aria-hidden="true" />
+
           <section aria-labelledby="assignments-title" className="space-y-3">
             {loading ? (
               <SkeletonRows count={4} rowClassName="h-32" />

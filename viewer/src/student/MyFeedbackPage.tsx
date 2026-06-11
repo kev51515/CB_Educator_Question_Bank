@@ -548,7 +548,7 @@ export function MyFeedbackPage() {
             <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
               Feedback
             </p>
-            <h1 className="mt-1 text-3xl font-bold text-slate-900 dark:text-slate-100">
+            <h1 className="page-title mt-1 text-3xl font-bold text-slate-900 dark:text-slate-100">
               Feedback history
             </h1>
             <p className="mt-2 text-slate-600 dark:text-slate-400">
@@ -564,6 +564,7 @@ export function MyFeedbackPage() {
             ← Back
           </button>
         </header>
+        <div className="ivy-rule" aria-hidden="true" />
 
         {/* Loading: 4 skeleton rows mirroring the row shape. */}
         {loading && items.length === 0 && (

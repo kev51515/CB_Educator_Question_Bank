@@ -22,6 +22,7 @@ import {
   courseStudentProfilePath,
   ROUTES,
 } from "@/lib/routes";
+import { useUiTheme } from "@/lib/theme";
 import {
   type RosterRow,
   type AssignmentRow,
@@ -30,6 +31,7 @@ import {
   type GradebookSortState,
   type SortKey,
   type GradebookFilter,
+  type Cell,
   getErrorMessage,
   truncateTitle,
   pickCell,
@@ -45,6 +47,20 @@ import {
   FILTER_LABELS,
 } from "./courseGradebookHelpers";
 
+/**
+ * Ivy-theme cell tone — outlier-only coloring. The ledger reads as quiet ink;
+ * only scores below 60% get red so a teacher's eye lands on real problems.
+ * Classic keeps the original four-band tinting via cellToneClass().
+ */
+function ivyCellToneClass(cell: Cell): string {
+  if (cell.kind === "score") {
+    return (cell.score ?? 0) < 60
+      ? "text-rose-700 dark:text-rose-400"
+      : "text-slate-900 dark:text-slate-100";
+  }
+  return "text-slate-500 dark:text-slate-400";
+}
+
 export function CourseGradebook() {
   const { cls } = useClassContext();
   const courseId = cls.id;
@@ -52,6 +68,7 @@ export function CourseGradebook() {
   const courseShortCode = cls.short_code;
   const navigate = useNavigate();
   const toast = useToast();
+  const uiTheme = useUiTheme();
 
   const [students, setStudents] = useState<Student[]>([]);
   const [assignments, setAssignments] = useState<AssignmentRow[]>([]);
@@ -504,7 +521,7 @@ export function CourseGradebook() {
   if (loading) {
     return (
       <div className="space-y-6 p-6">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+        <h1 className="page-title text-2xl font-bold text-slate-900 dark:text-slate-100">
           Gradebook
         </h1>
         <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 p-4 space-y-3">
@@ -518,7 +535,7 @@ export function CourseGradebook() {
   if (error) {
     return (
       <div className="space-y-6 p-6">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+        <h1 className="page-title text-2xl font-bold text-slate-900 dark:text-slate-100">
           Gradebook
         </h1>
         <div
@@ -548,7 +565,7 @@ export function CourseGradebook() {
   return (
     <div className="space-y-6 p-6">
       <div className="flex items-center justify-between gap-4">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+        <h1 className="page-title text-2xl font-bold text-slate-900 dark:text-slate-100">
           Gradebook
         </h1>
         <button
@@ -588,6 +605,8 @@ export function CourseGradebook() {
           Export CSV
         </button>
       </div>
+
+      <div className="ivy-rule" aria-hidden="true" />
 
       {!hasData ? (
         <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">
@@ -777,7 +796,7 @@ export function CourseGradebook() {
                               }
                               title={titleHint}
                               aria-label={`${titleHint} — ${a.title}`}
-                              className={`relative inline-flex items-center justify-center rounded-md min-h-[40px] md:min-h-0 px-2 py-1.5 md:py-0.5 text-xs font-medium hover:opacity-80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${cellToneClass(cell)}`}
+                              className={`relative inline-flex items-center justify-center rounded-md min-h-[40px] md:min-h-0 px-2 py-1.5 md:py-0.5 text-xs font-medium tabular-nums hover:opacity-80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${uiTheme === "ivy" ? ivyCellToneClass(cell) : cellToneClass(cell)}`}
                             >
                               {renderCellText(cell)}
                               {cell.adjusted && (
@@ -790,7 +809,7 @@ export function CourseGradebook() {
                           </td>
                         );
                       })}
-                      <td className="px-3 py-2 text-sm font-medium text-slate-900 dark:text-slate-100">
+                      <td className="px-3 py-2 text-sm font-medium tabular-nums text-slate-900 dark:text-slate-100">
                         {avg === null || avg === undefined
                           ? "—"
                           : `${Math.round(avg)}%`}

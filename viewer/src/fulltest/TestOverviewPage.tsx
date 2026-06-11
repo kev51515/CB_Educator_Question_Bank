@@ -650,7 +650,7 @@ export function TestOverviewPage(): JSX.Element {
             {metaLoading ? (
               <Skeleton className="mt-2 h-7 w-72 rounded" />
             ) : (
-              <h1 className="mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">
+              <h1 className="page-title mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">
                 {title}
               </h1>
             )}
@@ -795,6 +795,7 @@ export function TestOverviewPage(): JSX.Element {
           </div>
         </div>
       </header>
+      <div className="ivy-rule" aria-hidden="true" />
 
       {/* stat cards */}
       <section aria-label="Cohort summary" className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -820,6 +821,7 @@ export function TestOverviewPage(): JSX.Element {
           label="Average score"
           value={stats.avg}
           loading={rosterLoading}
+          ceremonial
           suffix={stats.avg != null ? "%" : undefined}
           sub={
             !rosterLoading && stats.low != null && stats.top != null

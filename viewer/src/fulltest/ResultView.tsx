@@ -79,7 +79,7 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
           {scaled.total !== null ? (
             <>
               <div className="mt-5 flex items-end gap-3">
-                <div className="text-[3.25rem] font-bold leading-none tabular-nums">
+                <div className="ceremonial text-[3.25rem] font-bold leading-none tabular-nums">
                   {scaled.total}
                 </div>
                 <div className="pb-1">
@@ -100,7 +100,7 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
             </>
           ) : singleSection !== null ? (
             <div className="mt-5 flex items-end gap-3">
-              <div className="text-[3.25rem] font-bold leading-none tabular-nums">
+              <div className="ceremonial text-[3.25rem] font-bold leading-none tabular-nums">
                 {singleSection.scaled}
               </div>
               <div className="pb-1">

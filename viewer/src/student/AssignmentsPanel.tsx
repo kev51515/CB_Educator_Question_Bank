@@ -209,7 +209,7 @@ export function AssignmentsPanel({
           My assignments
         </h3>
         {hasAnyAssignments && (
-          <span className="text-xs text-slate-500 dark:text-slate-400">
+          <span className="text-xs text-slate-500 dark:text-slate-400 tabular-nums">
             {totalOpen} total
           </span>
         )}
@@ -245,7 +245,7 @@ export function AssignmentsPanel({
                 >
                   <span>{FILTER_LABELS[key]}</span>
                   <span
-                    className={`ml-1.5 inline-flex items-center justify-center rounded-full px-1.5 text-[10px] font-semibold ${
+                    className={`ml-1.5 inline-flex items-center justify-center rounded-full px-1.5 text-[10px] font-semibold tabular-nums ${
                       isActive
                         ? "bg-white/20 text-white"
                         : "bg-white text-slate-600 dark:bg-slate-900 dark:text-slate-300"

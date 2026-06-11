@@ -432,7 +432,7 @@ export function SkillHeatmap() {
                     }`}
                   >
                     {domain}
-                    <span className="ml-1.5 opacity-80">({count})</span>
+                    <span className="ml-1.5 opacity-80 tabular-nums">({count})</span>
                   </button>
                 );
               })}
@@ -495,7 +495,7 @@ export function SkillHeatmap() {
                           <span className="text-lg font-bold tabular-nums">
                             {row.mastery}%
                           </span>
-                          <span className="text-[10px] opacity-80">
+                          <span className="text-[10px] opacity-80 tabular-nums">
                             {row.attempts} att
                           </span>
                         </div>

@@ -18,6 +18,7 @@
  *     italicized slate-500/slate-400.
  */
 import { useNavigate } from "react-router-dom";
+import { useUiTheme } from "@/lib/theme";
 import { useRecentFeedback, type RecentFeedbackItem } from "./useRecentFeedback";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ROUTES, assignmentReviewPath } from "@/lib/routes";
@@ -107,6 +108,7 @@ function PencilIcon() {
 }
 
 function FeedbackRow({ item, onOpen }: FeedbackRowProps) {
+  const uiTheme = useUiTheme();
   const hasFeedback = item.feedbackPreview !== null;
   const timeAgo = formatTimeAgo(item.gradedAt);
   const grader = item.graderDisplayName ?? "your teacher";
@@ -153,7 +155,13 @@ function FeedbackRow({ item, onOpen }: FeedbackRowProps) {
           {meta}
         </div>
         {item.feedbackPreview && (
-          <div className="mt-1 truncate text-xs italic text-slate-500 dark:text-slate-400">
+          <div
+            className={
+              uiTheme === "ivy"
+                ? "mt-1 truncate text-xs font-passage italic text-slate-500 dark:text-slate-400"
+                : "mt-1 truncate text-xs italic text-slate-500 dark:text-slate-400"
+            }
+          >
             “{item.feedbackPreview}”
           </div>
         )}

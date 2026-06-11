@@ -476,7 +476,7 @@ export function PassageBody({
   return (
     <div
       data-annot-field="passage"
-      className="text-[17px] leading-relaxed text-slate-800 dark:text-slate-200"
+      className="font-passage text-[17px] leading-relaxed text-slate-800 dark:text-slate-200"
       style={serif}
     >
       {blocks.map((block, idx) =>

@@ -12,6 +12,7 @@ export function StatCard({
   sub,
   suffix,
   tone = "slate",
+  ceremonial = false,
 }: {
   label: string;
   value: number | null;
@@ -19,6 +20,8 @@ export function StatCard({
   sub?: string;
   suffix?: string;
   tone?: "slate" | "indigo" | "emerald" | "blue" | "muted";
+  /** Ivy-theme accent for the one flagship numeral on screen; no-op in classic. */
+  ceremonial?: boolean;
 }): JSX.Element {
   const toneCls: Record<string, string> = {
     slate: "text-slate-900 dark:text-slate-100",
@@ -37,7 +40,7 @@ export function StatCard({
       ) : value === null ? (
         <p className="mt-1 text-3xl font-bold tabular-nums text-slate-300 dark:text-slate-600">—</p>
       ) : (
-        <p className={`mt-1 text-3xl font-bold tabular-nums ${toneCls[tone]}`}>
+        <p className={`mt-1 text-3xl font-bold tabular-nums ${ceremonial ? "ceremonial " : ""}${toneCls[tone]}`}>
           {value}
           {suffix && <span className="text-lg font-semibold">{suffix}</span>}
         </p>

@@ -19,6 +19,7 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUiTheme } from "@/lib/theme";
 import { useStudentSession } from "./session";
 import { ShortcutHelpOverlay } from "@/components/ShortcutHelpOverlay";
 
@@ -51,6 +52,7 @@ import { assignmentReviewPath, assignmentTakePath, studentCoursePath } from "@/l
 
 export function AreaSelector() {
   const navigate = useNavigate();
+  const uiTheme = useUiTheme();
   // We need the student id to scope assignment_attempts inserts / lookups,
   // and the display name for the welcome header. useStudentSession is cheap
   // (it's just a hook around the supabase session) and ensures we never
@@ -110,14 +112,23 @@ export function AreaSelector() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-12">
+    <div
+      className={
+        // Ivy: flat eggshell ground (the gradient's literal sky-blue stop
+        // can't retheme via vars and clashes with the navy identity).
+        // Classic: the original gradient, verbatim.
+        uiTheme === "ivy"
+          ? "min-h-screen bg-slate-50 dark:bg-slate-950 px-4 py-12"
+          : "min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-12"
+      }
+    >
       <div className="mx-auto max-w-5xl">
         <header className="mb-10 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center sm:gap-4">
           <div>
             <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
               Welcome back
             </p>
-            <h1 className="mt-1 text-3xl font-bold text-slate-900 dark:text-slate-100">
+            <h1 className="page-title mt-1 text-3xl font-bold text-slate-900 dark:text-slate-100">
               Hi, {studentName.split(" ")[0] || studentName}
             </h1>
             <p className="mt-2 text-slate-600 dark:text-slate-400">

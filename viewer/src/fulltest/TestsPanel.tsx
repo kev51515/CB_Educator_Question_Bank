@@ -121,7 +121,7 @@ export function TestsPanel() {
                     </span>
                     <SectionBadge sections={t.sections} />
                   </div>
-                  <div className="text-sm text-slate-500 dark:text-slate-400">
+                  <div className="text-sm tabular-nums text-slate-500 dark:text-slate-400">
                     {t.total_questions} questions · {t.module_count ?? "—"} timed{" "}
                     {t.module_count === 1 ? "module" : "modules"}
                     {formatTestDuration(t.total_time_seconds) && (
@@ -131,7 +131,7 @@ export function TestsPanel() {
                 </div>
                 <div className="flex items-center gap-3">
                   {submitted && run.score != null && run.total != null && (
-                    <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
+                    <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold tabular-nums text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
                       {run.score}/{run.total}
                     </span>
                   )}

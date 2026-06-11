@@ -16,6 +16,7 @@
  * never overflow their pane.
  */
 import { useEffect, useRef, useState } from "react";
+import { useUiTheme } from "@/lib/theme";
 import type { Letter, TestQuestion } from "./types";
 import type { AnnotField, Highlight } from "./annotations";
 import type { ChoiceRationale } from "./testContent";
@@ -102,6 +103,9 @@ function Stimulus({
   onRemoveHighlight?: (field: AnnotField, offset: number) => void;
 }) {
   const isMath = question.section === "math";
+  // Ivy: drop the inline Georgia override so the `font-passage` class
+  // (Literata) takes effect. Classic keeps the inline serif verbatim.
+  const serifStyle = useUiTheme() === "ivy" ? {} : SERIF;
   const passageRanges = (highlights ?? []).filter((h) => h.field === "passage");
   return (
     <div className="space-y-4">
@@ -120,7 +124,7 @@ function Stimulus({
           <PassageBody
             passage={question.passage}
             ranges={passageRanges}
-            serif={SERIF}
+            serif={serifStyle}
             onRemoveHighlight={onRemoveHighlight}
           />
         </div>
@@ -191,7 +195,7 @@ function QHeader({
           className={[
             "rounded-md border px-2 py-1 text-sm font-bold tracking-tight transition",
             strikeMode
-              ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-500"
+              ? "border-runner-600 bg-runner-600 text-white dark:border-runner-400 dark:bg-runner-500"
               : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
           ].join(" ")}
         >
@@ -328,6 +332,8 @@ function Prompt({
 >) {
   const rationaleEmpty =
     showRationale && (!rationale || Object.keys(rationale).length === 0);
+  // Ivy: drop the inline Georgia override so `font-passage` (Literata) applies.
+  const serifStyle = useUiTheme() === "ivy" ? {} : SERIF;
   // Track the mousedown point so a drag-select to highlight choice text doesn't
   // register as a click that toggles the answer (see the choice row onClick).
   const dragRef = useRef<{ x: number; y: number } | null>(null);
@@ -335,8 +341,8 @@ function Prompt({
     <div className="space-y-5">
       <p
         data-annot-field="stem"
-        className="whitespace-pre-wrap text-[17px] font-medium leading-relaxed text-slate-900 dark:text-slate-100"
-        style={SERIF}
+        className="whitespace-pre-wrap font-passage text-[17px] font-medium leading-relaxed text-slate-900 dark:text-slate-100"
+        style={serifStyle}
       >
         {renderText(
           question.stem,
@@ -401,7 +407,7 @@ function Prompt({
                           : isWrong
                             ? "border-rose-200 bg-rose-50/60 dark:border-rose-900/70 dark:bg-rose-950/20"
                             : selected && !struck
-                              ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
+                              ? "border-runner-600 bg-runner-50/70 dark:border-runner-400 dark:bg-blue-950/30"
                               : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
                         struck ? "opacity-50" : "",
                         disabled ? "cursor-default" : "",
@@ -417,7 +423,7 @@ function Prompt({
                               : isWrong
                                 ? "border-rose-300 text-rose-500 dark:border-rose-800 dark:text-rose-400"
                                 : selected
-                                  ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
+                                  ? "border-runner-600 bg-runner-600 text-white dark:border-runner-400 dark:bg-runner-400 dark:text-slate-900"
                                   : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
                         ].join(" ")}
                       >
@@ -426,12 +432,12 @@ function Prompt({
                       <span
                         data-annot-field={`choice:${letter}`}
                         className={[
-                          "select-text text-[16px] leading-relaxed",
+                          "select-text font-passage text-[16px] leading-relaxed",
                           struck
                             ? "text-slate-400 line-through dark:text-slate-500"
                             : "text-slate-800 dark:text-slate-200",
                         ].join(" ")}
-                        style={SERIF}
+                        style={serifStyle}
                       >
                         {wrong ? (
                           <HighlightedChoiceText text={text} wrong={wrong} />
@@ -471,7 +477,7 @@ function Prompt({
                         className={[
                           "grid h-9 w-9 shrink-0 place-items-center rounded-full border text-xs font-bold transition",
                           struck
-                            ? "border-blue-600 text-blue-700 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-950/40"
+                            ? "border-runner-600 text-runner-700 hover:bg-runner-50 dark:border-runner-400 dark:text-runner-300 dark:hover:bg-blue-950/40"
                             : "border-slate-300 text-slate-500 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-400 dark:hover:bg-slate-800",
                         ].join(" ")}
                       >
@@ -523,7 +529,7 @@ function Prompt({
               onChange(v.trim() === "" ? null : v);
             }}
             placeholder="e.g. 7, 3/5, or 4.75"
-            className="w-48 rounded-lg border-2 border-slate-300 bg-white px-3.5 py-2.5 text-lg text-slate-900 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-500/15 disabled:opacity-90 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
+            className="w-48 rounded-lg border-2 border-slate-300 bg-white px-3.5 py-2.5 text-lg text-slate-900 shadow-sm focus:border-runner-600 focus:outline-none focus:ring-4 focus:ring-runner-500/15 disabled:opacity-90 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
           />
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Student-produced response. Enter a number; fractions (3/5) and
@@ -562,6 +568,7 @@ export function QuestionPane({
 }: QuestionPaneProps) {
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
+  const ivy = useUiTheme() === "ivy";
 
   const questionSide = (header?: { numberClassName?: string; containerClassName?: string }) => (
     <>
@@ -634,8 +641,18 @@ export function QuestionPane({
               {/* Number atop the passage — always shown so the passage is
                   labelled. Split also shows it above the choices; stacked drops
                   the in-column one (this is the single in-body number). */}
-              <div className="mb-3">{numberBadge}</div>
-              <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
+              {ivy ? (
+                // Ivy: cap the reading measure for comfortable line lengths.
+                <div className="mx-auto max-w-[38rem]">
+                  <div className="mb-3">{numberBadge}</div>
+                  <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
+                </div>
+              ) : (
+                <>
+                  <div className="mb-3">{numberBadge}</div>
+                  <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
+                </>
+              )}
             </div>
             <div className="px-6 py-7 @[48rem]:h-full @[48rem]:overflow-y-auto lg:px-10">
               <div className="mx-auto max-w-xl">

@@ -1515,7 +1515,7 @@ function FullTestRunner() {
               className={[
                 "inline-flex items-center gap-1.5 min-h-[44px] rounded-lg border px-3 py-1.5 text-sm font-medium transition",
                 calcOpen
-                  ? "border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400 dark:bg-blue-950/50 dark:text-blue-300"
+                  ? "border-runner-500 bg-runner-50 text-runner-700 dark:border-runner-400 dark:bg-blue-950/50 dark:text-runner-300"
                   : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
               ].join(" ")}
               title="Toggle graphing calculator"
@@ -1534,7 +1534,7 @@ function FullTestRunner() {
               className={[
                 "inline-flex items-center gap-1.5 min-h-[44px] rounded-lg border px-3 py-1.5 text-sm font-medium transition",
                 refOpen
-                  ? "border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400 dark:bg-blue-950/50 dark:text-blue-300"
+                  ? "border-runner-500 bg-runner-50 text-runner-700 dark:border-runner-400 dark:bg-blue-950/50 dark:text-runner-300"
                   : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
               ].join(" ")}
               title="Toggle math reference sheet"
@@ -1700,7 +1700,7 @@ function FullTestRunner() {
             <button
               type="button"
               onClick={() => setIndex((i) => Math.min(questions.length - 1, i + 1))}
-              className="min-h-[44px] rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+              className="min-h-[44px] rounded-full bg-runner-700 px-7 py-2 text-sm font-semibold text-white hover:bg-runner-800"
             >
               Next
             </button>
@@ -1708,7 +1708,7 @@ function FullTestRunner() {
             <button
               type="button"
               onClick={() => setPendingSectionSubmit({ blanks: questions.length - answeredCount })}
-              className="min-h-[44px] rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+              className="min-h-[44px] rounded-full bg-runner-700 px-7 py-2 text-sm font-semibold text-white hover:bg-runner-800"
             >
               Submit
             </button>
@@ -1729,10 +1729,10 @@ function FullTestRunner() {
               </div>
               <div className="mb-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[11px] text-slate-500 dark:text-slate-400">
                 <span className="flex items-center gap-1">
-                  <span className="inline-block h-3 w-3 rounded-sm border-2 border-blue-600" /> Current
+                  <span className="inline-block h-3 w-3 rounded-sm border-2 border-runner-600" /> Current
                 </span>
                 <span className="flex items-center gap-1">
-                  <span className="inline-block h-3 w-3 rounded-sm bg-blue-600" /> Answered
+                  <span className="inline-block h-3 w-3 rounded-sm bg-runner-600" /> Answered
                 </span>
                 <span className="flex items-center gap-1">
                   <span className="inline-block h-3 w-3 rounded-sm border border-dashed border-slate-400" /> Unanswered
@@ -1758,9 +1758,9 @@ function FullTestRunner() {
                       className={[
                         "relative grid h-9 w-9 place-items-center rounded-md text-xs font-semibold transition",
                         cur
-                          ? "border-2 border-blue-600 text-blue-700 dark:text-blue-300"
+                          ? "border-2 border-runner-600 text-runner-700 dark:text-runner-300"
                           : ans
-                            ? "bg-blue-600 text-white"
+                            ? "bg-runner-600 text-white"
                             : "border border-dashed border-slate-400 text-slate-500 hover:border-slate-500 dark:border-slate-600 dark:text-slate-400",
                       ].join(" ")}
                     >

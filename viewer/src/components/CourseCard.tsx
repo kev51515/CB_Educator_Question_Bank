@@ -15,6 +15,8 @@
  */
 import type { ReactNode } from "react";
 import { KebabMenu, type KebabMenuOption } from "./KebabMenu";
+import { useUiTheme } from "@/lib/theme";
+import { accentRampFor, DOMAIN_VOCAB, type Domain } from "@/lib/domain";
 
 // Fixed Canvas-like palette. JIT picks these up because they're static strings.
 const CARD_PALETTE: ReadonlyArray<string> = [
@@ -40,6 +42,15 @@ export function paletteFor(seed: string): string {
   return CARD_PALETTE[hashString(seed) % CARD_PALETTE.length];
 }
 
+/** First letter(s) of the course name — max 2 — for the ivy monogram disc. */
+function monogramFor(name: string): string {
+  const words = name
+    .split(/\s+/)
+    .map((w) => w.match(/[A-Za-z0-9]/)?.[0] ?? "")
+    .filter(Boolean);
+  return (words[0] ?? "?").concat(words[1] ?? "").toUpperCase();
+}
+
 export interface CourseCardMetric {
   label: string;
   value: string | number;
@@ -49,6 +60,9 @@ export interface CourseCardProps {
   /** Stable id used for palette derivation + React key. */
   paletteSeed: string;
   name: string;
+  /** The course's domain — drives the ivy-theme eyebrow label + accent.
+   *  Optional (defaults to 'academic'); unused in the classic theme. */
+  domain?: Domain;
   description?: string | null;
   /** Optional second line below the description (used by admin view for
    *  teacher name + email). */
@@ -77,6 +91,7 @@ export interface CourseCardProps {
 export function CourseCard({
   paletteSeed,
   name,
+  domain = "academic",
   description,
   meta,
   metrics,
@@ -88,6 +103,7 @@ export function CourseCard({
   ariaLabel,
   kebab,
 }: CourseCardProps) {
+  const ivy = useUiTheme() === "ivy";
   const palette = paletteFor(paletteSeed);
   const trimmedDesc = (description ?? "").trim();
   const shortDesc =
@@ -108,30 +124,67 @@ export function CourseCard({
     (onClick ? "hover:shadow-md hover:-translate-y-0.5 cursor-pointer " : "") +
     (muted ? "opacity-70 " : "");
 
+  // Kebab block is shared between the two theme headers; only the backdrop
+  // chip changes (translucent white on the classic gradient vs quiet ink on
+  // the ivy paper header). Structure / handlers / aria are identical.
+  const kebabBlock = kebab && kebab.length > 0 && (
+    <div
+      className="absolute top-2 right-2 z-10"
+      onClick={(e) => {
+        // Trigger click is on a child <button>; stop here so the card's
+        // outer <button> onClick never fires when the user is opening
+        // the kebab.
+        e.stopPropagation();
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") e.stopPropagation();
+      }}
+    >
+      {/* Translucent backdrop chip so the dark dots read on the
+          gradient header without us recoloring KebabMenu's internals. */}
+      <span
+        className={
+          ivy
+            ? "inline-flex items-center justify-center rounded-md text-slate-500 dark:text-slate-400"
+            : "inline-flex items-center justify-center rounded-md bg-white/20 backdrop-blur-sm ring-1 ring-white/30 text-white"
+        }
+      >
+        <KebabMenu options={kebab} />
+      </span>
+    </div>
+  );
+
+  // Per-card domain accent (ivy ramp) for the eyebrow — exposed as CSS vars
+  // so light/dark grades can both be static JIT-safe utility classes.
+  const ivyEyebrowVars = {
+    "--cc-eyebrow": accentRampFor("ivy", domain)["600"],
+    "--cc-eyebrow-dark": accentRampFor("ivy", domain)["400"],
+  } as React.CSSProperties;
+
   const inner = (
     <>
-      <div className={`relative h-20 w-full rounded-t-xl bg-gradient-to-br ${palette}`} aria-hidden={!kebab}>
-        {kebab && kebab.length > 0 && (
-          <div
-            className="absolute top-2 right-2 z-10"
-            onClick={(e) => {
-              // Trigger click is on a child <button>; stop here so the card's
-              // outer <button> onClick never fires when the user is opening
-              // the kebab.
-              e.stopPropagation();
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") e.stopPropagation();
-            }}
+      {ivy ? (
+        // Ivy quiet header: monogram disc + domain eyebrow (no gradient band).
+        <div className="relative flex items-center gap-2.5 px-4 pt-4">
+          <span
+            aria-hidden="true"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-100 font-display text-sm font-semibold text-accent-700 dark:border-slate-700 dark:bg-slate-800"
           >
-            {/* Translucent backdrop chip so the dark dots read on the
-                gradient header without us recoloring KebabMenu's internals. */}
-            <span className="inline-flex items-center justify-center rounded-md bg-white/20 backdrop-blur-sm ring-1 ring-white/30 text-white">
-              <KebabMenu options={kebab} />
-            </span>
-          </div>
-        )}
-      </div>
+            {monogramFor(name)}
+          </span>
+          <span
+            style={ivyEyebrowVars}
+            className="text-[11px] font-semibold uppercase tracking-wide text-[color:var(--cc-eyebrow)] dark:text-[color:var(--cc-eyebrow-dark)]"
+          >
+            {DOMAIN_VOCAB[domain].homeNoun}
+          </span>
+          {kebabBlock}
+        </div>
+      ) : (
+        <div className={`relative h-20 w-full rounded-t-xl bg-gradient-to-br ${palette}`} aria-hidden={!kebab}>
+          {kebabBlock}
+        </div>
+      )}
       <div className="flex-1 p-4 space-y-2">
         <div className="flex items-start justify-between gap-2">
           <h3 className="min-w-0 flex-1 truncate text-base font-semibold text-slate-900 dark:text-slate-100">
@@ -139,7 +192,15 @@ export function CourseCard({
           </h3>
           <div className="flex shrink-0 items-center gap-1.5">
             {tag && (
-              <span className="rounded-full bg-violet-100 dark:bg-violet-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-violet-700 dark:text-violet-300">
+              <span
+                className={
+                  // Ivy: quiet slate chip (violet fights the navy/forest/
+                  // bronze triad and duplicates the eyebrow's color voice).
+                  ivy
+                    ? "rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-600 dark:text-slate-300"
+                    : "rounded-full bg-violet-100 dark:bg-violet-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-violet-700 dark:text-violet-300"
+                }
+              >
                 {tag}
               </span>
             )}
@@ -160,7 +221,7 @@ export function CourseCard({
           <div className="flex items-center gap-3 pt-1 text-xs text-slate-500 dark:text-slate-400">
             {metrics.map((m) => (
               <span key={m.label} className="inline-flex items-center gap-1">
-                <span className="font-semibold text-slate-700 dark:text-slate-200">
+                <span className="font-semibold text-slate-700 dark:text-slate-200 tabular-nums">
                   {m.value}
                 </span>
                 <span>{m.label}</span>

@@ -9,6 +9,8 @@ interface StatCardProps {
   loading: boolean;
   onClick?: () => void;
   ariaLabel: string;
+  /** Ivy theme: render the numeral in ceremonial gold (inert in classic). Max ~2 per screen. */
+  ceremonial?: boolean;
 }
 
 export function StatCard({
@@ -18,6 +20,7 @@ export function StatCard({
   loading,
   onClick,
   ariaLabel,
+  ceremonial,
 }: StatCardProps): JSX.Element {
   const baseClass =
     "rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white/85 dark:bg-slate-900/70 p-4 min-h-[88px] flex flex-col justify-center motion-safe:transition-all";
@@ -33,7 +36,11 @@ export function StatCard({
       {loading || value === null ? (
         <Skeleton className="h-8 w-16 mt-1 rounded" />
       ) : (
-        <p className="text-2xl font-bold tabular-nums text-slate-900 dark:text-slate-100 mt-0.5">
+        <p
+          className={`text-2xl font-bold tabular-nums text-slate-900 dark:text-slate-100 mt-0.5${
+            ceremonial ? " ceremonial" : ""
+          }`}
+        >
           {value}
         </p>
       )}

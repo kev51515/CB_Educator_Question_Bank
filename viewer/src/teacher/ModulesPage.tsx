@@ -1003,7 +1003,7 @@ export function ModulesPage(): JSX.Element {
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+        <h2 className="page-title text-lg font-semibold text-slate-900 dark:text-slate-100">
           Modules
         </h2>
 
@@ -1061,6 +1061,8 @@ export function ModulesPage(): JSX.Element {
           )}
         </div>
       </div>
+
+      <div className="ivy-rule" aria-hidden="true" />
 
       {error && (
         <div

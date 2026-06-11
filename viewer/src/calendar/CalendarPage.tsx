@@ -244,7 +244,7 @@ export function CalendarPage() {
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-6 space-y-4">
       <div className="flex items-center gap-3 flex-wrap">
-        <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
+        <h1 className="page-title text-2xl font-semibold text-slate-900 dark:text-slate-100">
           Calendar
         </h1>
         <div className="ml-auto relative">
@@ -298,6 +298,7 @@ export function CalendarPage() {
           </button>
         </div>
       </div>
+      <div className="ivy-rule" aria-hidden="true" />
 
       {view === "month" && (
         <MonthHeader

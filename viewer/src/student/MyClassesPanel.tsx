@@ -187,7 +187,7 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
           </h3>
           <div className="flex items-center gap-3">
             {classes.length > 0 && (
-              <span className="text-xs text-slate-500 dark:text-slate-400">
+              <span className="text-xs text-slate-500 dark:text-slate-400 tabular-nums">
                 {classes.length} enrolled
               </span>
             )}

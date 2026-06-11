@@ -660,7 +660,7 @@ export function AllClassesView() {
     <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6 space-y-4">
       <header className="flex items-center justify-between gap-3 flex-wrap">
         <div>
-          <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+          <h2 className="page-title text-xl font-semibold text-slate-900 dark:text-slate-100">
             All classes
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -691,6 +691,8 @@ export function AllClassesView() {
           </button>
         </div>
       </header>
+
+      <div className="ivy-rule" aria-hidden="true" />
 
       <div className="flex flex-col gap-6 lg:flex-row">
         <aside className="lg:w-60 lg:flex-none">
@@ -1269,6 +1271,7 @@ function AdminCourseCardRow({
       paletteSeed={course.id}
       name={course.name}
       description={course.description}
+      domain={domainOf(course.course_type)}
       muted={archivedOpt && !course.is_template}
       onClick={onNavigate}
       ariaLabel={`Open course ${course.name}`}

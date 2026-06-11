@@ -115,7 +115,7 @@ export function QuestionBankPage(): JSX.Element {
             <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
               Question Bank
             </p>
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            <h1 className="page-title text-2xl font-bold text-slate-900 dark:text-slate-100">
               Question Bank
             </h1>
             <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -123,6 +123,7 @@ export function QuestionBankPage(): JSX.Element {
               course.
             </p>
           </header>
+          <div className="ivy-rule" aria-hidden="true" />
 
           <div
             role="tablist"

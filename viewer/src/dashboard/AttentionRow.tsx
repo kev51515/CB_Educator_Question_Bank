@@ -45,7 +45,7 @@ export function AttentionRow({ initial, message, meta, onClick, ariaLabel, fresh
       <span className="flex-1 min-w-0 text-sm text-slate-700 dark:text-slate-200 truncate">
         {message}
       </span>
-      <span className="shrink-0 text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">
+      <span className="shrink-0 text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap tabular-nums">
         {meta}
       </span>
       <RowChevron />
