@@ -8,6 +8,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import {
+  Combobox,
   EmptyState,
   SkeletonRows,
   SmartDatePicker,
@@ -243,21 +244,20 @@ export function CoachHoursCard({
               >
                 Program (optional)
               </label>
-              <select
+              <Combobox
                 id="coach-program-select"
-                value={programId}
-                onChange={(e) => setProgramId(e.target.value)}
-                className="min-h-[44px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-              >
-                <option value="">— No program —</option>
-                {programs
-                  .filter((p) => !p.archived)
-                  .map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name}
-                    </option>
-                  ))}
-              </select>
+                ariaLabel="Program (optional)"
+                value={programId || null}
+                onChange={setProgramId}
+                options={[
+                  { value: "", label: "— No program —" },
+                  ...programs
+                    .filter((p) => !p.archived)
+                    .map((p) => ({ value: p.id, label: p.name })),
+                ]}
+                placeholder="— No program —"
+                className="w-full"
+              />
             </div>
             <div>
               <label

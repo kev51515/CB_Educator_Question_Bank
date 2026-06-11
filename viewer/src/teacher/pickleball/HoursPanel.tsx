@@ -11,6 +11,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useClassRoster } from "@/teacher/useClassRoster";
 import {
+  Combobox,
   EmptyState,
   SkeletonRows,
   SmartDatePicker,
@@ -302,21 +303,17 @@ export function HoursPanel({ courseId }: { courseId: string }) {
                 >
                   Program (optional)
                 </label>
-                <select
+                <Combobox
                   id="program-select"
-                  value={programId}
-                  onChange={(e) => setProgramId(e.target.value)}
-                  className="min-h-[44px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-                >
-                  <option value="">— No program —</option>
-                  {programs
+                  value={programId || null}
+                  onChange={(v) => setProgramId(v)}
+                  options={programs
                     .filter((p) => !p.archived)
-                    .map((p) => (
-                      <option key={p.id} value={p.id}>
-                        {p.name}
-                      </option>
-                    ))}
-                </select>
+                    .map((p) => ({ value: p.id, label: p.name }))}
+                  placeholder="— No program —"
+                  ariaLabel="Program (optional)"
+                  className="w-full"
+                />
               </div>
               <div>
                 <label

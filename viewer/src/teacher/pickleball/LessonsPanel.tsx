@@ -16,12 +16,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import {
+  Combobox,
   MarkdownEditor,
   SmartDatePicker,
   FileDropzone,
   SkeletonRows,
   useToast,
 } from "@/components";
+import type { ComboboxOption } from "@/components";
 import { parseVideoUrl } from "@/lib/videoEmbed";
 
 // ─── Constants ──────────────────────────────────────────────────────────────
@@ -274,6 +276,18 @@ export function LessonsPanel({ courseId }: { courseId: string }) {
 
   const hasLessons = useMemo(() => lessons.length > 0, [lessons]);
 
+  const playerOptions = useMemo<ComboboxOption[]>(
+    () => players.map((p) => ({ value: p.id, label: p.name })),
+    [players],
+  );
+  const programOptions = useMemo<ComboboxOption[]>(
+    () => [
+      { value: "", label: "No program" },
+      ...programs.map((p) => ({ value: p.id, label: p.name })),
+    ],
+    [programs],
+  );
+
   // ─── Schedule a lesson ──────────────────────────────────────────────────────
 
   const onSchedule = useCallback(async () => {
@@ -490,36 +504,30 @@ export function LessonsPanel({ courseId }: { courseId: string }) {
               <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
                 Player
               </span>
-              <select
-                value={form.playerId}
-                onChange={(e) => setForm((f) => ({ ...f, playerId: e.target.value }))}
-                className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-              >
-                <option value="">Choose a player…</option>
-                {players.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
+              <Combobox
+                value={form.playerId || null}
+                onChange={(v) => setForm((f) => ({ ...f, playerId: v }))}
+                options={playerOptions}
+                ariaLabel="Player"
+                placeholder="Choose a player…"
+                searchPlaceholder="Search players…"
+                className="w-full"
+              />
             </label>
 
             <label className="text-sm">
               <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
                 Program <span className="font-normal text-slate-400">(optional)</span>
               </span>
-              <select
+              <Combobox
                 value={form.programId}
-                onChange={(e) => setForm((f) => ({ ...f, programId: e.target.value }))}
-                className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-              >
-                <option value="">No program</option>
-                {programs.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
+                onChange={(v) => setForm((f) => ({ ...f, programId: v }))}
+                options={programOptions}
+                ariaLabel="Program (optional)"
+                placeholder="No program"
+                searchPlaceholder="Search programs…"
+                className="w-full"
+              />
             </label>
 
             <div className="text-sm">

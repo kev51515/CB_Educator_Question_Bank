@@ -13,6 +13,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useClassRoster } from "@/teacher/useClassRoster";
 import {
+  Combobox,
   EmptyState,
   MarkdownEditor,
   SkeletonRows,
@@ -411,18 +412,18 @@ export function DevelopmentPanel({ courseId }: { courseId: string }) {
             No coaches enrolled yet. Add coaches from the Coaches tab.
           </p>
         ) : (
-          <select
+          <Combobox
             id="dev-coach"
-            value={selectedCoach ?? ""}
-            onChange={(e) => setSelectedCoach(e.target.value)}
-            className="min-h-[44px] w-full max-w-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-          >
-            {roster.map((r) => (
-              <option key={r.student_id} value={r.student_id}>
-                {r.display_name || r.email}
-              </option>
-            ))}
-          </select>
+            value={selectedCoach}
+            onChange={setSelectedCoach}
+            options={roster.map((r) => ({
+              value: r.student_id,
+              label: r.display_name || r.email,
+            }))}
+            ariaLabel="Coach"
+            placeholder="Select a coach…"
+            className="max-w-sm"
+          />
         )}
       </div>
 
@@ -665,19 +666,29 @@ export function DevelopmentPanel({ courseId }: { courseId: string }) {
                             Auto-complete this step when a goal is met
                           </p>
                           <div className="grid gap-2 sm:grid-cols-2">
-                            <select
+                            <Combobox
                               value={cfgType}
-                              onChange={(e) =>
-                                setCfgType(e.target.value as StepType)
-                              }
-                              aria-label="Completion rule"
-                              className="min-h-[40px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-                            >
-                              <option value="manual">Manual (check off by hand)</option>
-                              <option value="hours">Teaching hours reach…</option>
-                              <option value="shadow">Signed-off shadows reach…</option>
-                              <option value="cert">Certifications reach…</option>
-                            </select>
+                              onChange={(v) => setCfgType(v as StepType)}
+                              options={[
+                                {
+                                  value: "manual",
+                                  label: "Manual (check off by hand)",
+                                },
+                                {
+                                  value: "hours",
+                                  label: "Teaching hours reach…",
+                                },
+                                {
+                                  value: "shadow",
+                                  label: "Signed-off shadows reach…",
+                                },
+                                {
+                                  value: "cert",
+                                  label: "Certifications reach…",
+                                },
+                              ]}
+                              ariaLabel="Completion rule"
+                            />
                             {cfgType !== "manual" && (
                               <input
                                 type="number"
@@ -694,21 +705,20 @@ export function DevelopmentPanel({ courseId }: { courseId: string }) {
                             )}
                           </div>
                           {cfgType === "hours" && (
-                            <select
+                            <Combobox
                               value={cfgProgramId}
-                              onChange={(e) => setCfgProgramId(e.target.value)}
-                              aria-label="Program filter"
-                              className="min-h-[40px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-                            >
-                              <option value="">All programs</option>
-                              {programs
-                                .filter((p) => !p.archived)
-                                .map((p) => (
-                                  <option key={p.id} value={p.id}>
-                                    {p.name} only
-                                  </option>
-                                ))}
-                            </select>
+                              onChange={setCfgProgramId}
+                              options={[
+                                { value: "", label: "All programs" },
+                                ...programs
+                                  .filter((p) => !p.archived)
+                                  .map((p) => ({
+                                    value: p.id,
+                                    label: `${p.name} only`,
+                                  })),
+                              ]}
+                              ariaLabel="Program filter"
+                            />
                           )}
                           <div className="flex gap-2">
                             <button
