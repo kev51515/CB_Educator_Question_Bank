@@ -144,7 +144,7 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
 
         <TimingCard result={result} />
 
-        <PacingPanel times={times} questions={result.questions} />
+        <PacingPanel runId={result.run_id} questions={result.questions} />
 
         <div className="mt-6 space-y-4">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">

@@ -35,7 +35,7 @@ export interface PacingQuestionRef {
   moduleLabel: string;
 }
 
-interface PacingPoint {
+export interface PacingPoint {
   number: number;
   module: number;
   moduleLabel: string;
@@ -59,10 +59,16 @@ const PLOT = {
 const COLOR = {
   fast: "#10b981", // emerald-500
   slow: "#f43f5e", // rose-500
-  you: "#4f46e5", // indigo-600
   avg: "#94a3b8", // slate-400
   grid: "currentColor",
 } as const;
+
+/** The student's own series follows the LIVE domain accent (navy under ivy,
+ *  indigo classic, forest/bronze per vertical) — resolved through the CSS
+ *  channel vars, so it re-themes with the rest of the app. var() doesn't
+ *  resolve in SVG presentation attributes, so consumers apply it via style. */
+const YOU_LIGHT = "rgb(var(--accent-600))";
+const YOU_DARK_TIP = "rgb(var(--accent-400))"; // on the dark tooltip panel
 
 /** Round a ms value up to a "nice" axis maximum (nearest 15s, floor 30s). */
 function niceMaxMs(rawMax: number): number {
@@ -97,9 +103,16 @@ const toPath = (pts: Array<[number, number]>): string =>
 export function PacingChart({
   points,
   classN,
+  youLabel = "This student",
+  onPick,
 }: {
   points: PacingPoint[];
   classN: number;
+  /** Series label for the viewer's own line — "You" on student surfaces. */
+  youLabel?: string;
+  /** When set, clicking a question's hover column fires with its index
+   *  (the student report uses it to jump to that question's review card). */
+  onPick?: (index: number) => void;
 }): JSX.Element {
   const [hover, setHover] = useState<number | null>(null);
   const showBands = classN >= 4;
@@ -176,7 +189,7 @@ export function PacingChart({
       if (p.slow != null && p.yours > p.slow) return COLOR.slow;
       if (p.fast != null && p.yours < p.fast) return COLOR.fast;
     }
-    return COLOR.you;
+    return YOU_LIGHT;
   };
 
   return (
@@ -245,7 +258,16 @@ export function PacingChart({
 
         {/* class-spread band (fast → slow) */}
         {bandPaths.map((d, i) => (
-          <path key={i} d={d} fill={COLOR.slow} fillOpacity={0.07} stroke="none" />
+          // Quiet neutral spread band — the fast/slow curves carry the color
+          // voice; a rose-tinted band read as "everything is wrong" at a glance.
+          <path
+            key={i}
+            d={d}
+            className="text-slate-400 dark:text-slate-500"
+            fill="currentColor"
+            fillOpacity={0.12}
+            stroke="none"
+          />
         ))}
 
         {/* class average — thin dashed reference */}
@@ -272,7 +294,7 @@ export function PacingChart({
 
         {/* student curve (bold, on top) */}
         {yourSeg.map((seg, i) => (
-          <path key={`you-${i}`} d={toPath(seg)} fill="none" stroke={COLOR.you} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
+          <path key={`you-${i}`} d={toPath(seg)} fill="none" style={{ stroke: YOU_LIGHT }} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
         ))}
 
         {/* hover guide */}
@@ -295,7 +317,7 @@ export function PacingChart({
               cx={xs[i]}
               cy={yPix(p.yours)}
               r={hover === i ? 4.5 : 2.6}
-              fill={dotColor(p)}
+              style={{ fill: dotColor(p) }}
               stroke="#fff"
               strokeWidth={hover === i ? 1.5 : 0}
               className="dark:stroke-slate-900"
@@ -317,7 +339,7 @@ export function PacingChart({
             <text x={tipX + 12} y={PLOT.y0 + 24} className="fill-white" style={{ fontSize: 13, fontWeight: 700 }}>
               {hp.moduleLabel} · Q{hp.number}
             </text>
-            <TipRow x={tipX + 12} y={PLOT.y0 + 42} color={COLOR.you} label="Student" value={fmtMs(hp.yours)} />
+            <TipRow x={tipX + 12} y={PLOT.y0 + 42} color={YOU_DARK_TIP} label={youLabel === "This student" ? "Student" : youLabel} value={fmtMs(hp.yours)} />
             {showBands && (
               <>
                 <TipRow x={tipX + 12} y={PLOT.y0 + 62} color={COLOR.fast} label="Fast 25%" value={fmtMs(hp.fast)} />
@@ -341,9 +363,11 @@ export function PacingChart({
               width={half * 2}
               height={PLOT.y1 - PLOT.y0}
               fill="transparent"
+              className={onPick ? "cursor-pointer" : undefined}
               onMouseEnter={() => setHover(i)}
               onMouseMove={() => setHover(i)}
               onMouseLeave={() => setHover((h) => (h === i ? null : h))}
+              onClick={onPick ? () => onPick(i) : undefined}
             />
           );
         })}
@@ -351,7 +375,7 @@ export function PacingChart({
 
       {/* legend */}
       <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-[11px] text-slate-500 dark:text-slate-400">
-        <LegendLine color={COLOR.you} label="This student" bold />
+        <LegendLine color={YOU_LIGHT} label={youLabel} bold />
         {showBands && <LegendLine color={COLOR.fast} label="Fastest 25%" />}
         {showBands && <LegendLine color={COLOR.slow} label="Slowest 25%" />}
         <LegendLine color={COLOR.avg} label="Class avg" dashed />
@@ -376,7 +400,7 @@ function TipRow({
 }): JSX.Element {
   return (
     <g>
-      <rect x={x} y={y - 8} width={9} height={9} rx={2} fill={color} />
+      <rect x={x} y={y - 8} width={9} height={9} rx={2} style={{ fill: color }} />
       <text x={x + 15} y={y} className="fill-slate-200" style={{ fontSize: 12 }}>
         {label}
       </text>
@@ -406,7 +430,7 @@ function LegendLine({
           y1={4}
           x2={20}
           y2={4}
-          stroke={color}
+          style={{ stroke: color }}
           strokeWidth={bold ? 3 : 2}
           strokeDasharray={dashed ? "4 3" : undefined}
           strokeLinecap="round"

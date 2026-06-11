@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Student report pacing — before / after</title>
+<style>
+  body { font: 14px/1.5 -apple-system, sans-serif; background: #fbfaf7; color: #1b2a4a; margin: 40px auto; max-width: 1100px; padding: 0 24px; }
+  h1 { font-size: 22px; } h2 { font-size: 15px; margin: 36px 0 6px; }
+  p.note { color: #44516b; max-width: 75ch; }
+  figure { margin: 0 0 18px; } figcaption { font-size: 12px; color: #6e7a95; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .05em; }
+  img { width: 100%; border: 1px solid #e9e6de; border-radius: 10px; box-shadow: 0 1px 3px rgba(27,42,74,.08); }
+</style>
+</head>
+<body>
+<h1>Student report — "Pacing vs. your class" redesign</h1>
+<p class="note">Before: a bar strip where height meant your time and color meant faster/slower — no sense of the class's range, and a green/yellow/red palette outside the Ivy voice. After: every question shows the class's fastest↔slowest quartile spread as a quiet band, the dashed class average, and your line in the domain accent on top — you can see exactly where you sit in the range on every question. Hovering shows the exact times; clicking a question jumps to its review card below. Dots tint only at outliers (emerald when you beat the fast group, rose when you trail the slow group).</p>
+
+<h2>Before</h2>
+<figure><img src="before.png" alt="Old bar-strip pacing panel"></figure>
+
+<h2>After</h2>
+<figure><img src="after.png" alt="New band chart pacing panel"></figure>
+
+<h2>After — hover detail</h2>
+<figure><figcaption>Tooltip with exact You / Fast 25% / Slow 25% times; click jumps to that question's review</figcaption><img src="after-hover.png" alt="Tooltip state"></figure>
+
+<p class="note">Data note: the after-shots use a seeded 5-student QA cohort with synthetic per-question dwell profiles (hence the wave pattern) — real class data reads organically. The band requires ≥4 classmates; below that the chart shows your own pace with a caveat.</p>
+</body>
+</html>
