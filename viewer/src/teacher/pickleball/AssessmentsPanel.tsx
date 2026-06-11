@@ -21,7 +21,7 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { MarkdownEditor, useToast } from "@/components";
+import { Combobox, MarkdownEditor, useToast } from "@/components";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { PICKLEBALL_SKILLS } from "@/lib/pickleballSkills";
@@ -402,23 +402,18 @@ export function AssessmentsPanel({ courseId }: { courseId: string }) {
             >
               Player
             </label>
-            <select
+            <Combobox
               id="pk-assess-player"
-              value={selectedId ?? ""}
-              onChange={(e) =>
-                e.target.value
-                  ? selectPlayer(e.target.value)
-                  : setSelectedId(null)
-              }
-              className={`${inputCls} min-h-[40px] max-w-md`}
-            >
-              <option value="">Choose a player…</option>
-              {roster.map((r) => (
-                <option key={r.student_id} value={r.student_id}>
-                  {nameOf(r)}
-                </option>
-              ))}
-            </select>
+              value={selectedId}
+              onChange={(v) => selectPlayer(v)}
+              options={roster.map((r) => ({
+                value: r.student_id,
+                label: nameOf(r),
+              }))}
+              placeholder="Choose a player…"
+              ariaLabel="Player"
+              className="max-w-md"
+            />
           </div>
 
           {selectedId == null ? (

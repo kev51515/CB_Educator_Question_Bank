@@ -17,7 +17,7 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { MarkdownEditor, SmartDatePicker, SkeletonRows, useToast } from "@/components";
+import { Combobox, MarkdownEditor, SmartDatePicker, SkeletonRows, useToast } from "@/components";
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
@@ -506,17 +506,13 @@ export function EventsPanel({ courseId }: { courseId: string }) {
               <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
                 Type
               </span>
-              <select
+              <Combobox
                 value={form.type}
-                onChange={(e) => setForm((f) => ({ ...f, type: e.target.value as EventType }))}
-                className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-              >
-                {TYPE_OPTIONS.map((t) => (
-                  <option key={t} value={t}>
-                    {TYPE_LABEL[t]}
-                  </option>
-                ))}
-              </select>
+                onChange={(v) => setForm((f) => ({ ...f, type: v as EventType }))}
+                options={TYPE_OPTIONS.map((t) => ({ value: t, label: TYPE_LABEL[t] }))}
+                ariaLabel="Type"
+                className="w-full"
+              />
             </label>
 
             <label className="text-sm">
@@ -536,18 +532,14 @@ export function EventsPanel({ courseId }: { courseId: string }) {
               <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
                 Coach <span className="font-normal text-slate-400">(optional)</span>
               </span>
-              <select
-                value={form.coachId}
-                onChange={(e) => setForm((f) => ({ ...f, coachId: e.target.value }))}
-                className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-              >
-                <option value="">No coach</option>
-                {coaches.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
+              <Combobox
+                value={form.coachId || null}
+                onChange={(v) => setForm((f) => ({ ...f, coachId: v }))}
+                options={coaches.map((c) => ({ value: c.id, label: c.name }))}
+                placeholder="No coach"
+                ariaLabel="Coach"
+                className="w-full"
+              />
             </label>
 
             <label className="text-sm">
@@ -960,18 +952,14 @@ function EventRowCard({
               Enrol a player (bypasses skill gate)
             </h4>
             <div className="flex flex-col gap-2 sm:flex-row">
-              <select
-                value={overridePlayer}
-                onChange={(e) => setOverridePlayer(e.target.value)}
-                className="min-h-[40px] flex-1 rounded-lg border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-              >
-                <option value="">Choose a player…</option>
-                {enrollable.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
+              <Combobox
+                value={overridePlayer || null}
+                onChange={(v) => setOverridePlayer(v)}
+                options={enrollable.map((p) => ({ value: p.id, label: p.name }))}
+                placeholder="Choose a player…"
+                ariaLabel="Player to enrol"
+                className="flex-1"
+              />
               <button
                 type="button"
                 onClick={() => void handleEnroll()}

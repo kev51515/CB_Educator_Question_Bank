@@ -23,6 +23,7 @@ import {
   SmartDatePicker,
   SkeletonRows,
   KebabMenu,
+  Combobox,
   useToast,
 } from "@/components";
 import { PICKLEBALL_SKILLS, SKILL_LEVELS, skillLabel } from "@/lib/pickleballSkills";
@@ -488,18 +489,13 @@ export function DrillsPanel({ courseId }: { courseId: string }) {
               <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
                 Player
               </span>
-              <select
-                value={assignPlayerId}
-                onChange={(e) => setAssignPlayerId(e.target.value)}
-                className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-              >
-                <option value="">Choose a player…</option>
-                {players.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
+              <Combobox
+                value={assignPlayerId || null}
+                onChange={setAssignPlayerId}
+                options={players.map((p) => ({ value: p.id, label: p.name }))}
+                ariaLabel="Player"
+                placeholder="Choose a player…"
+              />
             </label>
 
             <div className="text-sm">
@@ -750,20 +746,15 @@ function DrillEditor({ form, setForm, saving, onSave, onCancel }: DrillEditorPro
           <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
             Format
           </span>
-          <select
-            value={form.soloOrPartner}
-            onChange={(e) =>
-              setForm((f) => ({ ...f, soloOrPartner: e.target.value as SoloOrPartner | "" }))
+          <Combobox
+            value={form.soloOrPartner || null}
+            onChange={(v) =>
+              setForm((f) => ({ ...f, soloOrPartner: v as SoloOrPartner }))
             }
-            className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-          >
-            <option value="">Any</option>
-            {SOLO_OPTIONS.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label}
-              </option>
-            ))}
-          </select>
+            options={SOLO_OPTIONS.map((o) => ({ value: o.value, label: o.label }))}
+            ariaLabel="Format"
+            placeholder="Any"
+          />
         </label>
 
         <div className="grid grid-cols-2 gap-3 text-sm">
@@ -771,35 +762,25 @@ function DrillEditor({ form, setForm, saving, onSave, onCancel }: DrillEditorPro
             <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
               Level min
             </span>
-            <select
-              value={form.levelMin}
-              onChange={(e) => setForm((f) => ({ ...f, levelMin: e.target.value }))}
-              className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-            >
-              <option value="">—</option>
-              {SKILL_LEVELS.map((l) => (
-                <option key={l} value={l}>
-                  {l}
-                </option>
-              ))}
-            </select>
+            <Combobox
+              value={form.levelMin || null}
+              onChange={(v) => setForm((f) => ({ ...f, levelMin: v }))}
+              options={SKILL_LEVELS.map((l) => ({ value: l, label: l }))}
+              ariaLabel="Level min"
+              placeholder="—"
+            />
           </label>
           <label>
             <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
               Level max
             </span>
-            <select
-              value={form.levelMax}
-              onChange={(e) => setForm((f) => ({ ...f, levelMax: e.target.value }))}
-              className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-            >
-              <option value="">—</option>
-              {SKILL_LEVELS.map((l) => (
-                <option key={l} value={l}>
-                  {l}
-                </option>
-              ))}
-            </select>
+            <Combobox
+              value={form.levelMax || null}
+              onChange={(v) => setForm((f) => ({ ...f, levelMax: v }))}
+              options={SKILL_LEVELS.map((l) => ({ value: l, label: l }))}
+              ariaLabel="Level max"
+              placeholder="—"
+            />
           </label>
         </div>
 
@@ -820,15 +801,16 @@ function DrillEditor({ form, setForm, saving, onSave, onCancel }: DrillEditorPro
           <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">
             Status
           </span>
-          <select
+          <Combobox
             value={form.status}
-            onChange={(e) => setForm((f) => ({ ...f, status: e.target.value as DrillStatus }))}
-            className="min-h-[40px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-950"
-          >
-            <option value="published">Published</option>
-            <option value="draft">Draft</option>
-            <option value="archived">Archived</option>
-          </select>
+            onChange={(v) => setForm((f) => ({ ...f, status: v as DrillStatus }))}
+            options={[
+              { value: "published", label: "Published" },
+              { value: "draft", label: "Draft" },
+              { value: "archived", label: "Archived" },
+            ]}
+            ariaLabel="Status"
+          />
         </label>
       </div>
 

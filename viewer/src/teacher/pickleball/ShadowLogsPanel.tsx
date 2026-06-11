@@ -13,7 +13,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useClassRoster } from "@/teacher/useClassRoster";
-import { EmptyState, SkeletonRows, SmartDatePicker, useToast } from "@/components";
+import {
+  Combobox,
+  EmptyState,
+  SkeletonRows,
+  SmartDatePicker,
+  useToast,
+} from "@/components";
 
 interface ShadowLog {
   id: string;
@@ -230,18 +236,18 @@ export function ShadowLogsPanel({ courseId }: { courseId: string }) {
             No coaches enrolled yet. Add coaches from the Coaches tab.
           </p>
         ) : (
-          <select
+          <Combobox
             id="shadow-coach"
-            value={selectedCoach ?? ""}
-            onChange={(e) => setSelectedCoach(e.target.value)}
-            className="min-h-[44px] w-full max-w-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-          >
-            {roster.map((r) => (
-              <option key={r.student_id} value={r.student_id}>
-                {r.display_name || r.email}
-              </option>
-            ))}
-          </select>
+            ariaLabel="Coach"
+            value={selectedCoach}
+            onChange={(v) => setSelectedCoach(v)}
+            options={roster.map((r) => ({
+              value: r.student_id,
+              label: r.display_name || r.email,
+            }))}
+            placeholder="Select a coach…"
+            className="min-h-[44px] w-full max-w-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm text-left"
+          />
         )}
       </div>
 
@@ -265,21 +271,20 @@ export function ShadowLogsPanel({ courseId }: { courseId: string }) {
                 >
                   Mentor (optional)
                 </label>
-                <select
+                <Combobox
                   id="shadow-mentor"
-                  value={mentorId}
-                  onChange={(e) => setMentorId(e.target.value)}
-                  className="min-h-[44px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-                >
-                  <option value="">— No mentor —</option>
-                  {roster
+                  ariaLabel="Mentor (optional)"
+                  value={mentorId || null}
+                  onChange={(v) => setMentorId(v)}
+                  options={roster
                     .filter((r) => r.student_id !== selectedCoach)
-                    .map((r) => (
-                      <option key={r.student_id} value={r.student_id}>
-                        {r.display_name || r.email}
-                      </option>
-                    ))}
-                </select>
+                    .map((r) => ({
+                      value: r.student_id,
+                      label: r.display_name || r.email,
+                    }))}
+                  placeholder="— No mentor —"
+                  className="min-h-[44px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm text-left"
+                />
               </div>
               <div className="sm:col-span-2">
                 <label
@@ -288,22 +293,22 @@ export function ShadowLogsPanel({ courseId }: { courseId: string }) {
                 >
                   Lesson observed (optional)
                 </label>
-                <select
+                <Combobox
                   id="shadow-lesson"
-                  value={lessonId}
-                  onChange={(e) => setLessonId(e.target.value)}
-                  className="min-h-[44px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-                >
-                  <option value="">— Not linked to a lesson —</option>
-                  {lessons.map((l) => (
-                    <option key={l.id} value={l.id}>
-                      {formatDate(l.scheduled_at) || "Unscheduled"}
-                      {personName(l.player_id)
+                  ariaLabel="Lesson observed (optional)"
+                  value={lessonId || null}
+                  onChange={(v) => setLessonId(v)}
+                  options={lessons.map((l) => ({
+                    value: l.id,
+                    label: `${formatDate(l.scheduled_at) || "Unscheduled"}${
+                      personName(l.player_id)
                         ? ` · ${personName(l.player_id)}`
-                        : ""}
-                    </option>
-                  ))}
-                </select>
+                        : ""
+                    }`,
+                  }))}
+                  placeholder="— Not linked to a lesson —"
+                  className="min-h-[44px] w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm text-left"
+                />
               </div>
             </div>
             <input

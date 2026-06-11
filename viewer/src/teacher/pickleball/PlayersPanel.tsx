@@ -15,7 +15,7 @@
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useToast } from "@/components";
+import { Combobox, useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { ConfirmDialog } from "../ConfirmDialog";
@@ -214,37 +214,27 @@ function ProfileForm({
         <label htmlFor={`${idPrefix}-goal`} className={labelCls}>
           Goal
         </label>
-        <select
+        <Combobox
           id={`${idPrefix}-goal`}
-          value={draft.goal}
-          onChange={(e) => set("goal", e.target.value)}
-          className={`${inputCls} min-h-[40px]`}
-        >
-          <option value="">Not set</option>
-          {GOAL_OPTIONS.map((g) => (
-            <option key={g} value={g}>
-              {goalLabel(g)}
-            </option>
-          ))}
-        </select>
+          ariaLabel="Goal"
+          value={draft.goal === "" ? null : draft.goal}
+          onChange={(v) => set("goal", v)}
+          options={GOAL_OPTIONS.map((g) => ({ value: g, label: goalLabel(g) }))}
+          placeholder="Not set"
+        />
       </div>
       <div>
         <label htmlFor={`${idPrefix}-hand`} className={labelCls}>
           Dominant hand
         </label>
-        <select
+        <Combobox
           id={`${idPrefix}-hand`}
-          value={draft.dominant_hand}
-          onChange={(e) => set("dominant_hand", e.target.value)}
-          className={`${inputCls} min-h-[40px]`}
-        >
-          <option value="">Not set</option>
-          {HAND_OPTIONS.map((h) => (
-            <option key={h} value={h}>
-              {handLabel(h)}
-            </option>
-          ))}
-        </select>
+          ariaLabel="Dominant hand"
+          value={draft.dominant_hand === "" ? null : draft.dominant_hand}
+          onChange={(v) => set("dominant_hand", v)}
+          options={HAND_OPTIONS.map((h) => ({ value: h, label: handLabel(h) }))}
+          placeholder="Not set"
+        />
       </div>
       <div>
         <label htmlFor={`${idPrefix}-skill`} className={labelCls}>

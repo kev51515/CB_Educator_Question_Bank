@@ -19,6 +19,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useClassRoster } from "@/teacher/useClassRoster";
 import {
+  Combobox,
   EmptyState,
   MarkdownEditor,
   SkeletonRows,
@@ -331,18 +332,18 @@ export function EvaluationsPanel({ courseId }: { courseId: string }) {
             No coaches enrolled yet. Add coaches from the Coaches tab.
           </p>
         ) : (
-          <select
+          <Combobox
             id="eval-coach"
-            value={selectedCoach ?? ""}
-            onChange={(e) => setSelectedCoach(e.target.value)}
-            className="min-h-[44px] w-full max-w-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm"
-          >
-            {roster.map((r) => (
-              <option key={r.student_id} value={r.student_id}>
-                {r.display_name || r.email}
-              </option>
-            ))}
-          </select>
+            ariaLabel="Coach"
+            value={selectedCoach}
+            onChange={(v) => setSelectedCoach(v)}
+            options={roster.map((r) => ({
+              value: r.student_id,
+              label: r.display_name || r.email,
+            }))}
+            placeholder="Select a coach…"
+            className="w-full max-w-sm"
+          />
         )}
       </div>
 
