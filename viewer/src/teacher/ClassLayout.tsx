@@ -22,7 +22,7 @@
  * internally. That matches how the existing routeViews.tsx ClassLayout
  * stub is wired, and means no AuthGate changes are needed.
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { KebabMenu, type KebabMenuOption, useBreadcrumbLabel } from "@/components";
 import {
   Navigate,
@@ -262,11 +262,26 @@ export function ClassLayout() {
   // Theme the accent by the COURSE's domain while inside it (a coach/player
   // viewing a pickleball course sees orange even if their saved domain differs),
   // reverting to the saved domain on leave.
-  const { previewDomain } = useDomain();
+  const { domain, previewDomain } = useDomain();
   useEffect(() => {
     if (cls?.course_type) previewDomain(domainOf(cls.course_type));
     return () => previewDomain(null);
   }, [cls?.course_type, previewDomain]);
+
+  // Workspace rule: when the user SWITCHES domain while inside a course from a
+  // different domain, leave the course — the content pane must always reflect
+  // the active workspace. The initial mount is deliberately exempt so deep
+  // links (notifications, bookmarks) into a cross-domain course still open;
+  // only an explicit switch bounces, back to that workspace's courses list.
+  const prevDomainRef = useRef<typeof domain | null>(null);
+  useEffect(() => {
+    const prev = prevDomainRef.current;
+    prevDomainRef.current = domain;
+    if (prev === null || prev === domain) return;
+    if (cls?.course_type && domainOf(cls.course_type) !== domain) {
+      navigate(ROUTES.CLASSES, { replace: true });
+    }
+  }, [domain, cls?.course_type, navigate]);
 
   // Portfolio is a counseling surface — only on counseling courses (0133).
   const isCounseling = cls?.course_type === "counseling";
@@ -455,42 +470,48 @@ export function ClassLayout() {
 
   return (
     <ClassLayoutContext.Provider value={contextValue}>
-      <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950">
-        {/* Persistent header: course name + back link + kebab actions */}
+      <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-slate-50 dark:bg-slate-950">
+        {/* Persistent header: tab strip + right-side course chrome. The course
+            NAME deliberately does not render here — the breadcrumb already
+            carries it (owner decision 2026-06: save the vertical space). */}
         <div className="border-b border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur">
-          <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 pt-6 pb-2 space-y-3">
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 truncate">
-                    {cls.name}
-                  </h1>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      void onCopyShortCode();
-                    }}
-                    className="rounded-md bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-0.5 font-mono text-xs text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
-                    title="Click to copy course code"
-                  >
-                    {cls.short_code}
-                  </button>
-                  {isCounseling && (
-                    <span className="rounded-full bg-violet-100 dark:bg-violet-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-violet-700 dark:text-violet-300 ring-1 ring-violet-200 dark:ring-violet-900">
-                      Counseling
-                    </span>
-                  )}
+          <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 pt-3 space-y-2">
+            {actionError && (
+              <div
+                role="alert"
+                className="rounded-lg bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
+              >
+                {actionError}
+              </div>
+            )}
+            {/* Tab strip — grouped tabs + always-visible subtab band; drag to
+                reorder groups; order persists per (user, course type). Course
+                chrome (code chip, status, kebab) rides the groups row. */}
+            <CourseTabStrip
+              groups={tabGroups}
+              shortCode={cls.short_code}
+              userId={profile?.id ?? null}
+              courseType={courseType}
+              trailing={
+                <>
                   {cls.archived && (
                     <span className="rounded-full bg-amber-100 dark:bg-amber-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-900">
                       Archived
                     </span>
                   )}
-                </div>
-              </div>
-              <div className="shrink-0">
-                <KebabMenu
-                  options={(
-                    [
+                  <button
+                    type="button"
+                    onClick={() => {
+                      void onCopyShortCode();
+                    }}
+                    className="rounded-lg bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-0.5 font-mono text-xs text-slate-600 dark:text-slate-300 hover:bg-accent-50 dark:hover:bg-accent-950/40 hover:text-accent-700 dark:hover:text-accent-300 transition-colors"
+                    title="Click to copy course code"
+                  >
+                    {cls.short_code}
+                  </button>
+                  <KebabMenu
+                    options={(
+                      [
                       {
                         label: "Edit course",
                         onSelect: () => setShowEdit(true),
@@ -535,24 +556,9 @@ export function ClassLayout() {
                       },
                     ] satisfies KebabMenuOption[]
                   )}
-                />
-              </div>
-            </div>
-            {actionError && (
-              <div
-                role="alert"
-                className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
-              >
-                {actionError}
-              </div>
-            )}
-            {/* Tab strip — grouped tabs; drag to reorder groups; order
-                persists per (user, course type). */}
-            <CourseTabStrip
-              groups={tabGroups}
-              shortCode={cls.short_code}
-              userId={profile?.id ?? null}
-              courseType={courseType}
+                  />
+                </>
+              }
             />
           </div>
         </div>

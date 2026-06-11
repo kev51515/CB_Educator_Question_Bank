@@ -18,6 +18,7 @@ import {
   useCallback,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type CSSProperties,
 } from "react";
@@ -148,6 +149,28 @@ export function StaffShell() {
   // Active product-vertical domain (Teacher / Counselor / Coach) — drives the
   // header label + the DomainSwitcher chip in the rail.
   const { domain } = useDomain();
+
+  // Workspace rule: the content pane always reflects the active domain. The
+  // Question-Bank / Submissions / Tests surfaces are academic-only (their rail
+  // entries already hide outside academic) — if the user SWITCHES away from
+  // academic while standing on one, bounce to the new workspace's dashboard.
+  // Initial mount is exempt (deep links into academic surfaces still open
+  // before the profile's saved domain loads).
+  const prevDomainRef = useRef<typeof domain | null>(null);
+  useEffect(() => {
+    const prev = prevDomainRef.current;
+    prevDomainRef.current = domain;
+    if (prev === null || prev === domain || domain === "academic") return;
+    const academicOnly = [
+      ROUTES.QUESTION_BANK,
+      ROUTES.QBANK_LOG,
+      ROUTES.TESTS_ADMIN,
+    ];
+    const here = window.location.pathname;
+    if (academicOnly.some((p) => here === p || here.startsWith(`${p}/`))) {
+      navigate(ROUTES.DASHBOARD, { replace: true });
+    }
+  }, [domain, navigate]);
 
   const [paletteOpen, setPaletteOpen] = useState(false);
   const closePalette = useCallback(() => setPaletteOpen(false), []);

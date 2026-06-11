@@ -1,30 +1,25 @@
 /**
- * CourseTabStrip — the per-course tab bar, organised into GROUPS.
+ * CourseTabStrip — the per-course tab bar, organised into GROUPS with an
+ * always-visible SUBTAB row (two-level navigation).
  *
- * Each group is either:
- *   - single-item → a plain NavLink tab (same border-b-2 accent styling as the
- *     old flat strip), or
- *   - multi-item  → a button tab with a chevron that opens a dropdown menu
- *     (role="menu", keyboard + outside-click + viewport-flip behaviour
- *     modelled on components/KebabMenu.tsx). When the active route lives
- *     inside a group, the group tab shows the accent underline and its label
- *     reads "Group · Page" (e.g. "Teach · Grades").
+ * Row 1 — groups. Single-item groups render as plain NavLink tabs (the classic
+ * border-b-2 accent underline). Multi-item groups render as buttons; clicking
+ * one navigates to the group's first page (or stays put if the current route
+ * already lives inside the group).
+ *
+ * Row 2 — the active group's pages, ALWAYS visible while a multi-item group is
+ * active (owner decision 2026-06: subtabs over dropdown menus). The active
+ * group tab and the subtab band share the same accent-tinted surface so the
+ * two levels read as one connected control: the tab is drawn as the band's
+ * "raised lip" (tinted bg + rounded top, no underline), and the band carries
+ * the underline weight instead. Single-item groups have no band.
  *
  * Drag-reorder happens at the GROUP level only (HTML5 drag + Alt+←/→), and the
  * order persists per user AND course type under
  * `staff.coursetabs.grouporder:<userId>:<courseType>`. The saved order
  * reconciles: known group ids first, new ids appended, missing ones dropped.
- * (The pre-grouping flat key `staff.coursetabs.order:*` is abandoned.)
  */
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type KeyboardEvent as ReactKeyboardEvent,
-} from "react";
-import { createPortal } from "react-dom";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { classPath } from "@/lib/routes";
 
@@ -96,231 +91,21 @@ function isPathActive(pathname: string, tabPath: string): boolean {
   return pathname === tabPath || pathname.startsWith(`${tabPath}/`);
 }
 
-function stripTabClass(isActive: boolean): string {
-  return `whitespace-nowrap min-h-[40px] md:min-h-0 inline-flex items-center gap-1 px-3 py-2.5 md:py-2 text-sm font-medium border-b-2 transition-colors ${
-    isActive
-      ? "border-accent-600 text-accent-700 dark:text-accent-300"
-      : "border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700"
-  }`;
-}
-
 /**
- * Multi-item group tab: a chevron button that opens a dropdown menu.
- *
- * The menu panel is position:fixed (coordinates measured from the trigger) so
- * it escapes the strip's overflow-x-auto scroll container instead of being
- * clipped. Invisible-first-paint pattern (à la KebabMenu): rendered hidden,
- * measured, then positioned + revealed — flipping to right-align when the
- * panel would overflow the right viewport edge.
+ * Row-1 tab styling. Active MULTI-item groups get the tinted "lip" treatment
+ * (fuses with the subtab band below); active single-item tabs keep the classic
+ * accent underline (no band follows them).
  */
-function GroupTab({
-  group,
-  base,
-  onNudge,
-}: {
-  group: CourseTabGroup;
-  base: string;
-  onNudge: (dir: -1 | 1) => void;
-}) {
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
-  const [open, setOpen] = useState(false);
-  // null until measured — panel paints invisibly first (no wrong-side flash).
-  const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
-  const rootRef = useRef<HTMLDivElement | null>(null);
-  const triggerRef = useRef<HTMLButtonElement | null>(null);
-  const menuRef = useRef<HTMLDivElement | null>(null);
-  const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const [activeIndex, setActiveIndex] = useState<number>(-1);
-
-  const activeItemIndex = useMemo(
-    () => group.items.findIndex((t) => isPathActive(pathname, pathFor(base, t))),
-    [group.items, base, pathname],
-  );
-  const activeItem = activeItemIndex >= 0 ? group.items[activeItemIndex] : null;
-  const isActive = activeItem !== null;
-
-  // Outside click + Escape close; any scroll/resize closes too (the panel is
-  // fixed-positioned, so it would otherwise float detached from its trigger).
-  useEffect(() => {
-    if (!open) {
-      setPos(null);
-      setActiveIndex(-1);
-      return;
-    }
-    const onDocClick = (e: MouseEvent): void => {
-      const t = e.target as Node;
-      // The panel is PORTALED to <body> (it is NOT inside rootRef) — treat
-      // clicks in either the trigger wrapper or the panel as "inside".
-      if (rootRef.current?.contains(t)) return;
-      if (menuRef.current?.contains(t)) return;
-      setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent): void => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        triggerRef.current?.focus();
-      }
-    };
-    const onReposition = (e: Event): void => {
-      // Ignore scrolls inside the menu itself (long menus can scroll).
-      if (menuRef.current && e.target instanceof Node && menuRef.current.contains(e.target)) return;
-      setOpen(false);
-    };
-    document.addEventListener("mousedown", onDocClick);
-    document.addEventListener("keydown", onKey);
-    window.addEventListener("resize", onReposition);
-    window.addEventListener("scroll", onReposition, true);
-    return () => {
-      document.removeEventListener("mousedown", onDocClick);
-      document.removeEventListener("keydown", onKey);
-      window.removeEventListener("resize", onReposition);
-      window.removeEventListener("scroll", onReposition, true);
-    };
-  }, [open]);
-
-  // Measure after first (invisible) paint: anchor to the trigger's bottom-left;
-  // flip to right-align if the panel would overflow the right viewport edge.
-  useEffect(() => {
-    if (!open || !menuRef.current || !triggerRef.current) return;
-    const tr = triggerRef.current.getBoundingClientRect();
-    const menuWidth = menuRef.current.offsetWidth;
-    let left = tr.left;
-    if (left + menuWidth > window.innerWidth - 8) {
-      left = Math.max(8, tr.right - menuWidth);
-    }
-    setPos({ top: tr.bottom + 4, left });
-  }, [open]);
-
-  // Once positioned, move focus into the menu — onto the active page's item
-  // if the current route is inside this group, else the first item.
-  useEffect(() => {
-    if (!open || pos === null) return;
-    setActiveIndex(activeItemIndex >= 0 ? activeItemIndex : 0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, pos]);
-
-  useEffect(() => {
-    if (!open || activeIndex < 0) return;
-    itemRefs.current[activeIndex]?.focus();
-  }, [open, activeIndex]);
-
-  const onMenuKeyDown = (e: ReactKeyboardEvent<HTMLDivElement>): void => {
-    const n = group.items.length;
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      e.stopPropagation();
-      setActiveIndex((cur) => (cur < 0 ? 0 : (cur + 1) % n));
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      e.stopPropagation();
-      setActiveIndex((cur) => (cur < 0 ? n - 1 : (cur - 1 + n) % n));
-    } else if (e.key === "Home") {
-      e.preventDefault();
-      e.stopPropagation();
-      setActiveIndex(0);
-    } else if (e.key === "End") {
-      e.preventDefault();
-      e.stopPropagation();
-      setActiveIndex(n - 1);
-    } else if (e.key === "Tab") {
-      // Tab closes the menu and lets focus move naturally.
-      setOpen(false);
-    }
-  };
-
-  const select = (tab: CourseTab): void => {
-    setOpen(false);
-    triggerRef.current?.focus();
-    navigate(pathFor(base, tab));
-  };
-
-  return (
-    <div className="relative" ref={rootRef}>
-      <button
-        ref={triggerRef}
-        type="button"
-        aria-haspopup="menu"
-        aria-expanded={open}
-        aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight"
-        className={stripTabClass(isActive)}
-        onClick={() => setOpen((v) => !v)}
-        onKeyDown={(e) => {
-          if (e.altKey && e.key === "ArrowLeft") {
-            e.preventDefault();
-            onNudge(-1);
-          } else if (e.altKey && e.key === "ArrowRight") {
-            e.preventDefault();
-            onNudge(1);
-          } else if (!open && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
-            e.preventDefault();
-            setOpen(true);
-          }
-        }}
-      >
-        {isActive && activeItem ? `${group.label} · ${activeItem.label}` : group.label}
-        <svg
-          width={12}
-          height={12}
-          viewBox="0 0 12 12"
-          aria-hidden
-          className={`shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
-        >
-          <path
-            d="M2.5 4.5 6 8l3.5-3.5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-      {/* PORTALED to <body>: an ancestor of the strip uses backdrop-blur
-          (ClassLayout's course header), and backdrop-filter creates a
-          containing block for position:fixed — without the portal the
-          panel's viewport coordinates get reinterpreted relative to that
-          header and it renders detached from its trigger. */}
-      {open && createPortal(
-        <div
-          ref={menuRef}
-          role="menu"
-          aria-label={group.label}
-          onKeyDown={onMenuKeyDown}
-          style={pos ? { top: pos.top, left: pos.left } : { top: 0, left: 0 }}
-          className={`fixed z-50 min-w-[11rem] max-w-[18rem] rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 shadow py-1 text-sm ${
-            pos === null ? "invisible" : ""
-          }`}
-        >
-          {group.items.map((tab, i) => {
-            const itemActive = isPathActive(pathname, pathFor(base, tab));
-            return (
-              <button
-                key={tab.to}
-                ref={(el) => {
-                  itemRefs.current[i] = el;
-                }}
-                type="button"
-                role="menuitem"
-                aria-current={itemActive ? "page" : undefined}
-                tabIndex={i === activeIndex ? 0 : -1}
-                onMouseEnter={() => setActiveIndex(i)}
-                onClick={() => select(tab)}
-                className={`block w-full text-left px-3 py-2.5 md:py-1.5 truncate focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500 hover:bg-slate-100 dark:hover:bg-slate-800 ${
-                  itemActive
-                    ? "font-medium text-accent-700 dark:text-accent-300"
-                    : "text-slate-700 dark:text-slate-200"
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
-        </div>,
-        document.body,
-      )}
-    </div>
-  );
+function groupTabClass(opts: { active: boolean; fused: boolean }): string {
+  const base =
+    "whitespace-nowrap min-h-[40px] md:min-h-[36px] inline-flex items-center gap-1.5 px-3.5 text-sm font-medium transition-colors";
+  if (opts.active && opts.fused) {
+    return `${base} rounded-t-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] text-accent-800 dark:text-accent-200 font-semibold`;
+  }
+  if (opts.active) {
+    return `${base} border-b-2 border-accent-600 text-accent-700 dark:text-accent-300 font-semibold`;
+  }
+  return `${base} border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700`;
 }
 
 interface Props {
@@ -329,9 +114,21 @@ interface Props {
   userId: string | null;
   /** Part of the persistence key — each course type keeps its own group order. */
   courseType: string;
+  /** Right-aligned chrome rendered on the groups row (code chip, kebab …). */
+  trailing?: React.ReactNode;
 }
 
-export function CourseTabStrip({ groups, shortCode, userId, courseType }: Props) {
+export function CourseTabStrip({
+  groups,
+  shortCode,
+  userId,
+  courseType,
+  trailing,
+}: Props) {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const base = classPath(shortCode);
+
   const [order, setOrder] = useState<string[]>(() =>
     applyOrder(groups, readOrder(userId, courseType) ?? []).map((g) => g.id),
   );
@@ -346,9 +143,18 @@ export function CourseTabStrip({ groups, shortCode, userId, courseType }: Props)
   const [dragId, setDragId] = useState<string | null>(null);
   const [dropTarget, setDropTarget] = useState<string | null>(null);
 
-  // Keep the active tab visible in the (horizontally scrolling) strip.
-  const { pathname } = useLocation();
-  const base = classPath(shortCode);
+  // The group containing the current route (drives the subtab band).
+  const activeGroup = useMemo(
+    () =>
+      ordered.find((g) =>
+        g.items.some((t) => isPathActive(pathname, pathFor(base, t))),
+      ) ?? null,
+    [ordered, pathname, base],
+  );
+  const bandItems =
+    activeGroup && activeGroup.items.length > 1 ? activeGroup.items : null;
+
+  // Keep the active group tab visible in the horizontally scrolling row.
   const activeRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     activeRef.current?.scrollIntoView({ inline: "nearest", block: "nearest" });
@@ -372,8 +178,7 @@ export function CourseTabStrip({ groups, shortCode, userId, courseType }: Props)
     [ordered, commit],
   );
 
-  // Keyboard reorder: Alt+←/→ moves the focused group. React keeps the same
-  // DOM node (stable key) when the list reorders, so focus stays put.
+  // Keyboard reorder: Alt+←/→ moves the focused group tab.
   const nudge = useCallback(
     (id: string, dir: -1 | 1) => {
       const ids = ordered.map((g) => g.id);
@@ -387,81 +192,138 @@ export function CourseTabStrip({ groups, shortCode, userId, courseType }: Props)
   );
 
   return (
-    <nav
-      aria-label="Course sections"
-      className="flex items-center gap-1 overflow-x-auto -mb-px"
-    >
-      {ordered.map((group) => {
-        const isActiveGroup = group.items.some((t) =>
-          isPathActive(pathname, pathFor(base, t)),
-        );
-        const single = group.items.length === 1 ? group.items[0] : null;
-        return (
-          <div
-            key={group.id}
-            ref={isActiveGroup ? activeRef : undefined}
-            draggable
-            onDragStart={(e) => {
-              setDragId(group.id);
-              e.dataTransfer.effectAllowed = "move";
-              try {
-                e.dataTransfer.setData("text/plain", group.id);
-              } catch {
-                /* ignore */
-              }
-            }}
-            onDragOver={(e) => {
-              if (!dragId || dragId === group.id) {
+    <div>
+      {/* ── Row 1: groups ─────────────────────────────────────────────── */}
+      <div className="flex items-end gap-3">
+        <nav
+          aria-label="Course sections"
+          className="flex flex-1 min-w-0 items-end gap-1 overflow-x-auto"
+        >
+          {ordered.map((group) => {
+            const isActiveGroup = group.items.some((t) =>
+              isPathActive(pathname, pathFor(base, t)),
+            );
+            const single = group.items.length === 1 ? group.items[0] : null;
+            const dragProps = {
+              draggable: true,
+              onDragStart: (e: React.DragEvent) => {
+                setDragId(group.id);
+                e.dataTransfer.effectAllowed = "move";
+                try {
+                  e.dataTransfer.setData("text/plain", group.id);
+                } catch {
+                  /* ignore */
+                }
+              },
+              onDragOver: (e: React.DragEvent) => {
+                if (!dragId || dragId === group.id) {
+                  setDropTarget(null);
+                  return;
+                }
+                e.preventDefault();
+                e.dataTransfer.dropEffect = "move";
+                setDropTarget(group.id);
+                moveBefore(dragId, group.id);
+              },
+              onDragEnd: () => {
+                setDragId(null);
                 setDropTarget(null);
-                return;
+              },
+              onDrop: () => setDropTarget(null),
+            };
+            const onKeyDown = (e: React.KeyboardEvent) => {
+              if (e.altKey && e.key === "ArrowLeft") {
+                e.preventDefault();
+                nudge(group.id, -1);
+              } else if (e.altKey && e.key === "ArrowRight") {
+                e.preventDefault();
+                nudge(group.id, 1);
               }
-              e.preventDefault();
-              e.dataTransfer.dropEffect = "move";
-              setDropTarget(group.id);
-              moveBefore(dragId, group.id);
-            }}
-            onDragEnd={() => {
-              setDragId(null);
-              setDropTarget(null);
-            }}
-            onDrop={() => setDropTarget(null)}
-            className={`relative cursor-grab active:cursor-grabbing ${dragId === group.id ? "opacity-50" : ""}`}
-          >
-            {dragId && dropTarget === group.id && dragId !== group.id && (
-              <span
-                aria-hidden="true"
-                className="absolute inset-y-0 left-0 w-0.5 rounded-full bg-indigo-500 dark:bg-indigo-400"
-              />
-            )}
-            {single ? (
-              <NavLink
-                to={pathFor(base, single)}
-                end={single.end}
-                draggable={false}
-                className={() => stripTabClass(isActiveGroup)}
-                aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight"
-                onKeyDown={(e) => {
-                  if (e.altKey && e.key === "ArrowLeft") {
-                    e.preventDefault();
-                    nudge(group.id, -1);
-                  } else if (e.altKey && e.key === "ArrowRight") {
-                    e.preventDefault();
-                    nudge(group.id, 1);
-                  }
-                }}
+            };
+            return (
+              <div
+                key={group.id}
+                ref={isActiveGroup ? activeRef : undefined}
+                {...dragProps}
+                className={`relative cursor-grab active:cursor-grabbing ${
+                  dragId === group.id ? "opacity-50" : ""
+                }`}
               >
-                {group.label}
-              </NavLink>
-            ) : (
-              <GroupTab
-                group={group}
-                base={base}
-                onNudge={(dir) => nudge(group.id, dir)}
-              />
-            )}
-          </div>
-        );
-      })}
-    </nav>
+                {dragId && dropTarget === group.id && dragId !== group.id && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-y-0 left-0 w-0.5 rounded-full bg-accent-500"
+                  />
+                )}
+                {single ? (
+                  <NavLink
+                    to={pathFor(base, single)}
+                    end={single.end}
+                    draggable={false}
+                    aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight"
+                    onKeyDown={onKeyDown}
+                    className={groupTabClass({
+                      active: isActiveGroup,
+                      fused: false,
+                    })}
+                  >
+                    {group.label}
+                  </NavLink>
+                ) : (
+                  <button
+                    type="button"
+                    aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight"
+                    aria-current={isActiveGroup ? "true" : undefined}
+                    onKeyDown={onKeyDown}
+                    onClick={() => {
+                      // Already inside the group → no-op; else open its first page.
+                      if (!isActiveGroup) {
+                        navigate(pathFor(base, group.items[0]));
+                      }
+                    }}
+                    className={groupTabClass({
+                      active: isActiveGroup,
+                      fused: true,
+                    })}
+                  >
+                    {group.label}
+                  </button>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+        {trailing && (
+          <div className="flex shrink-0 items-center gap-2 pb-1">{trailing}</div>
+        )}
+      </div>
+
+      {/* ── Row 2: the active group's pages (subtabs) ─────────────────── */}
+      {/* Shares the active tab's tint so tab + band read as one control;
+          the band carries the accent baseline the fused tab gave up. */}
+      {bandItems && activeGroup && (
+        <nav
+          aria-label={`${activeGroup.label} pages`}
+          className="flex items-center gap-1 overflow-x-auto rounded-b-lg rounded-tr-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] px-1.5 py-1.5 border-b-2 border-accent-600"
+        >
+          {bandItems.map((tab) => (
+            <NavLink
+              key={tab.to}
+              to={pathFor(base, tab)}
+              end={tab.end}
+              className={({ isActive }) =>
+                `whitespace-nowrap min-h-[36px] md:min-h-[30px] inline-flex items-center rounded-lg px-3 text-[13px] font-medium transition-colors ${
+                  isActive || isPathActive(pathname, pathFor(base, tab))
+                    ? "bg-white dark:bg-slate-900 text-accent-800 dark:text-accent-200 font-semibold shadow-sm ring-1 ring-accent-600/20"
+                    : "text-accent-800/80 dark:text-accent-200/80 hover:bg-white/60 dark:hover:bg-slate-900/50 hover:text-accent-800 dark:hover:text-accent-200"
+                }`
+              }
+            >
+              {tab.label}
+            </NavLink>
+          ))}
+        </nav>
+      )}
+    </div>
   );
 }
