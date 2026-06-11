@@ -84,6 +84,14 @@
   --font-serif:   'Literata', Georgia, 'Noto Serif TC', serif;
   --font-mono:    'Fragment Mono', ui-monospace, SFMono-Regular, monospace;
 
+  /* layout width canon — every surface uses exactly one of these,
+     always centered in the pane. No per-page overrides.
+     data    = educator data surfaces (dashboard, gradebook, rosters, modules)
+     reading = student narrative surfaces (home, course view, feedback)
+     runner  = full-bleed two-pane; passage measure capped at 36rem inside */
+  --w-data:    1240px;
+  --w-reading: 800px;
+
   /* type scale (px) — the canon */
   --t-display: 30px;   /* page h1 — Newsreader 500, tracking -0.5px */
   --t-title:   20px;   /* card/panel h2 — Onest 600 */
@@ -204,8 +212,8 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
   border-radius: var(--r-full); background: var(--error); border: 1.5px solid var(--bg);
 }
 
-.content { padding: 32px 36px 96px; max-width: 1240px; }
-.content.reading { max-width: 760px; }   /* student narrative surfaces */
+.content { padding: 32px 36px 96px; max-width: var(--w-data); margin-inline: auto; }
+.content.reading { max-width: var(--w-reading); }   /* student narrative surfaces */
 
 /* page header block: display title + double rule */
 .pagehead { margin-bottom: 28px; }
