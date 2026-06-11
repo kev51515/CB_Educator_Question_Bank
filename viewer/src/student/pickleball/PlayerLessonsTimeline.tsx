@@ -15,7 +15,7 @@
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { Skeleton, SkeletonRows } from "@/components";
+import { Skeleton, SkeletonRows, useToast } from "@/components";
 import { parseVideoUrl } from "@/lib/videoEmbed";
 
 const STORAGE_BUCKET = "pickleball-videos";
@@ -49,6 +49,7 @@ interface LessonVideoRow {
   storage_path: string | null;
   title: string | null;
   sort_order: number | null;
+  added_by: string | null;
 }
 
 interface LessonRow {
@@ -92,6 +93,9 @@ export function PlayerLessonsTimeline({
   const [lessons, setLessons] = useState<LessonWithVideos[]>([]);
   // Map storage_path -> signed playback URL for uploaded videos.
   const [signedByPath, setSignedByPath] = useState<Record<string, string>>({});
+  const toast = useToast();
+  const [composerFor, setComposerFor] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     aliveRef.current = true;
@@ -126,7 +130,7 @@ export function PlayerLessonsTimeline({
       if (lessonIds.length > 0) {
         const { data: vData, error: vErr } = await supabase
           .from("pickleball_lesson_videos")
-          .select("id, lesson_id, kind, url, storage_path, title, sort_order")
+          .select("id, lesson_id, kind, url, storage_path, title, sort_order, added_by")
           .in("lesson_id", lessonIds)
           .order("sort_order", { ascending: true });
         if (!aliveRef.current) return;
@@ -168,6 +172,63 @@ export function PlayerLessonsTimeline({
   useEffect(() => {
     void load();
   }, [load]);
+
+  // ── Player contributes their own analysis clips (pk_add_lesson_video allows
+  //    the lesson's player; pk_delete only the clip they added). ──
+  const friendly = (e: { code?: string; message?: string } | null): string =>
+    e?.code === "42501" || /not_authorized/.test(e?.message ?? "")
+      ? "You can only manage clips you added."
+      : (e?.message ?? "Something went wrong.");
+
+  const addUrl = useCallback(
+    async (lessonId: string, url: string, title: string) => {
+      if (!url.trim()) return;
+      setBusy(true);
+      const { error } = await supabase.rpc("pk_add_lesson_video", {
+        p_lesson_id: lessonId, p_kind: "link", p_url: url.trim(),
+        p_title: title.trim() || null,
+      });
+      setBusy(false);
+      if (error) { toast.error(friendly(error)); return; }
+      toast.success("Clip added");
+      setComposerFor(null);
+      await load();
+    },
+    [load, toast],
+  );
+
+  const addUpload = useCallback(
+    async (lessonId: string, file: File, title: string) => {
+      setBusy(true);
+      try {
+        const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+        const path = `${courseId}/${studentId}/${lessonId}/${Date.now()}-${safe}`;
+        const up = await supabase.storage.from(STORAGE_BUCKET).upload(path, file, { upsert: false });
+        if (up.error) { toast.error(`Upload failed: ${up.error.message}`); return; }
+        const { error } = await supabase.rpc("pk_add_lesson_video", {
+          p_lesson_id: lessonId, p_kind: "upload", p_storage_path: path,
+          p_title: title.trim() || null,
+        });
+        if (error) { toast.error(friendly(error)); return; }
+        toast.success("Clip uploaded");
+        setComposerFor(null);
+        await load();
+      } finally {
+        setBusy(false);
+      }
+    },
+    [courseId, studentId, load, toast],
+  );
+
+  const removeClip = useCallback(
+    async (videoId: string) => {
+      const { error } = await supabase.rpc("pk_delete_lesson_video", { p_id: videoId });
+      if (error) { toast.error(friendly(error)); return; }
+      toast.success("Clip removed");
+      await load();
+    },
+    [load, toast],
+  );
 
   if (loading) {
     return (
@@ -272,23 +333,60 @@ export function PlayerLessonsTimeline({
               </section>
             )}
 
-            {/* Videos */}
-            {lesson.videos.length > 0 && (
-              <section className="mt-3">
-                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                  Recap videos
+            {/* Videos — coach recap clips + the player's own analysis clips */}
+            <section className="mt-3">
+              <div className="mb-2 flex items-center justify-between gap-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  Videos
                 </h4>
+                <button
+                  type="button"
+                  onClick={() => setComposerFor((cur) => (cur === lesson.id ? null : lesson.id))}
+                  className="inline-flex min-h-[36px] items-center rounded-lg px-2.5 text-xs font-medium text-accent-700 hover:bg-accent-50 dark:text-accent-300 dark:hover:bg-accent-950/40"
+                >
+                  {composerFor === lesson.id ? "Cancel" : "+ Add a clip"}
+                </button>
+              </div>
+
+              {composerFor === lesson.id && (
+                <ClipComposer
+                  busy={busy}
+                  onAddUrl={(u, t) => void addUrl(lesson.id, u, t)}
+                  onAddUpload={(f, t) => void addUpload(lesson.id, f, t)}
+                />
+              )}
+
+              {lesson.videos.length > 0 ? (
                 <div className="space-y-3">
                   {lesson.videos.map((v) => (
-                    <VideoPlayer
-                      key={v.id}
-                      video={v}
-                      signedUrl={v.storage_path ? signedByPath[v.storage_path] : undefined}
-                    />
+                    <div key={v.id}>
+                      <VideoPlayer
+                        video={v}
+                        signedUrl={v.storage_path ? signedByPath[v.storage_path] : undefined}
+                      />
+                      {v.added_by === studentId && (
+                        <div className="mt-1 flex items-center gap-2 text-[11px] text-slate-400">
+                          <span>Added by you</span>
+                          <button
+                            type="button"
+                            onClick={() => void removeClip(v.id)}
+                            className="font-medium text-rose-600 hover:underline dark:text-rose-400"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
-              </section>
-            )}
+              ) : (
+                composerFor !== lesson.id && (
+                  <p className="text-xs text-slate-400 dark:text-slate-500">
+                    No videos yet — add a clip of your play for your coach to analyze.
+                  </p>
+                )
+              )}
+            </section>
           </li>
         ))}
       </ol>
@@ -369,4 +467,74 @@ function VideoPlayer({
   }
 
   return null;
+}
+
+// ─── Player clip composer (paste a URL or upload a video file) ────────────────
+
+function ClipComposer({
+  busy,
+  onAddUrl,
+  onAddUpload,
+}: {
+  busy: boolean;
+  onAddUrl: (url: string, title: string) => void;
+  onAddUpload: (file: File, title: string) => void;
+}) {
+  const [url, setUrl] = useState("");
+  const [title, setTitle] = useState("");
+  const fileRef = useRef<HTMLInputElement | null>(null);
+  const inputClass =
+    "rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100";
+  return (
+    <div className="mb-3 rounded-xl bg-slate-50 p-3 ring-1 ring-slate-200 dark:bg-slate-800/50 dark:ring-slate-700">
+      <input
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Title (optional) — e.g. Serve, game 2"
+        className={`mb-2 w-full ${inputClass}`}
+      />
+      <div className="flex flex-col gap-2 sm:flex-row">
+        <div className="flex flex-1 gap-2">
+          <input
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="Paste a video URL (YouTube, Vimeo, Drive…)"
+            className={`flex-1 ${inputClass}`}
+          />
+          <button
+            type="button"
+            disabled={busy || !url.trim()}
+            onClick={() => onAddUrl(url, title)}
+            className="min-h-[40px] shrink-0 rounded-lg bg-accent-600 px-3 text-sm font-medium text-white hover:bg-accent-700 disabled:opacity-50"
+          >
+            Add URL
+          </button>
+        </div>
+        <div className="flex gap-2">
+          <input
+            ref={fileRef}
+            type="file"
+            accept="video/*"
+            className="hidden"
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              if (f) onAddUpload(f, title);
+              e.target.value = "";
+            }}
+          />
+          <button
+            type="button"
+            disabled={busy}
+            onClick={() => fileRef.current?.click()}
+            className="min-h-[40px] shrink-0 rounded-lg bg-slate-900 px-3 text-sm font-medium text-white hover:bg-slate-700 disabled:opacity-50 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+          >
+            {busy ? "Working…" : "Upload clip"}
+          </button>
+        </div>
+      </div>
+      <p className="mt-2 text-[11px] text-slate-400 dark:text-slate-500">
+        Your clips are visible to your coach for analysis. You can remove clips you added.
+      </p>
+    </div>
+  );
 }
