@@ -25,7 +25,7 @@
  * Type: Fraunces (display serif) + Hanken Grotesk (UI) — loaded in index.html.
  */
 import { useEffect, useRef, useState } from "react";
-import type { AuthResult, SignUpRole } from "./session";
+import type { AuthResult } from "./session";
 import {
   ROLE_LABELS,
   SANS,
@@ -38,7 +38,6 @@ import {
   inputCls,
   labelCls,
   primaryBtn,
-  type Tab,
   type SignInMode,
   type SignInRole,
 } from "./authScreenHelpers";
@@ -47,13 +46,8 @@ interface AuthScreenProps {
   signInWithPassword: (email: string, password: string) => Promise<AuthResult>;
   /** Passwordless student sign-in with a teacher-issued login code. */
   signInWithCode: (code: string) => Promise<AuthResult>;
-  signUp: (
-    email: string,
-    password: string,
-    displayName: string,
-    role: SignUpRole,
-    teacherInviteCode?: string,
-  ) => Promise<AuthResult>;
+  /** Google OAuth — redirects away on success; resolves with error otherwise. */
+  signInWithGoogle: () => Promise<AuthResult>;
   requestPasswordReset: (email: string) => Promise<AuthResult>;
   onSwitchToQuickStart: () => void;
 }
@@ -61,10 +55,13 @@ interface AuthScreenProps {
 export function AuthScreen({
   signInWithPassword,
   signInWithCode,
+  signInWithGoogle,
   requestPasswordReset,
   onSwitchToQuickStart,
 }: AuthScreenProps) {
-  const [tab, setTab] = useState<Tab>("signin");
+  // Signups are CLOSED (owner decision 2026-06): no tab bar, sign-in only.
+  // Students are the primary audience — student role is the default and the
+  // class-code join card leads the page.
   const [signInMode, setSignInMode] = useState<SignInMode>("password");
 
   // Sign-in fields. Initial role honours a `?role=student|educator` hint from
@@ -93,7 +90,7 @@ export function AuthScreen({
     if (signInMode === "reset") resetEmailRef.current?.focus();
     else signInEmailRef.current?.focus();
     setError(null);
-  }, [tab, signInMode]);
+  }, [signInMode]);
 
   // QR / deep-link prefill: a teacher-shared student login link arrives as
   // `?login=<code>&key=<password>`. Pre-fill the Student-role form and strip
@@ -106,7 +103,6 @@ export function AuthScreen({
     const login = sp.get("login");
     const key = sp.get("key");
     if (!login) return;
-    setTab("signin");
     setSignInMode("password");
     setSignInRole("student");
     setSignInEmail(login);
@@ -122,6 +118,18 @@ export function AuthScreen({
     signInRole === "student" &&
     signInEmail.trim().length > 0 &&
     !signInEmail.includes("@");
+
+  const onGoogleSignIn = async (): Promise<void> => {
+    setError(null);
+    setNotice(null);
+    setBusy(true);
+    const { error: gErr } = await signInWithGoogle();
+    if (gErr) {
+      setError(cleanError(gErr));
+      setBusy(false);
+    }
+    // On success the browser redirects to Google — stay busy until then.
+  };
 
   const onSignInSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -176,13 +184,7 @@ export function AuthScreen({
 
   // ---- presentational classes ---------------------------------------------
   // inputCls / labelCls / primaryBtn are shared with QuickStartScreen — see
-  // authScreenHelpers. tabCls / segBtn are auth-only.
-  const tabCls = (active: boolean) =>
-    `-mb-px border-b-2 pb-2.5 text-sm font-medium transition-colors focus:outline-none ${
-      active
-        ? "border-stone-900 text-stone-900 dark:border-stone-100 dark:text-stone-100"
-        : "border-transparent text-stone-400 hover:text-stone-600 dark:text-stone-500 dark:hover:text-stone-300"
-    }`;
+  // authScreenHelpers. segBtn is auth-only.
   const segBtn = (active: boolean) =>
     `rounded-[10px] px-3 py-2 text-sm transition ${
       active
@@ -266,49 +268,16 @@ export function AuthScreen({
               className="text-[1.95rem] font-medium leading-tight tracking-tight text-stone-900 dark:text-stone-100"
               style={serif}
             >
-              {tab === "signin"
-                ? `${ROLE_LABELS[signInRole]} sign-in`
-                : "Educator sign-up"}
+              {`${ROLE_LABELS[signInRole]} sign-in`}
             </h1>
             <p className="mt-1.5 text-sm text-stone-500 dark:text-stone-400">
-              {tab === "signin"
-                ? signInMode === "reset"
-                  ? "Enter your email and we'll send you a reset link."
-                  : signInRole === "student"
-                    ? "Joining for the first time? Use your class code. Returning? Sign in with your email below."
-                    : "Sign in with your email and password."
-                : "Accounts are invitation-only — here's how to get one."}
+              {signInMode === "reset"
+                ? "Enter your email and we'll send you a reset link."
+                : signInRole === "student"
+                  ? "Joining for the first time? Use your class code. Returning? Sign in below."
+                  : "Sign in with your email and password."}
             </p>
           </header>
-
-          {/* tabs */}
-          <div
-            role="tablist"
-            aria-label="Authentication mode"
-            className="mb-6 flex gap-7 border-b border-stone-200 dark:border-white/10"
-          >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={tab === "signin"}
-              onClick={() => {
-                setTab("signin");
-                setSignInMode("password");
-              }}
-              className={tabCls(tab === "signin")}
-            >
-              Sign in
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={tab === "signup"}
-              onClick={() => setTab("signup")}
-              className={tabCls(tab === "signup")}
-            >
-              Educator sign-up
-            </button>
-          </div>
 
           {notice && (
             <div
@@ -329,7 +298,7 @@ export function AuthScreen({
           )}
 
           {/* role toggle */}
-          {tab === "signin" && signInMode === "password" && (
+          {signInMode === "password" && (
             <div
               role="radiogroup"
               aria-label="Sign in as"
@@ -357,7 +326,7 @@ export function AuthScreen({
           {/* STUDENT first-time path — the no-password class code is the primary
               action for a student who hasn't signed in before; the returning-
               student code+password form sits below the divider. */}
-          {tab === "signin" && signInMode === "password" && signInRole === "student" && (
+          {signInMode === "password" && signInRole === "student" && (
             <div className="mb-5">
               <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-400 dark:text-stone-500">
                 New here? Joining a class?
@@ -375,7 +344,7 @@ export function AuthScreen({
 
           {/* sign-in form — for students this is the RETURNING path (student
               code + password your teacher set); for educators it's email + password. */}
-          {tab === "signin" && signInMode === "password" && (
+          {signInMode === "password" && (
             <form onSubmit={onSignInSubmit} className="space-y-4">
               <label className="block">
                 <span className={labelCls}>
@@ -452,9 +421,48 @@ export function AuthScreen({
             </form>
           )}
 
+          {/* Google sign-in. Signups stay invitation-only, but Google is a
+              SIGN-IN method: Supabase links the Google identity to the
+              existing account with the same verified email, so self-
+              registered students (and educators) can use either method.
+              Code-login students keep using their codes. */}
+          {signInMode === "password" && (
+            <div className="mt-5">
+              <div className="mb-4 flex items-center gap-3" aria-hidden>
+                <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500">
+                  or
+                </span>
+                <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
+              </div>
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() => {
+                  void onGoogleSignIn();
+                }}
+                className="flex min-h-[44px] w-full items-center justify-center gap-2.5 rounded-xl border border-stone-300/80 bg-white px-4 py-3 text-sm font-semibold text-stone-800 shadow-sm transition hover:border-stone-900/30 hover:bg-stone-50 focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] disabled:opacity-60 dark:border-white/10 dark:bg-white/[0.04] dark:text-stone-100 dark:hover:bg-white/[0.08]"
+              >
+                <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden>
+                  <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                  <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                  <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                  <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+                </svg>
+                Continue with Google
+              </button>
+              {signInRole === "student" && (
+                <p className="mt-2 text-center text-xs text-stone-400 dark:text-stone-500">
+                  Use the Google account with the same email as your OmniLMS
+                  login to keep everything together.
+                </p>
+              )}
+            </div>
+          )}
+
 
           {/* password reset */}
-          {tab === "signin" && signInMode === "reset" && (
+          {signInMode === "reset" && (
             <form onSubmit={onResetSubmit} className="space-y-4">
               <p className="text-sm text-stone-600 dark:text-stone-400">
                 Enter your account email and we'll send you a link to set a
@@ -487,97 +495,6 @@ export function AuthScreen({
                 ← Back to sign in
               </button>
             </form>
-          )}
-
-          {/* sign-up: invitation-only — educators are provisioned by an admin,
-              students join with a class code. No self-service account creation. */}
-          {tab === "signup" && (
-            <div className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 dark:border-white/10 dark:bg-white/[0.03]">
-              <p className="text-sm font-medium text-stone-800 dark:text-stone-100">
-                Accounts are invitation-only.
-              </p>
-              <ul className="mt-2 space-y-1.5 text-sm text-stone-600 dark:text-stone-400">
-                <li>
-                  <span className="font-medium text-stone-700 dark:text-stone-200">Educators</span> — ask an
-                  admin to create your account, then sign in above with your email + password.
-                </li>
-                <li>
-                  <span className="font-medium text-stone-700 dark:text-stone-200">Students</span> — use{" "}
-                  <span className="font-medium">Join with a class code</span> below (your teacher gives you a code).
-                </li>
-              </ul>
-            </div>
-          )}
-
-          {/* Class-code join. On the Student sign-in tab it already appears
-              ABOVE the form as the primary first-time path, and educators don't
-              join with a class code — so down here it's only for the sign-up tab
-              ("students start here"). */}
-          {tab === "signup" && (
-            <div className="mt-6">
-              <div className="mb-4 flex items-center gap-3" aria-hidden>
-                <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
-                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500">
-                  or
-                </span>
-                <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
-              </div>
-              <button
-                type="button"
-                onClick={onSwitchToQuickStart}
-                className="group flex w-full items-center gap-3.5 rounded-2xl border border-stone-300/80 bg-white/60 px-4 py-3.5 text-left shadow-sm transition hover:border-stone-900/30 hover:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/30 dark:hover:bg-white/[0.07]"
-              >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900">
-                  <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden
-                  >
-                    <rect width="5" height="5" x="3" y="3" rx="1" />
-                    <rect width="5" height="5" x="16" y="3" rx="1" />
-                    <rect width="5" height="5" x="3" y="16" rx="1" />
-                    <path d="M21 16h-3a2 2 0 0 0-2 2v3" />
-                    <path d="M21 21v.01" />
-                    <path d="M12 7v3a2 2 0 0 1-2 2H7" />
-                    <path d="M3 12h.01" />
-                    <path d="M12 3h.01" />
-                    <path d="M12 16v.01" />
-                    <path d="M16 12h1" />
-                    <path d="M21 12v.01" />
-                    <path d="M12 21v-1" />
-                  </svg>
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-semibold text-stone-900 dark:text-stone-100">
-                    Join with a class code
-                  </span>
-                  <span className="mt-0.5 block text-xs leading-snug text-stone-500 dark:text-stone-400">
-                    Got a code or QR from your teacher? Start here — no password
-                    needed.
-                  </span>
-                </span>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="shrink-0 text-stone-400 transition group-hover:translate-x-0.5 group-hover:text-stone-700 dark:text-stone-500 dark:group-hover:text-stone-200"
-                  aria-hidden
-                >
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </button>
-            </div>
           )}
 
           {/* footer links */}

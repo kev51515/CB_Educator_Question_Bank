@@ -48,6 +48,8 @@ export interface UseStudentSession {
    * credentials" lockout (the account email is no longer <code>@students.local).
    */
   signInWithCode: (code: string) => Promise<AuthResult>;
+  /** Google OAuth — redirects away on success; resolves with error otherwise. */
+  signInWithGoogle: () => Promise<AuthResult>;
   signUp: (
     email: string,
     password: string,
@@ -187,6 +189,31 @@ export function useStudentSession(): UseStudentSession {
     },
     [],
   );
+
+  /**
+   * Google OAuth sign-in. On success the browser REDIRECTS to Google and the
+   * promise never "completes" from the user's perspective; an AuthResult error
+   * only surfaces when the redirect can't start (provider disabled, network).
+   * Supabase auto-links the Google identity to an existing user with the same
+   * VERIFIED email — same profile, enrollments, history — so students who
+   * registered with email+password can switch to Google freely. Managed
+   * (code-login) students have synthetic addresses that never match a Gmail;
+   * Google would give them a fresh empty account, hence the caption in the UI.
+   */
+  const signInWithGoogle = useCallback(async (): Promise<AuthResult> => {
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo:
+            typeof window !== "undefined" ? `${window.location.origin}/` : undefined,
+        },
+      });
+      return { error: error ? error.message : null };
+    } catch (error: unknown) {
+      return { error: getErrorMessage(error) };
+    }
+  }, []);
 
   const signInWithCode = useCallback(async (code: string): Promise<AuthResult> => {
     try {
@@ -397,6 +424,7 @@ export function useStudentSession(): UseStudentSession {
     loading,
     signInWithPassword,
     signInWithCode,
+    signInWithGoogle,
     signUp,
     signOut,
     setArea,
