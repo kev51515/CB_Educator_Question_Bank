@@ -49,7 +49,7 @@ function isDiscussionFilter(value: string): value is DiscussionFilter {
 
 export function CourseDiscussions() {
   const { cls } = useClassContext();
-  const { profile } = useProfile();
+  const { profile, loading: profileLoading } = useProfile();
   const { topics, loading, error, refresh } = useDiscussions(cls.id);
   const [showCreate, setShowCreate] = useState(false);
   const [editingTopic, setEditingTopic] = useState<DiscussionTopic | null>(null);
@@ -310,7 +310,10 @@ export function CourseDiscussions() {
           </div>
         )}
 
-        {loading ? (
+        {/* Wait for the profile too — committing to the canCreate=false branch
+            while the role is still loading flashes student-voice copy (and no
+            Start-a-topic button) at the teacher. */}
+        {loading || profileLoading ? (
           <SkeletonRows count={3} rowClassName="h-20" />
         ) : error ? (
           <div

@@ -47,9 +47,7 @@ import {
 
 interface AssignmentsPageProps {
   classId: string;
-  className: string;
   teacherId: string;
-  onBack: () => void;
   /** Called when a teacher clicks "View attempts" on a card. */
   onOpenAttempts: (assignment: Assignment) => void;
 }
@@ -66,9 +64,7 @@ function getErrorMessage(error: unknown, fallback: string): string {
 
 export function AssignmentsPage({
   classId,
-  className,
   teacherId,
-  onBack,
   onOpenAttempts,
 }: AssignmentsPageProps) {
   const { assignments, loading, error, refresh } = useAssignments(classId);
@@ -290,18 +286,12 @@ export function AssignmentsPage({
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
-        <div className="mx-auto max-w-4xl space-y-6">
-          <button
-            type="button"
-            onClick={onBack}
-            className="inline-flex items-center gap-1.5 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
-          >
-            <span aria-hidden>←</span> Back
-          </button>
-
+      {/* Course-tab surface — flat like Modules/Gradebook. The page-in-a-page
+          gradient, centered column, and ← Back were relics of the standalone-
+          route era; the breadcrumb and tab band own navigation now. */}
+      <div className="p-6">
+        <div className="space-y-6">
           <AssignmentsToolbar
-            className={className}
             totalCount={assignments.length}
             activeCount={activeCount}
             archivedCount={archivedCount}

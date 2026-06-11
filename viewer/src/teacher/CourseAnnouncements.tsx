@@ -45,7 +45,7 @@ interface ConfirmPublishState {
 
 export function CourseAnnouncements() {
   const { cls } = useClassContext();
-  const { profile } = useProfile();
+  const { profile, loading: profileLoading } = useProfile();
   const { announcements, loading, error, refresh } = useAnnouncements(cls.id);
   const toast = useToast();
 
@@ -239,7 +239,10 @@ export function CourseAnnouncements() {
           )}
         </header>
 
-        {loading ? (
+        {/* Wait for the profile too — committing to the canManage=false branch
+            while the role is still loading flashes student-voice copy (and no
+            + Announcement button) at the teacher. */}
+        {loading || profileLoading ? (
           <SkeletonRows count={3} rowClassName="h-24" />
         ) : error ? (
           <div

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UX batch 2 — before / after</title>
+<style>
+  body { font: 14px/1.5 -apple-system, sans-serif; background: #fbfaf7; color: #1b2a4a; margin: 40px auto; max-width: 1200px; padding: 0 24px; }
+  h1 { font-size: 22px; } h2 { font-size: 15px; margin: 36px 0 6px; }
+  p.note { color: #44516b; max-width: 70ch; }
+  .pair { display: grid; gap: 10px; margin-bottom: 8px; }
+  figure { margin: 0; } figcaption { font-size: 12px; color: #6e7a95; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .05em; }
+  img { width: 100%; border: 1px solid #e9e6de; border-radius: 10px; box-shadow: 0 1px 3px rgba(27,42,74,.08); }
+</style>
+</head>
+<body>
+<h1>UX batch 2 — course-shell fixes</h1>
+
+<h2>1 · Assignments tab — page-in-a-page relic removed</h2>
+<p class="note">Before: the tab rendered its own full-screen gradient, a narrow centered column, a "← Back" button, and repeated the course name as its title (already in the breadcrumb). After: flat course-tab surface matching Modules/Gradebook — serif "Assignments" title, full-width content, no redundant navigation.</p>
+<div class="pair">
+  <figure><figcaption>Before</figcaption><img src="before-assignments.png"></figure>
+  <figure><figcaption>After</figcaption><img src="after-assignments.png"></figure>
+</div>
+
+<h2>2 · Materials / Announcements / Discussions — wrong-persona flash fixed</h2>
+<p class="note">Before: while the profile was still loading, the page committed to the student branch — a teacher saw "Your teacher hasn't posted any materials yet" with no Upload/Add buttons, which then popped in. After: the page holds skeletons until the role is known, then renders the complete teacher UI at once. (Same fix applied to Announcements and Discussions.)</p>
+<div class="pair">
+  <figure><figcaption>Before — student copy + missing buttons shown to a teacher</figcaption><img src="before-materials.png"></figure>
+  <figure><figcaption>After — honest skeletons until the role resolves</figcaption><img src="after-materials.png"></figure>
+</div>
+
+<h2>3 · Dashboard "Needs attention" badges (no shot — behavior fix)</h2>
+<p class="note">Section count badges rendered a confident "0" while their rows were still loading skeletons. Now: an em-dash while loading, and a muted (non-accent) badge when the count is genuinely zero so the eye isn't drawn to nothing.</p>
+</body>
+</html>

@@ -4,7 +4,7 @@
  * Header + filter pills for the teacher Assignments page.
  *
  * Renders:
- *   - The page title block (label / className / subtitle).
+ *   - The page title block (serif title + subtitle).
  *   - The action buttons on the right (Select/Done pill + Create button).
  *   - The "All assignments" sub-header with Active / Archived / All filter
  *     pills (counts included).
@@ -49,7 +49,6 @@ function FilterPill({ active, count, label, onClick }: FilterPillProps): JSX.Ele
 }
 
 export interface AssignmentsToolbarProps {
-  className: string;
   totalCount: number;
   activeCount: number;
   archivedCount: number;
@@ -69,7 +68,6 @@ export interface AssignmentsToolbarProps {
 }
 
 export function AssignmentsToolbar({
-  className,
   totalCount,
   activeCount,
   archivedCount,
@@ -86,11 +84,11 @@ export function AssignmentsToolbar({
     <>
       <header className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
+          {/* Serif page title per the Modules/Gradebook convention — the
+              course name already lives in the breadcrumb, so it isn't
+              repeated here. */}
+          <h1 className="page-title text-2xl font-bold text-slate-900 dark:text-slate-100">
             Assignments
-          </p>
-          <h1 className="mt-1 text-2xl font-bold text-slate-900 dark:text-slate-100">
-            {className}
           </h1>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Publish tests to this course and review results.

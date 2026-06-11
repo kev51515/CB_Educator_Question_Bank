@@ -58,15 +58,17 @@ export function Section({
         <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
           {label}
         </span>
+        {/* While loading the count is unknown — show a dash, not a confident
+            "0" above skeleton rows. A true zero gets a muted badge so an
+            accent-tinted chip doesn't draw the eye to nothing. */}
         <span
-          className="
-            inline-flex items-center justify-center min-w-[1.5rem] px-1.5
-            h-5 rounded-full text-xs font-medium tabular-nums
-            bg-indigo-100 text-indigo-700
-            dark:bg-indigo-900/60 dark:text-indigo-200
-          "
+          className={`inline-flex items-center justify-center min-w-[1.5rem] px-1.5 h-5 rounded-full text-xs font-medium tabular-nums ${
+            loading || count === 0
+              ? "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+              : "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/60 dark:text-indigo-200"
+          }`}
         >
-          {count}
+          {loading ? "—" : count}
         </span>
       </button>
       {!collapsed && (

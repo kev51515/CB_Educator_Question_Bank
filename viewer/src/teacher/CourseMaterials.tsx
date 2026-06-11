@@ -52,7 +52,7 @@ interface ConfirmDeleteState {
 
 export function CourseMaterials() {
   const { cls } = useClassContext();
-  const { profile } = useProfile();
+  const { profile, loading: profileLoading } = useProfile();
   const { materials, loading, error, refresh } = useMaterials(cls.id);
   const toast = useToast();
 
@@ -428,7 +428,10 @@ export function CourseMaterials() {
           )}
         </header>
 
-        {loading ? (
+        {/* Wait for the profile too — committing to the canEdit=false branch
+            while the role is still loading flashes student-voice copy (and no
+            header buttons) at the teacher. */}
+        {loading || profileLoading ? (
           <SkeletonRows count={4} rowClassName="h-20" />
         ) : error ? (
           <div
