@@ -541,7 +541,7 @@ export function MyFeedbackPage() {
   }, [loading, error, items.length, visibleItems.length, prefs.filter]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-12">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 px-4 py-12">
       <div className="mx-auto max-w-3xl space-y-6">
         <header className="flex items-start justify-between gap-4">
           <div>

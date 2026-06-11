@@ -112,7 +112,7 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
       <>
         {isFullTestLink ? (
           <Pill tone="bg-indigo-100 text-indigo-700 ring-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:ring-indigo-800">
-            Test
+            Practice Test
           </Pill>
         ) : (
           <ItemIcon type={item.item_type} />

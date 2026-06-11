@@ -164,7 +164,7 @@ export function StudentBadge({
         }
         className="flex items-center gap-2 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 pl-1 pr-3 py-1.5 min-h-[44px] hover:ring-indigo-400 dark:hover:ring-indigo-500 transition"
       >
-        <span className="h-7 w-7 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white grid place-items-center text-sm font-semibold">
+        <span className="h-7 w-7 rounded-full bg-accent-600 text-white grid place-items-center text-sm font-semibold">
           {initial}
         </span>
         <span className="flex flex-col items-start leading-tight max-w-[10rem]">

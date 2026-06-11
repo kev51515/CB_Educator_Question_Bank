@@ -773,7 +773,13 @@ const ModuleCard = memo(function ModuleCard({
           </svg>
         </button>
 
-        <div className="flex-1 min-w-0 flex items-center gap-2">
+        {/* Draft modules grey their title so publish state scans instantly
+            (matches the per-item draft dimming below). */}
+        <div
+          className={`flex-1 min-w-0 flex items-center gap-2 ${
+            module.published ? "" : "opacity-[0.55]"
+          }`}
+        >
           {canEdit ? (
             <InlineRename
               value={module.name}
@@ -1043,6 +1049,13 @@ const ModuleCard = memo(function ModuleCard({
                 }}
                 className={`flex items-center gap-2 px-3 py-2.5 hover:bg-indigo-50/50 dark:hover:bg-indigo-950/20 transition-opacity ${
                   isItemDragging ? "opacity-50" : ""
+                } ${
+                  // Draft rows read greyed-out so publish state is scannable
+                  // at a glance (students can't see these). Hover restores
+                  // full opacity so editing them never feels disabled.
+                  !item.published && !isItemDragging
+                    ? "opacity-[0.55] hover:opacity-100 focus-within:opacity-100"
+                    : ""
                 } ${
                   recentlyMovedId === item.id
                     ? "ring-2 ring-indigo-500 animate-pulse rounded-lg"

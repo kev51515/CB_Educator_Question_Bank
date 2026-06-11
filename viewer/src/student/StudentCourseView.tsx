@@ -401,7 +401,7 @@ export function StudentCourseView(): JSX.Element {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 px-4 py-10">
       <div className="mx-auto max-w-3xl space-y-6">
         <button
           type="button"
