@@ -417,8 +417,21 @@ export function AuthScreen({
                   />
                 </label>
               )}
-              {codeMode ? null : signInRole === "educator" ? (
-                <div className="flex justify-end">
+              {/* Self-serve reset is available to anyone signing in with
+                  EMAIL + password — including self-registered students. Only
+                  code users (passwordless; synthetic non-deliverable emails)
+                  are routed to their teacher instead. The link is deliberately
+                  prominent (accent + underline) — it was a near-invisible grey
+                  footnote before and users couldn't find it. */}
+              {codeMode ? null : (
+                <div className="flex items-center justify-between gap-3">
+                  {signInRole === "student" ? (
+                    <span className="text-xs text-stone-400 dark:text-stone-500">
+                      Using a login code? Ask your teacher to reset it.
+                    </span>
+                  ) : (
+                    <span />
+                  )}
                   <button
                     type="button"
                     onClick={() => {
@@ -427,15 +440,11 @@ export function AuthScreen({
                       setError(null);
                       setNotice(null);
                     }}
-                    className="text-xs font-medium text-stone-500 transition hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-900/30 rounded dark:text-stone-400 dark:hover:text-stone-100"
+                    className="min-h-[40px] shrink-0 text-sm font-semibold text-indigo-600 hover:text-indigo-700 hover:underline underline-offset-2 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded dark:text-indigo-400 dark:hover:text-indigo-300"
                   >
                     Forgot password?
                   </button>
                 </div>
-              ) : (
-                <p className="text-right text-xs text-stone-400 dark:text-stone-500">
-                  Forgot your password? Ask your teacher to reset it.
-                </p>
               )}
               <button type="submit" disabled={busy} className={primaryBtn}>
                 {busy ? "Signing in…" : codeMode ? "Sign in with code" : "Sign in"}
@@ -447,6 +456,10 @@ export function AuthScreen({
           {/* password reset */}
           {tab === "signin" && signInMode === "reset" && (
             <form onSubmit={onResetSubmit} className="space-y-4">
+              <p className="text-sm text-stone-600 dark:text-stone-400">
+                Enter your account email and we'll send you a link to set a
+                new password.
+              </p>
               <label className="block">
                 <span className={labelCls}>Email</span>
                 <input
