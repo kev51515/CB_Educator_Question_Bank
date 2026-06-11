@@ -114,7 +114,7 @@ export function InlineCreateModuleRow({
           }}
           disabled={busy}
           placeholder="Module name — Enter to create, Esc to cancel"
-          className="flex-1 bg-transparent text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded disabled:opacity-50"
+          className="flex-1 bg-transparent text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60 rounded disabled:opacity-50"
         />
         <button
           type="button"
@@ -535,10 +535,54 @@ export function InlineAddItemRow({
   // Type selector — fused-band segmented control, same recipe as the course
   // subtab band in CourseTabStrip (tinted band, raised white active pill).
   const typeChipClass = (active: boolean): string =>
-    "whitespace-nowrap min-h-[40px] md:min-h-[30px] inline-flex items-center rounded-lg px-3 text-[13px] font-medium transition-colors " +
+    "whitespace-nowrap min-h-[40px] md:min-h-[30px] inline-flex items-center gap-1.5 rounded-lg px-3 text-[13px] font-medium transition-colors " +
     (active
       ? "bg-white dark:bg-slate-900 text-accent-800 dark:text-accent-200 font-semibold shadow-sm ring-1 ring-accent-600/20"
       : "text-accent-800/80 dark:text-accent-200/80 hover:bg-white/60 dark:hover:bg-slate-900/50 hover:text-accent-800 dark:hover:text-accent-200");
+
+  // 14px stroke icons per type — same line-icon language as the module rows'
+  // ItemTypeIcon (tree.tsx), so a chip previews the row it will create.
+  const TYPE_ICON: Record<InlineAddType, JSX.Element> = {
+    assignment: (
+      <>
+        <path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" />
+        <path d="M14 2v5h5" />
+        <path d="M9 13h6M9 16.5h4" />
+      </>
+    ),
+    full_test: <><circle cx="12" cy="13" r="7.5" /><path d="M12 9.5V13l2.5 2M10 2.5h4" /></>,
+    question_set: (
+      <>
+        <path d="m12 2 9 4.5-9 4.5-9-4.5L12 2Z" />
+        <path d="m3 11.5 9 4.5 9-4.5M3 16.5 12 21l9-4.5" />
+      </>
+    ),
+    practice_test: (
+      <>
+        <path d="M9 2h6a1 1 0 0 1 1 1v2H8V3a1 1 0 0 1 1-1Z" />
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+        <path d="m9 14 2 2 4-4" />
+      </>
+    ),
+    header: <path d="M4 7h16M4 12h10M4 17h7" />,
+    link: (
+      <>
+        <path d="M10 13a5 5 0 0 0 7.07 0l1.93-1.93a5 5 0 0 0-7.07-7.07L11 5" />
+        <path d="M14 11a5 5 0 0 0-7.07 0L5 12.93a5 5 0 0 0 7.07 7.07L13 19" />
+      </>
+    ),
+  };
+
+  // One quiet line under the band explaining what the selected type adds —
+  // Full-Test / Practice Test / Question Set are easy to confuse otherwise.
+  const TYPE_HINT: Record<InlineAddType, string> = {
+    assignment: "Link an assignment that already exists in this course.",
+    full_test: "A full-length SAT in the locked test runner — pick which modules to deploy.",
+    question_set: "A pre-built Question Bank set, auto-scored on submission.",
+    practice_test: "Clone a practice test from your library into this course.",
+    header: "A bold divider row that groups the items below it.",
+    link: "An external URL — opens for students in a new tab.",
+  };
 
   const chip = (type: InlineAddType, label: string): JSX.Element => {
     const active = itemType === type;
@@ -549,6 +593,20 @@ export function InlineAddItemRow({
         aria-pressed={active}
         className={typeChipClass(active)}
       >
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden
+          className="h-3.5 w-3.5 flex-none opacity-70"
+        >
+          {TYPE_ICON[type]}
+        </svg>
         {label}
       </button>
     );
@@ -594,6 +652,9 @@ export function InlineAddItemRow({
           {chip("header", "Header")}
           {chip("link", "Link")}
         </div>
+        <p className="mt-1 px-1 text-[11px] text-slate-500 dark:text-slate-400">
+          {TYPE_HINT[itemType]}
+        </p>
       </div>
 
       {itemType === "assignment" && (
@@ -619,7 +680,7 @@ export function InlineAddItemRow({
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Display title (optional — defaults to assignment title)"
             disabled={busy}
-            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
           />
         </div>
       )}
@@ -670,7 +731,7 @@ export function InlineAddItemRow({
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Header title — e.g. 'Week 1: Linear Equations'"
           disabled={busy}
-          className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
         />
       )}
 
@@ -683,7 +744,7 @@ export function InlineAddItemRow({
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Link title"
             disabled={busy}
-            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
           />
           <input
             type="url"
@@ -691,7 +752,7 @@ export function InlineAddItemRow({
             onChange={(e) => setUrl(e.target.value)}
             placeholder="https://…"
             disabled={busy}
-            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
           />
         </div>
       )}

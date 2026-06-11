@@ -65,7 +65,7 @@ export function FullTestSection({
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Display title (optional — defaults to the test title)"
         disabled={busy}
-        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
       />
       {(() => {
         // Show the chosen test's section composition so the teacher knows
@@ -173,7 +173,7 @@ export function FullTestSection({
                       checked={on}
                       onChange={() => toggleFtModule(m.position)}
                       disabled={busy}
-                      className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                      className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-400/60"
                       aria-label={`Deploy ${m.label}`}
                     />
                     <span className="font-medium text-slate-800 dark:text-slate-200">

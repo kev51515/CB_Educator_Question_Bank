@@ -167,7 +167,7 @@ export function QuestionSetSection({
         placeholder="Type to filter sets (label, topic, section, difficulty)…"
         disabled={busy}
         aria-label="Filter Question Sets"
-        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
       />
 
       {/* Result list — error / loading skeletons / empty state / rows. */}
@@ -262,7 +262,7 @@ export function QuestionSetSection({
         placeholder={psSetUid ? "Title (defaults to set label)" : "Pick a set above first"}
         disabled={busy || !psSetUid}
         maxLength={200}
-        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
+        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60 disabled:opacity-60"
       />
 
       {/* Read-only meta — set definitions live in the catalog. */}
@@ -322,7 +322,7 @@ export function QuestionSetSection({
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Display title in module (optional)"
           disabled={busy}
-          className="mt-1.5 w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="mt-1.5 w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
         />
       </details>
     </div>
