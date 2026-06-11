@@ -29,6 +29,24 @@ import {
 
 
 
+type DiscussionFilter = "all" | "unanswered" | "locked" | "pinned";
+
+const FILTER_PILLS: { value: DiscussionFilter; label: string }[] = [
+  { value: "all", label: "All" },
+  { value: "unanswered", label: "Unanswered" },
+  { value: "locked", label: "Locked" },
+  { value: "pinned", label: "Pinned" },
+];
+
+function isDiscussionFilter(value: string): value is DiscussionFilter {
+  return (
+    value === "all" ||
+    value === "unanswered" ||
+    value === "locked" ||
+    value === "pinned"
+  );
+}
+
 export function CourseDiscussions() {
   const { cls } = useClassContext();
   const { profile } = useProfile();
@@ -70,6 +88,40 @@ export function CourseDiscussions() {
   const canCreate = profile !== null;
   const authorId = profile?.id ?? "";
   const isStaff = profile?.role === "teacher" || profile?.role === "admin";
+
+  // Status filter pills (All / Unanswered / Locked / Pinned), persisted per
+  // (user, course) so a teacher's chosen view survives reloads. "Unanswered"
+  // reuses the already-fetched reply counts (0 replies = unanswered).
+  const filterKey = `discussion.filter:${profile?.id ?? "anon"}:${cls.id}`;
+  const [statusFilter, setStatusFilter] = useState<DiscussionFilter>(() => {
+    try {
+      const raw = localStorage.getItem(filterKey);
+      return raw && isDiscussionFilter(raw) ? raw : "all";
+    } catch {
+      return "all";
+    }
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem(filterKey, statusFilter);
+    } catch {
+      // Ignore quota / private-mode write failures — filtering still works
+      // in-session, it just won't persist.
+    }
+  }, [filterKey, statusFilter]);
+
+  const visibleTopics = useMemo(() => {
+    switch (statusFilter) {
+      case "unanswered":
+        return topics.filter((t) => (replyCounts[t.id] ?? 0) === 0);
+      case "locked":
+        return topics.filter((t) => t.locked);
+      case "pinned":
+        return topics.filter((t) => t.pinned);
+      default:
+        return topics;
+    }
+  }, [topics, statusFilter, replyCounts]);
 
   // Reply counts: use PostgREST embedded-count aggregation so the server
   // returns the counts directly (`discussion_posts(count)` → [{ count: N }])
@@ -230,6 +282,34 @@ export function CourseDiscussions() {
           )}
         </header>
 
+        {!loading && !error && topics.length > 0 && (
+          <div
+            role="group"
+            aria-label="Filter discussions by status"
+            className="flex flex-wrap gap-2"
+          >
+            {FILTER_PILLS.map((pill) => {
+              const active = statusFilter === pill.value;
+              return (
+                <button
+                  key={pill.value}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setStatusFilter(pill.value)}
+                  className={
+                    "rounded-full px-3 py-1.5 text-xs font-medium ring-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
+                    (active
+                      ? "text-indigo-700 dark:text-indigo-300 ring-indigo-400 dark:ring-indigo-600 bg-indigo-50 dark:bg-indigo-950/40"
+                      : "text-slate-700 dark:text-slate-200 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800")
+                  }
+                >
+                  {pill.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         {loading ? (
           <SkeletonRows count={3} rowClassName="h-20" />
         ) : error ? (
@@ -253,9 +333,15 @@ export function CourseDiscussions() {
                 : undefined
             }
           />
+        ) : visibleTopics.length === 0 ? (
+          <EmptyState
+            title="No matching discussions"
+            body="No topics match this filter. Try a different status."
+            cta={{ label: "Show all", onClick: () => setStatusFilter("all") }}
+          />
         ) : (
           <div className="space-y-3">
-            {topics.map((t) => {
+            {visibleTopics.map((t) => {
               // Compute unread state. The "activity" timestamp is the latest
               // reply's created_at if present, else the topic's own
               // created_at. This way a brand-new topic with zero replies

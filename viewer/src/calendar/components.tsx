@@ -8,6 +8,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useMediaQuery } from "@/hooks";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
+import { EmptyState } from "@/components";
 import {
   buildMonthGrid,
   isSameDay,
@@ -114,7 +115,7 @@ export function ShortcutsPopover({ open, onClose }: ShortcutsPopoverProps) {
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="rounded-md min-h-[28px] min-w-[28px] inline-flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+            className="rounded-md min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 inline-flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             ×
           </button>
@@ -393,7 +394,7 @@ export function DayPopoverContent({
           onClick={onClose}
           aria-label="Close day view"
           data-autofocus
-          className="rounded-md min-h-[32px] min-w-[32px] inline-flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+          className="rounded-md min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 inline-flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
         >
           ×
         </button>
@@ -583,7 +584,7 @@ export function MonthView({ anchor, events, onEventClick }: MonthViewProps) {
 
   return (
     <div className="rounded-xl overflow-hidden overflow-x-auto ring-1 ring-slate-200 dark:ring-slate-800">
-      <div className="min-w-[560px]">
+      <div className="sm:min-w-[560px]">
       <div className="grid grid-cols-7 bg-slate-50 dark:bg-slate-900">
         {weekdays.map((d) => (
           <div
@@ -634,22 +635,32 @@ export interface ListViewProps {
 export function ListView({ events, onEventClick }: ListViewProps) {
   if (events.length === 0) {
     return (
-      <div className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 p-6 text-sm text-slate-500 dark:text-slate-400 text-center">
-        Nothing due in the next 30 days.
+      <div className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">
+        <EmptyState
+          icon="check"
+          title="No events due"
+          body="Nothing due in the next 30 days."
+        />
       </div>
     );
   }
   return (
     <div className="rounded-xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[640px] text-sm">
+        <table className="w-full md:min-w-[640px] text-sm">
         <thead className="bg-slate-50 dark:bg-slate-900 text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
           <tr>
             <th className="px-3 py-2 text-left font-semibold">Date</th>
-            <th className="px-3 py-2 text-left font-semibold">Time</th>
-            <th className="px-3 py-2 text-left font-semibold">Type</th>
+            <th className="px-3 py-2 text-left font-semibold hidden md:table-cell">
+              Time
+            </th>
+            <th className="px-3 py-2 text-left font-semibold hidden md:table-cell">
+              Type
+            </th>
             <th className="px-3 py-2 text-left font-semibold">Title</th>
-            <th className="px-3 py-2 text-left font-semibold">Course</th>
+            <th className="px-3 py-2 text-left font-semibold hidden md:table-cell">
+              Course
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -662,10 +673,10 @@ export function ListView({ events, onEventClick }: ListViewProps) {
               <td className="px-3 py-2 text-slate-700 dark:text-slate-200 whitespace-nowrap">
                 {DATE_FMT.format(ev.due_at)}
               </td>
-              <td className="px-3 py-2 text-slate-700 dark:text-slate-200 whitespace-nowrap">
+              <td className="px-3 py-2 text-slate-700 dark:text-slate-200 whitespace-nowrap hidden md:table-cell">
                 {TIME_FMT.format(ev.due_at)}
               </td>
-              <td className="px-3 py-2">
+              <td className="px-3 py-2 hidden md:table-cell">
                 <span
                   className={`inline-block rounded px-1.5 py-0.5 text-[11px] font-medium ${
                     ev.kind === "assignment"
@@ -679,7 +690,7 @@ export function ListView({ events, onEventClick }: ListViewProps) {
               <td className="px-3 py-2 text-slate-900 dark:text-slate-100 font-medium">
                 {ev.title}
               </td>
-              <td className="px-3 py-2 text-slate-500 dark:text-slate-400">
+              <td className="px-3 py-2 text-slate-500 dark:text-slate-400 hidden md:table-cell">
                 {ev.courseName}
               </td>
             </tr>

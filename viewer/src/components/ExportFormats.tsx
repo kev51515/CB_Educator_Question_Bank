@@ -254,6 +254,12 @@ export function ExportMenu({
 }: ExportMenuProps): JSX.Element | null {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const popRef = useRef<HTMLDivElement>(null);
+  // Viewport-flip state (mirrors KebabMenu): `null` until measured — rendered
+  // invisibly on first paint, then re-positioned and revealed to avoid a
+  // one-frame flicker on the wrong side.
+  const [side, setSide] = useState<"right" | "left" | null>(null);
+  const [vside, setVside] = useState<"down" | "up" | null>(null);
 
   // Close on outside click
   useEffect(() => {
@@ -265,6 +271,20 @@ export function ExportMenu({
     }
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  // Measure after layout: flip horizontally if the menu would overflow the
+  // right viewport edge, vertically if it would overflow the bottom.
+  useEffect(() => {
+    if (!open) {
+      setSide(null);
+      setVside(null);
+      return;
+    }
+    if (!popRef.current) return;
+    const rect = popRef.current.getBoundingClientRect();
+    setSide(rect.right > window.innerWidth - 8 ? "left" : "right");
+    setVside(rect.bottom > window.innerHeight - 8 ? "up" : "down");
   }, [open]);
 
   // Close on Escape
@@ -344,7 +364,15 @@ export function ExportMenu({
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-1 w-44 bg-white border border-ink-200 rounded-lg shadow-card z-30 py-1 text-[12px]">
+        <div
+          ref={popRef}
+          className={
+            "absolute min-w-[11rem] max-w-[18rem] bg-white border border-ink-200 rounded-lg shadow-card z-30 py-1 text-[12px] " +
+            (side === "left" ? "left-0 " : "right-0 ") +
+            (vside === "up" ? "bottom-full mb-1 " : "top-full mt-1 ") +
+            (side === null || vside === null ? "invisible" : "")
+          }
+        >
           <button
             type="button"
             onClick={handleCopyText}

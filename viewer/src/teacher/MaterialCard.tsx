@@ -10,10 +10,13 @@ function DragHandle({ className }: { className?: string }): JSX.Element {
       width={14}
       height={20}
       viewBox="0 0 14 20"
-      aria-hidden
+      role="img"
+      aria-label="Drag, or Alt+↑↓, to reorder"
+      aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown"
       style={{ touchAction: "none" }}
       className={`cursor-grab active:cursor-grabbing ${className ?? ""}`}
     >
+      <title>Drag, or Alt+↑↓, to reorder</title>
       <circle cx={4} cy={5} r={1.5} fill="currentColor" />
       <circle cx={10} cy={5} r={1.5} fill="currentColor" />
       <circle cx={4} cy={10} r={1.5} fill="currentColor" />

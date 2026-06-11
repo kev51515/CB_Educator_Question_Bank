@@ -5,7 +5,7 @@
  * adapter (TeacherMockTest -> Assignment shape for AssignmentFormModal's edit
  * mode). Extracted verbatim from QuestionBankPage.
  */
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { EmptyState, SkeletonRows } from "@/components";
 import { type Assignment } from "@/teacher/useAssignments";
 import { type TeacherMockTest } from "@/teacher/useTeacherMockTests";
@@ -47,6 +47,59 @@ export function mockTestToAssignment(m: TeacherMockTest): Assignment {
   };
 }
 
+/**
+ * Persisted filter selections for the Question Sets tab. The search query is
+ * intentionally kept transient (not persisted) — only the axis/section/
+ * difficulty pills survive a reload. The Question Bank is a global, role-level
+ * surface (no course scope), so a single fixed key is used.
+ */
+const FILTERS_STORAGE_KEY = "educator.qbank.questionSets.filters";
+
+interface PersistedFilters {
+  axis: AxisFilter;
+  section: SectionFilter;
+  difficulty: DifficultyFilter;
+}
+
+const DEFAULT_FILTERS: PersistedFilters = {
+  axis: "all",
+  section: "all",
+  difficulty: "all",
+};
+
+function isAxisFilter(v: unknown): v is AxisFilter {
+  return v === "all" || v === "skill" || v === "domain" || v === "mixed";
+}
+
+function isSectionFilter(v: unknown): v is SectionFilter {
+  return v === "all" || v === "math" || v === "reading-and-writing";
+}
+
+function isDifficultyFilter(v: unknown): v is DifficultyFilter {
+  return v === "all" || v === "easy" || v === "medium" || v === "hard";
+}
+
+function loadFilters(): PersistedFilters {
+  try {
+    const raw = window.localStorage.getItem(FILTERS_STORAGE_KEY);
+    if (!raw) return DEFAULT_FILTERS;
+    const parsed: unknown = JSON.parse(raw);
+    if (typeof parsed !== "object" || parsed === null) return DEFAULT_FILTERS;
+    const obj = parsed as Record<string, unknown>;
+    return {
+      axis: isAxisFilter(obj.axis) ? obj.axis : DEFAULT_FILTERS.axis,
+      section: isSectionFilter(obj.section)
+        ? obj.section
+        : DEFAULT_FILTERS.section,
+      difficulty: isDifficultyFilter(obj.difficulty)
+        ? obj.difficulty
+        : DEFAULT_FILTERS.difficulty,
+    };
+  } catch {
+    return DEFAULT_FILTERS;
+  }
+}
+
 export interface QuestionSetsSectionProps {
   catalog: CatalogEntry[];
   loading: boolean;
@@ -60,11 +113,33 @@ export function QuestionSetsSection({
   error,
   onAdd,
 }: QuestionSetsSectionProps): JSX.Element {
-  const [axisFilter, setAxisFilter] = useState<AxisFilter>("all");
-  const [sectionFilter, setSectionFilter] = useState<SectionFilter>("all");
-  const [difficultyFilter, setDifficultyFilter] =
-    useState<DifficultyFilter>("all");
+  const [axisFilter, setAxisFilter] = useState<AxisFilter>(
+    () => loadFilters().axis,
+  );
+  const [sectionFilter, setSectionFilter] = useState<SectionFilter>(
+    () => loadFilters().section,
+  );
+  const [difficultyFilter, setDifficultyFilter] = useState<DifficultyFilter>(
+    () => loadFilters().difficulty,
+  );
+  // Search stays transient — only the pills are persisted.
   const [search, setSearch] = useState<string>("");
+
+  // Persist filter selections on change so reloads don't reset them.
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(
+        FILTERS_STORAGE_KEY,
+        JSON.stringify({
+          axis: axisFilter,
+          section: sectionFilter,
+          difficulty: difficultyFilter,
+        }),
+      );
+    } catch {
+      /* localStorage unavailable (private mode / quota) — ignore */
+    }
+  }, [axisFilter, sectionFilter, difficultyFilter]);
 
   const filtered = useMemo(() => {
     return catalog.filter((entry) => {

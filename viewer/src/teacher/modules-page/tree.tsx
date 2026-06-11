@@ -110,6 +110,37 @@ function LockIcon(): JSX.Element {
 }
 
 /**
+ * Relative-time label for lock/open timestamps (AssignmentDetailPage's
+ * formatRelativeDue pattern, generalised to look both forward AND back since a
+ * lock can already be in the past). Returns "" for a null/invalid ISO so the
+ * caller can skip rendering. The absolute ISO stays available via a `title`
+ * tooltip on the rendered span for precise hover detail.
+ */
+function formatRelativeTime(iso: string | null): string {
+  if (!iso) return "";
+  const target = new Date(iso).getTime();
+  if (Number.isNaN(target)) return "";
+  const diffMs = target - Date.now();
+  const past = diffMs < 0;
+  const abs = Math.abs(diffMs);
+  const min = Math.round(abs / 60_000);
+  const hr = Math.round(abs / 3_600_000);
+  const day = Math.round(abs / 86_400_000);
+  const phrase =
+    min < 1
+      ? "just now"
+      : min < 60
+        ? `${min} min`
+        : hr < 24
+          ? `${hr} hr${hr === 1 ? "" : "s"}`
+          : day === 1
+            ? "1 day"
+            : `${day} days`;
+  if (phrase === "just now") return phrase;
+  return past ? `${phrase} ago` : `in ${phrase}`;
+}
+
+/**
  * Notion/Linear-style drop target. A single anchor row + relative position +
  * cursor-X depth resolution. `asChild` is only valid when position==="after"
  * and means "nest as the last child of the anchor".
@@ -733,20 +764,26 @@ const ModuleCard = memo(function ModuleCard({
 
           {isStudent && lockedNow && module.lock_at && (
             <span
-              title={`Locked since ${new Date(module.lock_at).toLocaleString()}`}
+              title={new Date(module.lock_at).toLocaleString()}
               className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1"
             >
-              <LockIcon /> Locked since {new Date(module.lock_at).toLocaleDateString()}
+              <LockIcon /> Locked {formatRelativeTime(module.lock_at)}
             </span>
           )}
           {!isStudent && module.lock_at && (
-            <span className="text-xs text-slate-500 dark:text-slate-400 truncate flex items-center gap-1">
-              <LockIcon /> {new Date(module.lock_at).toLocaleString()}
+            <span
+              title={new Date(module.lock_at).toLocaleString()}
+              className="text-xs text-slate-500 dark:text-slate-400 truncate flex items-center gap-1"
+            >
+              <LockIcon /> {lockedNow ? "Locked" : "Locks"} {formatRelativeTime(module.lock_at)}
             </span>
           )}
           {module.opens_at && (
-            <span className="text-xs text-slate-500 dark:text-slate-400 truncate">
-              opens {new Date(module.opens_at).toLocaleString()}
+            <span
+              title={new Date(module.opens_at).toLocaleString()}
+              className="text-xs text-slate-500 dark:text-slate-400 truncate"
+            >
+              opens {formatRelativeTime(module.opens_at)}
             </span>
           )}
         </div>

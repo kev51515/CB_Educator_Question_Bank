@@ -165,6 +165,8 @@ export function ReorderableNavRail({ items, collapsed, userId }: Props) {
           <div
             key={item.id}
             draggable
+            aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown"
+            title="Drag to reorder (or focus the grip and press arrow up/down)"
             onDragStart={(e) => {
               setDragId(item.id);
               e.dataTransfer.effectAllowed = "move";
@@ -234,6 +236,24 @@ export function ReorderableNavRail({ items, collapsed, userId }: Props) {
           </div>
         );
       })}
+
+      {/* Drop-at-end zone: appears only mid-drag, resolves to "after the last
+          item" so the dragged rail can be appended without overshooting. */}
+      {dragId && (
+        <div
+          aria-hidden
+          onDragOver={(e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = "move";
+          }}
+          onDrop={(e) => {
+            e.preventDefault();
+            if (dragId) moveBefore(dragId, null);
+            setDragId(null);
+          }}
+          className="hidden md:block h-10 mx-1 mt-1 rounded-lg border-2 border-dashed border-indigo-300 dark:border-indigo-700 bg-indigo-50/40 dark:bg-indigo-950/30"
+        />
+      )}
     </>
   );
 }

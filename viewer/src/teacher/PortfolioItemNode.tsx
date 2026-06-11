@@ -299,7 +299,20 @@ export function InsertionBar({
   return (
     <div aria-hidden className="relative h-0 pointer-events-none">
       {ticks && (
-        <div className="absolute -top-1 left-1 flex items-center">{ticks}</div>
+        // Align the depth ticks to where the indented line begins so they
+        // track DEPTH_INDENT_PX at every depth (0-5+) instead of floating at a
+        // fixed left edge. Right-anchored against the line start; -ml pulls the
+        // run back so the last tick butts up to the line's left dot.
+        <div
+          className="absolute -top-1 flex items-center"
+          style={{
+            // Each tick is w-2 (8px) + mr-0.5 (2px) = 10px wide; pull the run
+            // back by its full width so it butts up against the line's start.
+            left: `${depth * DEPTH_INDENT_PX - depth * 10 - 2}px`,
+          }}
+        >
+          {ticks}
+        </div>
       )}
       <div
         className="relative h-0"

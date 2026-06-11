@@ -83,6 +83,50 @@ function saveDomainFilter(userId: string, value: DomainFilter): void {
   }
 }
 
+// Per-(user, surface) persistence for the scope / folder / tag filters so a
+// reload doesn't reset an admin's view. Same per-user-keyed localStorage
+// pattern as the domain filter above.
+const FILTERS_PREFIX = "staff.allclasses.filters:";
+type AdminClassFilter = "active" | "archived" | "templates";
+interface PersistedFilters {
+  scope: AdminClassFilter;
+  folder: string;
+  tags: string[];
+}
+function isScope(v: unknown): v is AdminClassFilter {
+  return v === "active" || v === "archived" || v === "templates";
+}
+function loadFilters(userId: string): PersistedFilters | null {
+  if (!userId || typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(`${FILTERS_PREFIX}${userId}`);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as unknown;
+    if (!parsed || typeof parsed !== "object") return null;
+    const obj = parsed as Record<string, unknown>;
+    return {
+      scope: isScope(obj.scope) ? obj.scope : "active",
+      folder: typeof obj.folder === "string" ? obj.folder : "all",
+      tags: Array.isArray(obj.tags)
+        ? obj.tags.filter((t): t is string => typeof t === "string")
+        : [],
+    };
+  } catch {
+    return null;
+  }
+}
+function saveFilters(userId: string, value: PersistedFilters): void {
+  if (!userId || typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(
+      `${FILTERS_PREFIX}${userId}`,
+      JSON.stringify(value),
+    );
+  } catch {
+    /* quota / disabled storage */
+  }
+}
+
 // Join code generator (same as TeacherConsole's). 8 chars from a confusable-
 // excluding alphabet, dash-split for legibility. DB has a unique constraint;
 // on collision (23505) we retry with a fresh code.
@@ -117,8 +161,6 @@ export interface AdminClass {
   member_count: number;
   assignment_count: number;
 }
-
-type AdminClassFilter = "active" | "archived" | "templates";
 
 interface RawClassRow {
   id: string;
@@ -186,6 +228,9 @@ export function AllClassesView() {
   const { org } = orgApi;
   const [folderFilter, setFolderFilter] = useState<string>("all"); // "all" | "unfiled" | folderId
   const [tagFilter, setTagFilter] = useState<Set<string>>(() => new Set());
+  // Hydration guard so the persist effect doesn't clobber stored filters with
+  // the initial defaults before loadFilters() has run for this user.
+  const filtersHydrated = useRef<boolean>(false);
   const [view, setViewState] = useState<CourseView>(readView);
   const setView = useCallback((v: CourseView) => {
     setViewState(v);
@@ -235,6 +280,29 @@ export function AllClassesView() {
     [userId],
   );
   const effectiveDomainFilter: DomainFilter = domainFilter ?? "all";
+
+  // Hydrate scope / folder / tag filters from localStorage once per user.
+  useEffect(() => {
+    filtersHydrated.current = false;
+    if (!userId) return;
+    const stored = loadFilters(userId);
+    if (stored) {
+      setFilter(stored.scope);
+      setFolderFilter(stored.folder);
+      setTagFilter(new Set(stored.tags));
+    }
+    filtersHydrated.current = true;
+  }, [userId]);
+
+  // Persist scope / folder / tag filters per user as they change.
+  useEffect(() => {
+    if (!userId || !filtersHydrated.current) return;
+    saveFilters(userId, {
+      scope: filter,
+      folder: folderFilter,
+      tags: Array.from(tagFilter),
+    });
+  }, [userId, filter, folderFilter, tagFilter]);
 
   // Focus the inline input the moment it appears.
   useEffect(() => {
@@ -405,6 +473,56 @@ export function AllClassesView() {
   }, [filtered, folderFilter, tagFilter, org.folderOf, org.tagsOf]);
 
   const tagById = useMemo(() => new Map(org.tags.map((t) => [t.id, t])), [org.tags]);
+
+  // Active-filter pills shown above the grid — each is removable, resetting
+  // that one filter back to its default. Scope only shows a pill when it's
+  // narrowed away from the default "active".
+  const folderName = useCallback(
+    (id: string): string =>
+      id === "unfiled"
+        ? "Unfiled"
+        : (org.folders.find((f) => f.id === id)?.name ?? "Folder"),
+    [org.folders],
+  );
+  const activePills = useMemo(() => {
+    const pills: { key: string; label: string; onRemove: () => void }[] = [];
+    if (filter !== "active") {
+      pills.push({
+        key: "scope",
+        label: filter === "archived" ? "Archived" : "Templates",
+        onRemove: () => setFilter("active"),
+      });
+    }
+    if (folderFilter !== "all") {
+      pills.push({
+        key: "folder",
+        label: folderName(folderFilter),
+        onRemove: () => setFolderFilter("all"),
+      });
+    }
+    for (const tid of tagFilter) {
+      const tag = tagById.get(tid);
+      if (!tag) continue;
+      pills.push({
+        key: `tag:${tid}`,
+        label: tag.name,
+        onRemove: () =>
+          setTagFilter((cur) => {
+            const next = new Set(cur);
+            next.delete(tid);
+            return next;
+          }),
+      });
+    }
+    return pills;
+  }, [filter, folderFilter, tagFilter, folderName, tagById]);
+
+  const clearAllFilters = useCallback(() => {
+    setFilter("active");
+    setFolderFilter("all");
+    setTagFilter(new Set());
+  }, []);
+
   const tagsForCourse = useCallback(
     (id: string): CourseTag[] =>
       (org.tagsOf.get(id) ?? [])
@@ -663,6 +781,41 @@ export function AllClassesView() {
               void orgApi.deleteTag(id);
             }}
           />
+
+          {activePills.length > 0 && (
+            <div
+              className="flex flex-wrap items-center gap-2"
+              role="group"
+              aria-label="Active filters"
+            >
+              <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+                Filters:
+              </span>
+              {activePills.map((p) => (
+                <button
+                  key={p.key}
+                  type="button"
+                  onClick={p.onRemove}
+                  aria-label={`Remove filter ${p.label}`}
+                  className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50 px-2.5 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                >
+                  <span className="truncate max-w-[12rem]">{p.label}</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden>
+                    <path d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                </button>
+              ))}
+              {activePills.length > 1 && (
+                <button
+                  type="button"
+                  onClick={clearAllFilters}
+                  className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded"
+                >
+                  Clear all
+                </button>
+              )}
+            </div>
+          )}
 
           {error && (
             <div role="alert" className="rounded-lg bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-4 py-3 text-sm text-rose-700 dark:text-rose-300">

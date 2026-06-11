@@ -18,7 +18,7 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useToast } from "@/components";
+import { useToast, MarkdownEditor, SmartDatePicker } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
@@ -154,6 +154,15 @@ export function AdminCollegesPage() {
   const [editing, setEditing] = useState<College | null>(null);
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [saving, setSaving] = useState(false);
+  const [nameTouched, setNameTouched] = useState(false);
+
+  // Inline validation for the required name field (mirrors AccountSettings).
+  const trimmedName = form.name.trim();
+  const nameError: string | null = (() => {
+    if (!nameTouched) return null;
+    if (trimmedName.length === 0) return "College name is required";
+    return null;
+  })();
 
   // Delete confirm state.
   const [toDelete, setToDelete] = useState<College | null>(null);
@@ -212,12 +221,14 @@ export function AdminCollegesPage() {
   const openCreate = (): void => {
     setEditing(null);
     setForm(EMPTY_FORM);
+    setNameTouched(false);
     setFormOpen(true);
   };
 
   const openEdit = (c: College): void => {
     setEditing(c);
     setForm(formFromCollege(c));
+    setNameTouched(false);
     setFormOpen(true);
   };
 
@@ -229,6 +240,7 @@ export function AdminCollegesPage() {
 
   const onSave = async (): Promise<void> => {
     if (!form.name.trim()) {
+      setNameTouched(true);
       toast.error("Name is required");
       return;
     }
@@ -419,20 +431,44 @@ export function AdminCollegesPage() {
               </button>
             </div>
 
-            <div className="max-h-[70vh] space-y-4 overflow-y-auto px-5 py-4">
-              <div>
-                <label htmlFor="college-name" className={labelCls}>
-                  Name <span className="text-rose-500">*</span>
-                </label>
-                <input
-                  id="college-name"
-                  data-autofocus
-                  type="text"
-                  value={form.name}
-                  onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                  className={inputCls}
-                />
-              </div>
+            <div className="max-h-[70vh] space-y-6 overflow-y-auto px-5 py-4">
+              {/* Section: Basic info */}
+              <section className="space-y-4">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+                  Basic info
+                </h3>
+                <div>
+                  <label htmlFor="college-name" className={labelCls}>
+                    Name <span className="text-rose-500">*</span>
+                  </label>
+                  <input
+                    id="college-name"
+                    data-autofocus
+                    type="text"
+                    value={form.name}
+                    onChange={(e) => {
+                      setForm((f) => ({ ...f, name: e.target.value }));
+                      if (!nameTouched) setNameTouched(true);
+                    }}
+                    onBlur={() => setNameTouched(true)}
+                    aria-invalid={nameError !== null}
+                    aria-describedby={nameError ? "college-name-error" : undefined}
+                    className={
+                      nameError
+                        ? "w-full rounded-lg border border-rose-400 dark:border-rose-500 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        : inputCls
+                    }
+                  />
+                  {nameError && (
+                    <p
+                      id="college-name-error"
+                      role="alert"
+                      className="mt-1 text-xs text-rose-600 dark:text-rose-400"
+                    >
+                      {nameError}
+                    </p>
+                  )}
+                </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
@@ -533,51 +569,44 @@ export function AdminCollegesPage() {
                   }
                   className="h-5 w-5 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500"
                 />
-                <span className="text-sm text-slate-700 dark:text-slate-200">
-                  Accepts the Common App
-                </span>
-              </label>
+                  <span className="text-sm text-slate-700 dark:text-slate-200">
+                    Accepts the Common App
+                  </span>
+                </label>
+              </section>
 
-              <fieldset>
-                <legend className={labelCls}>Application deadlines</legend>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {/* Section: Deadlines */}
+              <section className="space-y-4 border-t border-slate-200 dark:border-slate-800 pt-5">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+                  Deadlines
+                </h3>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {(["ED", "EA", "REA", "RD"] as const).map((key) => (
-                    <div key={key}>
-                      <label
-                        htmlFor={`college-deadline-${key}`}
-                        className="block text-[11px] font-medium text-slate-500 dark:text-slate-400 mb-1"
-                      >
-                        {key}
-                      </label>
-                      <input
-                        id={`college-deadline-${key}`}
-                        type="text"
-                        value={form[key]}
-                        onChange={(e) =>
-                          setForm((f) => ({ ...f, [key]: e.target.value }))
-                        }
-                        placeholder="Nov 1"
-                        className={inputCls}
-                      />
-                    </div>
+                    <SmartDatePicker
+                      key={key}
+                      label={key}
+                      value={form[key] || null}
+                      onChange={(next) =>
+                        setForm((f) => ({ ...f, [key]: next ?? "" }))
+                      }
+                    />
                   ))}
                 </div>
-              </fieldset>
+              </section>
 
-              <div>
-                <label htmlFor="college-notes" className={labelCls}>
+              {/* Section: Notes */}
+              <section className="space-y-4 border-t border-slate-200 dark:border-slate-800 pt-5">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
                   Notes
-                </label>
-                <textarea
-                  id="college-notes"
-                  rows={3}
+                </h3>
+                <MarkdownEditor
                   value={form.notes}
-                  onChange={(e) =>
-                    setForm((f) => ({ ...f, notes: e.target.value }))
+                  onChange={(html) =>
+                    setForm((f) => ({ ...f, notes: html }))
                   }
-                  className={inputCls}
+                  placeholder="Internal notes about this college…"
                 />
-              </div>
+              </section>
             </div>
 
             <div className="flex items-center justify-end gap-3 border-t border-slate-200 dark:border-slate-800 px-5 py-4">
@@ -594,7 +623,7 @@ export function AdminCollegesPage() {
                 onClick={() => {
                   void onSave();
                 }}
-                disabled={saving || !form.name.trim()}
+                disabled={saving || !form.name.trim() || nameError !== null}
                 className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
               >
                 {saving

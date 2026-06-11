@@ -80,6 +80,7 @@ export function CourseTabStrip({ tabs, shortCode, userId }: Props) {
 
   const ordered = useMemo(() => applyOrder(tabs, order), [tabs, order]);
   const [dragId, setDragId] = useState<string | null>(null);
+  const [dropTarget, setDropTarget] = useState<string | null>(null);
 
   // Keep the active tab visible in the (horizontally scrolling) strip.
   const { pathname } = useLocation();
@@ -143,14 +144,28 @@ export function CourseTabStrip({ tabs, shortCode, userId }: Props) {
             }
           }}
           onDragOver={(e) => {
-            if (!dragId || dragId === tab.to) return;
+            if (!dragId || dragId === tab.to) {
+              setDropTarget(null);
+              return;
+            }
             e.preventDefault();
             e.dataTransfer.dropEffect = "move";
+            setDropTarget(tab.to);
             moveBefore(dragId, tab.to);
           }}
-          onDragEnd={() => setDragId(null)}
-          className={`cursor-grab active:cursor-grabbing ${dragId === tab.to ? "opacity-50" : ""}`}
+          onDragEnd={() => {
+            setDragId(null);
+            setDropTarget(null);
+          }}
+          onDrop={() => setDropTarget(null)}
+          className={`relative cursor-grab active:cursor-grabbing ${dragId === tab.to ? "opacity-50" : ""}`}
         >
+          {dragId && dropTarget === tab.to && dragId !== tab.to && (
+            <span
+              aria-hidden="true"
+              className="absolute inset-y-0 left-0 w-0.5 rounded-full bg-indigo-500 dark:bg-indigo-400"
+            />
+          )}
           <NavLink
             to={tab.to ? `${classPath(shortCode)}/${tab.to}` : classPath(shortCode)}
             end={tab.end}

@@ -218,6 +218,19 @@ const FILTER_LABEL: Record<FilterKey, string> = FILTER_PILLS.reduce(
   {} as Record<FilterKey, string>,
 );
 
+interface SortPillSpec {
+  key: SortKey;
+  label: string;
+}
+
+const SORT_PILLS: SortPillSpec[] = [
+  { key: "recent", label: "Most recent" },
+  { key: "oldest", label: "Oldest first" },
+  { key: "score_desc", label: "Highest score" },
+  { key: "score_asc", label: "Lowest score" },
+  { key: "course_name", label: "Course name" },
+];
+
 // ──────────────────────────────────────────────────────────────────────────
 // Helpers
 // ──────────────────────────────────────────────────────────────────────────
@@ -471,6 +484,13 @@ export function MyFeedbackPage() {
     setPrefs((prev) => (prev.sort === next ? prev : { ...prev, sort: next }));
   }, []);
 
+  // Roving-tabindex keyboard nav (Arrow/Home/End) for the sort tablist.
+  const { getTabProps: getSortTabProps } = useRovingTabIndex<HTMLButtonElement>({
+    count: SORT_PILLS.length,
+    activeIndex: SORT_PILLS.findIndex((p) => p.key === prefs.sort),
+    onSelect: (i) => setSort(SORT_PILLS[i].key),
+  });
+
   const toggleExpand = useCallback((attemptId: string): void => {
     setExpanded((prev) => {
       const next = new Set(prev);
@@ -574,9 +594,9 @@ export function MyFeedbackPage() {
         {/* Loaded */}
         {items.length > 0 && (
           <>
-            {/* Filter pills + sort. Tablist semantics so screen readers can
-                navigate the filters as a group; the sort is an adjacent
-                <select> with its own aria-label. */}
+            {/* Filter pills + sort pills. Both use tablist semantics so screen
+                readers can navigate each group; the sort group is an adjacent
+                tablist with its own aria-label. */}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div
                 role="tablist"
@@ -614,23 +634,37 @@ export function MyFeedbackPage() {
                   );
                 })}
               </div>
-              <label className="flex items-center gap-2 self-start sm:self-auto">
+              <div className="flex items-center gap-2 self-start sm:self-auto">
                 <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
                   Sort
                 </span>
-                <select
+                <div
+                  role="tablist"
                   aria-label="Sort feedback"
-                  value={prefs.sort}
-                  onChange={(e) => setSort(e.target.value as SortKey)}
-                  className="min-h-[40px] rounded-lg bg-white/80 dark:bg-slate-900/60 px-3 py-1.5 text-sm text-slate-800 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-white dark:hover:bg-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950"
+                  className="flex flex-wrap items-center gap-1"
                 >
-                  <option value="recent">Most recent</option>
-                  <option value="oldest">Oldest first</option>
-                  <option value="score_desc">Highest score</option>
-                  <option value="score_asc">Lowest score</option>
-                  <option value="course_name">Course name</option>
-                </select>
-              </label>
+                  {SORT_PILLS.map((pill, idx) => {
+                    const active = prefs.sort === pill.key;
+                    return (
+                      <button
+                        key={pill.key}
+                        type="button"
+                        role="tab"
+                        aria-selected={active}
+                        onClick={() => setSort(pill.key)}
+                        {...getSortTabProps(idx)}
+                        className={`inline-flex min-h-[40px] items-center rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 ${
+                          active
+                            ? "bg-slate-900 text-white ring-slate-900 dark:bg-slate-100 dark:text-slate-900 dark:ring-slate-100"
+                            : "bg-white/80 text-slate-700 ring-slate-200 hover:bg-white dark:bg-slate-900/60 dark:text-slate-200 dark:ring-slate-700 dark:hover:bg-slate-900"
+                        }`}
+                      >
+                        {pill.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
 
             {/* sr-only live region announces the filter result count so

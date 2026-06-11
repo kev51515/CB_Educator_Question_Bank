@@ -481,7 +481,7 @@ export function DiscussionTopicView() {
                     <button
                       type="button"
                       onClick={() => setConfirmDeleteTopic(true)}
-                      className="rounded-md px-2 py-1 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40"
+                      className="rounded-md px-2 py-1 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 motion-safe:transition-colors duration-150"
                     >
                       Delete
                     </button>
