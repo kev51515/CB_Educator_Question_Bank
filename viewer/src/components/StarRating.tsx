@@ -133,7 +133,7 @@ export function StarRating({
             onBlur={() => setHover(null)}
             // Click the current top quality star again to clear back to 0.
             onClick={() => onChange?.(n === value ? quality - 1 : quality)}
-            className="inline-flex min-h-[40px] min-w-[28px] items-center justify-center rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            className="inline-flex min-h-[40px] min-w-[40px] md:min-w-[28px] items-center justify-center rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
           >
             <StarIcon
               px={px}

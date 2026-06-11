@@ -137,7 +137,7 @@ export function CourseOrganizeModal({
                   onChange={(e) => setFolderName(e.target.value)}
                   onKeyDown={(e) => e.key === "Escape" && setNewFolderOpen(false)}
                   placeholder="Folder name"
-                  className="w-full border-b border-slate-200 bg-transparent pb-1 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none dark:border-slate-700 dark:text-slate-100"
+                  className="w-full border-b border-slate-200 bg-transparent pb-1 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-slate-700 dark:text-slate-100"
                 />
                 <div className="mt-2.5">
                   <ColorPicker value={folderColor} onChange={setFolderColor} />

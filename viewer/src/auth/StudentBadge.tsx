@@ -112,7 +112,7 @@ export function StudentBadge({
                 setOpen(false);
                 onSwitchArea();
               }}
-              className="block w-full text-left px-4 py-3 min-h-[44px] text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+              className="block w-full text-left px-4 py-3 min-h-[44px] text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500"
             >
               Switch area
             </button>

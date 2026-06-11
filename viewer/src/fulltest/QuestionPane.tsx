@@ -161,6 +161,7 @@ function QHeader({
             type="button"
             onClick={onToggleMark}
             aria-pressed={marked}
+            aria-label={`Mark question ${number} for review`}
             className="flex items-center gap-1.5 text-sm font-medium text-slate-600 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
           >
             <svg

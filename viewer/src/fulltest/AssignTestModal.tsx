@@ -104,7 +104,7 @@ export function AssignTestModal({ slug, title, sections, onClose }: AssignTestMo
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`Assign ${title}`}
+      aria-labelledby="assign-test-title"
       className="fixed inset-0 z-[60] flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
       onClick={onClose}
     >
