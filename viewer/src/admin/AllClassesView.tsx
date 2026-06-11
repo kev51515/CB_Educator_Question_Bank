@@ -33,7 +33,7 @@ import {
 import { SkeletonCard } from "@/components/Skeleton";
 import { useProfile } from "@/lib/profile";
 import { useDomain } from "@/lib/DomainProvider";
-import { DOMAINS, DOMAIN_VOCAB, domainOf, type Domain } from "@/lib/domain";
+import { domainOf, type Domain } from "@/lib/domain";
 import { coursePath, courseModulesPath } from "@/lib/routes";
 import { COURSE_DND_MIME, useCourseOrganization, type CourseTag } from "./courseOrg";
 import { CourseOrgSidebar, type FolderCounts } from "./CourseOrgSidebar";
@@ -51,41 +51,26 @@ function readView(): CourseView {
   }
 }
 
-// Domain focus filter — defaults to the user's active domain, persisted per
-// user. Composes ON TOP of the scope (active/archived/templates), folder, and
-// tag filters. "all" is the escape hatch.
-type DomainFilter = "all" | Domain;
-const DOMAIN_FILTER_PREFIX = "dashboard.domainFilter:";
+// The active domain IS the workspace — this page hard-scopes to the rail's
+// DomainSwitcher selection (no per-page domain chips). The + Course creator
+// only offers the active workspace's course types.
+const DOMAIN_COURSE_TYPES: Record<
+  Domain,
+  ReadonlyArray<{ value: CourseType; title: string; blurb: string }>
+> = {
+  academic: [{ value: "class", title: "Class", blurb: "SAT prep" }],
+  counseling: [
+    { value: "counseling", title: "Counseling", blurb: "College advising" },
+  ],
+  coaching: [
+    { value: "pickleball_player", title: "Pickleball: Players", blurb: "Coach players" },
+    { value: "pickleball_coach", title: "Pickleball: Coaches", blurb: "Develop coaches" },
+  ],
+};
 
-function asDomainFilter(raw: unknown): DomainFilter | null {
-  if (raw === "all") return "all";
-  if (raw === "academic" || raw === "counseling" || raw === "coaching") {
-    return raw;
-  }
-  return null;
-}
-function loadDomainFilter(userId: string): DomainFilter | null {
-  if (!userId || typeof window === "undefined") return null;
-  try {
-    return asDomainFilter(
-      window.localStorage.getItem(`${DOMAIN_FILTER_PREFIX}${userId}`),
-    );
-  } catch {
-    return null;
-  }
-}
-function saveDomainFilter(userId: string, value: DomainFilter): void {
-  if (!userId || typeof window === "undefined") return;
-  try {
-    window.localStorage.setItem(`${DOMAIN_FILTER_PREFIX}${userId}`, value);
-  } catch {
-    /* quota / disabled storage */
-  }
-}
-
-// Per-(user, surface) persistence for the scope / folder / tag filters so a
-// reload doesn't reset an admin's view. Same per-user-keyed localStorage
-// pattern as the domain filter above.
+// Per-(user, domain, surface) persistence for the scope / folder / tag filters
+// so a reload doesn't reset an admin's view — and each workspace remembers its
+// own selections independently.
 const FILTERS_PREFIX = "staff.allclasses.filters:";
 type AdminClassFilter = "active" | "archived" | "templates";
 interface PersistedFilters {
@@ -96,10 +81,12 @@ interface PersistedFilters {
 function isScope(v: unknown): v is AdminClassFilter {
   return v === "active" || v === "archived" || v === "templates";
 }
-function loadFilters(userId: string): PersistedFilters | null {
+function loadFilters(userId: string, domain: Domain): PersistedFilters | null {
   if (!userId || typeof window === "undefined") return null;
   try {
-    const raw = window.localStorage.getItem(`${FILTERS_PREFIX}${userId}`);
+    const raw = window.localStorage.getItem(
+      `${FILTERS_PREFIX}${userId}:${domain}`,
+    );
     if (!raw) return null;
     const parsed = JSON.parse(raw) as unknown;
     if (!parsed || typeof parsed !== "object") return null;
@@ -115,11 +102,15 @@ function loadFilters(userId: string): PersistedFilters | null {
     return null;
   }
 }
-function saveFilters(userId: string, value: PersistedFilters): void {
+function saveFilters(
+  userId: string,
+  domain: Domain,
+  value: PersistedFilters,
+): void {
   if (!userId || typeof window === "undefined") return;
   try {
     window.localStorage.setItem(
-      `${FILTERS_PREFIX}${userId}`,
+      `${FILTERS_PREFIX}${userId}:${domain}`,
       JSON.stringify(value),
     );
   } catch {
@@ -215,16 +206,27 @@ export function AllClassesView() {
   const [inlineCreating, setInlineCreating] = useState<boolean>(false);
   const [inlineBusy, setInlineBusy] = useState<boolean>(false);
   const [inlineName, setInlineName] = useState<string>("");
-  const [inlineType, setInlineType] = useState<CourseType>("class");
-  const inlineInputRef = useRef<HTMLInputElement | null>(null);
 
   const { profile } = useProfile();
-  const { domain: activeDomain } = useDomain();
+  const { domain: activeDomain, vocab } = useDomain();
   const navigate = useNavigate();
   const toast = useToast();
 
-  // Per-teacher organization layer (folders + tags, migration 0188).
-  const orgApi = useCourseOrganization(profile?.id);
+  // The creator only offers the active workspace's course types; the picker
+  // row is skipped entirely when there's just one.
+  const typeOptions = DOMAIN_COURSE_TYPES[activeDomain];
+  const defaultType = typeOptions[0].value;
+  const [inlineType, setInlineType] = useState<CourseType>(defaultType);
+  // Re-seed when the workspace changes so a stale cross-domain type can't be
+  // submitted.
+  useEffect(() => {
+    setInlineType(defaultType);
+  }, [defaultType]);
+  const inlineInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Per-teacher organization layer (folders + tags, migrations 0188 + 0195) —
+  // scoped to the active workspace.
+  const orgApi = useCourseOrganization(profile?.id, activeDomain);
   const { org } = orgApi;
   const [folderFilter, setFolderFilter] = useState<string>("all"); // "all" | "unfiled" | folderId
   const [tagFilter, setTagFilter] = useState<Set<string>>(() => new Set());
@@ -242,67 +244,29 @@ export function AllClassesView() {
   }, []);
   const [organizeTarget, setOrganizeTarget] = useState<AdminClass | null>(null);
 
-  // Domain focus filter. `null` = not yet hydrated; resolved by the effect
-  // below to the persisted choice, else the active domain (focus mode).
   const userId = profile?.id ?? "";
-  const [domainFilter, setDomainFilterState] = useState<DomainFilter | null>(
-    null,
-  );
 
-  // Which domains actually have at least one course (across all scopes) —
-  // drives the chip row so we never show a chip that yields nothing.
-  const domainsWithCourses = useMemo(() => {
-    const present = new Set<Domain>();
-    for (const c of classes) present.add(domainOf(c.course_type));
-    return DOMAINS.filter((d) => present.has(d));
-  }, [classes]);
-
-  useEffect(() => {
-    if (!userId) {
-      setDomainFilterState(null);
-      return;
-    }
-    if (classes.length === 0) return; // wait for courses before resolving
-    const present = new Set(domainsWithCourses);
-    const stored = loadDomainFilter(userId);
-    if (stored && (stored === "all" || present.has(stored))) {
-      setDomainFilterState(stored);
-      return;
-    }
-    setDomainFilterState(present.has(activeDomain) ? activeDomain : "all");
-  }, [userId, classes.length, domainsWithCourses, activeDomain]);
-
-  const selectDomainFilter = useCallback(
-    (value: DomainFilter) => {
-      setDomainFilterState(value);
-      if (userId) saveDomainFilter(userId, value);
-    },
-    [userId],
-  );
-  const effectiveDomainFilter: DomainFilter = domainFilter ?? "all";
-
-  // Hydrate scope / folder / tag filters from localStorage once per user.
+  // Hydrate scope / folder / tag filters from localStorage once per
+  // (user, workspace) — each domain remembers its own selections.
   useEffect(() => {
     filtersHydrated.current = false;
     if (!userId) return;
-    const stored = loadFilters(userId);
-    if (stored) {
-      setFilter(stored.scope);
-      setFolderFilter(stored.folder);
-      setTagFilter(new Set(stored.tags));
-    }
+    const stored = loadFilters(userId, activeDomain);
+    setFilter(stored?.scope ?? "active");
+    setFolderFilter(stored?.folder ?? "all");
+    setTagFilter(new Set(stored?.tags ?? []));
     filtersHydrated.current = true;
-  }, [userId]);
+  }, [userId, activeDomain]);
 
-  // Persist scope / folder / tag filters per user as they change.
+  // Persist scope / folder / tag filters per (user, workspace) as they change.
   useEffect(() => {
     if (!userId || !filtersHydrated.current) return;
-    saveFilters(userId, {
+    saveFilters(userId, activeDomain, {
       scope: filter,
       folder: folderFilter,
       tags: Array.from(tagFilter),
     });
-  }, [userId, filter, folderFilter, tagFilter]);
+  }, [userId, activeDomain, filter, folderFilter, tagFilter]);
 
   // Focus the inline input the moment it appears.
   useEffect(() => {
@@ -343,7 +307,7 @@ export function AllClassesView() {
           toast.success("Course created");
           setInlineCreating(false);
           setInlineName("");
-          setInlineType("class");
+          setInlineType(defaultType);
           void refresh();
           const shortCode = data.short_code as string | null;
           // Counseling courses land on their default tab (Caseload) via the
@@ -423,6 +387,13 @@ export function AllClassesView() {
     void refresh();
   }, [refresh]);
 
+  // Does the active workspace own ANY course (any scope)? Drives the empty
+  // state's "workspace is empty" vs "filters match nothing" copy.
+  const domainHasCourses = useMemo(
+    () => classes.some((c) => domainOf(c.course_type) === activeDomain),
+    [classes, activeDomain],
+  );
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     const inFilter = (c: AdminClass): boolean => {
@@ -433,17 +404,14 @@ export function AllClassesView() {
     };
     return classes.filter((c) => {
       if (!inFilter(c)) return false;
-      if (
-        effectiveDomainFilter !== "all" &&
-        domainOf(c.course_type) !== effectiveDomainFilter
-      ) {
-        return false;
-      }
+      // The active domain IS the workspace — hard scope, no escape hatch here.
+      // Switching workspaces happens in the rail's DomainSwitcher.
+      if (domainOf(c.course_type) !== activeDomain) return false;
       if (!q) return true;
       const haystack = `${c.name} ${c.teacher_name ?? ""} ${c.teacher_email}`.toLowerCase();
       return haystack.includes(q);
     });
-  }, [classes, search, filter, effectiveDomainFilter]);
+  }, [classes, search, filter, activeDomain]);
 
   // Folder counts reflect the current scope+search (independent of which folder
   // or tags are selected) so the rail shows a stable distribution.
@@ -601,37 +569,34 @@ export function AllClassesView() {
         <p className="text-xs text-slate-500 dark:text-slate-400">
           Saved as draft. You'll land on the new course's Modules page.
         </p>
-        <div className="grid grid-cols-2 gap-2">
-          {([
-            { value: "class", title: "Class", blurb: "SAT prep" },
-            { value: "counseling", title: "Counseling", blurb: "College advising" },
-            { value: "pickleball_player", title: "Pickleball: Players", blurb: "Coach players" },
-            { value: "pickleball_coach", title: "Pickleball: Coaches", blurb: "Develop coaches" },
-          ] as const).map((opt) => {
-            const active = inlineType === opt.value;
-            return (
-              <button
-                key={opt.value}
-                type="button"
-                aria-pressed={active}
-                disabled={inlineBusy}
-                onClick={() => setInlineType(opt.value)}
-                className={`text-left rounded-lg border px-2.5 py-1.5 transition-colors disabled:opacity-50 ${
-                  active
-                    ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/50 ring-1 ring-indigo-500"
-                    : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700"
-                }`}
-              >
-                <span className="block text-xs font-semibold text-slate-900 dark:text-slate-100">
-                  {opt.title}
-                </span>
-                <span className="block text-[10px] text-slate-500 dark:text-slate-400">
-                  {opt.blurb}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        {typeOptions.length > 1 && (
+          <div className="grid grid-cols-2 gap-2">
+            {typeOptions.map((opt) => {
+              const active = inlineType === opt.value;
+              return (
+                <button
+                  key={opt.value}
+                  type="button"
+                  aria-pressed={active}
+                  disabled={inlineBusy}
+                  onClick={() => setInlineType(opt.value)}
+                  className={`text-left rounded-lg border px-2.5 py-1.5 transition-colors disabled:opacity-50 ${
+                    active
+                      ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/50 ring-1 ring-indigo-500"
+                      : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700"
+                  }`}
+                >
+                  <span className="block text-xs font-semibold text-slate-900 dark:text-slate-100">
+                    {opt.title}
+                  </span>
+                  <span className="block text-[10px] text-slate-500 dark:text-slate-400">
+                    {opt.blurb}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
         <div className="flex items-center gap-2 mt-auto">
           <button
             type="submit"
@@ -664,7 +629,8 @@ export function AllClassesView() {
             All classes
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Every class across every teacher. Click a row to inspect.
+            Your {vocab.homeNoun} courses across every teacher — switch domain
+            in the sidebar to see others.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -711,35 +677,6 @@ export function AllClassesView() {
         </aside>
 
         <div className="min-w-0 flex-1 space-y-4">
-          {domainsWithCourses.length > 1 && (
-            <div
-              className="flex flex-wrap items-center gap-2"
-              role="group"
-              aria-label="Filter courses by domain"
-            >
-              {(["all", ...domainsWithCourses] as const).map((key) => {
-                const active = effectiveDomainFilter === key;
-                const label =
-                  key === "all" ? "All" : DOMAIN_VOCAB[key].homeNoun;
-                return (
-                  <button
-                    key={key}
-                    type="button"
-                    aria-pressed={active}
-                    onClick={() => selectDomainFilter(key)}
-                    className={
-                      "rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors min-h-[40px] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
-                      (active
-                        ? "bg-indigo-600 text-white ring-indigo-600"
-                        : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800")
-                    }
-                  >
-                    {label}
-                  </button>
-                );
-              })}
-            </div>
-          )}
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2 flex-wrap">
               {(["active", "archived", "templates"] as const).map((key) => {
@@ -834,31 +771,22 @@ export function AllClassesView() {
           ) : visible.length === 0 && !inlineCreating ? (
             <EmptyState
               title={
-                classes.length === 0
-                  ? "No courses yet"
-                  : effectiveDomainFilter !== "all" && visible.length === 0
-                    ? `No ${DOMAIN_VOCAB[effectiveDomainFilter].homeNoun.toLowerCase()} courses match this view`
-                    : "No courses match this view"
+                domainHasCourses
+                  ? `No ${vocab.homeNoun} courses match this view`
+                  : `No ${vocab.homeNoun} courses yet`
               }
               body={
-                classes.length === 0
-                  ? "Click + Course to create the first one."
-                  : effectiveDomainFilter !== "all"
-                    ? "Switch to All to see your other courses, or adjust the folder, tags, or scope."
-                    : "Try a different folder, clearing the tags, or adjusting the filter."
+                domainHasCourses
+                  ? "Try a different folder, clearing the tags, or adjusting the filter."
+                  : "This workspace is empty. Click + Course to create one, or switch domain in the sidebar to see your other courses."
               }
               cta={
-                classes.length === 0
-                  ? {
+                domainHasCourses
+                  ? undefined
+                  : {
                       label: "+ Course",
                       onClick: () => setInlineCreating(true),
                     }
-                  : effectiveDomainFilter !== "all"
-                    ? {
-                        label: "Show all courses",
-                        onClick: () => selectDomainFilter("all"),
-                      }
-                    : undefined
               }
               framed
             />

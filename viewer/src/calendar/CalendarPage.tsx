@@ -21,6 +21,8 @@ import {
   studentCoursePath,
 } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
+import { useDomain } from "@/lib/DomainProvider";
+import { domainOf } from "@/lib/domain";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
 import {
   ListView,
@@ -50,6 +52,12 @@ export function CalendarPage() {
   // The due-date data is RLS-scoped per role; only the click-through target
   // differs (students don't have the educator course-management routes).
   const isStudent = profile?.role === "student";
+  // Staff hard-scope to the active workspace domain (the rail's DomainSwitcher
+  // is the only place to change it). Students keep an unfiltered calendar —
+  // their profiles.domain is not meaningful, and hiding enrolled-course due
+  // dates would be a real harm.
+  const isStaff = profile?.role === "teacher" || profile?.role === "admin";
+  const { domain } = useDomain();
   const [view, setView] = useState<ViewMode>(() => readCalendarView());
   useEffect(() => {
     writeCalendarView(view);
@@ -143,7 +151,9 @@ export function CalendarPage() {
         const [asnRes, portRes] = await Promise.all([
           supabase
             .from("assignments")
-            .select("id, short_code, title, due_at, course_id, courses(name, short_code)")
+            .select(
+              "id, short_code, title, due_at, course_id, courses(name, short_code, course_type)",
+            )
             .not("due_at", "is", null)
             .gte("due_at", startIso)
             .lte("due_at", endIso)
@@ -151,7 +161,7 @@ export function CalendarPage() {
           supabase
             .from("portfolio_items")
             .select(
-              "id, title, due_at, portfolio_templates!inner(course_id, courses(name))",
+              "id, title, due_at, portfolio_templates!inner(course_id, courses(name, course_type))",
             )
             .not("due_at", "is", null)
             .gte("due_at", startIso)
@@ -179,6 +189,7 @@ export function CalendarPage() {
               due_at: new Date(r.due_at),
               courseName: course?.name ?? "—",
               courseId: course?.short_code ?? r.course_id,
+              domain: domainOf(course?.course_type),
             };
           });
 
@@ -196,6 +207,7 @@ export function CalendarPage() {
               due_at: new Date(r.due_at),
               courseName: course?.name ?? "—",
               courseId: course?.short_code ?? tpl?.course_id ?? "",
+              domain: domainOf(course?.course_type),
             };
           })
           .filter((ev) => ev.courseId !== "");
@@ -222,6 +234,13 @@ export function CalendarPage() {
       cancelled = true;
     };
   }, [range.start, range.end]);
+
+  // The active workspace domain IS the scope for staff; students always see
+  // every event their RLS gives them.
+  const visibleEvents = useMemo<CalendarEvent[]>(
+    () => (isStaff ? events.filter((ev) => ev.domain === domain) : events),
+    [events, isStaff, domain],
+  );
 
   const handleEventClick = (event: CalendarEvent) => {
     if (event.kind === "assignment") {
@@ -333,12 +352,12 @@ export function CalendarPage() {
       {!loading && !error && view === "month" && (
         <MonthView
           anchor={anchor}
-          events={events}
+          events={visibleEvents}
           onEventClick={handleEventClick}
         />
       )}
       {!loading && !error && view === "list" && (
-        <ListView events={events} onEventClick={handleEventClick} />
+        <ListView events={visibleEvents} onEventClick={handleEventClick} />
       )}
     </div>
   );

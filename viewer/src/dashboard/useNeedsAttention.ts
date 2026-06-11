@@ -22,6 +22,10 @@
  * `refreshReplies`, and there's a fan-out `refreshAll`. RLS does the
  * cross-course scoping — Maya only sees rows for courses she teaches/owns.
  *
+ * Workspace scoping: the optional `allowedCourseIds` set (course ids in the
+ * active domain) drops rows whose embedded course isn't in the workspace.
+ * `null` = no scoping (caller's course list still loading).
+ *
  * No new migration. No new RPC. Direct queries only.
  *
  * Realtime
@@ -197,7 +201,10 @@ function isMissingColumnError(message: string | undefined | null, column: string
 
 // ─── Hook ─────────────────────────────────────────────────────────────────
 
-export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
+export function useNeedsAttention(
+  teacherId: string | null,
+  allowedCourseIds: Set<string> | null = null,
+): UseNeedsAttention {
   const [toGrade, setToGrade] = useState<ToGradeItem[]>([]);
   const [pastDue, setPastDue] = useState<PastDueItem[]>([]);
   const [replies, setReplies] = useState<NewReplyItem[]>([]);
@@ -330,6 +337,8 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
         if (!assignment) continue;
         const course = pickOne(assignment.course);
         if (!course || course.archived) continue;
+        // Workspace scope: drop rows outside the active domain's courses.
+        if (allowedCourseIds && !allowedCourseIds.has(course.id)) continue;
         const student = pickOne(row.student);
 
         mapped.push({
@@ -370,7 +379,7 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
     } finally {
       if (aliveRef.current) setLoadingToGrade(false);
     }
-  }, [teacherId, scheduleFlash]);
+  }, [teacherId, allowedCourseIds, scheduleFlash]);
 
   // ── Query 2: overdue assignments ────────────────────────────────────────
   const refreshPastDue = useCallback(async (): Promise<void> => {
@@ -410,6 +419,8 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
         if (!row.due_at) continue;
         const course = pickOne(row.course);
         if (!course || course.archived) continue;
+        // Workspace scope: drop rows outside the active domain's courses.
+        if (allowedCourseIds && !allowedCourseIds.has(course.id)) continue;
         mapped.push({
           assignmentId: row.id,
           assignmentShortCode: row.short_code,
@@ -428,7 +439,7 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
     } finally {
       if (aliveRef.current) setLoadingPastDue(false);
     }
-  }, [teacherId]);
+  }, [teacherId, allowedCourseIds]);
 
   // ── Query 3: new discussion replies ─────────────────────────────────────
   const refreshReplies = useCallback(async (): Promise<void> => {
@@ -472,6 +483,8 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
         if (!topic) continue;
         const course = pickOne(topic.course);
         if (!course || course.archived) continue;
+        // Workspace scope: drop rows outside the active domain's courses.
+        if (allowedCourseIds && !allowedCourseIds.has(course.id)) continue;
 
         mapped.push({
           postId: row.id,
@@ -510,7 +523,7 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
     } finally {
       if (aliveRef.current) setLoadingReplies(false);
     }
-  }, [teacherId, scheduleFlash]);
+  }, [teacherId, allowedCourseIds, scheduleFlash]);
 
   const refreshAll = useCallback(async (): Promise<void> => {
     await Promise.all([refreshToGrade(), refreshPastDue(), refreshReplies()]);

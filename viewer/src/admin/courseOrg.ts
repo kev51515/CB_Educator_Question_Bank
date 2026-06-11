@@ -9,10 +9,17 @@
  * derived lookups (folderOf / tagsOf) plus optimistic mutations. Mutations
  * patch local state immediately for a snappy feel and reconcile (refresh +
  * toast) on failure — the same optimistic posture the rest of the LMS uses.
+ *
+ * WORKSPACE SCOPING (migration 0195): folders + tags carry a `domain` column
+ * and the hook only loads/creates rows for the caller's active domain — the
+ * active domain IS the workspace. Edge tables inherit the scope through their
+ * parents; folderOf/tagsOf are additionally client-filtered against the loaded
+ * folder/tag ids so a stale cross-domain assignment never surfaces.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components";
+import type { Domain } from "@/lib/domain";
 
 export interface CourseFolder {
   id: string;
@@ -150,7 +157,10 @@ export interface UseCourseOrg extends MutationApi {
   refresh: () => Promise<void>;
 }
 
-export function useCourseOrganization(ownerId: string | undefined): UseCourseOrg {
+export function useCourseOrganization(
+  ownerId: string | undefined,
+  domain: Domain,
+): UseCourseOrg {
   const [org, setOrg] = useState<CourseOrg>(EMPTY_ORG);
   const [loading, setLoading] = useState(true);
   const toast = useToast();
@@ -170,8 +180,16 @@ export function useCourseOrganization(ownerId: string | undefined): UseCourseOrg
     }
     setLoading(true);
     const [foldersRes, tagsRes, fItemsRes, tItemsRes] = await Promise.all([
-      supabase.from("course_folders").select("id, name, color, position").eq("owner_id", ownerId),
-      supabase.from("course_tags").select("id, name, color").eq("owner_id", ownerId),
+      supabase
+        .from("course_folders")
+        .select("id, name, color, position")
+        .eq("owner_id", ownerId)
+        .eq("domain", domain),
+      supabase
+        .from("course_tags")
+        .select("id, name, color")
+        .eq("owner_id", ownerId)
+        .eq("domain", domain),
       supabase.from("course_folder_items").select("course_id, folder_id").eq("owner_id", ownerId),
       supabase.from("course_tag_items").select("course_id, tag_id").eq("owner_id", ownerId),
     ]);
@@ -182,19 +200,25 @@ export function useCourseOrganization(ownerId: string | undefined): UseCourseOrg
     const tags = ((tagsRes.data ?? []) as CourseTag[])
       .slice()
       .sort((a, b) => a.name.localeCompare(b.name));
+    // Edge rows aren't domain-stamped (they inherit via their parent), so only
+    // keep assignments whose folder/tag actually loaded in this workspace —
+    // a stale cross-domain assignment must not leak into the maps.
+    const folderIds = new Set(folders.map((f) => f.id));
+    const tagIds = new Set(tags.map((t) => t.id));
     const folderOf = new Map<string, string>();
     for (const r of (fItemsRes.data ?? []) as Array<{ course_id: string; folder_id: string }>) {
-      folderOf.set(r.course_id, r.folder_id);
+      if (folderIds.has(r.folder_id)) folderOf.set(r.course_id, r.folder_id);
     }
     const tagsOf = new Map<string, string[]>();
     for (const r of (tItemsRes.data ?? []) as Array<{ course_id: string; tag_id: string }>) {
+      if (!tagIds.has(r.tag_id)) continue;
       const list = tagsOf.get(r.course_id);
       if (list) list.push(r.tag_id);
       else tagsOf.set(r.course_id, [r.tag_id]);
     }
     setOrg({ folders, tags, folderOf, tagsOf });
     setLoading(false);
-  }, [ownerId]);
+  }, [ownerId, domain]);
 
   useEffect(() => {
     void refresh();
@@ -221,7 +245,7 @@ export function useCourseOrganization(ownerId: string | undefined): UseCourseOrg
       const position = org.folders.length;
       const { data, error } = await supabase
         .from("course_folders")
-        .insert({ owner_id: ownerId, name: trimmed, color, position })
+        .insert({ owner_id: ownerId, name: trimmed, color, position, domain })
         .select("id, name, color, position")
         .single();
       if (error || !data) {
@@ -232,7 +256,7 @@ export function useCourseOrganization(ownerId: string | undefined): UseCourseOrg
       patch((cur) => ({ ...cur, folders: [...cur.folders, folder] }));
       return folder;
     },
-    [ownerId, org.folders.length, fail, patch],
+    [ownerId, domain, org.folders.length, fail, patch],
   );
 
   const renameFolder = useCallback<MutationApi["renameFolder"]>(
@@ -315,7 +339,7 @@ export function useCourseOrganization(ownerId: string | undefined): UseCourseOrg
       if (existing) return existing;
       const { data, error } = await supabase
         .from("course_tags")
-        .insert({ owner_id: ownerId, name: trimmed, color })
+        .insert({ owner_id: ownerId, name: trimmed, color, domain })
         .select("id, name, color")
         .single();
       if (error || !data) {
@@ -329,7 +353,7 @@ export function useCourseOrganization(ownerId: string | undefined): UseCourseOrg
       }));
       return tag;
     },
-    [ownerId, org.tags, fail, patch],
+    [ownerId, domain, org.tags, fail, patch],
   );
 
   const deleteTag = useCallback<MutationApi["deleteTag"]>(

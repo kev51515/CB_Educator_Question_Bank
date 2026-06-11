@@ -44,11 +44,21 @@ import { CourseChipRow, type CourseChipEntry } from "./CourseChipRow";
 
 interface NeedsAttentionPanelProps {
   teacherId: string;
+  /**
+   * Course ids in the active workspace (domain). Rows whose course isn't in
+   * the set are dropped. `null` = no scoping yet (course list still loading).
+   * The per-course chips inside the panel remain — they're course-level
+   * filters within the workspace, not domain-level.
+   */
+  allowedCourseIds: Set<string> | null;
 }
 
 const MAX_PER_SECTION = 5;
 
-export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
+export function NeedsAttentionPanel({
+  teacherId,
+  allowedCourseIds,
+}: NeedsAttentionPanelProps) {
   const navigate = useNavigate();
   const {
     toGrade,
@@ -66,7 +76,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
     refreshReplies,
     recentlyAddedToGrade,
     recentlyAddedReplies,
-  } = useNeedsAttention(teacherId);
+  } = useNeedsAttention(teacherId, allowedCourseIds);
 
   const [collapse, setCollapse] = useState<CollapseState>(() => loadCollapse());
   const [refreshing, setRefreshing] = useState<boolean>(false);

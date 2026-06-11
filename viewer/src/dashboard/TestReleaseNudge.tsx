@@ -8,9 +8,13 @@
  * Renders nothing when there's nothing awaiting (no clutter). Clicking a test
  * opens the same TestCompletionModal used in the catalog; on close we refresh
  * so a fully-released test drops off the nudge.
+ *
+ * Full tests are an academic-domain surface — the nudge renders (and fetches)
+ * only when the active workspace is 'academic'.
  */
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { useDomain } from "@/lib/DomainProvider";
 import { TestCompletionModal } from "@/fulltest/TestCompletionModal";
 
 interface AwaitingRow {
@@ -20,6 +24,7 @@ interface AwaitingRow {
 }
 
 export function TestReleaseNudge() {
+  const { domain } = useDomain();
   const [rows, setRows] = useState<AwaitingRow[]>([]);
   const [open, setOpen] = useState<AwaitingRow | null>(null);
 
@@ -33,9 +38,11 @@ export function TestReleaseNudge() {
   }, []);
 
   useEffect(() => {
+    if (domain !== "academic") return; // skip the fetch outside academic
     void refresh();
-  }, [refresh]);
+  }, [refresh, domain]);
 
+  if (domain !== "academic") return null;
   if (rows.length === 0) return null;
 
   const total = rows.reduce((sum, r) => sum + r.awaiting_count, 0);

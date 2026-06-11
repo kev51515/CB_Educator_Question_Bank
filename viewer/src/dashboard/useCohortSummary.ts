@@ -29,9 +29,18 @@
  *  - Cap at 12 rows. Most teachers have ≤6 cohorts; Maya specifically has
  *    ~10. The cap is defensive against power-users with 20+ archived/active
  *    courses showing up on screen as a wall.
+ *
+ *  - Workspace scoping: the hook reads the active domain from `useDomain()`
+ *    and keeps only courses whose `course_type` maps to it (domainOf) BEFORE
+ *    deriving courseIds, so every downstream stat is domain-scoped. A domain
+ *    switch refetches. We over-fetch (4× the row cap) because the domain
+ *    filter is client-side — domainOf's null/unknown→academic fallback can't
+ *    be expressed as a PostgREST predicate — then cap after filtering.
  */
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { useDomain } from "@/lib/DomainProvider";
+import { domainOf } from "@/lib/domain";
 
 export const MAX_COHORT_ROWS = 12;
 
@@ -61,6 +70,7 @@ interface CourseRow {
   short_code: string;
   name: string;
   archived: boolean;
+  course_type: string | null;
   course_memberships: { count: number }[] | null;
 }
 
@@ -126,6 +136,8 @@ function isMissingColumnError(
 // ─── Hook ─────────────────────────────────────────────────────────────────
 
 export function useCohortSummary(teacherId: string | null): UseCohortSummary {
+  // Active workspace — the summary hard-scopes to it (refetch on switch).
+  const { domain } = useDomain();
   const [rows, setRows] = useState<CohortRow[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -141,15 +153,16 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
 
     try {
       // ── 1. Teacher's non-archived courses + student counts ──────────────
+      // Over-fetch then domain-filter client-side (see header note), then cap.
       const coursesRes = await supabase
         .from("courses")
         .select(
-          "id, short_code, name, archived, course_memberships(count)",
+          "id, short_code, name, archived, course_type, course_memberships(count)",
         )
         .eq("teacher_id", teacherId)
         .eq("archived", false)
         .order("created_at", { ascending: false })
-        .limit(MAX_COHORT_ROWS);
+        .limit(MAX_COHORT_ROWS * 4);
 
       if (coursesRes.error) {
         setError(coursesRes.error.message);
@@ -157,7 +170,12 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
         return;
       }
 
-      const courseRows = (coursesRes.data ?? []) as unknown as CourseRow[];
+      const fetchedCourses = (coursesRes.data ?? []) as unknown as CourseRow[];
+      // Workspace scope BEFORE courseIds derivation — every downstream
+      // query (submissions, scores, needs pills) inherits it.
+      const courseRows = fetchedCourses
+        .filter((c) => domainOf(c.course_type) === domain)
+        .slice(0, MAX_COHORT_ROWS);
       if (courseRows.length === 0) {
         setRows([]);
         return;
@@ -388,7 +406,7 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
     } finally {
       setLoading(false);
     }
-  }, [teacherId]);
+  }, [teacherId, domain]);
 
   useEffect(() => {
     void refresh();

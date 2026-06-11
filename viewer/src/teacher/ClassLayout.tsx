@@ -58,7 +58,11 @@ import { CounselingCaseloadView } from "./counseling/CounselingCaseloadView";
 import { CourseDiscussions } from "./CourseDiscussions";
 import { DiscussionTopicView } from "./DiscussionTopicView";
 import { CourseSettings } from "./CourseSettings";
-import { CourseTabStrip } from "./CourseTabStrip";
+import {
+  CourseTabStrip,
+  type CourseTab,
+  type CourseTabGroup,
+} from "./CourseTabStrip";
 import { ModulesPage } from "./ModulesPage";
 import { QuickCreatePalette } from "./QuickCreatePalette";
 import { ROUTES, classPath, coursePath } from "@/lib/routes";
@@ -95,57 +99,151 @@ function getErrorMessage(error: unknown, fallback: string): string {
   return fallback;
 }
 
-interface TabDef {
-  /** Relative path inside /classes/:classId. Empty string = index. */
-  to: string;
-  label: string;
-  /**
-   * NavLink matches the exact path. Used for the index tab so it doesn't
-   * stay highlighted while you're inside a deeper sub-tab.
-   */
-  end?: boolean;
+// Per-course-type tab GROUP definitions. Single-item groups render as plain
+// tabs in CourseTabStrip; multi-item groups render as dropdown menus. Only the
+// groups for the course's own type are built — nothing leaks across types
+// (the old flat-TABS model leaked all pickleball tabs into academic courses).
+// Drag-reorder happens at the group level and persists per (user, courseType).
+function buildTabGroups(
+  courseType: string,
+  canQbank: boolean,
+): CourseTabGroup[] {
+  const tab = (to: string, label: string): CourseTab => ({ to, label });
+  const materials: CourseTabGroup = {
+    id: "materials",
+    label: "Materials",
+    items: [tab("materials", "Materials")],
+  };
+  const settings: CourseTabGroup = {
+    id: "settings",
+    label: "Settings",
+    items: [tab("settings", "Settings")],
+  };
+  if (courseType === "pickleball_player") {
+    return [
+      {
+        id: "coaching",
+        label: "Coaching",
+        items: [
+          tab("players", "Players"),
+          tab("lessons", "Lessons"),
+          tab("briefings", "Briefings"),
+          tab("progress", "Progress"),
+        ],
+      },
+      {
+        id: "training",
+        label: "Training",
+        items: [
+          tab("drills", "Drills"),
+          tab("programs", "Programs"),
+          tab("events", "Events"),
+        ],
+      },
+      {
+        id: "people",
+        label: "People",
+        items: [
+          tab("roster", "Roster"),
+          tab("chat", "Chat"),
+          tab("announcements", "Announcements"),
+        ],
+      },
+      materials,
+      settings,
+    ];
+  }
+  if (courseType === "pickleball_coach") {
+    return [
+      {
+        id: "development",
+        label: "Development",
+        items: [
+          tab("coaches", "Coaches"),
+          tab("certifications", "Certifications"),
+          tab("development", "Development"),
+          tab("shadowing", "Shadowing"),
+          tab("evaluations", "Evaluations"),
+        ],
+      },
+      {
+        id: "program",
+        label: "Program",
+        items: [tab("hours", "Hours"), tab("coach-programs", "Programs")],
+      },
+      {
+        id: "people",
+        label: "People",
+        items: [
+          tab("roster", "Roster"),
+          tab("chat", "Chat"),
+          tab("announcements", "Announcements"),
+        ],
+      },
+      materials,
+      settings,
+    ];
+  }
+  if (courseType === "counseling") {
+    return [
+      {
+        id: "plan",
+        label: "Plan",
+        items: [
+          tab("caseload", "Caseload"),
+          tab("portfolio", "Portfolio"),
+          tab("modules", "Modules"),
+        ],
+      },
+      {
+        id: "overview",
+        label: "Overview",
+        items: [tab("overview", "Overview")],
+      },
+      {
+        id: "people",
+        label: "People",
+        items: [
+          tab("roster", "Roster"),
+          tab("announcements", "Announcements"),
+          tab("discussions", "Discussions"),
+        ],
+      },
+      materials,
+      settings,
+    ];
+  }
+  // Academic ('class'). Skills is test-derived, gated with Q-bank access.
+  return [
+    {
+      id: "teach",
+      label: "Teach",
+      items: [
+        tab("modules", "Modules"),
+        tab("assignments", "Assignments"),
+        tab("grades", "Grades"),
+      ],
+    },
+    {
+      id: "insights",
+      label: "Insights",
+      items: canQbank
+        ? [tab("overview", "Overview"), tab("skills", "Skills")]
+        : [tab("overview", "Overview")],
+    },
+    {
+      id: "people",
+      label: "People",
+      items: [
+        tab("roster", "Roster"),
+        tab("announcements", "Announcements"),
+        tab("discussions", "Discussions"),
+      ],
+    },
+    materials,
+    settings,
+  ];
 }
-
-// Default order is grouped by function (the user can drag-reorder + it persists
-// per user via CourseTabStrip). Groups: Teach · Insights · People · Resources ·
-// Manage. Modules stays first (it's the default landing route).
-const TABS: ReadonlyArray<TabDef> = [
-  // Teach
-  { to: "modules", label: "Modules" },
-  { to: "assignments", label: "Assignments" },
-  { to: "grades", label: "Grades" },
-  // Insights
-  { to: "overview", label: "Overview" },
-  { to: "skills", label: "Skills" },
-  { to: "caseload", label: "Caseload" },
-  // People & comms
-  { to: "roster", label: "Roster" },
-  { to: "announcements", label: "Announcements" },
-  { to: "discussions", label: "Discussions" },
-  // Resources
-  { to: "materials", label: "Materials" },
-  { to: "portfolio", label: "Portfolio" },
-  // Pickleball — player track
-  { to: "players", label: "Players" },
-  { to: "lessons", label: "Lessons" },
-  { to: "briefings", label: "Briefings" },
-  { to: "progress", label: "Progress" },
-  { to: "drills", label: "Drills" },
-  { to: "programs", label: "Programs" },
-  { to: "events", label: "Events" },
-  // Pickleball — coach track
-  { to: "coaches", label: "Coaches" },
-  { to: "certifications", label: "Certifications" },
-  { to: "development", label: "Development" },
-  { to: "shadowing", label: "Shadowing" },
-  { to: "evaluations", label: "Evaluations" },
-  { to: "hours", label: "Hours" },
-  { to: "coach-programs", label: "Programs" },
-  // Pickleball — shared
-  { to: "chat", label: "Chat" },
-  // Manage
-  { to: "settings", label: "Settings" },
-];
 
 export function ClassLayout() {
   // Route is /courses/:courseId/* — keep the local name `classId` because
@@ -176,70 +274,10 @@ export function ClassLayout() {
   const isPickle = isPickleball(courseType);
   const isPicklePlayer = courseType === "pickleball_player";
   const isPickleCoach = courseType === "pickleball_coach";
-  const visibleTabs = useMemo(() => {
-    if (isPicklePlayer || isPickleCoach) {
-      const byTo = new Map(TABS.map((t) => [t.to, t]));
-      const PICKLE_PLAYER_ORDER = [
-        "players",
-        "lessons",
-        "briefings",
-        "progress",
-        "drills",
-        "programs",
-        "events",
-        "roster",
-        "chat",
-        "announcements",
-        "materials",
-        "settings",
-      ];
-      const PICKLE_COACH_ORDER = [
-        "coaches",
-        "certifications",
-        "development",
-        "shadowing",
-        "evaluations",
-        "hours",
-        "coach-programs",
-        "roster",
-        "chat",
-        "announcements",
-        "materials",
-        "settings",
-      ];
-      const order = isPicklePlayer ? PICKLE_PLAYER_ORDER : PICKLE_COACH_ORDER;
-      return order.map((to) => byTo.get(to)).filter((t): t is TabDef => !!t);
-    }
-    if (isCounseling) {
-      // Counseling courses get a purpose-built IA, not the class order. The
-      // student's mental model is: see the overall plan first (Modules =
-      // timeline/structure the counselor lays out), then the sub-items of that
-      // plan (Portfolio = essays/recs/college artifacts), then the working
-      // surfaces (Caseload, Overview, People, comms, Materials, Settings).
-      // Assignments/Grades/Skills are test-class concepts and don't apply.
-      const COUNSELING_ORDER = [
-        "modules",
-        "portfolio",
-        "caseload",
-        "overview",
-        "roster",
-        "announcements",
-        "discussions",
-        "materials",
-        "settings",
-      ];
-      const byTo = new Map(TABS.map((t) => [t.to, t]));
-      return COUNSELING_ORDER.map((to) => byTo.get(to)).filter(
-        (t): t is TabDef => !!t,
-      );
-    }
-    // Normal class: hide the counseling-only tabs; Skills follows Q-bank access.
-    return TABS.filter((t) => {
-      if (t.to === "skills") return canQbank;
-      if (t.to === "portfolio" || t.to === "caseload") return false;
-      return true;
-    });
-  }, [canQbank, isCounseling, isPicklePlayer, isPickleCoach]);
+  const tabGroups = useMemo(
+    () => buildTabGroups(courseType, canQbank),
+    [courseType, canQbank],
+  );
 
   // Publish the real course name to the global breadcrumb bar. NO-OPs until
   // both key + label are truthy, so calling it unconditionally before the
@@ -508,11 +546,13 @@ export function ClassLayout() {
                 {actionError}
               </div>
             )}
-            {/* Tab strip — drag to reorder; order persists per user. */}
+            {/* Tab strip — grouped tabs; drag to reorder groups; order
+                persists per (user, course type). */}
             <CourseTabStrip
-              tabs={visibleTabs}
+              groups={tabGroups}
               shortCode={cls.short_code}
               userId={profile?.id ?? null}
+              courseType={courseType}
             />
           </div>
         </div>

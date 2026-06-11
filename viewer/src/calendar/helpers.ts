@@ -5,6 +5,8 @@
  * helpers for the Calendar surface. No React/JSX — extracted verbatim from
  * CalendarPage. All top-level decls are exported.
  */
+import type { Domain } from "@/lib/domain";
+
 export type EventKind = "assignment" | "portfolio";
 
 export interface CalendarEvent {
@@ -14,6 +16,8 @@ export interface CalendarEvent {
   due_at: Date;
   courseName: string;
   courseId: string;
+  /** Workspace domain of the owning course (from courses.course_type). */
+  domain: Domain;
 }
 
 export interface AssignmentRow {
@@ -23,16 +27,16 @@ export interface AssignmentRow {
   due_at: string | null;
   course_id: string;
   courses:
-    | { name: string | null; short_code: string }
-    | { name: string | null; short_code: string }[]
+    | { name: string | null; short_code: string; course_type: string | null }
+    | { name: string | null; short_code: string; course_type: string | null }[]
     | null;
 }
 
 export interface PortfolioTemplate {
   course_id: string;
   courses:
-    | { name: string | null; short_code: string }
-    | { name: string | null; short_code: string }[]
+    | { name: string | null; short_code?: string; course_type: string | null }
+    | { name: string | null; short_code?: string; course_type: string | null }[]
     | null;
 }
 
