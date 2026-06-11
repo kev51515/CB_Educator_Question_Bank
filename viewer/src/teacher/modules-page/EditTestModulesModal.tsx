@@ -178,12 +178,13 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
     return ps.length > 0 && ps.length === deployed.size && ps.every((p) => deployed.has(p));
   };
 
-  // Unified chip style — matches inline-add.tsx (mobile tap target ≥40px).
+  // Unified chip style — matches inline-add's filter pills (Ivy kit `.pill`:
+  // compact, hug-content; mobile keeps the ≥40px tap target via min-h).
   const chipClass = (active: boolean): string =>
-    "rounded-full px-3 py-1.5 text-xs md:py-0.5 md:text-[11px] font-medium transition-colors text-center " +
+    "inline-flex items-center justify-center rounded-full px-3 min-h-[40px] md:min-h-[26px] text-xs md:text-[11px] font-medium transition-colors " +
     (active
       ? "bg-indigo-600 text-white ring-1 ring-indigo-600"
-      : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 hover:text-indigo-700 dark:hover:text-indigo-200");
+      : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:ring-slate-400 dark:hover:ring-slate-500 hover:text-slate-900 dark:hover:text-slate-100");
 
   const canSave = !saving && deployed.size > 0 && contiguous;
 

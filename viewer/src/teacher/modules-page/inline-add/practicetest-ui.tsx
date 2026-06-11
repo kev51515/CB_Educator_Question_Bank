@@ -81,7 +81,7 @@ export function PracticeTestSection({
             <span className="block text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
               Source
             </span>
-            <div className="grid grid-cols-4 gap-1.5">
+            <div className="flex flex-wrap gap-1.5">
               <button
                 type="button"
                 onClick={() => setPtSourceFilter("all")}

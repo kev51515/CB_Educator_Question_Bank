@@ -523,13 +523,22 @@ export function InlineAddItemRow({
     }
   };
 
-  // Unified chip style — mobile tap target ≥40px, desktop dense.
-  // Per CLAUDE.md: rounded-full pill, py-1.5 on mobile, py-0.5 on md+.
+  // Filter-pill style (Ivy kit `.pill`): compact, hug-content — never
+  // stretched edge-to-edge in a grid. Mobile keeps the ≥40px tap target
+  // via min-h; desktop stays dense.
   const chipClass = (active: boolean): string =>
-    "rounded-full px-3 py-1.5 text-xs md:py-0.5 md:text-[11px] font-medium transition-colors text-center " +
+    "inline-flex items-center justify-center rounded-full px-3 min-h-[40px] md:min-h-[26px] text-xs md:text-[11px] font-medium transition-colors " +
     (active
       ? "bg-indigo-600 text-white ring-1 ring-indigo-600"
-      : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 hover:text-indigo-700 dark:hover:text-indigo-200");
+      : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:ring-slate-400 dark:hover:ring-slate-500 hover:text-slate-900 dark:hover:text-slate-100");
+
+  // Type selector — fused-band segmented control, same recipe as the course
+  // subtab band in CourseTabStrip (tinted band, raised white active pill).
+  const typeChipClass = (active: boolean): string =>
+    "whitespace-nowrap min-h-[40px] md:min-h-[30px] inline-flex items-center rounded-lg px-3 text-[13px] font-medium transition-colors " +
+    (active
+      ? "bg-white dark:bg-slate-900 text-accent-800 dark:text-accent-200 font-semibold shadow-sm ring-1 ring-accent-600/20"
+      : "text-accent-800/80 dark:text-accent-200/80 hover:bg-white/60 dark:hover:bg-slate-900/50 hover:text-accent-800 dark:hover:text-accent-200");
 
   const chip = (type: InlineAddType, label: string): JSX.Element => {
     const active = itemType === type;
@@ -538,7 +547,7 @@ export function InlineAddItemRow({
         type="button"
         onClick={() => setItemType(type)}
         aria-pressed={active}
-        className={chipClass(active)}
+        className={typeChipClass(active)}
       >
         {label}
       </button>
@@ -573,11 +582,11 @@ export function InlineAddItemRow({
       className="rounded-lg ring-1 ring-indigo-300 dark:ring-indigo-700 bg-indigo-50/40 dark:bg-indigo-950/20 p-3 space-y-2"
     >
       {/* Type chips. "TYPE" eyebrow text hidden as sr-only — visual label is
-          redundant with the chip row. Grid prevents jagged wraps on narrow
-          widths (2 cols mobile, 5 cols sm+). */}
+          redundant with the chip row. Fused band (CourseTabStrip recipe):
+          chips hug content and wrap; the tint carries the grouping. */}
       <div>
         <span className="sr-only">Item type</span>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+        <div className="flex flex-wrap items-center gap-1 rounded-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] px-1.5 py-1.5">
           {chip("assignment", "Assignment")}
           {canQbank && chip("full_test", "Full-Test")}
           {canQbank && chip("question_set", "Question Set")}

@@ -63,7 +63,7 @@ export function QuestionSetSection({
           <span className="block text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
             Section
           </span>
-          <div className="grid grid-cols-3 gap-1.5">
+          <div className="flex flex-wrap gap-1.5">
             <button
               type="button"
               onClick={() => setPsSectionFilter("all")}
@@ -94,7 +94,7 @@ export function QuestionSetSection({
           <span className="block text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
             Difficulty
           </span>
-          <div className="grid grid-cols-4 gap-1.5">
+          <div className="flex flex-wrap gap-1.5">
             <button
               type="button"
               onClick={() => setPsDifficultyFilter("all")}
