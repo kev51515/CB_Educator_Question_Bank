@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction A — Scholar's Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DIRECTION A — SCHOLAR'S DESK
+   Token spec doubles as the stylesheet. Warm paper, ink, type.
+   ============================================================ */
+
+:root {
+  /* ---- Grounds & surfaces ---- */
+  --paper:          #FAF7F2;   /* page ground — never white */
+  --card:           #FFFFFF;
+  --wash-academic:  #F2F4FB;   /* tinted washes, chrome only */
+  --wash-counsel:   #EFF6F1;
+  --wash-coach:     #FBF2EA;
+
+  /* ---- Lines ---- */
+  --line:           #EAE4DA;
+  --line-strong:    #D8CFC2;
+
+  /* ---- Ink ---- */
+  --ink:            #1C1917;
+  --ink-2:          #57534E;
+  --ink-3:          #8A8178;
+
+  /* ---- Domain accents ---- */
+  --academic:       #3A5BC7;   /* library ink */
+  --academic-hover: #2F4AAD;
+  --counsel:        #2F7A50;   /* ivy */
+  --counsel-fill:   #3D9268;
+  --coach:          #B85C18;   /* ember */
+  --coach-fill:     #E0762B;
+
+  /* ---- Semantic ---- */
+  --success:        #2F7A50;
+  --warn:           #9A6B12;
+  --warn-bg:        #FBF3E0;
+  --error:          #BE3B2E;
+  --error-bg:       #FBEAE7;
+
+  /* ---- Dark "Espresso" ---- */
+  --d-bg:           #161311;
+  --d-surface:      #211D19;
+  --d-raised:       #2A251F;
+  --d-line:         #3A342C;
+  --d-ink:          #F0EAE0;
+  --d-ink-2:        #BCB2A4;
+  --d-accent:       #8FA7F2;
+
+  /* ---- Type ---- */
+  --display: "Fraunces", Georgia, serif;
+  --ui:      "Hanken Grotesk", -apple-system, sans-serif;
+  --serif:   "Source Serif 4", Georgia, serif;
+  --mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* ---- Radius system (the only three) ---- */
+  --r-pill: 999px;
+  --r-btn:  8px;
+  --r-card: 14px;
+
+  /* ---- Elevation (the only two) ---- */
+  --shadow-card:    0 1px 2px rgba(28, 25, 23, 0.05), 0 4px 14px rgba(28, 25, 23, 0.06);
+  --shadow-overlay: 0 4px 10px rgba(28, 25, 23, 0.10), 0 18px 44px rgba(28, 25, 23, 0.16);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ui);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background-color: var(--paper);
+  /* almost-imperceptible paper grain — page ground only */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.022'/%3E%3C/svg%3E");
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(58, 91, 199, 0.18); }
+
+/* ---- shared scaffolding ---- */
+.page { max-width: 1240px; margin: 0 auto; padding: 0 48px 140px; }
+
+.section { margin-top: 104px; }
+
+.section-label {
+  display: flex; align-items: center; gap: 16px;
+  font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 28px;
+}
+.section-label::after {
+  content: ""; flex: 1; height: 1px; background: var(--line-strong);
+}
+.section-label .num {
+  font-family: var(--mono); font-size: 11px; color: var(--ink-3);
+}
+
+button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+
+/* Universal focus ring — 2px + offset */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--academic);
+  outline-offset: 2px;
+  border-radius: var(--r-btn);
+}
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+svg.icon { display: block; flex-shrink: 0; }
+
+/* ============================================================
+   1 · HERO STRIP
+   ============================================================ */
+.hero {
+  padding: 88px 48px 72px;
+  border-bottom: 1px solid var(--line);
+}
+.hero-inner { max-width: 1240px; margin: 0 auto; }
+.hero-kicker {
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--academic);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  max-width: 14ch;
+}
+.hero p {
+  margin-top: 22px;
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+.hero p em { color: var(--ink); font-style: italic; }
+
+/* ============================================================
+   2 · TOKEN SHEET
+   ============================================================ */
+.swatch-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.swatch {
+  width: 116px;
+  border-radius: var(--r-card);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+}
+.swatch .chip { height: 64px; }
+.swatch .meta { padding: 9px 12px 11px; }
+.swatch .name { font-size: 12px; font-weight: 600; color: var(--ink); }
+.swatch .hex { font-family: var(--mono); font-size: 11px; color: var(--ink-3); margin-top: 1px; }
+
+.type-ramp {
+  margin-top: 36px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 36px 40px;
+}
+.ramp-row {
+  display: grid; grid-template-columns: 168px 1fr;
+  gap: 32px; align-items: baseline;
+  padding: 18px 0;
+}
+.ramp-row + .ramp-row { border-top: 1px solid var(--line); }
+.ramp-tag {
+  font-family: var(--mono); font-size: 11px; color: var(--ink-3);
+  letter-spacing: 0.02em;
+}
+.spec-display {
+  font-family: var(--display); font-optical-sizing: auto;
+  font-size: 40px; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
+}
+.spec-h1 { font-family: var(--display); font-optical-sizing: auto; font-size: 28px; font-weight: 600; line-height: 1.2; }
+.spec-h2 { font-family: var(--ui); font-size: 20px; font-weight: 600; line-height: 1.3; }
+.spec-body { font-family: var(--ui); font-size: 15px; color: var(--ink-2); max-width: 60ch; }
+.spec-serif { font-family: var(--serif); font-size: 16.5px; line-height: 1.65; max-width: 52ch; text-wrap: pretty; }
+.spec-caption { font-family: var(--ui); font-size: 12.5px; font-weight: 500; color: var(--ink-3); letter-spacing: 0.01em; }
+.spec-mono { font-family: var(--mono); font-size: 22px; font-variant-numeric: tabular-nums; letter-spacing: 0.01em; }
+
+.triad { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+.domain-chip {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 14px 20px 14px 14px;
+  min-width: 232px;
+}
+.domain-chip .dot { width: 36px; height: 36px; border-radius: var(--r-pill); }
+.domain-chip .t1 { font-size: 14px; font-weight: 600; }
+.domain-chip .t2 { font-family: var(--mono); font-size: 11px; color: var(--ink-3); margin-top: 1px; }
+
+/* ============================================================
+   3 · EDUCATOR DASHBOARD
+   ============================================================ */
+.app-frame {
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+}
+
+/* --- nav rail --- */
+.rail {
+  background: var(--card);
+  border-right: 1px solid var(--line);
+  padding: 18px 10px 22px;
+  display: flex; flex-direction: column;
+}
+.rail-brand {
+  display: flex; align-items: center; gap: 9px;
+  padding: 6px 10px 18px;
+}
+.rail-brand .mark {
+  width: 26px; height: 26px; border-radius: var(--r-btn);
+  background: var(--academic);
+  display: grid; place-items: center; color: #fff;
+  font-family: var(--display); font-weight: 600; font-size: 14px;
+}
+.rail-brand .word { font-family: var(--display); font-weight: 600; font-size: 15.5px; letter-spacing: -0.01em; }
+
+.rail-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; min-height: 40px;
+  padding: 0 10px;
+  border-radius: var(--r-btn);
+  font-size: 13.5px; font-weight: 500;
+  color: var(--ink-2);
+  text-align: left;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.rail-item:hover { background: var(--paper); color: var(--ink); }
+.rail-item.active {
+  background: var(--wash-academic);
+  color: var(--academic);
+  font-weight: 600;
+}
+.rail-item .icon { color: currentColor; }
+.rail-foot { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
+.rail-collapse {
+  display: flex; align-items: center; gap: 10px;
+  min-height: 40px; width: 100%; padding: 0 10px;
+  border-radius: var(--r-btn);
+  font-size: 12.5px; color: var(--ink-3);
+}
+.rail-collapse:hover { background: var(--paper); color: var(--ink-2); }
+
+/* --- top bar --- */
+.main { display: flex; flex-direction: column; min-width: 0; }
+.topbar {
+  display: flex; align-items: center; gap: 16px;
+  min-height: 52px;
+  padding: 0 28px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+.crumbs { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-3); }
+.crumbs .here { color: var(--ink); font-weight: 600; }
+.crumbs .sep { color: var(--line-strong); }
+.topbar-spacer { flex: 1; }
+.search-pill {
+  display: flex; align-items: center; gap: 9px;
+  min-height: 40px; padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-btn);
+  background: var(--paper);
+  color: var(--ink-3);
+  font-size: 13px;
+  width: 240px;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.search-pill:hover { border-color: var(--line-strong); background: var(--card); }
+.search-pill kbd {
+  margin-left: auto;
+  font-family: var(--mono); font-size: 10.5px;
+  border: 1px solid var(--line); border-radius: 5px;
+  padding: 2px 5px; color: var(--ink-3); background: var(--card);
+}
+.icon-btn {
+  position: relative;
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: var(--r-btn);
+  color: var(--ink-2);
+  transition: background-color 120ms ease;
+}
+.icon-btn:hover { background: var(--paper); color: var(--ink); }
+.icon-btn .badge {
+  position: absolute; top: 7px; right: 7px;
+  width: 8px; height: 8px; border-radius: var(--r-pill);
+  background: var(--coach-fill);
+  border: 2px solid var(--card);
+}
+
+/* --- content --- */
+.content { padding: 32px 28px 40px; }
+.greeting-row { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
+.greeting {
+  font-family: var(--display); font-optical-sizing: auto;
+  font-size: 28px; font-weight: 600; letter-spacing: -0.01em;
+}
+.greeting-date { font-size: 13px; color: var(--ink-3); }
+
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 18px 20px 16px;
+  transition: border-color 120ms ease;
+}
+.stat-card:hover { border-color: var(--line-strong); }
+.stat-label { font-size: 12.5px; font-weight: 500; color: var(--ink-3); letter-spacing: 0.01em; }
+.stat-num {
+  font-family: var(--display); font-optical-sizing: auto;
+  font-weight: 600; font-size: 38px; line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  margin-top: 6px;
+  letter-spacing: -0.01em;
+}
+.stat-num .up { color: var(--success); }
+.stat-sub { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-3); margin-top: 5px; }
+.stat-sub.good { color: var(--success); }
+.stat-sub.due { color: var(--warn); }
+
+.block-title {
+  font-family: var(--ui); font-size: 16px; font-weight: 600;
+  margin: 34px 0 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.block-title .count {
+  font-family: var(--mono); font-size: 11px; color: var(--ink-3);
+  border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: 2px 8px; font-variant-numeric: tabular-nums;
+}
+
+.course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.course-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 20px 20px 18px;
+  overflow: hidden;
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+.course-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent, var(--academic));
+}
+.course-card:hover { border-color: var(--line-strong); transform: translateY(-1px); }
+.course-kind {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent, var(--academic));
+}
+.course-name {
+  font-family: var(--display); font-optical-sizing: auto;
+  font-size: 19px; font-weight: 600; line-height: 1.25;
+  margin-top: 7px; letter-spacing: -0.005em;
+}
+.course-meta { display: flex; align-items: center; gap: 14px; margin-top: 12px; font-size: 13px; color: var(--ink-2); }
+.course-meta .n { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink); }
+.mastery-bar { margin-top: 14px; height: 5px; border-radius: var(--r-pill); background: var(--line); overflow: hidden; }
+.mastery-bar i { display: block; height: 100%; border-radius: var(--r-pill); background: var(--accent, var(--academic)); }
+.mastery-cap { display: flex; justify-content: space-between; margin-top: 7px; font-size: 11.5px; color: var(--ink-3); }
+.mastery-cap b { font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 600; }
+
+/* needs attention */
+.attn-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.attn-row {
+  display: flex; align-items: center; gap: 14px;
+  min-height: 56px; padding: 8px 18px;
+  transition: background-color 120ms ease;
+}
+.attn-row + .attn-row { border-top: 1px solid var(--line); }
+.attn-row:hover { background: var(--paper); }
+.attn-ind { width: 8px; height: 8px; border-radius: var(--r-pill); flex-shrink: 0; }
+.attn-ind.err { background: var(--error); }
+.attn-ind.warn { background: var(--warn); }
+.attn-ind.idle { background: var(--ink-3); }
+.attn-main { flex: 1; min-width: 0; }
+.attn-text { font-size: 14px; }
+.attn-text b { font-weight: 600; }
+.attn-text .pct { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--error); }
+.attn-when { font-size: 12px; color: var(--ink-3); margin-top: 1px; }
+.attn-act {
+  min-height: 40px; padding: 0 14px;
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--r-btn);
+  font-size: 12.5px; font-weight: 600; color: var(--academic);
+  background: var(--card);
+  transition: border-color 120ms ease, background-color 120ms ease, color 120ms ease;
+}
+.attn-act:hover { border-color: var(--academic); background: var(--wash-academic); color: var(--academic-hover); }
+
+/* ============================================================
+   4 · MODULES FRAGMENT
+   ============================================================ */
+.module-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  max-width: 880px;
+}
+.module-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.module-head .chev {
+  width: 40px; height: 40px; margin: -8px 0 -8px -8px;
+  display: grid; place-items: center; color: var(--ink-3);
+  border-radius: var(--r-btn);
+}
+.module-head .chev:hover { background: var(--line); color: var(--ink); }
+.module-title { font-family: var(--ui); font-size: 15.5px; font-weight: 600; flex: 1; }
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  border-radius: var(--r-pill);
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.02em;
+  padding: 4px 11px;
+  min-height: 24px;
+}
+.pill.published { color: var(--success); background: var(--wash-counsel); border: 1px solid rgba(47, 122, 80, 0.25); }
+.pill.published:hover { background: #E3F0E8; }
+.pill.locked { color: var(--warn); background: var(--warn-bg); border: 1px solid rgba(154, 107, 18, 0.25); }
+.pill.draft { color: var(--ink-3); background: var(--paper); border: 1px solid var(--line-strong); }
+
+.item-row {
+  display: flex; align-items: center; gap: 12px;
+  min-height: 56px; padding: 8px 18px 8px 12px;
+  transition: background-color 120ms ease;
+}
+.item-row + .item-row { border-top: 1px solid var(--line); }
+.item-row .grip {
+  width: 40px; height: 40px; display: grid; place-items: center;
+  color: var(--line-strong); cursor: grab; border-radius: var(--r-btn);
+}
+.item-row:hover .grip, .item-row.is-hover .grip { color: var(--ink-3); }
+.item-icon {
+  width: 32px; height: 32px; border-radius: var(--r-btn);
+  display: grid; place-items: center;
+  background: var(--paper); color: var(--ink-2);
+  border: 1px solid var(--line);
+}
+.item-main { flex: 1; min-width: 0; }
+.item-title { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.item-title:hover { color: var(--academic); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.item-meta { font-size: 12.5px; color: var(--ink-3); margin-top: 1px; }
+.item-meta .sep { margin: 0 6px; color: var(--line-strong); }
+.item-meta .n { font-variant-numeric: tabular-nums; }
+.kebab {
+  width: 40px; height: 40px; display: grid; place-items: center;
+  border-radius: var(--r-btn); color: var(--ink-3);
+  opacity: 0; transition: opacity 120ms ease, background-color 120ms ease;
+}
+.item-row:hover .kebab, .item-row.is-hover .kebab { opacity: 1; }
+.kebab:hover { background: var(--line); color: var(--ink); }
+.item-row:hover, .item-row.is-hover { background: var(--wash-academic); }
+.hover-note {
+  margin-top: 12px; font-size: 12.5px; color: var(--ink-3);
+  display: flex; align-items: center; gap: 7px;
+}
+
+/* ============================================================
+   5 · STUDENT "WHAT'S NEXT"
+   ============================================================ */
+.student-col { max-width: 640px; }
+.student-hi {
+  font-family: var(--display); font-optical-sizing: auto;
+  font-size: 26px; font-weight: 600; letter-spacing: -0.01em;
+}
+.student-sub { color: var(--ink-2); font-size: 14px; margin-top: 4px; }
+
+.next-card {
+  margin-top: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--academic);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 22px 24px;
+  display: flex; gap: 18px; align-items: flex-start;
+}
+.next-icon {
+  width: 44px; height: 44px; border-radius: var(--r-btn);
+  background: var(--wash-academic); color: var(--academic);
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.next-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--academic); }
+.next-title { font-family: var(--display); font-optical-sizing: auto; font-size: 21px; font-weight: 600; margin-top: 5px; letter-spacing: -0.005em; }
+.next-meta { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-2); margin-top: 7px; }
+.next-meta .n { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+.next-meta .dotsep { color: var(--line-strong); }
+.next-go {
+  margin-left: auto; align-self: center;
+  min-height: 40px; padding: 0 18px;
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--academic); color: #fff;
+  border-radius: var(--r-btn);
+  font-size: 13.5px; font-weight: 600;
+  transition: background-color 120ms ease;
+}
+.next-go:hover { background: var(--academic-hover); }
+
+/* streak — a reading log, not a flame */
+.streak-card {
+  margin-top: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 16px 24px;
+  display: flex; align-items: center; gap: 18px;
+}
+.streak-days { display: flex; gap: 7px; }
+.day-dot {
+  width: 22px; height: 22px; border-radius: var(--r-pill);
+  border: 1.5px solid var(--line-strong);
+  display: grid; place-items: center;
+  background: var(--paper);
+}
+.day-dot.done { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.day-dot.today { border-color: var(--academic); border-style: dashed; }
+.streak-text { font-size: 13.5px; color: var(--ink-2); }
+.streak-text b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* skill mastery grid */
+.mastery-card {
+  margin-top: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 22px 24px;
+}
+.mastery-head { display: flex; align-items: baseline; justify-content: space-between; }
+.mastery-title { font-size: 15.5px; font-weight: 600; }
+.legend { display: flex; gap: 14px; font-size: 11.5px; color: var(--ink-3); }
+.legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.sq { width: 16px; height: 16px; border-radius: 3px; }
+.m0 { background: var(--paper); border: 1px solid var(--line-strong); }
+.m1 { background: #C6D1EF; }
+.m2 { background: #7E96DE; }
+.m3 { background: var(--academic); }
+.legend .l0 { background: var(--paper); border: 1px solid var(--line-strong); }
+.legend .l1 { background: #C6D1EF; }
+.legend .l2 { background: #7E96DE; }
+.legend .l3 { background: var(--academic); }
+.domain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px; margin-top: 20px; }
+.domain { }
+.domain-name { font-size: 12.5px; font-weight: 600; color: var(--ink-2); margin-bottom: 7px; }
+.domain-name .sec { font-weight: 500; color: var(--ink-3); }
+.cells { display: flex; gap: 4px; flex-wrap: wrap; }
+
+/* trajectory sparkline */
+.traj-card {
+  margin-top: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 22px 24px 18px;
+}
+.traj-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+.traj-title { font-size: 15.5px; font-weight: 600; }
+.traj-delta { font-family: var(--mono); font-size: 12.5px; color: var(--success); font-variant-numeric: tabular-nums; }
+.traj-svg-wrap { margin-top: 4px; }
+.traj-label { font-family: var(--mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+/* ============================================================
+   6 · TEST RUNNER  (stays light & calm in every direction)
+   ============================================================ */
+.runner {
+  background: #FDFCFA;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.runner-bar {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 22px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+.runner-section { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.runner-section .dir { font-weight: 500; color: var(--ink-3); }
+.runner-timer { display: flex; align-items: center; gap: 10px; justify-self: center; }
+.runner-timer .t {
+  font-family: var(--mono); font-size: 18px; font-weight: 500;
+  font-variant-numeric: tabular-nums; letter-spacing: 0.02em;
+}
+.runner-timer .hide {
+  font-size: 11.5px; font-weight: 600; color: var(--ink-3);
+  border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: 3px 10px; min-height: 24px;
+}
+.runner-timer .hide:hover { border-color: var(--line-strong); color: var(--ink-2); background: var(--paper); }
+.runner-tools { display: flex; gap: 6px; justify-self: end; }
+.tool-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 40px; padding: 0 13px;
+  border-radius: var(--r-btn);
+  font-size: 12.5px; font-weight: 600; color: var(--ink-2);
+  transition: background-color 120ms ease;
+}
+.tool-btn:hover { background: var(--paper); color: var(--ink); }
+
+.runner-body {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  position: relative;
+}
+.pane-passage {
+  padding: 44px 48px 64px;
+  border-right: 1px solid var(--line);
+  display: flex; justify-content: center;
+}
+.passage {
+  font-family: var(--serif);
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--ink);
+  max-width: 36rem;
+  text-wrap: pretty;
+}
+.passage p + p { margin-top: 14px; }
+.hl {
+  background: linear-gradient(transparent 8%, rgba(241, 200, 90, 0.45) 8%, rgba(241, 200, 90, 0.45) 92%, transparent 92%);
+  border-radius: 2px;
+}
+.pane-q { padding: 44px 48px 96px; }
+.q-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11.5px;
+  color: var(--ink-3); font-variant-numeric: tabular-nums;
+  margin-bottom: 14px;
+}
+.q-tag .flag {
+  width: 28px; height: 28px; display: grid; place-items: center;
+  border-radius: var(--r-btn); color: var(--ink-3);
+}
+.q-tag .flag:hover { background: var(--paper); color: var(--ink-2); }
+.q-stem { font-size: 16px; font-weight: 600; line-height: 1.45; max-width: 44ch; }
+.choices { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+.choice {
+  display: flex; align-items: flex-start; gap: 14px;
+  width: 100%;
+  text-align: left;
+  padding: 13px 16px;
+  min-height: 52px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-btn);
+  font-size: 14.5px; line-height: 1.45;
+  color: var(--ink);
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.choice:hover { border-color: var(--line-strong); background: var(--paper); }
+.choice .letter {
+  width: 28px; height: 28px; flex-shrink: 0;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--line-strong);
+  display: grid; place-items: center;
+  font-size: 12.5px; font-weight: 600; color: var(--ink-2);
+  margin-top: -1px;
+}
+.choice.selected {
+  border-color: var(--academic);
+  box-shadow: inset 0 0 0 1px var(--academic);
+  background: var(--wash-academic);
+}
+.choice.selected .letter { background: var(--academic); border-color: var(--academic); color: #fff; }
+.choice.eliminated { color: var(--ink-3); background: var(--paper); }
+.choice.eliminated .text { text-decoration: line-through; text-decoration-color: var(--ink-3); }
+.choice.eliminated .letter { border-color: var(--line); color: var(--ink-3); }
+.choice .strike-restore {
+  margin-left: auto; align-self: center;
+  font-size: 11px; font-weight: 600; color: var(--ink-3);
+  text-decoration: underline; text-underline-offset: 2px; flex-shrink: 0;
+}
+
+.navigator {
+  position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 9px;
+  min-height: 44px; padding: 0 20px;
+  background: var(--ink); color: var(--paper);
+  border-radius: var(--r-pill);
+  font-size: 13.5px; font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  box-shadow: var(--shadow-overlay);
+  transition: background-color 120ms ease;
+}
+.navigator:hover { background: #322D29; }
+.runner-note { margin-top: 14px; font-size: 12.5px; color: var(--ink-3); max-width: 70ch; }
+
+/* ============================================================
+   7 · DARK MODE INSET — "Espresso"
+   ============================================================ */
+.dark-inset {
+  background: var(--d-bg);
+  border: 1px solid var(--d-line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-overlay);
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 20px;
+  color: var(--d-ink);
+}
+.d-rail {
+  background: var(--d-surface);
+  border: 1px solid var(--d-line);
+  border-radius: var(--r-card);
+  padding: 14px 8px;
+}
+.d-rail .rail-brand .word { color: var(--d-ink); }
+.d-rail .rail-brand .mark { background: var(--d-accent); color: var(--d-bg); }
+.d-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; min-height: 40px; padding: 0 10px;
+  border-radius: var(--r-btn);
+  font-size: 13.5px; font-weight: 500;
+  color: var(--d-ink-2);
+  text-align: left;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.d-item:hover { background: var(--d-raised); color: var(--d-ink); }
+.d-item.active { background: rgba(143, 167, 242, 0.14); color: var(--d-accent); font-weight: 600; }
+.d-item:focus-visible { outline-color: var(--d-accent); }
+
+.d-course {
+  position: relative;
+  background: var(--d-surface);
+  border: 1px solid var(--d-line);
+  border-radius: var(--r-card);
+  padding: 20px;
+  overflow: hidden;
+  align-self: start;
+  transition: border-color 120ms ease;
+}
+.d-course:hover { border-color: #4A4338; }
+.d-course::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--d-accent); }
+.d-course .course-kind { color: var(--d-accent); }
+.d-course .course-name { color: var(--d-ink); }
+.d-course .course-meta { color: var(--d-ink-2); }
+.d-course .course-meta .n { color: var(--d-ink); }
+.d-course .mastery-bar { background: var(--d-raised); }
+.d-course .mastery-bar i { background: var(--d-accent); }
+.d-course .mastery-cap { color: var(--d-ink-2); }
+.d-course .mastery-cap b { color: var(--d-ink); }
+
+.d-stat {
+  background: var(--d-surface);
+  border: 1px solid var(--d-line);
+  border-radius: var(--r-card);
+  padding: 18px 20px;
+  align-self: start;
+  transition: border-color 120ms ease;
+}
+.d-stat:hover { border-color: #4A4338; }
+.d-stat .stat-label { color: var(--d-ink-2); }
+.d-stat .stat-num { color: var(--d-ink); }
+.d-stat .stat-sub { color: var(--d-ink-2); }
+.d-stat .stat-sub.good { color: #6FBF93; }
+
+.dark-caption {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 9px;
+  font-size: 12.5px; color: var(--d-ink-2);
+  border-top: 1px solid var(--d-line);
+  padding-top: 18px; margin-top: 6px;
+}
+
+/* footer colophon */
+.colophon {
+  margin-top: 110px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between;
+  font-size: 12px; color: var(--ink-3);
+}
+.colophon .mono { font-family: var(--mono); font-size: 11px; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     1 · HERO STRIP
+     ============================================================ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Direction A · Design Exploration</div>
+    <h1>Scholar&rsquo;s Desk</h1>
+    <p>The product feels like a beautiful study desk — warm paper, ink, and unhurried type — calm enough that the test runner and the LMS share <em>one serene world</em>. The page itself is never white.</p>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- ============================================================
+       2 · TOKEN SHEET
+       ============================================================ -->
+  <section class="section">
+    <div class="section-label"><span class="num">02</span> Token Sheet</div>
+
+    <div class="swatch-row">
+      <div class="swatch"><div class="chip" style="background:#FAF7F2; border-bottom:1px solid var(--line);"></div><div class="meta"><div class="name">Paper</div><div class="hex">#FAF7F2</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#FFFFFF; border-bottom:1px solid var(--line);"></div><div class="meta"><div class="name">Card</div><div class="hex">#FFFFFF</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#EAE4DA;"></div><div class="meta"><div class="name">Hairline</div><div class="hex">#EAE4DA</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#1C1917;"></div><div class="meta"><div class="name">Ink</div><div class="hex">#1C1917</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#57534E;"></div><div class="meta"><div class="name">Ink&nbsp;2</div><div class="hex">#57534E</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#3A5BC7;"></div><div class="meta"><div class="name">Library Ink</div><div class="hex">#3A5BC7</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#2F7A50;"></div><div class="meta"><div class="name">Ivy</div><div class="hex">#2F7A50</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#B85C18;"></div><div class="meta"><div class="name">Ember</div><div class="hex">#B85C18</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#9A6B12;"></div><div class="meta"><div class="name">Warning</div><div class="hex">#9A6B12</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#BE3B2E;"></div><div class="meta"><div class="name">Error</div><div class="hex">#BE3B2E</div></div></div>
+    </div>
+
+    <div class="type-ramp">
+      <div class="ramp-row">
+        <div class="ramp-tag">display · Fraunces 600 · 40px</div>
+        <div class="spec-display">A quieter way to study hard.</div>
+      </div>
+      <div class="ramp-row">
+        <div class="ramp-tag">h1 · Fraunces 600 · 28px</div>
+        <div class="spec-h1">Good morning, Kevin</div>
+      </div>
+      <div class="ramp-row">
+        <div class="ramp-tag">h2 · Hanken Grotesk 600 · 20px</div>
+        <div class="spec-h2">Week 3 — Reading: Craft &amp; Structure</div>
+      </div>
+      <div class="ramp-row">
+        <div class="ramp-tag">body · Hanken Grotesk 400 · 15px</div>
+        <div class="spec-body">Assign a question set, schedule the practice test, and review skill mastery before Friday&rsquo;s session. Everything updates as students work.</div>
+      </div>
+      <div class="ramp-row">
+        <div class="ramp-tag">passage · Source Serif 4 · 16.5px</div>
+        <div class="spec-serif">The researchers concluded that the reef&rsquo;s soundscape was not merely a symptom of its health but a mechanism of its recovery.</div>
+      </div>
+      <div class="ramp-row">
+        <div class="ramp-tag">caption · Hanken Grotesk 500 · 12.5px</div>
+        <div class="spec-caption">Last synced 2 minutes ago · 24 questions · Module 2 of 4</div>
+      </div>
+      <div class="ramp-row">
+        <div class="ramp-tag">mono numerals · JetBrains Mono</div>
+        <div class="spec-mono tnum">1450 &nbsp;·&nbsp; 27:14 &nbsp;·&nbsp; 86%</div>
+      </div>
+    </div>
+
+    <div class="triad">
+      <div class="domain-chip">
+        <div class="dot" style="background:var(--academic);"></div>
+        <div><div class="t1">Academic</div><div class="t2">library ink · #3A5BC7</div></div>
+      </div>
+      <div class="domain-chip">
+        <div class="dot" style="background:var(--counsel);"></div>
+        <div><div class="t1">Counseling</div><div class="t2">ivy · #2F7A50</div></div>
+      </div>
+      <div class="domain-chip">
+        <div class="dot" style="background:var(--coach);"></div>
+        <div><div class="t1">Coaching</div><div class="t2">ember · #B85C18</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3 · EDUCATOR DASHBOARD
+       ============================================================ -->
+  <section class="section">
+    <div class="section-label"><span class="num">03</span> Educator Dashboard</div>
+
+    <div class="app-frame">
+      <!-- nav rail -->
+      <nav class="rail" aria-label="Primary">
+        <div class="rail-brand">
+          <div class="mark">P</div>
+          <div class="word">PrepMasters</div>
+        </div>
+        <button class="rail-item active" aria-current="page">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>
+          Dashboard
+        </button>
+        <button class="rail-item">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4a1 1 0 0 0-1-1H6.5A2.5 2.5 0 0 0 4 5.5v14z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+          Courses
+        </button>
+        <button class="rail-item">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="2.6"/><path d="M4 5v7c0 1.44 3.58 2.6 8 2.6s8-1.16 8-2.6V5"/><path d="M4 12v7c0 1.44 3.58 2.6 8 2.6s8-1.16 8-2.6v-7"/></svg>
+          Question Bank
+        </button>
+        <button class="rail-item">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-5.5l-2 3h-5l-2-3H2"/><path d="M5.4 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.4-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.8 1.1z"/></svg>
+          Inbox
+        </button>
+        <button class="rail-item">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/></svg>
+          Calendar
+        </button>
+        <button class="rail-item">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+          Account
+        </button>
+        <div class="rail-foot">
+          <button class="rail-collapse">
+            <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18 9 12l6-6"/><path d="M20 18v-12" opacity="0.4"/></svg>
+            Collapse
+          </button>
+        </div>
+      </nav>
+
+      <!-- main column -->
+      <div class="main">
+        <div class="topbar">
+          <div class="crumbs">
+            <span>PrepMasters</span>
+            <span class="sep">/</span>
+            <span class="here">Dashboard</span>
+          </div>
+          <div class="topbar-spacer"></div>
+          <button class="search-pill">
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            Search anything&hellip;
+            <kbd>&#8984;K</kbd>
+          </button>
+          <button class="icon-btn" aria-label="Notifications, 1 unread">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="badge"></span>
+          </button>
+        </div>
+
+        <div class="content">
+          <div class="greeting-row">
+            <h1 class="greeting">Good morning, Kevin</h1>
+            <span class="greeting-date">Thursday, June 11 · 3 sessions this week</span>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-card">
+              <div class="stat-label">Active students</div>
+              <div class="stat-num tnum">47</div>
+              <div class="stat-sub good">
+                <svg class="icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                4 joined this month
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Tests this week</div>
+              <div class="stat-num tnum">3</div>
+              <div class="stat-sub">Next: Practice Test 4, Fri</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Avg score trend</div>
+              <div class="stat-num tnum"><span class="up">+40</span></div>
+              <div class="stat-sub good">vs. previous attempt cycle</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Needs grading</div>
+              <div class="stat-num tnum">6</div>
+              <div class="stat-sub due">2 older than 3 days</div>
+            </div>
+          </div>
+
+          <h2 class="block-title">Your courses <span class="count tnum">3</span></h2>
+          <div class="course-grid">
+            <article class="course-card" style="--accent: var(--academic);">
+              <div class="course-kind">Academic</div>
+              <h3 class="course-name">SAT June Intensive</h3>
+              <div class="course-meta">
+                <span><span class="n tnum">18</span> students</span>
+                <span><span class="n tnum">4</span> modules</span>
+              </div>
+              <div class="mastery-bar"><i style="width:76%"></i></div>
+              <div class="mastery-cap"><span>Avg mastery</span><b class="tnum">76%</b></div>
+            </article>
+            <article class="course-card" style="--accent: var(--academic);">
+              <div class="course-kind">Academic</div>
+              <h3 class="course-name">SAT Weekend Cohort</h3>
+              <div class="course-meta">
+                <span><span class="n tnum">22</span> students</span>
+                <span><span class="n tnum">6</span> modules</span>
+              </div>
+              <div class="mastery-bar"><i style="width:64%"></i></div>
+              <div class="mastery-cap"><span>Avg mastery</span><b class="tnum">64%</b></div>
+            </article>
+            <article class="course-card" style="--accent: var(--counsel);">
+              <div class="course-kind" style="color:var(--counsel);">Counseling</div>
+              <h3 class="course-name">Counseling — Class of 2027</h3>
+              <div class="course-meta">
+                <span><span class="n tnum">7</span> students</span>
+                <span><span class="n tnum">12</span> portfolio items</span>
+              </div>
+              <div class="mastery-bar"><i style="width:58%; background:var(--counsel-fill);"></i></div>
+              <div class="mastery-cap"><span>Portfolio progress</span><b class="tnum">58%</b></div>
+            </article>
+          </div>
+
+          <h2 class="block-title">Needs attention <span class="count tnum">3</span></h2>
+          <div class="attn-panel">
+            <div class="attn-row">
+              <span class="attn-ind err"></span>
+              <div class="attn-main">
+                <div class="attn-text"><b>Emma L.</b> scored <span class="pct tnum">38%</span> on Algebra question set</div>
+                <div class="attn-when">2 hours ago · SAT June Intensive</div>
+              </div>
+              <button class="attn-act">Review attempt</button>
+            </div>
+            <div class="attn-row">
+              <span class="attn-ind warn"></span>
+              <div class="attn-main">
+                <div class="attn-text"><b>Practice Test 4</b> ungraded — <span class="tnum" style="font-weight:600">12</span> submissions waiting</div>
+                <div class="attn-when">Due back to students before Friday's session</div>
+              </div>
+              <button class="attn-act">Open gradebook</button>
+            </div>
+            <div class="attn-row">
+              <span class="attn-ind idle"></span>
+              <div class="attn-main">
+                <div class="attn-text"><b>Marcus T.</b> inactive for <span class="tnum" style="font-weight:600">6</span> days</div>
+                <div class="attn-when">Last seen: Vocabulary in Context, Question 9</div>
+              </div>
+              <button class="attn-act">Send nudge</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4 · MODULES FRAGMENT
+       ============================================================ -->
+  <section class="section">
+    <div class="section-label"><span class="num">04</span> Modules Fragment</div>
+
+    <div class="module-card">
+      <div class="module-head">
+        <button class="chev" aria-label="Collapse module">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <h3 class="module-title">Week 3 — Reading: Craft &amp; Structure</h3>
+        <button class="pill published">
+          <svg class="icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Published
+        </button>
+      </div>
+
+      <!-- row 1 -->
+      <div class="item-row">
+        <span class="grip" aria-hidden="true">
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.6"/><circle cx="15" cy="5" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="19" r="1.6"/><circle cx="15" cy="19" r="1.6"/></svg>
+        </span>
+        <span class="item-icon">
+          <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        </span>
+        <div class="item-main">
+          <div class="item-title">Vocabulary in Context</div>
+          <div class="item-meta">Question Set<span class="sep">·</span><span class="n tnum">24</span> questions</div>
+        </div>
+        <button class="pill published">
+          <svg class="icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Published
+        </button>
+        <button class="kebab" aria-label="More actions">
+          <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>
+        </button>
+      </div>
+
+      <!-- row 2 — frozen in hover state -->
+      <div class="item-row is-hover">
+        <span class="grip" aria-hidden="true">
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.6"/><circle cx="15" cy="5" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="19" r="1.6"/><circle cx="15" cy="19" r="1.6"/></svg>
+        </span>
+        <span class="item-icon">
+          <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>
+        </span>
+        <div class="item-main">
+          <div class="item-title">Craft &amp; Structure mini-lesson</div>
+          <div class="item-meta">Page<span class="sep">·</span>8 min read</div>
+        </div>
+        <button class="pill published">
+          <svg class="icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Published
+        </button>
+        <button class="kebab" aria-label="More actions">
+          <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>
+        </button>
+      </div>
+
+      <!-- row 3 -->
+      <div class="item-row">
+        <span class="grip" aria-hidden="true">
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.6"/><circle cx="15" cy="5" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="19" r="1.6"/><circle cx="15" cy="19" r="1.6"/></svg>
+        </span>
+        <span class="item-icon">
+          <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <div class="item-main">
+          <div class="item-title">Practice Test 4</div>
+          <div class="item-meta">Practice Test<span class="sep">·</span><span class="n tnum">98</span> questions<span class="sep">·</span>2h 14m</div>
+        </div>
+        <button class="pill locked">
+          <svg class="icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          Locked until Fri
+        </button>
+        <button class="kebab" aria-label="More actions">
+          <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>
+        </button>
+      </div>
+
+      <!-- row 4 -->
+      <div class="item-row">
+        <span class="grip" aria-hidden="true">
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.6"/><circle cx="15" cy="5" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="19" r="1.6"/><circle cx="15" cy="19" r="1.6"/></svg>
+        </span>
+        <span class="item-icon">
+          <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/></svg>
+        </span>
+        <div class="item-main">
+          <div class="item-title">Reflection journal</div>
+          <div class="item-meta">Assignment<span class="sep">·</span>No due date yet</div>
+        </div>
+        <button class="pill draft">Draft</button>
+        <button class="kebab" aria-label="More actions">
+          <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="hover-note">
+      <svg class="icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+      Second row shown in hover state: row tints with the academic wash, grip darkens, kebab becomes visible. Status pills toggle publish state in one click.
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · STUDENT "WHAT'S NEXT"
+       ============================================================ -->
+  <section class="section">
+    <div class="section-label"><span class="num">05</span> Student &mdash; What&rsquo;s Next</div>
+
+    <div class="student-col">
+      <h2 class="student-hi">Welcome back, Sophie</h2>
+      <p class="student-sub">You're on track for Friday's practice test. Here's the plan.</p>
+
+      <!-- next up -->
+      <div class="next-card">
+        <span class="next-icon">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <div>
+          <div class="next-eyebrow">Next up</div>
+          <div class="next-title">Practice Test 4</div>
+          <div class="next-meta">
+            <span class="n">Friday 9:00 AM</span>
+            <span class="dotsep">·</span>
+            <span>Reading &amp; Writing Module focus</span>
+          </div>
+        </div>
+        <button class="next-go">
+          Preview directions
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+
+      <!-- continuity / reading log -->
+      <div class="streak-card">
+        <div class="streak-days" role="img" aria-label="Studied 5 of the last 7 days">
+          <span class="day-dot done"><svg class="icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="day-dot done"><svg class="icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="day-dot"></span>
+          <span class="day-dot done"><svg class="icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="day-dot done"><svg class="icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="day-dot done"><svg class="icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="day-dot today"></span>
+        </div>
+        <div class="streak-text">You've studied <b class="tnum">5</b> of the last <b class="tnum">7</b> days. A short set today keeps the log full.</div>
+      </div>
+
+      <!-- skill mastery -->
+      <div class="mastery-card">
+        <div class="mastery-head">
+          <h3 class="mastery-title">Skill mastery</h3>
+          <div class="legend">
+            <span><i class="l0"></i>Untouched</span>
+            <span><i class="l1"></i>Attempted</span>
+            <span><i class="l2"></i>Proficient</span>
+            <span><i class="l3"></i>Mastered</span>
+          </div>
+        </div>
+        <div class="domain-grid">
+          <div class="domain">
+            <div class="domain-name">Information &amp; Ideas <span class="sec">· R&amp;W</span></div>
+            <div class="cells">
+              <span class="sq m3"></span><span class="sq m3"></span><span class="sq m3"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m0"></span>
+            </div>
+          </div>
+          <div class="domain">
+            <div class="domain-name">Craft &amp; Structure <span class="sec">· R&amp;W</span></div>
+            <div class="cells">
+              <span class="sq m3"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m0"></span><span class="sq m0"></span>
+            </div>
+          </div>
+          <div class="domain">
+            <div class="domain-name">Expression of Ideas <span class="sec">· R&amp;W</span></div>
+            <div class="cells">
+              <span class="sq m3"></span><span class="sq m3"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m0"></span>
+            </div>
+          </div>
+          <div class="domain">
+            <div class="domain-name">Standard English Conventions <span class="sec">· R&amp;W</span></div>
+            <div class="cells">
+              <span class="sq m3"></span><span class="sq m3"></span><span class="sq m3"></span><span class="sq m3"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m1"></span><span class="sq m1"></span>
+            </div>
+          </div>
+          <div class="domain">
+            <div class="domain-name">Algebra <span class="sec">· Math</span></div>
+            <div class="cells">
+              <span class="sq m2"></span><span class="sq m2"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span>
+            </div>
+          </div>
+          <div class="domain">
+            <div class="domain-name">Advanced Math <span class="sec">· Math</span></div>
+            <div class="cells">
+              <span class="sq m2"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span>
+            </div>
+          </div>
+          <div class="domain">
+            <div class="domain-name">Problem-Solving &amp; Data Analysis <span class="sec">· Math</span></div>
+            <div class="cells">
+              <span class="sq m3"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m2"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m0"></span>
+            </div>
+          </div>
+          <div class="domain">
+            <div class="domain-name">Geometry &amp; Trigonometry <span class="sec">· Math</span></div>
+            <div class="cells">
+              <span class="sq m1"></span><span class="sq m1"></span><span class="sq m1"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span><span class="sq m0"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- score trajectory -->
+      <div class="traj-card">
+        <div class="traj-head">
+          <h3 class="traj-title">Score trajectory</h3>
+          <span class="traj-delta tnum">+140 over 3 attempts</span>
+        </div>
+        <div class="traj-svg-wrap">
+          <svg width="100%" height="120" viewBox="0 0 580 120" fill="none" role="img" aria-label="Scaled scores rising from 1310 to 1380 to 1450">
+            <!-- gridlines -->
+            <line x1="0" y1="100" x2="580" y2="100" stroke="#EAE4DA" stroke-width="1"/>
+            <line x1="0" y1="62" x2="580" y2="62" stroke="#EAE4DA" stroke-width="1" stroke-dasharray="2 4"/>
+            <line x1="0" y1="24" x2="580" y2="24" stroke="#EAE4DA" stroke-width="1" stroke-dasharray="2 4"/>
+            <!-- area wash -->
+            <path d="M60 88 L290 60 L520 28 L520 100 L60 100 Z" fill="rgba(58,91,199,0.06)"/>
+            <!-- line -->
+            <path d="M60 88 L290 60 L520 28" stroke="#3A5BC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- points -->
+            <circle cx="60" cy="88" r="4.5" fill="#FFFFFF" stroke="#3A5BC7" stroke-width="2"/>
+            <circle cx="290" cy="60" r="4.5" fill="#FFFFFF" stroke="#3A5BC7" stroke-width="2"/>
+            <circle cx="520" cy="28" r="5.5" fill="#3A5BC7" stroke="#FFFFFF" stroke-width="2"/>
+            <!-- score labels -->
+            <text x="60" y="74" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#57534E">1310</text>
+            <text x="290" y="46" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#57534E">1380</text>
+            <text x="520" y="14" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13.5" font-weight="500" fill="#3A5BC7">1450</text>
+            <!-- attempt labels -->
+            <text x="60" y="116" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="11" fill="#8A8178">PT 2 · Apr</text>
+            <text x="290" y="116" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="11" fill="#8A8178">PT 3 · May</text>
+            <text x="520" y="116" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="11" fill="#8A8178">PT 4 · Jun</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 · TEST RUNNER FRAGMENT
+       ============================================================ -->
+  <section class="section">
+    <div class="section-label"><span class="num">06</span> Test Runner</div>
+
+    <div class="runner">
+      <div class="runner-bar">
+        <div class="runner-section"><span class="dir">Section 1, Module 2:</span> Reading and Writing</div>
+        <div class="runner-timer">
+          <span class="t tnum">27:14</span>
+          <button class="hide">Hide</button>
+        </div>
+        <div class="runner-tools">
+          <button class="tool-btn">
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/></svg>
+            Annotate
+          </button>
+          <button class="tool-btn">
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4a1 1 0 0 0-1-1H6.5A2.5 2.5 0 0 0 4 5.5v14z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+            Reference
+          </button>
+          <button class="tool-btn">
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg>
+            Calculator
+          </button>
+        </div>
+      </div>
+
+      <div class="runner-body">
+        <!-- passage pane -->
+        <div class="pane-passage">
+          <div class="passage">
+            <p>For decades, marine biologists judged the health of coral reefs almost entirely by sight, counting fish and measuring living coral cover. Yet a healthy reef is also unmistakably loud: snapping shrimp crackle like static, damselfish grunt and whoop, and sea urchins scrape audibly as they graze.</p>
+            <p>Recording soundscapes at restored reefs in Indonesia, researchers found that this acoustic richness returned within a few years of coral transplantation, closely tracking the recovery seen in visual surveys. <span class="hl">Crucially, drifting fish larvae appear to use these sounds to steer toward suitable habitat, suggesting that sound is not merely a symptom of reef health but a mechanism of its recovery.</span> Some teams now broadcast recordings of thriving reefs at degraded sites&mdash;a technique called acoustic enrichment&mdash;to draw young settlers back.</p>
+          </div>
+        </div>
+
+        <!-- question pane -->
+        <div class="pane-q">
+          <div class="q-tag">
+            <span class="tnum">QUESTION 7</span>
+            <button class="flag" aria-label="Mark for review">
+              <svg class="icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg>
+            </button>
+          </div>
+          <div class="q-stem">Which choice best states the main purpose of the text?</div>
+
+          <div class="choices">
+            <button class="choice selected" aria-pressed="true">
+              <span class="letter">A</span>
+              <span class="text">To explain how reef soundscapes are being studied and applied as both an indicator of and a tool for coral reef recovery</span>
+            </button>
+            <button class="choice">
+              <span class="letter">B</span>
+              <span class="text">To argue that visual surveys of coral reefs should be discontinued in favor of acoustic monitoring</span>
+            </button>
+            <button class="choice eliminated">
+              <span class="letter">C</span>
+              <span class="text">To describe the life cycle of larval fish in recently restored reef habitats</span>
+              <span class="strike-restore">Undo</span>
+            </button>
+            <button class="choice">
+              <span class="letter">D</span>
+              <span class="text">To evaluate the costs of acoustic enrichment relative to other reef restoration techniques</span>
+            </button>
+          </div>
+        </div>
+
+        <button class="navigator">
+          Question <span class="tnum">7</span> of <span class="tnum">27</span>
+          <svg class="icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <p class="runner-note">The runner stays light and Bluebook-calm in every direction — brand personality lives in the chrome margins only, never inside the passage or question panes.</p>
+  </section>
+
+  <!-- ============================================================
+       7 · DARK MODE INSET — "Espresso"
+       ============================================================ -->
+  <section class="section">
+    <div class="section-label"><span class="num">07</span> Dark Mode &mdash; Espresso</div>
+
+    <div class="dark-inset">
+      <!-- rail fragment -->
+      <nav class="d-rail" aria-label="Dark mode navigation sample">
+        <div class="rail-brand">
+          <div class="mark">P</div>
+          <div class="word">PrepMasters</div>
+        </div>
+        <button class="d-item active" aria-current="page">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>
+          Dashboard
+        </button>
+        <button class="d-item">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4a1 1 0 0 0-1-1H6.5A2.5 2.5 0 0 0 4 5.5v14z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+          Courses
+        </button>
+        <button class="d-item">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="2.6"/><path d="M4 5v7c0 1.44 3.58 2.6 8 2.6s8-1.16 8-2.6V5"/><path d="M4 12v7c0 1.44 3.58 2.6 8 2.6s8-1.16 8-2.6v-7"/></svg>
+          Question Bank
+        </button>
+        <button class="d-item">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/></svg>
+          Calendar
+        </button>
+      </nav>
+
+      <!-- course card -->
+      <article class="d-course">
+        <div class="course-kind">Academic</div>
+        <h3 class="course-name">SAT June Intensive</h3>
+        <div class="course-meta">
+          <span><span class="n tnum">18</span> students</span>
+          <span><span class="n tnum">4</span> modules</span>
+        </div>
+        <div class="mastery-bar"><i style="width:76%"></i></div>
+        <div class="mastery-cap"><span>Avg mastery</span><b class="tnum">76%</b></div>
+      </article>
+
+      <!-- stat card -->
+      <div class="d-stat">
+        <div class="stat-label">Avg score trend</div>
+        <div class="stat-num tnum" style="color:var(--d-accent);">+40</div>
+        <div class="stat-sub good">vs. previous attempt cycle</div>
+      </div>
+
+      <div class="dark-caption">
+        <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        Espresso is opt-in for evening review sessions. It never becomes the test-runner default — the runner stays light to match official testing conditions.
+      </div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <span>Direction A · Scholar's Desk · standalone design sample</span>
+    <span class="mono">Fraunces · Hanken Grotesk · Source Serif 4 · JetBrains Mono</span>
+  </footer>
+
+</main>
+</body>
+</html>
