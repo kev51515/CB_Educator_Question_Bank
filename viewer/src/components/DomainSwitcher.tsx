@@ -25,7 +25,6 @@ import {
 } from "react";
 import { useDomain } from "@/lib/DomainProvider";
 import {
-  DOMAINS,
   DOMAIN_VOCAB,
   accentRampFor,
   educatorLabel,
@@ -66,7 +65,12 @@ export function DomainSwitcher({
 }) {
   const labelOf = (d: Domain): string =>
     labels === "home" ? DOMAIN_VOCAB[d].homeNoun : educatorLabel(d);
-  const { domain, setDomain } = useDomain();
+  const { domain, setDomain, availableDomains } = useDomain();
+  // Only offer the domains this user participates in (taught + shared +
+  // enrolled courses; admins get all three). While the set is still loading
+  // (null), or when there's only one domain, the control renders as a static
+  // chip — a student in academic classes is never shown Counseling/Coaching.
+  const options: readonly Domain[] = availableDomains ?? [domain];
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   // Horizontal alignment of the popup. Default right-aligned (correct for a
@@ -133,10 +137,10 @@ export function DomainSwitcher({
   const onTriggerKeyDown = (e: ReactKeyboardEvent<HTMLButtonElement>): void => {
     if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      openMenu(Math.max(0, DOMAINS.indexOf(domain)));
+      openMenu(Math.max(0, options.indexOf(domain)));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      openMenu(DOMAINS.length - 1);
+      openMenu(options.length - 1);
     }
   };
 
@@ -147,11 +151,11 @@ export function DomainSwitcher({
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
-        setActiveIndex((index + 1) % DOMAINS.length);
+        setActiveIndex((index + 1) % options.length);
         break;
       case "ArrowUp":
         e.preventDefault();
-        setActiveIndex((index - 1 + DOMAINS.length) % DOMAINS.length);
+        setActiveIndex((index - 1 + options.length) % options.length);
         break;
       case "Home":
         e.preventDefault();
@@ -159,24 +163,38 @@ export function DomainSwitcher({
         break;
       case "End":
         e.preventDefault();
-        setActiveIndex(DOMAINS.length - 1);
+        setActiveIndex(options.length - 1);
         break;
       case "Enter":
       case " ":
         e.preventDefault();
-        choose(DOMAINS[index]);
+        choose(options[index]);
         break;
       default:
         break;
     }
   };
 
+  // Single-domain users (and the pre-load window) get a static chip: same
+  // look, no menu affordance — there is nothing to switch to.
+  if (options.length <= 1) {
+    return (
+      <span
+        className="inline-flex items-center gap-2 min-h-[40px] rounded-full px-3 py-1.5 text-sm font-medium bg-accent-50 text-accent-700 ring-1 ring-accent-200 dark:bg-accent-950/40 dark:text-accent-200 dark:ring-accent-900"
+        aria-label={`Domain: ${labelOf(domain)}`}
+      >
+        <DomainDot domain={domain} />
+        <span className="truncate max-w-[8rem]">{labelOf(domain)}</span>
+      </span>
+    );
+  }
+
   return (
     <div ref={rootRef} className="relative">
       <button
         ref={triggerRef}
         type="button"
-        onClick={() => (open ? setOpen(false) : openMenu(Math.max(0, DOMAINS.indexOf(domain))))}
+        onClick={() => (open ? setOpen(false) : openMenu(Math.max(0, options.indexOf(domain))))}
         onKeyDown={onTriggerKeyDown}
         aria-haspopup="menu"
         aria-expanded={open}
@@ -210,7 +228,7 @@ export function DomainSwitcher({
           <p className="px-3 pt-2.5 pb-1 text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
             Domain
           </p>
-          {DOMAINS.map((d, index) => {
+          {options.map((d, index) => {
             const checked = d === domain;
             return (
               <button

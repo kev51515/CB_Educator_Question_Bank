@@ -50,6 +50,13 @@ interface DomainContextValue {
    * active domain (call on unmount).
    */
   previewDomain: (next: Domain | null) => void;
+  /**
+   * The domains this user actually participates in (taught + shared +
+   * enrolled courses; admins get all three) — `my_available_domains` RPC.
+   * `null` while still loading. The DomainSwitcher only offers these, so a
+   * student in academic classes is never shown Counseling / Coaching areas.
+   */
+  availableDomains: Domain[] | null;
 }
 
 const DomainContext = createContext<DomainContextValue | null>(null);
@@ -111,6 +118,59 @@ export function DomainProvider({ children }: { children: ReactNode }) {
   // sign-out, profile refetch).
   const deriveSeqRef = useRef(0);
 
+  // Domains the user participates in (null = still loading). Scopes the
+  // switcher; fails OPEN to all three on RPC error — this is UI scoping, not
+  // a data lock, and locking a user out of switching is the worse failure.
+  const [availableDomains, setAvailableDomains] = useState<Domain[] | null>(
+    null,
+  );
+  const availSeqRef = useRef(0);
+  // Mirror for setDomain's guard so its useCallback identity stays stable.
+  const availableRef = useRef<Domain[] | null>(null);
+  availableRef.current = availableDomains;
+
+  useEffect(() => {
+    if (!profile?.id) {
+      setAvailableDomains(null);
+      return;
+    }
+    const seq = ++availSeqRef.current;
+    void (async () => {
+      try {
+        const { data, error } = await supabase.rpc("my_available_domains");
+        if (availSeqRef.current !== seq) return; // superseded
+        if (error) {
+          setAvailableDomains(["academic", "counseling", "coaching"]);
+          return;
+        }
+        const parsed = (Array.isArray(data) ? data : [])
+          .map(asDomain)
+          .filter((d): d is Domain => d !== null);
+        setAvailableDomains(
+          parsed.length > 0
+            ? parsed
+            : ["academic", "counseling", "coaching"],
+        );
+      } catch {
+        if (availSeqRef.current === seq) {
+          setAvailableDomains(["academic", "counseling", "coaching"]);
+        }
+      }
+    })();
+  }, [profile?.id]);
+
+  // If the saved/active domain falls outside the participation set (e.g. a
+  // student whose profile still says 'counseling' after their counseling
+  // course was archived), coerce the LOCAL state to the first available
+  // domain. Local-only on purpose: we re-theme without writing profiles.domain
+  // so a transient mis-read never clobbers the saved preference.
+  useEffect(() => {
+    if (!availableDomains || availableDomains.length === 0) return;
+    if (!availableDomains.includes(domain)) {
+      setDomainState(availableDomains[0]);
+    }
+  }, [availableDomains, domain]);
+
   // Resolve the active domain from the profile. If the profile carries an
   // explicit `domain`, use it. Otherwise derive a default from the user's
   // taught course types via RPC; default to 'academic' on any error.
@@ -160,6 +220,10 @@ export function DomainProvider({ children }: { children: ReactNode }) {
 
   const setDomain = useCallback(
     (next: Domain) => {
+      // Defensive: ignore switches to a domain the user doesn't participate
+      // in (the switcher shouldn't offer one, but guard the API anyway).
+      const avail = availableRef.current;
+      if (avail && !avail.includes(next)) return;
       setDomainState((prev) => {
         if (prev === next) return prev;
         // Optimistic: re-theme immediately, then persist. On failure, roll back.
@@ -184,8 +248,14 @@ export function DomainProvider({ children }: { children: ReactNode }) {
   );
 
   const value = useMemo<DomainContextValue>(
-    () => ({ domain, vocab: DOMAIN_VOCAB[domain], setDomain, previewDomain }),
-    [domain, setDomain, previewDomain],
+    () => ({
+      domain,
+      vocab: DOMAIN_VOCAB[domain],
+      setDomain,
+      previewDomain,
+      availableDomains,
+    }),
+    [domain, setDomain, previewDomain, availableDomains],
   );
 
   return (
@@ -206,5 +276,6 @@ export function useDomain(): DomainContextValue {
     vocab: DOMAIN_VOCAB.academic,
     setDomain: () => {},
     previewDomain: () => {},
+    availableDomains: null,
   };
 }
