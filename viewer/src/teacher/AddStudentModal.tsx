@@ -13,14 +13,16 @@
  * only as a bcrypt hash server-side, so there's no way to retrieve it later —
  * the teacher resets it instead. We make that explicit in the UI.
  *
- * Follows the project modal contract: role=dialog, aria-modal, focus trap,
- * top-right ×, Esc to close, backdrop click closes (panel stops propagation).
+ * Rendered inside the shared ResponsiveModal shell — a mobile bottom sheet /
+ * desktop centered card — which bakes in the project modal contract
+ * (role=dialog, aria-modal, focus trap, top-right ×, Esc + backdrop close,
+ * focus restore). We just feed it the title/subtitle/body.
  */
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
-import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { ResponsiveModal } from "@/components";
 import { studentLoginUrl } from "@/lib/routes";
 
 /** Stable DOM id for the credential QR canvas (read back for print). */
@@ -116,17 +118,18 @@ export function AddStudentModal({
   onCreated,
 }: AddStudentModalProps) {
   const toast = useToast();
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState<string>(() => generatePassword());
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [created, setCreated] = useState<CreatedStudent | null>(null);
-  useEscapeKey(() => {
+
+  // ResponsiveModal drives Esc + backdrop close; gate them while a create is
+  // in flight so a stray Esc/backdrop tap can't drop the modal mid-RPC.
+  const handleClose = useCallback(() => {
     if (!busy) onClose();
-  });
+  }, [busy, onClose]);
 
   const combinedCredentials = useMemo(() => {
     if (!created) return "";
@@ -251,44 +254,19 @@ export function AddStudentModal({
   }, [created, courseName, toast]);
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="add-student-title"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={busy ? undefined : onClose}
+    <ResponsiveModal
+      open={true}
+      onClose={handleClose}
+      title={created ? "Student created" : "Add student"}
+      subtitle={
+        created
+          ? "Hand these to the student. The password is shown only once."
+          : `New login for ${courseName}. No email needed.`
+      }
+      size="md"
+      dismissible={!busy}
     >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div>
-            <h2
-              id="add-student-title"
-              className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-            >
-              {created ? "Student created" : "Add student"}
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              {created
-                ? "Hand these to the student. The password is shown only once."
-                : `New login for ${courseName}. No email needed.`}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              if (!busy) onClose();
-            }}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-          >
-            ✕
-          </button>
-        </header>
-
+      <div className="space-y-4">
         {!created ? (
           <form onSubmit={onSubmit} className="space-y-4">
             <label className="block">
@@ -459,7 +437,7 @@ export function AddStudentModal({
           </div>
         )}
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }
 

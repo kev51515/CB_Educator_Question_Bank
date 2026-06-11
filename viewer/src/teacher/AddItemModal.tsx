@@ -13,9 +13,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
+import { ResponsiveModal } from "@/components";
 import { useAssignments } from "./useAssignments";
 import type { CourseModule, ModuleItemType } from "./useCourseModules";
-import { useFocusTrap } from "@/hooks";
 
 interface AddItemModalProps {
   open: boolean;
@@ -55,8 +55,6 @@ export function AddItemModal({
   const firstFieldRef = useRef<HTMLSelectElement | HTMLInputElement | null>(
     null,
   );
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
 
   const availableAssignments = useMemo(
     () =>
@@ -75,15 +73,6 @@ export function AddItemModal({
     setError(null);
   }, [open]);
 
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
-
   // Auto-focus the first interactive field when the modal opens (or when the
   // item type changes and the relevant field re-mounts). Defer to next tick
   // so the ref callback has fired.
@@ -95,7 +84,7 @@ export function AddItemModal({
     return () => window.clearTimeout(id);
   }, [open, itemType]);
 
-  if (!open || !module) return null;
+  if (!module) return null;
 
   const maxPosition = module.items.reduce(
     (max, it) => (it.position > max ? it.position : max),
@@ -191,43 +180,51 @@ export function AddItemModal({
     }
   };
 
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="add-item-title"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-5 max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
+  const footer = (
+    <div className="flex items-center gap-2">
+      <button
+        type="button"
+        onClick={onClose}
+        className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
       >
-        <header className="flex items-start justify-between gap-3">
-          <h2
-            id="add-item-title"
-            className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-          >
-            Add item to {module.name}
-          </h2>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-          >
-            ✕
-          </button>
-        </header>
+        Cancel
+      </button>
+      <button
+        type="submit"
+        form="add-item-form"
+        disabled={busy || submitDisabledReason !== null}
+        title={submitDisabledReason ?? undefined}
+        aria-describedby={
+          submitDisabledReason ? "add-item-submit-hint" : undefined
+        }
+        className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2.5 disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {busy ? "Adding…" : "Add item"}
+      </button>
+      {submitDisabledReason && (
+        <span id="add-item-submit-hint" className="sr-only">
+          {submitDisabledReason}
+        </span>
+      )}
+    </div>
+  );
 
-        <form
-          onSubmit={(e) => {
-            void onSubmit(e);
-          }}
-          className="space-y-4"
-        >
-          <fieldset className="space-y-2">
+  return (
+    <ResponsiveModal
+      open={open}
+      onClose={onClose}
+      title={`Add item to ${module.name}`}
+      size="md"
+      footer={footer}
+    >
+      <form
+        id="add-item-form"
+        onSubmit={(e) => {
+          void onSubmit(e);
+        }}
+        className="space-y-4"
+      >
+        <fieldset className="space-y-2">
             <legend className="text-sm font-medium text-slate-700 dark:text-slate-300">
               Item type
             </legend>
@@ -270,6 +267,7 @@ export function AddItemModal({
               ) : (
                 <select
                   id="add-item-assignment"
+                  data-autofocus
                   ref={(el) => {
                     firstFieldRef.current = el;
                   }}
@@ -378,34 +376,7 @@ export function AddItemModal({
               {error}
             </div>
           )}
-
-          <div className="flex items-center gap-2 pt-2">
-            <button
-              type="button"
-              onClick={onClose}
-              className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={busy || submitDisabledReason !== null}
-              title={submitDisabledReason ?? undefined}
-              aria-describedby={
-                submitDisabledReason ? "add-item-submit-hint" : undefined
-              }
-              className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2.5 disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              {busy ? "Adding…" : "Add item"}
-            </button>
-            {submitDisabledReason && (
-              <span id="add-item-submit-hint" className="sr-only">
-                {submitDisabledReason}
-              </span>
-            )}
-          </div>
-        </form>
-      </div>
-    </div>
+      </form>
+    </ResponsiveModal>
   );
 }

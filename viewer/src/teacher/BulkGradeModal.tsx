@@ -25,8 +25,8 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
+import { ResponsiveModal } from "@/components";
 import { useToast } from "@/components/Toast";
-import { useFocusTrap } from "@/hooks";
 import { useProfile } from "@/lib/profile";
 import { ConfirmDialog } from "./ConfirmDialog";
 import {
@@ -75,9 +75,6 @@ export function BulkGradeModal({
   const [scoreRaw, setScoreRaw] = useState<string>("");
   const [markAsGraded, setMarkAsGraded] = useState<boolean>(true);
 
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
-
   // --- Feedback templates ---------------------------------------------------
   const { profile } = useProfile();
   const teacherId = profile?.id ?? "";
@@ -109,17 +106,13 @@ export function BulkGradeModal({
     setTemplates(listTemplates(teacherId));
   };
 
-  // Esc to close; Cmd/Ctrl+Enter to apply (when valid).
-  // The handler reads the latest `canApply` via a ref so we don't have to
-  // recompute the listener on every keystroke in the editor.
+  // Cmd/Ctrl+Enter to apply (when valid). Esc-to-close is owned by
+  // ResponsiveModal. The handler reads the latest `canApply` via a ref so we
+  // don't have to recompute the listener on every keystroke in the editor.
   const canApplyRef = useRef<boolean>(false);
   const handleApplyRef = useRef<() => void>(() => {});
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !busy) {
-        onClose();
-        return;
-      }
       if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
         if (canApplyRef.current) {
           e.preventDefault();
@@ -129,7 +122,7 @@ export function BulkGradeModal({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose, busy]);
+  }, []);
 
   const feedbackTrimmed = feedbackHtml.trim();
   const feedbackPresent =
@@ -271,34 +264,70 @@ export function BulkGradeModal({
 
   const count = selectedIds.length;
 
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Apply feedback template to selected attempts"
-      className="fixed inset-0 z-50 flex items-start justify-center bg-slate-900/40 px-4 pt-16 sm:pt-24"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget && !busy) onClose();
-      }}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-2xl rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-xl overflow-hidden"
-      >
-        <header className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
-          <p className="text-xs uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
-            Bulk grade
-          </p>
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-            Apply feedback to {count} attempt{count === 1 ? "" : "s"}
-          </h2>
-          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-            Write the feedback once; we&rsquo;ll send it to every selected
-            attempt in one go.
-          </p>
-        </header>
+  const footer = (
+    <div className="flex items-center justify-between gap-2 flex-wrap">
+      <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+        {hasChanges && (
+          <button
+            type="button"
+            onClick={handleReset}
+            disabled={busy}
+            className="min-h-[40px] rounded-lg px-3 py-2 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+          >
+            Reset
+          </button>
+        )}
+        {canApply && (
+          <span className="hidden sm:inline">
+            <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 ring-1 ring-slate-300 dark:ring-slate-700 text-[10px] font-mono">
+              ⌘↵
+            </kbd>{" "}
+            to apply
+          </span>
+        )}
+      </div>
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={onClose}
+          disabled={busy}
+          className="min-h-[40px] rounded-lg px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          onClick={handleApply}
+          disabled={!canApply}
+          title={
+            applySummary
+              ? `Apply ${applySummary} to ${count} attempt${count === 1 ? "" : "s"}`
+              : undefined
+          }
+          className="min-h-[40px] rounded-lg px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {busy
+            ? "Applying…"
+            : applySummary
+              ? `Apply ${applySummary} to ${count}`
+              : `Apply to ${count}`}
+        </button>
+      </div>
+    </div>
+  );
 
-        <div className="px-6 py-5 space-y-5 max-h-[60vh] overflow-y-auto">
+  return (
+    <>
+      <ResponsiveModal
+        open={true}
+        onClose={onClose}
+        size="xl"
+        dismissible={!busy}
+        title={`Apply feedback to ${count} attempt${count === 1 ? "" : "s"}`}
+        subtitle="Write the feedback once; we'll send it to every selected attempt in one go."
+        footer={footer}
+      >
+        <div className="space-y-5">
           {/* Already-graded warning */}
           {alreadyGradedCount > 0 && (
             <div
@@ -435,6 +464,7 @@ export function BulkGradeModal({
             </label>
             <input
               id="bulk-grade-score"
+              data-autofocus
               type="number"
               inputMode="decimal"
               min={0}
@@ -481,57 +511,7 @@ export function BulkGradeModal({
             </span>
           </label>
         </div>
-
-        <footer className="px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 bg-slate-50 dark:bg-slate-900/60 flex-wrap">
-          <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
-            {hasChanges && (
-              <button
-                type="button"
-                onClick={handleReset}
-                disabled={busy}
-                className="min-h-[40px] rounded-lg px-3 py-2 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-              >
-                Reset
-              </button>
-            )}
-            {canApply && (
-              <span className="hidden sm:inline">
-                <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 ring-1 ring-slate-300 dark:ring-slate-700 text-[10px] font-mono">
-                  ⌘↵
-                </kbd>{" "}
-                to apply
-              </span>
-            )}
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={onClose}
-              disabled={busy}
-              className="min-h-[40px] rounded-lg px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              onClick={handleApply}
-              disabled={!canApply}
-              title={
-                applySummary
-                  ? `Apply ${applySummary} to ${count} attempt${count === 1 ? "" : "s"}`
-                  : undefined
-              }
-              className="min-h-[40px] rounded-lg px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {busy
-                ? "Applying…"
-                : applySummary
-                  ? `Apply ${applySummary} to ${count}`
-                  : `Apply to ${count}`}
-            </button>
-          </div>
-        </footer>
-      </div>
+      </ResponsiveModal>
       {pendingLoadTemplate && (
         <ConfirmDialog
           title="Replace current feedback?"
@@ -576,6 +556,6 @@ export function BulkGradeModal({
           onCancel={() => setPendingDeleteTemplate(null)}
         />
       )}
-    </div>
+    </>
   );
 }

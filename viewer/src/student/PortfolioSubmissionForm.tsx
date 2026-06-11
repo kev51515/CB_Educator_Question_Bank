@@ -21,7 +21,7 @@ import { FileDropzone } from "@/components/FileDropzone";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
 import { SmartDatePicker } from "@/components/SmartDatePicker";
 import { useToast } from "@/components/Toast";
-import { useFocusTrap } from "@/hooks";
+import { ResponsiveModal } from "@/components";
 import {
   STORAGE_BUCKET,
   MAX_FILE_BYTES,
@@ -100,8 +100,6 @@ export function PortfolioSubmissionForm({
   const maxNum = settingsNumber(item.settings, "max");
   const maxChars = item.settings.max_chars;
 
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
   const firstFieldRef = useRef<HTMLTextAreaElement | HTMLInputElement | null>(
     null,
   );
@@ -166,9 +164,7 @@ export function PortfolioSubmissionForm({
       autosaveEnabledRef.current = true;
     }, 0);
 
-    const focusId = window.setTimeout(() => firstFieldRef.current?.focus(), 0);
     return () => {
-      window.clearTimeout(focusId);
       window.clearTimeout(enableId);
       autosaveEnabledRef.current = false;
     };
@@ -314,15 +310,6 @@ export function PortfolioSubmissionForm({
     };
   }, [open, existingFilePath]);
 
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent): void => {
-      if (e.key === "Escape" && !busy) onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose, busy]);
-
   // ---- Live validation ---------------------------------------------------
   // Returns null if valid, or a user-facing message otherwise.
   const fieldError = useMemo((): string | null => {
@@ -388,8 +375,6 @@ export function PortfolioSubmissionForm({
     file,
     existingFilePath,
   ]);
-
-  if (!open) return null;
 
   const handleRestoreDraft = (): void => {
     if (!recoverDraft) return;
@@ -636,6 +621,7 @@ export function PortfolioSubmissionForm({
                 firstFieldRef.current = el;
               }}
               type="text"
+              data-autofocus
               value={textValue}
               onChange={(e) => setTextValue(e.target.value)}
               className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -669,6 +655,7 @@ export function PortfolioSubmissionForm({
                 firstFieldRef.current = el;
               }}
               type="text"
+              data-autofocus
               value={urlValue}
               onChange={(e) => setUrlValue(e.target.value)}
               onBlur={() => setUrlTouched(true)}
@@ -692,6 +679,7 @@ export function PortfolioSubmissionForm({
                 firstFieldRef.current = el;
               }}
               type="number"
+              data-autofocus
               inputMode="decimal"
               value={numberValue}
               onChange={(e) => setNumberValue(e.target.value)}
@@ -808,54 +796,53 @@ export function PortfolioSubmissionForm({
   };
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="portfolio-form-title"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={() => {
+    <ResponsiveModal
+      open={open}
+      onClose={() => {
         if (!busy) onClose();
       }}
+      dismissible={!busy}
+      title={item.title}
+      subtitle={
+        item.prompt ? (
+          <span className="whitespace-pre-wrap">{item.prompt}</span>
+        ) : undefined
+      }
+      size="lg"
+      footer={
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={busy}
+            className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              void save("draft");
+            }}
+            disabled={busy}
+            className="flex-1 rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium px-4 py-2.5 text-slate-700 dark:text-slate-200 disabled:opacity-50"
+          >
+            {busy ? "Saving…" : "Save draft"}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              void save("submitted");
+            }}
+            disabled={busy || !isValid}
+            className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+          >
+            {busy ? "Submitting…" : "Submit"}
+          </button>
+        </div>
+      }
     >
-      <div
-        ref={panelRef}
-        className="relative w-full max-w-xl rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4 max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute right-3 top-3 flex min-h-[40px] min-w-[40px] items-center justify-center rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:text-slate-500 dark:hover:text-slate-300 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M18 6 6 18M6 6l12 12" />
-          </svg>
-        </button>
-        <header className="space-y-1 pr-10">
-          <h2
-            id="portfolio-form-title"
-            className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-          >
-            {item.title}
-          </h2>
-          {item.prompt && (
-            <p className="text-sm text-slate-600 dark:text-slate-300 whitespace-pre-wrap">
-              {item.prompt}
-            </p>
-          )}
-        </header>
-
+      <div className="space-y-4">
         {error && (
           <div
             role="alert"
@@ -938,38 +925,7 @@ export function PortfolioSubmissionForm({
             Fill in the required field to submit
           </p>
         )}
-
-        <div className="flex items-center gap-2 pt-2">
-          <button
-            type="button"
-            onClick={onClose}
-            disabled={busy}
-            className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              void save("draft");
-            }}
-            disabled={busy}
-            className="flex-1 rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium px-4 py-2.5 text-slate-700 dark:text-slate-200 disabled:opacity-50"
-          >
-            {busy ? "Saving…" : "Save draft"}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              void save("submitted");
-            }}
-            disabled={busy || !isValid}
-            className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-          >
-            {busy ? "Submitting…" : "Submit"}
-          </button>
-        </div>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }

@@ -32,9 +32,8 @@ import type {
   AssignmentDifficultyMix,
   AssignmentSourceId,
 } from "./useAssignments";
-import { SmartDatePicker, useToast } from "@/components";
+import { ResponsiveModal, SmartDatePicker, useToast } from "@/components";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
-import { useFocusTrap } from "@/hooks";
 import {
   SOURCE_OPTIONS,
   DIFFICULTY_OPTIONS,
@@ -134,8 +133,6 @@ export function AssignmentFormModal({
   const maxAttemptsRef = useRef<HTMLInputElement | null>(null);
   const latePenaltyRef = useRef<HTMLInputElement | null>(null);
   const graceHoursRef = useRef<HTMLInputElement | null>(null);
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
 
   // Debounce timer + latest-state ref for draft writes. We keep a ref to the
   // current form values so the cleanup function (used to flush on unmount)
@@ -214,24 +211,10 @@ export function AssignmentFormModal({
       if (draft) setPendingRestore(draft);
     }
     setError(null);
-    const id = window.setTimeout(() => titleRef.current?.focus(), 0);
     return () => {
       cancelled = true;
-      window.clearTimeout(id);
     };
   }, [open, mode, initialAssignment, classId]);
-
-  // ---------------------------------------------------------------------------
-  // Esc to close
-  // ---------------------------------------------------------------------------
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
 
   // ---------------------------------------------------------------------------
   // Live validation: re-validate touched fields whenever their value changes.
@@ -451,8 +434,6 @@ export function AssignmentFormModal({
     setTouched((prev) => (prev[field] ? prev : { ...prev, [field]: true }));
   }, []);
 
-  if (!open) return null;
-
   // ---------------------------------------------------------------------------
   // Submit
   // ---------------------------------------------------------------------------
@@ -594,8 +575,8 @@ export function AssignmentFormModal({
     }
   };
 
-  const titleId =
-    mode === "edit" ? "edit-assignment-title" : "create-assignment-title";
+  const formId =
+    mode === "edit" ? "edit-assignment-form" : "create-assignment-form";
   const headingText =
     mode === "edit" ? "Edit assignment" : "Create an assignment";
   const subheading =
@@ -619,40 +600,35 @@ export function AssignmentFormModal({
   const ghErrId = "assignment-grace-hours-error";
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={titleId}
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-lg rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-5 max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div className="space-y-1">
-            <h2
-              id={titleId}
-              className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-            >
-              {headingText}
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              {subheading}
-            </p>
-          </div>
+    <ResponsiveModal
+      open={open}
+      onClose={onClose}
+      title={headingText}
+      subtitle={subheading}
+      size="lg"
+      footer={
+        <div className="flex items-center gap-2">
           <button
             type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
+            onClick={handleCancelClick}
+            className="flex-1 min-h-[40px] rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
-            ✕
+            Cancel
           </button>
-        </header>
-
+          <button
+            type="submit"
+            form={formId}
+            disabled={busy || !isValid}
+            aria-disabled={busy || !isValid}
+            title={!isValid && !busy ? "Fix the highlighted fields" : undefined}
+            className="flex-1 min-h-[40px] rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+          >
+            {submitLabel}
+          </button>
+        </div>
+      }
+    >
+      <div className="space-y-5">
         {/* Draft restore banner — create mode only, only when a non-stale
             draft was found on open and the user hasn't decided yet. */}
         {isCreate && pendingRestore && (
@@ -714,7 +690,7 @@ export function AssignmentFormModal({
           </div>
         )}
 
-        <form onSubmit={onSubmit} className="space-y-4" noValidate>
+        <form id={formId} onSubmit={onSubmit} className="space-y-4" noValidate>
           {error && (
             <div
               role="alert"
@@ -1065,32 +1041,9 @@ export function AssignmentFormModal({
               </span>
             </label>
           )}
-
-          <div className="flex items-center gap-2 pt-2">
-            <button
-              type="button"
-              onClick={handleCancelClick}
-              className="flex-1 min-h-[40px] rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={busy || !isValid}
-              aria-disabled={busy || !isValid}
-              title={
-                !isValid && !busy
-                  ? "Fix the highlighted fields"
-                  : undefined
-              }
-              className="flex-1 min-h-[40px] rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-            >
-              {submitLabel}
-            </button>
-          </div>
         </form>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }
 

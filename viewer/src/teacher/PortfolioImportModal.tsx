@@ -16,9 +16,8 @@
  *
  * Submissions DON'T transfer — surfaced in the subtitle.
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useToast } from "@/components";
-import { useFocusTrap } from "@/hooks";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { ResponsiveModal, useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import {
@@ -81,8 +80,6 @@ export function PortfolioImportModal({
   onClose,
 }: PortfolioImportModalProps) {
   const toast = useToast();
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
 
   const [sourceTemplateId, setSourceTemplateId] = useState<string>("");
   const [sourceItems, setSourceItems] = useState<SourceItem[]>([]);
@@ -303,48 +300,51 @@ export function PortfolioImportModal({
     toast,
   ]);
 
-  if (!open) return null;
-
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Import items from another course's portfolio"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onMouseDown={(e) => {
-        // Only treat the backdrop itself as a click — never a drag-release
-        // that began inside the panel (e.g. text-selection inside the tree).
-        if (e.target !== e.currentTarget) return;
-        if (!submitting) onClose();
-      }}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-2xl rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4 max-h-[90vh] overflow-y-auto"
-        onMouseDown={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div className="space-y-1">
-            <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-              Import items from another course&rsquo;s portfolio
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Items will be added to the end of this course&rsquo;s portfolio.
-              Student submissions don&rsquo;t transfer.
-            </p>
-          </div>
+    <ResponsiveModal
+      open={open}
+      onClose={onClose}
+      dismissible={!submitting}
+      size="lg"
+      title="Import items from another course's portfolio"
+      subtitle="Items will be added to the end of this course's portfolio. Student submissions don't transfer."
+      footer={
+        <div className="flex items-center justify-end gap-2">
           <button
             type="button"
             onClick={() => {
               if (!submitting) onClose();
             }}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
+            disabled={submitting}
+            className="min-h-[40px] md:min-h-0 rounded-lg px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-50"
           >
-            ✕
+            Cancel
           </button>
-        </header>
-
+          <button
+            type="button"
+            onClick={() => {
+              void onClickImport();
+            }}
+            disabled={
+              submitting ||
+              totalSelected === 0 ||
+              !sourceTemplateId ||
+              !hasTargetTemplate
+            }
+            className="min-h-[40px] md:min-h-0 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {submitting
+              ? "Importing…"
+              : totalSelected === 0
+              ? "Import"
+              : totalSelected === 1
+              ? "Import 1 item"
+              : `Import ${totalSelected} items`}
+          </button>
+        </div>
+      }
+    >
+      <div className="space-y-4">
         {/* Step 1: source picker */}
         <section className="space-y-2">
           <label
@@ -374,6 +374,7 @@ export function PortfolioImportModal({
           ) : (
             <select
               id="portfolio-import-source"
+              data-autofocus
               value={sourceTemplateId}
               onChange={(e) => setSourceTemplateId(e.target.value)}
               disabled={submitting}
@@ -502,43 +503,8 @@ export function PortfolioImportModal({
             </div>
           </section>
         )}
-
-        {/* Footer */}
-        <footer className="flex items-center justify-end gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-          <button
-            type="button"
-            onClick={() => {
-              if (!submitting) onClose();
-            }}
-            disabled={submitting}
-            className="min-h-[40px] md:min-h-0 rounded-lg px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-50"
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              void onClickImport();
-            }}
-            disabled={
-              submitting ||
-              totalSelected === 0 ||
-              !sourceTemplateId ||
-              !hasTargetTemplate
-            }
-            className="min-h-[40px] md:min-h-0 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {submitting
-              ? "Importing…"
-              : totalSelected === 0
-              ? "Import"
-              : totalSelected === 1
-              ? "Import 1 item"
-              : `Import ${totalSelected} items`}
-          </button>
-        </footer>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }
 

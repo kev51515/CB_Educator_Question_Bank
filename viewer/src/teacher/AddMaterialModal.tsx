@@ -23,12 +23,11 @@
  * No new deps: we use the browser File API, the global `crypto.randomUUID()`,
  * and the shared FileDropzone component.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { FileDropzone } from "@/components/FileDropzone";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
-import { useToast } from "@/components";
-import { useFocusTrap } from "@/hooks";
+import { ResponsiveModal, useToast } from "@/components";
 
 export type AddMaterialMode = "file" | "link";
 
@@ -126,10 +125,6 @@ export function AddMaterialModal({
   const [error, setError] = useState<string | null>(null);
   const toast = useToast();
 
-  const titleRef = useRef<HTMLInputElement | null>(null);
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
-
   useEffect(() => {
     if (!open) return;
     setTab(initialTab);
@@ -139,20 +134,7 @@ export function AddMaterialModal({
     setProgress({});
     setUrl("");
     setError(null);
-    const id = window.setTimeout(() => titleRef.current?.focus(), 0);
-    return () => window.clearTimeout(id);
   }, [open, initialTab]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !busy) onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose, busy]);
-
-  if (!open) return null;
 
   const onFilesChange = (next: File[]): void => {
     setFiles(next);
@@ -300,42 +282,48 @@ export function AddMaterialModal({
 
   const isBatch = tab === "file" && files.length > 1;
 
+  const footer = (
+    <div className="flex items-center gap-2 w-full">
+      <button
+        type="button"
+        onClick={onClose}
+        disabled={busy}
+        className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        form="add-material-form"
+        disabled={busy}
+        className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+      >
+        {busy
+          ? tab === "file"
+            ? "Uploading…"
+            : "Saving…"
+          : tab === "file"
+            ? files.length > 1
+              ? `Upload ${files.length} files`
+              : "Upload"
+            : "Add link"}
+      </button>
+    </div>
+  );
+
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Add course material"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={() => {
+    <ResponsiveModal
+      open={open}
+      onClose={() => {
         if (!busy) onClose();
       }}
+      dismissible={!busy}
+      title="Add to materials"
+      subtitle="Upload files or paste a link. Students see them in the Materials tab."
+      size="lg"
+      footer={footer}
     >
-      <div
-        ref={panelRef}
-        className="w-full max-w-lg rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4 max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div className="space-y-1">
-            <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-              Add to materials
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Upload files or paste a link. Students see them in the Materials tab.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              if (!busy) onClose();
-            }}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-          >
-            ✕
-          </button>
-        </header>
-
+      <div className="space-y-4">
         <div
           role="tablist"
           aria-label="Material type"
@@ -367,7 +355,7 @@ export function AddMaterialModal({
           </button>
         </div>
 
-        <form onSubmit={onSubmit} className="space-y-4">
+        <form id="add-material-form" onSubmit={onSubmit} className="space-y-4">
           {error && (
             <div
               role="alert"
@@ -402,6 +390,7 @@ export function AddMaterialModal({
               </span>
               <input
                 type="text"
+                data-autofocus
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="https://example.com/notes"
@@ -416,7 +405,7 @@ export function AddMaterialModal({
                 Title
               </span>
               <input
-                ref={titleRef}
+                data-autofocus
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -453,34 +442,8 @@ export function AddMaterialModal({
               />
             </div>
           </div>
-
-          <div className="flex items-center gap-2 pt-2">
-            <button
-              type="button"
-              onClick={onClose}
-              disabled={busy}
-              className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={busy}
-              className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-            >
-              {busy
-                ? tab === "file"
-                  ? "Uploading…"
-                  : "Saving…"
-                : tab === "file"
-                  ? files.length > 1
-                    ? `Upload ${files.length} files`
-                    : "Upload"
-                  : "Add link"}
-            </button>
-          </div>
         </form>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }

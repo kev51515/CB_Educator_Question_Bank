@@ -33,9 +33,8 @@ import { supabase } from "@/lib/supabase";
 import { useCourseTemplates } from "./useCourseTemplates";
 import { DuplicateCourseModal } from "./DuplicateCourseModal";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
-import { useToast } from "@/components";
+import { useToast, ResponsiveModal } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
-import { useFocusTrap } from "@/hooks";
 import {
   MAX_NAME_LENGTH,
   DRAFT_DEBOUNCE_MS,
@@ -114,8 +113,6 @@ export function ClassFormModal({
   const [showCancelConfirm, setShowCancelConfirm] = useState(false);
 
   const nameRef = useRef<HTMLInputElement | null>(null);
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
 
   const draftTimerRef = useRef<number | null>(null);
   const pendingDraftRef = useRef<ClassDraft | null>(null);
@@ -158,27 +155,9 @@ export function ClassFormModal({
     setTemplateSource(null);
     // Type is a create-time choice; default to a normal Class each open.
     setCourseType("class");
-
-    const id = window.setTimeout(() => nameRef.current?.focus(), 0);
-    return () => window.clearTimeout(id);
+    // Initial focus is handled by ResponsiveModal's focus trap via the
+    // `data-autofocus` attribute on the name input.
   }, [open, mode, initialClass]);
-
-  // --- Esc to close (also dismisses cancel-confirm if showing) ---
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        if (showCancelConfirm) {
-          setShowCancelConfirm(false);
-          return;
-        }
-        handleClose();
-      }
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, showCancelConfirm]);
 
   // --- Live validation: re-run validators on every (values, touched) change,
   //     but only write errors for touched fields. ---
@@ -279,6 +258,17 @@ export function ClassFormModal({
       return;
     }
     onClose();
+  };
+
+  // Routed to ResponsiveModal's onClose (Esc + backdrop + × button). If the
+  // dirty-draft confirm banner is already up, a dismiss just closes the banner
+  // rather than the whole modal — preserving the pre-migration Esc behaviour.
+  const requestClose = () => {
+    if (showCancelConfirm) {
+      setShowCancelConfirm(false);
+      return;
+    }
+    handleClose();
   };
 
   const handleRestoreDraft = () => {
@@ -436,8 +426,6 @@ export function ClassFormModal({
     }
   };
 
-  const titleId =
-    mode === "edit" ? "edit-class-title" : "create-class-title";
   const headingText = created
     ? "Course created"
     : mode === "edit"
@@ -463,52 +451,14 @@ export function ClassFormModal({
 
   return (
     <>
-    {open && (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={titleId}
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={handleClose}
+    <ResponsiveModal
+      open={open}
+      onClose={requestClose}
+      title={headingText}
+      subtitle={subheading}
+      size="md"
     >
-      <div
-        ref={panelRef}
-        className="relative w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-5"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={handleClose}
-          aria-label="Close"
-          className="absolute top-2 right-2 inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
-        >
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-        <header className="space-y-1 pr-8">
-          <h2
-            id={titleId}
-            className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-          >
-            {headingText}
-          </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            {subheading}
-          </p>
-        </header>
-
+      <div className="space-y-5">
         {created ? (
           <div className="space-y-4">
             <div className="rounded-xl bg-indigo-50 dark:bg-indigo-950/40 ring-1 ring-indigo-200 dark:ring-indigo-900 px-4 py-4 text-center">
@@ -685,6 +635,7 @@ export function ClassFormModal({
               </span>
               <input
                 ref={nameRef}
+                data-autofocus
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -780,8 +731,7 @@ export function ClassFormModal({
           </form>
         )}
       </div>
-    </div>
-    )}
+    </ResponsiveModal>
     <DuplicateCourseModal
       open={!!templateSource}
       source={templateSource}

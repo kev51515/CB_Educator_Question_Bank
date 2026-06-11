@@ -6,8 +6,8 @@
  * reason that's delivered as the first message) and exchange messages — preset
  * chips + free text — via the shared ProctorChat. All persisted (0113).
  */
-import { useRef, useState } from "react";
-import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { useState } from "react";
+import { ResponsiveModal } from "@/components";
 import { ProctorChat } from "./ProctorChat";
 
 interface ProctorChatModalProps {
@@ -28,45 +28,19 @@ export function ProctorChatModal({
   pauseBusy = false,
   onClose,
 }: ProctorChatModalProps): JSX.Element {
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
-  useEscapeKey(onClose);
   const [reason, setReason] = useState("");
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="proctor-chat-title"
-      className="fixed inset-0 z-[75] flex items-end justify-center bg-slate-900/40 p-0 backdrop-blur-sm sm:items-center sm:p-4"
-      onClick={onClose}
+    <ResponsiveModal
+      open
+      onClose={onClose}
+      title={studentName}
+      subtitle={paused ? "Paused — they can message you" : "In progress"}
+      size="md"
     >
-      <div
-        ref={panelRef}
-        onClick={(e) => e.stopPropagation()}
-        className="flex h-[85vh] w-full max-w-md flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700 sm:h-[80vh] sm:rounded-2xl"
-      >
-        <header className="flex shrink-0 items-start justify-between gap-3 border-b border-slate-200 px-5 py-3 dark:border-slate-800">
-          <div className="min-w-0">
-            <h2 id="proctor-chat-title" className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">
-              {studentName}
-            </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              {paused ? "Paused — they can message you" : "In progress"}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="-mr-1 -mt-1 inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-md text-slate-400 hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-slate-800 dark:hover:text-slate-200"
-          >
-            ✕
-          </button>
-        </header>
-
+      <div className="flex h-[72vh] flex-col sm:h-[68vh]">
         {/* pause / resume control */}
-        <div className="shrink-0 border-b border-slate-200 px-5 py-3 dark:border-slate-800">
+        <div className="shrink-0 border-b border-slate-200 pb-3 dark:border-slate-800">
           {paused ? (
             <button
               type="button"
@@ -80,6 +54,7 @@ export function ProctorChatModal({
             <div className="space-y-2">
               <input
                 type="text"
+                data-autofocus
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 maxLength={500}
@@ -107,7 +82,7 @@ export function ProctorChatModal({
         <ProctorChat
           runId={runId}
           role="staff"
-          className="min-h-0 flex-1 px-4 py-2"
+          className="min-h-0 flex-1 pt-2"
           emptyHint={
             paused
               ? "No messages yet. Send a quick reply or type a note."
@@ -115,6 +90,6 @@ export function ProctorChatModal({
           }
         />
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }

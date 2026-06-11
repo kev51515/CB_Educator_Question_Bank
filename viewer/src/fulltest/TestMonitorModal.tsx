@@ -8,10 +8,10 @@
  * Opened from the Full-Test catalog ("Monitor"). Auto-refreshes; pauses polling
  * while the tab is hidden.
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useEscapeKey, useFocusTrap } from "@/hooks";
 import { useToast } from "@/components/Toast";
+import { ResponsiveModal } from "@/components/ResponsiveModal";
 import { SkeletonRows } from "@/components/Skeleton";
 import { getRunTimeline } from "./api";
 import type { ProctorEvent } from "./api";
@@ -104,9 +104,6 @@ function fmtTime(iso: string | null): string {
 }
 
 export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onSeenRun, onClose }: TestMonitorModalProps) {
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
-  useEscapeKey(onClose);
   const toast = useToast();
 
   const [rows, setRows] = useState<LiveRow[]>([]);
@@ -268,48 +265,31 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
 
   return (
     <>
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={`${title} — live monitor`}
-      className="fixed inset-0 z-[60] flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onClose}
+    <ResponsiveModal
+      open={true}
+      onClose={onClose}
+      size="xl"
+      title={
+        <span className="flex items-center gap-2">
+          <span className="relative flex h-2.5 w-2.5" aria-hidden>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+          </span>
+          <span className="truncate">Live monitor — {title}</span>
+        </span>
+      }
+      subtitle={
+        <>
+          {taking} taking · {done} done · {notStarted} not started
+          {flagged > 0 && (
+            <span className="ml-1 font-medium text-amber-600 dark:text-amber-400">
+              · {flagged} need{flagged === 1 ? "s" : ""} attention
+            </span>
+          )}
+        </>
+      }
     >
-      <div
-        ref={panelRef}
-        className="w-full max-w-2xl max-h-[88vh] overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="relative flex h-2.5 w-2.5" aria-hidden>
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-              </span>
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 truncate">
-                Live monitor — {title}
-              </h2>
-            </div>
-            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
-              {taking} taking · {done} done · {notStarted} not started
-              {flagged > 0 && (
-                <span className="ml-1 font-medium text-amber-600 dark:text-amber-400">
-                  · {flagged} need{flagged === 1 ? "s" : ""} attention
-                </span>
-              )}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-          >
-            ✕
-          </button>
-        </header>
-
+      <div className="space-y-4">
         {!loaded ? (
           <SkeletonRows count={4} rowClassName="h-12" />
         ) : error ? (
@@ -518,7 +498,7 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
           Auto-refreshing every {POLL_MS / 1000}s.
         </p>
       </div>
-    </div>
+    </ResponsiveModal>
     {chatTarget &&
       (() => {
         const rNow = rows.find((x) => x.run_id === chatTarget.runId);

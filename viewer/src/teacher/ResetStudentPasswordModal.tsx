@@ -9,11 +9,11 @@
  *
  * Follows the modal contract (role=dialog, focus trap, ×, Esc, backdrop).
  */
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
-import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { ResponsiveModal } from "@/components";
 import { studentLoginUrl } from "@/lib/routes";
 
 interface ResetStudentPasswordModalProps {
@@ -64,16 +64,11 @@ export function ResetStudentPasswordModal({
   // A claimed seat signs in with its own email; the code/QR are retired.
   const useEmailIdentity = claimed && !!loginEmail;
   const toast = useToast();
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
 
   const [password, setPassword] = useState<string>(() => generatePassword());
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
-  useEscapeKey(() => {
-    if (!busy) onClose();
-  });
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,53 +111,32 @@ export function ResetStudentPasswordModal({
   }, [useEmailIdentity, loginEmail, loginCode, password, toast]);
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="reset-pw-title"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={busy ? undefined : onClose}
+    <ResponsiveModal
+      open={true}
+      onClose={() => {
+        if (!busy) onClose();
+      }}
+      dismissible={!busy}
+      title="Reset password"
+      subtitle={
+        <>
+          {studentName}
+          {useEmailIdentity ? (
+            <>
+              {" · "}
+              <span className="truncate">{loginEmail}</span>
+            </>
+          ) : loginCode ? (
+            <>
+              {" · "}
+              <span className="font-mono">{loginCode}</span>
+            </>
+          ) : null}
+        </>
+      }
+      size="md"
     >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div>
-            <h2
-              id="reset-pw-title"
-              className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-            >
-              Reset password
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              {studentName}
-              {useEmailIdentity ? (
-                <>
-                  {" · "}
-                  <span className="truncate">{loginEmail}</span>
-                </>
-              ) : loginCode ? (
-                <>
-                  {" · "}
-                  <span className="font-mono">{loginCode}</span>
-                </>
-              ) : null}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              if (!busy) onClose();
-            }}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-          >
-            ✕
-          </button>
-        </header>
-
+      <div className="space-y-4">
         {done ? (
           <div className="space-y-4">
             <div className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 bg-white dark:bg-slate-900">
@@ -285,6 +259,6 @@ export function ResetStudentPasswordModal({
           </form>
         )}
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }

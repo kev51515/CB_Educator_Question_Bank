@@ -12,10 +12,10 @@
  * type an invalid character. Paste handling extracts the first 6 valid
  * chars (stripping spaces, hyphens, or anything outside the alphabet).
  */
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
-import { useFocusTrap } from "@/hooks";
+import { ResponsiveModal } from "@/components";
 import { studentCoursePath } from "@/lib/routes";
 
 interface JoinedClass {
@@ -110,32 +110,14 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
   const [joined, setJoined] = useState<JoinedClass | null>(null);
   const toast = useToast();
 
-  const inputRef = useRef<HTMLInputElement | null>(null);
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
-
   useEffect(() => {
     if (!open) return;
     setCode("");
     setError(null);
     setJoined(null);
-    // defer focus so the modal mount completes first
-    const id = window.setTimeout(() => inputRef.current?.focus(), 0);
-    return () => window.clearTimeout(id);
   }, [open]);
 
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
-
   const complete = useMemo(() => isCompleteCode(code), [code]);
-
-  if (!open) return null;
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -184,171 +166,136 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
 
   const hintId = "join-class-format-hint";
   const errorId = "join-class-error";
+  const formId = "join-class-form";
+
+  const footer = joined ? (
+    <button
+      type="button"
+      onClick={onClose}
+      className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+    >
+      Done
+    </button>
+  ) : (
+    <div className="flex items-center gap-2">
+      <button
+        type="button"
+        onClick={onClose}
+        className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        form={formId}
+        disabled={busy || !complete}
+        title={
+          !complete
+            ? "Enter the 6-character code your teacher shared"
+            : undefined
+        }
+        className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+      >
+        {busy ? "Joining…" : "Join course"}
+      </button>
+    </div>
+  );
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="join-class-title"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onClose}
+    <ResponsiveModal
+      open={open}
+      onClose={onClose}
+      title="Join a course"
+      subtitle="Enter the 6-character code your teacher gave you."
+      size="sm"
+      footer={footer}
     >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-5 relative"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute top-3 right-3 inline-flex items-center justify-center w-11 h-11 rounded-full text-slate-500 hover:text-slate-700 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-
-        <header className="space-y-1 pr-10">
-          <h2
-            id="join-class-title"
-            className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-          >
-            Join a course
-          </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            Enter the 6-character code your teacher gave you.
-          </p>
-        </header>
-
-        {joined ? (
-          <div className="space-y-4">
-            <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/40 px-4 py-3 ring-1 ring-emerald-200 dark:ring-emerald-900">
-              <p className="text-sm font-medium text-emerald-800 dark:text-emerald-200">
-                You joined {joined.name}
+      {joined ? (
+        <div className="space-y-4">
+          <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/40 px-4 py-3 ring-1 ring-emerald-200 dark:ring-emerald-900">
+            <p className="text-sm font-medium text-emerald-800 dark:text-emerald-200">
+              You joined {joined.name}
+            </p>
+            {joined.teacher_display_name && (
+              <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-0.5">
+                Teacher: {joined.teacher_display_name}
               </p>
-              {joined.teacher_display_name && (
-                <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-0.5">
-                  Teacher: {joined.teacher_display_name}
-                </p>
+            )}
+          </div>
+        </div>
+      ) : (
+        <form id={formId} onSubmit={onSubmit} className="space-y-4">
+          <label className="block">
+            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+              Course join code
+            </span>
+            <input
+              data-autofocus
+              type="text"
+              value={code}
+              onChange={(e) => setCode(scrubCode(e.target.value))}
+              onPaste={(e) => {
+                // Extract first CODE_LENGTH valid chars from the pasted blob,
+                // stripping spaces, hyphens, and out-of-alphabet characters.
+                const pasted = e.clipboardData.getData("text");
+                if (pasted) {
+                  e.preventDefault();
+                  setCode(scrubCode(pasted));
+                }
+              }}
+              autoCapitalize="characters"
+              autoCorrect="off"
+              spellCheck={false}
+              autoComplete="off"
+              inputMode="text"
+              placeholder="A2C4E6"
+              maxLength={CODE_LENGTH}
+              aria-describedby={`${hintId}${error ? ` ${errorId}` : ""}`}
+              aria-invalid={error ? true : undefined}
+              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-3 text-slate-900 dark:text-slate-100 font-mono tracking-widest text-center uppercase text-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            <div
+              id={hintId}
+              aria-live="polite"
+              className="mt-1 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400"
+            >
+              <span>
+                {code.length === 0
+                  ? "Enter a code"
+                  : "Letters and numbers only (no O, 0, I, 1, or L)"}
+              </span>
+              <span
+                className={
+                  complete
+                    ? "font-medium text-emerald-600 dark:text-emerald-400"
+                    : ""
+                }
+              >
+                {code.length} / {CODE_LENGTH}
+              </span>
+            </div>
+          </label>
+
+          {error && (
+            <div
+              id={errorId}
+              role="alert"
+              className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900 space-y-2"
+            >
+              <p>{error.message}</p>
+              {error.alreadyJoinedCourseId && (
+                <a
+                  href={`#${studentCoursePath(error.alreadyJoinedCourseId)}`}
+                  onClick={onClose}
+                  className="inline-flex items-center gap-1 rounded-md bg-rose-100 dark:bg-rose-900/60 px-2 py-1 text-xs font-medium text-rose-800 dark:text-rose-200 hover:bg-rose-200 dark:hover:bg-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-500"
+                >
+                  Open class →
+                </a>
               )}
             </div>
-            <button
-              type="button"
-              onClick={onClose}
-              className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-            >
-              Done
-            </button>
-          </div>
-        ) : (
-          <form onSubmit={onSubmit} className="space-y-4">
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Course join code
-              </span>
-              <input
-                ref={inputRef}
-                data-autofocus
-                type="text"
-                value={code}
-                onChange={(e) => setCode(scrubCode(e.target.value))}
-                onPaste={(e) => {
-                  // Extract first CODE_LENGTH valid chars from the pasted blob,
-                  // stripping spaces, hyphens, and out-of-alphabet characters.
-                  const pasted = e.clipboardData.getData("text");
-                  if (pasted) {
-                    e.preventDefault();
-                    setCode(scrubCode(pasted));
-                  }
-                }}
-                autoCapitalize="characters"
-                autoCorrect="off"
-                spellCheck={false}
-                autoComplete="off"
-                inputMode="text"
-                placeholder="A2C4E6"
-                maxLength={CODE_LENGTH}
-                aria-describedby={`${hintId}${error ? ` ${errorId}` : ""}`}
-                aria-invalid={error ? true : undefined}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-3 text-slate-900 dark:text-slate-100 font-mono tracking-widest text-center uppercase text-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              <div
-                id={hintId}
-                aria-live="polite"
-                className="mt-1 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400"
-              >
-                <span>
-                  {code.length === 0
-                    ? "Enter a code"
-                    : "Letters and numbers only (no O, 0, I, 1, or L)"}
-                </span>
-                <span
-                  className={
-                    complete
-                      ? "font-medium text-emerald-600 dark:text-emerald-400"
-                      : ""
-                  }
-                >
-                  {code.length} / {CODE_LENGTH}
-                </span>
-              </div>
-            </label>
-
-            {error && (
-              <div
-                id={errorId}
-                role="alert"
-                className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900 space-y-2"
-              >
-                <p>{error.message}</p>
-                {error.alreadyJoinedCourseId && (
-                  <a
-                    href={`#${studentCoursePath(error.alreadyJoinedCourseId)}`}
-                    onClick={onClose}
-                    className="inline-flex items-center gap-1 rounded-md bg-rose-100 dark:bg-rose-900/60 px-2 py-1 text-xs font-medium text-rose-800 dark:text-rose-200 hover:bg-rose-200 dark:hover:bg-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-500"
-                  >
-                    Open class →
-                  </a>
-                )}
-              </div>
-            )}
-
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={onClose}
-                className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                disabled={busy || !complete}
-                title={
-                  !complete
-                    ? "Enter the 6-character code your teacher shared"
-                    : undefined
-                }
-                className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-              >
-                {busy ? "Joining…" : "Join course"}
-              </button>
-            </div>
-          </form>
-        )}
-      </div>
-    </div>
+          )}
+        </form>
+      )}
+    </ResponsiveModal>
   );
 }

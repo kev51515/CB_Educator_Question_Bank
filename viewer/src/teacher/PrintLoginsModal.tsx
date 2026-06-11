@@ -19,13 +19,16 @@
  * QR images are read off hidden <canvas> nodes (qrcode.react QRCodeCanvas) as
  * PNG data URLs so they survive into the separate print document.
  *
- * Modal contract: role=dialog, aria-modal, focus trap, ×, Esc, backdrop click.
+ * Shell: renders inside the shared ResponsiveModal (bottom sheet on mobile,
+ * centered card on desktop) which bakes in the role=dialog / aria-modal /
+ * focus-trap / × / Esc / backdrop-click contract. While a bulk reset is
+ * running, dismissal is disabled and the × is hidden.
  */
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
-import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { ResponsiveModal } from "@/components";
 import { studentCodePrefillUrl, studentLoginUrl } from "@/lib/routes";
 
 export interface PrintableLogin {
@@ -126,8 +129,6 @@ export function PrintLoginsModal({
   onChanged,
 }: PrintLoginsModalProps) {
   const toast = useToast();
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
 
   const [view, setView] = useState<View>("main");
   const [progress, setProgress] = useState({ done: 0, total: 0 });
@@ -135,9 +136,6 @@ export function PrintLoginsModal({
   const [failures, setFailures] = useState<{ name: string; reason: string }[]>([]);
 
   const busy = view === "running";
-  useEscapeKey(() => {
-    if (!busy) onClose();
-  });
 
   // Claimed seats sign in with their own email — the code/QR no longer works for
   // them, and a bulk reset would clobber the password they chose. Split them out.
@@ -297,47 +295,25 @@ export function PrintLoginsModal({
           : "Print all logins";
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="print-logins-title"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={busy ? undefined : onClose}
+    <ResponsiveModal
+      open
+      onClose={onClose}
+      title={headerTitle}
+      subtitle={
+        <>
+          {students.length} managed{" "}
+          {students.length === 1 ? "student" : "students"} in {courseName}
+          {claimedStudents.length > 0
+            ? ` · ${claimedStudents.length} use their own email`
+            : ""}
+          .
+        </>
+      }
+      size="md"
+      dismissible={!busy}
+      hideClose={view === "running"}
     >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div>
-            <h2
-              id="print-logins-title"
-              className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-            >
-              {headerTitle}
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              {students.length} managed{" "}
-              {students.length === 1 ? "student" : "students"} in {courseName}
-              {claimedStudents.length > 0
-                ? ` · ${claimedStudents.length} use their own email`
-                : ""}
-              .
-            </p>
-          </div>
-          {view !== "running" && (
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label="Close"
-              className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-            >
-              ✕
-            </button>
-          )}
-        </header>
-
+      <div className="space-y-4">
         {/* ---------- MAIN ---------- */}
         {view === "main" && (
           <>
@@ -356,6 +332,7 @@ export function PrintLoginsModal({
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
+                      data-autofocus
                       onClick={onPrintCodes}
                       className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 text-sm min-h-[40px]"
                     >
@@ -541,7 +518,7 @@ export function PrintLoginsModal({
           </div>
         )}
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }
 

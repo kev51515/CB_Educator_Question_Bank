@@ -24,9 +24,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
-import { useToast } from "@/components";
+import { ResponsiveModal, useToast } from "@/components";
 import type { DiscussionTopic } from "./useDiscussions";
-import { useFocusTrap } from "@/hooks";
 import {
   MAX_TITLE_LEN,
   MAX_BODY_LEN,
@@ -94,8 +93,6 @@ export function TopicFormModal({
   const toast = useToast();
 
   const titleRef = useRef<HTMLInputElement | null>(null);
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
 
   // Debounce timer + latest-state ref for draft writes. We keep a ref to the
   // current form values so the cleanup function (used to flush on unmount)
@@ -138,18 +135,6 @@ export function TopicFormModal({
     const id = window.setTimeout(() => titleRef.current?.focus(), 0);
     return () => window.clearTimeout(id);
   }, [open, mode, initialTopic, courseId]);
-
-  // ---------------------------------------------------------------------------
-  // Esc to close
-  // ---------------------------------------------------------------------------
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
 
   // ---------------------------------------------------------------------------
   // Live validation: re-validate touched fields whenever their value changes.
@@ -299,8 +284,6 @@ export function TopicFormModal({
     setTouched((prev) => (prev[field] ? prev : { ...prev, [field]: true }));
   }, []);
 
-  if (!open) return null;
-
   // ---------------------------------------------------------------------------
   // Submit
   // ---------------------------------------------------------------------------
@@ -424,41 +407,45 @@ export function TopicFormModal({
       : "Fix the highlighted fields"
     : undefined;
 
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={titleId}
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-lg rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-5 max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div className="space-y-1">
-            <h2
-              id={titleId}
-              className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-            >
-              {headingText}
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              {subheading}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-          >
-            ✕
-          </button>
-        </header>
+  const formId =
+    mode === "edit" ? "edit-topic-form" : "create-topic-form";
 
+  const footer = (
+    <div className="flex items-center gap-2">
+      <button
+        type="button"
+        onClick={handleCancelClick}
+        className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        form={formId}
+        disabled={busy || !isValid}
+        aria-disabled={busy || !isValid}
+        title={disabledTooltip}
+        className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+      >
+        {submitLabel}
+      </button>
+    </div>
+  );
+
+  return (
+    <ResponsiveModal
+      open={open}
+      onClose={handleCancelClick}
+      size="lg"
+      title={
+        <span id={titleId} className="text-lg font-semibold">
+          {headingText}
+        </span>
+      }
+      subtitle={subheading}
+      footer={footer}
+    >
+      <div className="space-y-5">
         {/* Draft restore banner — create mode only, only when a non-stale
             draft was found on open and the user hasn't decided yet. */}
         {isCreate && pendingRestore && (
@@ -520,7 +507,7 @@ export function TopicFormModal({
           </div>
         )}
 
-        <form onSubmit={onSubmit} className="space-y-4" noValidate>
+        <form id={formId} onSubmit={onSubmit} className="space-y-4" noValidate>
           {error && (
             <div
               role="alert"
@@ -640,26 +627,8 @@ export function TopicFormModal({
             </label>
           </div>
 
-          <div className="flex items-center gap-2 pt-2">
-            <button
-              type="button"
-              onClick={handleCancelClick}
-              className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={busy || !isValid}
-              aria-disabled={busy || !isValid}
-              title={disabledTooltip}
-              className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-            >
-              {submitLabel}
-            </button>
-          </div>
         </form>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }

@@ -28,11 +28,10 @@
  * Emails that don't resolve to a profile are reported back so the teacher
  * knows who still needs to sign up via the course join code.
  */
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { FileDropzone } from "@/components/FileDropzone";
-import { useToast } from "@/components";
-import { useFocusTrap } from "@/hooks";
+import { ResponsiveModal, useToast } from "@/components";
 import {
   getErrorMessage,
   parsePastedRows,
@@ -92,8 +91,6 @@ export function BulkRosterModal({
   const [failedEmails, setFailedEmails] = useState<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
   const toast = useToast();
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
 
   // Lowercase set of the existing roster, memoised so we don't rebuild
   // on every keystroke. `existingEmails` may be undefined (caller opted
@@ -270,45 +267,48 @@ export function BulkRosterModal({
       ? "Import"
       : `Import ${importableEmails.length} new student${importableEmails.length === 1 ? "" : "s"}`;
 
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="bulk-roster-title"
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={busy ? undefined : onClose}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
+  const footer = (
+    <div className="flex items-center gap-2">
+      <button
+        type="button"
+        onClick={onClose}
+        disabled={busy}
+        className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-60 disabled:cursor-not-allowed min-h-[40px]"
       >
-        <header className="flex items-start justify-between gap-3">
-          <div>
-            <h2
-              id="bulk-roster-title"
-              className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-            >
-              Bulk add students
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Paste emails or upload a CSV. We&apos;ll enroll any students who
-              already have an account; the rest need to sign up via the join
-              code first.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              if (!busy) onClose();
-            }}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-          >
-            ✕
-          </button>
-        </header>
+        {report || dryRun ? "Close" : "Cancel"}
+      </button>
+      {!report && !dryRun && (
+        <button
+          type="button"
+          onClick={() => {
+            void onImport();
+          }}
+          disabled={importDisabled}
+          aria-label={`Import ${importableEmails.length} new students`}
+          title={
+            importableEmails.length === 0
+              ? "No new rows to import. Add emails above."
+              : undefined
+          }
+          className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 text-sm min-h-[40px]"
+        >
+          {importLabel}
+        </button>
+      )}
+    </div>
+  );
 
+  return (
+    <ResponsiveModal
+      open
+      onClose={onClose}
+      dismissible={!busy}
+      title="Bulk add students"
+      subtitle="Paste emails or upload a CSV. We'll enroll any students who already have an account; the rest need to sign up via the join code first."
+      size="lg"
+      footer={footer}
+    >
+      <div className="space-y-4">
         <div
           role="tablist"
           aria-label="Bulk import source"
@@ -343,6 +343,7 @@ export function BulkRosterModal({
         {tab === "paste" ? (
           <div className="space-y-2">
             <textarea
+              data-autofocus
               rows={6}
               value={pasted}
               onChange={(e) => setPasted(e.target.value)}
@@ -595,36 +596,8 @@ export function BulkRosterModal({
           </div>
         )}
 
-        <div className="flex items-center gap-2 pt-2">
-          <button
-            type="button"
-            onClick={onClose}
-            disabled={busy}
-            className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-60 disabled:cursor-not-allowed min-h-[40px]"
-          >
-            {report || dryRun ? "Close" : "Cancel"}
-          </button>
-          {!report && !dryRun && (
-            <button
-              type="button"
-              onClick={() => {
-                void onImport();
-              }}
-              disabled={importDisabled}
-              aria-label={`Import ${importableEmails.length} new students`}
-              title={
-                importableEmails.length === 0
-                  ? "No new rows to import. Add emails above."
-                  : undefined
-              }
-              className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 text-sm min-h-[40px]"
-            >
-              {importLabel}
-            </button>
-          )}
-        </div>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }
 

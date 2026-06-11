@@ -11,12 +11,11 @@
  * checkboxes + "All / R&W only / Math only" preset pills; the deployed set must
  * be a non-empty CONTIGUOUS range (amber hint + disabled Save otherwise).
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { testRunPath } from "@/lib/routes";
 import { useToast } from "@/components/Toast";
-import { SmartDatePicker } from "@/components";
-import { useEscapeKey, useFocusTrap } from "@/hooks";
+import { ResponsiveModal, SmartDatePicker } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import type { ModuleItem } from "@/teacher/useCourseModules";
 
@@ -50,9 +49,6 @@ function parseLink(url: string | null): { slug: string; range: [number, number] 
 
 export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditTestModulesModalProps) {
   const toast = useToast();
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
-  useEscapeKey(onClose);
 
   const { slug, range } = useMemo(() => parseLink(item.url), [item.url]);
 
@@ -259,62 +255,61 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
     toast,
   ]);
 
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="edit-test-modules-title"
-      className="fixed inset-0 z-[60] flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md max-h-[85vh] overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <h2
-              id="edit-test-modules-title"
-              className="text-lg font-semibold text-slate-900 dark:text-slate-100 truncate"
-            >
-              Edit modules
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{item.title}</p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
-          >
-            ✕
-          </button>
-        </header>
+  const footer =
+    loaded && modules.length > 0 ? (
+      <>
+        <button
+          type="button"
+          onClick={onClose}
+          disabled={saving}
+          className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          onClick={() => void onSave()}
+          disabled={!canSave}
+          className="rounded-md px-3 py-1.5 text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {saving ? "Saving…" : "Save"}
+        </button>
+      </>
+    ) : undefined;
 
-        {!loaded ? (
-          <SkeletonRows count={4} rowClassName="h-10" />
-        ) : modules.length === 0 ? (
-          <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
-            Couldn't load this test's modules.
-          </p>
-        ) : (
-          <div className="space-y-2.5">
-            <div className="space-y-1.5 rounded-md ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-2.5">
-              <div className="flex items-center justify-between gap-2 flex-wrap">
-                <span className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                  Modules to deploy
-                </span>
-                <div className="flex gap-1.5">
-                  <button
-                    type="button"
-                    onClick={() => setBySection("all")}
-                    aria-pressed={deployed.size === modules.length}
-                    disabled={saving}
-                    className={chipClass(deployed.size === modules.length)}
-                  >
-                    All
-                  </button>
+  return (
+    <ResponsiveModal
+      open
+      onClose={onClose}
+      title="Edit modules"
+      subtitle={item.title}
+      size="md"
+      footer={footer}
+    >
+      {!loaded ? (
+        <SkeletonRows count={4} rowClassName="h-10" />
+      ) : modules.length === 0 ? (
+        <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
+          Couldn't load this test's modules.
+        </p>
+      ) : (
+        <div className="space-y-2.5">
+          <div className="space-y-1.5 rounded-md ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-2.5">
+            <div className="flex items-center justify-between gap-2 flex-wrap">
+              <span className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                Modules to deploy
+              </span>
+              <div className="flex gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setBySection("all")}
+                  aria-pressed={deployed.size === modules.length}
+                  disabled={saving}
+                  data-autofocus
+                  className={chipClass(deployed.size === modules.length)}
+                >
+                  All
+                </button>
                   {sections.includes("reading-writing") && (
                     <button
                       type="button"
@@ -399,28 +394,8 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
               Changing the modules affects students who haven't taken it yet;
               students who already submitted keep their existing result.
             </p>
-
-            <div className="flex items-center justify-end gap-2 pt-1">
-              <button
-                type="button"
-                onClick={onClose}
-                disabled={saving}
-                className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                onClick={() => void onSave()}
-                disabled={!canSave}
-                className="rounded-md px-3 py-1.5 text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {saving ? "Saving…" : "Save"}
-              </button>
-            </div>
           </div>
         )}
-      </div>
-    </div>
+    </ResponsiveModal>
   );
 }

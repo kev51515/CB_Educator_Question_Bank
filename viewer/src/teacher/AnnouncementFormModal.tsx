@@ -24,9 +24,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
-import { SmartDatePicker, useToast } from "@/components";
+import { ResponsiveModal, SmartDatePicker, useToast } from "@/components";
 import type { Announcement } from "./useAnnouncements";
-import { useFocusTrap } from "@/hooks";
 import {
   SCHEDULE_PRESETS,
   matchSchedulePreset,
@@ -107,10 +106,7 @@ export function AnnouncementFormModal({
   const [nowTick, setNowTick] = useState(0);
   const toast = useToast();
 
-  const titleRef = useRef<HTMLInputElement | null>(null);
-  const panelRef = useRef<HTMLDivElement | null>(null);
   const publishFieldRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, open);
 
   // Edit mode never shows the picker — we always operate on the existing row.
   const showCoursePicker = allowMultiCourse && mode === "create";
@@ -134,22 +130,13 @@ export function AnnouncementFormModal({
       setSelectedCourseIds(targetCourseIds);
     }
     setError(null);
-    const id = window.setTimeout(() => titleRef.current?.focus(), 0);
-    return () => window.clearTimeout(id);
+    // Initial focus is handled by ResponsiveModal via the [data-autofocus]
+    // attribute on the title input.
     // targetCourseIds is intentionally excluded from deps — we don't want
     // every parent re-render that builds a new array reference to wipe the
     // form. The form is re-seeded only when `open` flips or mode changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, mode, initialAnnouncement]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
 
   const allCandidateIds = useMemo<string[]>(
     () => (availableCourses ?? []).map((c) => c.id),
@@ -177,8 +164,6 @@ export function AnnouncementFormModal({
     const id = window.setInterval(() => setNowTick((t) => t + 1), 30_000);
     return () => window.clearInterval(id);
   }, [open]);
-
-  if (!open) return null;
 
   const isScheduled = publishAt !== null && publishAt !== "";
 
@@ -372,10 +357,6 @@ export function AnnouncementFormModal({
     }
   };
 
-  const titleId =
-    mode === "edit"
-      ? "edit-announcement-title"
-      : "create-announcement-title";
   const headingText =
     mode === "edit" ? "Edit announcement" : "Post an announcement";
   const subheading =
@@ -399,42 +380,34 @@ export function AnnouncementFormModal({
           : "Post announcement";
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={titleId}
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        ref={panelRef}
-        className="w-full max-w-lg rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-5 max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-start justify-between gap-3">
-          <div className="space-y-1">
-            <h2
-              id={titleId}
-              className="text-lg font-semibold text-slate-900 dark:text-slate-100"
-            >
-              {headingText}
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              {subheading}
-            </p>
-          </div>
+    <ResponsiveModal
+      open={open}
+      onClose={onClose}
+      title={headingText}
+      subtitle={subheading}
+      size="lg"
+      footer={
+        <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close"
-            className="rounded-md inline-flex items-center justify-center min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 md:p-1 -mt-1 -mr-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 flex-none"
+            className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
-            ✕
+            Cancel
           </button>
-        </header>
-
-        <form onSubmit={onSubmit} className="space-y-4">
-          {error && (
+          <button
+            type="submit"
+            form="announcement-form"
+            disabled={busy || scheduleError !== null}
+            className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+          >
+            {submitLabel}
+          </button>
+        </div>
+      }
+    >
+      <form id="announcement-form" onSubmit={onSubmit} className="space-y-4">
+        {error && (
             <div
               role="alert"
               className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
@@ -504,7 +477,6 @@ export function AnnouncementFormModal({
               Title
             </span>
             <input
-              ref={titleRef}
               data-autofocus
               type="text"
               value={title}
@@ -634,25 +606,7 @@ export function AnnouncementFormModal({
               </span>
             </span>
           </label>
-
-          <div className="flex items-center gap-2 pt-2">
-            <button
-              type="button"
-              onClick={onClose}
-              className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={busy || scheduleError !== null}
-              className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-            >
-              {submitLabel}
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+      </form>
+    </ResponsiveModal>
   );
 }

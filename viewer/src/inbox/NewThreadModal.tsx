@@ -24,7 +24,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
-import { useFocusTrap } from "@/hooks";
+import { ResponsiveModal } from "@/components";
 
 export interface NewThreadModalProps {
   currentUserId: string;
@@ -111,9 +111,7 @@ export function NewThreadModal({
   const [error, setError] = useState<string | null>(null);
   const [highlightIndex, setHighlightIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const panelRef = useRef<HTMLDivElement | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
   const toast = useToast();
 
   useEffect(() => {
@@ -250,11 +248,6 @@ export function NewThreadModal({
   );
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "Escape") {
-      e.preventDefault();
-      onClose();
-      return;
-    }
     if (visibleList.length === 0) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -339,38 +332,13 @@ export function NewThreadModal({
     : eligibleList.filter((r) => !recentsToShow.some((rr) => rr.id === r.id));
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="new-thread-modal-title"
-      className="fixed inset-0 z-40 flex items-start justify-center bg-slate-900/40 px-4 pt-24"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-      onKeyDown={onKeyDown}
+    <ResponsiveModal
+      open={true}
+      onClose={onClose}
+      title="New conversation"
+      size="md"
     >
-      <div
-        ref={panelRef}
-        className="w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700"
-      >
-        <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3 dark:border-slate-800">
-          <h2
-            id="new-thread-modal-title"
-            className="text-sm font-semibold text-slate-900 dark:text-slate-100"
-          >
-            New conversation
-          </h2>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="grid h-10 w-10 place-items-center rounded-md text-slate-500 hover:bg-slate-100 hover:text-slate-700 motion-safe:transition-colors dark:hover:bg-slate-800 dark:hover:text-slate-200"
-          >
-            <span aria-hidden="true" className="text-lg leading-none">
-              ×
-            </span>
-          </button>
-        </div>
+      <div onKeyDown={onKeyDown} className="-mx-5 -my-4">
         <div className="border-b border-slate-100 p-3 dark:border-slate-800">
           <input
             ref={inputRef}
@@ -467,6 +435,6 @@ export function NewThreadModal({
           )}
         </div>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }

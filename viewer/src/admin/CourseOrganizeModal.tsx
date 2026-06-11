@@ -4,8 +4,8 @@
  * modal per the CLAUDE.md contract (focus trap, Esc/backdrop close, ≥40px
  * close target). All edits apply optimistically through the org hook.
  */
-import { useRef, useState } from "react";
-import { useFocusTrap } from "@/hooks/useFocusTrap";
+import { useState } from "react";
+import { ResponsiveModal } from "@/components";
 import { ColorPicker, TagChip } from "./CourseOrgBits";
 import {
   colorClasses,
@@ -35,9 +35,6 @@ export function CourseOrganizeModal({
   onCreateTag,
   onClose,
 }: Props): JSX.Element {
-  const dialogRef = useRef<HTMLDivElement>(null);
-  useFocusTrap(dialogRef, true);
-
   const currentFolder = org.folderOf.get(course.id) ?? null;
   const courseTagIds = new Set(org.tagsOf.get(course.id) ?? []);
 
@@ -68,39 +65,25 @@ export function CourseOrganizeModal({
   };
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-3 backdrop-blur-sm sm:p-6"
-      onClick={onClose}
-    >
-      <div
-        ref={dialogRef}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="organize-title"
-        onClick={(e) => e.stopPropagation()}
-        className="flex max-h-[calc(100vh-2rem)] w-full max-w-md flex-col overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800"
-      >
-        <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-slate-800">
-          <div className="min-w-0">
-            <h2 id="organize-title" className="text-base font-semibold text-slate-900 dark:text-slate-100">
-              Organize course
-            </h2>
-            <p className="mt-0.5 truncate text-xs text-slate-500 dark:text-slate-400">{course.name}</p>
-          </div>
+    <ResponsiveModal
+      open={true}
+      onClose={onClose}
+      title="Organize course"
+      subtitle={course.name}
+      size="md"
+      footer={
+        <div className="flex justify-end">
           <button
             type="button"
-            data-autofocus
             onClick={onClose}
-            aria-label="Close"
-            className="grid h-10 w-10 flex-none place-items-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-slate-800"
+            className="rounded-lg bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
+            Done
           </button>
         </div>
-
-        <div className="min-h-0 flex-1 space-y-6 overflow-y-auto px-5 py-5">
+      }
+    >
+      <div className="space-y-6">
           {/* ---- folder ---- */}
           <section>
             <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
@@ -109,6 +92,7 @@ export function CourseOrganizeModal({
             <div className="space-y-1">
               <FolderOption
                 label="No folder"
+                autoFocus
                 selected={currentFolder == null}
                 onSelect={() => onSetFolder(course.id, null)}
               />
@@ -226,19 +210,8 @@ export function CourseOrganizeModal({
               </div>
             </form>
           </section>
-        </div>
-
-        <div className="flex justify-end border-t border-slate-200 px-5 py-3 dark:border-slate-800">
-          <button
-            type="button"
-            onClick={onClose}
-            className="rounded-lg bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
-          >
-            Done
-          </button>
-        </div>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }
 
@@ -247,11 +220,13 @@ function FolderOption({
   color,
   selected,
   onSelect,
+  autoFocus,
 }: {
   label: string;
   color?: string | null;
   selected: boolean;
   onSelect: () => void;
+  autoFocus?: boolean;
 }): JSX.Element {
   const c = colorClasses(color ?? null);
   return (
@@ -259,6 +234,7 @@ function FolderOption({
       type="button"
       onClick={onSelect}
       aria-pressed={selected}
+      {...(autoFocus ? { "data-autofocus": true } : {})}
       className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition ${
         selected
           ? `${c.soft} font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 dark:text-slate-100 dark:ring-slate-600`
