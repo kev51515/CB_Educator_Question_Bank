@@ -40,6 +40,14 @@ export interface UseStudentSession {
   session: StudentSession | null;
   loading: boolean;
   signInWithPassword: (email: string, password: string) => Promise<AuthResult>;
+  /**
+   * Passwordless sign-in for a managed student with their teacher-issued login
+   * code (mirrors first-time join). Resolves the code → the seat's CURRENT
+   * account server-side (student-code-login edge fn) and verifies the returned
+   * one-time token to establish a session. Fixes the post-claim "Invalid login
+   * credentials" lockout (the account email is no longer <code>@students.local).
+   */
+  signInWithCode: (code: string) => Promise<AuthResult>;
   signUp: (
     email: string,
     password: string,
@@ -179,6 +187,53 @@ export function useStudentSession(): UseStudentSession {
     },
     [],
   );
+
+  const signInWithCode = useCallback(async (code: string): Promise<AuthResult> => {
+    try {
+      const trimmed = code.trim();
+      if (!trimmed) return { error: "Please enter your login code." };
+      const { data, error } = await supabase.functions.invoke("student-code-login", {
+        body: { code: trimmed },
+      });
+      // functions.invoke returns the parsed body in `data` on 2xx; on non-2xx it
+      // sets `error` (FunctionsHttpError) and stashes the Response in
+      // error.context — read our { error: kind } code out of it for nice copy.
+      if (error) {
+        let kind = "";
+        try {
+          const ctx = (error as { context?: Response }).context;
+          if (ctx && typeof ctx.json === "function") {
+            kind = ((await ctx.json()) as { error?: string })?.error ?? "";
+          }
+        } catch {
+          /* body unreadable — fall through to generic */
+        }
+        if (kind === "rate_limited") {
+          return { error: "Too many attempts. Wait a minute and try again." };
+        }
+        if (kind === "invalid_code") {
+          return { error: "We couldn't find that login code. Check it with your teacher." };
+        }
+        // Network / unexpected — generic, and nudge toward the email path.
+        return {
+          error:
+            "We couldn't sign you in with that code. Check it with your teacher, or sign in with your email and password.",
+        };
+      }
+      const tokenHash = (data as { token_hash?: string } | null)?.token_hash;
+      if (!tokenHash) {
+        return { error: "We couldn't find that login code. Check it with your teacher." };
+      }
+      const { error: vErr } = await supabase.auth.verifyOtp({
+        token_hash: tokenHash,
+        type: "magiclink",
+      });
+      if (vErr) return { error: "That login code couldn't be used. Ask your teacher to re-issue it." };
+      return { error: null };
+    } catch (error: unknown) {
+      return { error: getErrorMessage(error) };
+    }
+  }, []);
 
   const signUp = useCallback(
     async (
@@ -341,6 +396,7 @@ export function useStudentSession(): UseStudentSession {
     session,
     loading,
     signInWithPassword,
+    signInWithCode,
     signUp,
     signOut,
     setArea,

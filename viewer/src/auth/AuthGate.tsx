@@ -135,10 +135,12 @@ function ProfileError({ message, onRetry, onSignOut }: ProfileErrorProps) {
  */
 function PublicRoutes({
   signInWithPassword,
+  signInWithCode,
   signUp,
   requestPasswordReset,
 }: {
   signInWithPassword: ReturnType<typeof useStudentSession>["signInWithPassword"];
+  signInWithCode: ReturnType<typeof useStudentSession>["signInWithCode"];
   signUp: ReturnType<typeof useStudentSession>["signUp"];
   requestPasswordReset: ReturnType<typeof useStudentSession>["requestPasswordReset"];
 }) {
@@ -152,6 +154,7 @@ function PublicRoutes({
         element={
           <AuthScreen
             signInWithPassword={signInWithPassword}
+            signInWithCode={signInWithCode}
             signUp={signUp}
             requestPasswordReset={requestPasswordReset}
             onSwitchToQuickStart={() => navigate(ROUTES.QUICK_START)}
@@ -229,6 +232,7 @@ function AuthGateImpl() {
     session,
     loading,
     signInWithPassword,
+    signInWithCode,
     signUp,
     signOut,
     requestPasswordReset,
@@ -283,6 +287,7 @@ function AuthGateImpl() {
     return (
       <PublicRoutes
         signInWithPassword={signInWithPassword}
+        signInWithCode={signInWithCode}
         signUp={signUp}
         requestPasswordReset={requestPasswordReset}
       />

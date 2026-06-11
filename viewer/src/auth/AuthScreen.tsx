@@ -45,6 +45,8 @@ import {
 
 interface AuthScreenProps {
   signInWithPassword: (email: string, password: string) => Promise<AuthResult>;
+  /** Passwordless student sign-in with a teacher-issued login code. */
+  signInWithCode: (code: string) => Promise<AuthResult>;
   signUp: (
     email: string,
     password: string,
@@ -58,6 +60,7 @@ interface AuthScreenProps {
 
 export function AuthScreen({
   signInWithPassword,
+  signInWithCode,
   requestPasswordReset,
   onSwitchToQuickStart,
 }: AuthScreenProps) {
@@ -112,20 +115,36 @@ export function AuthScreen({
     window.history.replaceState(null, "", window.location.pathname);
   }, []);
 
+  // Students may sign in two ways: with their teacher-issued login CODE (a bare
+  // identifier with no "@" → passwordless, mirrors first-time join) OR with the
+  // email + password they set when claiming. Educators always use email+pwd.
+  const codeMode =
+    signInRole === "student" &&
+    signInEmail.trim().length > 0 &&
+    !signInEmail.includes("@");
+
   const onSignInSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setNotice(null);
-    if (!signInEmail.trim() || !signInPassword) {
-      setError("Please enter your email and password.");
+    const id = signInEmail.trim();
+    if (!id) {
+      setError(
+        signInRole === "student"
+          ? "Enter your login code, or your email and password."
+          : "Please enter your email and password.",
+      );
+      return;
+    }
+    if (!codeMode && !signInPassword) {
+      setError("Please enter your password.");
       return;
     }
     setBusy(true);
     try {
-      const { error: err } = await signInWithPassword(
-        resolveLoginEmail(signInRole, signInEmail),
-        signInPassword,
-      );
+      const { error: err } = codeMode
+        ? await signInWithCode(id)
+        : await signInWithPassword(resolveLoginEmail(signInRole, id), signInPassword);
       if (err) setError(cleanError(err));
     } finally {
       setBusy(false);
@@ -359,40 +378,46 @@ export function AuthScreen({
           {tab === "signin" && signInMode === "password" && (
             <form onSubmit={onSignInSubmit} className="space-y-4">
               <label className="block">
-                <span className={labelCls}>Email</span>
+                <span className={labelCls}>
+                  {signInRole === "student" ? "Login code or email" : "Email"}
+                </span>
                 <input
                   ref={signInEmailRef}
-                  // type="text" (not "email"): the QR/login-link prefill can carry
-                  // a managed-student code, which strict email validation would
-                  // block on submit. resolveLoginEmail() accepts an email as-is or
-                  // maps a bare code to its address.
+                  // type="text" (not "email"): students may enter a bare login
+                  // code here (no "@"), which strict email validation would block.
+                  // A code → passwordless sign-in (codeMode); an email → password.
                   type="text"
                   inputMode="email"
                   value={signInEmail}
                   onChange={(e) => setSignInEmail(e.target.value)}
                   autoComplete="email"
                   className={inputCls}
-                  placeholder="you@example.com"
+                  placeholder={signInRole === "student" ? "ABCDEF or you@example.com" : "you@example.com"}
                 />
                 {signInRole === "student" && (
                   <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
-                    Sign in with your email and password — not the class code.
-                    Scanned a QR from your teacher? It fills in automatically.
+                    {codeMode
+                      ? "Using your login code — no password needed."
+                      : "Enter the login code your teacher gave you (no password needed), or the email + password you set."}
                   </span>
                 )}
               </label>
-              <label className="block">
-                <span className={labelCls}>Password</span>
-                <input
-                  type="password"
-                  value={signInPassword}
-                  onChange={(e) => setSignInPassword(e.target.value)}
-                  autoComplete="current-password"
-                  className={inputCls}
-                  placeholder="••••••••"
-                />
-              </label>
-              {signInRole === "educator" ? (
+              {/* Password is hidden when a student is signing in with their code
+                  (passwordless). Educators and email sign-in always show it. */}
+              {!codeMode && (
+                <label className="block">
+                  <span className={labelCls}>Password</span>
+                  <input
+                    type="password"
+                    value={signInPassword}
+                    onChange={(e) => setSignInPassword(e.target.value)}
+                    autoComplete="current-password"
+                    className={inputCls}
+                    placeholder="••••••••"
+                  />
+                </label>
+              )}
+              {codeMode ? null : signInRole === "educator" ? (
                 <div className="flex justify-end">
                   <button
                     type="button"
@@ -413,7 +438,7 @@ export function AuthScreen({
                 </p>
               )}
               <button type="submit" disabled={busy} className={primaryBtn}>
-                {busy ? "Signing in…" : "Sign in"}
+                {busy ? "Signing in…" : codeMode ? "Sign in with code" : "Sign in"}
               </button>
             </form>
           )}
