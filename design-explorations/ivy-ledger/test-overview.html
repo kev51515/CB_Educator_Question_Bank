@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Test 4 — PrepMasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Onest:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500&family=Fragment+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ivy.css">
+<style>
+  /* page-specific layout only — all color/radius/shadow from ivy.css vars */
+  .pagehead-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+  .pagehead .badges { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .pagehead .actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; padding-top: 26px; }
+
+  /* segmented radiogroups (proctoring / retake policy) */
+  .controls-row { display: flex; align-items: flex-start; gap: 40px; margin-top: 18px; }
+  .seg-block .seg-label { margin-bottom: 7px; }
+  .seg {
+    display: inline-flex; align-items: stretch; padding: 3px;
+    background: var(--surface-sunken); border: 1px solid var(--border);
+    border-radius: var(--r-btn);
+  }
+  .seg button {
+    display: inline-flex; align-items: center; gap: 6px;
+    min-height: 32px; padding: 0 13px; border-radius: 6px;
+    font-size: 12.5px; font-weight: 600; color: var(--ink-3);
+    transition: color 120ms ease, background 120ms ease;
+  }
+  .seg button:hover { color: var(--ink); }
+  .seg button.on { background: var(--surface); color: var(--navy); box-shadow: var(--shadow-card); }
+  .seg button svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+  .seg-hint { margin-top: 6px; font-size: 12px; color: var(--ink-3); }
+
+  /* stat cards */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 26px 0 22px; }
+  .stat .value.units { font-size: 26px; }
+  .stat .value .frac { font-size: 20px; color: var(--ink-3); font-weight: 400; }
+
+  /* structure + domains two-up */
+  .twoup { display: grid; grid-template-columns: 5fr 7fr; gap: 14px; margin-bottom: 22px; }
+  .module-list { list-style: none; }
+  .module-list li {
+    display: flex; align-items: center; gap: 12px;
+    min-height: 46px; padding: 6px 18px;
+  }
+  .module-list li + li { border-top: 1px solid var(--border); }
+  .module-list .modnum {
+    width: 26px; height: 26px; flex-shrink: 0;
+    border-radius: var(--r-full); border: 1px solid var(--border-strong);
+    background: var(--surface-sunken);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-2);
+  }
+  .module-list .modlabel { flex: 1; font-size: 13.5px; font-weight: 500; }
+  .module-list .modmeta { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); }
+
+  .domain-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+  .domain-row {
+    display: flex; align-items: center; gap: 12px;
+    min-height: 42px; padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .domain-row:nth-last-child(-n+2) { border-bottom: none; }
+  .domain-row .dname { flex: 1; font-size: 13px; color: var(--ink-2); min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .domain-row .dpct { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); width: 36px; text-align: right; }
+
+  /* roster */
+  .roster-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 22px 14px; }
+  .roster-head .note { max-width: 430px; font-size: 12.5px; color: var(--ink-3); margin-top: 5px; line-height: 1.5; }
+  .roster-head .bulk { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .table .student-cell { display: flex; align-items: center; gap: 11px; }
+  .table .student-cell .nm { font-weight: 500; font-size: 13.5px; }
+  .table .trend { font-family: var(--font-mono); font-size: 12px; }
+  .trend.up { color: var(--success); }
+  .trend.down { color: var(--error); }
+  .trend.flat { color: var(--ink-3); }
+  .badge.inprogress { background: var(--navy-tint-2); color: var(--navy); }
+  .live-dot { width: 6px; height: 6px; border-radius: var(--r-full); background: var(--navy); display: inline-block; }
+  td .total { font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--ink); }
+  td.dim { color: var(--ink-3); }
+
+  /* row kebab + open menu (resting visual states) */
+  .kebab-btn {
+    width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+    border-radius: var(--r-btn); color: var(--ink-3); opacity: 0;
+    transition: opacity 100ms ease, background 100ms ease;
+  }
+  .kebab-btn svg { width: 16px; height: 16px; fill: currentColor; }
+  tr:hover .kebab-btn { opacity: 1; }
+  tr.is-hover .kebab-btn { opacity: 1; background: var(--navy-tint-2); color: var(--ink); }
+  tr.is-hover { background: var(--navy-tint); }
+  .menu-anchor { position: relative; }
+  .menu {
+    position: absolute; right: 8px; top: 40px; z-index: 30; min-width: 192px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-btn); box-shadow: var(--shadow-overlay);
+    padding: 5px; text-align: left;
+  }
+  .menu button {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    min-height: 36px; padding: 0 10px; border-radius: 6px;
+    font-size: 13px; font-weight: 500; color: var(--ink-2);
+  }
+  .menu button svg { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.6; fill: none; flex-shrink: 0; }
+  .menu button:hover { background: var(--navy-tint); color: var(--ink); }
+  .menu button.danger { color: var(--error); }
+  .menu button.danger:hover { background: var(--error-tint); }
+  .menu .menu-sep { height: 1px; background: var(--border); margin: 5px 6px; }
+  .menu button.focused { background: var(--navy-tint); color: var(--ink); }
+
+  .gold-laurel { width: 15px; height: 15px; stroke: var(--gold); stroke-width: 1.6; fill: none; }
+  .legend { display: flex; align-items: center; gap: 14px; font-size: 11.5px; color: var(--ink-3); }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ======================= left rail ======================= -->
+  <aside class="rail">
+    <div class="rail-brand">
+      <div class="crest">P</div>
+      <div class="name">PrepMasters</div>
+    </div>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Courses
+    </a>
+    <a class="nav-item active" href="#" aria-current="page">
+      <svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01" stroke-linecap="round"/></svg>
+      Question Bank
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+      Inbox
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Calendar
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+      Account
+    </a>
+    <div class="rail-foot">
+      <a class="nav-item" href="#">
+        <svg viewBox="0 0 24 24"><path d="M11 17l-5-5 5-5"/><path d="M18 17l-5-5 5-5"/></svg>
+        Collapse
+        <kbd style="margin-left:auto;font-family:var(--font-mono);font-size:10.5px;padding:1px 5px;border:1px solid var(--border);border-radius:4px;background:var(--surface-sunken);color:var(--ink-3);">⌘B</kbd>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ======================= main ======================= -->
+  <div class="main">
+    <header class="topbar">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <span>Educator</span><span class="sep">/</span>
+        <span>Tests</span><span class="sep">/</span>
+        <span class="here">Practice Test 4</span>
+      </nav>
+      <button class="search" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        Search courses, students, tests…
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="iconbtn" type="button" aria-label="Notifications">
+        <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        <span class="dot"></span>
+      </button>
+      <div class="avatar">KY</div>
+    </header>
+
+    <main class="content">
+
+      <!-- ============ page head ============ -->
+      <div class="pagehead">
+        <div class="pagehead-row">
+          <div>
+            <div class="badges">
+              <span class="badge published">Full-length test</span>
+              <span class="badge" style="background:var(--navy-tint-2);color:var(--navy);">RW + Math</span>
+            </div>
+            <h1 class="h-display">Practice Test 4</h1>
+            <p class="sub">DSAT November 2023 &nbsp;·&nbsp; <span class="num">98</span> questions &nbsp;·&nbsp; <span class="num">4</span> timed modules &nbsp;·&nbsp; <span class="num">2h 14m</span> total</p>
+          </div>
+          <div class="actions">
+            <button class="btn btn-secondary" type="button">
+              <svg viewBox="0 0 24 24"><path d="M6 4.5v15l13-7.5z"/></svg>
+              Preview
+            </button>
+            <button class="btn btn-secondary" type="button">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              Assign to course
+            </button>
+            <button class="btn btn-secondary" type="button">
+              <span class="live-dot" aria-hidden="true"></span>
+              Monitor 2 live
+            </button>
+            <button class="btn btn-primary" type="button">
+              <svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              Release results
+            </button>
+          </div>
+        </div>
+
+        <!-- proctoring + retake policy segmented controls (admin only) -->
+        <div class="controls-row">
+          <div class="seg-block">
+            <div class="eyebrow seg-label">Proctoring level</div>
+            <div class="seg" role="radiogroup" aria-label="Proctoring level">
+              <button type="button" role="radio" aria-checked="false">Off</button>
+              <button type="button" role="radio" aria-checked="true" class="on">Standard</button>
+              <button type="button" role="radio" aria-checked="false">
+                <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                Lockdown
+              </button>
+            </div>
+            <p class="seg-hint">Standard — track tab switches &amp; focus loss.</p>
+          </div>
+          <div class="seg-block">
+            <div class="eyebrow seg-label">Retake policy</div>
+            <div class="seg" role="radiogroup" aria-label="Retake policy">
+              <button type="button" role="radio" aria-checked="true" class="on">One attempt</button>
+              <button type="button" role="radio" aria-checked="false">Unlimited (practice)</button>
+            </div>
+            <p class="seg-hint">One attempt; grant extra attempts per student from their row.</p>
+          </div>
+        </div>
+
+        <div class="double-rule"></div>
+      </div>
+
+      <!-- ============ cohort stat cards ============ -->
+      <section class="stats" aria-label="Cohort summary">
+        <div class="card stat">
+          <p class="label">Average score</p>
+          <p class="value ceremonial num">1287</p>
+          <p class="note">Range 1060–1450 across submissions</p>
+        </div>
+        <div class="card stat">
+          <p class="label">Completion</p>
+          <p class="value num">14<span class="frac">/18</span></p>
+          <p class="note">2 in progress · 2 not started</p>
+        </div>
+        <div class="card stat">
+          <p class="label">Highest score</p>
+          <p class="value num" style="display:flex;align-items:baseline;gap:8px;">1450
+            <svg class="gold-laurel" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v6"/><path d="M7 5c0 4 2 7 5 9 3-2 5-5 5-9"/><path d="M8 21h8M12 14v7"/></svg>
+          </p>
+          <p class="note">Sophia Chen · RW 720 / M 730</p>
+        </div>
+        <div class="card stat">
+          <p class="label">Average time</p>
+          <p class="value num units">2h&hairsp;04m</p>
+          <p class="note">Of 2h 14m allotted</p>
+        </div>
+      </section>
+
+      <!-- ============ structure + by-domain breakdown ============ -->
+      <div class="twoup">
+        <section class="card" aria-label="Test structure">
+          <div class="card-head">
+            <h2 class="h-sub">Structure</h2>
+            <span class="meta num">98 questions</span>
+          </div>
+          <ol class="module-list">
+            <li>
+              <span class="modnum">1</span>
+              <span class="modlabel">Reading &amp; Writing — Module 1</span>
+              <span class="modmeta num">27 q · 32 min</span>
+            </li>
+            <li>
+              <span class="modnum">2</span>
+              <span class="modlabel">Reading &amp; Writing — Module 2</span>
+              <span class="modmeta num">27 q · 32 min</span>
+            </li>
+            <li>
+              <span class="modnum">3</span>
+              <span class="modlabel">Math — Module 1</span>
+              <span class="modmeta num">22 q · 35 min</span>
+            </li>
+            <li>
+              <span class="modnum">4</span>
+              <span class="modlabel">Math — Module 2</span>
+              <span class="modmeta num">22 q · 35 min</span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="card" aria-label="Performance by skill domain">
+          <div class="card-head">
+            <h2 class="h-sub">By skill domain</h2>
+            <div class="legend" aria-hidden="true">
+              <span><i class="msq" style="display:inline-block;"></i> Unseen</span>
+              <span><i class="msq attempted" style="display:inline-block;"></i> Attempted</span>
+              <span><i class="msq proficient" style="display:inline-block;"></i> Proficient</span>
+              <span><i class="msq mastered" style="display:inline-block;"></i> Mastered</span>
+            </div>
+          </div>
+          <div class="card-pad" style="padding-top:14px;padding-bottom:14px;">
+            <div class="domain-grid">
+              <div class="domain-row">
+                <span class="dname">Information &amp; Ideas</span>
+                <span class="mastery"><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq proficient"></i><i class="msq attempted"></i></span>
+                <span class="dpct num">78%</span>
+              </div>
+              <div class="domain-row">
+                <span class="dname">Algebra</span>
+                <span class="mastery"><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq proficient"></i></span>
+                <span class="dpct num">84%</span>
+              </div>
+              <div class="domain-row">
+                <span class="dname">Craft &amp; Structure</span>
+                <span class="mastery"><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq proficient"></i><i class="msq attempted"></i><i class="msq attempted"></i></span>
+                <span class="dpct num">69%</span>
+              </div>
+              <div class="domain-row">
+                <span class="dname">Advanced Math</span>
+                <span class="mastery"><i class="msq mastered"></i><i class="msq proficient"></i><i class="msq proficient"></i><i class="msq attempted"></i><i class="msq"></i></span>
+                <span class="dpct num">61%</span>
+              </div>
+              <div class="domain-row">
+                <span class="dname">Expression of Ideas</span>
+                <span class="mastery"><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq proficient"></i><i class="msq proficient"></i></span>
+                <span class="dpct num">75%</span>
+              </div>
+              <div class="domain-row">
+                <span class="dname">Problem-Solving &amp; Data Analysis</span>
+                <span class="mastery"><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq proficient"></i><i class="msq proficient"></i><i class="msq attempted"></i></span>
+                <span class="dpct num">72%</span>
+              </div>
+              <div class="domain-row">
+                <span class="dname">Standard English Conventions</span>
+                <span class="mastery"><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq mastered"></i><i class="msq attempted"></i></span>
+                <span class="dpct num">81%</span>
+              </div>
+              <div class="domain-row">
+                <span class="dname">Geometry &amp; Trigonometry</span>
+                <span class="mastery"><i class="msq proficient"></i><i class="msq proficient"></i><i class="msq attempted"></i><i class="msq attempted"></i><i class="msq"></i></span>
+                <span class="dpct num">57%</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============ student roster ============ -->
+      <section class="card" aria-label="Students">
+        <div class="roster-head">
+          <div>
+            <h2 class="h-sub">Students</h2>
+            <p class="meta num" style="margin-top:3px;">14 of 18 submitted · 9 released · SAT June Intensive</p>
+            <p class="note"><strong style="color:var(--ink-2);font-weight:600;">Releasing</strong> lets a student open their score and answer review. Until you do, they only see that they finished.</p>
+          </div>
+          <div class="bulk">
+            <button class="btn btn-secondary btn-sm" type="button">Hide all</button>
+            <button class="btn btn-primary btn-sm" type="button">Release all results</button>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" style="width:24%;" aria-sort="none">Student</th>
+              <th scope="col" style="width:15%;">Status</th>
+              <th scope="col" style="width:10%;text-align:right;">RW</th>
+              <th scope="col" style="width:10%;text-align:right;">Math</th>
+              <th scope="col" style="width:11%;text-align:right;" aria-sort="descending">Total ▾</th>
+              <th scope="col" style="width:13%;text-align:right;">vs Test 3</th>
+              <th scope="col" style="width:6%;"><span style="position:absolute;clip:rect(0 0 0 0);">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">SC</span><span class="nm">Sophia Chen</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">720</td>
+              <td class="num" style="text-align:right;">730</td>
+              <td style="text-align:right;"><span class="total">1450</span></td>
+              <td style="text-align:right;"><span class="trend up">+40</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Sophia Chen"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+
+            <!-- hover state shown + kebab menu open (instructive) -->
+            <tr class="is-hover">
+              <td><span class="student-cell"><span class="avatar">MT</span><span class="nm">Marcus Tan</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">660</td>
+              <td class="num" style="text-align:right;">650</td>
+              <td style="text-align:right;"><span class="total">1310</span></td>
+              <td style="text-align:right;"><span class="trend up">+30</span></td>
+              <td style="text-align:right;" class="menu-anchor">
+                <button class="kebab-btn" type="button" aria-haspopup="menu" aria-expanded="true" aria-label="Actions for Marcus Tan"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+                <div class="menu" role="menu" aria-label="Row actions">
+                  <button type="button" role="menuitem" class="focused">
+                    <svg viewBox="0 0 24 24"><path d="M14 3h7v7"/><path d="M21 3 11 13"/><path d="M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg>
+                    View report
+                  </button>
+                  <button type="button" role="menuitem">
+                    <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.3"/><path d="M3 4v5h5"/></svg>
+                    Allow retake
+                  </button>
+                  <div class="menu-sep" role="separator"></div>
+                  <button type="button" role="menuitem" class="danger">
+                    <svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg>
+                    Reset attempt
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><span class="student-cell"><span class="avatar">DP</span><span class="nm">Daniel Park</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">640</td>
+              <td class="num" style="text-align:right;">660</td>
+              <td style="text-align:right;"><span class="total">1300</span></td>
+              <td style="text-align:right;"><span class="trend down">&minus;10</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Daniel Park"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">OW</span><span class="nm">Olivia Wang</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">670</td>
+              <td class="num" style="text-align:right;">620</td>
+              <td style="text-align:right;"><span class="total">1290</span></td>
+              <td style="text-align:right;"><span class="trend up">+60</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Olivia Wang"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">IL</span><span class="nm">Isabella Lin</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">650</td>
+              <td class="num" style="text-align:right;">610</td>
+              <td style="text-align:right;"><span class="total">1260</span></td>
+              <td style="text-align:right;"><span class="trend up">+20</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Isabella Lin"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">EK</span><span class="nm">Ethan Kim</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">610</td>
+              <td class="num" style="text-align:right;">640</td>
+              <td style="text-align:right;"><span class="total">1250</span></td>
+              <td style="text-align:right;"><span class="trend down">&minus;20</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Ethan Kim"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">MH</span><span class="nm">Mia Huang</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">630</td>
+              <td class="num" style="text-align:right;">590</td>
+              <td style="text-align:right;"><span class="total">1220</span></td>
+              <td style="text-align:right;"><span class="trend up">+50</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Mia Huang"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">EL</span><span class="nm">Emma Liu</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">620</td>
+              <td class="num" style="text-align:right;">560</td>
+              <td style="text-align:right;"><span class="total">1180</span></td>
+              <td style="text-align:right;"><span class="trend down">&minus;20</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Emma Liu"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">JW</span><span class="nm">Jason Wu</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">580</td>
+              <td class="num" style="text-align:right;">560</td>
+              <td style="text-align:right;"><span class="total">1140</span></td>
+              <td style="text-align:right;"><span class="trend flat">±0</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Jason Wu"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">LB</span><span class="nm">Lucas Brown</span></span></td>
+              <td><span class="badge published">Submitted</span></td>
+              <td class="num" style="text-align:right;">540</td>
+              <td class="num" style="text-align:right;">520</td>
+              <td style="text-align:right;"><span class="total">1060</span></td>
+              <td style="text-align:right;"><span class="trend down">&minus;40</span></td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Lucas Brown"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">AR</span><span class="nm">Ava Rodriguez</span></span></td>
+              <td><span class="badge inprogress"><span class="live-dot" aria-hidden="true"></span>In progress</span></td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td class="dim" style="text-align:right;">Math M1 · Q14</td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Ava Rodriguez"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">NG</span><span class="nm">Noah Garcia</span></span></td>
+              <td><span class="badge inprogress"><span class="live-dot" aria-hidden="true"></span>In progress</span></td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td class="dim" style="text-align:right;">RW M2 · Q21</td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for Noah Garcia"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><span class="student-cell"><span class="avatar">DK</span><span class="nm">David Koh</span></span></td>
+              <td><span class="badge draft">Not started</span></td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td class="dim" style="text-align:right;">Hasn't opened yet</td>
+              <td class="dim" style="text-align:right;">—</td>
+              <td style="text-align:right;"><button class="kebab-btn" type="button" aria-haspopup="menu" aria-label="Actions for David Koh"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>

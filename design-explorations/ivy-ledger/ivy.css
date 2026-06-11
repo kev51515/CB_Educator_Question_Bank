@@ -1,0 +1,382 @@
+/* ==========================================================================
+   IVY LEDGER — refined design kit (v2)
+   Aspirational academia: navy ink on eggshell paper, ceremonial gold.
+   This file doubles as the token spec for the Tailwind migration.
+
+   Rules of the system
+   - The page is eggshell (#FBFAF7), cards are white. Depth comes free.
+   - ALL text is navy-cast. There is no pure black anywhere.
+   - Gold appears ONLY as: score/stat numerals >= 18px, small icons,
+     thin rules, milestone moments. Never body text, never fills on
+     small elements, never more than ~3 places per screen.
+   - No accent bars/stripes/top-rules on cards. Domain identity comes
+     from eyebrow labels, monogram tints, and typography.
+   - Exactly three radii (full / 8 / 14) and two shadows (card / overlay).
+   - Numerals are tabular everywhere data appears.
+   - Serif (Newsreader) for page titles + ceremonial numbers; Onest for
+     everything operational; Literata only for passage/reading content.
+   ========================================================================== */
+
+:root {
+  /* grounds */
+  --bg:            #FBFAF7;
+  --surface:       #FFFFFF;
+  --surface-sunken:#F5F3EC;   /* wells, table header bands, input bg */
+  --border:        #E9E6DE;
+  --border-strong: #D3CFC2;
+
+  /* navy-cast text ramp */
+  --ink:   #1B2A4A;
+  --ink-2: #44516B;
+  --ink-3: #6E7A95;           /* nudged darker than v1 (#76819A) for AA at 12.5px */
+
+  /* academic accent */
+  --navy:        #24407E;
+  --navy-hover:  #1A2F61;
+  --navy-tint:   rgba(36, 64, 126, 0.06);
+  --navy-tint-2: rgba(36, 64, 126, 0.11);
+
+  /* ceremonial gold */
+  --gold:         #B9892C;
+  --gold-deep:    #94701F;
+  --gold-chip-bg: #F7EFD9;
+  --gold-chip-ink:#6E5212;
+
+  /* domain triad (academic = navy above) */
+  --counseling:      #2E6B4F;
+  --counseling-fill: #3F8A67;
+  --counseling-tint: rgba(46, 107, 79, 0.08);
+  --coaching:        #B05A14;
+  --coaching-fill:   #DD7A28;
+  --coaching-tint:   rgba(176, 90, 20, 0.08);
+
+  /* semantic */
+  --success:      #2E6B4F;
+  --success-tint: rgba(46, 107, 79, 0.09);
+  --warning:      #8F6A10;
+  --warning-tint: #FBF3DC;
+  --error:        #B23A30;
+  --error-tint:   rgba(178, 58, 48, 0.07);
+
+  /* Midnight Quad (opt-in dark; never the runner) */
+  --d-bg:      #0C1220;
+  --d-surface: #141C30;
+  --d-raised:  #1B2540;
+  --d-border:  #283455;
+  --d-ink:     #ECF0F8;
+  --d-ink-2:   #ADB8CE;
+  --d-ink-3:   #75819C;
+  --d-accent:  #8FB0FF;
+  --d-gold:    #D9B45B;
+
+  /* geometry */
+  --r-full: 999px;
+  --r-btn:  8px;
+  --r-card: 14px;
+
+  /* elevation — the only two shadows */
+  --shadow-card:    0 1px 2px rgba(27,42,74,.05), 0 3px 10px rgba(27,42,74,.06);
+  --shadow-overlay: 0 4px 14px rgba(27,42,74,.10), 0 18px 44px rgba(27,42,74,.16);
+
+  /* type */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-ui:      'Onest', -apple-system, 'PingFang TC', 'Noto Sans TC', sans-serif;
+  --font-serif:   'Literata', Georgia, 'Noto Serif TC', serif;
+  --font-mono:    'Fragment Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* type scale (px) — the canon */
+  --t-display: 30px;   /* page h1 — Newsreader 500, tracking -0.5px */
+  --t-title:   20px;   /* card/panel h2 — Onest 600 */
+  --t-sub:     16px;   /* row titles — Onest 600 */
+  --t-body:    14.5px; /* default UI */
+  --t-meta:    12.5px; /* secondary meta */
+  --t-micro:   11.5px; /* eyebrows, uppercase labels */
+  --t-passage: 16.5px; /* Literata, lh 1.65, measure <= 36rem */
+}
+
+/* ---------- base ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: var(--t-body);
+  line-height: 1.55;
+}
+::selection { background: rgba(36, 64, 126, 0.16); }
+button { font-family: inherit; font-size: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+a { color: var(--navy); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; border-radius: 4px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- type recipes ---------- */
+.h-display {
+  font-family: var(--font-display); font-optical-sizing: auto;
+  font-size: var(--t-display); font-weight: 500; letter-spacing: -0.01em;
+  line-height: 1.15; color: var(--ink);
+}
+.h-title  { font-size: var(--t-title); font-weight: 600; letter-spacing: -0.01em; }
+.h-sub    { font-size: var(--t-sub); font-weight: 600; letter-spacing: -0.005em; }
+.eyebrow {
+  font-size: var(--t-micro); font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3);
+}
+.meta { font-size: var(--t-meta); color: var(--ink-3); }
+.passage {
+  font-family: var(--font-serif); font-size: var(--t-passage);
+  line-height: 1.65; max-width: 36rem; text-wrap: pretty; color: var(--ink);
+}
+
+/* signature divider: two hairlines 2px apart. Under page titles. */
+.double-rule { height: 4px; border-top: 1px solid var(--border-strong); border-bottom: 1px solid var(--border-strong); }
+.double-rule.gold { border-color: var(--gold); opacity: 0.65; }  /* ceremonial only */
+
+/* ceremonial numeral — Newsreader + gold. Score heroes ONLY. */
+.ceremonial {
+  font-family: var(--font-display); font-weight: 500;
+  color: var(--gold-deep); font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   APP SHELL — left rail + topbar (educator + student share the anatomy)
+   ========================================================================== */
+.shell { display: flex; min-height: 100vh; }
+.rail {
+  width: 188px; flex-shrink: 0; padding: 18px 12px 16px;
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 2px;
+  position: sticky; top: 0; height: 100vh;
+}
+.rail-brand {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 10px 16px; margin-bottom: 6px;
+}
+.rail-brand .crest {
+  width: 30px; height: 30px; border-radius: var(--r-full);
+  background: var(--navy); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 15px; font-weight: 500;
+}
+.rail-brand .name { font-size: 14.5px; font-weight: 600; letter-spacing: -0.01em; }
+.nav-item {
+  display: flex; align-items: center; gap: 11px;
+  min-height: 40px; padding: 0 10px; border-radius: var(--r-btn);
+  font-size: 13.5px; font-weight: 500; color: var(--ink-2);
+  position: relative; transition: background 120ms ease, color 120ms ease;
+}
+.nav-item svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.6; fill: none; opacity: 0.85; }
+.nav-item:hover { background: var(--navy-tint); color: var(--ink); }
+.nav-item.active { background: var(--navy-tint-2); color: var(--navy); font-weight: 600; }
+.rail-foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); }
+
+.main { flex: 1; min-width: 0; }
+.topbar {
+  height: 52px; display: flex; align-items: center; gap: 16px;
+  padding: 0 28px; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: rgba(251, 250, 247, 0.92);
+  backdrop-filter: blur(8px); z-index: 20;
+}
+.crumbs { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-3); }
+.crumbs .sep { color: var(--border-strong); }
+.crumbs .here { color: var(--ink); font-weight: 600; }
+.search {
+  margin-left: auto; display: flex; align-items: center; gap: 9px;
+  height: 34px; width: 280px; padding: 0 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-btn); color: var(--ink-3); font-size: 13px;
+}
+.search:hover { border-color: var(--border-strong); }
+.search kbd {
+  margin-left: auto; font-family: var(--font-mono); font-size: 10.5px;
+  padding: 2px 5px; border: 1px solid var(--border); border-radius: 4px;
+  background: var(--surface-sunken); color: var(--ink-3);
+}
+.iconbtn {
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-btn); color: var(--ink-2); position: relative;
+}
+.iconbtn:hover { background: var(--navy-tint); color: var(--ink); }
+.iconbtn svg { width: 19px; height: 19px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+.iconbtn .dot {
+  position: absolute; top: 7px; right: 7px; width: 7px; height: 7px;
+  border-radius: var(--r-full); background: var(--error); border: 1.5px solid var(--bg);
+}
+
+.content { padding: 32px 36px 96px; max-width: 1240px; }
+.content.reading { max-width: 760px; }   /* student narrative surfaces */
+
+/* page header block: display title + double rule */
+.pagehead { margin-bottom: 28px; }
+.pagehead .h-display { margin-bottom: 6px; }
+.pagehead .sub { font-size: 14px; color: var(--ink-2); }
+.pagehead .double-rule { margin-top: 18px; }
+
+/* ==========================================================================
+   COMPONENTS
+   ========================================================================== */
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 38px; padding: 0 16px; border-radius: var(--r-btn);
+  font-size: 13.5px; font-weight: 600; letter-spacing: 0.005em;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--navy-hover); }
+.btn-secondary { background: var(--surface); color: var(--ink); border: 1px solid var(--border-strong); }
+.btn-secondary:hover { border-color: var(--ink-3); background: var(--surface); }
+.btn-ghost { color: var(--ink-2); }
+.btn-ghost:hover { background: var(--navy-tint); color: var(--ink); }
+.btn-danger { background: var(--surface); color: var(--error); border: 1px solid rgba(178,58,48,.35); }
+.btn-danger:hover { background: var(--error-tint); border-color: var(--error); }
+.btn-sm { min-height: 32px; padding: 0 12px; font-size: 12.5px; }
+
+/* toolbar pill (Modules-style action chips) */
+.pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 32px; padding: 0 13px; border-radius: var(--r-full);
+  font-size: 12.5px; font-weight: 600;
+  background: var(--surface); border: 1px solid var(--border); color: var(--ink-2);
+  transition: all 120ms ease;
+}
+.pill:hover { border-color: var(--border-strong); color: var(--ink); }
+.pill svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+.pill.navy:hover { border-color: var(--navy); color: var(--navy); background: var(--navy-tint); }
+.pill.green:hover { border-color: var(--counseling); color: var(--counseling); background: var(--counseling-tint); }
+.pill.red:hover { border-color: var(--error); color: var(--error); background: var(--error-tint); }
+
+/* ---------- cards ---------- */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-card); box-shadow: var(--shadow-card);
+}
+.card.hoverable { transition: border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease; }
+.card.hoverable:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+.card-pad { padding: 20px 22px; }
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 22px; border-bottom: 1px solid var(--border);
+}
+.card-head .h-sub { flex: 1; }
+
+/* stat card */
+.stat { padding: 18px 20px 16px; }
+.stat .label { font-size: var(--t-meta); color: var(--ink-2); font-weight: 500; }
+.stat .value {
+  font-family: var(--font-display); font-size: 34px; font-weight: 500;
+  font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+  line-height: 1.1; margin-top: 6px;
+}
+.stat .note { font-size: 12px; color: var(--ink-3); margin-top: 6px; }
+
+/* monogram disc (course identity) */
+.crest-disc {
+  width: 36px; height: 36px; border-radius: var(--r-full);
+  border: 1px solid var(--border-strong); background: var(--surface-sunken);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 14px; font-weight: 500; color: var(--navy);
+}
+.crest-disc.counseling { color: var(--counseling); }
+.crest-disc.coaching { color: var(--coaching); }
+
+/* ---------- status language ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 24px; padding: 0 10px; border-radius: var(--r-full);
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.02em;
+}
+.badge svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 2; fill: none; }
+.badge.published { background: var(--success-tint); color: var(--success); }
+.badge.draft { background: var(--surface-sunken); color: var(--ink-3); border: 1px dashed var(--border-strong); }
+.badge.locked { background: var(--warning-tint); color: var(--warning); }
+.badge.overdue { background: var(--error-tint); color: var(--error); }
+.badge.gold { background: var(--gold-chip-bg); color: var(--gold-chip-ink); }
+/* clickable status (publish toggle) gets affordance; inert ones don't */
+.badge.toggle { cursor: pointer; }
+.badge.toggle:hover { box-shadow: inset 0 0 0 1px currentColor; }
+
+/* ---------- rows & lists ---------- */
+.row {
+  display: flex; align-items: center; gap: 12px;
+  min-height: 52px; padding: 8px 16px;
+  transition: background 100ms ease;
+}
+.row + .row { border-top: 1px solid var(--border); }
+.row:hover { background: var(--navy-tint); }
+.row .grip { color: var(--border-strong); cursor: grab; flex-shrink: 0; }
+.row:hover .grip { color: var(--ink-3); }
+.row .kebab { opacity: 0; transition: opacity 100ms ease; }
+.row:hover .kebab, .row:focus-within .kebab { opacity: 1; }
+
+/* ---------- tables (gradebook / rosters) ---------- */
+.table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.table th {
+  text-align: left; font-size: var(--t-micro); font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
+  padding: 10px 14px; background: var(--surface-sunken);
+  border-bottom: 1px solid var(--border); white-space: nowrap;
+}
+.table td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.table tr:last-child td { border-bottom: none; }
+.table tbody tr { transition: background 100ms ease; }
+.table tbody tr:hover { background: var(--navy-tint); }
+.table .num { font-family: var(--font-mono); font-size: 12.5px; }
+
+/* score cells (gradebook) — outlier-only color: a table full of tinted
+   numbers means color stops meaning anything. Default is ink; only scores
+   that need a teacher's eye (low) get semantic color. */
+.score-cell { font-family: var(--font-mono); font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.score-cell.good { color: var(--ink); }
+.score-cell.mid { color: var(--ink-2); }
+.score-cell.low { color: var(--error); font-weight: 500; }
+
+/* ---------- inputs ---------- */
+.input {
+  width: 100%; min-height: 38px; padding: 8px 12px;
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: var(--r-btn); font-family: inherit; font-size: 13.5px; color: var(--ink);
+}
+.input::placeholder { color: var(--ink-3); }
+.input:focus { outline: 2px solid var(--navy); outline-offset: 0; border-color: transparent; }
+
+/* ---------- progress ---------- */
+.bar { height: 5px; border-radius: var(--r-full); background: var(--border); overflow: hidden; }
+.bar > i { display: block; height: 100%; border-radius: var(--r-full); background: var(--navy); }
+.bar.green > i { background: var(--counseling-fill); }
+
+/* mastery squares — the recurring brand visual */
+.mastery { display: flex; gap: 4px; flex-wrap: wrap; }
+.msq { width: 13px; height: 13px; border-radius: 3.5px; background: var(--surface-sunken); border: 1px solid var(--border); }
+.msq.attempted { background: #C9D4EA; border-color: #C9D4EA; }
+.msq.proficient { background: #6E8CC6; border-color: #6E8CC6; }
+.msq.mastered { background: var(--navy); border-color: var(--navy); }
+
+/* ---------- misc ---------- */
+.empty {
+  text-align: center; padding: 48px 24px; color: var(--ink-3);
+}
+.empty .h-sub { color: var(--ink-2); margin: 10px 0 4px; }
+.toast {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--ink); color: #fff; border-radius: var(--r-btn);
+  padding: 11px 16px; font-size: 13px; font-weight: 500;
+  box-shadow: var(--shadow-overlay);
+}
+.toast .undo { color: var(--d-gold); font-weight: 600; cursor: pointer; }
+
+.avatar {
+  width: 30px; height: 30px; border-radius: var(--r-full);
+  background: var(--surface-sunken); border: 1px solid var(--border-strong);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600; color: var(--ink-2); flex-shrink: 0;
+}
+
+/* annotation frame for the mockups themselves (not part of the app) */
+.mock-note {
+  max-width: 1240px; margin: 0 auto; padding: 14px 36px 0;
+  font-size: 12px; color: var(--ink-3);
+}

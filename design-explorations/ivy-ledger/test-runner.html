@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Test 4 — Section 1, Module 2 · PrepMasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Onest:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500&family=Fragment+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ivy.css">
+<style>
+  /* ── Bluebook-calm runner: white panes, eggshell only as header/footer band tint.
+        No gold on this screen. Navy whispers: answer ring, navigator pill, text links. ── */
+  html, body { height: 100%; }
+  body { background: var(--surface); overflow: hidden; }
+
+  .runner {
+    position: fixed; inset: 0;
+    display: flex; flex-direction: column;
+    background: var(--surface);
+  }
+
+  /* ── Top bar ── */
+  .runner-top {
+    flex-shrink: 0;
+    display: flex; align-items: stretch;
+    padding: 10px 24px 8px;
+    background: var(--bg);                 /* the only eggshell on this screen */
+    border-bottom: 1px solid var(--border);
+  }
+  .runner-top .cell { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+  .runner-top .cell.center { align-items: center; }
+  .runner-top .cell.right { align-items: flex-end; }
+
+  .module-label {
+    font-size: 15px; font-weight: 600; letter-spacing: -0.005em;
+    color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .directions-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 2px; padding: 2px 0;
+    font-size: 12.5px; font-weight: 500; color: var(--ink-3);
+    border-radius: 4px;
+  }
+  .directions-link:hover { color: var(--ink); }
+  .directions-link svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+  .timer {
+    font-family: var(--font-mono);
+    font-size: 24px; line-height: 1; letter-spacing: 0.01em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .timer-hide {
+    margin-top: 4px; font-size: 12px; font-weight: 500;
+    color: var(--navy); padding: 1px 6px; border-radius: 4px;
+  }
+  .timer-hide:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+  .tools { display: flex; align-items: center; gap: 6px; }
+  .tool-btn {
+    display: inline-flex; flex-direction: column; align-items: center; gap: 3px;
+    min-width: 64px; min-height: 44px; padding: 5px 10px 4px;
+    border-radius: var(--r-btn);
+    font-size: 11.5px; font-weight: 500; color: var(--ink-2);
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .tool-btn svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+  .tool-btn:hover { background: rgba(27, 42, 74, 0.05); color: var(--ink); }
+  .tool-btn.is-on { background: var(--navy-tint-2); color: var(--navy); }
+
+  /* ── Body: two panes, fixed split, only the panes scroll ── */
+  .runner-body {
+    flex: 1; min-height: 0;
+    display: flex;
+  }
+  .pane { overflow-y: auto; background: var(--surface); }
+  .pane-left  { flex: 1 1 50%; display: flex; justify-content: center; padding: 44px 48px 64px; }
+  .pane-right { flex: 1 1 50%; padding: 36px 48px 64px; border-left: 1px solid var(--border); }
+
+  .passage-wrap { width: 100%; max-width: 36rem; }
+  .passage-kicker {
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-3);
+    margin-bottom: 14px;
+  }
+  .passage p + p { margin-top: 1em; }
+  .hl { background: var(--warning-tint); border-radius: 2px; padding: 0.5px 1px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+  /* ── Question header: number chip + mark for review + ABC strike toggle ── */
+  .q-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding-bottom: 12px; margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .q-head-left { display: flex; align-items: center; gap: 14px; }
+  .q-chip {
+    display: grid; place-items: center;
+    min-width: 28px; height: 28px; padding: 0 7px;
+    background: var(--ink); color: #fff;
+    border-radius: var(--r-btn);
+    font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums;
+  }
+  .mark-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    min-height: 40px; padding: 0 8px; border-radius: var(--r-btn);
+    font-size: 13px; font-weight: 500; color: var(--ink-2);
+    transition: color 120ms ease, background 120ms ease;
+  }
+  .mark-btn svg { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+  .mark-btn:hover { color: var(--ink); background: rgba(27, 42, 74, 0.05); }
+  .abc-btn {
+    min-height: 32px; padding: 0 10px;
+    border: 1px solid var(--border-strong); border-radius: var(--r-btn);
+    font-size: 13px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink-2);
+    text-decoration: line-through; text-decoration-thickness: 1.6px;
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  }
+  .abc-btn:hover { background: rgba(27, 42, 74, 0.05); color: var(--ink); }
+
+  .q-stem { font-size: 15.5px; line-height: 1.55; color: var(--ink); max-width: 34rem; margin-bottom: 20px; }
+
+  /* ── Answer choices ── */
+  .choices { display: flex; flex-direction: column; gap: 10px; max-width: 34rem; }
+  .choice {
+    position: relative;
+    display: flex; align-items: flex-start; gap: 13px;
+    width: 100%; min-height: 52px; padding: 13px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--r-btn);
+    text-align: left; font-size: 14.5px; line-height: 1.5; color: var(--ink);
+    transition: border-color 120ms ease, background 120ms ease;
+  }
+  .choice:hover { border-color: var(--ink-3); }
+  .choice .letter {
+    flex-shrink: 0;
+    display: grid; place-items: center;
+    width: 26px; height: 26px; margin-top: -1px;
+    border: 1.6px solid var(--border-strong); border-radius: var(--r-full);
+    font-size: 12.5px; font-weight: 600; color: var(--ink-2);
+    transition: all 120ms ease;
+  }
+  .choice:hover .letter { border-color: var(--ink-3); color: var(--ink); }
+
+  .choice.selected {
+    border-color: var(--navy);
+    box-shadow: inset 0 0 0 1px var(--navy);
+    background: var(--navy-tint);
+  }
+  .choice.selected .letter { border-color: var(--navy); background: var(--navy); color: #fff; }
+  .choice.selected:hover { border-color: var(--navy); }
+
+  .choice.eliminated { border-color: var(--border); }
+  .choice.eliminated .letter { border-color: var(--border); color: var(--ink-3); opacity: 0.55; }
+  .choice.eliminated .choice-text { color: var(--ink-3); text-decoration: line-through; text-decoration-thickness: 1.2px; opacity: 0.65; }
+  .choice.eliminated:hover { border-color: var(--border-strong); }
+  .undo-strike {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    font-size: 12px; font-weight: 600; color: var(--navy);
+    padding: 4px 8px; border-radius: 4px;
+  }
+  .undo-strike:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+  /* ── Bottom bar ── */
+  .runner-bottom {
+    flex-shrink: 0;
+    display: flex; align-items: center;
+    padding: 10px 24px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+  .runner-bottom .cell { flex: 1 1 0; min-width: 0; display: flex; align-items: center; }
+  .runner-bottom .cell.center { justify-content: center; }
+  .runner-bottom .cell.right { justify-content: flex-end; gap: 10px; }
+  .student-name { font-size: 13.5px; font-weight: 600; color: var(--ink-2); }
+
+  .nav-pill {
+    display: inline-flex; align-items: center; gap: 9px;
+    min-height: 42px; padding: 0 18px;
+    background: var(--navy); color: #fff;
+    border-radius: var(--r-btn);
+    font-size: 13.5px; font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    transition: background 120ms ease;
+  }
+  .nav-pill:hover { background: var(--navy-hover); }
+  .nav-pill svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 2.2; fill: none; }
+
+  .btn-back {
+    min-height: 42px; padding: 0 22px;
+    border: 1px solid var(--border-strong); border-radius: var(--r-full);
+    background: var(--surface);
+    font-size: 13.5px; font-weight: 600; color: var(--ink-2);
+    transition: border-color 120ms ease, color 120ms ease;
+  }
+  .btn-back:hover { border-color: var(--ink-3); color: var(--ink); }
+  .btn-next {
+    min-height: 42px; padding: 0 30px;
+    border-radius: var(--r-full);
+    background: var(--navy); color: #fff;
+    font-size: 13.5px; font-weight: 600;
+    transition: background 120ms ease;
+  }
+  .btn-next:hover { background: var(--navy-hover); }
+
+  @media (max-width: 980px) {
+    .runner-body { flex-direction: column; }
+    .pane-right { border-left: none; border-top: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<div class="runner">
+
+  <!-- ════════ Top bar ════════ -->
+  <header class="runner-top">
+    <div class="cell">
+      <div class="module-label">Section 1, Module 2: Reading and Writing</div>
+      <button class="directions-link" type="button" aria-expanded="false">
+        Directions
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="cell center">
+      <div class="timer num" title="Time remaining in this section" aria-live="off">27:14</div>
+      <button class="timer-hide" type="button">Hide</button>
+    </div>
+
+    <div class="cell right">
+      <div class="tools">
+        <button class="tool-btn is-on" type="button" aria-pressed="true" title="Highlight and note tools">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+          </svg>
+          Annotate
+        </button>
+        <button class="tool-btn" type="button" aria-pressed="false" title="Math reference sheet">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          Reference
+        </button>
+        <button class="tool-btn" type="button" aria-pressed="false" title="Graphing calculator">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <path d="M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h.01M15.5 18h.01"/>
+          </svg>
+          Calculator
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════ Body: passage | question ════════ -->
+  <div class="runner-body">
+
+    <!-- Left pane: passage -->
+    <section class="pane pane-left" aria-label="Passage">
+      <div class="passage-wrap">
+        <div class="passage-kicker">Questions 7–8 refer to this passage</div>
+        <div class="passage">
+          <p>Degraded coral reefs are notably quieter than healthy ones: the snaps,
+          grunts, and whistles produced by resident fish and invertebrates fade as
+          those organisms disappear. Marine ecologist Aran Mooney and colleagues
+          wondered whether this silence might itself impede recovery, since many
+          reef larvae rely on sound to select a place to settle.
+          <span class="hl">To test the idea, the team installed underwater speakers
+          on patches of degraded reef off the U.S. Virgin Islands and broadcast
+          recordings made at a nearby thriving reef.</span>
+          Coral larvae settled on the acoustically &ldquo;enriched&rdquo; patches at rates up
+          to seven times higher than on silent control patches. The researchers
+          caution, however, that loudspeakers alone cannot rebuild a reef:
+          settlement is only the first step, and the larvae must still survive on
+          substrate that may remain inhospitable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right pane: question -->
+    <section class="pane pane-right" aria-label="Question 7">
+
+      <div class="q-head">
+        <div class="q-head-left">
+          <span class="q-chip num">7</span>
+          <button class="mark-btn" type="button" aria-pressed="false" aria-label="Mark question 7 for review">
+            <svg viewBox="0 0 24 24" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"/>
+            </svg>
+            Mark for Review
+          </button>
+        </div>
+        <button class="abc-btn" type="button" aria-pressed="false" aria-label="Cross out answer choices" title="Cross out answer choices">ABC</button>
+      </div>
+
+      <p class="q-stem">Which choice best states the main purpose of the text?</p>
+
+      <div class="choices" role="radiogroup" aria-label="Answer choices">
+
+        <button class="choice" type="button" role="radio" aria-checked="false">
+          <span class="letter">A</span>
+          <span class="choice-text">To argue that loudspeaker installations should replace
+          conventional approaches to coral reef restoration</span>
+        </button>
+
+        <button class="choice selected" type="button" role="radio" aria-checked="true">
+          <span class="letter">B</span>
+          <span class="choice-text">To describe a study suggesting that broadcasting the sounds
+          of a healthy reef can encourage coral larvae to settle on a degraded one</span>
+        </button>
+
+        <button class="choice eliminated" type="button" role="radio" aria-checked="false" aria-label="Choice C, crossed out">
+          <span class="letter">C</span>
+          <span class="choice-text">To explain why fish and invertebrate populations decline
+          when the structural complexity of a reef is lost</span>
+          <span class="undo-strike" role="button" tabindex="0" aria-label="Undo cross-out for choice C">Undo</span>
+        </button>
+
+        <button class="choice" type="button" role="radio" aria-checked="false">
+          <span class="letter">D</span>
+          <span class="choice-text">To compare the settlement rates of coral larvae in the
+          U.S. Virgin Islands with those observed at other Caribbean sites</span>
+        </button>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ Bottom bar ════════ -->
+  <footer class="runner-bottom">
+    <div class="cell">
+      <span class="student-name">Sophia Chen</span>
+    </div>
+    <div class="cell center">
+      <button class="nav-pill num" type="button" aria-expanded="false" aria-label="Open question navigator">
+        Question 7 of 27
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
+      </button>
+    </div>
+    <div class="cell right">
+      <button class="btn-back" type="button">Back</button>
+      <button class="btn-next" type="button">Next</button>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

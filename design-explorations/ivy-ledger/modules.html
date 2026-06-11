@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modules — SAT June Intensive · PrepMasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Onest:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500&family=Fragment+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ivy.css">
+<style>
+  /* page-specific layout only — tokens + radii + shadows all from ivy.css */
+
+  .toolbar-row {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .toolbar-row .spacer { flex: 1; }
+  .pill-primary {
+    display: inline-flex; align-items: center; gap: 7px;
+    min-height: 32px; padding: 0 14px; border-radius: var(--r-full);
+    font-size: 12.5px; font-weight: 600;
+    background: var(--navy); color: #fff; border: 1px solid var(--navy);
+    transition: background 120ms ease;
+  }
+  .pill-primary:hover { background: var(--navy-hover); }
+  .pill-primary svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+  .pill.selected-mode {
+    border-color: var(--navy); color: var(--navy); background: var(--navy-tint);
+  }
+
+  .modules-stack { display: flex; flex-direction: column; gap: 14px; }
+
+  /* module card head */
+  .mod-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 13px 16px 13px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mod-head.collapsed { border-bottom: none; }
+  .mod-head .chev {
+    width: 28px; height: 28px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: var(--r-btn); color: var(--ink-3);
+  }
+  .mod-head .chev:hover { background: var(--navy-tint); color: var(--ink); }
+  .mod-head .chev svg { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+  .mod-head .grip { color: var(--border-strong); cursor: grab; display: flex; flex-shrink: 0; }
+  .mod-head:hover .grip { color: var(--ink-3); }
+  .mod-title {
+    font-size: var(--t-sub); font-weight: 600; letter-spacing: -0.005em;
+    color: var(--ink); cursor: text; border-radius: 4px; padding: 1px 4px; margin-left: -4px;
+  }
+  .mod-title:hover { background: var(--navy-tint); }
+  .mod-count { font-size: var(--t-meta); color: var(--ink-3); white-space: nowrap; }
+  .mod-head .tail { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+
+  /* select-mode checkbox */
+  .ck {
+    width: 17px; height: 17px; flex-shrink: 0; border-radius: 5px;
+    border: 1.5px solid var(--border-strong); background: var(--surface);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ck.on { background: var(--navy); border-color: var(--navy); }
+  .ck svg { width: 11px; height: 11px; stroke: #fff; stroke-width: 2.4; fill: none; }
+
+  /* kebab button */
+  .kebab-btn {
+    width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+    border-radius: var(--r-btn); color: var(--ink-3);
+  }
+  .kebab-btn:hover { background: var(--navy-tint); color: var(--ink); }
+  .kebab-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* item rows */
+  .item-row { padding-left: 14px; padding-right: 14px; }
+  .item-row .ticon {
+    width: 30px; height: 30px; flex-shrink: 0; border-radius: var(--r-btn);
+    background: var(--surface-sunken); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center; color: var(--ink-2);
+  }
+  .item-row .ticon svg { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+  .item-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+  .item-title {
+    font-size: 13.5px; font-weight: 500; color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    cursor: pointer; align-self: flex-start; border-radius: 4px; padding: 0 3px; margin-left: -3px;
+  }
+  .item-title:hover { background: var(--navy-tint); color: var(--navy); }
+  .item-kind { font-size: var(--t-micro); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); padding-left: 0; }
+  .item-meta { font-size: var(--t-meta); color: var(--ink-3); white-space: nowrap; }
+  .item-tail { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+  /* forced hover state for the instructive row */
+  .row.is-hover { background: var(--navy-tint); }
+  .row.is-hover .grip { color: var(--ink-3); }
+  .row.is-hover .kebab { opacity: 1; }
+
+  /* dashed drop-slot (drag in progress) */
+  .drop-slot {
+    margin: 6px 14px; height: 38px; border-radius: var(--r-btn);
+    border: 2px dashed var(--navy-tint-2); border-color: rgba(36,64,126,0.35);
+    background: var(--navy-tint);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 12px; font-weight: 600; color: var(--navy);
+  }
+  .drop-slot svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+
+  /* ghost of the row being dragged */
+  .row.dragging { opacity: 0.45; }
+  .row.dragging .grip { cursor: grabbing; color: var(--navy); }
+
+  /* + Add item affordance */
+  .add-item {
+    display: flex; align-items: center; gap: 9px;
+    min-height: 44px; padding: 0 16px 0 52px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px; font-weight: 600; color: var(--ink-3);
+    width: 100%; text-align: left; border-radius: 0 0 var(--r-card) var(--r-card);
+  }
+  .add-item:hover { background: var(--navy-tint); color: var(--navy); }
+  .add-item svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+
+  /* floating batch-ops bar */
+  .batchbar-wrap {
+    position: fixed; bottom: 22px; left: 188px; right: 0; z-index: 50;
+    display: flex; justify-content: center; pointer-events: none; padding: 0 36px;
+  }
+  .batchbar {
+    pointer-events: auto;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    background: var(--surface); border: 1px solid var(--border-strong);
+    border-radius: var(--r-card); box-shadow: var(--shadow-overlay);
+    padding: 10px 18px; max-width: 760px;
+  }
+  .batchbar .count { font-size: 13.5px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .batchbar .vr { width: 1px; height: 22px; background: var(--border); }
+  .batchbar .clear { font-size: 12.5px; font-weight: 500; color: var(--ink-3); margin-left: 4px; }
+  .batchbar .clear:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+  /* completion summary strip under the toolbar */
+  .mod-progress { display: flex; align-items: center; gap: 10px; min-width: 132px; }
+  .mod-progress .bar { width: 84px; }
+  .mod-progress .pct { font-size: var(--t-meta); color: var(--ink-3); }
+
+  @media (max-width: 1023px) { .batchbar-wrap { left: 0; } }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ====================== left rail ====================== -->
+  <aside class="rail">
+    <div class="rail-brand">
+      <div class="crest">P</div>
+      <div class="name">PrepMasters</div>
+    </div>
+
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><path d="M3.5 10.5 12 4l8.5 6.5M5.5 9.5V20h13V9.5"/></svg>
+      Dashboard
+    </a>
+    <a class="nav-item active" href="#" aria-current="page">
+      <svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H12v16H5.5A1.5 1.5 0 0 1 4 18.5v-13Z"/><path d="M12 4h6.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H12"/></svg>
+      Courses
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+      Question Bank
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+      Inbox
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+      Calendar
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c.8-3.4 3.6-5.5 7-5.5s6.2 2.1 7 5.5"/></svg>
+      Account
+    </a>
+
+    <div class="rail-foot">
+      <button class="nav-item" style="width:100%;">
+        <svg viewBox="0 0 24 24"><path d="m14 7-5 5 5 5"/></svg>
+        Collapse
+        <kbd style="margin-left:auto;font-family:var(--font-mono);font-size:10.5px;padding:2px 5px;border:1px solid var(--border);border-radius:4px;background:var(--surface-sunken);color:var(--ink-3);">⌘B</kbd>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ====================== main ====================== -->
+  <div class="main">
+    <header class="topbar">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="#">Educator</a><span class="sep">/</span>
+        <a href="#">Courses</a><span class="sep">/</span>
+        <a href="#">SAT June Intensive</a><span class="sep">/</span>
+        <span class="here">Modules</span>
+      </nav>
+      <button class="search" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+        Search courses, students, tests…
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="iconbtn" aria-label="Notifications">
+        <svg viewBox="0 0 24 24"><path d="M6 9.5a6 6 0 0 1 12 0c0 4 1.5 5.5 1.5 5.5h-15S6 13.5 6 9.5Z"/><path d="M10 18.5a2 2 0 0 0 4 0"/></svg>
+        <span class="dot"></span>
+      </button>
+      <div class="avatar">KY</div>
+    </header>
+
+    <main class="content">
+
+      <div class="pagehead">
+        <h1 class="h-display">Modules</h1>
+        <p class="sub">SAT June Intensive · 18 students · 4 of 5 modules published · class average completion <span class="num" style="font-weight:600;color:var(--ink-2);">71%</span></p>
+        <div class="double-rule"></div>
+      </div>
+
+      <!-- toolbar -->
+      <div class="toolbar-row">
+        <button class="pill" type="button">
+          <svg viewBox="0 0 24 24"><path d="m7 10 5-5 5 5M7 14l5 5 5-5"/></svg>
+          Collapse all
+        </button>
+        <button class="pill green" type="button">
+          <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+          Publish all
+        </button>
+        <button class="pill selected-mode" type="button">Done</button>
+        <span class="spacer"></span>
+        <button class="pill-primary" type="button">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          Module
+        </button>
+      </div>
+
+      <div class="modules-stack">
+
+        <!-- ============ Module 1 — expanded, published, selected ============ -->
+        <section class="card">
+          <header class="mod-head">
+            <span class="ck on" role="checkbox" aria-checked="true" aria-label="Select Week 1"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+            <span class="grip" aria-label="Drag to reorder Week 1 — Foundations &amp; Diagnostic. Alt+Arrow to move."><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <button class="chev" aria-label="Collapse module" aria-expanded="true"><svg viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6"/></svg></button>
+            <span class="mod-title" title="Click to rename">Week 1 — Foundations &amp; Diagnostic</span>
+            <span class="mod-count num">5 items</span>
+            <div class="tail">
+              <div class="mod-progress" title="14 of 18 students completed every item">
+                <div class="bar"><i style="width:78%;"></i></div>
+                <span class="pct num">78%</span>
+              </div>
+              <button class="badge published toggle" type="button" title="Click to unpublish">
+                <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                Published
+              </button>
+              <button class="kebab-btn" aria-haspopup="menu" aria-label="Module actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </header>
+
+          <div class="row item-row">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Page"><svg viewBox="0 0 24 24"><path d="M6 3.5h8.5L19 8v12.5H6z"/><path d="M14 3.5V8.5H19"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Course Syllabus &amp; Expectations</span>
+              <span class="item-kind">Page</span>
+            </div>
+            <div class="item-tail">
+              <span class="item-meta num">18 of 18 viewed</span>
+              <span class="badge published">Published</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <div class="row item-row">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Assignment"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M9 10.5h6M9 14.5h6M9 18h3.5"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Diagnostic: Reading Baseline</span>
+              <span class="item-kind">Assignment</span>
+            </div>
+            <div class="item-tail">
+              <span class="item-meta">Due Mon, Jun 8 · <span class="num">17/18</span> submitted</span>
+              <span class="badge published">Published</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <!-- instructive hover state: background + kebab revealed -->
+          <div class="row item-row is-hover">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Practice Test"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 2M10 2.5h4"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Practice Test 3</span>
+              <span class="item-kind">Practice Test</span>
+            </div>
+            <div class="item-tail">
+              <span class="item-meta">Avg <span class="num">1240</span> · <span class="num">16/18</span> taken</span>
+              <span class="badge published">Published</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <div class="row item-row">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Question Set"><svg viewBox="0 0 24 24"><path d="M4.5 8.5 12 4.5l7.5 4L12 12.5z"/><path d="m4.5 12.5 7.5 4 7.5-4M4.5 16.5l7.5 4 7.5-4"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Craft &amp; Structure — Set A</span>
+              <span class="item-kind">Question Set</span>
+            </div>
+            <div class="item-tail">
+              <span class="item-meta num">24 questions</span>
+              <span class="badge published">Published</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <div class="row item-row">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Page"><svg viewBox="0 0 24 24"><path d="M6 3.5h8.5L19 8v12.5H6z"/><path d="M14 3.5V8.5H19"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">How to Review Your Mistakes</span>
+              <span class="item-kind">Page</span>
+            </div>
+            <div class="item-tail">
+              <span class="badge draft">Draft</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <button class="add-item" type="button">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            Add item — Assignment, Practice Test, Question Set, Header, or Link
+          </button>
+        </section>
+
+        <!-- ============ Module 2 — expanded, drag in progress ============ -->
+        <section class="card">
+          <header class="mod-head">
+            <span class="ck on" role="checkbox" aria-checked="true" aria-label="Select Week 2"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <button class="chev" aria-label="Collapse module" aria-expanded="true"><svg viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6"/></svg></button>
+            <span class="mod-title" title="Click to rename">Week 2 — Reading &amp; Writing Deep Dive</span>
+            <span class="mod-count num">4 items</span>
+            <div class="tail">
+              <div class="mod-progress" title="11 of 18 students completed every item">
+                <div class="bar"><i style="width:61%;"></i></div>
+                <span class="pct num">61%</span>
+              </div>
+              <button class="badge published toggle" type="button" title="Click to unpublish">
+                <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                Published
+              </button>
+              <button class="kebab-btn" aria-haspopup="menu" aria-label="Module actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </header>
+
+          <div class="row item-row">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Question Set"><svg viewBox="0 0 24 24"><path d="M4.5 8.5 12 4.5l7.5 4L12 12.5z"/><path d="m4.5 12.5 7.5 4 7.5-4M4.5 16.5l7.5 4 7.5-4"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Information &amp; Ideas — Set B</span>
+              <span class="item-kind">Question Set</span>
+            </div>
+            <div class="item-tail">
+              <span class="item-meta num">22 questions</span>
+              <span class="badge published">Published</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <!-- drag-in-progress: dashed drop-slot between rows -->
+          <div class="drop-slot" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 4v12M7.5 11.5 12 16l4.5-4.5M5 20h14"/></svg>
+            Move "Standard English Conventions — Set C" here
+          </div>
+
+          <div class="row item-row" style="border-top:1px solid var(--border);">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Assignment"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M9 10.5h6M9 14.5h6M9 18h3.5"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Annotation Practice: Paired Passages</span>
+              <span class="item-kind">Assignment</span>
+            </div>
+            <div class="item-tail">
+              <span class="item-meta">Due Thu, Jun 12 · <span class="num">9/18</span> submitted</span>
+              <span class="badge published">Published</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <!-- the row currently being dragged, shown as ghost -->
+          <div class="row item-row dragging">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Question Set"><svg viewBox="0 0 24 24"><path d="M4.5 8.5 12 4.5l7.5 4L12 12.5z"/><path d="m4.5 12.5 7.5 4 7.5-4M4.5 16.5l7.5 4 7.5-4"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Standard English Conventions — Set C</span>
+              <span class="item-kind">Question Set</span>
+            </div>
+            <div class="item-tail">
+              <span class="item-meta num">26 questions</span>
+              <span class="badge published">Published</span>
+            </div>
+          </div>
+
+          <!-- locked item row -->
+          <div class="row item-row">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Question Set"><svg viewBox="0 0 24 24"><path d="M4.5 8.5 12 4.5l7.5 4L12 12.5z"/><path d="m4.5 12.5 7.5 4 7.5-4M4.5 16.5l7.5 4 7.5-4"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Expression of Ideas — Set A</span>
+              <span class="item-kind">Question Set</span>
+            </div>
+            <div class="item-tail">
+              <span class="badge locked" title="Friday, June 13, 2026, 8:00 AM">
+                <svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>
+                Locked until Fri, Jun 13
+              </span>
+              <span class="badge published">Published</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <button class="add-item" type="button">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            Add item — Assignment, Practice Test, Question Set, Header, or Link
+          </button>
+        </section>
+
+        <!-- ============ Module 3 — collapsed, module-level lock ============ -->
+        <section class="card">
+          <header class="mod-head collapsed">
+            <span class="ck" role="checkbox" aria-checked="false" aria-label="Select Week 3"></span>
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <button class="chev" aria-label="Expand module" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></svg></button>
+            <span class="mod-title" title="Click to rename">Week 3 — Math Module Mastery</span>
+            <span class="mod-count num">6 items</span>
+            <div class="tail">
+              <span class="badge locked" title="Friday, June 13, 2026, 8:00 AM">
+                <svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>
+                Locks Fri, Jun 13
+              </span>
+              <button class="badge published toggle" type="button" title="Click to unpublish">
+                <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                Published
+              </button>
+              <button class="kebab-btn" aria-haspopup="menu" aria-label="Module actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </header>
+        </section>
+
+        <!-- ============ Module 4 — expanded, draft (mock day) ============ -->
+        <section class="card">
+          <header class="mod-head">
+            <span class="ck on" role="checkbox" aria-checked="true" aria-label="Select June 15 Full-Length Mock"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <button class="chev" aria-label="Collapse module" aria-expanded="true"><svg viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6"/></svg></button>
+            <span class="mod-title" title="Click to rename">June 15 Full-Length Mock</span>
+            <span class="mod-count num">2 items</span>
+            <div class="tail">
+              <span class="badge gold">
+                <svg viewBox="0 0 24 24"><path d="M12 3.5 14.4 9l5.6.5-4.2 3.8 1.3 5.7L12 16l-5.1 3 1.3-5.7L4 9.5 9.6 9z"/></svg>
+                Mock day · Mon, Jun 15
+              </span>
+              <button class="badge draft toggle" type="button" title="Click to publish">Draft</button>
+              <button class="kebab-btn" aria-haspopup="menu" aria-label="Module actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </header>
+
+          <div class="row item-row">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Practice Test"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 2M10 2.5h4"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Practice Test 4 — DSAT Nov 2023</span>
+              <span class="item-kind">Practice Test</span>
+            </div>
+            <div class="item-tail">
+              <span class="item-meta">Full-length · 4 modules · 2h 14m</span>
+              <span class="badge draft">Draft</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <div class="row item-row">
+            <span class="grip"><svg width="14" height="18" viewBox="0 0 14 18"><g fill="currentColor"><circle cx="4.5" cy="3.5" r="1.4"/><circle cx="9.5" cy="3.5" r="1.4"/><circle cx="4.5" cy="9" r="1.4"/><circle cx="9.5" cy="9" r="1.4"/><circle cx="4.5" cy="14.5" r="1.4"/><circle cx="9.5" cy="14.5" r="1.4"/></g></svg></span>
+            <span class="ticon" title="Page"><svg viewBox="0 0 24 24"><path d="M6 3.5h8.5L19 8v12.5H6z"/><path d="M14 3.5V8.5H19"/></svg></span>
+            <div class="item-main">
+              <span class="item-title">Test-Day Checklist</span>
+              <span class="item-kind">Page</span>
+            </div>
+            <div class="item-tail">
+              <span class="badge draft">Draft</span>
+              <button class="kebab-btn kebab" aria-haspopup="menu" aria-label="Item actions"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg></button>
+            </div>
+          </div>
+
+          <button class="add-item" type="button">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            Add item — Assignment, Practice Test, Question Set, Header, or Link
+          </button>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ====================== floating batch-ops bar ====================== -->
+<div class="batchbar-wrap" role="region" aria-label="Bulk module actions">
+  <div class="batchbar">
+    <span class="count num">3 selected</span>
+    <span class="vr"></span>
+    <button class="pill green" type="button">
+      <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+      Publish
+    </button>
+    <button class="pill" type="button">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      Move to…
+    </button>
+    <button class="pill red" type="button">
+      <svg viewBox="0 0 24 24"><path d="M5 7h14M9.5 7V5h5v2M7 7l1 13h8l1-13M10.5 11v5M13.5 11v5"/></svg>
+      Delete
+    </button>
+    <button class="clear" type="button">Clear selection</button>
+  </div>
+</div>
+
+</body>
+</html>

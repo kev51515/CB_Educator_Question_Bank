@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ivy Ledger — Your Screens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Onest:wght@400;500;600&family=Fragment+Mono&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="ivy.css" />
+<style>
+  .hub { max-width: 980px; margin: 0 auto; padding: 64px 36px 110px; }
+  .hub-rule { margin: 22px 0 40px; }
+  .screens { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 860px) { .screens { grid-template-columns: 1fr; } }
+  a.screen {
+    display: block; padding: 22px 24px; text-decoration: none; color: inherit;
+  }
+  a.screen:hover { text-decoration: none; }
+  .screen .who { margin-bottom: 8px; }
+  .screen h2 {
+    font-family: var(--font-display); font-size: 22px; font-weight: 500;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .screen p { font-size: 13.5px; color: var(--ink-2); margin-bottom: 12px; }
+  .screen .go { font-size: 13px; font-weight: 600; color: var(--navy); }
+  .foot-note { margin-top: 44px; font-size: 13px; color: var(--ink-3); line-height: 1.7; }
+  .foot-note code { font-family: var(--font-mono); font-size: 12px; background: var(--surface-sunken); padding: 1px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="hub">
+  <div class="eyebrow">Ivy Ledger · refined kit v2 · June 2026</div>
+  <h1 class="h-display" style="font-size:38px; margin-top:12px;">Your screens, restyled</h1>
+  <p style="font-size:15px; color:var(--ink-2); max-width:600px; margin-top:10px;">
+    Six real surfaces from the app, rebuilt on the refined Ivy Ledger system —
+    same information architecture, same features, new identity. Every token
+    comes from <code style="font-family:var(--font-mono); font-size:13px;">ivy.css</code>,
+    which doubles as the migration spec.
+  </p>
+  <div class="double-rule hub-rule"></div>
+
+  <div class="screens">
+    <a class="screen card hoverable" href="educator-dashboard.html">
+      <div class="eyebrow who">Educator</div>
+      <h2>Dashboard</h2>
+      <p>Greeting, stat row, course cards with monogram crests (gradient bands gone), needs-attention triage.</p>
+      <span class="go">Open →</span>
+    </a>
+    <a class="screen card hoverable" href="modules.html">
+      <div class="eyebrow who">Educator</div>
+      <h2>Modules</h2>
+      <p>The reference-standard surface: pill toolbar, module groups, drag grips, lock-until, floating batch bar.</p>
+      <span class="go">Open →</span>
+    </a>
+    <a class="screen card hoverable" href="gradebook.html">
+      <div class="eyebrow who">Educator</div>
+      <h2>Gradebook</h2>
+      <p>The ledger moment — a finely set table with score tinting, override marks, and one gold class average.</p>
+      <span class="go">Open →</span>
+    </a>
+    <a class="screen card hoverable" href="test-overview.html">
+      <div class="eyebrow who">Educator</div>
+      <h2>Test overview</h2>
+      <p>Per-test analytics: cohort stats, domain breakdown, roster with statuses, trends, and release controls.</p>
+      <span class="go">Open →</span>
+    </a>
+    <a class="screen card hoverable" href="student-home.html">
+      <div class="eyebrow who">Student</div>
+      <h2>Student home</h2>
+      <p>Reading-width column: next-up card, score trajectory with a gold 1450, mastery squares across 8 domains.</p>
+      <span class="go">Open →</span>
+    </a>
+    <a class="screen card hoverable" href="test-runner.html">
+      <div class="eyebrow who">Student</div>
+      <h2>Test runner</h2>
+      <p>Bluebook-calm and deliberately neutral — Literata passage, navy only as selection state, zero gold.</p>
+      <span class="go">Open →</span>
+    </a>
+  </div>
+
+  <p class="foot-note">
+    The runner stays visually quiet on purpose: practice should rehearse test day,
+    so brand personality lives in the LMS chrome, never inside the passage panes.
+    Compare with the original direction sample at <code>../c-ivy-ledger.html</code>.
+  </p>
+</div>
+</body>
+</html>

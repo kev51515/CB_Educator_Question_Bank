@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — PrepMasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Onest:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500&family=Fragment+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ivy.css">
+<style>
+  /* page-specific layout only — all color/radius/shadow from ivy.css vars */
+
+  /* header action cluster */
+  .pagehead-bar { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+
+  /* domain focus chips */
+  .chip-row { display: flex; align-items: center; gap: 8px; margin: 0 0 22px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    min-height: 32px; padding: 0 14px; border-radius: var(--r-full);
+    font-size: 12.5px; font-weight: 600; color: var(--ink-2);
+    background: var(--surface); border: 1px solid var(--border);
+    transition: all 120ms ease;
+  }
+  .chip:hover { border-color: var(--border-strong); color: var(--ink); }
+  .chip.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .chip .count {
+    font-family: var(--font-mono); font-size: 10.5px; font-variant-numeric: tabular-nums;
+    color: var(--ink-3);
+  }
+  .chip.active .count { color: rgba(255,255,255,.75); }
+
+  /* ------- Needs attention panel ------- */
+  .panel-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 16px 22px 12px;
+  }
+  .panel-head .count-pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 22px; height: 20px; padding: 0 7px; border-radius: var(--r-full);
+    background: var(--navy); color: #fff;
+    font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums;
+  }
+  .panel-head .spacer { flex: 1; }
+
+  .attn-courses { display: flex; gap: 8px; padding: 0 22px 14px; }
+
+  .attn-section + .attn-section { border-top: 1px solid var(--border); }
+  .attn-section-head {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    min-height: 44px; padding: 0 22px; text-align: left;
+  }
+  .attn-section-head:hover { background: var(--navy-tint); }
+  .attn-section-head .chev { color: var(--ink-3); flex-shrink: 0; }
+  .attn-section-head .lbl {
+    font-size: var(--t-micro); font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-2);
+  }
+  .attn-section-head .n {
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .icon-disc {
+    width: 30px; height: 30px; border-radius: var(--r-full); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .icon-disc svg { width: 15px; height: 15px; stroke-width: 1.6; fill: none; }
+  .icon-disc.grade   { background: var(--navy-tint-2); color: var(--navy); }
+  .icon-disc.due     { background: var(--warning-tint); color: var(--warning); }
+  .icon-disc.reply   { background: var(--counseling-tint); color: var(--counseling); }
+
+  .attn-row-main { min-width: 0; flex: 1; }
+  .attn-row-main .line { font-size: 13.5px; }
+  .attn-row-main .line b { font-weight: 600; }
+  .attn-row-main .line .dim { color: var(--ink-3); }
+  .attn-row .when { font-size: var(--t-meta); color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .attn-row .act { opacity: 0; transition: opacity 100ms ease; }
+  .attn-row:hover .act, .attn-row.hovered .act { opacity: 1; }
+  .attn-row.hovered { background: var(--navy-tint); }
+
+  .more-line { padding: 6px 22px 12px; font-size: var(--t-meta); color: var(--navy); }
+
+  /* ------- Cohort summary ------- */
+  .cohort-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+    padding: 6px 22px 20px;
+  }
+  .cohort-card {
+    border: 1px solid var(--border); border-radius: var(--r-btn);
+    padding: 14px 16px; position: relative;
+    transition: border-color 140ms ease;
+  }
+  .cohort-card:hover { border-color: var(--border-strong); }
+  .cohort-card .cname { font-size: 13.5px; font-weight: 600; }
+  .cohort-card .cmeta { font-size: var(--t-meta); color: var(--ink-3); margin-top: 3px; }
+  .cohort-card .avg-row { display: flex; align-items: baseline; gap: 8px; margin-top: 12px; }
+  .cohort-card .avg-num { font-size: 26px; line-height: 1; }
+  .cohort-card .avg-lbl { font-size: 11.5px; color: var(--ink-3); }
+  .cohort-card .noact { margin-top: 14px; font-size: var(--t-meta); color: var(--ink-3); font-style: italic; }
+  .needs-pill {
+    position: absolute; top: 12px; right: 12px;
+    display: inline-flex; align-items: center; gap: 5px;
+    min-height: 22px; padding: 0 9px; border-radius: var(--r-full);
+    background: var(--warning-tint); color: var(--warning);
+    font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums;
+    cursor: pointer;
+  }
+  .needs-pill:hover { box-shadow: inset 0 0 0 1px currentColor; }
+
+  /* ------- Course cards grid ------- */
+  .section-eyebrow { margin: 32px 0 14px; display: flex; align-items: center; gap: 10px; }
+  .section-eyebrow .ln { flex: 1; height: 1px; background: var(--border); }
+
+  .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+  .course-card { display: flex; flex-direction: column; cursor: pointer; position: relative; }
+  .course-card .cc-top {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 18px 18px 0;
+  }
+  .course-card .cc-id { min-width: 0; flex: 1; }
+  .course-card .cc-id .eyebrow { margin-bottom: 3px; }
+  .course-card .cc-name { font-size: var(--t-sub); font-weight: 600; letter-spacing: -0.005em; }
+  .course-card .cc-desc {
+    padding: 8px 18px 0; font-size: var(--t-meta); color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .course-card .cc-metrics {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px 18px 14px; font-size: var(--t-meta); color: var(--ink-3);
+  }
+  .course-card .cc-metrics b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .course-card .cc-foot {
+    margin-top: auto; display: flex; align-items: center; gap: 2px;
+    padding: 8px 12px; border-top: 1px solid var(--border);
+  }
+  .cc-action {
+    width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+    border-radius: var(--r-btn); color: var(--ink-3);
+  }
+  .cc-action:hover { background: var(--navy-tint); color: var(--navy); }
+  .cc-action svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+  .cc-foot .kebab {
+    margin-left: auto; opacity: 0; transition: opacity 100ms ease;
+  }
+  .course-card:hover .kebab, .course-card.hovered .kebab { opacity: 1; }
+  .course-card.hovered { border-color: var(--border-strong); transform: translateY(-1px); }
+  .course-card.muted .cc-id, .course-card.muted .cc-desc, .course-card.muted .cc-metrics { opacity: .55; }
+
+  .pinned-tag {
+    position: absolute; top: 14px; right: 14px;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 10.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .pinned-tag svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+
+  /* kebab dots */
+  .kebab-btn {
+    width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+    border-radius: var(--r-btn); color: var(--ink-3);
+  }
+  .kebab-btn:hover { background: var(--navy-tint); color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ===================== rail ===================== -->
+  <aside class="rail">
+    <div class="rail-brand">
+      <div class="crest">P</div>
+      <div class="name">PrepMasters</div>
+    </div>
+
+    <a class="nav-item active" href="#">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Courses
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+      Question Bank
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Inbox
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v1"/></svg>
+      Account
+    </a>
+
+    <div class="rail-foot">
+      <a class="nav-item" href="#">
+        <svg viewBox="0 0 24 24"><polyline points="11 17 6 12 11 7"/><line x1="18" y1="12" x2="6" y2="12"/></svg>
+        Collapse
+        <kbd style="margin-left:auto;font-family:var(--font-mono);font-size:10px;color:var(--ink-3);border:1px solid var(--border);border-radius:4px;padding:1px 4px;background:var(--surface-sunken);">⌘B</kbd>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ===================== main ===================== -->
+  <div class="main">
+    <header class="topbar">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <span>Educator</span><span class="sep">/</span><span class="here">Dashboard</span>
+      </nav>
+      <button class="search" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        Search courses, students, tests…
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="iconbtn" aria-label="Notifications">
+        <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        <span class="dot"></span>
+      </button>
+      <div class="avatar">KY</div>
+    </header>
+
+    <main class="content">
+
+      <!-- page head -->
+      <div class="pagehead">
+        <div class="pagehead-bar">
+          <div>
+            <h1 class="h-display">Good morning, Kevin</h1>
+            <p class="sub">Wednesday, June 11 — jump back into any course.</p>
+          </div>
+          <button class="btn btn-secondary" type="button">
+            <svg viewBox="0 0 24 24"><path d="M3 11l18-8v18l-18-8z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+            Broadcast
+          </button>
+        </div>
+        <div class="double-rule"></div>
+      </div>
+
+      <!-- domain focus chips -->
+      <div class="chip-row" role="group" aria-label="Filter courses by domain">
+        <button class="chip active" type="button" aria-pressed="true">All <span class="count">3</span></button>
+        <button class="chip" type="button" aria-pressed="false">Academic <span class="count">2</span></button>
+        <button class="chip" type="button" aria-pressed="false">Counseling <span class="count">1</span></button>
+      </div>
+
+      <!-- ============ Needs your attention ============ -->
+      <section class="card" aria-labelledby="needs-attention-heading" style="margin-bottom:22px;">
+        <header class="panel-head">
+          <h2 id="needs-attention-heading" class="eyebrow" style="color:var(--ink-2);">Needs your attention</h2>
+          <span class="count-pill num" aria-label="6 items">6</span>
+          <span class="spacer"></span>
+          <button class="iconbtn" aria-label="Refresh" title="Refresh">
+            <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><polyline points="16 8 21 8 21 3"/><polyline points="8 16 3 16 3 21"/></svg>
+          </button>
+        </header>
+
+        <!-- course filter chips -->
+        <div class="attn-courses" role="group" aria-label="Filter by course">
+          <button class="chip active" type="button">All courses <span class="count">6</span></button>
+          <button class="chip" type="button">SAT June Intensive <span class="count">4</span></button>
+          <button class="chip" type="button">SAT Weekend Cohort <span class="count">2</span></button>
+        </div>
+
+        <!-- To grade -->
+        <div class="attn-section">
+          <button class="attn-section-head" type="button" aria-expanded="true">
+            <svg class="chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="lbl">To grade</span>
+            <span class="n">3</span>
+          </button>
+
+          <div class="row attn-row">
+            <span class="icon-disc grade"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+            <div class="attn-row-main">
+              <div class="line"><b>Sophia Chen</b> submitted <span class="dim">SAT June Intensive · Practice Test 4 (91%)</span></div>
+            </div>
+            <span class="when num">26 min ago</span>
+            <button class="btn btn-secondary btn-sm act" type="button">Grade</button>
+          </div>
+
+          <div class="row attn-row hovered">
+            <span class="icon-disc grade"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+            <div class="attn-row-main">
+              <div class="line"><b>Marcus Tan</b> submitted <span class="dim">SAT June Intensive · Reading Drill — Craft &amp; Structure (78%)</span></div>
+            </div>
+            <span class="when num">2 hr ago</span>
+            <button class="btn btn-secondary btn-sm act" type="button">Grade</button>
+          </div>
+
+          <div class="row attn-row">
+            <span class="icon-disc grade"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+            <div class="attn-row-main">
+              <div class="line"><b>Emma Liu</b> submitted <span class="dim">SAT Weekend Cohort · Essay Outline — College App</span></div>
+            </div>
+            <span class="when num">yesterday</span>
+            <button class="btn btn-secondary btn-sm act" type="button">Grade</button>
+          </div>
+        </div>
+
+        <!-- Past due -->
+        <div class="attn-section">
+          <button class="attn-section-head" type="button" aria-expanded="true">
+            <svg class="chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="lbl">Past due</span>
+            <span class="n">2</span>
+          </button>
+
+          <div class="row attn-row">
+            <span class="icon-disc due"><svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
+            <div class="attn-row-main">
+              <div class="line"><b>Algebra Question Set 6</b> <span class="dim">· SAT June Intensive</span> <span class="badge overdue" style="margin-left:6px;">Past due</span></div>
+            </div>
+            <span class="when num">due 2 days ago</span>
+            <button class="btn btn-secondary btn-sm act" type="button">Open</button>
+          </div>
+
+          <div class="row attn-row">
+            <span class="icon-disc due"><svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
+            <div class="attn-row-main">
+              <div class="line"><b>Vocabulary in Context — Set B</b> <span class="dim">· SAT Weekend Cohort</span> <span class="badge overdue" style="margin-left:6px;">Past due</span></div>
+            </div>
+            <span class="when num">due 5 hr ago</span>
+            <button class="btn btn-secondary btn-sm act" type="button">Open</button>
+          </div>
+        </div>
+
+        <!-- New replies -->
+        <div class="attn-section">
+          <button class="attn-section-head" type="button" aria-expanded="true">
+            <svg class="chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="lbl">New replies</span>
+            <span class="n">1</span>
+          </button>
+
+          <div class="row attn-row">
+            <span class="icon-disc reply"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 1 1 16.1-3.8z"/></svg></span>
+            <div class="attn-row-main">
+              <div class="line"><b>Daniel Park</b> replied to <span class="dim">Why is choice C wrong on PT3 Q12? · SAT June Intensive</span></div>
+            </div>
+            <span class="when num">41 min ago</span>
+            <button class="btn btn-secondary btn-sm act" type="button">View</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Cohort summary ============ -->
+      <section class="card" aria-labelledby="cohort-summary-heading" style="margin-bottom:8px;">
+        <header class="panel-head">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <h2 id="cohort-summary-heading" class="eyebrow" style="color:var(--ink-2);">Cohort summary</h2>
+          <span class="count-pill num" style="background:var(--surface-sunken);color:var(--ink-2);" aria-label="3 cohorts">3</span>
+          <span class="spacer"></span>
+          <button class="iconbtn" aria-label="Refresh cohort summary" title="Refresh">
+            <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><polyline points="16 8 21 8 21 3"/><polyline points="8 16 3 16 3 21"/></svg>
+          </button>
+        </header>
+
+        <div class="cohort-grid">
+          <div class="cohort-card">
+            <button class="needs-pill num" type="button" title="Jump to triage">Needs 4</button>
+            <div class="cname">SAT June Intensive</div>
+            <div class="cmeta num">18 students · 31 submissions this week</div>
+            <div class="avg-row">
+              <span class="ceremonial avg-num num">1284</span>
+              <span class="avg-lbl">avg score · last 30 days</span>
+            </div>
+          </div>
+
+          <div class="cohort-card">
+            <button class="needs-pill num" type="button" title="Jump to triage">Needs 2</button>
+            <div class="cname">SAT Weekend Cohort</div>
+            <div class="cmeta num">22 students · 19 submissions this week</div>
+            <div class="avg-row">
+              <span class="ceremonial avg-num num">1192</span>
+              <span class="avg-lbl">avg score · last 30 days</span>
+            </div>
+          </div>
+
+          <div class="cohort-card">
+            <div class="cname">Counseling — Class of 2027</div>
+            <div class="cmeta num">7 students · 3 submissions this week</div>
+            <div class="noact">No scored activity yet</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Published courses ============ -->
+      <div class="section-eyebrow">
+        <span class="eyebrow">Published courses (3)</span>
+        <span class="ln"></span>
+      </div>
+
+      <div class="course-grid">
+
+        <!-- pinned card -->
+        <div class="card hoverable course-card" role="button" tabindex="0" aria-label="Open course SAT June Intensive">
+          <span class="pinned-tag">
+            <svg viewBox="0 0 24 24"><path d="M12 17v5"/><path d="M9 3h6l1 7 2.5 2.5H5.5L8 10l1-7z"/></svg>
+            Pinned
+          </span>
+          <div class="cc-top">
+            <div class="crest-disc">SJ</div>
+            <div class="cc-id">
+              <div class="eyebrow">Academic</div>
+              <div class="cc-name">SAT June Intensive</div>
+            </div>
+          </div>
+          <p class="cc-desc">Daily intensive, Mon–Fri. Four modules live; Practice Test 4 assigned this week.</p>
+          <div class="cc-metrics num"><span><b>18</b> students</span><span><b>4</b> modules</span></div>
+          <div class="cc-foot">
+            <button class="cc-action" type="button" aria-label="Assignments" title="Assignments"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></button>
+            <button class="cc-action" type="button" aria-label="People" title="People"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></button>
+            <button class="cc-action" type="button" aria-label="Announcements" title="Announcements"><svg viewBox="0 0 24 24"><path d="M3 11l18-8v18l-18-8z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></button>
+            <span class="kebab"><button class="kebab-btn" type="button" aria-label="Course actions" aria-haspopup="menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></button></span>
+          </div>
+        </div>
+
+        <!-- hover-state card (kebab revealed) -->
+        <div class="card hoverable course-card hovered" role="button" tabindex="0" aria-label="Open course SAT Weekend Cohort">
+          <div class="cc-top">
+            <div class="crest-disc">SW</div>
+            <div class="cc-id">
+              <div class="eyebrow">Academic</div>
+              <div class="cc-name">SAT Weekend Cohort</div>
+            </div>
+          </div>
+          <p class="cc-desc">Saturday + Sunday sections. Reading-heavy track; Practice Test 3 review in progress.</p>
+          <div class="cc-metrics num"><span><b>22</b> students</span><span><b>3</b> modules</span></div>
+          <div class="cc-foot">
+            <button class="cc-action" type="button" aria-label="Assignments" title="Assignments"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></button>
+            <button class="cc-action" type="button" aria-label="People" title="People"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></button>
+            <button class="cc-action" type="button" aria-label="Announcements" title="Announcements"><svg viewBox="0 0 24 24"><path d="M3 11l18-8v18l-18-8z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></button>
+            <span class="kebab"><button class="kebab-btn" type="button" aria-label="Course actions" aria-haspopup="menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></button></span>
+          </div>
+        </div>
+
+        <!-- counseling card -->
+        <div class="card hoverable course-card" role="button" tabindex="0" aria-label="Open course Counseling — Class of 2027">
+          <div class="cc-top">
+            <div class="crest-disc counseling">C7</div>
+            <div class="cc-id">
+              <div class="eyebrow" style="color:var(--counseling);">Counseling</div>
+              <div class="cc-name">Counseling — Class of 2027</div>
+            </div>
+          </div>
+          <p class="cc-desc">College-application portfolio track. Common App essay drafts due end of month.</p>
+          <div class="cc-metrics num"><span><b>7</b> students</span><span><b>12</b> portfolio items</span></div>
+          <div class="cc-foot">
+            <button class="cc-action" type="button" aria-label="Assignments" title="Assignments"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></button>
+            <button class="cc-action" type="button" aria-label="People" title="People"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></button>
+            <button class="cc-action" type="button" aria-label="Announcements" title="Announcements"><svg viewBox="0 0 24 24"><path d="M3 11l18-8v18l-18-8z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></button>
+            <span class="kebab"><button class="kebab-btn" type="button" aria-label="Course actions" aria-haspopup="menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></button></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ Unpublished ============ -->
+      <div class="section-eyebrow">
+        <span class="eyebrow">Unpublished (1)</span>
+        <span class="ln"></span>
+      </div>
+
+      <div class="course-grid">
+        <div class="card hoverable course-card muted" role="button" tabindex="0" aria-label="Open course SAT March Intensive (archived)">
+          <div class="cc-top">
+            <div class="crest-disc">SM</div>
+            <div class="cc-id">
+              <div class="eyebrow">Academic</div>
+              <div class="cc-name">SAT March Intensive</div>
+            </div>
+          </div>
+          <p class="cc-desc">Spring cohort — archived after the March test date. Roster retained for records.</p>
+          <div class="cc-metrics num"><span><b>15</b> students</span><span class="badge draft" style="margin-left:auto;">Archived</span></div>
+          <div class="cc-foot">
+            <button class="cc-action" type="button" aria-label="Assignments" title="Assignments"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></button>
+            <button class="cc-action" type="button" aria-label="People" title="People"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></button>
+            <button class="cc-action" type="button" aria-label="Announcements" title="Announcements"><svg viewBox="0 0 24 24"><path d="M3 11l18-8v18l-18-8z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></button>
+            <span class="kebab"><button class="kebab-btn" type="button" aria-label="Course actions" aria-haspopup="menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></button></span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>
