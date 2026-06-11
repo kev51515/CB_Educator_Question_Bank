@@ -289,7 +289,9 @@ export function StaffShell() {
         </svg>
       ),
     },
-    ...(canQbank
+    // Question Bank is SAT/academic-specific — hide it outside the academic
+    // domain so the Coach/Counselor rail stays fitting to that vertical.
+    ...(canQbank && domain === "academic"
       ? ([
           {
             id: "question-bank",

@@ -23,6 +23,7 @@ import { StudentBadge } from "./StudentBadge";
 import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
 import { useProfile } from "@/lib/profile";
+import { useDomain } from "@/lib/DomainProvider";
 import { CommandPalette, type Command } from "@/components/CommandPalette";
 import { ShortcutsHelp } from "@/components/ShortcutsHelp";
 import { DomainSwitcher } from "@/components";
@@ -149,6 +150,11 @@ export function StudentShell() {
     useStudentSession();
   const { profile } = useProfile();
   const displayName = profile?.display_name ?? session?.name ?? "";
+  // Domain-aware role label so a player's shell reads "Player" (coaching) /
+  // "Advisee" (counseling) / "Student" (academic), matching the active accent.
+  const { domain } = useDomain();
+  const studentRoleLabel =
+    domain === "coaching" ? "Player" : domain === "counseling" ? "Advisee" : "Student";
   // Personal code (managed students) and the prefixed landing path. The code
   // is display-only — it makes the role + student identity legible in the URL
   // and the badge; access is enforced by auth/RLS.
@@ -272,7 +278,7 @@ export function StudentShell() {
               aria-hidden={collapsed}
               className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate"
             >
-              Student
+              {studentRoleLabel}
             </p>
             {/* Domain switcher — re-themes the accent + relabels vocabulary
                 live. Hidden when the rail is collapsed (icon-only). */}
@@ -450,7 +456,7 @@ export function StudentShell() {
       </div>
       <StudentBadge
         studentName={displayName}
-        roleLabel="Student"
+        roleLabel={studentRoleLabel}
         personalCode={personalCode}
         inboxPath={ROUTES.STUDENT_INBOX}
         accountPath={ROUTES.STUDENT_ACCOUNT}
