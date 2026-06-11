@@ -2,11 +2,13 @@
  * theme — the UI theme layer of the redesign ("Ivy Ledger", June 2026).
  *
  * Two themes:
- *   'classic' — the pre-redesign look (system fonts, Tailwind slate, indigo).
- *               This is the DEFAULT, so shipping this module changes nothing
- *               visually until a user opts in.
  *   'ivy'     — Ivy Ledger: eggshell paper, navy-cast ink, Newsreader display
- *               serif, ceremonial gold. Spec: design-explorations/ivy-ledger/.
+ *               serif, ceremonial gold. THE DEFAULT since 2026-06-11 (owner
+ *               request: live-test immediately). Spec:
+ *               design-explorations/ivy-ledger/.
+ *   'classic' — the pre-redesign look (system fonts, Tailwind slate, indigo).
+ *               Kept as an explicit opt-out during the transition; an
+ *               explicitly stored 'classic' preference is always honored.
  *
  * Mechanism (same trick as the domain accent system, one level up): the
  * Tailwind `slate-*` and `ink-*` ramps resolve through `--slate-N` / `--ink-N`
@@ -29,8 +31,9 @@ export type UiTheme = "classic" | "ivy";
 
 const STORAGE_KEY = "ui.theme";
 const IVY_CLASS = "theme-ivy";
+const DEFAULT_THEME: UiTheme = "ivy";
 
-let current: UiTheme = "classic";
+let current: UiTheme = DEFAULT_THEME;
 let fontsRequested = false;
 const listeners = new Set<() => void>();
 
@@ -76,7 +79,7 @@ function subscribe(fn: () => void): () => void {
 
 /** React hook: the active theme, re-rendering on change (cross-tab included). */
 export function useUiTheme(): UiTheme {
-  return useSyncExternalStore(subscribe, getUiTheme, () => "classic" as const);
+  return useSyncExternalStore(subscribe, getUiTheme, () => DEFAULT_THEME);
 }
 
 /**
@@ -91,12 +94,12 @@ export function initUiTheme(): void {
   } catch {
     // ignore
   }
-  current = isUiTheme(stored) ? stored : "classic";
+  current = isUiTheme(stored) ? stored : DEFAULT_THEME;
   applyToDom(current);
   // Cross-tab sync (mirrors useDarkMode's pattern).
   window.addEventListener("storage", (e) => {
     if (e.key !== STORAGE_KEY) return;
-    const next = isUiTheme(e.newValue) ? e.newValue : "classic";
+    const next = isUiTheme(e.newValue) ? e.newValue : DEFAULT_THEME;
     if (next !== current) {
       current = next;
       applyToDom(next);
