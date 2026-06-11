@@ -44,6 +44,8 @@ import {
 import { NeedsAttentionPanel } from "./NeedsAttentionPanel";
 import { TestReleaseNudge } from "./TestReleaseNudge";
 import { CohortSummaryWidget } from "./CohortSummaryWidget";
+import { useCohortSummary } from "./useCohortSummary";
+import { StatRow } from "./StatRow";
 
 // ---------------------------------------------------------------------------
 // Pinned-courses storage
@@ -323,6 +325,11 @@ export function DashboardPage() {
   const { classes, loading, error, refresh } = useTeacherClasses(
     profile?.id ?? null,
   );
+  // Cohort summary data is fetched ONCE here (the same single query the
+  // widget used to own) and threaded down as props, so the greeting-level
+  // StatRow and the CohortSummaryWidget share one source of truth without
+  // a duplicate network round-trip.
+  const cohortSummary = useCohortSummary(profile?.id ?? null);
   const [editTarget, setEditTarget] = useState<TeacherClass | null>(null);
   const [duplicateSource, setDuplicateSource] =
     useState<{ id: string; name: string } | null>(null);
@@ -447,45 +454,102 @@ export function DashboardPage() {
     };
   }, [domainScopedClasses, sortPinnedFirst]);
 
+  // ── Greeting (ivy-ledger pagehead) ────────────────────────────────────
+  // Time-of-day salutation + first name + long-form date, derived purely
+  // from the clock and the profile already in memory.
+  const greeting = useMemo(() => {
+    const h = new Date().getHours();
+    const salutation =
+      h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
+    const first = profile?.display_name?.trim().split(/\s+/)[0];
+    return first ? `${salutation}, ${first}` : salutation;
+  }, [profile?.display_name]);
+
+  const todayLine = useMemo(
+    () =>
+      new Date().toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+      }),
+    [],
+  );
+
+  // ── StatRow derivations ───────────────────────────────────────────────
+  // All from data already on this page: course list + the cohort summary.
+  const activeStudents = useMemo(
+    () => published.reduce((sum, c) => sum + c.member_count, 0),
+    [published],
+  );
+
+  const cohortStats = useMemo(() => {
+    let needs = 0;
+    let scoreSum = 0;
+    let scoreCount = 0;
+    for (const r of cohortSummary.rows) {
+      needs += r.needsAttentionCount;
+      if (r.avgEffectiveScore !== null) {
+        scoreSum += r.avgEffectiveScore;
+        scoreCount += 1;
+      }
+    }
+    return {
+      needs,
+      avg: scoreCount > 0 ? scoreSum / scoreCount : null,
+    };
+  }, [cohortSummary.rows]);
+
   return (
     <div className="min-h-[calc(100vh-var(--app-chrome-top,0px))] bg-slate-50 dark:bg-slate-950">
       <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6 space-y-8">
-        <header className="flex items-end justify-between gap-3">
-          <div className="space-y-1">
-            <h1 className="page-title text-2xl font-semibold text-slate-900 dark:text-slate-100">
-              Dashboard
-            </h1>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Jump back into any course.
-            </p>
-          </div>
-          {domainScopedClasses.length > 1 && (
-            <button
-              type="button"
-              onClick={() => setBroadcastOpen(true)}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-2 min-h-[40px] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
-              title="Compose once, send to multiple cohorts"
-            >
-              <svg
-                width={16}
-                height={16}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden
+        <div>
+          <header className="flex items-end justify-between gap-3">
+            <div className="space-y-1.5">
+              <h1 className="page-title text-2xl font-semibold text-slate-900 dark:text-slate-100">
+                {greeting}
+              </h1>
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                {todayLine} — jump back into any course.
+              </p>
+            </div>
+            {domainScopedClasses.length > 1 && (
+              <button
+                type="button"
+                onClick={() => setBroadcastOpen(true)}
+                className="inline-flex items-center gap-1.5 rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-sm font-medium px-3 py-2 min-h-[40px] hover:bg-slate-50 dark:hover:bg-slate-800 hover:ring-slate-400 dark:hover:ring-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 transition-colors"
+                title="Compose once, send to multiple cohorts"
               >
-                <path d="M3 11l18-8v18l-18-8z" />
-                <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
-              </svg>
-              Broadcast
-            </button>
-          )}
-        </header>
+                <svg
+                  width={16}
+                  height={16}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.6}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <path d="M3 11l18-8v18l-18-8z" />
+                  <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+                </svg>
+                Broadcast
+              </button>
+            )}
+          </header>
 
-        <div className="ivy-rule" aria-hidden="true" />
+          <div className="ivy-rule" aria-hidden="true" />
+        </div>
+
+        {!loading && !error && domainScopedClasses.length > 0 && (
+          <StatRow
+            activeStudents={activeStudents}
+            coursesLive={published.length}
+            needsAttention={cohortStats.needs}
+            avgScore30d={cohortStats.avg}
+            cohortLoading={cohortSummary.loading}
+          />
+        )}
 
         {profile?.id && (
           <NeedsAttentionPanel
@@ -496,7 +560,7 @@ export function DashboardPage() {
 
         {profile?.id && canQbank && <TestReleaseNudge />}
 
-        {profile?.id && <CohortSummaryWidget teacherId={profile.id} />}
+        {profile?.id && <CohortSummaryWidget summary={cohortSummary} />}
 
         {loading && (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -530,9 +594,15 @@ export function DashboardPage() {
 
         {!loading && !error && published.length > 0 && (
           <section className="space-y-3">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 tabular-nums">
-              Published courses ({published.length})
-            </h2>
+            <div className="flex items-center gap-3">
+              <h2 className="text-[11px] font-semibold uppercase tracking-[0.1em] text-slate-500 dark:text-slate-400 tabular-nums whitespace-nowrap">
+                Published courses ({published.length})
+              </h2>
+              <span
+                className="h-px flex-1 bg-slate-200 dark:bg-slate-800"
+                aria-hidden
+              />
+            </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {published.map((course) => (
                 <DashboardCard
@@ -553,9 +623,15 @@ export function DashboardPage() {
 
         {!loading && !error && unpublished.length > 0 && (
           <section className="space-y-3">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 tabular-nums">
-              Unpublished ({unpublished.length})
-            </h2>
+            <div className="flex items-center gap-3">
+              <h2 className="text-[11px] font-semibold uppercase tracking-[0.1em] text-slate-500 dark:text-slate-400 tabular-nums whitespace-nowrap">
+                Unpublished ({unpublished.length})
+              </h2>
+              <span
+                className="h-px flex-1 bg-slate-200 dark:bg-slate-800"
+                aria-hidden
+              />
+            </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {unpublished.map((course) => (
                 <DashboardCard

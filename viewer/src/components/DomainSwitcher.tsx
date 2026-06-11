@@ -24,18 +24,21 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
 import { useDomain } from "@/lib/DomainProvider";
-import { DOMAINS, educatorLabel, type Domain } from "@/lib/domain";
+import {
+  DOMAINS,
+  DOMAIN_VOCAB,
+  accentRampFor,
+  educatorLabel,
+  type Domain,
+} from "@/lib/domain";
+import { getUiTheme } from "@/lib/theme";
 
 /** Small filled dot in the active accent, marking the chip + each option. */
 function DomainDot({ domain }: { domain: Domain }) {
   // Per-domain swatch (independent of the live accent vars so the menu shows
-  // each option's true color even while a different domain is active).
-  const color =
-    domain === "coaching"
-      ? "#ea580c" // orange-600
-      : domain === "counseling"
-        ? "#059669" // emerald-600
-        : "#4f46e5"; // indigo-600 (academic)
+  // each option's true color even while a different domain is active) —
+  // theme-aware so ivy shows navy/forest/bronze, classic indigo/emerald/orange.
+  const color = accentRampFor(getUiTheme(), domain)["600"];
   return (
     <span
       aria-hidden
@@ -48,7 +51,21 @@ function DomainDot({ domain }: { domain: Domain }) {
 /** Menu width — keep in sync with the `w-52` on the menu (52 × 4px = 208). */
 const MENU_WIDTH = 208;
 
-export function DomainSwitcher() {
+export function DomainSwitcher({
+  labels = "educator",
+}: {
+  /**
+   * Which vocabulary the chip + menu use:
+   *   'educator' — Teacher / Counselor / Coach (staff shell: "which hat am I
+   *                wearing"), the historical default.
+   *   'home'     — Academics / Counseling / Coaching (student shell: a student
+   *                switches which AREA they're looking at, not a role — a
+   *                "Teacher" pill on a student screen reads as a bug).
+   */
+  labels?: "educator" | "home";
+}) {
+  const labelOf = (d: Domain): string =>
+    labels === "home" ? DOMAIN_VOCAB[d].homeNoun : educatorLabel(d);
   const { domain, setDomain } = useDomain();
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
@@ -163,11 +180,11 @@ export function DomainSwitcher() {
         onKeyDown={onTriggerKeyDown}
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label={`Active domain: ${educatorLabel(domain)}. Switch domain`}
+        aria-label={`Active domain: ${labelOf(domain)}. Switch domain`}
         className="inline-flex items-center gap-2 min-h-[40px] rounded-full px-3 py-1.5 text-sm font-medium bg-accent-50 text-accent-700 ring-1 ring-accent-200 hover:bg-accent-100 dark:bg-accent-950/40 dark:text-accent-200 dark:ring-accent-900 motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
       >
         <DomainDot domain={domain} />
-        <span className="truncate max-w-[8rem]">{educatorLabel(domain)}</span>
+        <span className="truncate max-w-[8rem]">{labelOf(domain)}</span>
         <svg
           aria-hidden
           width={14}
@@ -210,7 +227,7 @@ export function DomainSwitcher() {
                 className="flex w-full items-center gap-2.5 px-3 py-2.5 min-h-[40px] text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:bg-slate-50 dark:focus-visible:bg-slate-800"
               >
                 <DomainDot domain={d} />
-                <span className="flex-1 truncate">{educatorLabel(d)}</span>
+                <span className="flex-1 truncate">{labelOf(d)}</span>
                 {checked && (
                   <svg
                     aria-hidden

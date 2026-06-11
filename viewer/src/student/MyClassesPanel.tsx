@@ -99,30 +99,58 @@ interface ClassRowProps {
   onOpen: () => void;
 }
 
+/** Up-to-two-letter monogram for the course crest disc ("SAT June" → "SJ"). */
+function courseMonogram(name: string): string {
+  return name
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? "")
+    .join("");
+}
+
 function ClassRow({ cls, onOpen }: ClassRowProps) {
   return (
-    <li className="rounded-xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 flex items-stretch justify-between gap-1 overflow-hidden">
+    <li className="rounded-lg bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 flex items-stretch justify-between gap-1 overflow-hidden">
       <button
         type="button"
         onClick={onOpen}
-        className="flex-1 min-w-0 min-h-[40px] text-left px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/60 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-inset"
+        className="flex-1 min-w-0 min-h-[40px] flex items-center gap-3 text-left px-3.5 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/60 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-inset"
         aria-label={`Open course ${cls.name}`}
       >
-        <p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
-          {cls.name}
-        </p>
-        {cls.teacher_display_name && (
-          <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
-            {cls.teacher_display_name}
-          </p>
-        )}
+        {/* Crest-disc monogram (course identity, mockup's .crest-disc). */}
+        <span
+          aria-hidden="true"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-800 font-display text-sm font-medium text-accent-700 dark:text-accent-300"
+        >
+          {courseMonogram(cls.name)}
+        </span>
+        <span className="min-w-0">
+          <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100 truncate">
+            {cls.name}
+          </span>
+          {cls.teacher_display_name && (
+            <span className="block text-xs text-slate-500 dark:text-slate-400 truncate">
+              {cls.teacher_display_name}
+            </span>
+          )}
+        </span>
       </button>
       {/* Read-only status. Students can't leave a course themselves — the
           teacher manages enrolment from the roster. */}
-      <div className="flex items-center shrink-0 px-4">
-        <span className="text-[10px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      <div className="flex items-center shrink-0 gap-2 px-3.5">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
           Enrolled
         </span>
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="h-4 w-4 fill-none stroke-slate-300 dark:stroke-slate-600"
+          strokeWidth="1.8"
+        >
+          <path d="m9 6 6 6-6 6" />
+        </svg>
       </div>
     </li>
   );
@@ -176,12 +204,12 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
     <>
       <section
         aria-labelledby="my-classes-title"
-        className="rounded-2xl bg-white/60 dark:bg-slate-900/40 ring-1 ring-slate-200 dark:ring-slate-800 p-5"
+        className="rounded-2xl bg-white/60 dark:bg-slate-900/40 ring-1 ring-slate-200 dark:ring-slate-800 shadow-card p-5"
       >
         <header className="mb-3 flex items-center justify-between gap-3">
           <h3
             id="my-classes-title"
-            className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
+            className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400"
           >
             My courses
           </h3>
@@ -258,10 +286,10 @@ interface EmptyClassesStateProps {
 
 function EmptyClassesState({ onJoin }: EmptyClassesStateProps) {
   return (
-    <div className="rounded-xl bg-slate-50 dark:bg-slate-900/60 ring-1 ring-dashed ring-slate-200 dark:ring-slate-700 px-5 py-8 text-center">
+    <div className="rounded-2xl bg-slate-50 dark:bg-slate-900/60 ring-1 ring-dashed ring-slate-200 dark:ring-slate-700 px-5 py-8 text-center">
       <div
         aria-hidden="true"
-        className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300"
+        className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-accent-100 dark:bg-accent-900/40 text-accent-700 dark:text-accent-300"
       >
         <svg
           viewBox="0 0 24 24"
@@ -285,7 +313,7 @@ function EmptyClassesState({ onJoin }: EmptyClassesStateProps) {
       <button
         type="button"
         onClick={onJoin}
-        className="mt-4 inline-flex items-center justify-center min-h-[40px] rounded-lg bg-indigo-600 hover:bg-indigo-700 px-4 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 motion-safe:transition-colors"
+        className="mt-4 inline-flex items-center justify-center min-h-[40px] rounded-lg bg-accent-700 hover:bg-accent-800 px-4 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 motion-safe:transition-colors"
       >
         Join class
       </button>

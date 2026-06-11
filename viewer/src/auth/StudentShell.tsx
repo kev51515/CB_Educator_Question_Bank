@@ -281,10 +281,12 @@ export function StudentShell() {
               {studentRoleLabel}
             </p>
             {/* Domain switcher — re-themes the accent + relabels vocabulary
-                live. Hidden when the rail is collapsed (icon-only). */}
+                live. Hidden when the rail is collapsed (icon-only). Students
+                switch AREAS (Academics / Coaching…), not roles — the educator
+                labels read as a bug here ("Teacher" pill on a student UI). */}
             {!collapsed && (
               <div className="mt-2">
-                <DomainSwitcher />
+                <DomainSwitcher labels="home" />
               </div>
             )}
           </div>

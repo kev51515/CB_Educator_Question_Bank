@@ -65,7 +65,7 @@ export function FullTestSection({
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Display title (optional — defaults to the test title)"
         disabled={busy}
-        className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
       />
       {(() => {
         // Show the chosen test's section composition so the teacher knows
@@ -82,7 +82,7 @@ export function FullTestSection({
         const sum = sectionSummary(chosen.sections);
         return (
           <div
-            className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-[11px] text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700"
+            className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-[11px] text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700"
             aria-label="Test composition"
           >
             <span className="font-medium text-slate-700 dark:text-slate-200">
@@ -118,7 +118,7 @@ export function FullTestSection({
           All selected = the full test. A contiguous subset (e.g. R&W only)
           writes set_test_module_windows after the link is created. */}
       {fullTestSlug && ftModules.length > 1 && (
-        <div className="space-y-1.5 rounded-md ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-2.5">
+        <div className="space-y-1.5 rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-2.5">
           <div className="flex items-center justify-between gap-2 flex-wrap">
             <span className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
               Modules to deploy
@@ -164,7 +164,7 @@ export function FullTestSection({
                 <li key={m.position}>
                   <label
                     className={
-                      "flex items-center gap-2 rounded-md px-1.5 py-1.5 text-sm cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60 " +
+                      "flex items-center gap-2 rounded-lg px-1.5 py-1.5 text-sm cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60 " +
                       (on ? "" : "opacity-50")
                     }
                   >

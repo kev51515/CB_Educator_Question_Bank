@@ -16,6 +16,8 @@ export interface RosterRow {
 export interface AssignmentRow {
   id: string;
   title: string;
+  /** assignments.kind enum — drives the column-header eyebrow label. */
+  kind: string | null;
   created_at: string;
   /** ISO timestamp; nullable when teacher hasn't set a due date. */
   due_at: string | null;
@@ -115,6 +117,76 @@ export function renderCellText(cell: Cell): string {
 export function cellToneClass(cell: Cell): string {
   if (cell.kind === "score") return scoreToneClass(cell.score ?? 0);
   return NEUTRAL_CELL;
+}
+
+/** Vocabulary canon (CLAUDE.md): mocktest → "Practice Test",
+ *  qbank_set → "Question Set"; everything else is a plain "Assignment". */
+export function kindLabel(kind: string | null | undefined): string {
+  if (kind === "mocktest") return "Practice Test";
+  if (kind === "qbank_set") return "Question Set";
+  return "Assignment";
+}
+
+/** Avatar initials for the student cell — first + last word initials,
+ *  or the first two letters of a single-word name. */
+export function initialsOf(name: string): string {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "?";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+/**
+ * Summary stats for the three cards above the ledger. Pure derivation from
+ * the already-loaded matrix — no network. One pass over students × assignments.
+ */
+export interface GradebookStats {
+  /** Mean of per-student averages (0–100); null when no scores exist yet. */
+  classAverage: number | null;
+  /** Scored cells / expected cells, rounded percent; null when no cells. */
+  completionPct: number | null;
+  submittedCells: number;
+  expectedCells: number;
+  /** Draft / in-progress attempts awaiting review. */
+  ungradedCount: number;
+}
+
+export function computeGradebookStats(
+  students: Student[],
+  assignments: AssignmentRow[],
+  attemptMap: Map<string, AttemptRow>,
+): GradebookStats {
+  let submitted = 0;
+  let ungraded = 0;
+  let avgSum = 0;
+  let avgCount = 0;
+  for (const s of students) {
+    let sum = 0;
+    let count = 0;
+    for (const a of assignments) {
+      const cell = pickCell(attemptMap.get(`${s.student_id}|${a.id}`));
+      if (cell.kind === "score") {
+        submitted += 1;
+        sum += cell.score ?? 0;
+        count += 1;
+      } else if (cell.kind === "draft") {
+        ungraded += 1;
+      }
+    }
+    if (count > 0) {
+      avgSum += sum / count;
+      avgCount += 1;
+    }
+  }
+  const expected = students.length * assignments.length;
+  return {
+    classAverage: avgCount > 0 ? avgSum / avgCount : null,
+    completionPct:
+      expected > 0 ? Math.round((submitted / expected) * 100) : null,
+    submittedCells: submitted,
+    expectedCells: expected,
+    ungradedCount: ungraded,
+  };
 }
 
 export function todayStamp(): string {

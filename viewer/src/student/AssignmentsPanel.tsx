@@ -38,6 +38,8 @@ import {
   SORT_ORDER,
   categorise,
   compareAssignments,
+  formatDue,
+  formatTimeLimit,
   isDueImminent,
   isDueSoon,
   isGraded,
@@ -53,6 +55,20 @@ import {
   type SortKey,
   type ViewState,
 } from "./assignmentsPanelHelpers";
+
+/**
+ * Crest-disc monogram for the "Next up" hero — a trailing number ("Practice
+ * Test 4" → "4") when the title ends in one, else up-to-two word initials.
+ */
+function heroMonogram(title: string): string {
+  const trailingNumber = /(\d+)\s*$/.exec(title.trim());
+  if (trailingNumber && trailingNumber[1].length <= 2) return trailingNumber[1];
+  const words = title.trim().split(/\s+/).filter(Boolean);
+  return words
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? "")
+    .join("");
+}
 
 interface AssignmentsPanelProps {
   /** Bump to force a refetch — same pattern as MyClassesPanel. */
@@ -166,6 +182,24 @@ export function AssignmentsPanel({
   const totalOpen = counts.all;
   const hasAnyAssignments = assignments.length > 0;
 
+  // "Next up" hero — the soonest-due open to-do item (not submitted, not past
+  // due). Derived purely from the already-fetched list; dated items win over
+  // no-due-date ones.
+  const nextUp = useMemo<StudentAssignment | null>(() => {
+    let best: StudentAssignment | null = null;
+    let bestDue = Number.POSITIVE_INFINITY;
+    for (const a of assignments) {
+      if (!isOpen(a, now) || isSubmitted(a) || isPastDue(a, now)) continue;
+      const due = a.due_at ? Date.parse(a.due_at) : Number.NaN;
+      const key = Number.isFinite(due) ? due : Number.MAX_SAFE_INTEGER;
+      if (key < bestDue) {
+        bestDue = key;
+        best = a;
+      }
+    }
+    return best;
+  }, [assignments, now]);
+
   // Accessibility: a polite live region announces filter changes. Use the
   // active-chip label + the visible count so screen readers know what's now
   // displayed without yelling at the user on every keystroke elsewhere.
@@ -199,12 +233,12 @@ export function AssignmentsPanel({
   return (
     <section
       aria-labelledby="my-assignments-title"
-      className="rounded-2xl bg-white/60 dark:bg-slate-900/40 ring-1 ring-slate-200 dark:ring-slate-800 p-5 space-y-4"
+      className="rounded-2xl bg-white/60 dark:bg-slate-900/40 ring-1 ring-slate-200 dark:ring-slate-800 shadow-card p-5 space-y-4"
     >
       <header className="flex items-baseline justify-between">
         <h3
           id="my-assignments-title"
-          className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
+          className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400"
         >
           My assignments
         </h3>
@@ -214,6 +248,59 @@ export function AssignmentsPanel({
           </span>
         )}
       </header>
+
+      {/* "Next up" hero — the soonest-due to-do item gets the mockup's
+          crest-disc + display-face treatment. Same Start intent as its row. */}
+      {!loading && !error && nextUp && (
+        <div className="space-y-2">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+            Next up
+          </p>
+          <div className="flex items-center gap-4 rounded-2xl bg-white dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-700 shadow-card px-5 py-4">
+            <div
+              aria-hidden="true"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-800 font-display text-sm font-medium text-accent-700 dark:text-accent-300"
+            >
+              {heroMonogram(nextUp.title)}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="font-display text-lg font-medium leading-snug text-slate-900 dark:text-slate-100 truncate">
+                {nextUp.title}
+              </p>
+              <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[13px] text-slate-500 dark:text-slate-400">
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 shrink-0 fill-none stroke-current"
+                  strokeWidth="1.6"
+                >
+                  <circle cx="12" cy="12" r="8.5" />
+                  <path d="M12 7.5V12l3 2" />
+                </svg>
+                <span>{formatDue(nextUp.due_at)}</span>
+                <span aria-hidden className="text-slate-300 dark:text-slate-600">
+                  ·
+                </span>
+                <span className="truncate">{nextUp.class_name}</span>
+                <span aria-hidden className="text-slate-300 dark:text-slate-600">
+                  ·
+                </span>
+                <span className="tabular-nums">
+                  {nextUp.question_count} questions ·{" "}
+                  {formatTimeLimit(nextUp.time_limit_minutes)}
+                </span>
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => onStart(nextUp)}
+              className="inline-flex min-h-[40px] shrink-0 items-center rounded-lg bg-accent-700 px-4 py-2 text-sm font-semibold text-white hover:bg-accent-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-1 motion-safe:transition-colors"
+            >
+              Start
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Filter + sort toolbar — render only when there's something to triage. */}
       {!loading && !error && hasAnyAssignments && (
@@ -227,11 +314,11 @@ export function AssignmentsPanel({
               const isActive = view.filter === key;
               const count = counts[key];
               const base =
-                "inline-flex items-center min-h-[40px] rounded-full text-xs font-medium px-3 py-1.5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400";
+                "inline-flex items-center min-h-[40px] rounded-full text-xs font-medium px-3 py-1.5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400";
               const active =
-                "bg-indigo-600 text-white shadow-sm hover:bg-indigo-700";
+                "bg-accent-700 text-white shadow-sm hover:bg-accent-800";
               const inactive =
-                "bg-slate-100 text-slate-600 hover:border-indigo-400 hover:text-indigo-700 border border-transparent dark:bg-slate-800/70 dark:text-slate-300 dark:hover:text-indigo-300";
+                "bg-slate-100 text-slate-600 hover:border-accent-400 hover:text-accent-700 border border-transparent dark:bg-slate-800/70 dark:text-slate-300 dark:hover:text-accent-300";
               return (
                 <button
                   key={key}
@@ -297,7 +384,7 @@ export function AssignmentsPanel({
       ) : filtered.length === 0 ? (
         <div
           id="my-assignments-results"
-          className="rounded-xl bg-slate-50/80 dark:bg-slate-900/40 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-6 text-center space-y-2"
+          className="rounded-2xl bg-slate-50/80 dark:bg-slate-900/40 ring-1 ring-slate-200 dark:ring-slate-800 px-4 py-6 text-center space-y-2"
         >
           <p className="text-sm text-slate-500 dark:text-slate-400">
             No assignments match this filter
@@ -305,7 +392,7 @@ export function AssignmentsPanel({
           <button
             type="button"
             onClick={resetFilter}
-            className="text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 rounded-md min-h-[40px] px-3 py-2"
+            className="text-xs font-medium text-accent-700 dark:text-accent-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 rounded-lg min-h-[40px] px-3 py-2"
           >
             Show all
           </button>
@@ -314,7 +401,7 @@ export function AssignmentsPanel({
         <div id="my-assignments-results" className="space-y-5">
           {grouped.todo.length > 0 && (
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                 To do · {grouped.todo.length}
               </p>
               <ul className="space-y-2">
@@ -334,7 +421,7 @@ export function AssignmentsPanel({
 
           {grouped.pastDue.length > 0 && (
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wide text-rose-600 dark:text-rose-400">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-rose-600 dark:text-rose-400">
                 Past due · {grouped.pastDue.length}
               </p>
               <ul className="space-y-2">
@@ -353,7 +440,7 @@ export function AssignmentsPanel({
 
           {grouped.completed.length > 0 && (
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                 Completed · {grouped.completed.length}
               </p>
               <ul className="space-y-2">

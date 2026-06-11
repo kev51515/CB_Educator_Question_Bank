@@ -167,13 +167,13 @@ export function QuestionSetSection({
         placeholder="Type to filter sets (label, topic, section, difficulty)…"
         disabled={busy}
         aria-label="Filter Question Sets"
-        className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
       />
 
       {/* Result list — error / loading skeletons / empty state / rows. */}
       <div
         ref={psListRef}
-        className="max-h-60 overflow-y-auto rounded-md ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900"
+        className="max-h-60 overflow-y-auto rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900"
         role="listbox"
         aria-label="Question Set catalog"
       >
@@ -183,7 +183,7 @@ export function QuestionSetSection({
             <button
               type="button"
               onClick={() => void refreshCatalog()}
-              className="rounded-md bg-white dark:bg-slate-900 ring-1 ring-rose-300 dark:ring-rose-800 px-2 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 hover:bg-rose-50 dark:hover:bg-rose-950/40"
+              className="rounded-lg bg-white dark:bg-slate-900 ring-1 ring-rose-300 dark:ring-rose-800 px-2 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 hover:bg-rose-50 dark:hover:bg-rose-950/40"
             >
               Retry
             </button>
@@ -262,7 +262,7 @@ export function QuestionSetSection({
         placeholder={psSetUid ? "Title (defaults to set label)" : "Pick a set above first"}
         disabled={busy || !psSetUid}
         maxLength={200}
-        className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
+        className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
       />
 
       {/* Read-only meta — set definitions live in the catalog. */}
@@ -275,7 +275,7 @@ export function QuestionSetSection({
           );
           return (
             <div
-              className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-[11px] text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700"
+              className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-[11px] text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700"
               aria-label="Set defaults"
             >
               <span>
@@ -322,7 +322,7 @@ export function QuestionSetSection({
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Display title in module (optional)"
           disabled={busy}
-          className="mt-1.5 w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="mt-1.5 w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
       </details>
     </div>

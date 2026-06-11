@@ -91,7 +91,7 @@ export function InlineRename({
         onBlur={() => {
           void commit();
         }}
-        className={`bg-white dark:bg-slate-800 ring-1 ring-indigo-400 rounded-md px-2 py-0.5 text-sm w-full max-w-md ${
+        className={`bg-white dark:bg-slate-800 ring-1 ring-indigo-400 rounded-lg px-2 py-0.5 text-sm w-full max-w-md ${
           className ?? ""
         }`}
       />
@@ -157,7 +157,7 @@ export function LockUntilPicker({
             onClick={() => {
               void onApply(null);
             }}
-            className="rounded-md px-2 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+            className="rounded-lg px-2 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             Clear lock
           </button>
@@ -165,7 +165,7 @@ export function LockUntilPicker({
             <button
               type="button"
               onClick={onClose}
-              className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
             >
               Cancel
             </button>
@@ -174,7 +174,7 @@ export function LockUntilPicker({
               onClick={() => {
                 void onApply(value);
               }}
-              className="rounded-md px-3 py-1.5 text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white"
+              className="rounded-lg px-3 py-1.5 text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white"
             >
               Apply
             </button>
@@ -227,14 +227,14 @@ export function MoveItemPicker({
             min={0}
             value={position}
             onChange={(e) => setPosition(Number.parseInt(e.target.value, 10) || 0)}
-            className="mt-1 w-full rounded-md bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
           />
         </label>
         <div className="flex items-center justify-end gap-2">
           <button
             type="button"
             onClick={onClose}
-            className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+            className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             Cancel
           </button>
@@ -243,7 +243,7 @@ export function MoveItemPicker({
             onClick={() => {
               void onApply(targetModuleId, position);
             }}
-            className="rounded-md px-3 py-1.5 text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white"
+            className="rounded-lg px-3 py-1.5 text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white"
           >
             Move
           </button>
@@ -310,14 +310,14 @@ export function MoveModulePicker({
             min={0}
             value={position}
             onChange={(e) => setPosition(Number.parseInt(e.target.value, 10) || 0)}
-            className="mt-1 w-full rounded-md bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
+            className="mt-1 w-full rounded-lg bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
           />
         </label>
         <div className="flex items-center justify-end gap-2">
           <button
             type="button"
             onClick={onClose}
-            className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+            className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             Cancel
           </button>
@@ -326,7 +326,7 @@ export function MoveModulePicker({
             onClick={() => {
               void onApply(parentId, position);
             }}
-            className="rounded-md px-3 py-1.5 text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white"
+            className="rounded-lg px-3 py-1.5 text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white"
           >
             Move
           </button>

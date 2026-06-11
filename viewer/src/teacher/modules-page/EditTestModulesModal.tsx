@@ -262,7 +262,7 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
           type="button"
           onClick={onClose}
           disabled={saving}
-          className="rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
+          className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50"
         >
           Cancel
         </button>
@@ -270,7 +270,7 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
           type="button"
           onClick={() => void onSave()}
           disabled={!canSave}
-          className="rounded-md px-3 py-1.5 text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+          className="rounded-lg px-3 py-1.5 text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {saving ? "Saving…" : "Save"}
         </button>
@@ -289,12 +289,12 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
       {!loaded ? (
         <SkeletonRows count={4} rowClassName="h-10" />
       ) : modules.length === 0 ? (
-        <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
+        <p className="rounded-lg bg-slate-50 dark:bg-slate-800/60 px-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
           Couldn't load this test's modules.
         </p>
       ) : (
         <div className="space-y-2.5">
-          <div className="space-y-1.5 rounded-md ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-2.5">
+          <div className="space-y-1.5 rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-2.5">
             <div className="flex items-center justify-between gap-2 flex-wrap">
               <span className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Modules to deploy
@@ -341,7 +341,7 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
                     <li key={m.position}>
                       <label
                         className={
-                          "flex items-center gap-2 rounded-md px-1.5 py-1.5 text-sm cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60 " +
+                          "flex items-center gap-2 rounded-lg px-1.5 py-1.5 text-sm cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60 " +
                           (on ? "" : "opacity-50")
                         }
                       >
@@ -383,7 +383,7 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
             </div>
 
             {submittedCount > 0 && (
-              <p className="rounded-md bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-[11px] text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-800">
+              <p className="rounded-lg bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-[11px] text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-800">
                 {submittedCount} student{submittedCount === 1 ? "" : "s"} already took the
                 current modules. Changing the modules won&apos;t affect their results —
                 new attempts use the new set.

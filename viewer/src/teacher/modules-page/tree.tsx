@@ -71,22 +71,66 @@ function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element 
     header: <path d="M4 7h16M4 12h10M4 17h7" />,
   };
   return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+    <span
       aria-hidden
-      className="h-4 w-4 flex-none text-slate-400 dark:text-slate-500"
+      className="h-7 w-7 flex-none inline-flex items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 text-slate-500 dark:text-slate-400"
     >
-      {paths[type]}
-    </svg>
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-[15px] w-[15px]"
+      >
+        {paths[type]}
+      </svg>
+    </span>
   );
 }
+
+/**
+ * Sunken icon tile for full-test links — clock face per the Ivy Ledger
+ * mockup's "Practice Test" type icon (replaces the old uppercase TEST chip;
+ * the kind label under the title now carries the wording).
+ */
+function FullTestIcon(): JSX.Element {
+  return (
+    <span
+      aria-hidden
+      className="h-7 w-7 flex-none inline-flex items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 text-indigo-600 dark:text-indigo-400"
+    >
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-[15px] w-[15px]"
+      >
+        <circle cx="12" cy="13" r="7.5" />
+        <path d="M12 9.5V13l2.5 2M10 2.5h4" />
+      </svg>
+    </span>
+  );
+}
+
+/** Uppercase micro kind label rendered under each item title (mockup's
+ *  .item-kind type hierarchy). Derived purely from item_type already in
+ *  memory. */
+const ITEM_KIND_LABEL: Record<ModuleItem["item_type"], string> = {
+  assignment: "Assignment",
+  page: "Page",
+  link: "Link",
+  file: "File",
+  header: "Header",
+};
 
 /** Small line-SVG padlock, matching ItemTypeIcon's stroke style. */
 function LockIcon(): JSX.Element {
@@ -543,7 +587,7 @@ const ModuleCard = memo(function ModuleCard({
       )}
       <div
         ref={moduleContainerRef}
-        className={`${depth > 0 ? "rounded-xl" : "rounded-2xl"} bg-white dark:bg-slate-900 ring-1 overflow-visible transition-colors ${
+        className={`rounded-2xl bg-white dark:bg-slate-900 ring-1 shadow-card overflow-visible transition-colors ${
           isNestTargetParent
             ? "ring-2 ring-indigo-500 bg-indigo-50/40 dark:bg-indigo-950/30"
             : recentlyMovedId === module.id
@@ -597,12 +641,14 @@ const ModuleCard = memo(function ModuleCard({
         }}
       >
       <div
-        className={`flex items-center gap-2 ${depth > 0 ? "px-2.5 py-2" : "px-3 py-3"} border-b border-slate-200 dark:border-slate-800 transition-colors ${
+        className={`flex items-center gap-2 ${depth > 0 ? "px-2.5 py-2" : "px-3 py-3"} ${
+          expanded ? "border-b border-slate-200 dark:border-slate-800" : ""
+        } transition-colors ${
           itemHeaderHover
             ? "bg-indigo-100 dark:bg-indigo-950/60 ring-2 ring-inset ring-indigo-400"
             : isNestTargetParent
               ? "bg-indigo-100 dark:bg-indigo-950/60"
-              : "bg-slate-50/50 dark:bg-slate-900/50"
+              : ""
         } ${isDragging ? "animate-pulse" : ""}`}
         // #6: cross-module item drop onto the module HEADER. Only active while
         // an item is being dragged (draggedItemId set) AND it isn't already in
@@ -746,7 +792,7 @@ const ModuleCard = memo(function ModuleCard({
           {module.children.length > 0 && (
             <span
               title={`${module.children.length} submodule${module.children.length === 1 ? "" : "s"}`}
-              className="text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5 flex-none"
+              className="text-xs text-slate-500 dark:text-slate-400 tabular-nums whitespace-nowrap flex-none"
             >
               {module.children.length}{" "}
               {module.children.length === 1 ? "submodule" : "submodules"}
@@ -755,7 +801,7 @@ const ModuleCard = memo(function ModuleCard({
           {module.items.length > 0 && (
             <span
               title={`${module.items.length} item${module.items.length === 1 ? "" : "s"}`}
-              className="text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5 flex-none"
+              className="text-xs text-slate-500 dark:text-slate-400 tabular-nums whitespace-nowrap flex-none"
             >
               {module.items.length}{" "}
               {module.items.length === 1 ? "item" : "items"}
@@ -765,7 +811,7 @@ const ModuleCard = memo(function ModuleCard({
           {isStudent && lockedNow && module.lock_at && (
             <span
               title={new Date(module.lock_at).toLocaleString()}
-              className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1"
+              className="inline-flex items-center gap-1 rounded-full bg-amber-50 dark:bg-amber-950/40 px-2.5 py-1 text-[11px] font-semibold text-amber-700 dark:text-amber-300 flex-none"
             >
               <LockIcon /> Locked {formatRelativeTime(module.lock_at)}
             </span>
@@ -773,7 +819,7 @@ const ModuleCard = memo(function ModuleCard({
           {!isStudent && module.lock_at && (
             <span
               title={new Date(module.lock_at).toLocaleString()}
-              className="text-xs text-slate-500 dark:text-slate-400 truncate flex items-center gap-1"
+              className="inline-flex items-center gap-1 rounded-full bg-amber-50 dark:bg-amber-950/40 px-2.5 py-1 text-[11px] font-semibold text-amber-700 dark:text-amber-300 truncate"
             >
               <LockIcon /> {lockedNow ? "Locked" : "Locks"} {formatRelativeTime(module.lock_at)}
             </span>
@@ -995,7 +1041,7 @@ const ModuleCard = memo(function ModuleCard({
                   e.stopPropagation();
                   void onCommitItemDrop(cur);
                 }}
-                className={`flex items-center gap-2 px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-opacity ${
+                className={`flex items-center gap-2 px-3 py-2.5 hover:bg-indigo-50/50 dark:hover:bg-indigo-950/20 transition-opacity ${
                   isItemDragging ? "opacity-50" : ""
                 } ${
                   recentlyMovedId === item.id
@@ -1029,86 +1075,91 @@ const ModuleCard = memo(function ModuleCard({
                   </button>
                 )}
                 {isFullTestLink ? (
-                  <span className="flex-none inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
-                    Test
-                  </span>
+                  <FullTestIcon />
                 ) : (
                   <ItemTypeIcon type={item.item_type} />
                 )}
-                {canEdit && renamingItemId === item.id ? (
-                  // Kebab "Rename" flips ANY item into an inline editor — even
-                  // a full-test link, whose title otherwise renders as a <Link>
-                  // and can't be click-to-renamed in place.
-                  <InlineRename
-                    value={item.title}
-                    disabled={false}
-                    autoEdit
-                    onCancel={() => setRenamingItemId(null)}
-                    onSave={async (next) => {
-                      await onRenameItem(item, next);
-                      setRenamingItemId(null);
-                    }}
-                    className="flex-1"
-                    titleClassName={
-                      item.item_type === "header"
-                        ? "text-sm font-semibold text-slate-700 dark:text-slate-200"
-                        : "text-sm text-slate-700 dark:text-slate-200"
-                    }
-                  />
-                ) : isAssignment ? (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (item.item_ref_id) onOpenAssignment(item.item_ref_id);
-                    }}
-                    className="flex-1 text-left text-sm text-indigo-600 dark:text-indigo-400 hover:underline truncate"
-                  >
-                    {item.title}
-                  </button>
-                ) : isFullTestLink && item.url ? (
-                  // Teachers proctor, they don't sit the test — a test link opens
-                  // the per-test OVERVIEW (results + live status), same tab.
-                  <Link
-                    to={`${testOverviewPath(fullTestSlug)}?course=${classId}${
-                      fullTestRange ? `&m=${fullTestRange}` : ""
-                    }`}
-                    title="Open the proctor view — results & live status"
-                    className="flex-1 text-sm text-indigo-600 dark:text-indigo-400 hover:underline truncate"
-                  >
-                    {item.title}
-                  </Link>
-                ) : item.item_type === "link" && item.url ? (
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-sm text-indigo-600 dark:text-indigo-400 hover:underline truncate"
-                  >
-                    {item.title}
-                  </a>
-                ) : canEdit ? (
-                  <InlineRename
-                    value={item.title}
-                    disabled={false}
-                    onSave={(next) => onRenameItem(item, next)}
-                    className="flex-1"
-                    titleClassName={
-                      item.item_type === "header"
-                        ? "text-sm font-semibold text-slate-700 dark:text-slate-200"
-                        : "text-sm text-slate-700 dark:text-slate-200"
-                    }
-                  />
-                ) : (
-                  <span
-                    className={`flex-1 text-sm truncate ${
-                      item.item_type === "header"
-                        ? "font-semibold text-slate-700 dark:text-slate-200"
-                        : "text-slate-700 dark:text-slate-200"
-                    }`}
-                  >
-                    {item.title}
-                  </span>
-                )}
+                <div className="flex-1 min-w-0 flex flex-col">
+                  {canEdit && renamingItemId === item.id ? (
+                    // Kebab "Rename" flips ANY item into an inline editor — even
+                    // a full-test link, whose title otherwise renders as a <Link>
+                    // and can't be click-to-renamed in place.
+                    <InlineRename
+                      value={item.title}
+                      disabled={false}
+                      autoEdit
+                      onCancel={() => setRenamingItemId(null)}
+                      onSave={async (next) => {
+                        await onRenameItem(item, next);
+                        setRenamingItemId(null);
+                      }}
+                      className="max-w-full"
+                      titleClassName={
+                        item.item_type === "header"
+                          ? "text-sm font-semibold text-slate-700 dark:text-slate-200"
+                          : "text-sm font-medium text-slate-800 dark:text-slate-200"
+                      }
+                    />
+                  ) : isAssignment ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (item.item_ref_id) onOpenAssignment(item.item_ref_id);
+                      }}
+                      className="self-start max-w-full text-left text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline truncate"
+                    >
+                      {item.title}
+                    </button>
+                  ) : isFullTestLink && item.url ? (
+                    // Teachers proctor, they don't sit the test — a test link opens
+                    // the per-test OVERVIEW (results + live status), same tab.
+                    <Link
+                      to={`${testOverviewPath(fullTestSlug)}?course=${classId}${
+                        fullTestRange ? `&m=${fullTestRange}` : ""
+                      }`}
+                      title="Open the proctor view — results & live status"
+                      className="self-start max-w-full text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline truncate"
+                    >
+                      {item.title}
+                    </Link>
+                  ) : item.item_type === "link" && item.url ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="self-start max-w-full text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline truncate"
+                    >
+                      {item.title}
+                    </a>
+                  ) : canEdit ? (
+                    <InlineRename
+                      value={item.title}
+                      disabled={false}
+                      onSave={(next) => onRenameItem(item, next)}
+                      className="max-w-full self-start"
+                      titleClassName={
+                        item.item_type === "header"
+                          ? "text-sm font-semibold text-slate-700 dark:text-slate-200"
+                          : "text-sm font-medium text-slate-800 dark:text-slate-200"
+                      }
+                    />
+                  ) : (
+                    <span
+                      className={`self-start max-w-full text-sm truncate ${
+                        item.item_type === "header"
+                          ? "font-semibold text-slate-700 dark:text-slate-200"
+                          : "font-medium text-slate-800 dark:text-slate-200"
+                      }`}
+                    >
+                      {item.title}
+                    </span>
+                  )}
+                  {item.item_type !== "header" && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                      {isFullTestLink ? "Practice Test" : ITEM_KIND_LABEL[item.item_type]}
+                    </span>
+                  )}
+                </div>
 
                 {canEdit ? (
                   <>
@@ -1152,8 +1203,8 @@ const ModuleCard = memo(function ModuleCard({
             );
           })}
           {canEdit && (
-            <div className="px-4 py-2.5">
-              {inlineAddingItem ? (
+            inlineAddingItem ? (
+              <div className="px-4 py-2.5">
                 <InlineAddItemRow
                   classId={classId}
                   module={module}
@@ -1167,16 +1218,35 @@ const ModuleCard = memo(function ModuleCard({
                   }}
                   onCancel={onCancelInlineItem}
                 />
-              ) : (
-                <button
-                  type="button"
-                  onClick={onAddItem}
-                  className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline"
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={onAddItem}
+                className="w-full min-h-[44px] flex items-center gap-2 px-4 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 hover:bg-indigo-50/70 dark:hover:bg-indigo-950/30 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors rounded-b-2xl"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                  className="h-3.5 w-3.5 flex-none"
                 >
-                  + Add item
-                </button>
-              )}
-            </div>
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+                Add item
+                <span className="font-normal text-slate-400 dark:text-slate-500 truncate hidden sm:inline">
+                  — {canQbank
+                    ? "Assignment, Practice Test, Question Set, Header, or Link"
+                    : "Assignment, Header, or Link"}
+                </span>
+              </button>
+            )
           )}
         </div>
       )}
@@ -1421,7 +1491,7 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
               // rows inside belong to the parent above. When this container
               // is an active asChild drop target the rule pops to indigo
               // (active interaction); otherwise slate (passive structure).
-              "relative ml-6 mt-3 p-3 space-y-3 rounded-xl border transition-colors " +
+              "relative ml-6 mt-3 p-3 space-y-3 rounded-2xl border transition-colors " +
               "bg-slate-50/70 dark:bg-slate-900/40 " +
               "before:absolute before:left-0 before:top-3 before:bottom-3 before:w-[3px] before:rounded-full transition-colors " +
               (isNestDropTarget

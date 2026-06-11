@@ -1,80 +1,42 @@
 import { Link } from "react-router-dom";
 import { type CohortRow } from "./useCohortSummary";
 import { courseModulesPath } from "@/lib/routes";
-import { useUiTheme } from "@/lib/theme";
 
-// ─── Score pill ───────────────────────────────────────────────────────────
+// ─── Average score (ledger numeral) ───────────────────────────────────────
+//
+// Ivy-ledger anatomy: big display numeral + quiet label on one baseline.
+// Deliberately NOT `.ceremonial` — the dashboard's single gold numeral is
+// the 30-day average up in StatRow; per-cohort averages stay in plain ink
+// so the screen respects the two-gold cap. `font-display` is a safe no-op
+// in the classic theme.
 
-interface ScorePillProps {
+interface ScoreLineProps {
   value: number | null;
 }
 
-function ScorePill({ value }: ScorePillProps) {
-  const ivy = useUiTheme() === "ivy";
+function ScoreLine({ value }: ScoreLineProps) {
   if (value === null) {
-    if (ivy) {
-      // Ivy: quiet italic line instead of a grey pill (same copy + tooltip).
-      return (
-        <span
-          className="text-[11px] italic text-slate-500 dark:text-slate-400"
-          title="No graded attempts in the last 30 days"
-        >
-          No activity yet
-        </span>
-      );
-    }
     return (
       <span
-        className="
-          inline-flex items-center gap-1
-          px-2 py-0.5 rounded-full text-[11px] font-medium
-          bg-slate-100 text-slate-600
-          dark:bg-slate-800 dark:text-slate-300
-        "
+        className="text-[11px] italic text-slate-500 dark:text-slate-400"
         title="No graded attempts in the last 30 days"
       >
-        No activity yet
+        No scored activity yet
       </span>
     );
   }
   const rounded = Math.round(value);
-  if (ivy) {
-    // Ivy: the 30-day average is the cohort card's ledger moment — a
-    // ceremonial display numeral instead of a tinted pill. Same copy
-    // ("Avg N%"), restructured as label + numeral.
-    return (
-      <span
-        className="inline-flex items-baseline gap-1.5"
-        title="Average score over the last 30 days"
-      >
-        <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
-          Avg
-        </span>
-        <span className="ceremonial text-[24px] leading-none tabular-nums">
-          {rounded}%
-        </span>
-      </span>
-    );
-  }
-  let cls = "";
-  if (value >= 80) {
-    cls =
-      "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200";
-  } else if (value >= 70) {
-    cls =
-      "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-200";
-  } else if (value >= 50) {
-    cls =
-      "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200";
-  } else {
-    cls = "bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-200";
-  }
   return (
     <span
-      className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold ${cls}`}
+      className="inline-flex items-baseline gap-1.5 min-w-0"
       title="Average score over the last 30 days"
     >
-      Avg {rounded}%
+      <span className="font-display text-[26px] font-medium leading-none tabular-nums text-slate-900 dark:text-slate-100">
+        {rounded}%
+      </span>
+      <span className="text-[11px] text-slate-500 dark:text-slate-400 whitespace-nowrap">
+        avg · last 30 days
+      </span>
     </span>
   );
 }
@@ -95,7 +57,7 @@ function ChevronRightIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth={2.5}
+      strokeWidth={1.6}
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden
@@ -107,15 +69,16 @@ function ChevronRightIcon() {
 
 export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) {
   const studentsLabel = row.studentCount === 1 ? "student" : "students";
-  const subsLabel = row.submissionsThisWeek === 1 ? "this week" : "this week";
+  const subsLabel =
+    row.submissionsThisWeek === 1 ? "submission" : "submissions";
 
   return (
     <div
       className="
         relative group min-w-0
-        rounded-xl ring-1 ring-slate-200/60 dark:ring-slate-800
-        bg-white/80 dark:bg-slate-900/40
-        hover:ring-indigo-200 dark:hover:ring-indigo-800
+        rounded-lg ring-1 ring-slate-200 dark:ring-slate-800
+        bg-white dark:bg-slate-900/40
+        hover:ring-slate-300 dark:hover:ring-slate-700
         transition-colors
       "
     >
@@ -134,10 +97,10 @@ export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) 
             inline-flex items-center gap-1
             min-h-[40px] px-2.5 py-1
             rounded-full text-[11px] font-semibold tabular-nums
-            bg-rose-100 text-rose-800
-            dark:bg-rose-900/40 dark:text-rose-200
-            hover:bg-rose-200 dark:hover:bg-rose-900/60
-            focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500
+            bg-amber-100 text-amber-800
+            dark:bg-amber-900/40 dark:text-amber-200
+            hover:bg-amber-200 dark:hover:bg-amber-900/60
+            focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500
             transition-colors
           "
         >
@@ -149,52 +112,35 @@ export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) 
         onClick={() => onOpenDrill(row)}
         aria-label={`View ${row.courseName} cohort details`}
         className="
-          block w-full text-left p-3 space-y-2
-          rounded-xl
+          block w-full text-left p-3.5
+          rounded-lg
           focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500
         "
       >
-        <div className="flex items-start justify-between gap-2">
-          <h3
-            className="
-              min-w-0 flex-1
-              text-sm font-semibold
-              text-slate-900 dark:text-slate-100
-              truncate pr-16
-            "
-            title={row.courseName}
-          >
-            {row.courseName}
-          </h3>
-        </div>
-        <div className="flex flex-wrap items-center gap-1.5">
-          <span
-            className="
-              inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium tabular-nums
-              bg-slate-100 text-slate-700
-              dark:bg-slate-800 dark:text-slate-200
-            "
-          >
-            {row.studentCount} {studentsLabel}
-          </span>
-          <span
-            className="
-              inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium tabular-nums
-              bg-slate-100 text-slate-700
-              dark:bg-slate-800 dark:text-slate-200
-            "
-          >
-            {row.submissionsThisWeek} {subsLabel}
-          </span>
-        </div>
-        <div className="flex items-center justify-between gap-2">
-          <ScorePill value={row.avgEffectiveScore} />
+        <h3
+          className="
+            min-w-0
+            text-sm font-semibold
+            text-slate-900 dark:text-slate-100
+            truncate pr-16
+          "
+          title={row.courseName}
+        >
+          {row.courseName}
+        </h3>
+        <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400 tabular-nums truncate">
+          {row.studentCount} {studentsLabel} · {row.submissionsThisWeek}{" "}
+          {subsLabel} this week
+        </p>
+        <div className="mt-3 flex items-end justify-between gap-2">
+          <ScoreLine value={row.avgEffectiveScore} />
           <span
             className="
               inline-flex items-center gap-1 text-[11px] font-medium
               text-slate-500 dark:text-slate-400
-              opacity-0 group-hover:opacity-100
+              opacity-0 group-hover:opacity-100 group-focus-within:opacity-100
               motion-safe:transition-opacity
+              whitespace-nowrap
             "
             aria-hidden
           >
@@ -207,12 +153,12 @@ export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) 
         to={courseModulesPath(row.courseShortCode)}
         onClick={(e) => e.stopPropagation()}
         className="
-          block px-3 py-1.5 text-[11px] font-medium
+          block px-3.5 py-2 text-[11px] font-medium
           text-indigo-700 dark:text-indigo-300
-          border-t border-slate-200/60 dark:border-slate-800
+          border-t border-slate-200 dark:border-slate-800
           hover:bg-indigo-50/40 dark:hover:bg-indigo-950/20
           focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500
-          rounded-b-xl
+          rounded-b-lg
           transition-colors
         "
       >

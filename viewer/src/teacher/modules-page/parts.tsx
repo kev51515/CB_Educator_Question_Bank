@@ -44,11 +44,31 @@ interface PublishButtonProps {
   onToggle: () => void;
 }
 
+/** Small check icon for the published badge (1.6px stroke, no emoji). */
+function CheckIcon(): JSX.Element {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className="h-3 w-3 flex-none"
+    >
+      <path d="m5 12.5 4.5 4.5L19 7.5" />
+    </svg>
+  );
+}
+
 /**
- * iOS-style switch + label: the "circle" before this was ambiguous (users
- * couldn't tell at a glance whether a module was published). The switch
- * makes the state obvious — knob LEFT = off (Draft), knob RIGHT = on
- * (Published). Color reinforces: slate track for off, emerald for on.
+ * One-click status badge (Ivy Ledger mockup language): published reads as a
+ * green-tint pill with a check; draft reads as a dashed, sunken pill. The
+ * whole badge is the toggle — same single-click contract as before, the
+ * switch chrome is just replaced with the mockup's .badge recipe.
  */
 function PublishToggle({
   published,
@@ -63,34 +83,18 @@ function PublishToggle({
       role="switch"
       aria-checked={published}
       title={published ? "Published — click to make draft" : "Draft — click to publish"}
-      className={`min-h-[40px] md:min-h-0 inline-flex items-center gap-2 px-1.5 py-1 rounded-full transition-colors ${
-        disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-slate-50 dark:hover:bg-slate-800/60"
+      className={`min-h-[40px] md:min-h-0 inline-flex items-center flex-none ${
+        disabled ? "opacity-50 cursor-not-allowed" : ""
       }`}
     >
-      {/* Switch track */}
       <span
-        aria-hidden
-        className={`relative inline-block w-9 h-5 rounded-full transition-colors ${
+        className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold transition-colors ${
           published
-            ? "bg-emerald-500"
-            : "bg-slate-300 dark:bg-slate-600"
+            ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 border border-transparent hover:border-emerald-400 dark:hover:border-emerald-600"
+            : "bg-slate-50 text-slate-500 dark:bg-slate-800/60 dark:text-slate-400 border border-dashed border-slate-300 dark:border-slate-600 hover:border-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
         }`}
       >
-        {/* Knob */}
-        <span
-          className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow-sm transition-all duration-150 ${
-            published ? "left-[18px]" : "left-0.5"
-          }`}
-        />
-      </span>
-      {/* Label */}
-      <span
-        className={`text-xs font-semibold uppercase tracking-wide hidden sm:inline ${
-          published
-            ? "text-emerald-700 dark:text-emerald-300"
-            : "text-slate-500 dark:text-slate-400"
-        }`}
-      >
+        {published && <CheckIcon />}
         {published ? "Published" : "Draft"}
       </span>
     </button>
@@ -137,18 +141,20 @@ export function OptimisticPublishToggle(props: OptimisticPublishToggleProps): JS
   return <OptimisticPublishToggleInner key={`${rowKey}:${rest.published}`} {...rest} />;
 }
 
-/** Read-only round status indicator for student view. */
+/** Read-only status badge for student view — same .badge language as the
+ *  teacher toggle, minus interactivity. */
 export function PublishBadge({ published }: { published: boolean }): JSX.Element {
   return (
     <span
       title={published ? "Published" : "Unpublished"}
-      className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
+      className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold flex-none ${
         published
-          ? "bg-emerald-500 text-white"
-          : "border-2 border-slate-300 text-slate-300"
+          ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
+          : "bg-slate-50 text-slate-500 dark:bg-slate-800/60 dark:text-slate-400 border border-dashed border-slate-300 dark:border-slate-600"
       }`}
     >
-      {published ? "✓" : ""}
+      {published && <CheckIcon />}
+      {published ? "Published" : "Draft"}
     </span>
   );
 }
@@ -204,7 +210,7 @@ export function InsertionBar({
           {parentName && (
             <span
               className={
-                "absolute -top-2.5 text-[11px] font-semibold rounded-md px-1.5 py-0.5 shadow-sm whitespace-nowrap max-w-[16rem] truncate " +
+                "absolute -top-2.5 text-[11px] font-semibold rounded-lg px-1.5 py-0.5 shadow-sm whitespace-nowrap max-w-[16rem] truncate " +
                 (asChild
                   ? "left-3 bg-indigo-600 text-white ring-1 ring-indigo-700"
                   : "left-3 bg-indigo-100 dark:bg-indigo-900/60 text-indigo-800 dark:text-indigo-200 ring-1 ring-indigo-200 dark:ring-indigo-800")
@@ -220,7 +226,7 @@ export function InsertionBar({
             this depth. The styling mimics a real row but at 40% opacity with
             a dashed indigo border so it reads as "future state". */}
         {draggedName && (
-          <div className="mt-1.5 rounded-xl border-2 border-dashed border-indigo-400 dark:border-indigo-600 bg-indigo-50/60 dark:bg-indigo-950/40 px-3 py-2 opacity-70 flex items-center gap-2">
+          <div className="mt-1.5 rounded-lg border-2 border-dashed border-indigo-400 dark:border-indigo-600 bg-indigo-50/60 dark:bg-indigo-950/40 px-3 py-2 opacity-70 flex items-center gap-2">
             <span aria-hidden className="text-indigo-400 dark:text-indigo-500">
               <svg width={12} height={12} viewBox="0 0 12 12">
                 <circle cx={3} cy={3} r={1} fill="currentColor" />

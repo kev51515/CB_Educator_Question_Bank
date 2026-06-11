@@ -5,12 +5,9 @@
  * (see migration 0024) which returns one row per (domain, skill) the student
  * has touched, with attempts/correct counts and a 0-100 mastery percentage.
  *
- * The view groups rows by domain and renders each skill as a cell colored by
- * mastery band:
- *   >= 85%  emerald
- *   65-84   indigo
- *   40-64   amber
- *   < 40    rose
+ * The view groups rows by domain and renders each skill as a hairline row
+ * with ten "mastery squares" (the Ivy Ledger brand visual) in four fill
+ * states derived from the 0-100 mastery value, plus a mono percent.
  *
  * Wave 22 additions:
  *   - Domain filter pills (tablist) — quickly scope to Math / Reading / Writing
@@ -89,17 +86,47 @@ function toNumber(value: number | string | null): number {
   return Number.isFinite(n) ? n : 0;
 }
 
-function masteryClasses(mastery: number): string {
-  if (mastery >= 85) {
-    return "bg-emerald-500/90 text-white ring-emerald-600";
-  }
-  if (mastery >= 65) {
-    return "bg-indigo-500/90 text-white ring-indigo-600";
-  }
-  if (mastery >= 40) {
-    return "bg-amber-400/90 text-slate-900 ring-amber-500";
-  }
-  return "bg-rose-500/90 text-white ring-rose-600";
+/**
+ * Mastery squares (the Ivy Ledger brand visual): ten small rounded squares
+ * per skill, each in one of four fill states derived from the 0-100 mastery
+ * value. Square i fills progressively as mastery crosses i*10:
+ *   fully past  → mastered (deep accent)
+ *   half past   → proficient (mid accent)
+ *   just past   → attempted (light accent)
+ *   not reached → untouched (sunken outline)
+ */
+type MasterySquareState = "mastered" | "proficient" | "attempted" | "untouched";
+
+const MSQ_CLASSES: Record<MasterySquareState, string> = {
+  mastered: "bg-accent-700 dark:bg-accent-400",
+  proficient: "bg-accent-400 dark:bg-accent-600",
+  attempted: "bg-accent-200 dark:bg-accent-900",
+  untouched:
+    "bg-slate-100 ring-1 ring-inset ring-slate-200 dark:bg-slate-800/80 dark:ring-slate-700",
+};
+
+function masterySquareStates(mastery: number): MasterySquareState[] {
+  const v = Math.max(0, Math.min(100, mastery)) / 10;
+  return Array.from({ length: 10 }, (_, i) => {
+    const fill = v - i;
+    if (fill >= 1) return "mastered";
+    if (fill >= 0.5) return "proficient";
+    if (fill > 0) return "attempted";
+    return "untouched";
+  });
+}
+
+function MasterySquares({ mastery }: { mastery: number }) {
+  return (
+    <span aria-hidden="true" className="flex shrink-0 gap-1">
+      {masterySquareStates(mastery).map((state, i) => (
+        <i
+          key={i}
+          className={`block h-[13px] w-[13px] rounded-[3.5px] ${MSQ_CLASSES[state]}`}
+        />
+      ))}
+    </span>
+  );
 }
 
 function getErrorMessage(error: unknown): string {
@@ -334,17 +361,17 @@ export function SkillHeatmap() {
   return (
     <section
       aria-labelledby="skill-mastery-title"
-      className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 p-5 shadow-sm"
+      className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 p-5 shadow-card"
     >
       <div className="flex items-baseline justify-between gap-3">
         <h3
           id="skill-mastery-title"
-          className="text-sm font-semibold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+          className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400"
         >
           Skill mastery
         </h3>
         {rows.length > 0 && (
-          <span className="text-xs text-slate-500 dark:text-slate-400">
+          <span className="text-xs text-slate-500 dark:text-slate-400 tabular-nums">
             {rows.length} skills
           </span>
         )}
@@ -380,14 +407,14 @@ export function SkillHeatmap() {
             <div
               role="status"
               aria-label={`Weakest skill: ${weakest.skill} at ${weakest.mastery}% mastery`}
-              className="mt-4 flex flex-wrap items-center gap-3 rounded-xl bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-3 py-2"
+              className="mt-4 flex flex-wrap items-center gap-3 rounded-lg bg-slate-50/80 dark:bg-slate-800/50 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2"
             >
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-500/10 dark:bg-rose-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-rose-700 dark:text-rose-300">
-                Weakest skill
+              <span className="inline-flex min-h-[24px] items-center rounded-full bg-amber-100 dark:bg-amber-900/40 px-2.5 text-[11px] font-semibold tracking-[0.02em] text-amber-800 dark:text-amber-300">
+                Focus here
               </span>
               <div className="min-w-0 flex-1 text-sm text-slate-800 dark:text-slate-100">
                 <span className="font-semibold">{weakest.skill}</span>{" "}
-                <span className="text-slate-500 dark:text-slate-400">
+                <span className="text-slate-500 dark:text-slate-400 tabular-nums">
                   · {weakest.mastery}% mastery ·{" "}
                   {weakest.correct}/{weakest.attempts} correct
                 </span>
@@ -407,14 +434,14 @@ export function SkillHeatmap() {
                 role="tab"
                 aria-selected={view.domain === ALL_DOMAINS}
                 onClick={() => handleDomainSelect(ALL_DOMAINS)}
-                className={`motion-safe:transition-colors min-h-[40px] inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 ${
+                className={`motion-safe:transition-colors min-h-[40px] inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1 ${
                   view.domain === ALL_DOMAINS
-                    ? "bg-indigo-600 text-white ring-1 ring-indigo-700"
+                    ? "bg-accent-700 text-white ring-1 ring-accent-800"
                     : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700"
                 }`}
               >
                 All
-                <span className="ml-1.5 opacity-80">({rows.length})</span>
+                <span className="ml-1.5 opacity-80 tabular-nums">({rows.length})</span>
               </button>
               {domainPills.map(({ domain, count }) => {
                 const selected = view.domain === domain;
@@ -425,9 +452,9 @@ export function SkillHeatmap() {
                     role="tab"
                     aria-selected={selected}
                     onClick={() => handleDomainSelect(domain)}
-                    className={`motion-safe:transition-colors min-h-[40px] inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 ${
+                    className={`motion-safe:transition-colors min-h-[40px] inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1 ${
                       selected
-                        ? "bg-indigo-600 text-white ring-1 ring-indigo-700"
+                        ? "bg-accent-700 text-white ring-1 ring-accent-800"
                         : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700"
                     }`}
                   >
@@ -465,45 +492,61 @@ export function SkillHeatmap() {
               <button
                 type="button"
                 onClick={() => handleDomainSelect(ALL_DOMAINS)}
-                className="motion-safe:transition-colors mt-2 inline-flex min-h-[40px] items-center rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1"
+                className="motion-safe:transition-colors mt-2 inline-flex min-h-[40px] items-center rounded-lg bg-accent-700 hover:bg-accent-800 text-white text-xs font-semibold px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1"
               >
                 Show all
               </button>
             </div>
           )}
 
-          {/* Heatmap grids per domain group */}
+          {/* Mastery-square rows per domain group (Ivy Ledger brand visual) */}
           {filteredCount > 0 && (
             <div className="mt-4 space-y-4">
               {filteredGroups.map((group) => (
                 <div key={group.domain}>
-                  <h4 className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2">
+                  <h4 className="mb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
                     {group.domain}
                   </h4>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  <div className="divide-y divide-slate-100 dark:divide-slate-800">
                     {group.rows.map((row) => (
                       <div
                         key={`${group.domain}::${row.skill}`}
-                        className={`min-h-[40px] text-left rounded-lg p-2 ring-1 ${masteryClasses(row.mastery)}`}
+                        className="flex min-h-[46px] flex-wrap items-center gap-x-3.5 gap-y-1 py-1.5"
                         title={`${row.skill}: ${row.correct}/${row.attempts} correct`}
                         aria-label={`${row.skill} — current mastery ${row.mastery}%`}
                       >
-                        <div className="text-xs font-medium leading-tight line-clamp-2">
+                        <span className="min-w-0 flex-1 text-[13.5px] font-medium leading-snug text-slate-800 dark:text-slate-100">
                           {row.skill}
-                        </div>
-                        <div className="mt-1 flex items-baseline justify-between">
-                          <span className="text-lg font-bold tabular-nums">
-                            {row.mastery}%
-                          </span>
-                          <span className="text-[10px] opacity-80 tabular-nums">
-                            {row.attempts} att
-                          </span>
-                        </div>
+                        </span>
+                        <MasterySquares mastery={row.mastery} />
+                        <span className="w-10 text-right font-mono text-xs tabular-nums text-slate-600 dark:text-slate-300">
+                          {row.mastery}%
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
               ))}
+
+              {/* Legend footer — square states, mirrored from the mockup. */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 border-t border-slate-100 dark:border-slate-800 pt-3 text-[11.5px] text-slate-500 dark:text-slate-400">
+                <span className="inline-flex items-center gap-1.5">
+                  <i className={`block h-[13px] w-[13px] rounded-[3.5px] ${MSQ_CLASSES.mastered}`} />
+                  Mastered
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <i className={`block h-[13px] w-[13px] rounded-[3.5px] ${MSQ_CLASSES.proficient}`} />
+                  Proficient
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <i className={`block h-[13px] w-[13px] rounded-[3.5px] ${MSQ_CLASSES.attempted}`} />
+                  Attempted
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <i className={`block h-[13px] w-[13px] rounded-[3.5px] ${MSQ_CLASSES.untouched}`} />
+                  Untouched
+                </span>
+              </div>
             </div>
           )}
         </>

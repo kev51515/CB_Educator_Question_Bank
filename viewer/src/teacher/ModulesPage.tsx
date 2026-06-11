@@ -1000,6 +1000,21 @@ export function ModulesPage(): JSX.Element {
     );
   }
 
+  // Quiet ledger meta under the page title — derived purely from the module
+  // list already in memory (no extra queries).
+  const publishedCount = modules.filter((m) => m.published).length;
+  const totalItems = modules.reduce((n, m) => n + m.items.length, 0);
+
+  // Ivy Ledger toolbar pill recipes: white ring-1 chips, per-intent tinted
+  // hovers (neutral / green / navy), one solid navy primary. 32px visual
+  // height on desktop, >=40px tap target on touch.
+  const pillBase =
+    "inline-flex items-center gap-1.5 rounded-full min-h-[40px] md:min-h-[32px] px-3.5 text-xs font-medium bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 transition-colors";
+  const pillNeutral =
+    `${pillBase} text-slate-600 dark:text-slate-300 hover:ring-slate-300 dark:hover:ring-slate-600 hover:text-slate-900 dark:hover:text-slate-100`;
+  const pillGreen =
+    `${pillBase} text-slate-600 dark:text-slate-300 hover:ring-emerald-300 dark:hover:ring-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950/30`;
+
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -1015,8 +1030,26 @@ export function ModulesPage(): JSX.Element {
                 if (allCollapsed) expandAll();
                 else collapseAll();
               }}
-              className="rounded-full px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className={pillNeutral}
             >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+                className="h-3.5 w-3.5 flex-none"
+              >
+                {allCollapsed ? (
+                  <path d="m7 4 5 5 5-5M7 20l5-5 5 5" />
+                ) : (
+                  <path d="m7 10 5-5 5 5M7 14l5 5 5-5" />
+                )}
+              </svg>
               {allCollapsed ? "Expand all" : "Collapse all"}
             </button>
           )}
@@ -1026,8 +1059,22 @@ export function ModulesPage(): JSX.Element {
               onClick={() => {
                 void publishAll();
               }}
-              className="rounded-full px-3 py-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-300 ring-1 ring-emerald-300 dark:ring-emerald-700 hover:bg-emerald-50 dark:hover:bg-emerald-950/30"
+              className={pillGreen}
             >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+                className="h-3.5 w-3.5 flex-none"
+              >
+                <path d="m5 12.5 4.5 4.5L19 7.5" />
+              </svg>
               Publish all
             </button>
           )}
@@ -1036,7 +1083,7 @@ export function ModulesPage(): JSX.Element {
               <button
                 type="button"
                 onClick={exitSelectMode}
-                className="rounded-full px-3 py-1.5 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-400 dark:ring-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-950/60"
+                className="inline-flex items-center gap-1.5 rounded-full min-h-[40px] md:min-h-[32px] px-3.5 text-xs font-medium transition-colors text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-400 dark:ring-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-950/60"
               >
                 Done
               </button>
@@ -1044,7 +1091,7 @@ export function ModulesPage(): JSX.Element {
               <button
                 type="button"
                 onClick={() => setSelectMode(true)}
-                className="rounded-full px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className={pillNeutral}
               >
                 Select
               </button>
@@ -1054,20 +1101,44 @@ export function ModulesPage(): JSX.Element {
             <button
               type="button"
               onClick={() => setInlineCreatingModule({ busy: false })}
-              className="rounded-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-3 py-1.5"
+              className="inline-flex items-center gap-1.5 rounded-full min-h-[40px] md:min-h-[32px] px-3.5 text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition-colors"
             >
-              + Module
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+                className="h-3.5 w-3.5 flex-none"
+              >
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+              Module
             </button>
           )}
         </div>
       </div>
+
+      {modules.length > 0 && (
+        <p className="text-sm text-slate-500 dark:text-slate-400 -mt-2">
+          <span className="tabular-nums">{publishedCount}</span> of{" "}
+          <span className="tabular-nums">{modules.length}</span>{" "}
+          {modules.length === 1 ? "module" : "modules"} published ·{" "}
+          <span className="tabular-nums">{totalItems}</span>{" "}
+          {totalItems === 1 ? "item" : "items"}
+        </p>
+      )}
 
       <div className="ivy-rule" aria-hidden="true" />
 
       {error && (
         <div
           role="alert"
-          className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
+          className="rounded-lg bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
         >
           {error}
         </div>
@@ -1255,10 +1326,14 @@ export function ModulesPage(): JSX.Element {
           aria-label="Bulk module actions"
           className="fixed bottom-4 left-0 right-0 z-50 px-3 pointer-events-none"
         >
-          <div className="pointer-events-auto mx-auto max-w-3xl rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-indigo-300 dark:ring-indigo-700 shadow-xl px-4 py-2.5 flex flex-wrap items-center gap-3">
-            <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+          <div className="pointer-events-auto mx-auto max-w-3xl rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-600 shadow-xl px-4 py-2.5 flex flex-wrap items-center gap-3">
+            <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 tabular-nums whitespace-nowrap">
               {selectedModuleIds.size} selected
             </span>
+            <span
+              aria-hidden
+              className="hidden sm:block w-px h-5 bg-slate-200 dark:bg-slate-700"
+            />
             <div className="flex items-center gap-2 flex-wrap">
               <button
                 type="button"
@@ -1266,9 +1341,23 @@ export function ModulesPage(): JSX.Element {
                 onClick={() => {
                   void bulkSetPublished(true);
                 }}
-                className="rounded-full px-3 py-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-300 ring-1 ring-emerald-300 dark:ring-emerald-700 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-1.5 rounded-full min-h-[40px] md:min-h-[32px] px-3.5 text-xs font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 hover:ring-emerald-300 dark:hover:ring-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {bulkBusy ? "Working…" : "Publish all"}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                  className="h-3.5 w-3.5 flex-none"
+                >
+                  <path d="m5 12.5 4.5 4.5L19 7.5" />
+                </svg>
+                {bulkBusy ? "Working…" : "Publish"}
               </button>
               <button
                 type="button"
@@ -1276,16 +1365,30 @@ export function ModulesPage(): JSX.Element {
                 onClick={() => {
                   void bulkSetPublished(false);
                 }}
-                className="rounded-full px-3 py-1.5 text-xs font-medium text-amber-700 dark:text-amber-300 ring-1 ring-amber-300 dark:ring-amber-700 hover:bg-amber-50 dark:hover:bg-amber-950/30 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-1.5 rounded-full min-h-[40px] md:min-h-[32px] px-3.5 text-xs font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 hover:ring-amber-300 dark:hover:ring-amber-700 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Unpublish all
+                Unpublish
               </button>
               <button
                 type="button"
                 disabled={bulkBusy}
                 onClick={() => setBulkDeleteOpen(true)}
-                className="rounded-full px-3 py-1.5 text-xs font-semibold text-white bg-rose-600 hover:bg-rose-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-1.5 rounded-full min-h-[40px] md:min-h-[32px] px-3.5 text-xs font-semibold text-rose-700 dark:text-rose-300 ring-1 ring-rose-300 dark:ring-rose-700 bg-white dark:bg-slate-900 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                  className="h-3.5 w-3.5 flex-none"
+                >
+                  <path d="M5 7h14M9.5 7V5h5v2M7 7l1 13h8l1-13M10.5 11v5M13.5 11v5" />
+                </svg>
                 Delete
               </button>
             </div>
@@ -1293,7 +1396,7 @@ export function ModulesPage(): JSX.Element {
               type="button"
               onClick={exitSelectMode}
               disabled={bulkBusy}
-              className="ml-auto text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-50"
+              className="ml-auto min-h-[40px] md:min-h-0 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:underline underline-offset-2 disabled:opacity-50"
             >
               Clear selection
             </button>

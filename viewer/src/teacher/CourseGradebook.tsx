@@ -35,6 +35,9 @@ import {
   getErrorMessage,
   truncateTitle,
   pickCell,
+  computeGradebookStats,
+  initialsOf,
+  kindLabel,
   renderCellText,
   cellToneClass,
   todayStamp,
@@ -151,7 +154,7 @@ export function CourseGradebook() {
             .eq("course_id", courseId),
           supabase
             .from("assignments")
-            .select("id, short_code, title, created_at, due_at")
+            .select("id, short_code, title, kind, created_at, due_at")
             .eq("course_id", courseId)
             .eq("archived", false)
             .order("created_at", { ascending: true }),
@@ -345,6 +348,13 @@ export function CourseGradebook() {
     return out;
   }, [students, orderedAssignments, attemptMap]);
 
+  // Summary stats for the three cards above the ledger — derived purely
+  // from the already-loaded matrix in memory (no extra queries).
+  const stats = useMemo(
+    () => computeGradebookStats(students, orderedAssignments, attemptMap),
+    [students, orderedAssignments, attemptMap],
+  );
+
   const sortedStudents = useMemo<Student[]>(() => {
     const arr = [...students];
     if (sort.key === "name") {
@@ -525,7 +535,7 @@ export function CourseGradebook() {
           Gradebook
         </h1>
         <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 p-4 space-y-3">
-          <Skeleton className="h-8 w-full rounded" />
+          <Skeleton className="h-8 w-full rounded-lg" />
           <SkeletonRows count={6} rowClassName="h-10" />
         </div>
       </div>
@@ -540,7 +550,7 @@ export function CourseGradebook() {
         </h1>
         <div
           role="alert"
-          className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
+          className="rounded-lg bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
         >
           {error}
         </div>
@@ -551,9 +561,9 @@ export function CourseGradebook() {
   const hasData = students.length > 0 && orderedAssignments.length > 0;
 
   const sortPillClass = (active: boolean): string =>
-    `rounded-full min-h-[40px] md:min-h-0 inline-flex items-center px-3 py-2 md:py-1 text-xs font-medium ring-1 transition ${
+    `rounded-full min-h-[40px] md:min-h-0 inline-flex items-center px-3 py-2 md:py-1 text-xs font-medium ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 ${
       active
-        ? "bg-indigo-600 text-white ring-indigo-600 hover:bg-indigo-700"
+        ? "bg-accent-600 text-white ring-accent-600 hover:bg-accent-700"
         : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800"
     }`;
 
@@ -587,7 +597,7 @@ export function CourseGradebook() {
           // Slate ghost button matching surrounding controls (filter pills,
           // sort buttons). 40px+ tap target via min-h-[40px]. Dark-mode pair
           // mirrors the sortPillClass scheme.
-          className="inline-flex items-center gap-2 rounded-lg min-h-[40px] px-4 py-2 text-sm font-medium ring-1 transition bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-700 dark:hover:text-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white dark:disabled:hover:bg-slate-900 disabled:hover:text-slate-700 dark:disabled:hover:text-slate-200"
+          className="inline-flex items-center gap-2 rounded-lg min-h-[40px] px-4 py-2 text-sm font-medium ring-1 transition bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent-700 dark:hover:text-accent-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white dark:disabled:hover:bg-slate-900 disabled:hover:text-slate-700 dark:disabled:hover:text-slate-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -609,7 +619,7 @@ export function CourseGradebook() {
       <div className="ivy-rule" aria-hidden="true" />
 
       {!hasData ? (
-        <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">
+        <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 shadow-card">
           <EmptyState
             title="Nothing to grade yet"
             body={
@@ -633,8 +643,56 @@ export function CourseGradebook() {
         </div>
       ) : (
         <>
+          {/* Summary stat cards (ivy-ledger mockup). All three derive from
+              the in-memory matrix via computeGradebookStats — zero queries.
+              Class average is the page's single ceremonial numeral. */}
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 shadow-card px-5 pt-4 pb-4">
+              <div className="text-xs font-medium text-slate-500 dark:text-slate-400">
+                Class average
+              </div>
+              <div className="ceremonial mt-1 text-[34px] leading-none font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+                {stats.classAverage === null
+                  ? "—"
+                  : `${Math.round(stats.classAverage)}%`}
+              </div>
+              <div className="mt-1.5 text-xs text-slate-400 dark:text-slate-500">
+                {stats.classAverage === null
+                  ? "No scored submissions yet"
+                  : `Mean of ${students.length} student ${
+                      students.length === 1 ? "average" : "averages"
+                    } across ${orderedAssignments.length} ${
+                      orderedAssignments.length === 1 ? "item" : "items"
+                    }`}
+              </div>
+            </div>
+            <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 shadow-card px-5 pt-4 pb-4">
+              <div className="text-xs font-medium text-slate-500 dark:text-slate-400">
+                Completion
+              </div>
+              <div className="mt-1 text-[28px] leading-none font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+                {stats.completionPct === null ? "—" : `${stats.completionPct}%`}
+              </div>
+              <div className="mt-1.5 text-xs text-slate-400 dark:text-slate-500 tabular-nums">
+                {stats.submittedCells} of {stats.expectedCells} expected
+                submissions
+              </div>
+            </div>
+            <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 shadow-card px-5 pt-4 pb-4">
+              <div className="text-xs font-medium text-slate-500 dark:text-slate-400">
+                Ungraded
+              </div>
+              <div className="mt-1 text-[28px] leading-none font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+                {stats.ungradedCount}
+              </div>
+              <div className="mt-1.5 text-xs text-slate-400 dark:text-slate-500">
+                Drafts &amp; in-progress attempts awaiting review
+              </div>
+            </div>
+          </div>
+
           <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <span className="font-medium">Sort:</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-400 dark:text-slate-500">Sort</span>
             <button
               type="button"
               onClick={() => toggleSortKey("name")}
@@ -661,7 +719,7 @@ export function CourseGradebook() {
             aria-label="Filter gradebook"
             className="flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400"
           >
-            <span className="font-medium">Filter:</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-400 dark:text-slate-500">Filter</span>
             {(Object.keys(FILTER_LABELS) as GradebookFilter[]).map((key) => (
               <button
                 key={key}
@@ -673,7 +731,7 @@ export function CourseGradebook() {
                 {FILTER_LABELS[key]}
               </button>
             ))}
-            <span className="ml-1 inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:text-slate-300">
+            <span className="ml-1 inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 min-h-[24px] text-[11px] font-semibold tabular-nums text-slate-600 dark:text-slate-300">
               {visibleStudents.length} of {sortedStudents.length} students
             </span>
           </div>
@@ -685,7 +743,7 @@ export function CourseGradebook() {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search students…"
               aria-label="Search students by name"
-              className="w-full sm:w-72 rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2 min-h-[40px] text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              className="w-full sm:w-72 rounded-lg bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2 min-h-[40px] text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
             />
             <span className="text-xs text-slate-500 dark:text-slate-400">
               {debouncedQuery.trim()
@@ -710,27 +768,35 @@ export function CourseGradebook() {
             sticky doesn't work reliably across browsers for
             `border-collapse` tables.
           */}
-          <div
-            ref={scrollRef}
-            onScroll={onTableScroll}
-            className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 overflow-x-auto"
-          >
+          <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 shadow-card">
+            <div
+              ref={scrollRef}
+              onScroll={onTableScroll}
+              className="overflow-x-auto rounded-t-2xl"
+            >
             <table className="min-w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="sticky top-[var(--app-chrome-top,0px)] left-0 z-30 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-r border-slate-200 dark:border-slate-800">
+                  {/* Sunken header band; eyebrow typography per the ledger
+                      mockup. Sticky strategy unchanged (see comment above). */}
+                  <th className="sticky top-[var(--app-chrome-top,0px)] left-0 z-30 bg-slate-100 dark:bg-slate-800 px-3.5 py-2.5 text-left text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400 border-b border-r border-slate-300 dark:border-slate-700 align-bottom">
                     Student
                   </th>
                   {orderedAssignments.map((a) => (
                     <th
                       key={a.id}
-                      className="sticky top-[var(--app-chrome-top,0px)] z-20 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800"
+                      className="sticky top-[var(--app-chrome-top,0px)] z-20 bg-slate-100 dark:bg-slate-800 px-3 py-2.5 text-left border-b border-slate-300 dark:border-slate-700 align-bottom"
                       title={a.title}
                     >
-                      {truncateTitle(a.title)}
+                      <span className="block text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+                        {kindLabel(a.kind)}
+                      </span>
+                      <span className="block mt-0.5 text-xs font-semibold normal-case tracking-normal text-slate-700 dark:text-slate-200 whitespace-nowrap">
+                        {truncateTitle(a.title)}
+                      </span>
                     </th>
                   ))}
-                  <th className="sticky top-[var(--app-chrome-top,0px)] z-20 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left text-sm font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800">
+                  <th className="sticky top-[var(--app-chrome-top,0px)] z-20 bg-slate-100 dark:bg-slate-800 px-3.5 py-2.5 text-right text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400 border-b border-l border-slate-300 dark:border-slate-700 align-bottom">
                     Average
                   </th>
                 </tr>
@@ -753,25 +819,42 @@ export function CourseGradebook() {
                   return (
                     <tr
                       key={s.student_id}
-                      className="border-t border-slate-200 dark:border-slate-800"
+                      className="border-t border-slate-200 dark:border-slate-800 transition-colors hover:bg-accent-600/[0.05] dark:hover:bg-slate-800/50"
                     >
-                      <td className="sticky left-0 z-10 bg-white dark:bg-slate-900 px-3 py-2 text-sm whitespace-nowrap border-r border-slate-200 dark:border-slate-800">
-                        <button
-                          type="button"
-                          onClick={() =>
-                            navigate(
-                              courseStudentProfilePath(
-                                courseShortCode,
-                                s.student_id,
-                              ),
-                            )
-                          }
-                          title="Open student profile"
-                          aria-label={`Open profile for ${s.display_name}`}
-                          className="inline-flex items-center rounded-md min-h-[40px] md:min-h-0 px-1.5 py-1 text-left text-slate-900 dark:text-slate-100 hover:text-indigo-700 dark:hover:text-indigo-300 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                        >
-                          {s.display_name}
-                        </button>
+                      {/* Sticky student cell keeps its opaque surface so the
+                          row-hover tint never bleeds under it (mockup). */}
+                      <td className="sticky left-0 z-10 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm whitespace-nowrap border-r border-slate-300 dark:border-slate-700">
+                        <div className="flex items-center gap-2.5">
+                          <span
+                            aria-hidden="true"
+                            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-300 dark:ring-slate-600 text-[11px] font-semibold tracking-wide text-slate-600 dark:text-slate-300"
+                          >
+                            {initialsOf(s.display_name)}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              navigate(
+                                courseStudentProfilePath(
+                                  courseShortCode,
+                                  s.student_id,
+                                ),
+                              )
+                            }
+                            title="Open student profile"
+                            aria-label={`Open profile for ${s.display_name}`}
+                            className="rounded-lg min-h-[40px] px-1.5 py-1 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 group"
+                          >
+                            <span className="block text-[13px] font-semibold leading-tight text-slate-900 dark:text-slate-100 group-hover:text-accent-700 dark:group-hover:text-accent-300 group-hover:underline underline-offset-2">
+                              {s.display_name}
+                            </span>
+                            {s.email ? (
+                              <span className="block text-[11px] font-normal leading-tight text-slate-500 dark:text-slate-400">
+                                {s.email}
+                              </span>
+                            ) : null}
+                          </button>
+                        </div>
                       </td>
                       {orderedAssignments.map((a) => {
                         const cell = pickCell(
@@ -787,8 +870,17 @@ export function CourseGradebook() {
                             : cell.adjusted
                               ? "Open attempt · score adjusted by teacher"
                               : "Open attempt";
+                        // Score cells keep the per-theme tone class; draft
+                        // renders as the mockup's dashed chip and missing as
+                        // a quiet em-dash in both themes (structural).
+                        const scoreTone =
+                          cell.kind === "score"
+                            ? uiTheme === "ivy"
+                              ? ivyCellToneClass(cell)
+                              : cellToneClass(cell)
+                            : "";
                         return (
-                          <td key={a.id} className="px-3 py-2 text-sm">
+                          <td key={a.id} className="px-3 py-2 text-sm whitespace-nowrap">
                             <button
                               type="button"
                               onClick={() =>
@@ -796,29 +888,72 @@ export function CourseGradebook() {
                               }
                               title={titleHint}
                               aria-label={`${titleHint} — ${a.title}`}
-                              className={`relative inline-flex items-center justify-center rounded-md min-h-[40px] md:min-h-0 px-2 py-1.5 md:py-0.5 text-xs font-medium tabular-nums hover:opacity-80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${uiTheme === "ivy" ? ivyCellToneClass(cell) : cellToneClass(cell)}`}
+                              className={`relative inline-flex items-center justify-center rounded-lg min-h-[40px] md:min-h-0 px-2 py-1.5 md:py-0.5 text-[13px] font-medium tabular-nums hover:opacity-80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 ${scoreTone}`}
                             >
-                              {renderCellText(cell)}
+                              {cell.kind === "missing" ? (
+                                <span className="text-slate-300 dark:text-slate-600">
+                                  —
+                                </span>
+                              ) : cell.kind === "draft" ? (
+                                <span className="inline-flex items-center rounded-full border border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 px-2.5 py-0.5 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                                  draft
+                                </span>
+                              ) : (
+                                renderCellText(cell)
+                              )}
                               {cell.adjusted && (
                                 <span
                                   aria-hidden
-                                  className="absolute -top-1 -right-1 inline-block h-2 w-2 rounded-full bg-indigo-500 ring-2 ring-white dark:ring-slate-900"
+                                  className="absolute -top-1 -right-1 inline-block h-2 w-2 rounded-full bg-accent-500 ring-2 ring-white dark:ring-slate-900"
                                 />
                               )}
                             </button>
                           </td>
                         );
                       })}
-                      <td className="px-3 py-2 text-sm font-medium tabular-nums text-slate-900 dark:text-slate-100">
-                        {avg === null || avg === undefined
-                          ? "—"
-                          : `${Math.round(avg)}%`}
+                      <td className="px-3.5 py-2 text-right text-[13px] font-medium tabular-nums border-l border-slate-300 dark:border-slate-700">
+                        {avg === null || avg === undefined ? (
+                          <span className="text-slate-300 dark:text-slate-600">
+                            —
+                          </span>
+                        ) : (
+                          <span className="text-slate-900 dark:text-slate-100">
+                            {Math.round(avg)}%
+                          </span>
+                        )}
                       </td>
                     </tr>
                   );
                 })}
               </tbody>
             </table>
+            </div>
+            {/* Ledger footer: real counts + outlier legend (mockup). */}
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-slate-200 dark:border-slate-800 px-4 py-3 text-xs text-slate-500 dark:text-slate-400">
+              <span className="tabular-nums">
+                {students.length}{" "}
+                {students.length === 1 ? "student" : "students"} ·{" "}
+                {orderedAssignments.length} graded{" "}
+                {orderedAssignments.length === 1 ? "item" : "items"}
+              </span>
+              <div className="hidden sm:flex items-center gap-4">
+                <span className="inline-flex items-center gap-1.5">
+                  <span
+                    aria-hidden="true"
+                    className="h-2 w-2 rounded-[2.5px] bg-rose-600 dark:bg-rose-500"
+                  />
+                  below 60% — needs attention
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <span
+                    aria-hidden="true"
+                    className="h-2 w-2 rounded-[2.5px] border border-dashed border-slate-400 dark:border-slate-500 bg-slate-100 dark:bg-slate-800"
+                  />
+                  draft
+                </span>
+                <span>— not started</span>
+              </div>
+            </div>
           </div>
         </>
       )}

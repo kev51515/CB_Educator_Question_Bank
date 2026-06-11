@@ -35,6 +35,13 @@ function isEditableTarget(target: EventTarget | null): boolean {
   if (target.isContentEditable) return true;
   return false;
 }
+
+/** Time-of-day salutation for the greeting block (mockup: "Good afternoon"). */
+function salutation(hours: number): string {
+  if (hours < 12) return "Good morning";
+  if (hours < 18) return "Good afternoon";
+  return "Good evening";
+}
 import { StudentTestResultsPanel } from "@/student/StudentTestResultsPanel";
 import {
   AssignmentsPanel,
@@ -123,25 +130,35 @@ export function AreaSelector() {
       }
     >
       <div className="mx-auto max-w-5xl">
-        <header className="mb-10 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center sm:gap-4">
-          <div>
-            <p className="text-sm uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
-              Welcome back
-            </p>
-            <h1 className="page-title mt-1 text-3xl font-bold text-slate-900 dark:text-slate-100">
-              Hi, {studentName.split(" ")[0] || studentName}
-            </h1>
-            <p className="mt-2 text-slate-600 dark:text-slate-400">
-              Here's what your teacher has assigned.
-            </p>
+        <header className="mb-10">
+          <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center sm:gap-4">
+            <div>
+              <p className="text-[13px] text-slate-500 dark:text-slate-400">
+                {new Date().toLocaleDateString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </p>
+              <h1 className="page-title mt-1 text-3xl font-bold font-display text-slate-900 dark:text-slate-100">
+                {salutation(new Date().getHours())},{" "}
+                {studentName.split(" ")[0] || studentName}
+              </h1>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Here's what your teacher has assigned.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => void signOut()}
+              className="inline-flex items-center min-h-[44px] rounded-lg px-4 py-2 text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60"
+            >
+              Sign out
+            </button>
           </div>
-          <button
-            type="button"
-            onClick={() => void signOut()}
-            className="inline-flex items-center min-h-[44px] rounded-lg px-4 py-2 text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60"
-          >
-            Sign out
-          </button>
+          {/* Signature double-hairline rule (renders in ivy only). */}
+          <div className="ivy-rule" aria-hidden="true" />
         </header>
 
         {/* Two-column on desktop: the workload stack stays in the main (left)
@@ -170,7 +187,7 @@ export function AreaSelector() {
             <section aria-labelledby="your-progress-title" className="space-y-3">
               <h2
                 id="your-progress-title"
-                className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
+                className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400"
               >
                 Your progress
               </h2>
@@ -188,7 +205,7 @@ export function AreaSelector() {
               <button
                 type="button"
                 onClick={() => setJoinOpen(true)}
-                className="inline-flex items-center min-h-[44px] rounded-lg bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium text-indigo-700 dark:text-indigo-300 hover:bg-white dark:hover:bg-slate-900 transition"
+                className="inline-flex items-center min-h-[44px] rounded-lg bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium text-accent-700 dark:text-accent-300 hover:bg-white dark:hover:bg-slate-900 transition"
               >
                 Join a course
               </button>

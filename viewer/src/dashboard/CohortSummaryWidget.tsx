@@ -20,9 +20,15 @@
  * persist any other widget state — refresh and per-card visibility are
  * intentionally ephemeral.
  *
+ * Data flow
+ * ---------
+ * The `useCohortSummary` query is owned by DashboardPage (it also feeds
+ * the greeting-level StatRow) and arrives here via the `summary` prop —
+ * one fetch, two consumers.
+ *
  * Empty / loading
  * ---------------
- *  - teacherId has zero non-archived courses → render nothing.
+ *  - Teacher has zero non-archived courses → render nothing.
  *  - Loading → 3 skeleton cards inside the collapsible body.
  *  - Teacher has cohorts but no activity → still render cards, with "No
  *    activity yet" in place of the avg-score pill. The whole point of the
@@ -34,7 +40,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { useCohortSummary, type CohortRow } from "./useCohortSummary";
+import { type CohortRow, type UseCohortSummary } from "./useCohortSummary";
 import { Skeleton } from "@/components/Skeleton";
 import { useToast } from "@/components";
 import {
@@ -94,17 +100,14 @@ function SkeletonCohortCard() {
   return (
     <div
       className="
-        rounded-xl ring-1 ring-slate-200/60 dark:ring-slate-800
+        rounded-lg ring-1 ring-slate-200 dark:ring-slate-800
         bg-white/70 dark:bg-slate-900/40
-        p-3 space-y-3
+        p-3.5 space-y-3
       "
     >
-      <Skeleton className="h-4 w-3/4 rounded" />
-      <div className="flex gap-2">
-        <Skeleton className="h-5 w-20 rounded-full" />
-        <Skeleton className="h-5 w-24 rounded-full" />
-      </div>
-      <Skeleton className="h-5 w-16 rounded-full" />
+      <Skeleton className="h-4 w-3/4 rounded-lg" />
+      <Skeleton className="h-3 w-2/3 rounded-lg" />
+      <Skeleton className="h-7 w-20 rounded-lg" />
     </div>
   );
 }
@@ -112,11 +115,15 @@ function SkeletonCohortCard() {
 // ─── Main widget ──────────────────────────────────────────────────────────
 
 interface CohortSummaryWidgetProps {
-  teacherId: string;
+  /**
+   * Cohort data owned by DashboardPage (which also feeds the StatRow) and
+   * threaded down so the page issues the query exactly once.
+   */
+  summary: UseCohortSummary;
 }
 
-export function CohortSummaryWidget({ teacherId }: CohortSummaryWidgetProps) {
-  const { rows, loading, error, refresh } = useCohortSummary(teacherId);
+export function CohortSummaryWidget({ summary }: CohortSummaryWidgetProps) {
+  const { rows, loading, error, refresh } = summary;
   const [collapsed, setCollapsed] = useState<boolean>(() => loadCollapsed());
   const [refreshing, setRefreshing] = useState<boolean>(false);
   const [lastRefreshAt, setLastRefreshAt] = useState<number>(0);
@@ -190,7 +197,7 @@ export function CohortSummaryWidget({ teacherId }: CohortSummaryWidgetProps) {
       aria-labelledby="cohort-summary-heading"
       className="
         rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800
-        bg-white/70 dark:bg-slate-900/40
+        bg-white dark:bg-slate-900/40 shadow-card
         p-4 sm:p-5
         space-y-3
       "
@@ -202,7 +209,7 @@ export function CohortSummaryWidget({ teacherId }: CohortSummaryWidgetProps) {
           aria-expanded={!collapsed}
           aria-controls={bodyId}
           className="
-            flex items-center gap-2 min-h-[40px] px-1 py-1 rounded-md
+            flex items-center gap-2 min-h-[40px] px-1 py-1 rounded-lg
             text-left
             focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500
           "
@@ -210,7 +217,7 @@ export function CohortSummaryWidget({ teacherId }: CohortSummaryWidgetProps) {
           <ChevronIcon collapsed={collapsed} />
           <h2
             id="cohort-summary-heading"
-            className="text-sm font-semibold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+            className="text-[11px] font-semibold uppercase tracking-[0.1em] text-slate-600 dark:text-slate-300"
           >
             Cohort summary
           </h2>
@@ -236,7 +243,7 @@ export function CohortSummaryWidget({ teacherId }: CohortSummaryWidgetProps) {
           title="Refresh"
           className="
             inline-flex items-center justify-center
-            w-10 h-10 rounded-md
+            w-10 h-10 rounded-lg
             text-slate-600 dark:text-slate-300
             hover:bg-slate-100 dark:hover:bg-slate-800
             disabled:opacity-50 disabled:cursor-not-allowed
