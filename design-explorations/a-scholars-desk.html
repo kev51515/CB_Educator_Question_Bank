@@ -372,10 +372,6 @@ svg.icon { display: block; flex-shrink: 0; }
   overflow: hidden;
   transition: border-color 120ms ease, transform 120ms ease;
 }
-.course-card::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--accent, var(--academic));
-}
 .course-card:hover { border-color: var(--line-strong); transform: translateY(-1px); }
 .course-kind {
   font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
@@ -514,7 +510,6 @@ svg.icon { display: block; flex-shrink: 0; }
   margin-top: 22px;
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--academic);
   border-radius: var(--r-card);
   box-shadow: var(--shadow-card);
   padding: 22px 24px;
@@ -781,7 +776,6 @@ svg.icon { display: block; flex-shrink: 0; }
   transition: border-color 120ms ease;
 }
 .d-course:hover { border-color: #4A4338; }
-.d-course::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--d-accent); }
 .d-course .course-kind { color: var(--d-accent); }
 .d-course .course-name { color: var(--d-ink); }
 .d-course .course-meta { color: var(--d-ink-2); }

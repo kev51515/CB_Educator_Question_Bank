@@ -261,7 +261,7 @@ svg { display: block; flex: none; }
   box-shadow: var(--shadow-card); overflow: hidden; transition: border-color .12s, transform .12s;
 }
 .course:hover { border-color: var(--border-strong); transform: translateY(-1px); }
-.course-bar { height: 4px; }
+.course-bar { display: none; }
 .course-body { padding: 16px 18px 16px; }
 .course-kicker { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
 .course h3 { font-size: 15.5px; font-weight: 600; letter-spacing: -0.01em; margin-top: 5px; }
@@ -359,7 +359,6 @@ svg { display: block; flex: none; }
 
 .next-card {
   margin-top: 22px; background: var(--surface); border: 1px solid var(--border);
-  border-left: 3px solid var(--academic);
   border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 22px 24px;
   display: flex; gap: 18px; align-items: flex-start;
 }

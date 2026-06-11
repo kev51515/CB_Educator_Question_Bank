@@ -263,11 +263,9 @@ button{ font-family:inherit; cursor:pointer; }
 .courses{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
 .course{
   position:relative; background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--r-card); box-shadow:var(--shadow-card); padding:20px 20px 18px 24px;
+  border-radius:var(--r-card); box-shadow:var(--shadow-card); padding:20px 20px 18px;
   overflow:hidden; transition:box-shadow .15s, transform .15s; cursor:pointer;
 }
-.course::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--navy); }
-.course.counseling::before{ background:var(--counseling); }
 .course:hover{ box-shadow:var(--shadow-overlay); transform:translateY(-1px); }
 .course .mono-crest{
   width:34px; height:34px; border-radius:var(--r-full); border:1px solid var(--border-strong);
@@ -381,7 +379,6 @@ button{ font-family:inherit; cursor:pointer; }
   border-radius:var(--r-card); box-shadow:var(--shadow-card); padding:24px 26px;
   position:relative; overflow:hidden;
 }
-.nextup::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--navy); }
 .nextup .tag{ font-size:11.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); }
 .nextup h3{ font-family:var(--font-display); font-size:24px; font-weight:500; margin-top:8px; }
 .nextup .when{ display:flex; align-items:center; gap:8px; margin-top:8px; font-size:13.5px; color:var(--ink-2); font-variant-numeric:tabular-nums; }
@@ -545,9 +542,8 @@ button{ font-family:inherit; cursor:pointer; }
 
 .m-course{
   position:relative; background:var(--d-surface); border:1px solid var(--d-border);
-  border-radius:var(--r-card); padding:20px 20px 18px 24px; overflow:hidden;
+  border-radius:var(--r-card); padding:20px 20px 18px; overflow:hidden;
 }
-.m-course::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--d-accent); }
 .m-course .mono-crest{
   width:34px; height:34px; border-radius:var(--r-full); border:1px solid var(--d-border);
   background:var(--d-raised); color:var(--d-accent);
