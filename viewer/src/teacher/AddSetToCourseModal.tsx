@@ -18,7 +18,7 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { MarkdownEditor, SmartDatePicker, useToast } from "@/components";
+import { Combobox, MarkdownEditor, SmartDatePicker, useToast } from "@/components";
 import { useTeacherClasses } from "./useTeacherClasses";
 import { useFocusTrap } from "@/hooks";
 import {
@@ -76,7 +76,6 @@ export function AddSetToCourseModal({
   );
 
   const [selectedCourseId, setSelectedCourseId] = useState<string>("");
-  const [courseSearch, setCourseSearch] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [dueAt, setDueAt] = useState<string | null>(null);
@@ -94,22 +93,11 @@ export function AddSetToCourseModal({
     [classes],
   );
 
-  // Typeahead: once a teacher has many courses, a plain <select> is hard to
-  // navigate. We pair the native select with a filter input (matching the
-  // pattern in AdminAuditPage) and hide non-matching options as they type.
-  // The selected course always stays visible so it can't be filtered out of
-  // its own dropdown.
-  const filteredCourses = useMemo(() => {
-    const q = courseSearch.trim().toLowerCase();
-    if (!q) return eligibleCourses;
-    return eligibleCourses.filter(
-      (c) =>
-        c.id === selectedCourseId || c.name.toLowerCase().includes(q),
-    );
-  }, [eligibleCourses, courseSearch, selectedCourseId]);
-
-  // Only surface the filter box once the list is long enough to warrant it.
-  const showCourseFilter = eligibleCourses.length > 6;
+  // Course options for the shared Combobox (type-to-filter built in).
+  const courseOptions = useMemo(
+    () => eligibleCourses.map((c) => ({ value: c.id, label: c.name })),
+    [eligibleCourses],
+  );
 
   // Reset form whenever the modal opens with a (possibly new) entry.
   useEffect(() => {
@@ -118,7 +106,6 @@ export function AddSetToCourseModal({
     setDescription("");
     setDueAt(null);
     setError(null);
-    setCourseSearch("");
     setSelectedCourseId(initialCourseId ?? "");
     const id = window.setTimeout(() => titleRef.current?.focus(), 0);
     return () => window.clearTimeout(id);
@@ -269,38 +256,24 @@ export function AddSetToCourseModal({
             <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
               Course
             </span>
-            {showCourseFilter && (
-              <input
-                type="text"
-                value={courseSearch}
-                onChange={(e) => setCourseSearch(e.target.value)}
-                placeholder="Filter courses…"
-                aria-label="Filter course options"
-                disabled={classesLoading}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
+            <div className="mt-1">
+              <Combobox
+                value={selectedCourseId || null}
+                onChange={setSelectedCourseId}
+                options={courseOptions}
+                ariaLabel="Course"
+                searchPlaceholder="Filter courses…"
+                emptyText="No courses match your filter"
+                disabled={classesLoading || eligibleCourses.length === 0}
+                placeholder={
+                  classesLoading
+                    ? "Loading courses…"
+                    : eligibleCourses.length === 0
+                      ? "No active courses — create one first"
+                      : "Select a course…"
+                }
               />
-            )}
-            <select
-              value={selectedCourseId}
-              onChange={(e) => setSelectedCourseId(e.target.value)}
-              disabled={classesLoading}
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
-            >
-              <option value="">
-                {classesLoading
-                  ? "Loading courses…"
-                  : eligibleCourses.length === 0
-                    ? "No active courses — create one first"
-                    : filteredCourses.length === 0
-                      ? "No courses match your filter"
-                      : "Select a course…"}
-              </option>
-              {filteredCourses.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name}
-                </option>
-              ))}
-            </select>
+            </div>
           </label>
 
           <label className="block">

@@ -2,9 +2,10 @@
  * ConfirmDialog
  * =============
  * Minimal confirmation dialog shared across the course-detail surfaces
- * (Overview, Roster, Settings) and the test runner. Lifted out of the old
- * ClassDetailView so the now-split tabs can render the same destructive /
- * regen / remove confirmations without each file owning its own copy.
+ * (Overview, Roster, Settings) and the test runner. Now built on the shared
+ * `ResponsiveModal` shell, so it's a centered card on desktop and a bottom
+ * sheet on mobile, and inherits the full modal contract (focus trap, Esc +
+ * backdrop close, ≥40px × close, focus restore) for free.
  *
  * `confirmPhrase` adds a type-to-confirm gate for IRREVERSIBLE actions (e.g.
  * submitting a test section you can't return to): the user must type the phrase
@@ -14,8 +15,8 @@
  *
  * Deliberately not exported from the barrel — internal helper.
  */
-import { useEffect, useRef, useState, type ReactNode } from "react";
-import { useFocusTrap } from "@/hooks";
+import { useRef, useState, type ReactNode } from "react";
+import { ResponsiveModal } from "@/components";
 
 interface ConfirmDialogProps {
   title: string;
@@ -41,79 +42,47 @@ export function ConfirmDialog({
   onConfirm,
   onCancel,
 }: ConfirmDialogProps) {
-  const cancelRef = useRef<HTMLButtonElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const panelRef = useRef<HTMLDivElement | null>(null);
-  useFocusTrap(panelRef, true);
-
   const [typed, setTyped] = useState("");
   const phraseOk =
     !confirmPhrase ||
     typed.trim().toLowerCase() === confirmPhrase.trim().toLowerCase();
   const canConfirm = !busy && !confirmDisabled && phraseOk;
 
-  // Esc-to-close — match the standard modal a11y contract.
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent): void => {
-      if (e.key === "Escape") onCancel();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [onCancel]);
-
-  // Focus management: the type-to-confirm input when present (so the user can
-  // start typing immediately), else Cancel (safe default — they must click
-  // Confirm deliberately for plain destructive flows). Restore focus on close.
-  useEffect(() => {
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    if (confirmPhrase) inputRef.current?.focus();
-    else cancelRef.current?.focus();
-    return () => {
-      previouslyFocused?.focus?.();
-    };
-  }, [confirmPhrase]);
-
   const doConfirm = (): void => {
     if (canConfirm) onConfirm();
   };
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={title}
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onCancel}
-    >
-      <div
-        ref={panelRef}
-        className="relative w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onCancel}
-          aria-label="Close"
-          className="absolute top-2 right-2 inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
-        >
-          <svg
-            width={20}
-            height={20}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
+    <ResponsiveModal
+      open
+      onClose={onCancel}
+      title={title}
+      size="sm"
+      footer={
+        <>
+          <button
+            type="button"
+            data-autofocus={confirmPhrase ? undefined : true}
+            onClick={onCancel}
+            className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100 sm:flex-none sm:min-w-[6rem] dark:text-slate-300 dark:hover:bg-slate-800"
           >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 pr-8">
-          {title}
-        </h2>
+            Cancel
+          </button>
+          <button
+            type="button"
+            onClick={doConfirm}
+            disabled={!canConfirm}
+            className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-60 sm:flex-none sm:min-w-[6rem] ${
+              destructive ? "bg-rose-600 hover:bg-rose-700" : "bg-indigo-600 hover:bg-indigo-700"
+            }`}
+          >
+            {busy ? "Working…" : confirmLabel}
+          </button>
+        </>
+      }
+    >
+      <div className="space-y-4">
         <div className="text-sm text-slate-600 dark:text-slate-300">{body}</div>
 
         {confirmPhrase && (
@@ -147,35 +116,11 @@ export function ConfirmDialog({
               spellCheck={false}
               aria-label={`Type ${confirmPhrase} to confirm`}
               placeholder={confirmPhrase}
-              className="w-full min-h-[44px] rounded-lg px-3 py-2.5 text-sm bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 ring-1 ring-slate-300 dark:ring-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 placeholder:text-slate-400 dark:placeholder:text-slate-600"
+              className="w-full min-h-[44px] rounded-lg px-3 py-2.5 text-sm bg-white text-slate-900 ring-1 ring-slate-300 placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:bg-slate-950 dark:text-slate-100 dark:ring-slate-700 dark:placeholder:text-slate-600"
             />
           </div>
         )}
-
-        <div className="flex items-center gap-2 pt-2">
-          <button
-            ref={cancelRef}
-            data-autofocus={confirmPhrase ? undefined : true}
-            type="button"
-            onClick={onCancel}
-            className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={doConfirm}
-            disabled={!canConfirm}
-            className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-white disabled:opacity-60 disabled:cursor-not-allowed ${
-              destructive
-                ? "bg-rose-600 hover:bg-rose-700"
-                : "bg-indigo-600 hover:bg-indigo-700"
-            }`}
-          >
-            {busy ? "Working…" : confirmLabel}
-          </button>
-        </div>
       </div>
-    </div>
+    </ResponsiveModal>
   );
 }

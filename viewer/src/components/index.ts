@@ -103,6 +103,8 @@ export { ToastProvider, useToast } from "./Toast";
 export { useOptimistic } from "./useOptimistic";
 export { SafeHtml } from "./SafeHtml";
 export { EmptyState } from "./EmptyState";
+export { ResponsiveModal, type ResponsiveModalProps, type ModalSize } from "./ResponsiveModal";
+export { Combobox, type ComboboxOption, type ComboboxProps } from "./Combobox";
 export { Skeleton, SkeletonRows } from "./Skeleton";
 export { StarRating, type StarRatingProps } from "./StarRating";
 export { ShortcutHelpOverlay } from "./ShortcutHelpOverlay";
