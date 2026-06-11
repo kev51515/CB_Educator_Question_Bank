@@ -32,8 +32,96 @@ import { Link } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components";
 import { LineConnectCard } from "@/line";
+import { setUiTheme, useUiTheme, type UiTheme } from "@/lib/theme";
 import type { Profile } from "@/lib/profile";
 import type { AuthResult } from "./session";
+
+/**
+ * Appearance — UI theme picker (Ivy Ledger redesign, June 2026).
+ * Local-only preference (localStorage via lib/theme.ts), applies instantly,
+ * no server round-trip. Offered to every account type, so it renders in both
+ * the managed-student and full-account branches below.
+ */
+function AppearanceSection(): JSX.Element {
+  const theme = useUiTheme();
+  const options: Array<{
+    value: UiTheme;
+    label: string;
+    blurb: string;
+    /** Little three-dot palette preview: page / surface / accent. */
+    dots: [string, string, string];
+  }> = [
+    {
+      value: "classic",
+      label: "Classic",
+      blurb: "The original look — clean white with system fonts.",
+      dots: ["#f8fafc", "#ffffff", "#4f46e5"],
+    },
+    {
+      value: "ivy",
+      label: "Ivy Ledger",
+      blurb: "Navy ink on warm paper with serif headings.",
+      dots: ["#fbfaf7", "#ffffff", "#24407e"],
+    },
+  ];
+  return (
+    <section className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 space-y-3">
+      <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+        Appearance
+      </h2>
+      <div
+        role="radiogroup"
+        aria-label="UI theme"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+      >
+        {options.map((opt) => {
+          const active = theme === opt.value;
+          return (
+            <button
+              key={opt.value}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() => setUiTheme(opt.value)}
+              className={`min-h-[44px] rounded-lg p-3 text-left transition ring-1 focus-ring ${
+                active
+                  ? "ring-2 ring-indigo-600 bg-indigo-50/50 dark:bg-indigo-500/10"
+                  : "ring-slate-200 dark:ring-slate-700 hover:ring-slate-300 dark:hover:ring-slate-600"
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                <span className="flex -space-x-1" aria-hidden>
+                  {opt.dots.map((c, i) => (
+                    <span
+                      key={i}
+                      className="inline-block h-4 w-4 rounded-full ring-1 ring-slate-300 dark:ring-slate-600"
+                      style={{ background: c }}
+                    />
+                  ))}
+                </span>
+                <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {opt.label}
+                </span>
+                {active && (
+                  <span className="ml-auto text-[11px] font-semibold text-indigo-600 dark:text-indigo-400">
+                    Active
+                  </span>
+                )}
+              </span>
+              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
+                {opt.blurb}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+      <p className="text-xs text-slate-500 dark:text-slate-400">
+        Applies on this device only. Test-taking always uses the light, calm
+        layout regardless of theme.
+      </p>
+    </section>
+  );
+}
 
 interface AccountSettingsProps {
   profile: Profile;
@@ -330,6 +418,7 @@ export function AccountSettings({
             them to reset it for you.
           </p>
         </section>
+        <AppearanceSection />
         <LineConnectCard />
       </div>
     );
@@ -577,6 +666,9 @@ export function AccountSettings({
             </form>
           )}
         </section>
+
+        {/* UI theme (Classic / Ivy Ledger) */}
+        <AppearanceSection />
 
         {/* LINE binding + per-type LINE delivery prefs */}
         <LineConnectCard />

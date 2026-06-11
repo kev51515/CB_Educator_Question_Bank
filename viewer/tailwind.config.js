@@ -7,20 +7,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Apple-ish neutral grays (slightly cooler than pure white-to-black)
+        // Neutral ramps — routed through CSS channel vars (index.css seeds)
+        // exactly like the accent alias below, so the Ivy Ledger theme
+        // (`.theme-ivy` on <html>, see lib/theme.ts) can swap every slate-*/
+        // ink-* utility app-wide with zero component edits. The :root seeds
+        // are the EXACT pre-redesign values, so the default 'classic' theme
+        // renders pixel-identical to before this alias existed.
         ink: {
-          50: "#fafafb",
-          100: "#f3f3f5",
-          150: "#ececef",
-          200: "#e6e6ea",
-          300: "#cfd0d6",
-          400: "#9b9da5",
-          450: "#6E7078",
-          500: "#80828a",
-          600: "#65676f",
-          700: "#3e3f47",
-          800: "#1d1d20",
-          900: "#000000",
+          50: "rgb(var(--ink-50) / <alpha-value>)",
+          100: "rgb(var(--ink-100) / <alpha-value>)",
+          150: "rgb(var(--ink-150) / <alpha-value>)",
+          200: "rgb(var(--ink-200) / <alpha-value>)",
+          300: "rgb(var(--ink-300) / <alpha-value>)",
+          400: "rgb(var(--ink-400) / <alpha-value>)",
+          450: "rgb(var(--ink-450) / <alpha-value>)",
+          500: "rgb(var(--ink-500) / <alpha-value>)",
+          600: "rgb(var(--ink-600) / <alpha-value>)",
+          700: "rgb(var(--ink-700) / <alpha-value>)",
+          800: "rgb(var(--ink-800) / <alpha-value>)",
+          900: "rgb(var(--ink-900) / <alpha-value>)",
+        },
+        slate: {
+          50: "rgb(var(--slate-50) / <alpha-value>)",
+          100: "rgb(var(--slate-100) / <alpha-value>)",
+          200: "rgb(var(--slate-200) / <alpha-value>)",
+          300: "rgb(var(--slate-300) / <alpha-value>)",
+          400: "rgb(var(--slate-400) / <alpha-value>)",
+          500: "rgb(var(--slate-500) / <alpha-value>)",
+          600: "rgb(var(--slate-600) / <alpha-value>)",
+          700: "rgb(var(--slate-700) / <alpha-value>)",
+          800: "rgb(var(--slate-800) / <alpha-value>)",
+          900: "rgb(var(--slate-900) / <alpha-value>)",
+          950: "rgb(var(--slate-950) / <alpha-value>)",
         },
         // Domain accent — re-themes live per active domain (academic=indigo,
         // counseling=emerald, coaching=orange). The ramp maps to CSS custom
@@ -61,22 +79,16 @@ export default {
         },
       },
       fontFamily: {
-        sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          '"SF Pro Text"',
-          '"SF Pro Display"',
-          '"Inter"',
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-        ],
-        mono: [
-          '"SF Mono"',
-          '"Menlo"',
-          "ui-monospace",
-          "monospace",
-        ],
+        // Routed through theme vars (index.css). Classic seeds = the previous
+        // literal stacks, so nothing changes by default; .theme-ivy swaps to
+        // Onest / Newsreader / Literata / Fragment Mono (lib/theme.ts).
+        sans: ["var(--font-ui)"],
+        mono: ["var(--font-mono-ui)"],
+        // `font-display` (page titles) and `font-passage` (reading serif) are
+        // intentional no-ops in classic (they resolve to --font-ui) so Ivy
+        // surface work can land incrementally without forking components.
+        display: ["var(--font-display)"],
+        passage: ["var(--font-passage)"],
       },
       borderRadius: {
         xl: "12px",

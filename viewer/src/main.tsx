@@ -28,7 +28,12 @@ import { DomainProvider } from "@/lib/DomainProvider";
 import { AuthGate } from "@/auth";
 import { registerServiceWorker } from "./registerSW";
 import { captureError, initTelemetry } from "@/lib/telemetry";
+import { initUiTheme } from "@/lib/theme";
 import { stashPendingLinkTokenFromUrl } from "@/line/linkResume";
+
+// Apply the persisted UI theme (classic / ivy) before first render so there's
+// no flash of the wrong theme. Cheap: reads localStorage + toggles one class.
+initUiTheme();
 
 // LINE opens /line/link?linkToken=… in its in-app browser (no LMS session).
 // Capture the token NOW, before AuthGate can redirect to sign-in and drop it;

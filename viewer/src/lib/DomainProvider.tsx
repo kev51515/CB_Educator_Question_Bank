@@ -31,10 +31,11 @@ import { supabase } from "./supabase";
 import { useProfile } from "./profile";
 import {
   ACCENT_STOPS,
-  DOMAIN_ACCENT,
   DOMAIN_VOCAB,
+  accentRampFor,
   type Domain,
 } from "./domain";
+import { getUiTheme, useUiTheme } from "./theme";
 import { useToast } from "@/components";
 
 interface DomainContextValue {
@@ -81,7 +82,11 @@ function applyAccent(domain: Domain): void {
   if (typeof document === "undefined") return;
   const root = document.documentElement;
   root.dataset.domain = domain;
-  const ramp = DOMAIN_ACCENT[domain];
+  // Theme-aware: the ivy theme re-voices the triad (navy/forest/bronze)
+  // while classic keeps indigo/emerald/orange. Read from the theme store
+  // directly so synchronous callers (setDomain's optimistic re-paint) get
+  // the right ramp without threading theme through every call site.
+  const ramp = accentRampFor(getUiTheme(), domain);
   for (const stop of ACCENT_STOPS) {
     const ch = hexToChannels(ramp[stop] ?? "");
     if (ch) root.style.setProperty(`--accent-${stop}`, ch);
@@ -141,10 +146,12 @@ export function DomainProvider({ children }: { children: ReactNode }) {
   }, [profile?.id, profile?.domain]);
 
   // Paint the accent ramp whenever the effective domain changes — a course
-  // preview overrides the saved domain while it's set.
+  // preview overrides the saved domain while it's set. Also re-paints when
+  // the UI theme flips (classic ↔ ivy use different ramps per domain).
+  const uiTheme = useUiTheme();
   useEffect(() => {
     applyAccent(preview ?? domain);
-  }, [preview, domain]);
+  }, [preview, domain, uiTheme]);
 
   const previewDomain = useCallback((next: Domain | null) => {
     previewRef.current = next;

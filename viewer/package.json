@@ -45,6 +45,10 @@
     "gen:rationale": "node --env-file-if-exists=../.env scripts/generate-test-rationale.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/literata": "^5.2.8",
+    "@fontsource-variable/newsreader": "^5.2.10",
+    "@fontsource-variable/onest": "^5.2.11",
+    "@fontsource/fragment-mono": "^5.2.8",
     "@sentry/react": "^9.0.0",
     "@supabase/supabase-js": "^2.45.0",
     "@tiptap/extension-link": "^2.10.0",
