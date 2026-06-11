@@ -140,7 +140,7 @@ export function InlineCreateModuleRow({
 }
 
 // ---------------------------------------------------------------------------
-// InlineAddItemRow — modern alternative to AddItemModal. Renders inside a
+// InlineAddItemRow — replaced the old AddItemModal (since deleted). Renders inside a
 // module's item list when the user clicks "+ Add item". Six item types
 // (assignment, full_test, question_set, practice_test, header, link)
 // selectable via a chip row; the rest of the row shows only the fields each

@@ -61,9 +61,7 @@ export { AssignmentAttemptsView } from "./AssignmentAttemptsView";
 export { useAssignmentAttempts } from "./useAssignmentAttempts";
 export { TeacherAttemptDetailView } from "./TeacherAttemptDetailView";
 export { ModulesPage } from "./ModulesPage";
-export { AddModuleModal } from "./AddModuleModal";
 export { EditModuleModal } from "./EditModuleModal";
-export { AddItemModal } from "./AddItemModal";
 export { useCourseModules } from "./useCourseModules";
 export type {
   CourseModule,
