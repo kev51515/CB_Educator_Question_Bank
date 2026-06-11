@@ -28,7 +28,7 @@ import {
 } from "./useStudentPortfolio";
 import { PortfolioSubmissionForm } from "./PortfolioSubmissionForm";
 import { SkeletonRows } from "@/components/Skeleton";
-import { EmptyState } from "@/components";
+import { Combobox, EmptyState } from "@/components";
 
 /**
  * Per-type leaf icons. Inline line-SVGs (stroke=currentColor, 24x24 viewBox)
@@ -623,19 +623,19 @@ export function StudentPortfolio() {
             >
               Sort
             </label>
-            <select
+            <Combobox
               id="portfolio-sort"
-              aria-label="Sort portfolio"
+              ariaLabel="Sort portfolio"
               value={sortMode}
-              onChange={(e) => {
-                const v = e.target.value;
+              onChange={(v) => {
                 if (isSortMode(v)) setSortMode(v);
               }}
-              className="rounded-lg bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 text-xs font-medium text-slate-700 dark:text-slate-300 px-2 py-2 min-h-[40px]"
-            >
-              <option value="position">Position</option>
-              <option value="due_date">Due date</option>
-            </select>
+              options={[
+                { value: "position", label: "Position" },
+                { value: "due_date", label: "Due date" },
+              ]}
+              className="w-36"
+            />
           </div>
         </div>
 

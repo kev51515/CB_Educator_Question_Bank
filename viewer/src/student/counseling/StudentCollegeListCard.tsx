@@ -15,7 +15,7 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useToast } from "@/components";
+import { Combobox, useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "../../teacher/ConfirmDialog";
 import {
@@ -639,9 +639,6 @@ export function StudentCollegeListCard({
     void load();
   };
 
-  const selectClass =
-    "rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500";
-
   const trimmedQuery = query.trim();
   const visibleMatches = matches.filter((m) => !usedCollegeIds.has(m.id));
   const showFreeText =
@@ -657,23 +654,17 @@ export function StudentCollegeListCard({
         {!loading && count > 0 && (
           <div className="flex shrink-0 items-center gap-2">
             {count > 1 && (
-              <>
-                <label className="sr-only" htmlFor="student-college-sort">
-                  Sort colleges
-                </label>
-                <select
-                  id="student-college-sort"
-                  value={sortKey}
-                  onChange={(e) => setSortKey(e.target.value as SortKey)}
-                  className={`${selectClass} min-h-[36px] text-xs`}
-                >
-                  {SORT_OPTIONS.map((o) => (
-                    <option key={o.key} value={o.key}>
-                      Sort: {o.label}
-                    </option>
-                  ))}
-                </select>
-              </>
+              <Combobox
+                id="student-college-sort"
+                ariaLabel="Sort colleges"
+                value={sortKey}
+                onChange={(v) => setSortKey(v as SortKey)}
+                options={SORT_OPTIONS.map((o) => ({
+                  value: o.key,
+                  label: `Sort: ${o.label}`,
+                }))}
+                className="w-36"
+              />
             )}
             <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
               {countLabel}
@@ -749,43 +740,32 @@ export function StudentCollegeListCard({
                 </div>
 
                 <div className="flex shrink-0 flex-wrap items-center gap-2">
-                  <label className="sr-only" htmlFor={`tier-${app.id}`}>
-                    Tier for {app.college_name}
-                  </label>
-                  <select
+                  <Combobox
                     id={`tier-${app.id}`}
-                    value={app.tier ?? ""}
+                    ariaLabel={`Tier for ${app.college_name}`}
+                    value={app.tier ?? null}
                     disabled={busyId === app.id}
-                    onChange={(e) => {
-                      void onChangeTier(app, e.target.value as Tier | "");
+                    onChange={(v) => {
+                      void onChangeTier(app, v as Tier);
                     }}
-                    className={`${selectClass} min-h-[40px] capitalize disabled:opacity-50`}
-                  >
-                    <option value="">Tier…</option>
-                    {TIER_OPTIONS.map((t) => (
-                      <option key={t} value={t} className="capitalize">
-                        {t}
-                      </option>
-                    ))}
-                  </select>
-                  <label className="sr-only" htmlFor={`status-${app.id}`}>
-                    Status for {app.college_name}
-                  </label>
-                  <select
+                    placeholder="Tier…"
+                    options={TIER_OPTIONS.map((t) => ({ value: t, label: t }))}
+                    className="w-28 capitalize"
+                  />
+                  <Combobox
                     id={`status-${app.id}`}
+                    ariaLabel={`Status for ${app.college_name}`}
                     value={app.status}
                     disabled={busyId === app.id}
-                    onChange={(e) => {
-                      void onChangeStatus(app, e.target.value as Status);
+                    onChange={(v) => {
+                      void onChangeStatus(app, v as Status);
                     }}
-                    className={`${selectClass} min-h-[40px] disabled:opacity-50`}
-                  >
-                    {STATUS_OPTIONS.map((s) => (
-                      <option key={s} value={s}>
-                        {STATUS_LABEL[s]}
-                      </option>
-                    ))}
-                  </select>
+                    options={STATUS_OPTIONS.map((s) => ({
+                      value: s,
+                      label: STATUS_LABEL[s],
+                    }))}
+                    className="w-36"
+                  />
                   <button
                     type="button"
                     onClick={() => setConfirmRemove(app)}
@@ -814,21 +794,14 @@ export function StudentCollegeListCard({
           <label className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
             Add a college
           </label>
-          <label className="sr-only" htmlFor="add-tier">
-            Tier for new college
-          </label>
-          <select
+          <Combobox
             id="add-tier"
+            ariaLabel="Tier for new college"
             value={addTier}
-            onChange={(e) => setAddTier(e.target.value as Tier)}
-            className={`${selectClass} ml-auto min-h-[36px] capitalize`}
-          >
-            {TIER_OPTIONS.map((t) => (
-              <option key={t} value={t} className="capitalize">
-                {t}
-              </option>
-            ))}
-          </select>
+            onChange={(v) => setAddTier(v as Tier)}
+            options={TIER_OPTIONS.map((t) => ({ value: t, label: t }))}
+            className="ml-auto w-28 capitalize"
+          />
         </div>
         <input
           type="text"

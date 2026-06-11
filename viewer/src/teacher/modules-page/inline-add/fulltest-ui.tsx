@@ -6,7 +6,7 @@
  */
 import { sectionSummary, formatTestDuration } from "@/fulltest/testSections";
 import type { TestCatalogEntry } from "@/fulltest/types";
-import { SmartDatePicker } from "@/components";
+import { SmartDatePicker, Combobox } from "@/components";
 import type { FullTestSelection } from "./fulltest-hooks";
 
 interface FullTestSectionProps {
@@ -42,25 +42,23 @@ export function FullTestSection({
 
   return (
     <div className="space-y-1.5">
-      <select
-        value={fullTestSlug}
-        onChange={(e) => setFullTestSlug(e.target.value)}
-        disabled={busy}
-        className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-      >
-        <option value="">
-          {fullTests.length === 0 ? "No full-length tests yet" : "Pick a full-length test…"}
-        </option>
-        {fullTests.map((t) => {
+      <Combobox
+        value={fullTestSlug || null}
+        onChange={(v) => setFullTestSlug(v)}
+        options={fullTests.map((t) => {
           const sum = sectionSummary(t.sections);
-          return (
-            <option key={t.slug} value={t.slug}>
-              {t.title}
-              {sum ? ` — ${sum.short}` : ""}
-            </option>
-          );
+          return {
+            value: t.slug,
+            label: `${t.title}${sum ? ` — ${sum.short}` : ""}`,
+          };
         })}
-      </select>
+        disabled={busy}
+        ariaLabel="Full-length test"
+        placeholder={
+          fullTests.length === 0 ? "No full-length tests yet" : "Pick a full-length test…"
+        }
+        className="w-full"
+      />
       <input
         type="text"
         value={title}

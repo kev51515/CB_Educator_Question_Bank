@@ -12,6 +12,7 @@
  * console's nav for profile.role === 'admin'.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { Combobox } from "@/components";
 import { useRovingTabIndex } from "@/hooks";
 import { supabase } from "@/lib/supabase";
 import { SmartDatePicker } from "@/components/SmartDatePicker";
@@ -450,22 +451,16 @@ export function AdminInviteCodesPage() {
                   );
                 })}
               </div>
-              <label className="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                <span className="sr-only">Sort codes</span>
+              <div className="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
                 <span aria-hidden>Sort</span>
-                <select
-                  aria-label="Sort codes"
+                <Combobox
+                  ariaLabel="Sort codes"
                   value={view.sort}
-                  onChange={(e) => setSort(e.target.value as SortKey)}
-                  className="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 min-h-[40px] focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                  {SORT_OPTIONS.map((o) => (
-                    <option key={o.key} value={o.key}>
-                      {o.label}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                  onChange={(v) => setSort(v as SortKey)}
+                  options={SORT_OPTIONS.map((o) => ({ value: o.key, label: o.label }))}
+                  className="w-48"
+                />
+              </div>
               <div className="sr-only" aria-live="polite" role="status">
                 Showing {visibleCodes.length} {activeFilterLabel.toLowerCase()}{" "}
                 {visibleCodes.length === 1 ? "code" : "codes"}.

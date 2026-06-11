@@ -20,7 +20,7 @@ import { useClassContext } from "../classLayoutContext";
 import { CaseloadDeadlinesTimeline } from "./CaseloadDeadlinesTimeline";
 import { courseStudentProfilePath, coursePeoplePath } from "@/lib/routes";
 import { SkeletonRows } from "@/components/Skeleton";
-import { useToast } from "@/components";
+import { useToast, Combobox } from "@/components";
 import {
   useCounselingCaseload,
   type CaseloadStudent,
@@ -719,23 +719,19 @@ export function CounselingCaseloadView() {
 
                 {/* Right-aligned: sort selector + CSV export */}
                 <div className="ml-auto flex items-center gap-2">
-                  <label className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
                     <span className="hidden sm:inline">Sort</span>
-                    <select
+                    <Combobox
                       value={sortKey}
-                      onChange={(e) => {
-                        setSortKey(e.target.value as SortKey);
+                      onChange={(v) => {
+                        setSortKey(v as SortKey);
                         setSortDir("asc");
                       }}
-                      className="rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-700 px-2 py-1 text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                    >
-                      {SORTS.map((s) => (
-                        <option key={s.value} value={s.value}>
-                          {s.label}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
+                      options={SORTS}
+                      ariaLabel="Sort"
+                      className="w-40"
+                    />
+                  </div>
                   <button
                     type="button"
                     onClick={() => setSortDir((d) => (d === "asc" ? "desc" : "asc"))}

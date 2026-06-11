@@ -32,6 +32,7 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { Combobox } from "@/components";
 import { Skeleton } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { useToast } from "@/components/Toast";
@@ -323,10 +324,7 @@ export function SkillHeatmap() {
     setAnnouncement(`Filtered to ${label}`);
   };
 
-  const handleSortChange = (
-    e: React.ChangeEvent<HTMLSelectElement>,
-  ): void => {
-    const next = e.target.value;
+  const handleSortChange = (next: string): void => {
     if (isSortKey(next)) {
       setView((prev) => ({ ...prev, sort: next }));
       setAnnouncement(`Sorted by ${SORT_LABEL[next]}`);
@@ -444,19 +442,17 @@ export function SkillHeatmap() {
               <label className="sr-only" htmlFor="skill-heatmap-sort">
                 Sort skills
               </label>
-              <select
+              <Combobox
                 id="skill-heatmap-sort"
-                aria-label="Sort skills"
+                ariaLabel="Sort skills"
                 value={view.sort}
                 onChange={handleSortChange}
-                className="min-h-[40px] rounded-lg bg-white dark:bg-slate-800 text-sm text-slate-800 dark:text-slate-100 ring-1 ring-slate-200 dark:ring-slate-700 px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                {SORT_KEYS.map((k) => (
-                  <option key={k} value={k}>
-                    {SORT_LABEL[k]}
-                  </option>
-                ))}
-              </select>
+                options={SORT_KEYS.map((k) => ({
+                  value: k,
+                  label: SORT_LABEL[k],
+                }))}
+                className="min-w-[10rem]"
+              />
             </div>
           </div>
 

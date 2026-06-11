@@ -18,7 +18,7 @@
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { useBreadcrumbLabel } from "@/components";
+import { Combobox, useBreadcrumbLabel } from "@/components";
 import { Skeleton } from "@/components/Skeleton";
 import { testOverviewPath } from "@/lib/routes";
 import { QuestionPane } from "./QuestionPane";
@@ -293,21 +293,21 @@ export function TestReviewPage(): JSX.Element {
             {courses.length > 0 && (
               <label className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
                 <span className="hidden sm:inline">Class</span>
-                <select
-                  value={courseId ?? ""}
-                  onChange={(e) => {
-                    const next = e.target.value || null;
+                <Combobox
+                  ariaLabel="Class"
+                  placeholder="Select class…"
+                  value={courseId}
+                  onChange={(v) => {
+                    const next = v || null;
                     setCourseId(next);
                     writeReviewClass(slug, next);
                   }}
-                  className="max-w-[14rem] rounded-md border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
-                >
-                  {courses.map((c) => (
-                    <option key={c.course_id} value={c.course_id}>
-                      {c.title} ({c.taken})
-                    </option>
-                  ))}
-                </select>
+                  options={courses.map((c) => ({
+                    value: c.course_id,
+                    label: `${c.title} (${c.taken})`,
+                  }))}
+                  className="max-w-[14rem]"
+                />
               </label>
             )}
             <button

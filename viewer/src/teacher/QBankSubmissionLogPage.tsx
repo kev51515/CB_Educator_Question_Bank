@@ -29,6 +29,7 @@
  * page.
  */
 import { useMemo, useState } from "react";
+import { Combobox } from "@/components";
 import { supabase } from "@/lib/supabase";
 import { courseAssignmentAttemptPath } from "@/lib/routes";
 import { EmptyState } from "@/components/EmptyState";
@@ -160,6 +161,18 @@ export function QBankSubmissionLogPage() {
     );
   }, [entries]);
 
+  // Combobox option list for the course filter — derived from the same
+  // course tuples above. A leading "All courses" entry (sentinel value "")
+  // preserves the native <select>'s ability to clear the filter back to all,
+  // since Combobox has no built-in clear-to-placeholder affordance.
+  const courseComboOptions = useMemo(
+    () => [
+      { value: "", label: "All courses" },
+      ...courseOptions.map(([id, name]) => ({ value: id, label: name })),
+    ],
+    [courseOptions],
+  );
+
   // Issue-count badge on the "Issues" tab — quick scan signal.
   const issueCount = useMemo(
     () =>
@@ -212,19 +225,15 @@ export function QBankSubmissionLogPage() {
               >
                 Course
               </label>
-              <select
+              <Combobox
                 id="course-filter"
                 value={courseFilter}
-                onChange={(e) => setCourseFilter(e.target.value)}
-                className="rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-700 dark:text-slate-200"
-              >
-                <option value="">All courses</option>
-                {courseOptions.map(([id, name]) => (
-                  <option key={id} value={id}>
-                    {name}
-                  </option>
-                ))}
-              </select>
+                onChange={(v) => setCourseFilter(v)}
+                options={courseComboOptions}
+                ariaLabel="Course"
+                placeholder="All courses"
+                className="w-48"
+              />
 
               <button
                 type="button"

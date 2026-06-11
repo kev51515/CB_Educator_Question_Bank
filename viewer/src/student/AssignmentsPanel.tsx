@@ -27,6 +27,7 @@ import {
   type StudentAssignment,
   type StudentAssignmentAttempt,
 } from "./useStudentAssignments";
+import { Combobox } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { AssignmentRow } from "./AssignmentRow";
 import {
@@ -262,21 +263,18 @@ export function AssignmentsPanel({
             <span aria-hidden className="select-none">
               {sortChevron}
             </span>
-            <select
-              aria-label="Sort assignments"
+            <Combobox
+              ariaLabel="Sort assignments"
               value={view.sort}
-              onChange={(e) => {
-                const next = e.target.value;
+              onChange={(next) => {
                 if (isSortKey(next)) handleSortChange(next);
               }}
-              className="min-h-[40px] rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
-            >
-              {SORT_ORDER.map((key) => (
-                <option key={key} value={key}>
-                  {SORT_LABELS[key]}
-                </option>
-              ))}
-            </select>
+              options={SORT_ORDER.map((key) => ({
+                value: key,
+                label: SORT_LABELS[key],
+              }))}
+              className="min-w-[10rem]"
+            />
           </label>
         </div>
       )}

@@ -28,6 +28,7 @@ import { useRovingTabIndex } from "@/hooks";
 import { supabase } from "@/lib/supabase";
 import { downloadCsv } from "@/lib/csv";
 import { useToast } from "@/components/Toast";
+import { Combobox } from "@/components";
 import type { ProfileRole } from "@/lib/profile";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
@@ -395,34 +396,15 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
           >
             Sort
           </label>
-          <div className="relative">
-            <select
-              id="all-users-sort"
-              aria-label="Sort users"
-              value={sort}
-              onChange={(e) =>
-                setView((v) => ({ ...v, sort: e.target.value as SortKey }))
-              }
-              className="appearance-none rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 pl-3 pr-8 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[40px] motion-safe:transition-colors"
-            >
-              {SORT_KEYS.map((k) => (
-                <option key={k} value={k}>
-                  {sortLabel(k)}
-                </option>
-              ))}
-            </select>
-            {/* Chevron is the "active sort" indicator the spec calls for. */}
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 20 20"
-              className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500 dark:text-slate-400"
-            >
-              <path
-                fill="currentColor"
-                d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z"
-              />
-            </svg>
-          </div>
+          <Combobox
+            id="all-users-sort"
+            ariaLabel="Sort users"
+            value={sort}
+            onChange={(v) => setView((vw) => ({ ...vw, sort: v as SortKey }))}
+            options={SORT_KEYS.map((k) => ({ value: k, label: sortLabel(k) }))}
+            placeholder="Sort…"
+            className="w-44"
+          />
         </div>
       </div>
 
@@ -526,23 +508,24 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
                       </td>
                       <td className="px-5 py-2 text-right">
                         <div className="inline-flex items-center gap-2">
-                          <select
+                          <Combobox
                             value={u.role}
                             disabled={busy || isSelf}
-                            onChange={(e) =>
-                              void onChangeRole(u, e.target.value as ProfileRole)
+                            onChange={(v) =>
+                              void onChangeRole(u, v as ProfileRole)
                             }
-                            title={
+                            ariaLabel={
                               isSelf
                                 ? "You can't change your own role here."
                                 : "Change role"
                             }
-                            className="rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-2 py-1 text-xs text-slate-900 dark:text-slate-100 disabled:opacity-50"
-                          >
-                            <option value="student">student</option>
-                            <option value="teacher">teacher</option>
-                            <option value="admin">admin</option>
-                          </select>
+                            options={[
+                              { value: "student", label: "student" },
+                              { value: "teacher", label: "teacher" },
+                              { value: "admin", label: "admin" },
+                            ]}
+                            className="w-32"
+                          />
                           <button
                             type="button"
                             disabled={busy || isSelf}

@@ -30,7 +30,7 @@ import {
   useState,
 } from "react";
 import { supabase } from "@/lib/supabase";
-import { EmptyState, Skeleton } from "@/components";
+import { Combobox, EmptyState, Skeleton, type ComboboxOption } from "@/components";
 import {
   actorOptionLabel,
   buildActionOptionGroups,
@@ -167,9 +167,6 @@ export function AdminAuditPage() {
   const [actorFilter, setActorFilter] = useState<ActorFilterState>(() =>
     readPersistedActorFilter(),
   );
-  // Typeahead text inside the actor combobox — hides non-matching options
-  // as the user types. Not persisted; resets on reload.
-  const [actorSearch, setActorSearch] = useState<string>("");
   // Date-range filter — preset chips + optional custom From/To pair.
   // Persisted per-admin so a focused window sticks across reloads.
   const [dateRange, setDateRange] = useState<DateRangeState>(() =>
@@ -443,20 +440,6 @@ export function AdminAuditPage() {
     [courseFilter, courseOptions],
   );
 
-  // Filter actor options by the combobox search box. Matches name OR email,
-  // case-insensitive. When the active actor is no longer in the matched set
-  // (e.g. user typed in the search), still keep them as the leading option so
-  // the selection remains visible.
-  const filteredActorOptions = useMemo(() => {
-    const q = actorSearch.trim().toLowerCase();
-    if (!q) return actorOptions;
-    return actorOptions.filter((opt) => {
-      const name = (opt.display_name ?? "").toLowerCase();
-      const email = opt.email.toLowerCase();
-      return name.includes(q) || email.includes(q);
-    });
-  }, [actorOptions, actorSearch]);
-
   // Resolve the active actor's display name from the loaded options once
   // they arrive — covers the case where the persisted name is stale (e.g.
   // the teacher updated their display_name since last visit).
@@ -481,6 +464,35 @@ export function AdminAuditPage() {
       name: actorFilter.actorName ?? actorFilter.actorId,
     };
   }, [actorFilter, actorOptions]);
+
+  // Combobox options for the course filter. {value,label} mapped from the
+  // fetched course list; the Combobox supplies its own type-to-filter.
+  const courseComboOptions = useMemo<ComboboxOption[]>(
+    () =>
+      courseOptions.map((c) => ({
+        value: c.id,
+        label: c.short_code ? `${c.name} (${c.short_code})` : c.name,
+      })),
+    [courseOptions],
+  );
+
+  // Combobox options for the actor filter. Mapped from the fetched staff list
+  // with the shared `actorOptionLabel` formatter. When the active actor isn't
+  // in the loaded set (former staff / beyond the top-100 cap) we prepend it so
+  // the selection stays visible.
+  const actorComboOptions = useMemo<ComboboxOption[]>(() => {
+    const opts: ComboboxOption[] = actorOptions.map((opt) => ({
+      value: opt.id,
+      label: actorOptionLabel(opt),
+    }));
+    if (
+      activeActor &&
+      !actorOptions.some((o) => o.id === activeActor.id)
+    ) {
+      opts.unshift({ value: activeActor.id, label: activeActor.name });
+    }
+    return opts;
+  }, [actorOptions, activeActor]);
 
   const pageCount = useMemo(
     () => Math.max(1, Math.ceil(total / PAGE_SIZE)),
@@ -552,26 +564,18 @@ export function AdminAuditPage() {
         <label className="text-xs font-medium text-slate-600 dark:text-slate-400 flex flex-col gap-1">
           Course
           <div className="flex items-center gap-1">
-            <select
-              value={courseFilter}
-              onChange={(e) => {
-                setCourseFilter(e.target.value);
+            <Combobox
+              value={courseFilter || null}
+              onChange={(v) => {
+                setCourseFilter(v);
                 setPage(0);
               }}
-              className="min-h-[40px] flex-1 rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-              title={
-                activeCourse
-                  ? `Scoped to ${activeCourse.name}`
-                  : "Filter by course"
-              }
-            >
-              <option value="">All courses</option>
-              {courseOptions.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.short_code ? `${c.name} (${c.short_code})` : c.name}
-                </option>
-              ))}
-            </select>
+              options={courseComboOptions}
+              placeholder="All courses"
+              searchPlaceholder="Filter courses…"
+              ariaLabel="Filter audit events by course"
+              className="min-h-[40px] flex-1"
+            />
             {courseFilter && (
               <button
                 type="button"
@@ -592,24 +596,15 @@ export function AdminAuditPage() {
           Actor
           <div className="flex flex-col gap-1">
             {/*
-              Typeahead box — hides non-matching options as the user types.
-              Native <select> alone gives a basic press-letter-to-jump,
-              but a real type-to-filter requires this paired input. We keep
-              the visual treatment compact so it doesn't overwhelm the row.
+              Combobox supplies the type-to-filter the old native <select>
+              couldn't — no paired typeahead input needed. The active actor
+              is kept visible via `actorComboOptions` (prepends it if it's
+              beyond the loaded top-100 set).
             */}
-            <input
-              type="text"
-              value={actorSearch}
-              onChange={(e) => setActorSearch(e.target.value)}
-              placeholder="Filter actors…"
-              aria-label="Filter actor options"
-              className="min-h-[40px] md:min-h-[32px] rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-            />
             <div className="flex items-center gap-1">
-              <select
-                value={actorFilter.actorId ?? ""}
-                onChange={(e) => {
-                  const id = e.target.value;
+              <Combobox
+                value={actorFilter.actorId}
+                onChange={(id) => {
                   if (!id) {
                     setActorFilter(DEFAULT_ACTOR_FILTER);
                   } else {
@@ -622,38 +617,17 @@ export function AdminAuditPage() {
                   }
                   setPage(0);
                 }}
-                aria-label="Filter audit events by actor"
-                title={
-                  activeActor
-                    ? `Scoped to ${activeActor.name}`
-                    : "Filter by actor"
-                }
-                className="min-h-[40px] flex-1 rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-              >
-                <option value="">All actors</option>
-                {/*
-                  Keep the active selection visible even when the typeahead
-                  has filtered it out — admins shouldn't lose their scope
-                  just because they're searching for someone else.
-                */}
-                {activeActor &&
-                  !filteredActorOptions.some(
-                    (o) => o.id === activeActor.id,
-                  ) && (
-                    <option value={activeActor.id}>{activeActor.name}</option>
-                  )}
-                {filteredActorOptions.map((opt) => (
-                  <option key={opt.id} value={opt.id}>
-                    {actorOptionLabel(opt)}
-                  </option>
-                ))}
-              </select>
+                options={actorComboOptions}
+                placeholder="All actors"
+                searchPlaceholder="Filter actors…"
+                ariaLabel="Filter audit events by actor"
+                className="min-h-[40px] flex-1"
+              />
               {actorFilter.actorId && (
                 <button
                   type="button"
                   onClick={() => {
                     setActorFilter(DEFAULT_ACTOR_FILTER);
-                    setActorSearch("");
                     setPage(0);
                   }}
                   title="Clear actor filter"
@@ -772,7 +746,6 @@ export function AdminAuditPage() {
             onClick={() => {
               setActionFilter("");
               setActorFilter(DEFAULT_ACTOR_FILTER);
-              setActorSearch("");
               setDateRange(DEFAULT_DATE_RANGE);
               setCourseFilter("");
               setPage(0);

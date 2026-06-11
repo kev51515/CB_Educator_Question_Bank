@@ -27,6 +27,7 @@ import {
   type AssignmentAttempt,
 } from "./useAssignmentAttempts";
 import { SkeletonRows } from "@/components/Skeleton";
+import { Combobox } from "@/components";
 import { BulkGradeModal, type BulkGradePatch } from "./BulkGradeModal";
 import { useToast } from "@/components/Toast";
 import { useProfile } from "@/lib/profile";
@@ -307,6 +308,16 @@ export function AssignmentAttemptsView({
 
   const selectedCount = selectedIds.size;
 
+  // Sort options for the Combobox. Typed against AttemptSort so the
+  // onChange cast below is the only narrowing point.
+  const sortOptions: ReadonlyArray<{ value: AttemptSort; label: string }> = [
+    { value: "submitted_desc", label: "Most recent submission" },
+    { value: "submitted_asc", label: "Oldest submission" },
+    { value: "name_asc", label: "Student name (A–Z)" },
+    { value: "score_desc", label: "Highest score" },
+    { value: "score_asc", label: "Lowest score" },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
       <div className="mx-auto max-w-4xl space-y-6">
@@ -360,20 +371,13 @@ export function AssignmentAttemptsView({
                     <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
                       Sort
                     </span>
-                    <select
+                    <Combobox
                       value={sort}
-                      onChange={(e) => setSort(e.target.value as AttemptSort)}
-                      aria-label="Sort attempts"
-                      className="min-h-[40px] rounded-lg bg-white dark:bg-slate-950/60 ring-1 ring-slate-200 dark:ring-slate-700 px-2.5 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 motion-safe:transition-colors"
-                    >
-                      <option value="submitted_desc">
-                        Most recent submission
-                      </option>
-                      <option value="submitted_asc">Oldest submission</option>
-                      <option value="name_asc">Student name (A–Z)</option>
-                      <option value="score_desc">Highest score</option>
-                      <option value="score_asc">Lowest score</option>
-                    </select>
+                      onChange={(v) => setSort(v as AttemptSort)}
+                      options={sortOptions}
+                      ariaLabel="Sort attempts"
+                      className="w-56"
+                    />
                   </label>
                 </div>
               )}

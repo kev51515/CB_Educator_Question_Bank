@@ -46,6 +46,7 @@ import { canAccessQuestionBank } from "@/lib/access";
 import { testRunPath } from "@/lib/routes";
 import { useFullTests } from "@/fulltest/useFullTests";
 import { useToast } from "@/components/Toast";
+import { Combobox } from "@/components";
 import { useAssignments } from "@/teacher/useAssignments";
 import {
   readLastAddType,
@@ -588,23 +589,20 @@ export function InlineAddItemRow({
 
       {itemType === "assignment" && (
         <div className="space-y-1.5">
-          <select
-            value={assignmentId}
-            onChange={(e) => setAssignmentId(e.target.value)}
-            disabled={busy}
-            className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            <option value="">
-              {available.length === 0
+          <Combobox
+            value={assignmentId || null}
+            onChange={(v) => setAssignmentId(v)}
+            options={available.map((a) => ({ value: a.id, label: a.title }))}
+            disabled={busy || available.length === 0}
+            ariaLabel="Assignment"
+            placeholder={
+              available.length === 0
                 ? "No unassigned assignments — create one first"
-                : "Pick an assignment…"}
-            </option>
-            {available.map((a) => (
-              <option key={a.id} value={a.id}>
-                {a.title}
-              </option>
-            ))}
-          </select>
+                : "Pick an assignment…"
+            }
+            searchPlaceholder="Type to filter assignments…"
+            emptyText="No matching assignments"
+          />
           <input
             ref={titleRef}
             type="text"

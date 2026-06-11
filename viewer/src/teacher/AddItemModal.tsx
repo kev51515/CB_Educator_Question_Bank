@@ -13,7 +13,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
-import { ResponsiveModal } from "@/components";
+import { Combobox, ResponsiveModal } from "@/components";
 import { useAssignments } from "./useAssignments";
 import type { CourseModule, ModuleItemType } from "./useCourseModules";
 
@@ -52,9 +52,7 @@ export function AddItemModal({
   const [url, setUrl] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const firstFieldRef = useRef<HTMLSelectElement | HTMLInputElement | null>(
-    null,
-  );
+  const firstFieldRef = useRef<HTMLInputElement | null>(null);
 
   const availableAssignments = useMemo(
     () =>
@@ -265,23 +263,20 @@ export function AddItemModal({
                   Assignments tab first.
                 </p>
               ) : (
-                <select
-                  id="add-item-assignment"
-                  data-autofocus
-                  ref={(el) => {
-                    firstFieldRef.current = el;
-                  }}
-                  value={assignmentId}
-                  onChange={(e) => setAssignmentId(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                  <option value="">Choose an assignment…</option>
-                  {availableAssignments.map((a) => (
-                    <option key={a.id} value={a.id}>
-                      {a.title}
-                    </option>
-                  ))}
-                </select>
+                <div data-autofocus>
+                  <Combobox
+                    id="add-item-assignment"
+                    ariaLabel="Assignment"
+                    value={assignmentId || null}
+                    onChange={(v) => setAssignmentId(v)}
+                    options={availableAssignments.map((a) => ({
+                      value: a.id,
+                      label: a.title,
+                    }))}
+                    placeholder="Choose an assignment…"
+                    className="w-full"
+                  />
+                </div>
               )}
               <div className="space-y-1 pt-2">
                 <label

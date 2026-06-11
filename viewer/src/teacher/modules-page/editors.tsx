@@ -7,7 +7,7 @@
  * callback via props and owns only local draft state.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { SmartDatePicker } from "@/components";
+import { Combobox, SmartDatePicker } from "@/components";
 import type { CourseModule, ModuleItem, ModuleNode } from "@/teacher/useCourseModules";
 
 interface InlineRenameProps {
@@ -210,17 +210,15 @@ export function MoveItemPicker({
         </h3>
         <label className="block text-xs text-slate-500 dark:text-slate-400">
           Target module
-          <select
-            value={targetModuleId}
-            onChange={(e) => setTargetModuleId(e.target.value)}
-            className="mt-1 w-full rounded-md bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
-          >
-            {modules.map((m) => (
-              <option key={m.id} value={m.id}>
-                {m.name}
-              </option>
-            ))}
-          </select>
+          <div className="mt-1">
+            <Combobox
+              ariaLabel="Target module"
+              value={targetModuleId}
+              onChange={setTargetModuleId}
+              options={modules.map((m) => ({ value: m.id, label: m.name }))}
+              placeholder="Select a module…"
+            />
+          </div>
         </label>
         <label className="block text-xs text-slate-500 dark:text-slate-400">
           Position (0-based)
@@ -289,21 +287,21 @@ export function MoveModulePicker({
         </h3>
         <label className="block text-xs text-slate-500 dark:text-slate-400">
           New parent
-          <select
-            value={parentId ?? ""}
-            onChange={(e) =>
-              setParentId(e.target.value === "" ? null : e.target.value)
-            }
-            className="mt-1 w-full rounded-md bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
-          >
-            <option value="">Top level</option>
-            {options.map((m) => (
-              <option key={m.id} value={m.id}>
-                {"  ".repeat(m.depth)}
-                {m.name}
-              </option>
-            ))}
-          </select>
+          <div className="mt-1">
+            <Combobox
+              ariaLabel="New parent"
+              value={parentId}
+              onChange={(v) => setParentId(v === "" ? null : v)}
+              options={[
+                { value: "", label: "Top level" },
+                ...options.map((m) => ({
+                  value: m.id,
+                  label: `${"  ".repeat(m.depth)}${m.name}`,
+                })),
+              ]}
+              placeholder="Top level"
+            />
+          </div>
         </label>
         <label className="block text-xs text-slate-500 dark:text-slate-400">
           Position (0-based)

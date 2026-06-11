@@ -7,7 +7,7 @@
  * QuestionBankPage; consumed by practice-section + the page via the barrel.
  */
 import { useEffect, useState } from "react";
-import { SkeletonRows } from "@/components";
+import { Combobox, SkeletonRows } from "@/components";
 import { type AssignmentSourceId } from "@/teacher/useAssignments";
 export type PracticeSourceFilter = AssignmentSourceId | "all";
 export type PracticeStatusFilter = "active" | "archived";
@@ -202,18 +202,14 @@ export function CoursePickerDialog({
             <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
               Course
             </span>
-            <select
-              value={selected}
-              onChange={(e) => setSelected(e.target.value)}
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
-              <option value="">Choose a course…</option>
-              {courses.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name}
-                </option>
-              ))}
-            </select>
+            <Combobox
+              value={selected.length > 0 ? selected : null}
+              onChange={(v) => setSelected(v)}
+              options={courses.map((c) => ({ value: c.id, label: c.name }))}
+              ariaLabel="Course"
+              placeholder="Choose a course…"
+              className="mt-1 w-full"
+            />
           </label>
         )}
 

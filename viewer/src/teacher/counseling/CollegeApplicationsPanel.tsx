@@ -12,7 +12,7 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useToast } from "@/components";
+import { Combobox, useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "../ConfirmDialog";
 import { ApplicationDocsChecklist } from "./ApplicationDocsChecklist";
@@ -661,21 +661,17 @@ export function CollegeApplicationsPanel({
           <div className="flex shrink-0 items-center gap-2">
             {apps.length > 1 && (
               <>
-                <label className="sr-only" htmlFor="college-sort">
-                  Sort colleges
-                </label>
-                <select
+                <Combobox
                   id="college-sort"
+                  ariaLabel="Sort colleges"
                   value={sortKey}
-                  onChange={(e) => setSortKey(e.target.value as SortKey)}
-                  className={`${selectClass} min-h-[36px] text-xs`}
-                >
-                  {SORT_OPTIONS.map((o) => (
-                    <option key={o.key} value={o.key}>
-                      Sort: {o.label}
-                    </option>
-                  ))}
-                </select>
+                  onChange={(v) => setSortKey(v as SortKey)}
+                  options={SORT_OPTIONS.map((o) => ({
+                    value: o.key,
+                    label: `Sort: ${o.label}`,
+                  }))}
+                  className="min-w-[8.5rem]"
+                />
               </>
             )}
             <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
@@ -752,24 +748,20 @@ export function CollegeApplicationsPanel({
                 </div>
 
                 <div className="flex shrink-0 items-center gap-2">
-                  <label className="sr-only" htmlFor={`status-${app.id}`}>
-                    Status for {app.college_name}
-                  </label>
-                  <select
+                  <Combobox
                     id={`status-${app.id}`}
+                    ariaLabel={`Status for ${app.college_name}`}
                     value={app.status}
                     disabled={busyId === app.id}
-                    onChange={(e) => {
-                      void onChangeStatus(app, e.target.value as Status);
+                    onChange={(v) => {
+                      void onChangeStatus(app, v as Status);
                     }}
-                    className={`${selectClass} min-h-[40px] disabled:opacity-50`}
-                  >
-                    {STATUS_OPTIONS.map((s) => (
-                      <option key={s} value={s}>
-                        {STATUS_LABEL[s]}
-                      </option>
-                    ))}
-                  </select>
+                    options={STATUS_OPTIONS.map((s) => ({
+                      value: s,
+                      label: STATUS_LABEL[s],
+                    }))}
+                    className="min-w-[9rem]"
+                  />
                   <button
                     type="button"
                     onClick={() => setConfirmRemove(app)}
@@ -802,38 +794,27 @@ export function CollegeApplicationsPanel({
           Add a college
         </label>
         <div className="flex flex-wrap items-center gap-2">
-          <label className="sr-only" htmlFor="add-tier">
-            Tier
-          </label>
-          <select
+          <Combobox
             id="add-tier"
-            value={tier}
-            onChange={(e) => setTier(e.target.value as Tier | "")}
-            className={`${selectClass} min-h-[40px]`}
-          >
-            <option value="">Tier…</option>
-            {TIER_OPTIONS.map((t) => (
-              <option key={t} value={t} className="capitalize">
-                {t}
-              </option>
-            ))}
-          </select>
-          <label className="sr-only" htmlFor="add-plan">
-            Plan
-          </label>
-          <select
+            ariaLabel="Tier"
+            placeholder="Tier…"
+            value={tier || null}
+            onChange={(v) => setTier(v as Tier | "")}
+            options={TIER_OPTIONS.map((t) => ({
+              value: t,
+              label: t.charAt(0).toUpperCase() + t.slice(1),
+            }))}
+            className="min-w-[7rem]"
+          />
+          <Combobox
             id="add-plan"
-            value={plan}
-            onChange={(e) => setPlan(e.target.value as Plan | "")}
-            className={`${selectClass} min-h-[40px]`}
-          >
-            <option value="">Plan…</option>
-            {PLAN_OPTIONS.map((p) => (
-              <option key={p} value={p}>
-                {p}
-              </option>
-            ))}
-          </select>
+            ariaLabel="Plan"
+            placeholder="Plan…"
+            value={plan || null}
+            onChange={(v) => setPlan(v as Plan | "")}
+            options={PLAN_OPTIONS.map((p) => ({ value: p, label: p }))}
+            className="min-w-[7rem]"
+          />
           <label className="sr-only" htmlFor="add-deadline">
             Deadline
           </label>

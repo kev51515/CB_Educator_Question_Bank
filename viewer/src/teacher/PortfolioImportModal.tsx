@@ -17,7 +17,7 @@
  * Submissions DON'T transfer — surfaced in the subtitle.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ResponsiveModal, useToast } from "@/components";
+import { Combobox, ResponsiveModal, useToast } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import {
@@ -372,21 +372,21 @@ export function PortfolioImportModal({
               body="You can import only from courses you teach that already have portfolio items."
             />
           ) : (
-            <select
+            <Combobox
               id="portfolio-import-source"
-              data-autofocus
-              value={sourceTemplateId}
-              onChange={(e) => setSourceTemplateId(e.target.value)}
+              ariaLabel="Source course"
+              value={sourceTemplateId || null}
+              onChange={(v) => setSourceTemplateId(v)}
               disabled={submitting}
-              className="w-full min-h-[40px] rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
-              {availableSources.map((src) => (
-                <option key={src.templateId} value={src.templateId}>
-                  {src.courseName} &middot; {src.itemCount}{" "}
-                  {src.itemCount === 1 ? "item" : "items"}
-                </option>
-              ))}
-            </select>
+              className="w-full"
+              placeholder="Choose a source course…"
+              options={availableSources.map((src) => ({
+                value: src.templateId,
+                label: `${src.courseName} · ${src.itemCount} ${
+                  src.itemCount === 1 ? "item" : "items"
+                }`,
+              }))}
+            />
           )}
         </section>
 
@@ -413,26 +413,21 @@ export function PortfolioImportModal({
               </p>
             ) : (
               <>
-                <select
+                <Combobox
                   id="portfolio-import-anchor"
-                  value={targetParentId}
-                  onChange={(e) => setTargetParentId(e.target.value)}
+                  ariaLabel="Insert at"
+                  value={targetParentId || null}
+                  onChange={(v) => setTargetParentId(v)}
                   disabled={submitting}
-                  className="w-full min-h-[40px] rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 max-h-72"
-                >
-                  <option value="">Top level (root)</option>
-                  {targetOptions.map((opt) => {
-                    // Indent with non-breaking spaces — works inside <option>
-                    // text where leading whitespace would otherwise collapse.
-                    const indent = "  ".repeat(opt.depth + 1);
-                    return (
-                      <option key={opt.id} value={opt.id}>
-                        {indent}
-                        {opt.title}
-                      </option>
-                    );
-                  })}
-                </select>
+                  className="w-full"
+                  placeholder="Top level (root)"
+                  options={targetOptions.map((opt) => ({
+                    value: opt.id,
+                    // Indent with non-breaking spaces so the nesting reads in
+                    // the single-line label (leading whitespace collapses).
+                    label: `${"  ".repeat(opt.depth + 1)}${opt.title}`,
+                  }))}
+                />
                 <p className="text-xs text-slate-500 dark:text-slate-400">
                   {targetParentId
                     ? "Picked items will be inserted as children of this."

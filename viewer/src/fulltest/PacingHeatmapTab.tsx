@@ -12,6 +12,7 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { Combobox } from "@/components";
 import { Skeleton } from "@/components/Skeleton";
 import { PacingChartCard, type PacingQuestionRef } from "./PacingChart";
 import type { RosterRow } from "./test-overview/helpers";
@@ -106,18 +107,15 @@ export function PacingHeatmapTab({
         >
           Student
         </label>
-        <select
+        <Combobox
           id="pacing-student"
-          value={selected ?? ""}
-          onChange={(e) => setSelected(e.target.value)}
-          className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-800 shadow-sm focus:border-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
-        >
-          {roster.map((s) => (
-            <option key={s.runId} value={s.runId}>
-              {s.name}
-            </option>
-          ))}
-        </select>
+          value={selected}
+          onChange={setSelected}
+          options={roster.map((s) => ({ value: s.runId, label: s.name }))}
+          ariaLabel="Student"
+          placeholder="Select a student"
+          className="min-w-[12rem]"
+        />
         <span className="text-[11px] text-slate-400 dark:text-slate-500">
           {roster.length} student{roster.length === 1 ? "" : "s"} with a submitted sitting
         </span>

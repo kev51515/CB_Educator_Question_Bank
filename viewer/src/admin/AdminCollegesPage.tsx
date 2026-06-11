@@ -18,7 +18,7 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useToast, MarkdownEditor, SmartDatePicker } from "@/components";
+import { useToast, MarkdownEditor, SmartDatePicker, Combobox } from "@/components";
 import { SkeletonRows } from "@/components/Skeleton";
 import { ConfirmDialog } from "@/teacher/ConfirmDialog";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
@@ -506,23 +506,24 @@ export function AdminCollegesPage() {
                   <label htmlFor="college-type" className={labelCls}>
                     Type
                   </label>
-                  <select
+                  <Combobox
                     id="college-type"
-                    value={form.type}
-                    onChange={(e) =>
+                    ariaLabel="Type"
+                    value={form.type === "" ? null : form.type}
+                    onChange={(v) =>
                       setForm((f) => ({
                         ...f,
-                        type: e.target.value as FormState["type"],
+                        type: (v ?? "") as FormState["type"],
                       }))
                     }
-                    className={inputCls}
-                  >
-                    <option value="">—</option>
-                    <option value="public">Public</option>
-                    <option value="private">Private</option>
-                    <option value="community">Community</option>
-                    <option value="other">Other</option>
-                  </select>
+                    options={[
+                      { value: "public", label: "Public" },
+                      { value: "private", label: "Private" },
+                      { value: "community", label: "Community" },
+                      { value: "other", label: "Other" },
+                    ]}
+                    placeholder="—"
+                  />
                 </div>
                 <div>
                   <label htmlFor="college-admit" className={labelCls}>

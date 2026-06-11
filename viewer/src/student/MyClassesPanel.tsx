@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useStudentClasses, type StudentClass } from "./useStudentClasses";
 import { SkeletonRows } from "@/components/Skeleton";
+import { Combobox } from "@/components";
 import { studentCoursePath } from "@/lib/routes";
 import { JoinClassModal } from "./JoinClassModal";
 
@@ -238,33 +239,15 @@ function SortDropdown({ sort, onChange }: SortDropdownProps) {
   return (
     <label className="relative flex items-center text-xs">
       <span className="sr-only">Sort classes</span>
-      <select
-        aria-label="Sort classes"
+      <Combobox
+        ariaLabel="Sort classes"
         value={sort}
-        onChange={(e) => {
-          const next = e.target.value;
+        onChange={(next) => {
           if (isSortKey(next)) onChange(next);
         }}
-        className="appearance-none rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 pl-2 pr-7 py-1.5 min-h-[44px] text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 motion-safe:transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/60"
-      >
-        {SORT_OPTIONS.map((opt) => (
-          <option key={opt.key} value={opt.key}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 20 20"
-        className="pointer-events-none absolute right-2 h-4 w-4 text-slate-500 dark:text-slate-400"
-        fill="currentColor"
-      >
-        <path
-          fillRule="evenodd"
-          d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
-          clipRule="evenodd"
-        />
-      </svg>
+        options={SORT_OPTIONS.map((opt) => ({ value: opt.key, label: opt.label }))}
+        className="min-h-[44px] w-44"
+      />
     </label>
   );
 }

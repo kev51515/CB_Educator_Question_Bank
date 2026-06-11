@@ -21,6 +21,7 @@
  *     drop zone reachable past its bottom edge.
  */
 import { useEffect, useMemo, useState } from "react";
+import { Combobox, type ComboboxOption } from "@/components";
 import {
   flattenTree,
   type PortfolioItemNode,
@@ -190,6 +191,19 @@ export function MovePicker({
   const flat = useMemo(() => flattenTree(tree), [tree]);
   const options = flat.filter((entry) => !forbiddenIds.has(entry.node.id));
 
+  // "Top level" sentinel uses value "" (mapped to null on change); nested
+  // titles keep their indent so the hierarchy still reads in the listbox.
+  const parentOptions = useMemo<ComboboxOption[]>(
+    () => [
+      { value: "", label: "Top level" },
+      ...options.map(({ node, depth }) => ({
+        value: node.id,
+        label: `${"  ".repeat(depth)}${node.title}`,
+      })),
+    ],
+    [options],
+  );
+
   // Resolve the sibling set for the currently-chosen parent so position
   // labels reflect where the item will actually land.
   const siblings = useMemo<readonly PortfolioItemNode[]>(() => {
@@ -226,6 +240,11 @@ export function MovePicker({
     positionChoices.find((c) => c.key === positionKey)?.position ??
     Number.MAX_SAFE_INTEGER;
 
+  const positionOptions = useMemo<ComboboxOption[]>(
+    () => positionChoices.map((c) => ({ value: c.key, label: c.label })),
+    [positionChoices],
+  );
+
   return (
     <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/40 p-4">
       <div className="w-full max-w-sm rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 p-4 space-y-3">
@@ -234,35 +253,24 @@ export function MovePicker({
         </h3>
         <label className="block text-xs text-slate-500 dark:text-slate-400">
           New parent
-          <select
-            value={parentId ?? ""}
-            onChange={(e) =>
-              setParentId(e.target.value === "" ? null : e.target.value)
-            }
-            className="mt-1 w-full rounded-md bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
-          >
-            <option value="">Top level</option>
-            {options.map(({ node, depth }) => (
-              <option key={node.id} value={node.id}>
-                {"  ".repeat(depth)}
-                {node.title}
-              </option>
-            ))}
-          </select>
+          <Combobox
+            value={parentId}
+            onChange={(v) => setParentId(v === "" ? null : v)}
+            options={parentOptions}
+            ariaLabel="New parent"
+            placeholder="Top level"
+            className="mt-1"
+          />
         </label>
         <label className="block text-xs text-slate-500 dark:text-slate-400">
           Position
-          <select
+          <Combobox
             value={positionKey}
-            onChange={(e) => setPositionKey(e.target.value)}
-            className="mt-1 w-full rounded-md bg-slate-50 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
-          >
-            {positionChoices.map((c) => (
-              <option key={c.key} value={c.key}>
-                {c.label}
-              </option>
-            ))}
-          </select>
+            onChange={(v) => setPositionKey(v)}
+            options={positionOptions}
+            ariaLabel="Position"
+            className="mt-1"
+          />
         </label>
         <div className="flex items-center justify-end gap-2">
           <button
