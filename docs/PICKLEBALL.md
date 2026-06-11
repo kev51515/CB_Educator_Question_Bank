@@ -6,9 +6,10 @@ lives in [`PICKLEBALL_REQUIREMENTS_v3.md`](./PICKLEBALL_REQUIREMENTS_v3.md); the
 plan in [`PLAN_PICKLEBALL.md`](./PLAN_PICKLEBALL.md); the domain/theming layer in
 [`PLAN_DOMAIN_LAYER.md`](./PLAN_DOMAIN_LAYER.md).
 
-**Status: DEPLOYED to prod 2026-06-11** (migrations `0174`–`0191`) + merged to `main`
+**Status: DEPLOYED to prod 2026-06-11** (migrations `0174`–`0193`) + merged to `main`
 (Cloudflare build). Validated on prod: structural smoke + **`smoke-pickleball.mjs` 28/28
-green** (auth/RLS/RPC/waitlist/auto-step). Follow-ups complete (see bottom).
+green** (auth/RLS/RPC/waitlist/auto-step). Follow-ups + the contribution model complete
+(see bottom). Both demo courses fully seeded for visualization.
 
 ## What it is
 
@@ -39,7 +40,7 @@ Surface components: `viewer/src/teacher/pickleball/*`, `viewer/src/student/pickl
 shared chat `viewer/src/components/pickleball/ChatPanel.tsx`, video helper
 `viewer/src/lib/videoEmbed.ts`, skills taxonomy `viewer/src/lib/pickleballSkills.ts`.
 
-## Data model (migrations 0174–0186)
+## Data model (migrations 0174–0193)
 
 | # | Tables / change |
 |---|---|
@@ -56,6 +57,10 @@ shared chat `viewer/src/components/pickleball/ChatPanel.tsx`, video helper
 | 0184 | `pickleball_coach_evaluations` |
 | 0185 | `pickleball_events` + `pickleball_event_registrations` (capacity/skill-gate/waitlist) |
 | 0186 | `profiles.domain` + `set_my_domain` + `derive_user_domain` (domain layer) |
+| 0190 | certs bucket → private; dropped broad homework player-UPDATE policy (writes via RPC) |
+| 0191 | certs storage RLS **course-path-scoped** (`<course_id>/<coach_id>/<file>`) |
+| 0192 | `derive_user_domain` also reads enrollments → player shell themes coaching |
+| 0193 | `pickleball_lesson_videos.added_by`; player adds/removes own lesson clips; counseling revise-not-delete; videos-only storage policy |
 
 19 `pickleball_*` tables, 42 `pk_*` RPCs (all `SECURITY DEFINER`, `SET search_path = public,
 auth`, stable error codes, `GRANT EXECUTE TO authenticated`). RLS pattern: educator-full
@@ -97,6 +102,29 @@ Student/Advisee/**Player**/**Coach-in-training**) and **accent color** (indigo /
   pickleball course sees orange regardless of their saved domain.
 - ✅ Assessment 1–5 skill avg → **2.0–5.5 band** remap; override-enroll **waitlist toast**;
   homework broad player-UPDATE policy **dropped** (writes via `pk_set_homework_status` only).
+
+## Member contribution model (who can add content, by vertical)
+
+Owner-specified (migration 0193); the educator/coach/counselor owns the structure everywhere.
+
+| Vertical | Member (student) can |
+|---|---|
+| **Academic** (class) | nothing — read-only |
+| **Counseling** | upload + **revise** their own Portfolio submissions; **cannot delete or reorder** |
+| **Coaching** (player) | add + remove **their own** video clips/URLs to their lessons (for analysis); coach keeps full control |
+
+## Demo data + seed scripts
+
+`viewer/scripts/`: `seed-pickleball-demo.mjs` (mints the two demo courses + logins),
+`seed-pickleball-iptpa.mjs` (IPTPA content), **`seed-pickleball-full.mjs`** (the
+comprehensive seed — 18 drills with real verified YouTube videos, 7 players with
+development-story assessments + lessons + homework, 5 clinics + registrations, 3 coaches
+with certs/dev-tracks/evals, chat; idempotent find-or-create). Demo courses **`5W84HR`**
+(players) + **`3KN2C6`** (coaches), owned by `kevyao@gmail.com` (admin, domain=coaching).
+
+> **LINE note:** outbound LINE sending (`line-dispatch-minutely` cron, job 13) is currently
+> **paused** (`active=false`) at the owner's request — re-enable via
+> `cron.alter_job(job_id := 13, active := true)`.
 
 ## Open (minor)
 - Storage path-scoping is course-level, not per-cert-row; fine for this model.
