@@ -212,7 +212,7 @@ export function BrandPanel({ eyebrow, title, titleAccent, lead, steps }: BrandPa
         className="relative flex items-center justify-between text-xs text-stone-500 auth-reveal"
         style={{ animationDelay: "180ms" }}
       >
-        <span>© {new Date().getFullYear()} PrepMasters</span>
+        <span>© {new Date().getFullYear()} OmniLMS</span>
         <span className="tracking-wide" style={serif}>
           Mastery, measured.
         </span>

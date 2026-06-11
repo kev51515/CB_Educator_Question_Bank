@@ -8,7 +8,7 @@
 // (--no-verify-jwt is REQUIRED for cron invocation — the function self-guards
 //  via CRON_TOKEN; see the LINE functions for the precedent.)
 //
-// Required secrets: RESEND_API_KEY, EMAIL_FROM (e.g. "PrepMasters
+// Required secrets: RESEND_API_KEY, EMAIL_FROM (e.g. "OmniLMS
 //   <notifications@pication.app>" — domain must be verified in Resend),
 //   CRON_TOKEN, SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (auto-injected).
 // =============================================================================
@@ -52,20 +52,20 @@ function renderHtml(title: string, body: string | null, link: string | null, kin
     : "";
   return `<!doctype html><html><body style="margin:0;padding:0;background:#FBFAF7;">
   <div style="max-width:560px;margin:0 auto;padding:36px 24px;font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1B2A4A;">
-    <p style="margin:0 0 18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6E7A95;">PrepMasters</p>
+    <p style="margin:0 0 18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6E7A95;">OmniLMS</p>
     <div style="background:#ffffff;border:1px solid #E9E6DE;border-radius:14px;padding:26px 28px;">
       <h1 style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:22px;line-height:1.25;color:#1B2A4A;">${escapeHtml(title)}</h1>
       ${body ? `<p style="margin:0;font-size:14.5px;line-height:1.6;color:#44516B;white-space:pre-line;">${escapeHtml(body)}</p>` : ""}
       ${cta}
     </div>
-    <p style="margin:18px 0 0;font-size:12px;line-height:1.6;color:#6E7A95;">You're receiving this because email notifications are on for your PrepMasters account. Turn them off under Account &rarr; Settings.</p>
+    <p style="margin:18px 0 0;font-size:12px;line-height:1.6;color:#6E7A95;">You're receiving this because email notifications are on for your OmniLMS account. Turn them off under Account &rarr; Settings.</p>
   </div>
 </body></html>`;
 }
 
 Deno.serve(async (req) => {
   const RESEND_KEY = Deno.env.get("RESEND_API_KEY") ?? "";
-  const FROM = Deno.env.get("EMAIL_FROM") ?? "PrepMasters <notifications@pication.app>";
+  const FROM = Deno.env.get("EMAIL_FROM") ?? "OmniLMS <notifications@pication.app>";
   const SUPA_URL = Deno.env.get("SUPABASE_URL") ?? "";
   const SERVICE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
   const CRON_TOKEN = Deno.env.get("CRON_TOKEN");
