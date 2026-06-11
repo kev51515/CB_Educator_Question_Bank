@@ -20,6 +20,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUiTheme } from "@/lib/theme";
+import { useProfile } from "@/lib/profile";
 import { useStudentSession } from "./session";
 import { ShortcutHelpOverlay } from "@/components/ShortcutHelpOverlay";
 
@@ -65,7 +66,14 @@ export function AreaSelector() {
   // (it's just a hook around the supabase session) and ensures we never
   // end up with a stale or mismatched id.
   const { session, signOut } = useStudentSession();
-  const studentName = session?.name ?? "";
+  const { profile } = useProfile();
+  // profiles.display_name is the CANONICAL name (teacher-owned per project
+  // rules; migration 0093). session.name derives from auth user_metadata with
+  // an email-local-part fallback, so the two can disagree — a teacher rename
+  // never reaches auth metadata. Greet from profiles; session is the fallback
+  // for the pre-profile flicker window only. (QA caught the greeting showing
+  // an email slug while the avatar pill showed the real name.)
+  const studentName = profile?.display_name ?? session?.name ?? "";
 
   const [joinOpen, setJoinOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);

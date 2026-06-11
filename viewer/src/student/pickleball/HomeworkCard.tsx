@@ -30,7 +30,7 @@ const STATUS_LABEL: Record<HomeworkStatus, string> = {
 
 const STATUS_STYLE: Record<HomeworkStatus, string> = {
   assigned:
-    "bg-sky-100 text-sky-700 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:ring-sky-900",
+    "bg-indigo-100 text-indigo-700 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900",
   done:
     "bg-emerald-100 text-emerald-700 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900",
   skipped:
@@ -229,7 +229,7 @@ export function HomeworkCard({
         <button
           type="button"
           onClick={() => void load()}
-          className="mt-4 inline-flex min-h-[40px] items-center rounded-xl bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+          className="mt-4 inline-flex min-h-[40px] items-center rounded-lg bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
         >
           Try again
         </button>
@@ -332,7 +332,7 @@ function HomeworkItemCard({
           {drill.skill_tags.map((slug) => (
             <span
               key={slug}
-              className="rounded-md bg-slate-100 px-1.5 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+              className="rounded-full bg-slate-100 px-1.5 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-300"
             >
               {skillLabel(slug)}
             </span>
@@ -344,7 +344,7 @@ function HomeworkItemCard({
       {embed?.embedSrc ? (
         <div className="mt-3">
           <div
-            className="relative w-full overflow-hidden rounded-xl bg-black"
+            className="relative w-full overflow-hidden rounded-2xl bg-black"
             style={{ paddingBottom: "56.25%" }}
           >
             <iframe
@@ -363,7 +363,7 @@ function HomeworkItemCard({
             href={drill.demo_video_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex min-h-[40px] items-center gap-2 text-sm font-medium text-sky-600 hover:underline dark:text-sky-400"
+            className="mt-3 inline-flex min-h-[40px] items-center gap-2 text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-400"
           >
             Watch demo
           </a>
@@ -400,14 +400,14 @@ function HomeworkItemCard({
             <button
               type="button"
               onClick={onMarkDone}
-              className="min-h-[40px] rounded-xl bg-emerald-600 px-4 text-sm font-medium text-white transition hover:bg-emerald-500"
+              className="min-h-[40px] rounded-lg bg-emerald-600 px-4 text-sm font-medium text-white transition hover:bg-emerald-500"
             >
               Mark done
             </button>
             <button
               type="button"
               onClick={onMarkSkipped}
-              className="min-h-[40px] rounded-xl px-3.5 text-sm font-medium text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800"
+              className="min-h-[40px] rounded-lg px-3.5 text-sm font-medium text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800"
             >
               Skip
             </button>
@@ -416,7 +416,7 @@ function HomeworkItemCard({
           <button
             type="button"
             onClick={onReopen}
-            className="min-h-[40px] rounded-xl px-3.5 text-sm font-medium text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800"
+            className="min-h-[40px] rounded-lg px-3.5 text-sm font-medium text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800"
           >
             Reopen
           </button>

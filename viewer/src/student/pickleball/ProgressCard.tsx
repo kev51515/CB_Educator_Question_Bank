@@ -236,7 +236,7 @@ export function ProgressCard({
         <button
           type="button"
           onClick={() => void load()}
-          className="mt-4 inline-flex min-h-[40px] items-center rounded-xl bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+          className="mt-4 inline-flex min-h-[40px] items-center rounded-lg bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
         >
           Try again
         </button>
@@ -276,7 +276,7 @@ export function ProgressCard({
           My progress
         </h2>
         {overall != null && (
-          <div className="flex items-baseline gap-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1.5">
+          <div className="flex items-baseline gap-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1.5">
             <span className="text-xs font-medium text-emerald-700 dark:text-emerald-300">
               Level
             </span>
@@ -292,7 +292,7 @@ export function ProgressCard({
         <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
           Skills
         </h3>
-        <ul className="divide-y divide-slate-200 dark:divide-slate-800 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
+        <ul className="divide-y divide-slate-200 dark:divide-slate-800 rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800">
           {PICKLEBALL_SKILLS.map((skill) => {
             const latest = series.latest[skill.slug];
             const hist = series.history[skill.slug] ?? [];

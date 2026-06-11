@@ -28,7 +28,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
-import { EmptyState } from "@/components/EmptyState";
 import { ROUTES } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
 import { domainOf, studentLabel } from "@/lib/domain";
@@ -408,7 +407,21 @@ export function StudentCourseView(): JSX.Element {
           onClick={() => navigate(ROUTES.STUDENT_COURSES)}
           className="min-h-[44px] inline-flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
         >
-          <span aria-hidden>←</span> Back
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+            className="h-3.5 w-3.5 flex-none"
+          >
+            <path d="M15 18 9 12l6-6" />
+          </svg>{" "}
+          Back
         </button>
 
         {loading && (
@@ -429,33 +442,36 @@ export function StudentCourseView(): JSX.Element {
 
         {!loading && !error && course && (
           <>
-            <header className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white/85 dark:bg-slate-900/70 p-5 space-y-4 motion-safe:transition-all">
+            <header className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 shadow-card p-5 space-y-4 motion-safe:transition-all">
               <div className="space-y-1">
-                <p className="text-xs uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
-                  Course · {course.short_code}
+                <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400 font-medium">
+                  Course
                 </p>
                 <div className="flex flex-wrap items-center gap-2">
                   <h1 className="page-title text-3xl font-bold text-slate-900 dark:text-slate-100">
                     {course.name}
                   </h1>
-                  <span className="inline-flex items-center rounded-full bg-accent-50 dark:bg-accent-950/40 px-2.5 py-0.5 text-xs font-medium text-accent-700 dark:text-accent-300 ring-1 ring-accent-200/60 dark:ring-accent-800/60">
-                    {studentLabel(course.course_type)}
+                  {/* The course code appears exactly once — this quiet mono chip. */}
+                  <span className="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[11px] font-mono text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700">
+                    {course.short_code}
                   </span>
+                  {/* Role chip only when it carries information beyond the
+                      obvious (Advisee / Player / Coach-in-training). */}
+                  {course.course_type && course.course_type !== "class" && (
+                    <span className="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700">
+                      {studentLabel(course.course_type)}
+                    </span>
+                  )}
                 </div>
                 {(() => {
                   const tname = teacherName(course);
+                  if (!tname) return null;
                   return (
                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                      {tname && (
-                        <>
-                          Taught by{" "}
-                          <span className="text-slate-700 dark:text-slate-200 font-medium">
-                            {tname}
-                          </span>
-                          <span aria-hidden> · </span>
-                        </>
-                      )}
-                      <span className="font-mono">{course.short_code}</span>
+                      Taught by{" "}
+                      <span className="text-slate-700 dark:text-slate-200 font-medium">
+                        {tname}
+                      </span>
                     </p>
                   );
                 })()}
@@ -505,7 +521,9 @@ export function StudentCourseView(): JSX.Element {
                 />
                 <StatCard
                   label="My average"
-                  ceremonial
+                  /* Ceremonial gold is for the real numeral only — the empty
+                     em-dash renders as a plain slate dash + note. */
+                  ceremonial={stats.myAverage !== null}
                   value={
                     statsLoading
                       ? null
@@ -614,7 +632,7 @@ export function StudentCourseView(): JSX.Element {
                   return (
                     <section
                       key={m.id}
-                      className="rounded-2xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"
+                      className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-card overflow-hidden"
                     >
                       <button
                         type="button"
@@ -650,7 +668,22 @@ export function StudentCourseView(): JSX.Element {
                                 : "bg-slate-100 text-slate-600 ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700"
                             }`}
                           >
-                            {done >= total ? "✓ " : ""}
+                            {done >= total && (
+                              <svg
+                                width="11"
+                                height="11"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                aria-hidden
+                                className="mr-1 h-[11px] w-[11px] flex-none"
+                              >
+                                <path d="M4 12.5 9.5 18 20 6.5" />
+                              </svg>
+                            )}
                             {done}/{total} done
                           </span>
                         )}
@@ -678,14 +711,21 @@ export function StudentCourseView(): JSX.Element {
                         )}
                       </button>
                       {!isCollapsed && (
-                        <div id={bodyId} className="px-2 pb-2">
+                        <div
+                          id={bodyId}
+                          className="border-t border-slate-100 dark:border-slate-800"
+                        >
                           {items.length === 0 ? (
-                            <EmptyState
-                              icon="inbox"
-                              title="No items in this module yet."
-                            />
+                            // Published module, nothing published inside (all
+                            // items draft, or genuinely empty). Quiet one-liner
+                            // — NOT the empty-state CTA card: "no items yet"
+                            // would be misleading when the teacher has drafts
+                            // staged, and there's no action a student can take.
+                            <p className="px-4 py-3 text-sm italic text-slate-400 dark:text-slate-500">
+                              Content coming soon.
+                            </p>
                           ) : (
-                            <ul className="space-y-0.5">
+                            <ul className="divide-y divide-slate-100 dark:divide-slate-800">
                               {items.map((it) => (
                                 <li key={it.id}>
                                   <ModuleItemRowView

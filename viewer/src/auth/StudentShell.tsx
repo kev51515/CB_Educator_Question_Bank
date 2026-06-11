@@ -125,7 +125,17 @@ function isAccountRouteActive(pathname: string): boolean {
  */
 /** Reserved sub-route segments under `/student/*` that are their own nav
  *  destinations — NOT the managed-student coded home `/student/<code>`. */
-const STUDENT_RESERVED_SEGMENTS = ["courses", "inbox", "account"];
+const STUDENT_RESERVED_SEGMENTS = [
+  "courses",
+  "inbox",
+  "account",
+  // Own destinations — must not also light up Home (QA caught my-feedback
+  // leaving Home highlighted).
+  "my-feedback",
+  "assignment",
+  "practice",
+  "mock-test",
+];
 
 function isStudentHomeActive(pathname: string): boolean {
   if (pathname === "/" || pathname === ROUTES.STUDENT_HOME) return true;

@@ -212,7 +212,7 @@ export function CoachHoursCard({
       </div>
 
       {showForm && (
-        <div className="mb-4 space-y-3 rounded-xl border border-slate-200 dark:border-slate-800 p-3">
+        <div className="mb-4 space-y-3 rounded-2xl border border-slate-200 dark:border-slate-800 p-3">
           <div className="grid gap-3 sm:grid-cols-2">
             <SmartDatePicker
               value={taughtOn}
@@ -310,7 +310,7 @@ export function CoachHoursCard({
           {logs.map((log) => (
             <li
               key={log.id}
-              className="flex items-start justify-between gap-3 rounded-xl border border-slate-200 dark:border-slate-800 p-3"
+              className="flex items-start justify-between gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 p-3"
             >
               <div className="min-w-0">
                 <p className="text-sm font-medium text-slate-800 dark:text-slate-100">

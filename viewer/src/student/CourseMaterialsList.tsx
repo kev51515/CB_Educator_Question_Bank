@@ -175,7 +175,7 @@ function MaterialRow({ material }: RowProps) {
     return (
       <li
         aria-disabled="true"
-        className="flex items-start gap-3 rounded-xl bg-white/60 dark:bg-slate-900/40 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2.5 opacity-60"
+        className="flex items-start gap-3 rounded-2xl bg-white/60 dark:bg-slate-900/40 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2.5 opacity-60"
         title="Link unavailable"
       >
         {body}
@@ -190,7 +190,7 @@ function MaterialRow({ material }: RowProps) {
         target="_blank"
         rel="noopener noreferrer"
         download={isFile ? material.title : undefined}
-        className="flex items-start gap-3 rounded-xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2.5 shadow-sm hover:ring-indigo-300 dark:hover:ring-indigo-700 hover:bg-white dark:hover:bg-slate-900 transition-colors motion-safe:transition-colors"
+        className="flex items-start gap-3 rounded-2xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 px-3 py-2.5 shadow-sm hover:ring-indigo-300 dark:hover:ring-indigo-700 hover:bg-white dark:hover:bg-slate-900 transition-colors motion-safe:transition-colors"
       >
         {body}
       </a>
@@ -331,7 +331,7 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search materials…"
                 aria-label="Search materials"
-                className="w-full h-10 rounded-xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 px-3 pr-9 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:focus:ring-indigo-600 motion-safe:transition-colors"
+                className="w-full h-10 rounded-lg bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 px-3 pr-9 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:focus:ring-indigo-600 motion-safe:transition-colors"
               />
               {queryActive && (
                 <button
@@ -347,7 +347,7 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
             <div
               role="radiogroup"
               aria-label="Sort materials"
-              className="inline-flex shrink-0 rounded-xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 p-0.5"
+              className="inline-flex shrink-0 rounded-full bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 p-0.5"
             >
               {SORT_PILLS.map((pill) => {
                 const active = view.sort === pill.value;
@@ -359,7 +359,7 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
                     aria-checked={active}
                     onClick={() => setView((v) => ({ ...v, sort: pill.value }))}
                     className={[
-                      "inline-flex items-center justify-center min-h-9 px-3 rounded-[0.625rem] text-sm motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
+                      "inline-flex items-center justify-center min-h-9 px-3 rounded-full text-sm motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
                       active
                         ? "bg-indigo-600 text-white"
                         : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800",
@@ -426,7 +426,7 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
       ) : error ? (
         <div
           role="alert"
-          className="rounded-xl bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-4 py-3 text-sm text-rose-700 dark:text-rose-300"
+          className="rounded-lg bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-4 py-3 text-sm text-rose-700 dark:text-rose-300"
         >
           {error}
         </div>
@@ -452,7 +452,7 @@ export function CourseMaterialsList({ courseId }: CourseMaterialsListProps) {
           <button
             type="button"
             onClick={showAll}
-            className="inline-flex items-center justify-center min-h-10 px-3 rounded-xl bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 motion-safe:transition-colors"
+            className="inline-flex items-center justify-center min-h-10 px-3 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 motion-safe:transition-colors"
           >
             Show all
           </button>

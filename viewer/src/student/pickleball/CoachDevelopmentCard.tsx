@@ -149,13 +149,13 @@ export function CoachDevelopmentCard({
             return (
               <li
                 key={step.id}
-                className="flex items-start gap-3 rounded-xl border border-slate-200 dark:border-slate-800 p-3"
+                className="flex items-start gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 p-3"
               >
                 <button
                   type="button"
                   onClick={() => void toggleStep(step)}
                   aria-label={done ? "Mark as not done" : "Mark as done"}
-                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border ${
+                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border ${
                     done
                       ? "border-emerald-600 bg-emerald-600 text-white"
                       : "border-slate-300 dark:border-slate-600"

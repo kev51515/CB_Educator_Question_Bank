@@ -329,7 +329,7 @@ export function StudentAttemptReview({
         )}
 
         {data.questions.length > 0 ? (
-          <div className="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
             <button
               type="button"
               onClick={() => setReviewOpen((open) => !open)}
@@ -374,7 +374,7 @@ export function StudentAttemptReview({
                       onClick={jumpToNextProblem}
                       disabled={totalProblems === 0}
                       aria-label="Jump to next wrong answer"
-                      className="inline-flex items-center gap-1 min-h-11 rounded-md text-xs font-medium px-3 py-1.5 bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 motion-safe:transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex items-center gap-1 min-h-11 rounded-lg text-xs font-medium px-3 py-1.5 bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 motion-safe:transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Next <span aria-hidden="true">▼</span>
                     </button>
@@ -398,7 +398,7 @@ export function StudentAttemptReview({
                       <button
                         type="button"
                         onClick={() => handleFilterChange("all")}
-                        className="inline-flex items-center min-h-[44px] rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5 motion-safe:transition-colors"
+                        className="inline-flex items-center min-h-[44px] rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5 motion-safe:transition-colors"
                       >
                         Show all
                       </button>
@@ -411,7 +411,7 @@ export function StudentAttemptReview({
             )}
           </div>
         ) : (
-          <div className="rounded-xl border border-slate-200 dark:border-slate-800 p-4 text-sm text-slate-500 dark:text-slate-400">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 text-sm text-slate-500 dark:text-slate-400">
             Per-question review is unavailable for this attempt (no question
             snapshot was saved).
           </div>
@@ -455,7 +455,7 @@ function FilterPill({ label, count, active, tone, onClick }: FilterPillProps) {
       aria-selected={active}
       onClick={onClick}
       className={[
-        "inline-flex items-center min-h-[44px] rounded-md text-xs font-medium px-3 py-1.5 motion-safe:transition-colors",
+        "inline-flex items-center min-h-[44px] rounded-full text-xs font-medium px-3 py-1.5 motion-safe:transition-colors",
         active ? activeClasses[tone] : inactiveClasses,
       ].join(" ")}
     >

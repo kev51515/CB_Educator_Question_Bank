@@ -25,7 +25,7 @@ type LessonStatus = "scheduled" | "completed" | "recapped" | "cancelled";
 
 const STATUS_STYLE: Record<LessonStatus, string> = {
   scheduled:
-    "bg-sky-100 text-sky-700 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:ring-sky-900",
+    "bg-indigo-100 text-indigo-700 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900",
   completed:
     "bg-amber-100 text-amber-700 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900",
   recapped:
@@ -257,7 +257,7 @@ export function PlayerLessonsTimeline({
         <button
           type="button"
           onClick={() => void load()}
-          className="mt-4 inline-flex min-h-[40px] items-center rounded-xl bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+          className="mt-4 inline-flex min-h-[40px] items-center rounded-lg bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
         >
           Try again
         </button>
@@ -410,7 +410,7 @@ function VideoPlayer({
     if (parsed.embedSrc) {
       return (
         <figure>
-          <div className="relative w-full overflow-hidden rounded-xl bg-black" style={{ paddingBottom: "56.25%" }}>
+          <div className="relative w-full overflow-hidden rounded-2xl bg-black" style={{ paddingBottom: "56.25%" }}>
             <iframe
               src={parsed.embedSrc}
               title={title}
@@ -434,7 +434,7 @@ function VideoPlayer({
         href={video.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex min-h-[40px] items-center gap-2 text-sm font-medium text-sky-600 hover:underline dark:text-sky-400"
+        className="inline-flex min-h-[40px] items-center gap-2 text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-400"
       >
         {title}
       </a>
@@ -444,7 +444,7 @@ function VideoPlayer({
   if (video.kind === "upload") {
     if (!signedUrl) {
       return (
-        <div className="rounded-xl bg-slate-100 px-3 py-4 text-center text-xs text-slate-500 dark:bg-slate-800/60 dark:text-slate-400">
+        <div className="rounded-lg bg-slate-100 px-3 py-4 text-center text-xs text-slate-500 dark:bg-slate-800/60 dark:text-slate-400">
           Preparing video…
         </div>
       );
@@ -455,7 +455,7 @@ function VideoPlayer({
           src={signedUrl}
           controls
           preload="metadata"
-          className="w-full rounded-xl bg-black"
+          className="w-full rounded-2xl bg-black"
         />
         {video.title && (
           <figcaption className="mt-1 text-xs text-slate-500 dark:text-slate-400">
@@ -486,7 +486,7 @@ function ClipComposer({
   const inputClass =
     "rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100";
   return (
-    <div className="mb-3 rounded-xl bg-slate-50 p-3 ring-1 ring-slate-200 dark:bg-slate-800/50 dark:ring-slate-700">
+    <div className="mb-3 rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-200 dark:bg-slate-800/50 dark:ring-slate-700">
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}

@@ -212,7 +212,7 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
     >
       {joined ? (
         <div className="space-y-4">
-          <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/40 px-4 py-3 ring-1 ring-emerald-200 dark:ring-emerald-900">
+          <div className="rounded-lg bg-emerald-50 dark:bg-emerald-950/40 px-4 py-3 ring-1 ring-emerald-200 dark:ring-emerald-900">
             <p className="text-sm font-medium text-emerald-800 dark:text-emerald-200">
               You joined {joined.name}
             </p>
@@ -280,14 +280,14 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
             <div
               id={errorId}
               role="alert"
-              className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900 space-y-2"
+              className="rounded-lg bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900 space-y-2"
             >
               <p>{error.message}</p>
               {error.alreadyJoinedCourseId && (
                 <a
                   href={`#${studentCoursePath(error.alreadyJoinedCourseId)}`}
                   onClick={onClose}
-                  className="inline-flex items-center gap-1 rounded-md bg-rose-100 dark:bg-rose-900/60 px-2 py-1 text-xs font-medium text-rose-800 dark:text-rose-200 hover:bg-rose-200 dark:hover:bg-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-500"
+                  className="inline-flex items-center gap-1 rounded-lg bg-rose-100 dark:bg-rose-900/60 px-2 py-1 text-xs font-medium text-rose-800 dark:text-rose-200 hover:bg-rose-200 dark:hover:bg-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-500"
                 >
                   Open class →
                 </a>

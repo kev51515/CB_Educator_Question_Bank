@@ -327,7 +327,7 @@ function CatalogDetail({ college }: { college: CatalogCollege | undefined }) {
             {prompts.map((p, i) => (
               <li
                 key={i}
-                className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-2 py-1.5 ring-1 ring-slate-200/70 dark:ring-slate-800"
+                className="rounded-lg bg-slate-50 dark:bg-slate-800/60 px-2 py-1.5 ring-1 ring-slate-200/70 dark:ring-slate-800"
               >
                 <span className="text-slate-700 dark:text-slate-200">
                   {p.prompt}
@@ -390,7 +390,7 @@ function ExpandToggle({
       onClick={onToggle}
       aria-expanded={expanded}
       aria-label={`${expanded ? "Collapse" : "Expand"} details for ${label}`}
-      className="flex min-h-[40px] min-w-[40px] shrink-0 items-center justify-center rounded-md text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800 dark:hover:text-slate-300"
+      className="flex min-h-[40px] min-w-[40px] shrink-0 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800 dark:hover:text-slate-300"
     >
       <svg
         width={16}
@@ -770,7 +770,7 @@ export function StudentCollegeListCard({
                     type="button"
                     onClick={() => setConfirmRemove(app)}
                     aria-label={`Remove ${app.college_name}`}
-                    className="min-h-[40px] shrink-0 rounded-md ring-1 ring-rose-300 dark:ring-rose-800 bg-rose-50 dark:bg-rose-950/40 px-2.5 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-900/40"
+                    className="min-h-[40px] shrink-0 rounded-lg ring-1 ring-rose-300 dark:ring-rose-800 bg-rose-50 dark:bg-rose-950/40 px-2.5 py-1 text-xs font-medium text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-900/40"
                   >
                     Remove
                   </button>

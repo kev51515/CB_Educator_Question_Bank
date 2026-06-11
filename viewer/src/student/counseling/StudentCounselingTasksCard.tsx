@@ -299,7 +299,7 @@ export function StudentCounselingTasksCard({ courseId, studentId }: Props) {
                 {useGrading ? (
                   <span
                     aria-hidden
-                    className={`mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md ring-1 ${
+                    className={`mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ring-1 ${
                       complete
                         ? "bg-emerald-600 ring-emerald-600 text-white"
                         : "bg-white dark:bg-slate-950 ring-slate-300 dark:ring-slate-700 text-slate-400 dark:text-slate-500"
@@ -343,7 +343,7 @@ export function StudentCounselingTasksCard({ courseId, studentId }: Props) {
                     onClick={() => {
                       void onToggle(task);
                     }}
-                    className={`mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md ring-1 disabled:opacity-50 ${
+                    className={`mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ring-1 disabled:opacity-50 ${
                       done
                         ? "bg-indigo-600 ring-indigo-600 text-white hover:bg-indigo-700"
                         : "bg-white dark:bg-slate-950 ring-slate-300 dark:ring-slate-700 text-transparent hover:ring-indigo-500"
@@ -388,7 +388,7 @@ export function StudentCounselingTasksCard({ courseId, studentId }: Props) {
                   )}
                   {task.due_date && (
                     <span
-                      className={`mt-1.5 inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ring-1 ${
+                      className={`mt-1.5 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ring-1 ${
                         overdue
                           ? "bg-rose-50 dark:bg-rose-950/40 ring-rose-300 dark:ring-rose-800 text-rose-700 dark:text-rose-300"
                           : "bg-slate-50 dark:bg-slate-800 ring-slate-200 dark:ring-slate-700 text-slate-600 dark:text-slate-300"
@@ -454,7 +454,7 @@ export function StudentCounselingTasksCard({ courseId, studentId }: Props) {
                               label={`${punctuality} of ${maxStars} stars so far, awaiting review`}
                             />
                             <span
-                              className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ring-1 ${
+                              className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ring-1 ${
                                 task.submission_on_time
                                   ? "bg-emerald-50 dark:bg-emerald-950/40 ring-emerald-300 dark:ring-emerald-800 text-emerald-700 dark:text-emerald-300"
                                   : "bg-amber-50 dark:bg-amber-950/40 ring-amber-300 dark:ring-amber-800 text-amber-700 dark:text-amber-300"
@@ -499,7 +499,7 @@ export function StudentCounselingTasksCard({ courseId, studentId }: Props) {
                             </span>
                           </div>
                           {task.feedback && (
-                            <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2 text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap">
+                            <p className="rounded-lg bg-slate-50 dark:bg-slate-800/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-2 text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap">
                               {task.feedback}
                             </p>
                           )}

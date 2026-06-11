@@ -330,7 +330,7 @@ function StudentNodeRow({
       </article>
 
       {hasChildren && (
-        <ul className="ml-6 mt-2 space-y-2 border-l-2 border-slate-200 dark:border-slate-800 pl-3">
+        <ul className="ml-6 mt-2 space-y-2 border-l border-slate-200 dark:border-slate-800 pl-3">
           {ordered.map((child) => (
             <StudentNodeRow
               key={child.id}
@@ -518,7 +518,7 @@ export function StudentPortfolio() {
     return (
       <div
         role="alert"
-        className="rounded-xl bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-4 py-3 text-sm text-rose-700 dark:text-rose-300"
+        className="rounded-lg bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-4 py-3 text-sm text-rose-700 dark:text-rose-300"
       >
         {error}
       </div>

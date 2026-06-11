@@ -287,7 +287,7 @@ function ScorePill({ score }: ScorePillProps) {
   }
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ring-1 ${palette}`}
+      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold tabular-nums ring-1 ${palette}`}
       aria-label={`Score ${rounded} percent`}
     >
       {rounded}%
@@ -348,18 +348,24 @@ function FeedbackRow({
   }`;
 
   return (
-    <div className="rounded-xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-white dark:hover:bg-slate-900 transition">
+    <div className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-white dark:hover:bg-slate-900 transition">
       <button
         type="button"
         onClick={() => onOpen(item)}
-        className="w-full min-h-[40px] flex items-start gap-3 px-4 py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 rounded-xl"
+        className="w-full min-h-[40px] flex items-start gap-3 px-4 py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 rounded-2xl"
         aria-label={ariaLabel}
       >
         <span
           aria-hidden
           className="mt-0.5 inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-300 text-sm"
         >
-          {hasFeedback ? <PencilIcon /> : "✓"}
+          {hasFeedback ? (
+            <PencilIcon />
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
+              <path d="M5 12l5 5L19 7" />
+            </svg>
+          )}
         </span>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
@@ -570,7 +576,7 @@ export function MyFeedbackPage() {
         {loading && items.length === 0 && (
           <div className="space-y-2" aria-hidden>
             {[0, 1, 2, 3].map((i) => (
-              <Skeleton key={i} className="h-20 w-full rounded-xl" />
+              <Skeleton key={i} className="h-20 w-full rounded-2xl" />
             ))}
           </div>
         )}

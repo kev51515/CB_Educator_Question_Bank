@@ -217,7 +217,7 @@ export function LessonCheckinCard({
         <button
           type="button"
           onClick={() => void load()}
-          className="mt-4 inline-flex min-h-[40px] items-center rounded-xl bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+          className="mt-4 inline-flex min-h-[40px] items-center rounded-lg bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
         >
           Try again
         </button>
@@ -393,7 +393,7 @@ function CheckinForm({
           <button
             type="button"
             onClick={() => setEditing(true)}
-            className="mt-1 inline-flex min-h-[40px] items-center rounded-xl px-3 text-sm font-medium text-sky-600 transition hover:bg-sky-50 dark:text-sky-400 dark:hover:bg-sky-950/40"
+            className="mt-1 inline-flex min-h-[40px] items-center rounded-lg px-3 text-sm font-medium text-indigo-600 transition hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-950/40"
           >
             Edit check-in
           </button>
@@ -420,7 +420,7 @@ function CheckinForm({
                     role="radio"
                     aria-checked={active}
                     onClick={() => setCondition(c.value)}
-                    className={`inline-flex min-h-[40px] items-center rounded-xl px-4 text-sm font-medium ring-1 transition ${
+                    className={`inline-flex min-h-[40px] items-center rounded-full px-4 text-sm font-medium ring-1 transition ${
                       active
                         ? CONDITION_ACTIVE_STYLE[c.value]
                         : "bg-white text-slate-700 ring-slate-200 hover:bg-slate-50 dark:bg-slate-800/60 dark:text-slate-200 dark:ring-slate-700 dark:hover:bg-slate-800"
@@ -453,7 +453,7 @@ function CheckinForm({
               onChange={(e) => setFocus(e.target.value)}
               placeholder="e.g. third-shot drops, backhand consistency…"
               maxLength={FOCUS_LIMIT + 40}
-              className="min-h-[40px] w-full rounded-xl bg-white px-3 text-sm text-slate-900 ring-1 ring-slate-200 transition placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-slate-800/60 dark:text-slate-100 dark:ring-slate-700"
+              className="min-h-[40px] w-full rounded-lg bg-white px-3 text-sm text-slate-900 ring-1 ring-slate-200 transition placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800/60 dark:text-slate-100 dark:ring-slate-700"
             />
             <div
               className={`mt-1 text-right text-xs ${
@@ -483,7 +483,7 @@ function CheckinForm({
               type="button"
               onClick={() => void submit()}
               disabled={saving || overLimit}
-              className="inline-flex min-h-[40px] items-center rounded-xl bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 disabled:opacity-50 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+              className="inline-flex min-h-[40px] items-center rounded-lg bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 disabled:opacity-50 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
             >
               {saving ? "Sending…" : existing ? "Update check-in" : "Send check-in"}
             </button>
@@ -495,7 +495,7 @@ function CheckinForm({
                   setEditing(false);
                 }}
                 disabled={saving}
-                className="inline-flex min-h-[40px] items-center rounded-xl px-4 text-sm font-medium text-slate-600 transition hover:bg-slate-100 disabled:opacity-50 dark:text-slate-300 dark:hover:bg-slate-800"
+                className="inline-flex min-h-[40px] items-center rounded-lg px-4 text-sm font-medium text-slate-600 transition hover:bg-slate-100 disabled:opacity-50 dark:text-slate-300 dark:hover:bg-slate-800"
               >
                 Cancel
               </button>

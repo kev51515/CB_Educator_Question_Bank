@@ -520,7 +520,7 @@ export function StudentCounselingProfileCard({
                       type="button"
                       onClick={() => removeActivity(idx)}
                       aria-label={`Remove activity ${idx + 1}`}
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md ring-1 ring-rose-300 dark:ring-rose-800 bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-900/40"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ring-1 ring-rose-300 dark:ring-rose-800 bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-900/40"
                     >
                       <svg
                         viewBox="0 0 20 20"
@@ -541,7 +541,7 @@ export function StudentCounselingProfileCard({
             <button
               type="button"
               onClick={addActivity}
-              className="inline-flex h-10 items-center gap-1.5 rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+              className="inline-flex h-10 items-center gap-1.5 rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
             >
               <svg
                 viewBox="0 0 20 20"
@@ -577,7 +577,7 @@ export function StudentCounselingProfileCard({
               onClick={() => {
                 void onSave();
               }}
-              className="inline-flex h-10 items-center rounded-md bg-indigo-600 px-4 text-sm font-medium text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex h-10 items-center rounded-lg bg-indigo-600 px-4 text-sm font-medium text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {saving ? "Saving…" : "Save profile"}
             </button>

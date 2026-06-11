@@ -456,7 +456,7 @@ export function EventsCard({
         <button
           type="button"
           onClick={() => void load()}
-          className="mt-4 inline-flex min-h-[40px] items-center rounded-xl bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+          className="mt-4 inline-flex min-h-[40px] items-center rounded-lg bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
         >
           Try again
         </button>
@@ -512,7 +512,7 @@ const REG_BADGE_STYLE: Record<RegStatus, string> = {
   waitlisted:
     "bg-amber-100 text-amber-700 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900",
   attended:
-    "bg-sky-100 text-sky-700 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:ring-sky-900",
+    "bg-indigo-100 text-indigo-700 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900",
   cancelled:
     "bg-slate-100 text-slate-500 ring-slate-200 dark:bg-slate-800/60 dark:text-slate-400 dark:ring-slate-700",
 };
@@ -619,7 +619,7 @@ function EventRowCard({
             type="button"
             onClick={onCancel}
             disabled={busy}
-            className="inline-flex min-h-[40px] items-center rounded-xl px-4 text-sm font-medium text-rose-600 ring-1 ring-rose-200 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60 dark:text-rose-400 dark:ring-rose-900 dark:hover:bg-rose-950/40"
+            className="inline-flex min-h-[40px] items-center rounded-lg px-4 text-sm font-medium text-rose-600 ring-1 ring-rose-200 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60 dark:text-rose-400 dark:ring-rose-900 dark:hover:bg-rose-950/40"
           >
             {busy ? "Cancelling…" : "Cancel registration"}
           </button>
@@ -628,7 +628,7 @@ function EventRowCard({
             type="button"
             onClick={onRegister}
             disabled={busy}
-            className="inline-flex min-h-[40px] items-center rounded-xl bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+            className="inline-flex min-h-[40px] items-center rounded-lg bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
           >
             {busy ? "Registering…" : isFull ? "Join waitlist" : "Register"}
           </button>

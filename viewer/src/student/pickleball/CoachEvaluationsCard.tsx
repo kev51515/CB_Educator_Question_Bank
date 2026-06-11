@@ -137,7 +137,7 @@ export function CoachEvaluationsCard({
             {DIMENSIONS.map(({ key, label }) => (
               <div
                 key={key}
-                className="rounded-xl bg-slate-50 dark:bg-slate-800/40 ring-1 ring-slate-200 dark:ring-slate-800 p-3 text-center"
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 ring-1 ring-slate-200 dark:ring-slate-800 p-3 text-center"
               >
                 <p className="text-xs text-slate-500 dark:text-slate-400">
                   {label}
@@ -156,7 +156,7 @@ export function CoachEvaluationsCard({
             {evals.map((ev) => (
               <li
                 key={ev.id}
-                className="rounded-xl border border-slate-200 dark:border-slate-800 p-3"
+                className="rounded-2xl border border-slate-200 dark:border-slate-800 p-3"
               >
                 <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
                   {formatDate(ev.created_at)}

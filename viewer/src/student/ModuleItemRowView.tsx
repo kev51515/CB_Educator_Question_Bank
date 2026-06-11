@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/Toast";
 import { assignmentTakePath, studentTestRunPath } from "@/lib/routes";
-import { ItemIcon } from "./ItemIcon";
+import { FullTestIcon, ItemIcon } from "./ItemIcon";
 import {
   type AssignmentMeta,
   type ModuleItemRow,
@@ -24,12 +24,61 @@ const DUE_TONE: Record<string, string> = {
     "bg-slate-100 text-slate-600 ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700",
 };
 
+/** Uppercase micro kind label under each title — educator modules canon. */
+const KIND_LABEL_CLASS =
+  "block mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500";
+
 function Pill({ children, tone }: { children: ReactNode; tone: string }) {
   return (
     <span
-      className={`flex-none inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${tone}`}
+      className={`flex-none inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${tone}`}
     >
       {children}
+    </span>
+  );
+}
+
+/** Small line-SVG check used inside the done/score pills (no glyph chars). */
+function CheckGlyph(): JSX.Element {
+  return (
+    <svg
+      width="11"
+      height="11"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className="h-[11px] w-[11px] flex-none"
+    >
+      <path d="M4 12.5 9.5 18 20 6.5" />
+    </svg>
+  );
+}
+
+/** Warm amber padlock marking a row inside a locked module. */
+function RowLock(): JSX.Element {
+  return (
+    <span
+      aria-hidden
+      className="flex-none text-amber-500 dark:text-amber-400/80"
+    >
+      <svg
+        width="13"
+        height="13"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-[13px] w-[13px]"
+      >
+        <rect x="4" y="10.5" width="16" height="10" rx="2" />
+        <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
+      </svg>
     </span>
   );
 }
@@ -41,18 +90,18 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
   if (!item.published) return null;
 
   const indent = Math.min(item.indent, 5);
-  const padLeft = `${0.75 + indent * 1.5}rem`;
+  const padLeft = `${1 + indent * 1.5}rem`;
   const rowBase =
-    "group w-full min-h-[44px] flex items-center gap-3 px-3 py-2 rounded-lg text-sm motion-safe:transition-colors";
+    "group w-full min-h-[44px] flex items-center gap-3 px-4 py-2 text-sm motion-safe:transition-colors";
   const interactive = locked
     ? "text-slate-400 dark:text-slate-600 cursor-not-allowed"
-    : "text-slate-800 dark:text-slate-200 hover:bg-slate-100/80 dark:hover:bg-slate-800/70";
+    : "text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50";
 
   // ---- Header --------------------------------------------------------------
   if (item.item_type === "header") {
     return (
       <div
-        className="px-3 pt-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500"
+        className="px-4 pt-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500"
         style={{ paddingLeft: padLeft }}
       >
         {item.title}
@@ -77,24 +126,32 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
       >
         <ItemIcon type={item.item_type} />
         <span className="min-w-0 flex-1">
-          <span className="flex items-center gap-2">
-            <span className="truncate font-medium">{item.title}</span>
-          </span>
-          <span className="mt-0.5 flex flex-wrap items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400">
-            <span className="font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-300">
-              {label}
-            </span>
-            {meta?.questionCount ? <span>· {meta.questionCount} Q</span> : null}
-            {meta?.timeLimitMinutes ? <span>· {meta.timeLimitMinutes} min</span> : null}
+          <span className="block truncate font-medium">{item.title}</span>
+          <span className={KIND_LABEL_CLASS}>
+            {label}
+            {meta?.questionCount ? (
+              <span className="normal-case font-medium tracking-normal text-slate-400 dark:text-slate-500">
+                {" "}· {meta.questionCount} Q
+              </span>
+            ) : null}
+            {meta?.timeLimitMinutes ? (
+              <span className="normal-case font-medium tracking-normal text-slate-400 dark:text-slate-500">
+                {" "}· {meta.timeLimitMinutes} min
+              </span>
+            ) : null}
           </span>
         </span>
-        {done && typeof score === "number" ? (
+        {locked ? (
+          <RowLock />
+        ) : done && typeof score === "number" ? (
           <Pill tone="bg-emerald-50 text-emerald-700 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
-            ✓ {Math.round(score)}%
+            <CheckGlyph />
+            {Math.round(score)}%
           </Pill>
         ) : done ? (
           <Pill tone="bg-emerald-50 text-emerald-700 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
-            ✓ Done
+            <CheckGlyph />
+            Done
           </Pill>
         ) : due ? (
           <Pill tone={DUE_TONE[due.tone]}>{due.text}</Pill>
@@ -110,22 +167,23 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
   if (item.item_type === "link" && item.url) {
     const content = (
       <>
-        {isFullTestLink ? (
-          <Pill tone="bg-indigo-100 text-indigo-700 ring-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:ring-indigo-800">
-            Practice Test
-          </Pill>
-        ) : (
-          <ItemIcon type={item.item_type} />
-        )}
-        <span className="min-w-0 flex-1 truncate font-medium">{item.title}</span>
-        {!locked && !isFullTestLink && (
+        {isFullTestLink ? <FullTestIcon /> : <ItemIcon type={item.item_type} />}
+        <span className="min-w-0 flex-1">
+          <span className="block truncate font-medium">{item.title}</span>
+          <span className={KIND_LABEL_CLASS}>
+            {isFullTestLink ? "Practice Test" : "Link"}
+          </span>
+        </span>
+        {locked ? (
+          <RowLock />
+        ) : !isFullTestLink ? (
           <svg
             width="14"
             height="14"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="1.6"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden
@@ -133,7 +191,7 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
           >
             <path d="M7 17 17 7M9 7h8v8" />
           </svg>
-        )}
+        ) : null}
       </>
     );
     if (locked) {
@@ -193,7 +251,13 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
       style={{ paddingLeft: padLeft }}
     >
       <ItemIcon type={item.item_type} />
-      <span className="min-w-0 flex-1 truncate font-medium">{item.title}</span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate font-medium">{item.title}</span>
+        <span className={KIND_LABEL_CLASS}>
+          {item.item_type === "page" ? "Page" : "File"}
+        </span>
+      </span>
+      {locked && <RowLock />}
     </button>
   );
 }
