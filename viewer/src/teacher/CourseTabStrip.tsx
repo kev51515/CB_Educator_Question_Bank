@@ -92,9 +92,11 @@ function isPathActive(pathname: string, tabPath: string): boolean {
 }
 
 /**
- * Row-1 tab styling. Active MULTI-item groups get the tinted "lip" treatment
- * (fuses with the subtab band below); active single-item tabs keep the classic
- * accent underline (no band follows them).
+ * Row-1 tab styling. NO accent edge bars anywhere (owner rule: edge accents —
+ * underlines, side stripes, band borders — read as AI-generated). Active state
+ * is carried by FILL TINT + WEIGHT alone: multi-item groups get the tinted
+ * "lip" (rounded top, fuses with the band below); single-item tabs get the
+ * same tint fully rounded.
  */
 function groupTabClass(opts: { active: boolean; fused: boolean }): string {
   const base =
@@ -103,9 +105,9 @@ function groupTabClass(opts: { active: boolean; fused: boolean }): string {
     return `${base} rounded-t-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] text-accent-800 dark:text-accent-200 font-semibold`;
   }
   if (opts.active) {
-    return `${base} border-b-2 border-accent-600 text-accent-700 dark:text-accent-300 font-semibold`;
+    return `${base} rounded-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] text-accent-800 dark:text-accent-200 font-semibold`;
   }
-  return `${base} border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700`;
+  return `${base} rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-600/[0.05] dark:hover:bg-slate-300/[0.08]`;
 }
 
 interface Props {
@@ -299,12 +301,13 @@ export function CourseTabStrip({
       </div>
 
       {/* ── Row 2: the active group's pages (subtabs) ─────────────────── */}
-      {/* Shares the active tab's tint so tab + band read as one control;
-          the band carries the accent baseline the fused tab gave up. */}
+      {/* Shares the active tab's tint so tab + band read as one control.
+          Deliberately NO accent border on any edge (owner rule) — the tint
+          plus the raised white active pill carry all the state. */}
       {bandItems && activeGroup && (
         <nav
           aria-label={`${activeGroup.label} pages`}
-          className="flex items-center gap-1 overflow-x-auto rounded-b-lg rounded-tr-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] px-1.5 py-1.5 border-b-2 border-accent-600"
+          className="flex items-center gap-1 overflow-x-auto rounded-b-lg rounded-tr-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] px-1.5 py-1.5"
         >
           {bandItems.map((tab) => (
             <NavLink

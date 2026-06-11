@@ -855,7 +855,7 @@ export function PortfolioSubmissionForm({
         {recoverDraft && (
           <div
             role="status"
-            className="rounded-md border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-sm text-amber-900 dark:text-amber-200 ring-1 ring-amber-200 dark:ring-amber-900/60"
+            className="rounded-md bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-sm text-amber-900 dark:text-amber-200 ring-1 ring-amber-200 dark:ring-amber-900/60"
           >
             <p>
               We found an unsaved draft from{" "}

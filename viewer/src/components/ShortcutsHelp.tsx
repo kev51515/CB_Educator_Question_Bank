@@ -201,7 +201,6 @@ export function ShortcutsHelp({
         className={[
           "w-full max-w-[560px] max-h-[80vh]",
           "rounded-2xl bg-white dark:bg-slate-900",
-          "border-l-4 border-l-indigo-500 dark:border-l-indigo-400",
           "ring-1 ring-slate-200 dark:ring-slate-800",
           "shadow-2xl",
           "flex flex-col overflow-hidden",

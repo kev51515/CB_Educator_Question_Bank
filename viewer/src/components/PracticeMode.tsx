@@ -220,7 +220,7 @@ export function PracticeMode({
               // Before checking — selection highlight
               if (isUserPick) {
                 cardCls =
-                  "border-l-4 border-accent-500 bg-accent-50/50 shadow-card";
+                  "ring-2 ring-accent-500 bg-accent-50/50 shadow-card";
                 circleCls = "bg-accent-600 text-white";
               }
             }

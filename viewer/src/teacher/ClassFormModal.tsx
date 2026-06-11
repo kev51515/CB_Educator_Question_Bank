@@ -490,7 +490,7 @@ export function ClassFormModal({
             {mode === "create" && pendingRestore && (
               <div
                 role="status"
-                className="rounded-md border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/40 px-3 py-2 ring-1 ring-amber-200 dark:ring-amber-900"
+                className="rounded-md bg-amber-50 dark:bg-amber-950/40 px-3 py-2 ring-1 ring-amber-200 dark:ring-amber-900"
               >
                 <p className="text-sm text-amber-800 dark:text-amber-200">
                   Restore draft from{" "}
@@ -519,7 +519,7 @@ export function ClassFormModal({
             {showCancelConfirm && (
               <div
                 role="alert"
-                className="rounded-md border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/40 px-3 py-2 ring-1 ring-amber-200 dark:ring-amber-900"
+                className="rounded-md bg-amber-50 dark:bg-amber-950/40 px-3 py-2 ring-1 ring-amber-200 dark:ring-amber-900"
               >
                 <p className="text-sm text-amber-800 dark:text-amber-200">
                   You have unsaved changes. Discard draft and close?

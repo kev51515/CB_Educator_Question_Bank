@@ -190,7 +190,7 @@ export function CourseAnnouncementsList() {
                   "rounded-2xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 p-4 shadow-sm",
                   "motion-safe:transition-colors",
                   isUnread
-                    ? "border-l-2 border-indigo-500 dark:border-indigo-400"
+                    ? "bg-accent-600/[0.05] dark:bg-accent-400/[0.10]"
                     : "",
                 ]
                   .filter(Boolean)

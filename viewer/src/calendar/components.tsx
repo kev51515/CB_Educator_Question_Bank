@@ -322,7 +322,7 @@ export function DayPopover({
           role="dialog"
           aria-modal="true"
           aria-labelledby={labelId}
-          className="fixed inset-x-0 bottom-0 z-50 max-h-[80vh] rounded-t-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 border-l-4 border-l-indigo-500 shadow-2xl flex flex-col motion-safe:transition-transform"
+          className="fixed inset-x-0 bottom-0 z-50 max-h-[80vh] rounded-t-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-2xl flex flex-col motion-safe:transition-transform"
           onClick={(e) => e.stopPropagation()}
         >
           <DayPopoverContent
@@ -349,7 +349,7 @@ export function DayPopover({
         role="dialog"
         aria-modal="true"
         aria-labelledby={labelId}
-        className="fixed z-50 w-[280px] max-h-[60vh] rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 border-l-4 border-l-indigo-500 shadow-xl flex flex-col motion-safe:transition-transform"
+        className="fixed z-50 w-[280px] max-h-[60vh] rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-xl flex flex-col motion-safe:transition-transform"
         style={{ left: coords!.left, top: coords!.top }}
         onClick={(e) => e.stopPropagation()}
       >

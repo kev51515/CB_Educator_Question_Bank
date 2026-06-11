@@ -91,7 +91,7 @@ export function CohortDrillDrawer({
           absolute inset-0 sm:inset-y-0 sm:right-0 sm:left-auto
           w-full sm:w-[420px]
           bg-white dark:bg-slate-950
-          border-l-4 border-indigo-500
+          ring-1 ring-slate-200 dark:ring-slate-800
           shadow-2xl
           flex flex-col
           motion-safe:transition-transform
