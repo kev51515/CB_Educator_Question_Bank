@@ -24,7 +24,7 @@
  * focus-trap / × / Esc / backdrop-click contract. While a bulk reset is
  * running, dismissal is disabled and the × is hidden.
  */
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
@@ -137,10 +137,50 @@ export function PrintLoginsModal({
 
   const busy = view === "running";
 
-  // Claimed seats sign in with their own email — the code/QR no longer works for
-  // them, and a bulk reset would clobber the password they chose. Split them out.
+  // A login code now signs a student in PASSWORDLESSLY (student-code-login),
+  // for EVERY managed seat — claimed or not. So the code is the one credential
+  // worth distributing to the whole class. (A bulk PASSWORD reset still skips
+  // claimed seats so it can't clobber the password they chose — that split is
+  // only relevant to the reset track below, not to code distribution.)
   const codeStudents = useMemo(() => students.filter((s) => !s.claimed), [students]);
   const claimedStudents = useMemo(() => students.filter((s) => s.claimed), [students]);
+
+  // ---- Copy & paste: one selectable block of every student's code + link ----
+  const aliveRef = useRef(true);
+  useEffect(() => {
+    aliveRef.current = true;
+    return () => {
+      aliveRef.current = false;
+    };
+  }, []);
+  const [copied, setCopied] = useState(false);
+
+  const copyText = useMemo(() => {
+    const header =
+      `${courseName} — student logins\n` +
+      `Sign in: open your link (or go to the class site and tap “Student”), then type ` +
+      `your login code. No password needed.\n`;
+    const body = students
+      .map((s) => `${s.name} — code: ${s.code} — ${studentCodePrefillUrl(s.code)}`)
+      .join("\n");
+    return `${header}\n${body}\n`;
+  }, [students, courseName]);
+
+  const onCopyAll = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(copyText);
+      if (!aliveRef.current) return;
+      setCopied(true);
+      toast.success("Copied all logins", "Paste into an email, LINE, or a doc.");
+      window.setTimeout(() => {
+        if (aliveRef.current) setCopied(false);
+      }, 2000);
+    } catch {
+      // Clipboard blocked (insecure context / permissions) — the textarea is
+      // right there and selectable, so guide the teacher to copy manually.
+      toast.info("Couldn't copy automatically", "Tap the box, select all, and copy.");
+    }
+  }, [copyText, toast]);
 
   // ---- Track 1: codes only -------------------------------------------------
 
@@ -151,50 +191,45 @@ export function PrintLoginsModal({
       toast.info("Pop-up blocked", "Allow pop-ups to print the login sheet.");
       return;
     }
-    const codeCards = codeStudents
+    // Every managed seat gets a code card — the code signs them in with no
+    // password (claimed seats included). Claimed seats also show their email
+    // as an alternative way in.
+    const cards = students
       .map((s) => {
         const qr = readQr(codeQrId(s.code));
         const img = qr ? `<img src="${qr}" width="120" height="120" alt="Login QR"/>` : "";
+        const emailLine =
+          s.claimed && s.email
+            ? `<div class="lbl" style="margin-top:8px">Or sign in with email</div><div class="code" style="font-size:13px">${esc(s.email)}</div>`
+            : "";
         return `<div class="card"><div class="qr">${img}</div><div class="meta">
             <div class="name">${esc(s.name)}</div>
             <div class="lbl">Login code</div><div class="code">${esc(s.code)}</div>
-            <div class="hint">Scan, or go to the class site → “I’m a student”. Enter your password.</div>
+            ${emailLine}
+            <div class="hint">Scan the QR, or go to the class site → tap “Student” → type this code. No password needed.</div>
           </div></div>`;
       })
       .join("");
-    // Claimed seats: the code/QR no longer signs them in — show their email.
-    const claimedCards = claimedStudents
-      .map(
-        (s) => `<div class="card"><div class="meta">
-            <div class="name">${esc(s.name)}</div>
-            <div class="lbl">Signs in with own email</div>
-            <div class="code" style="font-size:14px">${esc(s.email ?? "—")}</div>
-            <div class="hint">This student set up their own login — the class login code no longer applies.</div>
-          </div></div>`,
-      )
-      .join("");
     const sub =
-      `${codeStudents.length} with a login code` +
-      (claimedStudents.length
-        ? ` · ${claimedStudents.length} use their own email`
-        : "") +
-      " · passwords set per student (not shown) — use Reset password on the roster if one is lost.";
+      `${students.length} student${students.length === 1 ? "" : "s"} · ` +
+      "each signs in with their login code — no password. " +
+      "(Forgot-password isn't needed for code sign-in.)";
     w.document.write(`<!doctype html><html><head><title>Logins — ${esc(courseName)}</title>
       <style>${SHEET_CSS}</style></head><body>
       <h1>${esc(courseName)} — student logins</h1>
       <p class="sub">${sub}</p>
-      <div class="grid">${codeCards}${claimedCards}</div></body></html>`);
+      <div class="grid">${cards}</div></body></html>`);
     w.document.close();
     w.focus();
     w.print();
-  }, [students, codeStudents, claimedStudents, courseName, toast]);
+  }, [students, courseName, toast]);
 
   const onDownloadCodesCsv = useCallback(() => {
     if (students.length === 0) return;
+    // Code + one-tap link for everyone (the code signs all seats in); email
+    // column filled for claimed seats as an alternative.
     const rows = students.map((s) =>
-      s.claimed
-        ? [s.name, "—", s.email ?? "", ""].map(csvCell).join(",")
-        : [s.name, s.code, "", studentCodePrefillUrl(s.code)].map(csvCell).join(","),
+      [s.name, s.code, s.email ?? "", studentCodePrefillUrl(s.code)].map(csvCell).join(","),
     );
     downloadCsv(
       `${courseName.replace(/[^a-z0-9]+/gi, "-").replace(/^-+|-+$/g, "") || "course"}-logins.csv`,
@@ -302,11 +337,8 @@ export function PrintLoginsModal({
       subtitle={
         <>
           {students.length} managed{" "}
-          {students.length === 1 ? "student" : "students"} in {courseName}
-          {claimedStudents.length > 0
-            ? ` · ${claimedStudents.length} use their own email`
-            : ""}
-          .
+          {students.length === 1 ? "student" : "students"} in {courseName} — each
+          signs in with their login code (no password needed).
         </>
       }
       size="md"
@@ -325,18 +357,48 @@ export function PrintLoginsModal({
               </p>
             ) : (
               <>
+                {/* ---------- Copy & paste (the quick, intuitive path) ---------- */}
                 <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                    Codes only (no passwords)
+                    Copy &amp; paste
+                  </p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    Every student&apos;s name, login code, and one-tap sign-in link.
+                    Students sign in with the code alone — no password. Paste it
+                    into an email, LINE, or a doc.
+                  </p>
+                  <textarea
+                    readOnly
+                    value={copyText}
+                    onFocus={(e) => e.currentTarget.select()}
+                    rows={Math.min(10, Math.max(4, students.length + 3))}
+                    className="w-full rounded-lg bg-slate-50 dark:bg-slate-950 ring-1 ring-slate-300 dark:ring-slate-700 px-3 py-2.5 font-mono text-xs leading-relaxed text-slate-800 dark:text-slate-200 resize-y focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                    aria-label="Class logins to copy"
+                  />
+                  <button
+                    type="button"
+                    data-autofocus
+                    onClick={() => void onCopyAll()}
+                    className={`w-full rounded-lg font-medium py-2.5 text-sm min-h-[40px] text-white ${
+                      copied ? "bg-emerald-600" : "bg-indigo-600 hover:bg-indigo-700"
+                    }`}
+                  >
+                    {copied ? "Copied ✓" : `Copy all ${students.length} login${students.length === 1 ? "" : "s"}`}
+                  </button>
+                </div>
+
+                {/* ---------- Print / CSV ---------- */}
+                <div className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                    Print cards or download a spreadsheet
                   </p>
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
-                      data-autofocus
                       onClick={onPrintCodes}
-                      className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 text-sm min-h-[40px]"
+                      className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 min-h-[40px]"
                     >
-                      Print sheet
+                      Print sheet (with QR)
                     </button>
                     <button
                       type="button"
@@ -381,10 +443,10 @@ export function PrintLoginsModal({
               </>
             )}
 
-            {/* hidden code-only QR canvases (read at print time) — unclaimed
-                seats only; a claimed seat's code no longer signs them in. */}
+            {/* hidden code QR canvases (read at print time) — ALL managed seats,
+                since the code now signs every seat in (claimed included). */}
             <div aria-hidden style={hiddenStyle}>
-              {codeStudents.map((s) => (
+              {students.map((s) => (
                 <QRCodeCanvas
                   key={s.code}
                   id={codeQrId(s.code)}
