@@ -24,6 +24,7 @@ import {
   useState,
   type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
+import { createPortal } from "react-dom";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { classPath } from "@/lib/routes";
 
@@ -148,8 +149,12 @@ function GroupTab({
       return;
     }
     const onDocClick = (e: MouseEvent): void => {
-      if (!rootRef.current) return;
-      if (!rootRef.current.contains(e.target as Node)) setOpen(false);
+      const t = e.target as Node;
+      // The panel is PORTALED to <body> (it is NOT inside rootRef) — treat
+      // clicks in either the trigger wrapper or the panel as "inside".
+      if (rootRef.current?.contains(t)) return;
+      if (menuRef.current?.contains(t)) return;
+      setOpen(false);
     };
     const onKey = (e: KeyboardEvent): void => {
       if (e.key === "Escape") {
@@ -271,7 +276,12 @@ function GroupTab({
           />
         </svg>
       </button>
-      {open && (
+      {/* PORTALED to <body>: an ancestor of the strip uses backdrop-blur
+          (ClassLayout's course header), and backdrop-filter creates a
+          containing block for position:fixed — without the portal the
+          panel's viewport coordinates get reinterpreted relative to that
+          header and it renders detached from its trigger. */}
+      {open && createPortal(
         <div
           ref={menuRef}
           role="menu"
@@ -306,7 +316,8 @@ function GroupTab({
               </button>
             );
           })}
-        </div>
+        </div>,
+        document.body,
       )}
     </div>
   );
@@ -390,7 +401,6 @@ export function CourseTabStrip({ groups, shortCode, userId, courseType }: Props)
             key={group.id}
             ref={isActiveGroup ? activeRef : undefined}
             draggable
-            title="Drag, or Alt+←/→, to reorder"
             onDragStart={(e) => {
               setDragId(group.id);
               e.dataTransfer.effectAllowed = "move";
