@@ -1192,11 +1192,11 @@ function AdminCourseCardRow({
       ref={cardRef}
       className={`relative transition-opacity ${dragging ? "opacity-50" : ""}`}
     >
-      {grip(
-        "absolute left-2 top-2 z-10 bg-white/90 dark:bg-slate-900/90 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm",
-      )}
     <CourseCard
       paletteSeed={course.id}
+      // Bare glyph inline with the header row — the old boxed overlay
+      // floated over the card corner and collided with the monogram.
+      leading={grip("-ml-1.5")}
       name={course.name}
       description={course.description}
       domain={domainOf(course.course_type)}

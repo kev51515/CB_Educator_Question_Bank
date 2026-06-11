@@ -86,6 +86,10 @@ export interface CourseCardProps {
    *  for contrast. Click is stop-propagation'd so it doesn't fire the
    *  card's primary onClick. */
   kebab?: ReadonlyArray<KebabMenuOption>;
+  /** Leading slot in the header row (before the monogram) — used by the
+   *  courses grid for its drag grip so it sits inline with the header
+   *  instead of floating in a box over the card corner. */
+  leading?: ReactNode;
 }
 
 export function CourseCard({
@@ -102,6 +106,7 @@ export function CourseCard({
   onClick,
   ariaLabel,
   kebab,
+  leading,
 }: CourseCardProps) {
   const ivy = useUiTheme() === "ivy";
   const palette = paletteFor(paletteSeed);
@@ -166,6 +171,7 @@ export function CourseCard({
       {ivy ? (
         // Ivy quiet header: monogram disc + domain eyebrow (no gradient band).
         <div className="relative flex items-center gap-2.5 px-4 pt-4">
+          {leading}
           <span
             aria-hidden="true"
             className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-100 font-display text-sm font-semibold text-accent-700 dark:border-slate-700 dark:bg-slate-800"
@@ -182,6 +188,9 @@ export function CourseCard({
         </div>
       ) : (
         <div className={`relative h-20 w-full rounded-t-xl bg-gradient-to-br ${palette}`} aria-hidden={!kebab}>
+          {leading && (
+            <span className="absolute left-2 top-2 z-10">{leading}</span>
+          )}
           {kebabBlock}
         </div>
       )}
