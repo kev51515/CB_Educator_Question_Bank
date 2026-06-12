@@ -278,6 +278,28 @@
   //      with a friendly "not released yet" message. The durable record is
   //      already gated server-side; this hides the immediate in-iframe reveal.
   function installWithholdGate() {
+    // Neutralise the per-card correct/wrong reveal that grading paints onto the
+    // choices + cards (data-result / .card--correct|wrong). CSS override (scoped
+    // under html.qbank-withheld) is non-destructive — it never touches the
+    // runner's state, just hides the colour so a withheld student can't read
+    // their results off the cards either.
+    try {
+      document.documentElement.classList.add('qbank-withheld');
+      if (!document.getElementById('qbank-withhold-style')) {
+        var st = document.createElement('style');
+        st.id = 'qbank-withhold-style';
+        st.textContent =
+          'html.qbank-withheld .choice[data-result],' +
+          'html.qbank-withheld .gridin__entry-input[data-result]{' +
+          'background:transparent !important;border-color:rgba(0,0,0,.14) !important;' +
+          'border-style:solid !important;color:inherit !important;}' +
+          'html.qbank-withheld .choice[data-result]::after{content:none !important;}' +
+          'html.qbank-withheld .card--correct,html.qbank-withheld .card--wrong{' +
+          'border-color:rgba(0,0,0,.12) !important;box-shadow:none !important;}';
+        (document.head || document.documentElement).appendChild(st);
+      }
+    } catch (_) {}
+
     function blank(panel) {
       try {
         panel.innerHTML =
