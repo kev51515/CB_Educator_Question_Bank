@@ -152,6 +152,58 @@ export async function endRecording(
   if (error) throw error;
 }
 
+/** Re-queue a Part for transcription (e.g. after a failed/stuck attempt). */
+export async function retryPart(partId: string): Promise<void> {
+  const { error } = await supabase
+    .from("recording_parts")
+    .update({ status: "queued", error: null })
+    .eq("id", partId);
+  if (error) throw error;
+  const { error: fnErr } = await supabase.functions.invoke("transcribe-part", {
+    body: { part_id: partId },
+  });
+  if (fnErr) throw fnErr;
+}
+
+/**
+ * Delete a Part: remove its audio object + row, then renumber the remaining
+ * Parts so `part_index` stays contiguous (no "Part 1, Part 3" gaps).
+ */
+export async function deletePart(
+  part: RecordingPart,
+  allParts: RecordingPart[],
+): Promise<void> {
+  if (part.audio_path) {
+    await supabase.storage.from("recordings").remove([part.audio_path]).catch(() => {});
+  }
+  const { error } = await supabase.from("recording_parts").delete().eq("id", part.id);
+  if (error) throw error;
+  // Shift every later Part down by one.
+  const later = allParts
+    .filter((p) => p.part_index > part.part_index)
+    .sort((a, b) => a.part_index - b.part_index);
+  for (const p of later) {
+    await supabase
+      .from("recording_parts")
+      .update({ part_index: p.part_index - 1 })
+      .eq("id", p.id);
+  }
+}
+
+/** Patch the AI notes (educator tweaks). Columns are jsonb / text on recording_notes. */
+export async function updateNotes(
+  recordingId: string,
+  patch: Partial<
+    Pick<RecordingNotes, "tldr" | "topics" | "action_items" | "highlights">
+  >,
+): Promise<void> {
+  const { error } = await supabase
+    .from("recording_notes")
+    .update(patch)
+    .eq("recording_id", recordingId);
+  if (error) throw error;
+}
+
 /** Overwrite a Part's transcript utterances (inline correction / speaker rename). */
 export async function updatePartTranscript(
   partId: string,

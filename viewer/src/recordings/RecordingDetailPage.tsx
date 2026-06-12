@@ -11,16 +11,19 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
-import { Skeleton, useToast } from "@/components";
+import { KebabMenu, Skeleton, useToast } from "@/components";
 import { useProfile } from "@/lib/profile";
 import { useDomain } from "@/lib/DomainProvider";
 import { ROUTES } from "@/lib/routes";
 import { RecorderPanel } from "./RecorderPanel";
 import { QuizDraftPanel } from "./QuizDraftPanel";
 import {
+  deletePart,
   deleteRecording,
   renameRecording,
   renameSpeaker,
+  retryPart,
+  updateNotes,
   updatePartTranscript,
   useRecordingDetail,
 } from "./useRecordings";
@@ -147,12 +150,16 @@ function PartBlock({
   editable,
   query,
   onSaved,
+  onRetry,
+  onDelete,
 }: {
   part: RecordingPart;
   register: RegisterAudio;
   editable: boolean;
   query: string;
   onSaved: () => void;
+  onRetry: () => void;
+  onDelete: () => void;
 }) {
   const pending = part.status !== "transcribed" && part.status !== "failed";
   const toast = useToast();
@@ -179,12 +186,33 @@ function PartBlock({
         <h3 className="text-sm font-semibold uppercase tracking-wide text-indigo-800 dark:text-indigo-300">
           Part {part.part_index}
         </h3>
-        {partStatusLabel(part) && (
-          <span className="text-xs text-slate-500 dark:text-slate-400">
-            {pending && <span className="mr-1 inline-block animate-pulse">●</span>}
-            {partStatusLabel(part)}
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {partStatusLabel(part) && (
+            <span className="text-xs text-slate-500 dark:text-slate-400">
+              {pending && <span className="mr-1 inline-block animate-pulse">●</span>}
+              {partStatusLabel(part)}
+            </span>
+          )}
+          {part.status === "failed" && editable && (
+            <button
+              type="button"
+              onClick={onRetry}
+              className="rounded border border-indigo-200 px-2 py-0.5 text-xs font-medium text-indigo-700 hover:bg-indigo-50 dark:border-indigo-900/50 dark:text-indigo-300"
+            >
+              Retry
+            </button>
+          )}
+          {editable && (
+            <KebabMenu
+              options={[
+                ...(part.status === "failed" || part.status === "transcribed"
+                  ? [{ label: "Retry transcription", onSelect: onRetry }]
+                  : []),
+                { label: "Delete part", destructive: true, onSelect: onDelete },
+              ]}
+            />
+          )}
+        </div>
       </div>
       {utterances.length > 0 ? (
         <div className="space-y-2">
@@ -278,6 +306,27 @@ function TranscriptSection({
     }
   }
 
+  async function handleRetry(part: RecordingPart) {
+    try {
+      await retryPart(part.id);
+      toast.success(`Retrying Part ${part.part_index}…`);
+      refresh();
+    } catch (e) {
+      toast.error(`Couldn't retry: ${(e as Error).message}`);
+    }
+  }
+
+  async function handleDeletePart(part: RecordingPart) {
+    if (!confirm(`Delete Part ${part.part_index}? This can't be undone.`)) return;
+    try {
+      await deletePart(part, parts);
+      toast.success(`Part ${part.part_index} deleted.`);
+      refresh();
+    } catch (e) {
+      toast.error(`Couldn't delete: ${(e as Error).message}`);
+    }
+  }
+
   const showBody = open || !!query;
 
   return (
@@ -318,6 +367,8 @@ function TranscriptSection({
                 editable={isOwner}
                 query={query}
                 onSaved={refresh}
+                onRetry={() => void handleRetry(p)}
+                onDelete={() => void handleDeletePart(p)}
               />
             ))}
           </div>
@@ -341,49 +392,164 @@ function TimeChip({ partIndex, startMs, onJump }: { partIndex: number; startMs: 
   );
 }
 
-function NotesView({ notes, onJump }: { notes: RecordingNotes; onJump: JumpTo }) {
+/** Click-to-edit text (single line or multiline), saves on blur. */
+function EditableText({
+  value,
+  onSave,
+  editable,
+  multiline,
+  placeholder,
+  className,
+}: {
+  value: string;
+  onSave: (v: string) => void;
+  editable: boolean;
+  multiline?: boolean;
+  placeholder?: string;
+  className?: string;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(value);
+  if (editing && editable) {
+    const common = {
+      autoFocus: true,
+      value: draft,
+      onChange: (e: { target: { value: string } }) => setDraft(e.target.value),
+      onBlur: () => {
+        setEditing(false);
+        if (draft !== value) onSave(draft);
+      },
+      className: `w-full rounded-md border border-slate-300 px-2 py-1 text-sm dark:border-slate-600 dark:bg-slate-800 ${className ?? ""}`,
+    };
+    return multiline ? <textarea rows={2} {...common} /> : <input type="text" {...common} />;
+  }
+  return (
+    <span
+      className={`${editable ? "cursor-text rounded hover:bg-slate-100 dark:hover:bg-slate-800" : ""} ${className ?? ""}`}
+      onClick={() => editable && (setDraft(value), setEditing(true))}
+      title={editable ? "Click to edit" : undefined}
+    >
+      {value || <span className="text-slate-400">{placeholder}</span>}
+    </span>
+  );
+}
+
+function RemoveBtn({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="ml-1 shrink-0 rounded px-1 text-xs text-slate-400 hover:text-red-600"
+      title="Remove"
+      aria-label="Remove"
+    >
+      ✕
+    </button>
+  );
+}
+
+function NotesView({
+  notes,
+  onJump,
+  editable,
+  onUpdate,
+}: {
+  notes: RecordingNotes;
+  onJump: JumpTo;
+  editable: boolean;
+  onUpdate: (patch: Partial<RecordingNotes>) => void;
+}) {
   return (
     <div className="space-y-5 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
-      {notes.tldr && (
+      {(notes.tldr || editable) && (
         <div>
           <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Summary</h2>
-          <p className="text-sm text-slate-800 dark:text-slate-200">{notes.tldr}</p>
+          <p className="text-sm text-slate-800 dark:text-slate-200">
+            <EditableText
+              value={notes.tldr ?? ""}
+              editable={editable}
+              multiline
+              placeholder="Add a summary…"
+              onSave={(v) => onUpdate({ tldr: v })}
+            />
+          </p>
         </div>
       )}
+
       {notes.topics.length > 0 && (
         <div>
           <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Topics</h2>
           <ul className="space-y-2">
             {notes.topics.map((t, i) => (
-              <li key={i}>
-                <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                  {t.title}
-                  {t.part_index != null && <TimeChip partIndex={t.part_index} startMs={t.start_ms ?? 0} onJump={onJump} />}
+              <li key={i} className="flex items-start gap-1">
+                <div className="min-w-0 flex-1">
+                  <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                    <EditableText
+                      value={t.title}
+                      editable={editable}
+                      onSave={(v) => onUpdate({ topics: notes.topics.map((x, j) => (j === i ? { ...x, title: v } : x)) })}
+                    />
+                    {t.part_index != null && <TimeChip partIndex={t.part_index} startMs={t.start_ms ?? 0} onJump={onJump} />}
+                  </div>
+                  <div className="text-sm text-slate-600 dark:text-slate-300">
+                    <EditableText
+                      value={t.summary}
+                      editable={editable}
+                      multiline
+                      onSave={(v) => onUpdate({ topics: notes.topics.map((x, j) => (j === i ? { ...x, summary: v } : x)) })}
+                    />
+                  </div>
                 </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">{t.summary}</div>
+                {editable && <RemoveBtn onClick={() => onUpdate({ topics: notes.topics.filter((_, j) => j !== i) })} />}
               </li>
             ))}
           </ul>
         </div>
       )}
-      {notes.action_items.length > 0 && (
+
+      {(notes.action_items.length > 0 || editable) && (
         <div>
           <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Action items</h2>
-          <ul className="list-disc space-y-1 pl-5 text-sm text-slate-800 dark:text-slate-200">
+          <ul className="space-y-1 text-sm text-slate-800 dark:text-slate-200">
             {notes.action_items.map((a, i) => (
-              <li key={i}>{a.text}{a.owner ? ` — ${a.owner}` : ""}</li>
+              <li key={i} className="flex items-start gap-1">
+                <span className="mt-1 text-slate-400">•</span>
+                <span className="min-w-0 flex-1">
+                  <EditableText
+                    value={a.text}
+                    editable={editable}
+                    placeholder="Action item…"
+                    onSave={(v) => onUpdate({ action_items: notes.action_items.map((x, j) => (j === i ? { ...x, text: v } : x)) })}
+                  />
+                  {a.owner ? ` — ${a.owner}` : ""}
+                </span>
+                {editable && <RemoveBtn onClick={() => onUpdate({ action_items: notes.action_items.filter((_, j) => j !== i) })} />}
+              </li>
             ))}
           </ul>
+          {editable && (
+            <button
+              type="button"
+              onClick={() => onUpdate({ action_items: [...notes.action_items, { text: "" }] })}
+              className="mt-1 text-xs font-medium text-indigo-600 hover:underline"
+            >
+              + Add item
+            </button>
+          )}
         </div>
       )}
+
       {notes.highlights.length > 0 && (
         <div>
           <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Highlights</h2>
           <ul className="space-y-1">
             {notes.highlights.map((h, i) => (
-              <li key={i} className="border-l-2 border-indigo-300 pl-3 text-sm italic text-slate-700 dark:text-slate-300">
-                "{h.quote}"
-                {h.part_index != null && <TimeChip partIndex={h.part_index} startMs={h.start_ms ?? 0} onJump={onJump} />}
+              <li key={i} className="flex items-start border-l-2 border-indigo-300 pl-3 text-sm italic text-slate-700 dark:text-slate-300">
+                <span className="min-w-0 flex-1">
+                  "{h.quote}"
+                  {h.part_index != null && <TimeChip partIndex={h.part_index} startMs={h.start_ms ?? 0} onJump={onJump} />}
+                </span>
+                {editable && <RemoveBtn onClick={() => onUpdate({ highlights: notes.highlights.filter((_, j) => j !== i) })} />}
               </li>
             ))}
           </ul>
@@ -606,7 +772,21 @@ export function RecordingDetailPage() {
 
       {notes && (
         <div className="mb-6">
-          <NotesView notes={notes} onJump={jumpTo} />
+          <NotesView
+            notes={notes}
+            onJump={jumpTo}
+            editable={isOwner}
+            onUpdate={(patch) => {
+              void (async () => {
+                try {
+                  await updateNotes(recording.id, patch);
+                  await refresh();
+                } catch (e) {
+                  toast.error(`Couldn't save notes: ${(e as Error).message}`);
+                }
+              })();
+            }}
+          />
         </div>
       )}
 
