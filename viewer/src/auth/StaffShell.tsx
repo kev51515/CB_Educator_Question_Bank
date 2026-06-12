@@ -312,6 +312,18 @@ export function StaffShell() {
         </svg>
       ),
     },
+    // Recordings — cross-domain (teacher / counselor / coach all benefit).
+    {
+      id: "recordings",
+      to: ROUTES.RECORDINGS,
+      label: "Recordings",
+      icon: (
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <rect x={9} y={3} width={6} height={11} rx={3} />
+          <path d="M5 11a7 7 0 0 0 14 0M12 18v3" />
+        </svg>
+      ),
+    },
     // Question Bank is SAT/academic-specific — hide it outside the academic
     // domain so the Coach/Counselor rail stays fitting to that vertical.
     ...(canQbank && domain === "academic"

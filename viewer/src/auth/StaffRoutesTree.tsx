@@ -36,6 +36,7 @@ const ThreadView = lazy(() =>
 import { QuestionBankPage } from "@/teacher/QuestionBankPage";
 import { QBankSubmissionLogPage } from "@/teacher/QBankSubmissionLogPage";
 import { StudentProfilePage } from "@/teacher/StudentProfilePage";
+import { RecordingsListPage, RecordingDetailPage } from "@/recordings";
 import type { AccountContext } from "./routeTreeTypes";
 
 /**
@@ -89,6 +90,9 @@ export default function StaffRoutesTree({ account }: { account: AccountContext }
         <Route path={ROUTES.COURSES} element={<AllClassesView />} />
         <Route path={ROUTES.QUESTION_BANK} element={gate(<QuestionBankPage />)} />
         <Route path={ROUTES.QBANK_LOG} element={gate(<QBankSubmissionLogPage />)} />
+        {/* Recordings — available to all educator domains (teacher/counselor/coach). */}
+        <Route path={ROUTES.RECORDINGS} element={<RecordingsListPage />} />
+        <Route path={ROUTES.RECORDING} element={<RecordingDetailPage />} />
         <Route path={ROUTES.TESTS_ADMIN} element={gate(<TestsAdminPage />)} />
         <Route path={ROUTES.TEST_OVERVIEW} element={gate(<TestOverviewPage />)} />
         <Route path={ROUTES.TEST_REVIEW} element={gate(<TestReviewPage />)} />
