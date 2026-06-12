@@ -740,7 +740,13 @@ export function ModulesPage(): JSX.Element {
     async (parent: ModuleNode): Promise<void> => {
       if (!classId) return;
       const siblings = childrenByParent.get(parent.id) ?? [];
-      const position = siblings.length;
+      // Append at max(sibling position)+1, NOT siblings.length: positions
+      // aren't guaranteed dense-from-0 (trashing a submodule leaves a gap, and
+      // the trashed row still holds its slot under the DB constraint). Using
+      // the count collides whenever a live sibling sits at index `length`
+      // (e.g. submodules at {1,2} → length 2 → "duplicate key … position").
+      const position =
+        siblings.reduce((max, m) => (m.position > max ? m.position : max), -1) + 1;
       const { error: insertError } = await supabase
         .from("course_modules")
         .insert({
