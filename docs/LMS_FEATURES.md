@@ -178,7 +178,7 @@ See `docs/PROCTORING.md` for the full stack + SEB integration plan. Shipped in c
 | Notes (teacher-authored markdown) | ○ Not built | S; `kind='note'` in materials |
 | Video / media embeds | ○ Not built | S; YouTube / Vimeo iframe in pages |
 | Modules / lesson sequences | ✓ Built | `0011_modules.sql` defines `modules` + `module_items`; surfaced in teacher course shell |
-| Journey view (gamified mastery grid) | ✓ Built | Khan-style grid over modules: gold seal ≥80%, derived mastery points + levels; educator Modules Journey\|List (Journey primary), student default (temp. flagged off). `viewer/src/journey/` + [JOURNEY_VIEW.md](./JOURNEY_VIEW.md) |
+| Journey view (gamified) | ✓ Built | Student ledger spine (medallions, summit card, cell popovers, quiet-ledger seal moment, points+levels); educator Journey w/ Class grid \| Students heatmap, triage popovers + Nudge DMs. Student side temp. flagged off. `viewer/src/journey/` + [JOURNEY_VIEW.md](./JOURNEY_VIEW.md) |
 | Resource library (cross-class) | ○ Not built | M; teacher-scoped library + "Add to class" |
 | Rich-text editor | ○ Not built | M; pick lightweight (TipTap or markdown textarea) — no library is in `package.json` today |
 

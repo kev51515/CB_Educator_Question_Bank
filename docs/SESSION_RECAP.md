@@ -139,6 +139,32 @@ with a fresh design pass.
   course incl. locked week + up-next + full-test link) — student journey, List
   regression, educator aggregate all screenshot-verified; tsc + vite build clean.
 
+**v1.1 — interactions (same day).** A/B mockups in
+`design-explorations/journey/interactions/`; Kevin picked the recommended
+direction on all three: **1A** anchored cell-detail popover (state, score,
+distance-to-seal bar w/ gold 80% tick, Review attempt / Retake CTA — best
+attempt id read from `assignment_best_attempts.attempt_id`), **2A** educator
+triage popover (distribution bar + needs-attention list + "Nudge n students"
+DM via `open_thread_with` + `messages` — the harness asserts a real DM row),
+**3A** quiet-ledger seal moment (gold cell stamp + ring, rising +pts in the
+HUD, toast for seals + level-ups; diff vs a per-course localStorage snapshot
+gated on meta-loaded-for-current-ids — a plain boolean raced and
+false-celebrated on first load). Also: `journey.preview=1` localStorage
+escape hatch enables the student journey while the build flag is off.
+
+**v2/v3 — layout round (same day).** Mockups in
+`design-explorations/journey/v2` + `v3`; Kevin skipped named-chips and the
+summit header for now, picked **C1 ledger spine** (student: unit cards on a
+progress-thermometer rail, completion medallions, seal-count chips, final
+full test promoted to a navy summit card — `JourneySpine`, popover/stamp
+shared via the `UnitCells` extraction) and **D2 class heatmap** (educator
+Class grid | Students toggle; pinned Class row of stacked mini-bars +
+sealed-% with red flags <40%; student rows click through to best attempts;
+needs-attention sort + row Nudge — `TeacherClassHeatmap`). Positioning
+polish: popover flips above the cell near the viewport bottom (KebabMenu
+convention) + clamps width on phones — asserted by
+`_verify-journey-popover.mjs`.
+
 ## Pickleball coaching — two course types, full coaching suite (2026-06-11) — DEPLOYED
 
 New **pickleball coaching** vertical layered onto the LMS as two `course_type` values

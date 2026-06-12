@@ -109,11 +109,14 @@ surface's domain folder (`dashboard/`, `student/`, `teacher/`, `journey/`)
 and is imported directly from the consumer. Don't promote it to `components/`
 unless a second surface needs it. The barrel is for cross-cutting primitives.
 
-`viewer/src/journey/` is the gamified Journey view (Khan-style mastery grid:
-gold seal at effective score ≥80%, derived mastery points + levels — nothing
-stored). Spec + decision record: `docs/JOURNEY_VIEW.md`. Educator Modules has
-Journey|List with Journey primary; the student-side journey is behind
-`STUDENT_JOURNEY_ENABLED` in `StudentCourseView.tsx` (temp. off).
+`viewer/src/journey/` is the gamified Journey view (gold seal at effective
+score ≥80%, derived mastery points + levels — nothing stored). Spec + all
+decision records: `docs/JOURNEY_VIEW.md`. Student = ledger spine
+(`JourneySpine`, summit card) with cell popovers + quiet-ledger seal moment;
+educator Modules has Journey|List (Journey primary) with Class grid |
+Students (heatmap) tabs, triage popovers + Nudge DMs. The student-side
+journey is behind `STUDENT_JOURNEY_ENABLED` in `StudentCourseView.tsx`
+(temp. off; `localStorage journey.preview=1` previews it).
 
 ### Modal contract (every `role="dialog"`)
 
