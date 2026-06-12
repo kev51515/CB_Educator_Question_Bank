@@ -152,6 +152,20 @@ export async function endRecording(
   if (error) throw error;
 }
 
+/**
+ * Re-open a finished recording so the owner can capture more Parts. Flips
+ * status back to 'recording'; the RecorderPanel reappears and continues the
+ * Part numbering. Ending again re-finalizes (and regenerates notes if a new
+ * Part was transcribed).
+ */
+export async function reopenRecording(id: string): Promise<void> {
+  const { error } = await supabase
+    .from("recordings")
+    .update({ status: "recording" })
+    .eq("id", id);
+  if (error) throw error;
+}
+
 /** Re-queue a Part for transcription (e.g. after a failed/stuck attempt). */
 export async function retryPart(partId: string): Promise<void> {
   const { error } = await supabase

@@ -204,9 +204,11 @@ assignment rework settles, or in explicit coordination.
   Transcript** (collapses once notes exist). Owner can **rename speakers**
   (across Parts), **inline-correct** any utterance, **edit the AI notes**
   (TL;DR / topic title+summary / action items inline; remove topics + highlights;
-  add action items), and **retry or delete a Part** (delete renumbers). Header
-  actions: **Copy notes**, **Copy transcript**, **Download .md**,
-  Generate/Regenerate notes, Delete. Per-Part audio playback + status.
+  add action items), **retry or delete a Part** (delete renumbers), and **save
+  any transcript line as a highlight** (★ on hover). Header actions: **+ Add
+  parts** (reopens a finished recording to capture more), **Copy notes**, **Copy
+  transcript**, **Download .md**, Generate/Regenerate notes, Delete. Per-Part
+  audio playback + status.
 - **QuizDraftPanel** — generate (SAT-style/general toggle) → review/edit each
   question (stem/choices/correct/rationale) → delete/regenerate. Publish button
   present but disabled (Phase 3b deferred).

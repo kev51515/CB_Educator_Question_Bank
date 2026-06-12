@@ -22,6 +22,7 @@ import {
   deleteRecording,
   renameRecording,
   renameSpeaker,
+  reopenRecording,
   retryPart,
   updateNotes,
   updatePartTranscript,
@@ -104,11 +105,13 @@ function UtteranceRow({
   editable,
   query,
   onSave,
+  onHighlight,
 }: {
   u: Utterance;
   editable: boolean;
   query: string;
   onSave: (text: string) => void;
+  onHighlight?: () => void;
 }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(u.text);
@@ -131,7 +134,7 @@ function UtteranceRow({
     );
   }
   return (
-    <p className="text-sm leading-relaxed text-slate-800 dark:text-slate-200">
+    <p className="group text-sm leading-relaxed text-slate-800 dark:text-slate-200">
       <span className="mr-2 font-medium text-slate-500 dark:text-slate-400">{speakerDisplay(u.speaker)}:</span>
       <span
         className={editable ? "cursor-text rounded hover:bg-slate-100 dark:hover:bg-slate-800" : ""}
@@ -140,6 +143,17 @@ function UtteranceRow({
       >
         {highlight(u.text, query)}
       </span>
+      {onHighlight && (
+        <button
+          type="button"
+          onClick={onHighlight}
+          className="ml-2 align-middle text-xs text-slate-300 opacity-0 transition-opacity hover:text-indigo-600 group-hover:opacity-100"
+          title="Save as a highlight"
+          aria-label="Save as a highlight"
+        >
+          ★
+        </button>
+      )}
     </p>
   );
 }
@@ -152,6 +166,7 @@ function PartBlock({
   onSaved,
   onRetry,
   onDelete,
+  onHighlight,
 }: {
   part: RecordingPart;
   register: RegisterAudio;
@@ -160,6 +175,7 @@ function PartBlock({
   onSaved: () => void;
   onRetry: () => void;
   onDelete: () => void;
+  onHighlight?: (u: Utterance) => void;
 }) {
   const pending = part.status !== "transcribed" && part.status !== "failed";
   const toast = useToast();
@@ -225,6 +241,7 @@ function PartBlock({
                 editable={editable}
                 query={query}
                 onSave={(text) => void saveUtterance(idx, text)}
+                onHighlight={onHighlight ? () => onHighlight(u) : undefined}
               />
             );
           })}
@@ -283,6 +300,7 @@ function TranscriptSection({
   open,
   setOpen,
   refresh,
+  onHighlight,
 }: {
   parts: RecordingPart[];
   register: RegisterAudio;
@@ -290,6 +308,7 @@ function TranscriptSection({
   open: boolean;
   setOpen: (v: boolean) => void;
   refresh: () => void;
+  onHighlight?: (u: Utterance, partIndex: number) => void;
 }) {
   const [query, setQuery] = useState("");
   const toast = useToast();
@@ -369,6 +388,7 @@ function TranscriptSection({
                 onSaved={refresh}
                 onRetry={() => void handleRetry(p)}
                 onDelete={() => void handleDeletePart(p)}
+                onHighlight={onHighlight ? (u) => onHighlight(u, p.part_index) : undefined}
               />
             ))}
           </div>
@@ -621,6 +641,8 @@ export function RecordingDetailPage() {
   const transcribedCount = parts.filter((p) => p.status === "transcribed").length;
   const hasTranscript = transcribedCount > 0;
   const canGenerate = isOwner && recording.status === "ready" && hasTranscript;
+  const canAddParts =
+    isOwner && (recording.status === "ready" || recording.status === "failed");
 
   async function saveTitle() {
     setEditingTitle(false);
@@ -719,8 +741,25 @@ export function RecordingDetailPage() {
       </div>
 
       {/* Action bar */}
-      {hasTranscript && (
+      {(hasTranscript || canAddParts) && (
         <div className="mb-5 flex flex-wrap gap-2">
+          {canAddParts && (
+            <button
+              onClick={() => {
+                void (async () => {
+                  try {
+                    await reopenRecording(recording.id);
+                    await refresh();
+                  } catch (e) {
+                    toast.error((e as Error).message);
+                  }
+                })();
+              }}
+              className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
+            >
+              + Add parts
+            </button>
+          )}
           {canGenerate && (
             <button
               onClick={() => void generateNotes()}
@@ -810,6 +849,26 @@ export function RecordingDetailPage() {
           open={transcriptOpen || !notes}
           setOpen={setTranscriptOpen}
           refresh={() => void refresh()}
+          onHighlight={
+            notes && isOwner
+              ? (u, partIndex) => {
+                  void (async () => {
+                    try {
+                      await updateNotes(recording.id, {
+                        highlights: [
+                          ...notes.highlights,
+                          { quote: u.text, part_index: partIndex, start_ms: u.start_ms },
+                        ],
+                      });
+                      await refresh();
+                      toast.success("Added to highlights.");
+                    } catch (e) {
+                      toast.error(`Couldn't add highlight: ${(e as Error).message}`);
+                    }
+                  })();
+                }
+              : undefined
+          }
         />
       )}
     </div>
