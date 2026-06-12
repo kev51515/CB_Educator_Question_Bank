@@ -28,14 +28,17 @@ no Anthropic (`ANTHROPIC_API_KEY` isn't even set on the project). Full spec:
 - **UX wave** — detail page Fathom layout (collapsible/searchable transcript,
   **speaker rename**, **inline correction**, copy/download .md); list search +
   filter + kebab + auto-refresh; recorder **mic level meter**.
-- **Deferred — publish a quiz into a takeable assignment.** Isolated half built
-  + committed (migration **0218** staged: `assignment_id` snapshot col +
-  `get_authored_questions` answer-stripped reader + server-graded
-  `submit_authored_attempt`; dormant `AuthoredQuizRunner`). The shared half
-  (alter `assignments_kind_consistency` for `kind='authored_set'`,
-  `publish_authored_quiz`, Publish wiring, `AssignmentRunner` branch) waits for
-  the parallel assignment rework (0209–0217) to settle. **Phase 5 (future):
-  Google Meet in a Module.**
+- **Publish loop — LIVE 2026-06-13** (migrations **0218** + **0221**, applied via
+  direct-psql). `publish_authored_quiz` snapshots a draft quiz into a
+  `kind='authored_set'` assignment; students take it via `AuthoredQuizRunner`
+  through the answer-stripped `get_authored_questions` + server-graded idempotent
+  `submit_authored_attempt`. Full publish→take→grade loop validated e2e.
+  Built via a 3-lane Workflow (publish loop / course Recordings tab / Web-Audio
+  waveform scrubber + Space=pause/resume). **Integration fix:** `routeViews.tsx`
+  dropped `kind` from the assignment-take select — so qbank_set assignments also
+  fell through to the mock-test runner (the deeper cause of the "Command of
+  Evidence is math" report); now fixed. **Phase 5 (future): Google Meet in a
+  Module.**
 
 ## Test annotations — student highlight fix + teacher review suite (2026-06-12) — SHIPPED
 

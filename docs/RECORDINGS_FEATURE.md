@@ -1,11 +1,13 @@
 # Recordings — audio → transcript → AI notes → quiz/assignment
 
-Status: **Phases 0–3 backend deployed + validated on prod** (Gemini key set;
-migrations 0208 + 0216 live; `transcribe-part` / `summarize-recording` /
-`generate-quiz-from-recording` deployed; end-to-end test green). **The client
-UI is built but NOT pushed** (held for a coordinated release). Publish-to-
-assignment is deferred. Owner-facing feature for educators across all three
-domains (teacher / counselor / coach).
+Status: **FULLY LIVE on prod (2026-06-13)** — Phases 0–3 + the publish loop.
+Migrations 0208 / 0216 / 0218 / 0221 applied; edge functions `transcribe-part`
+/ `summarize-recording` / `generate-quiz-from-recording` deployed; client shipped
+(record → transcript → notes → draft quiz → **Publish to course → student takes
+it, server-graded**). Also live: a per-course Recordings tab, a waveform
+scrubber, transcript editing/speaker-rename, editable notes. End-to-end
+validated. Owner-facing across all three educator domains (teacher / counselor /
+coach). **Phase 5 (Google Meet in a module) remains future.**
 
 **AI engine: Google Gemini (paid tier) for everything** — transcription AND the
 text steps (Phase 2 notes, Phase 3 quiz). Chosen over AssemblyAI + Claude so it
@@ -23,16 +25,21 @@ no Anthropic key). Model: `gemini-2.5-flash` (override via `GEMINI_MODEL`).
 - ✅ **Phase 2** — `_shared/summarize.ts` + `summarize-recording` (Gemini →
   `recording_notes`), auto-triggered on finalize; detail-page Generate/Regenerate
   + jump-to-timestamp chips. Deployed + validated (notes auto-generate).
-- ◑ **Phase 3** — migration `0216_authored_questions` LIVE,
-  `generate-quiz-from-recording` (Gemini, **SAT-style or general** per recording)
-  deployed + validated; `QuizDraftPanel` (generate → review/edit stem/choices/
-  answer/rationale → delete/regenerate). **DEFERRED: publish-into-a-takeable-
-  assignment** — couples to the assignment/runner system the parallel session is
-  actively rewriting (0209–0215); needs a design decision + coordination. The
-  Publish button is present but disabled with a "coming next" note.
-- ⏸ **Client UI** — all phases' React is built + `tsc -b` clean (recordings
-  files), but NOT pushed to `main` (held for a coordinated release). The backend
-  is live and idle until the client ships.
+- ✅ **Phase 3** — migration `0216_authored_questions` LIVE,
+  `generate-quiz-from-recording` (Gemini, **SAT-style or general** per recording);
+  `QuizDraftPanel` (generate → review/edit stem/choices/answer/rationale →
+  delete/regenerate).
+- ✅ **Phase 3b — publish loop (LIVE 2026-06-13)** — migrations `0218`
+  (assignment_id snapshot col + `get_authored_questions` answer-stripped reader +
+  server-graded idempotent `submit_authored_attempt`) and `0221` (widen
+  `assignments_kind_check`/`_consistency` for `kind='authored_set'` +
+  `publish_authored_quiz` RPC). Working **Publish to course** modal in
+  `QuizDraftPanel`; `AuthoredQuizRunner` + the `authored_set` branch in
+  `AssignmentRunner`. **Integration fix:** `routeViews.tsx` was dropping `kind`
+  from the assignment-take select (so qbank_set also fell through to mock-test) —
+  now passes kind. Full publish→take→server-grade loop validated e2e.
+- ✅ **Client UI** — shipped to `main` (commits b5ba6336, aa77913e); Cloudflare
+  live. Includes a per-course Recordings tab + a Web-Audio waveform scrubber.
 - ⏳ **Phase 4** — consent/audit hardening, coach polish, iOS fallback, retention.
 - ⏳ **Phase 5 (future, user-requested)** — **Google Meet integration in a Module**:
   link a Meet meeting to a course/module so its recording + notes flow into a
