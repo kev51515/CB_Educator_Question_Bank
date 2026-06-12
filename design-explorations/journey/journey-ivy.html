@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journey — Ivy Expedition Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7; --sunken:#F5F3EC; --border:#E9E6DE; --border-strong:#D3CFC2;
+    --ink:#1B2A4A; --ink2:#44516B; --ink3:#6E7A95;
+    --navy:#24407E; --navy-deep:#1A2F61; --navy-tint:rgba(36,64,126,.07);
+    --gold:#B9892C; --gold-deep:#94701F; --gold-bright:#D9B45B; --gold-chip:#F7EFD9;
+    --green:#2E6B4F;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font:15px/1.5 Onest,system-ui,sans-serif;background:var(--paper);color:var(--ink);
+       max-width:460px;margin:0 auto;padding-bottom:80px}
+
+  /* ── header: points + level ── */
+  .hud{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);
+       border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;gap:14px}
+  .hud .pts{font-family:Newsreader,serif;font-size:24px;font-weight:600;color:var(--gold-deep);
+            font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:5px}
+  .hud .pts small{font:600 10px Onest;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase}
+  .hud .lvl{flex:1}
+  .hud .lvl .label{display:flex;justify-content:space-between;font:600 10px Onest;color:var(--ink3);
+                   letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+  .hud .lvl .label b{color:var(--navy)}
+  .bar{height:6px;border-radius:99px;background:var(--sunken);border:1px solid var(--border);overflow:hidden}
+  .bar i{display:block;height:100%;width:62%;border-radius:99px;
+         background:linear-gradient(90deg,var(--navy),var(--navy-deep))}
+
+  .crumb{padding:20px 18px 0;font:600 11px Onest;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+  h1{font-family:Newsreader,serif;font-weight:600;font-size:30px;padding:2px 18px 0}
+  .sub{padding:2px 18px 18px;color:var(--ink3);font-size:13px}
+
+  /* ── the trail ── */
+  .trail{position:relative;padding:8px 0 30px}
+  .trail svg.path{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+
+  .stage{position:relative;z-index:1;margin:6px 18px 26px}
+  .banner{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .banner .rule{flex:1;height:1px;background:var(--border-strong)}
+  .banner .name{font-family:Newsreader,serif;font-size:17px;font-weight:600;white-space:nowrap}
+  .banner .meta{font:500 11px Onest;color:var(--ink3);white-space:nowrap}
+
+  .node{display:flex;align-items:center;gap:14px;margin:0 0 22px;position:relative}
+  .node:nth-child(odd){padding-left:6%}
+  .node:nth-child(even){padding-left:34%}
+  .disc{width:58px;height:58px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+        background:#fff;border:1.5px solid var(--border-strong);box-shadow:0 1px 3px rgba(27,42,74,.10);position:relative}
+  .disc svg{width:22px;height:22px;stroke:var(--ink3);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+  /* done = navy check */
+  .done .disc{border-color:var(--navy);background:var(--navy-tint)}
+  .done .disc svg{stroke:var(--navy)}
+  /* gold seal = mastered */
+  .seal .disc{border-color:var(--gold);background:radial-gradient(circle at 35% 30%, #E8C97E, var(--gold) 70%, var(--gold-deep))}
+  .seal .disc svg{stroke:#fff}
+  .seal .disc::after{content:"";position:absolute;inset:5px;border-radius:50%;border:1px dashed rgba(255,255,255,.55)}
+  /* current */
+  .current .disc{border:2px solid var(--navy);box-shadow:0 0 0 6px var(--navy-tint),0 2px 6px rgba(27,42,74,.18)}
+  .current .disc svg{stroke:var(--navy)}
+  .pulse{animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 6px var(--navy-tint)}50%{box-shadow:0 0 0 11px rgba(36,64,126,.04)}}
+
+  .ninfo .t{font-weight:600;font-size:14.5px}
+  .ninfo .d{font-size:12px;color:var(--ink3);margin-top:1px;display:flex;align-items:center;gap:6px}
+  .chip{display:inline-flex;align-items:center;gap:4px;border-radius:99px;padding:1.5px 8px;font:600 10.5px Onest}
+  .chip.gold{background:var(--gold-chip);color:var(--gold-deep)}
+  .chip.navy{background:var(--navy-tint);color:var(--navy)}
+  .upnext{display:inline-flex;align-items:center;gap:5px;font:700 10.5px Onest;color:var(--gold-deep);
+          letter-spacing:.07em;text-transform:uppercase;margin-top:3px}
+
+  /* summit (unit test) */
+  .summit .disc{width:70px;height:70px;border-radius:18px;border:1.5px solid var(--border-strong)}
+  .summit.seal .disc{border-radius:18px}
+
+  /* locked mist */
+  .locked-stage{position:relative}
+  .locked-stage .stage-body{filter:grayscale(.4);opacity:.45}
+  .mist{position:absolute;inset:-8px -18px;backdrop-filter:blur(1.1px);
+        background:linear-gradient(180deg,rgba(251,250,247,.1),rgba(251,250,247,.55));
+        display:flex;align-items:center;justify-content:center;z-index:2;border-radius:14px}
+  .mist .lockcard{background:#fff;border:1px solid var(--border-strong);border-radius:12px;
+                  box-shadow:0 4px 14px rgba(27,42,74,.10);padding:10px 16px;display:flex;gap:9px;align-items:center;
+                  font:600 12.5px Onest;color:var(--ink2)}
+  .mist svg{width:15px;height:15px;stroke:var(--ink3);fill:none;stroke-width:1.8}
+</style>
+</head>
+<body>
+
+<div class="hud">
+  <div class="pts">1,250 <small>pts</small></div>
+  <div class="lvl">
+    <div class="label"><span><b>Level 4</b> · Scholar</span><span>250 to Level 5</span></div>
+    <div class="bar"><i></i></div>
+  </div>
+</div>
+
+<div class="crumb">SAT June Intensive · Journey</div>
+<h1>Your road to test day</h1>
+<div class="sub">8 of 13 checkpoints sealed · test day in 24 days</div>
+
+<div class="trail">
+  <svg class="path" viewBox="0 0 460 1190" preserveAspectRatio="none" aria-hidden>
+    <path d="M85 90 C 85 160, 215 150, 215 215 S 105 290, 105 350 S 235 420, 225 485
+             C 215 550, 100 560, 102 630 S 230 700, 228 770 S 110 840, 110 915 S 230 980, 228 1060"
+          fill="none" stroke="#D3CFC2" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round"/>
+  </svg>
+
+  <!-- Stage 1 -->
+  <section class="stage">
+    <div class="banner"><span class="name">Week 1 — Foundations</span><span class="meta">4/4 done</span><span class="rule"></span></div>
+    <div class="node seal">
+      <span class="disc"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <span class="ninfo"><span class="t">Vocab Quiz 1</span>
+        <span class="d"><span class="chip gold">Sealed · 85%</span> +120 pts</span></span>
+    </div>
+    <div class="node done">
+      <span class="disc"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <span class="ninfo"><span class="t">Reading drill — Craft &amp; Structure</span>
+        <span class="d"><span class="chip navy">Done · 72%</span> retake for the seal</span></span>
+    </div>
+    <div class="node seal">
+      <span class="disc"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <span class="ninfo"><span class="t">Linear equations set</span>
+        <span class="d"><span class="chip gold">Sealed · 92%</span> +140 pts</span></span>
+    </div>
+    <div class="node done">
+      <span class="disc"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l1.93-1.93a5 5 0 0 0-7.07-7.07L11 5M14 11a5 5 0 0 0-7.07 0L5 12.93a5 5 0 0 0 7.07 7.07L13 19"/></svg></span>
+      <span class="ninfo"><span class="t">Khan Academy — practice</span><span class="d">side trail · optional</span></span>
+    </div>
+  </section>
+
+  <!-- Stage 2 -->
+  <section class="stage">
+    <div class="banner"><span class="name">Week 2 — Algebra</span><span class="meta">1/3 done</span><span class="rule"></span></div>
+    <div class="node seal">
+      <span class="disc"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <span class="ninfo"><span class="t">Systems of equations</span>
+        <span class="d"><span class="chip gold">Sealed · 88%</span> +130 pts</span></span>
+    </div>
+    <div class="node current">
+      <span class="disc pulse"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></span>
+      <span class="ninfo"><span class="t">Quadratics Quiz</span>
+        <span class="d">12 questions · due Friday</span>
+        <span class="upnext">Up next for you</span></span>
+    </div>
+    <div class="node">
+      <span class="disc"><svg viewBox="0 0 24 24"><path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z M14 2v5h5 M9 13h6M9 16.5h4"/></svg></span>
+      <span class="ninfo"><span class="t">Function notation drill</span><span class="d">not started</span></span>
+    </div>
+  </section>
+
+  <!-- Stage 3: locked -->
+  <section class="stage locked-stage">
+    <div class="stage-body">
+      <div class="banner"><span class="name">Week 3 — Geometry</span><span class="meta">0/3</span><span class="rule"></span></div>
+      <div class="node"><span class="disc"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></span>
+        <span class="ninfo"><span class="t">Angles &amp; triangles quiz</span></span></div>
+      <div class="node"><span class="disc"><svg viewBox="0 0 24 24"><path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z M14 2v5h5"/></svg></span>
+        <span class="ninfo"><span class="t">Circles drill</span></span></div>
+    </div>
+    <div class="mist"><span class="lockcard">
+      <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      Unlocks Monday, June 16</span></div>
+  </section>
+
+  <!-- Summit -->
+  <section class="stage">
+    <div class="banner"><span class="name">Summit</span><span class="rule"></span></div>
+    <div class="node summit">
+      <span class="disc"><svg viewBox="0 0 24 24"><path d="M4 21V4 M4 4h12l-2.5 4L16 12H4"/></svg></span>
+      <span class="ninfo"><span class="t">Full Test — Digital SAT, June</span>
+        <span class="d">4 modules · 134 min · the real rehearsal</span></span>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
