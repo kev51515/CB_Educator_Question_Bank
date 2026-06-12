@@ -88,6 +88,9 @@ export const ROUTES = {
   // Staff: replay one student's sitting — scrub/play the captured action
   // stream (answers, colored highlights, notes, eliminations, flags, dwell).
   TEST_REPLAY: "/educator/tests/:slug/replay/:runId",
+  // Staff: one student's report exactly as the student sees it (ResultView,
+  // no proctoring chrome) — for QA and "what will they see when I release?".
+  TEST_STUDENT_REPORT: "/educator/tests/:slug/report/:runId",
   // Staff preview of the runner itself, role-prefixed + nested under the test's
   // overview so it reads as "the run view of this test". Renders the full-screen
   // FullTestApp (outside the staff shell). Reached from the overview's Preview.
@@ -219,6 +222,10 @@ export function testReviewPath(slug: string): string {
 
 export function testReplayPath(slug: string, runId: string): string {
   return buildPath(ROUTES.TEST_REPLAY, { slug, runId });
+}
+
+export function testStudentReportPath(slug: string, runId: string): string {
+  return buildPath(ROUTES.TEST_STUDENT_REPORT, { slug, runId });
 }
 
 export function coursePath(courseId: string): string {

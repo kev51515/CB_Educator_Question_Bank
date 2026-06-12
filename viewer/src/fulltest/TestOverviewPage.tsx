@@ -26,7 +26,13 @@ import { useToast } from "@/components/Toast";
 import { Skeleton } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { useBreadcrumbLabel } from "@/components";
-import { ROUTES, testPreviewPath, testReviewPath, testReplayPath } from "@/lib/routes";
+import {
+  ROUTES,
+  testPreviewPath,
+  testReviewPath,
+  testReplayPath,
+  testStudentReportPath,
+} from "@/lib/routes";
 import { getResult, getRunTimeline } from "./api";
 import type { ProctorEvent } from "./api";
 import { ResultView } from "./ResultView";
@@ -613,7 +619,7 @@ export function TestOverviewPage(): JSX.Element {
   // --- not-found / loading shells ---
   if (notFound) {
     return (
-      <div className="max-w-5xl px-4 sm:px-6 lg:px-8 py-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
         <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">
           <EmptyState
             title="Test not found"
@@ -628,7 +634,7 @@ export function TestOverviewPage(): JSX.Element {
   const title = test?.title ?? "Full-length test";
 
   return (
-    <div className="max-w-5xl px-4 sm:px-6 lg:px-8 py-6 space-y-5">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 space-y-5">
       {/* header card */}
       <header className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -753,6 +759,7 @@ export function TestOverviewPage(): JSX.Element {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               to={testPreviewPath(slug)}
+              title="Take the test yourself in the real runner — nothing is recorded"
               className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
             >
               <span aria-hidden>▶</span> Preview test
@@ -768,6 +775,7 @@ export function TestOverviewPage(): JSX.Element {
                       .join("&")}`
                   : ""
               }`}
+              title="Answer key + per-question class breakdown for this test"
               className="rounded-lg border border-slate-300 px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
             >
               Review Mode
@@ -775,6 +783,7 @@ export function TestOverviewPage(): JSX.Element {
             <button
               type="button"
               onClick={() => setAssignOpen(true)}
+              title="Add this test to a course's Modules so students can take it"
               className="rounded-lg border border-indigo-300 px-3.5 py-2 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50 dark:border-indigo-800 dark:text-indigo-300 dark:hover:bg-indigo-950/30"
             >
               Assign to course
@@ -783,6 +792,11 @@ export function TestOverviewPage(): JSX.Element {
               <button
                 type="button"
                 onClick={() => setMonitorOpen(true)}
+                title={
+                  courseFilter !== "all"
+                    ? "Live progress of this course's in-progress students — pause, add time, message"
+                    : "Live progress of in-progress students — pause, add time, message"
+                }
                 className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 px-3.5 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/30"
               >
                 <span className="relative flex h-2 w-2" aria-hidden>
@@ -1060,6 +1074,7 @@ export function TestOverviewPage(): JSX.Element {
                       hasNewMessage={lr?.run_id ? newMsgRuns.has(lr.run_id) : false}
                       onReview={onReview}
                       onReplay={(runId) => navigate(testReplayPath(slug, runId))}
+                      onReport={(runId) => navigate(testStudentReportPath(slug, runId))}
                       onToggleRelease={onToggleRow}
                       onSetPause={onSetPause}
                       onOpenChat={openChat}
@@ -1091,6 +1106,18 @@ export function TestOverviewPage(): JSX.Element {
           slug={slug}
           title={title}
           isAdmin={isAdmin}
+          // Scope the live view to the course selected on this page (default:
+          // students from other courses are noise). "All courses" passes null.
+          scopeStudentIds={
+            courseFilter !== "all"
+              ? new Set(filteredRows.map((r) => r.student_id))
+              : null
+          }
+          scopeLabel={
+            courseFilter !== "all"
+              ? (courses.find((c) => c.id === courseFilter)?.name ?? null)
+              : null
+          }
           newMsgRuns={newMsgRuns}
           onSeenRun={(rid) =>
             setNewMsgRuns((prev) => {

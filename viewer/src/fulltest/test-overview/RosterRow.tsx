@@ -29,6 +29,8 @@ interface RosterRowProps {
   hasNewMessage: boolean;
   onReview: (row: RosterRowData) => void;
   onReplay: (runId: string) => void;
+  /** Open this run's report exactly as the student sees it (QA / pre-release check). */
+  onReport: (runId: string) => void;
   onToggleRelease: (row: RosterRowData) => void;
   onSetPause: (runId: string, paused: boolean, name: string) => void;
   onOpenChat: (runId: string, name: string) => void;
@@ -46,6 +48,7 @@ export function RosterRowView({
   hasNewMessage,
   onReview,
   onReplay,
+  onReport,
   onToggleRelease,
   onSetPause,
   onOpenChat,
@@ -182,18 +185,29 @@ export function RosterRowView({
         )}
       </td>
 
-      {/* Actions */}
+      {/* Actions — one right-aligned NOWRAP row so buttons line up across
+          rows instead of wrapping into a ragged stack. The page column is
+          wide (max-w-7xl); on narrow screens the table itself scrolls. */}
       <td className="py-3 px-3 align-middle">
-        <div className="flex flex-wrap items-center justify-end gap-2">
+        <div className="flex items-center justify-end gap-1.5 whitespace-nowrap">
           {taken ? (
             <>
               <RowAction
                 tone="primary"
                 onClick={() => onReview(row)}
                 disabled={reviewLoadingId === row.run_id}
+                title="Open the grading review — answers, score, proctoring timeline"
               >
                 {reviewLoadingId === row.run_id ? "…" : "Review"}
               </RowAction>
+              {row.run_id && (
+                <RowAction
+                  onClick={() => onReport(row.run_id ?? "")}
+                  title="See this student's report exactly as they see it once released"
+                >
+                  Student report
+                </RowAction>
+              )}
               {row.run_id && (
                 <RowAction
                   onClick={() => onReplay(row.run_id ?? "")}

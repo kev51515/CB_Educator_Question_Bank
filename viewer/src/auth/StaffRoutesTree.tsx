@@ -19,6 +19,7 @@ import {
   TestReviewPage,
   TestOverviewPage,
   ReplayPage,
+  StudentReportPage,
 } from "@/fulltest";
 import { LineLinkPage } from "@/line";
 import { CalendarPage } from "@/calendar";
@@ -92,6 +93,7 @@ export default function StaffRoutesTree({ account }: { account: AccountContext }
         <Route path={ROUTES.TEST_OVERVIEW} element={gate(<TestOverviewPage />)} />
         <Route path={ROUTES.TEST_REVIEW} element={gate(<TestReviewPage />)} />
         <Route path={ROUTES.TEST_REPLAY} element={gate(<ReplayPage />)} />
+        <Route path={ROUTES.TEST_STUDENT_REPORT} element={gate(<StudentReportPage />)} />
         {/* Per-student profile inside a course. Registered BEFORE the
             ClassLayout wildcard below so React Router matches the more
             specific path first. Lives outside ClassLayout's tab strip

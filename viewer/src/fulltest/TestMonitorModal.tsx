@@ -61,6 +61,12 @@ interface TestMonitorModalProps {
   title: string;
   /** Only the lead teacher (admin) may act on a live sitting; others are read-only. */
   isAdmin?: boolean;
+  /** When set, only these students are shown — TestOverviewPage passes the
+   *  selected course's roster so the live view matches the page's course
+   *  scope (other courses' sitters are noise). null = no scoping. */
+  scopeStudentIds?: ReadonlySet<string> | null;
+  /** Course name for the scope note in the header (paired with scopeStudentIds). */
+  scopeLabel?: string | null;
   /** Runs with an unread student message — owned by TestOverviewPage so the
    *  page + this modal share ONE realtime subscription (no phantom dots). */
   newMsgRuns?: Set<string>;
@@ -103,7 +109,7 @@ function fmtTime(iso: string | null): string {
   }
 }
 
-export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onSeenRun, onClose }: TestMonitorModalProps) {
+export function TestMonitorModal({ slug, title, isAdmin = false, scopeStudentIds = null, scopeLabel = null, newMsgRuns, onSeenRun, onClose }: TestMonitorModalProps) {
   const toast = useToast();
 
   const [rows, setRows] = useState<LiveRow[]>([]);
@@ -222,9 +228,19 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
     };
   }, [refresh]);
 
-  const taking = rows.filter((r) => r.state === "in_progress").length;
-  const done = rows.filter((r) => r.state === "submitted").length;
-  const notStarted = rows.filter((r) => r.state === "not_started").length;
+  // Apply the page's course scope (the RPC is slug-wide). Done client-side so
+  // the poll loop stays one RPC; the set is small (a course roster).
+  const visibleRows = useMemo(
+    () =>
+      scopeStudentIds
+        ? rows.filter((r) => scopeStudentIds.has(r.student_id))
+        : rows,
+    [rows, scopeStudentIds],
+  );
+
+  const taking = visibleRows.filter((r) => r.state === "in_progress").length;
+  const done = visibleRows.filter((r) => r.state === "submitted").length;
+  const notStarted = visibleRows.filter((r) => r.state === "not_started").length;
 
   // Triage: bubble in-progress students who need attention (left the tab, idle,
   // or low on time) to the top. `tick` is in the deps so idle/low-time recompute
@@ -253,15 +269,15 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
     };
     const rank = (st: LiveRow["state"]) =>
       st === "in_progress" ? 0 : st === "submitted" ? 1 : 2;
-    const next = [...rows].sort((a, b) => {
+    const next = [...visibleRows].sort((a, b) => {
       const r = rank(a.state) - rank(b.state);
       if (r !== 0) return r;
       const at = attention(b) - attention(a);
       if (at !== 0) return at;
       return (a.student_name ?? "").localeCompare(b.student_name ?? "");
     });
-    return { sorted: next, flagged: rows.filter((r) => attention(r) > 0).length };
-  }, [rows, tick]);
+    return { sorted: next, flagged: visibleRows.filter((r) => attention(r) > 0).length };
+  }, [visibleRows, tick]);
 
   return (
     <>
@@ -280,6 +296,14 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
       }
       subtitle={
         <>
+          {scopeLabel && (
+            <span
+              className="mr-1 font-medium text-slate-600 dark:text-slate-300"
+              title="Scoped to the course selected on the test overview — switch to 'All courses' there to monitor everyone"
+            >
+              {scopeLabel} ·
+            </span>
+          )}
           {taking} taking · {done} done · {notStarted} not started
           {flagged > 0 && (
             <span className="ml-1 font-medium text-amber-600 dark:text-amber-400">
@@ -294,9 +318,11 @@ export function TestMonitorModal({ slug, title, isAdmin = false, newMsgRuns, onS
           <SkeletonRows count={4} rowClassName="h-12" />
         ) : error ? (
           <p role="alert" className="text-sm text-rose-600 dark:text-rose-400">{error}</p>
-        ) : rows.length === 0 ? (
+        ) : visibleRows.length === 0 ? (
           <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
-            No students are assigned this test yet.
+            {scopeLabel
+              ? `No students in ${scopeLabel} are assigned this test yet.`
+              : "No students are assigned this test yet."}
           </p>
         ) : (
           <ul className="divide-y divide-slate-100 dark:divide-slate-800 rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
