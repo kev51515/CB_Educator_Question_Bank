@@ -186,6 +186,10 @@ export async function createQuestionSetItem(
 export async function insertFullTestLink(
   supabase: DB,
   row: {
+    /** Client-generated module_items id — the URL embeds it as `&item=<id>`
+     *  (the assignment-occurrence identity, 0215), so the id must be known
+     *  BEFORE the insert. */
+    id: string;
     module_id: string;
     position: number;
     title: string;
@@ -193,6 +197,7 @@ export async function insertFullTestLink(
   },
 ): Promise<string | null> {
   const { error: insertError } = await supabase.from("module_items").insert({
+    id: row.id,
     module_id: row.module_id,
     position: row.position,
     item_type: "link",

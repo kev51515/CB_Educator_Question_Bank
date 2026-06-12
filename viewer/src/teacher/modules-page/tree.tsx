@@ -1187,7 +1187,7 @@ const ModuleCard = memo(function ModuleCard({
                     // the per-test OVERVIEW (results + live status), same tab.
                     <Link
                       to={`${testOverviewPath(fullTestSlug)}?course=${classId}${
-                        fullTestRange ? `&m=${fullTestRange}` : ""
+                        fullTestRange ? `&m=${fullTestRange}&item=${item.id}` : ""
                       }`}
                       title="Open the proctor view — results & live status"
                       className="self-start max-w-full text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline truncate"

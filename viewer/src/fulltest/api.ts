@@ -60,6 +60,7 @@ export async function startTest(
   first?: number | null,
   last?: number | null,
   timeMode?: "unlimited" | "strict" | null,
+  itemId?: string | null,
 ): Promise<StartTestResult> {
   // first/last scope the run to a module subset (a `?m=<first>-<last>` link),
   // so the same test assigned for different modules launches independent runs
@@ -67,11 +68,14 @@ export async function startTest(
   // timeMode (`&tm=` on the occurrence link, 0211) is frozen onto the run at
   // creation: 'strict' = clock keeps running while away; 'unlimited' (default)
   // = clock pauses. Ignored on resume (the existing run keeps its mode).
+  // itemId (`&item=` on the link, 0215) is the assignment-occurrence identity
+  // — recorded on the run so two assignments of the same range stay separate.
   const { data, error } = await supabase.rpc("start_test", {
     p_slug: slug,
     p_first: first ?? null,
     p_last: last ?? null,
     p_time_mode: timeMode ?? "unlimited",
+    p_item: itemId ?? null,
   });
   if (error) throw mapError(error);
   return data as StartTestResult;

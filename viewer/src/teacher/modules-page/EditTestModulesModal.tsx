@@ -219,9 +219,12 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
     // so it launches its own run with its own report (0156). A full selection
     // uses the plain /test/<slug> link. Strict TIME mode (0211) adds `tm=strict`
     // — appended with `&` after a range, or as the sole `?` query on a full test.
+    // The occurrence identity (`&item=`, 0215) is this module_items row's own
+    // id — re-stamp it on every rewrite so editing the range/time mode never
+    // strips it (and mints it onto pre-0215 links on their first edit).
     const base =
       isSubset && first != null
-        ? `${testRunPath(slug)}?m=${first}-${last}`
+        ? `${testRunPath(slug)}?m=${first}-${last}&item=${item.id}`
         : testRunPath(slug);
     const newUrl =
       timeMode === "strict" ? `${base}${base.includes("?") ? "&" : "?"}tm=strict` : base;

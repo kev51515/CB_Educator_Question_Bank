@@ -129,6 +129,16 @@ export function TestOverviewPage(): JSX.Element {
     return null;
   }, [searchParams]);
 
+  // Occurrence ITEM id (0215): `&item=<module_items.id>` from the course's
+  // module link pins the roster to one specific assignment of this range —
+  // the same module assigned twice shows independent rosters. The teacher
+  // tree always sends it; a bare ?m= link (old bookmark) falls back to
+  // range-only scoping (pre-0215 behavior).
+  const occurrenceItem = useMemo(() => {
+    const raw = searchParams.get("item");
+    return raw && /^[0-9a-f-]{36}$/i.test(raw) ? raw : null;
+  }, [searchParams]);
+
   // Modules shown for this occurrence (all when test-wide; the range when a
   // ?m= deep-link scopes the page to one assignment).
   const scopedModules = useMemo(
@@ -222,6 +232,9 @@ export function TestOverviewPage(): JSX.Element {
           p_slug: slug,
           p_first: moduleRange?.first ?? null,
           p_last: moduleRange?.last ?? null,
+          // Pin to ONE assignment occurrence (0215) — without this, the same
+          // module assigned twice merges both assignments' runs in the list.
+          p_item: occurrenceItem,
         }),
         supabase.rpc("test_live_progress", { p_slug: slug }),
       ]);
@@ -246,7 +259,7 @@ export function TestOverviewPage(): JSX.Element {
     } finally {
       setRosterLoading(false);
     }
-  }, [slug, toast, moduleRange]);
+  }, [slug, toast, moduleRange, occurrenceItem]);
 
   useEffect(() => {
     void refreshRoster();

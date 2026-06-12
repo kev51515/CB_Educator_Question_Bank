@@ -421,12 +421,17 @@ export function InlineAddItemRow({
       // plain /test/<slug> link.
       const first = ft.ftDeployedSorted[0];
       const last = ft.ftDeployedSorted[ft.ftDeployedSorted.length - 1];
+      // Client-generated module_items id, embedded in the link as `&item=` —
+      // the assignment-occurrence identity (0215). Assign the same module
+      // twice and each link launches runs attributed to ITS OWN occurrence,
+      // so rosters and retake gating never merge the two.
+      const itemId = crypto.randomUUID();
       // Strict TIME mode (0211) adds `tm=strict` to the link so the run keeps its
       // clock running while away; appended with `&` after a range or as the sole
       // `?` query on a full test.
       const base =
         ft.ftIsSubset && first != null
-          ? `${testRunPath(ft.fullTestSlug)}?m=${first}-${last}`
+          ? `${testRunPath(ft.fullTestSlug)}?m=${first}-${last}&item=${itemId}`
           : testRunPath(ft.fullTestSlug);
       const url =
         ft.ftTimeMode === "strict"
@@ -435,6 +440,7 @@ export function InlineAddItemRow({
       setBusy(true);
       try {
         const insertErr = await insertFullTestLink(supabase, {
+          id: itemId,
           module_id: module.id,
           position: maxPosition + 1,
           title: payloadTitle,
