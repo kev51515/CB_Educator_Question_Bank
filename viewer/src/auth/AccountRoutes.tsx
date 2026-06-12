@@ -24,6 +24,7 @@ import {
   AdminAuditPage,
   AdminInvitesPage,
   AdminStatsPage,
+  AdminTrashPage,
   AdminUsersPage,
   AdminCollegesPage,
 } from "@/admin";
@@ -154,6 +155,7 @@ export function AccountRoutes({
                 <SidebarLink to={`${basePath}/admin/colleges`} label="Colleges" />
                 <SidebarLink to={`${basePath}/admin/invites`} label="Invite codes" />
                 <SidebarLink to={`${basePath}/admin/audit`} label="Audit log" />
+                <SidebarLink to={`${basePath}/admin/trash`} label="Trash" />
               </div>
             )}
           </nav>
@@ -204,6 +206,7 @@ export function AccountRoutes({
                   <Route path="admin/colleges" element={<AdminCollegesPage />} />
                   <Route path="admin/invites" element={<AdminInvitesPage />} />
                   <Route path="admin/audit" element={<AdminAuditPage />} />
+                  <Route path="admin/trash" element={<AdminTrashPage />} />
                 </>
               ) : (
                 // Non-admins (teachers + students) who deep-link to an admin URL

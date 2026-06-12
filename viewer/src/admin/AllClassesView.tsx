@@ -349,6 +349,9 @@ export function AllClassesView() {
         .select(
           "id, short_code, name, description, join_code, archived, is_template, course_type, created_at, teacher_id, teacher:profiles!courses_teacher_id_fkey(display_name, email), course_memberships(count), assignments(count)",
         )
+        // Admin RLS reads trashed rows too (the Trash page needs that) —
+        // exclude them from the working grid here.
+        .is("deleted_at", null)
         .order("created_at", { ascending: false });
 
       if (queryError) {
@@ -888,15 +891,31 @@ export function AllClassesView() {
             if (!deleteTarget) return;
             setDeleteBusy(true);
             try {
-              const { error: delError } = await supabase
-                .from("courses")
-                .delete()
-                .eq("id", deleteTarget.id);
+              // Soft delete (0198): Trash with a 90-day recovery window.
+              const targetId = deleteTarget.id;
+              const { error: delError } = await supabase.rpc("trash_course", {
+                p_course_id: targetId,
+              });
               if (delError) {
                 toast.error("Couldn't delete", delError.message);
                 return;
               }
-              toast.success("Course deleted");
+              toast.success("Course moved to Trash", "Recoverable for 90 days.", {
+                action: {
+                  label: "Undo",
+                  onAction: () => {
+                    void supabase
+                      .rpc("restore_course", { p_course_id: targetId })
+                      .then(({ error }) => {
+                        if (error) toast.error("Couldn't restore", error.message);
+                        else {
+                          toast.success("Course restored");
+                          void refresh();
+                        }
+                      });
+                  },
+                },
+              });
               setDeleteTarget(null);
               void refresh();
             } catch (err: unknown) {

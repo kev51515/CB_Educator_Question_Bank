@@ -221,15 +221,29 @@ export function CourseSettings() {
   const onDelete = async (): Promise<void> => {
     setActionBusy(true);
     try {
-      const { error: delError } = await supabase
-        .from("courses")
-        .delete()
-        .eq("id", cls.id);
+      // Soft delete (0198): the course moves to the Trash and is recoverable
+      // for 90 days; a daily purge job hard-deletes after that. RLS hides it
+      // from all course lists immediately.
+      const { error: delError } = await supabase.rpc("trash_course", {
+        p_course_id: cls.id,
+      });
       if (delError) {
         toast.error("Couldn't delete course", delError.message);
         return;
       }
-      toast.success("Course deleted");
+      toast.success("Course moved to Trash", "Recoverable for 90 days.", {
+        action: {
+          label: "Undo",
+          onAction: () => {
+            void supabase
+              .rpc("restore_course", { p_course_id: cls.id })
+              .then(({ error }) => {
+                if (error) toast.error("Couldn't restore course", error.message);
+                else toast.success("Course restored");
+              });
+          },
+        },
+      });
       navigate(ROUTES.CLASSES);
     } catch (err: unknown) {
       toast.error(

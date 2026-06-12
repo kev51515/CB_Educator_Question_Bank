@@ -62,7 +62,7 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
   return (
     <div className="min-h-screen bg-slate-50 px-4 py-10 dark:bg-slate-950">
       <div className="mx-auto max-w-3xl">
-        <header className="rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 p-7 text-white shadow-lg">
+        <header className="result-hero rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 p-7 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <p className="text-sm uppercase tracking-wide text-white/80">Results</p>
             {hasEstimate && (

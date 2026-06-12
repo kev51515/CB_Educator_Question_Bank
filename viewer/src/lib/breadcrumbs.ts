@@ -84,6 +84,7 @@ const STATIC_LABELS: Readonly<Record<string, string>> = {
   users: "Users",
   invites: "Invites",
   audit: "Audit",
+  trash: "Trash",
 };
 
 /**
@@ -129,9 +130,10 @@ export function buildEducatorTrail(
     const parent = parts[i - 1];
     acc = `${acc}/${seg}`;
 
-    // `attempts` is purely structural — the attempt id that follows carries
-    // the "Attempt" crumb, so we skip emitting one for the literal segment.
-    if (seg === "attempts") continue;
+    // Purely structural segments — the id that follows carries the crumb
+    // ("Attempt", a replay's run, a student-report's run), so we skip
+    // emitting one for the literal segment.
+    if (seg === "attempts" || seg === "replay" || seg === "report") continue;
 
     const staticLabel = STATIC_LABELS[seg];
     if (staticLabel !== undefined) {

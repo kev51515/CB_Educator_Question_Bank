@@ -725,6 +725,17 @@ body {
   margin-top: 14px;
 }
 
+/* Result hero (student test report) — classic keeps its indigo→violet
+   gradient untouched; ivy re-voices it as the collegiate navy ground with
+   bright gold ceremonial numerals (the dark-gold grade vanishes on navy). */
+.theme-ivy .result-hero {
+  background: linear-gradient(135deg, #1b2a4a, #24407e);
+}
+.theme-ivy.dark .result-hero {
+  background: linear-gradient(135deg, #101d3b, #1a2f61);
+}
+.theme-ivy .result-hero .ceremonial { color: #d9b45b; }
+
 /* Ceremonial gold numerals — scores/averages at display size ONLY (>=18px),
    max ~2 per screen. Classic: inherits surrounding styles untouched. */
 .theme-ivy .ceremonial {

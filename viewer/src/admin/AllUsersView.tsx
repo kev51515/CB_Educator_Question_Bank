@@ -103,7 +103,9 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
       // tiebreaker so pagination doesn't shuffle within equal keys.
       let query = supabase
         .from("profiles")
-        .select("id, email, display_name, role, created_at", { count: "exact" });
+        .select("id, email, display_name, role, created_at", { count: "exact" })
+        // Trashed users (0198) live on the admin Trash page, not here.
+        .is("deleted_at", null);
 
       switch (sort) {
         case "created_desc":
@@ -213,6 +215,7 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
     const { data, error } = await supabase
       .from("profiles")
       .select("email, display_name, role, created_at")
+      .is("deleted_at", null)
       .order("created_at", { ascending: true });
     if (error) {
       toast.error("Export failed", getErrorMessage(error));
@@ -261,7 +264,9 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
     setActionError(null);
     setBusyId(user.id);
     try {
-      const { error: rpcError } = await supabase.rpc("admin_delete_user", {
+      // Soft delete (0198): the user moves to the Trash (sign-in blocked) and
+      // is recoverable for 90 days; the daily purge hard-deletes after that.
+      const { error: rpcError } = await supabase.rpc("trash_user", {
         p_user_id: user.id,
       });
       if (rpcError) {
@@ -269,7 +274,22 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
         toast.error("Couldn't delete user", rpcError.message);
         return;
       }
-      toast.success("User deleted", label);
+      toast.success("User moved to Trash", `${label} — recoverable for 90 days.`, {
+        action: {
+          label: "Undo",
+          onAction: () => {
+            void supabase
+              .rpc("restore_user", { p_user_id: user.id })
+              .then(({ error }) => {
+                if (error) toast.error("Couldn't restore user", error.message);
+                else {
+                  toast.success("User restored", label);
+                  void refresh();
+                }
+              });
+          },
+        },
+      });
       setConfirmDelete(null);
       // If we deleted the last user on this page, step back one page.
       if (filtered.length === 1 && page > 0) {
