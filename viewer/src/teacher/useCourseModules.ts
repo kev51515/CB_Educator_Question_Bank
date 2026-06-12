@@ -29,12 +29,16 @@ export interface ModuleItem {
   url: string | null;
   indent: number;
   published: boolean;
+  /** Scheduled auto-publish time (0219). Null = manual publishing only. */
+  publish_at: string | null;
   /**
    * Due date for assignment-backed items (Assignment / Practice Test /
    * Question Set), resolved from the linked `assignments.due_at` via the soft
    * FK `item_ref_id`. Null for headers, links, and undated assignments.
    */
   due_at: string | null;
+  /** Start time for assignment-backed items (`assignments.opens_at`). */
+  opens_at: string | null;
 }
 
 export interface CourseModule {
@@ -45,6 +49,8 @@ export interface CourseModule {
   published: boolean;
   opens_at: string | null;
   lock_at: string | null;
+  /** Scheduled auto-publish time (0219). Null = manual publishing only. */
+  publish_at: string | null;
   parent_module_id: string | null;
   created_at: string;
   updated_at: string;
@@ -84,6 +90,7 @@ interface ModuleItemRow {
   url: string | null;
   indent: number;
   published: boolean;
+  publish_at: string | null;
 }
 
 interface CourseModuleRow {
@@ -94,6 +101,7 @@ interface CourseModuleRow {
   published: boolean;
   opens_at: string | null;
   lock_at: string | null;
+  publish_at: string | null;
   parent_module_id: string | null;
   created_at: string;
   updated_at: string;
@@ -145,13 +153,14 @@ export function useCourseModules(classId: string | null): UseCourseModules {
             "published",
             "opens_at",
             "lock_at",
+            "publish_at",
             "parent_module_id",
             "created_at",
             "updated_at",
             // Inline items so we don't fire one query per module. The
             // server-side order isn't guaranteed across nested rows, so we
             // sort again on the client below.
-            "items:module_items(id, module_id, position, item_type, item_ref_id, title, url, indent, published)",
+            "items:module_items(id, module_id, position, item_type, item_ref_id, title, url, indent, published, publish_at)",
           ].join(", "),
         )
         .eq("course_id", classId)
@@ -167,13 +176,20 @@ export function useCourseModules(classId: string | null): UseCourseModules {
       // is a SOFT FK (header/link rows hold NULL), so PostgREST can't embed it
       // — a small second query keyed by course is cheaper than per-item lookups
       // and keeps the nested module select simple.
-      const dueByAssignment = new Map<string, string | null>();
+      const dueByAssignment = new Map<
+        string,
+        { due_at: string | null; opens_at: string | null }
+      >();
       const { data: asnData } = await supabase
         .from("assignments")
-        .select("id, due_at")
+        .select("id, due_at, opens_at")
         .eq("course_id", classId);
-      for (const a of (asnData ?? []) as { id: string; due_at: string | null }[]) {
-        dueByAssignment.set(a.id, a.due_at);
+      for (const a of (asnData ?? []) as {
+        id: string;
+        due_at: string | null;
+        opens_at: string | null;
+      }[]) {
+        dueByAssignment.set(a.id, { due_at: a.due_at, opens_at: a.opens_at });
       }
 
       const rows = (data ?? []) as unknown as CourseModuleRow[];
@@ -191,8 +207,12 @@ export function useCourseModules(classId: string | null): UseCourseModules {
               url: item.url,
               indent: item.indent,
               published: item.published,
+              publish_at: item.publish_at,
               due_at: item.item_ref_id
-                ? (dueByAssignment.get(item.item_ref_id) ?? null)
+                ? (dueByAssignment.get(item.item_ref_id)?.due_at ?? null)
+                : null,
+              opens_at: item.item_ref_id
+                ? (dueByAssignment.get(item.item_ref_id)?.opens_at ?? null)
                 : null,
             }))
             .sort((a, b) => a.position - b.position);
@@ -205,6 +225,7 @@ export function useCourseModules(classId: string | null): UseCourseModules {
             published: row.published,
             opens_at: row.opens_at,
             lock_at: row.lock_at ?? null,
+            publish_at: row.publish_at ?? null,
             parent_module_id: row.parent_module_id ?? null,
             created_at: row.created_at,
             updated_at: row.updated_at,

@@ -451,10 +451,20 @@ export function ModulesPage(): JSX.Element {
           throw new Error(updError.message);
         }
       }
+      // Publishing now supersedes a pending schedule (0219).
+      if (!m.published && m.publish_at) {
+        await supabase
+          .from("course_modules")
+          .update({ publish_at: null })
+          .eq("id", m.id);
+      }
       // Optimistic: patch the one module locally instead of a full refetch, so
       // publishing doesn't flash/reflow the whole list (the toggle already
       // reflects the new state instantly).
-      patchModule(m.id, { published: !m.published });
+      patchModule(m.id, {
+        published: !m.published,
+        publish_at: !m.published ? null : m.publish_at,
+      });
     },
     [patchModule],
   );

@@ -31,6 +31,7 @@ import {
   OptimisticPublishToggle,
   PublishBadge,
 } from "./parts";
+import { SchedulePublishPicker } from "./editors";
 import { InlineRename } from "./editors";
 import { InlineAddItemRow } from "./inline-add";
 import { EditTestModulesModal } from "./EditTestModulesModal";
@@ -418,6 +419,9 @@ const ModuleCard = memo(function ModuleCard({
   // option below) and the full-test "Edit modules" picker modal.
   const [renamingItemId, setRenamingItemId] = useState<string | null>(null);
   const [editModulesItem, setEditModulesItem] = useState<ModuleItem | null>(null);
+  // Scheduled publishing (0219): pickers for this module / one of its items.
+  const [schedulingModule, setSchedulingModule] = useState(false);
+  const [schedulingItem, setSchedulingItem] = useState<ModuleItem | null>(null);
   // #6: header-level item drop. The empty-list "Drop here as first item" zone
   // only renders for an EXPANDED, EMPTY module — so a collapsed module, or a
   // module that already has items, had no cross-module item drop target. This
@@ -447,6 +451,14 @@ const ModuleCard = memo(function ModuleCard({
           .update({ published: next })
           .eq("id", item.id);
         if (error) throw new Error(error.message);
+      }
+      // Publishing now supersedes a pending schedule (0219): clear it so
+      // the "Scheduled" badge doesn't linger or re-fire after an unpublish.
+      if (!item.published && item.publish_at) {
+        await supabase
+          .from("module_items")
+          .update({ publish_at: null })
+          .eq("id", item.id);
       }
       await onRefresh();
     },
@@ -581,6 +593,17 @@ const ModuleCard = memo(function ModuleCard({
     },
     { label: "Move to…", onSelect: onMoveModule },
     { label: "Lock until…", onSelect: onLockModule },
+    ...(!module.published
+      ? [
+          {
+            label: "Schedule publish…",
+            hint: module.publish_at
+              ? `Currently ${new Date(module.publish_at).toLocaleString()}`
+              : "Publish automatically at a set time",
+            onSelect: () => setSchedulingModule(true),
+          } as KebabMenuOption,
+        ]
+      : []),
     { label: "Delete", destructive: true, onSelect: onDelete },
   ];
 
@@ -889,6 +912,16 @@ const ModuleCard = memo(function ModuleCard({
               opens {formatRelativeTime(module.opens_at)}
             </span>
           )}
+          {/* Scheduled publish (0219) — staff-only signal; drafts are
+              invisible to students anyway. */}
+          {!isStudent && !module.published && module.publish_at && (
+            <span
+              title={`Publishes automatically ${new Date(module.publish_at).toLocaleString()}. Items inside publish with it only if they're published or scheduled themselves.`}
+              className="inline-flex items-center gap-1 rounded-full bg-sky-50 dark:bg-sky-950/40 px-2.5 py-1 text-[11px] font-semibold text-sky-700 dark:text-sky-300 ring-1 ring-sky-200 dark:ring-sky-900 flex-none"
+            >
+              <ClockIcon /> Publishes {formatRelativeTime(module.publish_at)}
+            </span>
+          )}
         </div>
 
         {/* Explicit "Drop here ↓" pill when this module is the asChild
@@ -1011,6 +1044,17 @@ const ModuleCard = memo(function ModuleCard({
                 },
               },
               { label: "Move to…", onSelect: () => onMoveItem(item) },
+              ...(!item.published && item.item_type !== "header"
+                ? [
+                    {
+                      label: "Schedule publish…",
+                      hint: item.publish_at
+                        ? `Currently ${new Date(item.publish_at).toLocaleString()}`
+                        : "Publish automatically at a set time",
+                      onSelect: () => setSchedulingItem(item),
+                    } as KebabMenuOption,
+                  ]
+                : []),
               {
                 label: "Delete",
                 destructive: true,
@@ -1250,6 +1294,56 @@ const ModuleCard = memo(function ModuleCard({
                           </span>
                         );
                       })()}
+                      {/* Start time for assignment-backed items — only worth
+                          ink when it's in the future (a past opens_at is the
+                          default state). */}
+                      {!isStudent &&
+                        item.opens_at &&
+                        new Date(item.opens_at).getTime() > Date.now() && (
+                          <span
+                            title={`Opens ${new Date(item.opens_at).toLocaleString()}`}
+                            className="inline-flex items-center gap-1 normal-case tracking-normal font-medium text-slate-500 dark:text-slate-400"
+                          >
+                            <span aria-hidden className="text-slate-300 dark:text-slate-600">
+                              ·
+                            </span>
+                            Opens {formatRelativeTime(item.opens_at)}
+                          </span>
+                        )}
+                      {/* Scheduled publish (0219). Warn when the schedule
+                          can't make the item visible on its own. */}
+                      {!isStudent && !item.published && item.publish_at && (() => {
+                        const moduleBlocked =
+                          !module.published &&
+                          (!module.publish_at ||
+                            new Date(module.publish_at).getTime() >
+                              new Date(item.publish_at).getTime());
+                        return (
+                          <span
+                            title={
+                              moduleBlocked
+                                ? `Publishes automatically ${new Date(item.publish_at).toLocaleString()} — but its module is ${
+                                    module.publish_at
+                                      ? "scheduled later"
+                                      : "an unscheduled draft"
+                                  }, so students won't see it until the module is live.`
+                                : `Publishes automatically ${new Date(item.publish_at).toLocaleString()} (goes live with its module).`
+                            }
+                            className={`inline-flex items-center gap-1 normal-case tracking-normal font-semibold ${
+                              moduleBlocked
+                                ? "text-amber-700 dark:text-amber-400"
+                                : "text-sky-700 dark:text-sky-400"
+                            }`}
+                          >
+                            <span aria-hidden className="text-slate-300 dark:text-slate-600">
+                              ·
+                            </span>
+                            <ClockIcon />
+                            Publishes {formatRelativeTime(item.publish_at)}
+                            {moduleBlocked ? " — module still draft" : ""}
+                          </span>
+                        );
+                      })()}
                     </span>
                   )}
                 </div>
@@ -1362,6 +1456,63 @@ const ModuleCard = memo(function ModuleCard({
           onSaved={() => {
             void onRefresh();
           }}
+        />
+      )}
+      {schedulingModule && (
+        <SchedulePublishPicker
+          subject={module.name}
+          initial={module.publish_at}
+          hint="Items inside publish with it only if they're published or scheduled themselves — unscheduled drafts stay drafts."
+          onApply={async (iso) => {
+            const { error } = await supabase
+              .from("course_modules")
+              .update({ publish_at: iso })
+              .eq("id", module.id);
+            if (error) {
+              toast.error("Couldn't schedule module", error.message);
+              return;
+            }
+            toast.success(
+              iso ? "Module scheduled" : "Schedule cleared",
+              iso
+                ? `${module.name} publishes ${new Date(iso).toLocaleString()}.`
+                : module.name,
+            );
+            setSchedulingModule(false);
+            await onRefresh();
+          }}
+          onClose={() => setSchedulingModule(false)}
+        />
+      )}
+      {schedulingItem && (
+        <SchedulePublishPicker
+          subject={schedulingItem.title}
+          initial={schedulingItem.publish_at}
+          hint={
+            module.published
+              ? "Students see it as soon as it publishes."
+              : "Students see it once BOTH it and this module are published."
+          }
+          onApply={async (iso) => {
+            const target = schedulingItem;
+            const { error } = await supabase
+              .from("module_items")
+              .update({ publish_at: iso })
+              .eq("id", target.id);
+            if (error) {
+              toast.error("Couldn't schedule item", error.message);
+              return;
+            }
+            toast.success(
+              iso ? "Item scheduled" : "Schedule cleared",
+              iso
+                ? `${target.title} publishes ${new Date(iso).toLocaleString()}.`
+                : target.title,
+            );
+            setSchedulingItem(null);
+            await onRefresh();
+          }}
+          onClose={() => setSchedulingItem(null)}
         />
       )}
     </div>

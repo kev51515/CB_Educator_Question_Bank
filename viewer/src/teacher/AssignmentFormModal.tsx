@@ -99,6 +99,9 @@ export function AssignmentFormModal({
   const [difficultyMix, setDifficultyMix] =
     useState<AssignmentDifficultyMix>("any");
   const [dueAt, setDueAt] = useState<string | null>(null);
+  // Start time (`opens_at`, NOT NULL DEFAULT now()). Null in the form means
+  // "opens immediately" — we omit it on insert and write now() on update.
+  const [opensAt, setOpensAt] = useState<string | null>(null);
   const [archived, setArchived] = useState(false);
   // Empty string = unlimited attempts. We keep it as a string so the input
   // can be cleared without forcing a numeric placeholder.
@@ -167,6 +170,14 @@ export function AssignmentFormModal({
       setTimeLimit(initialAssignment.time_limit_minutes);
       setDifficultyMix(initialAssignment.difficulty_mix);
       setDueAt(initialAssignment.due_at);
+      // A past opens_at = already open = the default state; show empty so
+      // the form doesn't nag about a date that no longer matters.
+      setOpensAt(
+        initialAssignment.opens_at &&
+          new Date(initialAssignment.opens_at).getTime() > Date.now()
+          ? initialAssignment.opens_at
+          : null,
+      );
       setArchived(initialAssignment.archived);
       // Reset policy fields to defaults first; we'll overwrite when the
       // direct fetch resolves so the form never shows stale values from a
@@ -203,6 +214,7 @@ export function AssignmentFormModal({
       setTimeLimit(DEFAULT_TIME_LIMIT_MINUTES);
       setDifficultyMix("any");
       setDueAt(null);
+      setOpensAt(null);
       setArchived(false);
       setMaxAttempts("");
       setLatePenaltyPercent(DEFAULT_LATE_PENALTY_PERCENT);
@@ -515,6 +527,8 @@ export function AssignmentFormModal({
             time_limit_minutes: timeLimit,
             difficulty_mix: difficultyMix,
             due_at: dueAtIso,
+            // Cleared picker = opens immediately (column is NOT NULL).
+            opens_at: opensAt ?? new Date().toISOString(),
             archived,
             max_attempts: maxAttemptsValue,
             late_penalty_percent: latePenaltyPercent,
@@ -542,6 +556,9 @@ export function AssignmentFormModal({
         time_limit_minutes: timeLimit,
         difficulty_mix: difficultyMix,
         due_at: dueAtIso,
+        // Only send when set — the column defaults to now() (opens
+        // immediately), and PostgREST passes explicit NULLs through.
+        ...(opensAt ? { opens_at: opensAt } : {}),
         max_attempts: maxAttemptsValue,
         late_penalty_percent: latePenaltyPercent,
         grace_period_hours: gracePeriodHours,
@@ -891,12 +908,20 @@ export function AssignmentFormModal({
             </div>
           </fieldset>
 
-          <SmartDatePicker
-            label="Due date (optional)"
-            value={dueAt}
-            onChange={setDueAt}
-            allowClear
-          />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <SmartDatePicker
+              label="Opens at (optional — blank = immediately)"
+              value={opensAt}
+              onChange={setOpensAt}
+              allowClear
+            />
+            <SmartDatePicker
+              label="Due date (optional)"
+              value={dueAt}
+              onChange={setDueAt}
+              allowClear
+            />
+          </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
             <label className="block">

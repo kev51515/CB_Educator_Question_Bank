@@ -130,6 +130,75 @@ export function InlineRename({
   );
 }
 
+interface SchedulePublishPickerProps {
+  /** What's being scheduled — shown in the title ("Quadratics Quiz"). */
+  subject: string;
+  initial: string | null;
+  /** Extra context line, e.g. the goes-live-with-module caveat. */
+  hint?: string;
+  onApply: (iso: string | null) => Promise<void>;
+  onClose: () => void;
+}
+
+/**
+ * Picker for `publish_at` (0219 scheduled publishing) on a module or item.
+ * Same shape as LockUntilPicker; the pg_cron tick flips `published` when
+ * the time arrives.
+ */
+export function SchedulePublishPicker({
+  subject,
+  initial,
+  hint,
+  onApply,
+  onClose,
+}: SchedulePublishPickerProps): JSX.Element {
+  const [value, setValue] = useState<string | null>(initial);
+
+  return (
+    <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/40 p-4">
+      <div className="w-full max-w-sm rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 p-4 space-y-3">
+        <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+          Schedule publish — {subject}
+        </h3>
+        <SmartDatePicker value={value} onChange={setValue} allowClear />
+        <p className="text-[11px] text-slate-500 dark:text-slate-400">
+          Publishes automatically at the chosen time (checked every minute).
+          {hint ? ` ${hint}` : ""}
+        </p>
+        <div className="flex items-center justify-between gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              void onApply(null);
+            }}
+            className="rounded-lg px-2 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            Clear schedule
+          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                void onApply(value);
+              }}
+              className="rounded-lg px-3 py-1.5 text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 interface LockUntilPickerProps {
   initial: string | null;
   onApply: (iso: string | null) => Promise<void>;

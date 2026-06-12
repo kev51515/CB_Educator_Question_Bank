@@ -31,6 +31,7 @@ export function EditModuleModal({
 }: EditModuleModalProps) {
   const [name, setName] = useState("");
   const [opensAt, setOpensAt] = useState<string | null>(null);
+  const [publishAt, setPublishAt] = useState<string | null>(null);
   const [published, setPublished] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -39,6 +40,7 @@ export function EditModuleModal({
     if (!open || !module) return;
     setName(module.name);
     setOpensAt(module.opens_at);
+    setPublishAt(module.publish_at);
     setPublished(module.published);
     setError(null);
   }, [open, module]);
@@ -62,6 +64,9 @@ export function EditModuleModal({
           name: trimmed,
           opens_at: opensAt,
           published,
+          // Publishing now supersedes any schedule (0219); otherwise keep
+          // whatever the picker holds.
+          publish_at: published ? null : publishAt,
         })
         .eq("id", module.id);
 
@@ -145,6 +150,22 @@ export function EditModuleModal({
           />
           Published
         </label>
+
+        {!published && (
+          <div className="space-y-1">
+            <SmartDatePicker
+              label="Publish automatically at (optional)"
+              value={publishAt}
+              onChange={setPublishAt}
+              allowClear
+            />
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+              The module goes live on its own at this time. Items inside it
+              publish with it only if they're published or scheduled
+              themselves — unscheduled drafts stay drafts.
+            </p>
+          </div>
+        )}
 
         {error && (
           <div
