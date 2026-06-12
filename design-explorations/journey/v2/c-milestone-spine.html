@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C · Milestone spine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7; --line:#E9E6DE; --line2:#D3CFC2;
+    --ink:#1B2A4A; --ink2:#44516B; --ink3:#6E7A95;
+    --navy:#24407E; --navy-tint:rgba(36,64,126,.07);
+    --gold:#B9892C; --gold-deep:#94701F; --gold-bright:#D9B45B; --gold-chip:#F7EFD9;
+    --green:#2E6B4F;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font:14px/1.5 Onest,system-ui,sans-serif;background:var(--paper);color:var(--ink);
+       max-width:680px;margin:0 auto;padding:36px 20px 60px}
+  .note{font-size:12px;color:var(--ink3);margin-bottom:18px;max-width:64ch}
+
+  .trail{position:relative;padding-left:54px}
+  .trail::before{content:"";position:absolute;left:19px;top:14px;bottom:30px;width:2px;
+                 background:repeating-linear-gradient(180deg,var(--line2) 0 4px,transparent 4px 10px)}
+
+  .medal{position:absolute;left:-54px;top:8px;width:40px;height:40px;border-radius:50%;background:#fff;
+         border:1.5px solid var(--line2);display:flex;align-items:center;justify-content:center;
+         font:700 13px Onest;color:var(--ink3);box-shadow:0 1px 3px rgba(27,42,74,.08)}
+  .medal.done{border-color:var(--green);color:var(--green)}
+  .medal.cur{border:2px solid var(--navy);color:var(--navy);box-shadow:0 0 0 5px var(--navy-tint)}
+  .medal svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  /* per-unit completion ring on the medallion */
+  .medal i{position:absolute;inset:-5px;border-radius:50%}
+  .medal i svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+
+  .unitcard{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;
+            box-shadow:0 1px 2px rgba(27,42,74,.05),0 3px 10px rgba(27,42,74,.06);
+            padding:14px 18px;margin-bottom:18px}
+  .unitcard.cur{border-color:rgba(36,64,126,.35)}
+  .unitcard.locked{opacity:.55}
+  .head{display:flex;align-items:baseline;gap:10px}
+  .head h3{font-size:15px;font-weight:600}
+  .upnext{font:700 10px Onest;letter-spacing:.07em;text-transform:uppercase;color:var(--navy)}
+  .meta{margin-left:auto;font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
+  .cells{display:flex;gap:8px;margin-top:11px}
+  .cell{width:30px;height:30px;border-radius:7px;border:2px solid var(--line2);background:#fff;
+        display:flex;align-items:center;justify-content:center;color:#fff}
+  .cell svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .cell.seal{background:linear-gradient(135deg,#D9B45B,#B9892C 70%);border-color:var(--gold-deep)}
+  .cell.prof{background:var(--navy);border-color:var(--navy)}
+  .cell.att{background:#cfd8ef;border-color:#b5c3e6;color:#3a4f86}
+  .lockline{font-size:11.5px;color:var(--ink3);margin-top:8px;display:flex;align-items:center;gap:6px;font-weight:600}
+  .lockline svg{width:13px;height:13px;stroke:var(--ink3);fill:none;stroke-width:2}
+
+  /* summit */
+  .summit{position:relative;margin-top:4px}
+  .summit .medal{border-radius:12px;border-color:var(--gold);color:var(--gold-deep);background:var(--gold-chip)}
+  .summitcard{background:linear-gradient(150deg,#16233f,#24407E 85%);color:#fff;border:none}
+  .summitcard h3{color:#fff}
+  .summitcard .meta{color:rgba(255,255,255,.7)}
+  .summitcard .d{font-size:12px;color:rgba(255,255,255,.75);margin-top:3px}
+  .summitcard .d b{color:var(--gold-bright)}
+</style>
+</head>
+<body>
+<p class="note"><b>C · Milestone spine.</b> Units become cards hung on a quiet dotted spine. Each module gets
+a <i>medallion</i>: a numbered disc with a thin completion ring (green when complete, navy pulse on the
+current one). The final full test renders as a navy <i>summit card</i> at the end of the spine — the journey
+visibly leads somewhere. ~80% of the expedition-map feeling at ~20% of its decoration; no winding path,
+no mist, no wax-seal discs.</p>
+
+<div class="trail">
+  <div style="position:relative">
+    <span class="medal done">
+      <i><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="23" fill="none" stroke="#2E6B4F" stroke-width="2.5" stroke-dasharray="145" stroke-dashoffset="0"/></svg></i>
+      <svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+    </span>
+    <div class="unitcard">
+      <div class="head"><h3>Week 1 — Foundations</h3><span class="meta">3/3 done · 300/400 pts</span></div>
+      <div class="cells">
+        <span class="cell seal"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+        <span class="cell att"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+        <span class="cell prof"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.7-4.6 4.2 1.3 6L12 16.6 6.5 19.5l1.3-6L3.2 9.3l6.1-.7L12 3Z"/></svg></span>
+        <span class="cell"></span>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative">
+    <span class="medal cur">
+      <i><svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="23" fill="none" stroke="#24407E" stroke-width="2.5" stroke-dasharray="145" stroke-dashoffset="97"/></svg></i>
+      2
+    </span>
+    <div class="unitcard cur">
+      <div class="head"><h3>Week 2 — Algebra</h3><span class="upnext">· Up next</span><span class="meta">1/3 done · 100/300 pts</span></div>
+      <div class="cells">
+        <span class="cell seal"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+        <span class="cell" style="border-color:var(--navy);box-shadow:0 0 0 3px var(--navy-tint)"></span>
+        <span class="cell"></span>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative">
+    <span class="medal">3</span>
+    <div class="unitcard locked">
+      <div class="head"><h3>Week 3 — Geometry</h3><span class="meta">0/1</span></div>
+      <div class="lockline"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Unlocks Monday, June 16</div>
+    </div>
+  </div>
+
+  <div class="summit" style="position:relative">
+    <span class="medal"><svg viewBox="0 0 24 24"><path d="M4 21V4 M4 4h12l-2.5 4L16 12H4"/></svg></span>
+    <div class="unitcard summitcard">
+      <div class="head"><h3>Summit — Digital SAT, June</h3><span class="meta">24 days</span></div>
+      <p class="d">4 modules · 134 min · <b>the real rehearsal</b></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

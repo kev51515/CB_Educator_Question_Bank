@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Journey v2 — four improvement options</title>
+<style>
+  body { font: 14px/1.5 -apple-system, sans-serif; background: #fbfaf7; color: #1b2a4a; margin: 40px auto; max-width: 1280px; padding: 0 24px; }
+  h1 { font-size: 22px; }
+  p.note { color: #44516b; max-width: 92ch; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; align-items: start; }
+  figure { margin: 0; }
+  figcaption { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  figcaption small { display: block; font-weight: 400; color: #6e7a95; margin-top: 2px; }
+  img { width: 100%; border: 1px solid #e9e6de; border-radius: 12px; box-shadow: 0 1px 4px rgba(27,42,74,.10); }
+  .links { margin-top: 4px; font-size: 12px; }
+  .links a { color: #24407e; }
+  .tag { display:inline-block; border-radius:99px; padding:1px 9px; font-size:11px; font-weight:700; margin-left:6px; }
+  .tag.s { background:#eef2fb; color:#24407e; }
+  .tag.e { background:#f7efd9; color:#94701f; }
+</style>
+</head>
+<body>
+<h1>Journey v2 — four improvement options (composable — pick any set)</h1>
+<p class="note">These are independent layers, not alternatives: A and C change how the student grid reads,
+B adds a narrative header above it, D is a new educator lens. All same fixture data, all in the shipped
+Ivy tokens. A + B, B + C, or B + D are natural pairings. (A and C can combine too — labeled chips hung on
+the spine.)</p>
+
+<div class="row">
+  <figure>
+    <figcaption>A · Named checkpoints <span class="tag s">student grid</span>
+      <small>Cells become labeled chips (kind dot + title + score line); sealed chips get a cream fill.
+      Scannable without hover — the biggest single readability win, especially on mobile. Costs density.</small>
+    </figcaption>
+    <img src="shot-a-named-checkpoints.png" alt="Named checkpoints">
+    <p class="links"><a href="a-named-checkpoints.html">open live →</a></p>
+  </figure>
+  <figure>
+    <figcaption>B · Summit header <span class="tag s">student page</span>
+      <small>Navy hero above the grid: gold seal-progress ring, test-day countdown as the destination, and
+      ONE computed next step ("seal Reading drill — you're 25% away"). Replaces the flat points HUD;
+      turns the page into a story with a goal.</small>
+    </figcaption>
+    <img src="shot-b-summit-header.png" alt="Summit header">
+    <p class="links"><a href="b-summit-header.html">open live →</a></p>
+  </figure>
+  <figure>
+    <figcaption>C · Milestone spine <span class="tag s">student grid</span>
+      <small>Unit cards hung on a dotted spine with numbered medallions (completion ring; green = done,
+      navy pulse = current) ending in a navy summit card. The journey visibly leads somewhere — the
+      expedition feeling without the winding-path decoration Kevin disliked.</small>
+    </figcaption>
+    <img src="shot-c-milestone-spine.png" alt="Milestone spine">
+    <p class="links"><a href="c-milestone-spine.html">open live →</a></p>
+  </figure>
+  <figure>
+    <figcaption>D · Educator heatmap matrix <span class="tag e">educator lens</span>
+      <small>Students × checkpoints matrix inside the educator Journey (Class grid | Students tabs):
+      weak checkpoints read as vertical pale stripes, struggling students as horizontal ones; mastery-points
+      column ranks the class. The "who exactly is stuck where" view that class averages can't show.</small>
+    </figcaption>
+    <img src="shot-d-educator-heatmap.png" alt="Educator heatmap">
+    <p class="links"><a href="d-educator-heatmap.html">open live →</a></p>
+  </figure>
+</div>
+</body>
+</html>

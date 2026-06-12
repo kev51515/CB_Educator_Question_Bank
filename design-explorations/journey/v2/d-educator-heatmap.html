@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D · Educator heatmap matrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7; --line:#E9E6DE; --line2:#D3CFC2;
+    --ink:#1B2A4A; --ink2:#44516B; --ink3:#6E7A95;
+    --navy:#24407E; --navy-tint:rgba(36,64,126,.07);
+    --gold:#B9892C; --gold-deep:#94701F; --gold-chip:#F7EFD9;
+    --rose:#B4533E;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font:14px/1.5 Onest,system-ui,sans-serif;background:var(--paper);color:var(--ink);
+       max-width:760px;margin:0 auto;padding:36px 20px 60px}
+  .note{font-size:12px;color:var(--ink3);margin-bottom:18px;max-width:66ch}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;
+        box-shadow:0 1px 2px rgba(27,42,74,.05),0 3px 10px rgba(27,42,74,.06)}
+  .bar{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+  .bar h3{font-family:Newsreader,serif;font-weight:600;font-size:18px}
+  .bar .m{font-size:11.5px;color:var(--ink3)}
+
+  table{border-collapse:collapse;width:100%}
+  th{font:600 9.5px Onest;letter-spacing:.04em;text-transform:uppercase;color:var(--ink3);
+     padding:4px 6px;text-align:left;vertical-align:bottom}
+  th.col{writing-mode:vertical-rl;transform:rotate(195deg);transform:rotate(180deg);height:104px;
+         white-space:nowrap;text-align:left;font-weight:600;max-width:26px;padding:4px 2px}
+  th.grp{writing-mode:horizontal-tb;transform:none;height:auto;text-align:center;color:var(--navy);
+         border-bottom:1px solid var(--line);font-size:9px;padding-bottom:3px}
+  td{padding:3px 6px;border-top:1px solid #f5f3ec;font-size:12.5px;vertical-align:middle}
+  td.name{white-space:nowrap;font-weight:600}
+  .av{display:inline-flex;width:20px;height:20px;border-radius:50%;background:var(--navy-tint);color:var(--navy);
+      align-items:center;justify-content:center;font:700 9px Onest;margin-right:7px;vertical-align:-5px}
+  .c{width:20px;height:20px;border-radius:5px;border:1.5px solid var(--line2);background:#fff;display:inline-block;vertical-align:middle}
+  .c.seal{background:linear-gradient(135deg,#D9B45B,#B9892C 70%);border-color:var(--gold-deep)}
+  .c.prof{background:var(--navy);border-color:var(--navy)}
+  .c.att{background:#cfd8ef;border-color:#b5c3e6}
+  .c.zero{background:#fdf1ee;border-color:#ecc8bd}
+  td.pts{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+  td.pts b{color:var(--gold-deep)}
+  tr.low td.name{color:var(--rose)}
+  .legend{display:flex;gap:14px;margin-top:12px;font-size:11px;color:var(--ink2);flex-wrap:wrap}
+  .legend .c{width:13px;height:13px;vertical-align:-2px;margin-right:4px}
+</style>
+</head>
+<body>
+<p class="note"><b>D · Educator heatmap matrix.</b> A third lens on the Modules Journey (Class grid ▸
+<i>Students</i> tab inside Journey): rows = students, columns = checkpoints grouped by module, cell =
+that student's mastery state. The class's weak spots show as vertical pale stripes; a struggling student
+as a horizontal one. Far column = each student's mastery points. Row click → student profile; cell click →
+that attempt. This is the "who exactly is stuck where" view that averages can't show.</p>
+
+<div class="card">
+  <div class="bar"><h3>Class mastery</h3><span class="m">12 students · 7 checkpoints · sorted by points</span></div>
+  <table>
+    <thead>
+      <tr><th></th><th class="grp" colspan="3">Week 1</th><th class="grp" colspan="3">Week 2</th><th class="grp">W3</th><th></th></tr>
+      <tr>
+        <th></th>
+        <th class="col">Vocab Quiz 1</th>
+        <th class="col">Reading drill</th>
+        <th class="col">Linear eq. PT</th>
+        <th class="col">Systems of eq.</th>
+        <th class="col">Quadratics</th>
+        <th class="col">Function notation</th>
+        <th class="col">Angles</th>
+        <th style="text-align:right">Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="name"><span class="av">AS</span>Aiden Sun</td>
+        <td><span class="c seal"></span></td><td><span class="c seal"></span></td><td><span class="c prof"></span></td>
+        <td><span class="c seal"></span></td><td><span class="c seal"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts"><b>550</b></td></tr>
+      <tr><td class="name"><span class="av">JW</span>Jenny Wu</td>
+        <td><span class="c seal"></span></td><td><span class="c prof"></span></td><td><span class="c seal"></span></td>
+        <td><span class="c seal"></span></td><td><span class="c prof"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts"><b>525</b></td></tr>
+      <tr><td class="name"><span class="av">RM</span>Ravi Mehta</td>
+        <td><span class="c seal"></span></td><td><span class="c att"></span></td><td><span class="c prof"></span></td>
+        <td><span class="c prof"></span></td><td><span class="c att"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts">425</td></tr>
+      <tr><td class="name"><span class="av">YL</span>Yuna Lee</td>
+        <td><span class="c prof"></span></td><td><span class="c att"></span></td><td><span class="c att"></span></td>
+        <td><span class="c att"></span></td><td><span class="c zero"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts">300</td></tr>
+      <tr class="low"><td class="name"><span class="av">MP</span>Marco Pérez</td>
+        <td><span class="c att"></span></td><td><span class="c zero"></span></td><td><span class="c zero"></span></td>
+        <td><span class="c zero"></span></td><td><span class="c zero"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts">50</td></tr>
+      <tr class="low"><td class="name"><span class="av">DK</span>Dana Kim</td>
+        <td><span class="c zero"></span></td><td><span class="c zero"></span></td><td><span class="c zero"></span></td>
+        <td><span class="c zero"></span></td><td><span class="c zero"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts">0</td></tr>
+    </tbody>
+  </table>
+  <div class="legend">
+    <span><span class="c seal"></span>Sealed</span>
+    <span><span class="c prof"></span>Proficient</span>
+    <span><span class="c att"></span>Attempted</span>
+    <span><span class="c zero"></span>Not started</span>
+    <span><span class="c"></span>Unreleased / locked</span>
+  </div>
+</div>
+</body>
+</html>

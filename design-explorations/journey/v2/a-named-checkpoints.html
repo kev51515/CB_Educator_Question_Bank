@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A · Named checkpoints</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7; --line:#E9E6DE; --line2:#D3CFC2;
+    --ink:#1B2A4A; --ink2:#44516B; --ink3:#6E7A95;
+    --navy:#24407E; --navy-tint:rgba(36,64,126,.07);
+    --gold:#B9892C; --gold-deep:#94701F; --gold-chip:#F7EFD9;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font:14px/1.5 Onest,system-ui,sans-serif;background:var(--paper);color:var(--ink);
+       max-width:680px;margin:0 auto;padding:36px 20px 60px}
+  .note{font-size:12px;color:var(--ink3);margin-bottom:18px;max-width:64ch}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;
+        box-shadow:0 1px 2px rgba(27,42,74,.05),0 3px 10px rgba(27,42,74,.06)}
+  .unit{padding:18px 20px}
+  .unit+.unit{border-top:1px solid #f1efe8}
+  .unit.next{background:rgba(36,64,126,.045)}
+  .head{display:flex;align-items:baseline;gap:12px}
+  .head h3{font-size:15px;font-weight:600}
+  .head .upnext{font:700 10px Onest;letter-spacing:.07em;text-transform:uppercase;color:var(--navy)}
+  .meta{margin-left:auto;font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
+  .meta b{color:var(--ink2)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line2);background:#fff;
+        border-radius:10px;padding:7px 11px 7px 8px;max-width:280px;cursor:pointer}
+  .chip:hover{border-color:var(--navy)}
+  .dot{width:22px;height:22px;border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;
+       border:1.5px solid var(--line2);color:#fff}
+  .dot svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .seal .dot{background:linear-gradient(135deg,#D9B45B,#B9892C 70%);border-color:var(--gold-deep)}
+  .seal{border-color:#E2CF9C;background:#FFFDF7}
+  .prof .dot{background:var(--navy);border-color:var(--navy)}
+  .att .dot{background:#cfd8ef;border-color:#b5c3e6;color:#3a4f86}
+  .todo .dot{color:transparent}
+  .cur{border-color:var(--navy);box-shadow:0 0 0 3px var(--navy-tint)}
+  .locked{opacity:.5}
+  .locked .dot{background:#F5F3EC}
+
+  .t{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .s{font-size:10.5px;color:var(--ink3);white-space:nowrap}
+  .s b{color:var(--gold-deep)}
+  .chip.prof .s b{color:var(--navy)}
+  .star{width:11px;height:11px;flex:none;margin-left:1px}
+</style>
+</head>
+<body>
+<p class="note"><b>A · Named checkpoints.</b> Cells become small <i>labeled chips</i> — kind dot + title +
+score line — so the grid is scannable without hovering. Sealed chips get a warm cream fill. Density drops
+(one module ≈ 2 rows instead of 1) but every checkpoint is identifiable at a glance, which matters most on
+mobile where there is no hover at all. Popover/click behavior unchanged.</p>
+
+<div class="card">
+  <div class="unit">
+    <div class="head"><h3>Week 1 — Foundations</h3><span class="meta">3/3 done · <b>300</b>/400 pts</span></div>
+    <div class="chips">
+      <span class="chip seal"><span class="dot"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+        <span><span class="t">Vocab Quiz 1</span><br><span class="s"><b>Sealed · 85%</b> · 100 pts</span></span></span>
+      <span class="chip att"><span class="dot"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+        <span><span class="t">Reading drill — Craft &amp; Structure</span><br><span class="s">55% · retake for the seal</span></span></span>
+      <span class="chip prof"><span class="dot"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.7-4.6 4.2 1.3 6L12 16.6 6.5 19.5l1.3-6L3.2 9.3l6.1-.7L12 3Z"/></svg></span>
+        <span><span class="t">Linear equations Practice Test</span><br><span class="s"><b>72%</b> · 150/200 pts</span></span></span>
+      <span class="chip todo"><span class="dot"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l1.93-1.93a5 5 0 0 0-7.07-7.07L11 5M14 11a5 5 0 0 0-7.07 0L5 12.93a5 5 0 0 0 7.07 7.07L13 19"/></svg></span>
+        <span><span class="t">Khan Academy — practice</span><br><span class="s">side trail</span></span></span>
+    </div>
+  </div>
+
+  <div class="unit next">
+    <div class="head"><h3>Week 2 — Algebra</h3><span class="upnext">· Up next for you</span><span class="meta">1/3 done · <b>100</b>/300 pts</span></div>
+    <div class="chips">
+      <span class="chip seal"><span class="dot"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+        <span><span class="t">Systems of equations</span><br><span class="s"><b>Sealed · 88%</b> · 100 pts</span></span></span>
+      <span class="chip todo cur"><span class="dot"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" stroke="#3a4f86"/></svg></span>
+        <span><span class="t">Quadratics Quiz</span><br><span class="s">12 Q · due Friday</span></span></span>
+      <span class="chip todo"><span class="dot"></span>
+        <span><span class="t">Function notation drill</span><br><span class="s">not started</span></span></span>
+    </div>
+  </div>
+
+  <div class="unit locked">
+    <div class="head"><h3>Week 3 — Geometry</h3><span class="meta">unlocks Mon, June 16</span></div>
+    <div class="chips">
+      <span class="chip todo"><span class="dot"></span>
+        <span><span class="t">Angles &amp; triangles</span><br><span class="s">locked</span></span></span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
