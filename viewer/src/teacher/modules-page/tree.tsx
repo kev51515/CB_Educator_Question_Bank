@@ -921,15 +921,6 @@ const ModuleCard = memo(function ModuleCard({
             >
               Drop here as first item
             </div>
-          ) : module.items.length === 0 ? (
-            <div className="px-4 py-6 text-sm text-slate-500 dark:text-slate-400 text-center">
-              <div>No items yet.</div>
-              <div className="mt-1 text-[12px] text-slate-500 dark:text-slate-400">
-                {canQbank
-                  ? "Add an Assignment, Practice Test, Question Set, Header, or Link."
-                  : "Add an Assignment, Header, or Link."}
-              </div>
-            </div>
           ) : null}
           {module.items.map((item) => {
             const isAssignment =
@@ -1515,17 +1506,16 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
             className={
               // Tinted inset block: children visually sit INSIDE the parent
               // module. Indented from the left (so the parent's drag handle/
-              // expander still align with its row), tinted background +
-              // border + thicker left rule make it unambiguous that the
-              // rows inside belong to the parent above. When this container
-              // is an active asChild drop target the rule pops to indigo
-              // (active interaction); otherwise slate (passive structure).
+              // expander still align with its row); the tint + full border +
+              // containment make it clear the rows belong to the parent above
+              // — no left accent stripe (reads as AI-generated chrome). When
+              // this container is an active asChild drop target the border
+              // pops to indigo; otherwise slate (passive structure).
               "relative ml-6 mt-3 p-3 space-y-3 rounded-2xl border transition-colors " +
               "bg-slate-50/70 dark:bg-slate-900/40 " +
-              "before:absolute before:left-0 before:top-3 before:bottom-3 before:w-[3px] before:rounded-full transition-colors " +
               (isNestDropTarget
-                ? "border-indigo-400 dark:border-indigo-700 before:bg-indigo-500 dark:before:bg-indigo-400 "
-                : "border-slate-200 dark:border-slate-800 before:bg-slate-300 dark:before:bg-slate-700 ")
+                ? "border-indigo-400 dark:border-indigo-700 "
+                : "border-slate-200 dark:border-slate-800 ")
             }
             aria-label="Submodules"
           >

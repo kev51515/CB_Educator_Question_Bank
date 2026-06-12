@@ -64,11 +64,28 @@ function CheckIcon(): JSX.Element {
   );
 }
 
+/** Solid amber dot for the draft badge — a filled "not live yet" status dot. */
+function DraftDot(): JSX.Element {
+  return (
+    <span
+      aria-hidden
+      className="h-2 w-2 flex-none rounded-full bg-amber-500 dark:bg-amber-400"
+    />
+  );
+}
+
+// Shared pill recipes so the interactive toggle and the read-only badge can't
+// drift. Draft now reads as a solid amber pill (was a faint grey dashed pill
+// that scanned as "disabled / inert" rather than "needs publishing").
+const PUBLISHED_PILL =
+  "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300";
+const DRAFT_PILL =
+  "bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300 ring-1 ring-amber-300 dark:ring-amber-700/60";
+
 /**
- * One-click status badge (Ivy Ledger mockup language): published reads as a
- * green-tint pill with a check; draft reads as a dashed, sunken pill. The
- * whole badge is the toggle — same single-click contract as before, the
- * switch chrome is just replaced with the mockup's .badge recipe.
+ * One-click status badge: published reads as a green-tint pill with a check;
+ * draft reads as a solid amber pill with a status dot (clearly "not live").
+ * The whole badge is the toggle — same single-click contract.
  */
 function PublishToggle({
   published,
@@ -90,11 +107,11 @@ function PublishToggle({
       <span
         className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold transition-colors ${
           published
-            ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 border border-transparent hover:border-emerald-400 dark:hover:border-emerald-600"
-            : "bg-slate-50 text-slate-500 dark:bg-slate-800/60 dark:text-slate-400 border border-dashed border-slate-300 dark:border-slate-600 hover:border-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+            ? `${PUBLISHED_PILL} ring-1 ring-transparent hover:ring-emerald-400 dark:hover:ring-emerald-600`
+            : `${DRAFT_PILL} hover:bg-amber-200 dark:hover:bg-amber-900/50`
         }`}
       >
-        {published && <CheckIcon />}
+        {published ? <CheckIcon /> : <DraftDot />}
         {published ? "Published" : "Draft"}
       </span>
     </button>
@@ -148,12 +165,10 @@ export function PublishBadge({ published }: { published: boolean }): JSX.Element
     <span
       title={published ? "Published" : "Unpublished"}
       className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold flex-none ${
-        published
-          ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
-          : "bg-slate-50 text-slate-500 dark:bg-slate-800/60 dark:text-slate-400 border border-dashed border-slate-300 dark:border-slate-600"
+        published ? PUBLISHED_PILL : DRAFT_PILL
       }`}
     >
-      {published && <CheckIcon />}
+      {published ? <CheckIcon /> : <DraftDot />}
       {published ? "Published" : "Draft"}
     </span>
   );
