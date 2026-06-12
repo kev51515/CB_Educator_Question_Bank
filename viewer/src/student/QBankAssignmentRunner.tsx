@@ -27,7 +27,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { assignmentReviewPath } from "@/lib/routes";
-import { qbankSetUidMatches } from "@/lib/qbankSetUid";
+import { resolveQbankQuestionsHtml } from "@/lib/qbankCatalog";
 import { useToast } from "@/components";
 import {
   listStagedSubmissions,
@@ -56,22 +56,6 @@ interface QBankAssignmentRunnerProps {
   onExit: () => void;
 }
 
-interface CatalogEntry {
-  axis: string;
-  section: string;
-  difficulty: string;
-  setId: string;
-  label: string;
-  topic: string;
-  questionCount: number;
-  questionsHtml: string;
-}
-
-interface CatalogJson {
-  generatedAt: string;
-  entries: CatalogEntry[];
-}
-
 interface QBankSubmitPayload {
   score_percent: number;
   correct_count: number;
@@ -86,52 +70,6 @@ type Stage =
   | { kind: "error"; message: string }
   | { kind: "ready"; iframeSrc: string };
 
-let catalogPromise: Promise<CatalogJson> | null = null;
-function loadCatalog(): Promise<CatalogJson> {
-  if (catalogPromise) return catalogPromise;
-  catalogPromise = fetch("/exports/catalog.json")
-    .then((res) => {
-      if (!res.ok) throw new Error(`catalog.json fetch failed: ${res.status}`);
-      return res.json() as Promise<CatalogJson>;
-    })
-    .catch((err: unknown) => {
-      catalogPromise = null;
-      throw err;
-    });
-  return catalogPromise;
-}
-
-async function resolveQuestionsHtml(
-  qbankSetUid: string,
-): Promise<string | null> {
-  try {
-    const catalog = await loadCatalog();
-    // The uid is axis::section::difficulty::topic::setId. Exported files live at
-    // `by-skill/<section>/<difficulty>/<slug>_questions.html`. We REQUIRE the
-    // matched entry's file to sit under the uid's own section + difficulty, so a
-    // loose/colliding match can never serve a different subject's set (this is
-    // the guard that stops an R&W "Inferences" assignment ever loading a Math
-    // file — the reported bug). If nothing matches strictly we return null and
-    // the caller shows an error rather than the wrong subject's questions.
-    const parts = qbankSetUid.toLowerCase().split("::");
-    const section = parts[1];
-    const difficulty = parts[2];
-    const expectedDir =
-      section && difficulty ? `by-skill/${section}/${difficulty}/` : null;
-    for (const entry of catalog.entries) {
-      if (!qbankSetUidMatches(entry, qbankSetUid)) continue;
-      const html = entry.questionsHtml ?? "";
-      if (!expectedDir || html.toLowerCase().includes(expectedDir)) {
-        return html;
-      }
-      // matched the uid but the file is in the wrong section/difficulty — skip,
-      // do NOT return it.
-    }
-    return null;
-  } catch {
-    return null;
-  }
-}
 
 function makeClientAttemptId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -197,7 +135,7 @@ export function QBankAssignmentRunner({
       });
       return;
     }
-    if (!path) path = await resolveQuestionsHtml(uid);
+    if (!path) path = await resolveQbankQuestionsHtml(uid);
     if (!path) {
       setStage({
         kind: "error",
