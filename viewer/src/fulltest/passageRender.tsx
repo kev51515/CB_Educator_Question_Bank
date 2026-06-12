@@ -144,6 +144,7 @@ function renderMarks(
       start: r.start - baseOffset,
       end: r.end - baseOffset,
       color: r.color,
+      deco: r.deco,
     }))
     .filter((r) => r.end > 0 && r.start < text.length)
     .sort((a, b) => a.start - b.start);
@@ -155,7 +156,18 @@ function renderMarks(
     const e = Math.max(s, Math.min(r.end, text.length));
     if (e <= s) return; // skip a range fully behind the cursor (defensive)
     if (s > pos) out.push(<span key={`t${idx}`}>{text.slice(pos, s)}</span>);
-    const fill = HIGHLIGHT_FILL[coerceColor(r.color)].mark;
+    const palette = HIGHLIGHT_FILL[coerceColor(r.color)];
+    // "underline" deco (teacher review tool) draws colored ink instead of a fill.
+    const markStyle: React.CSSProperties =
+      r.deco === "underline"
+        ? {
+            backgroundColor: "transparent",
+            textDecorationLine: "underline",
+            textDecorationColor: palette.swatch,
+            textDecorationThickness: "2.5px",
+            textUnderlineOffset: "3px",
+          }
+        : { backgroundColor: palette.mark };
     out.push(
       <mark
         key={`m${idx}`}
@@ -168,8 +180,8 @@ function renderMarks(
             onRemove?.(field, baseOffset + s);
           }
         }}
-        title="Click to remove highlight"
-        style={{ backgroundColor: fill }}
+        title={r.deco === "underline" ? "Click to remove underline" : "Click to remove highlight"}
+        style={markStyle}
         className="cursor-pointer rounded-sm text-inherit box-decoration-clone"
       >
         {text.slice(s, e)}

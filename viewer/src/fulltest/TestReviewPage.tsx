@@ -8,8 +8,11 @@
  *   • a collapsible LEFT sidebar shows, per question, how the chosen class
  *     answered — per-option counts + which students picked each (0112 RPCs) —
  *     plus a section overview list with %-correct per question,
- *   • text highlighting for live discussion, saved per teacher (localStorage,
- *     via useRunnerAnnotations — survives across review sessions),
+ *   • an annotation suite for live discussion — multi-color highlights,
+ *     underlines, and per-question notes — saved to the DB per (teacher,
+ *     course, test) via useTeacherItemAnnotations, so reviewing the same test
+ *     with another class shows that class's own annotations (device-local
+ *     fallback until a class is selected),
  *   • a class picker (the courses the teacher teaches that link this test).
  *
  * Content comes from a direct staff SELECT on tests → test_modules →
@@ -33,7 +36,14 @@ import {
   type TestContentModule,
   type TestContentQuestion,
 } from "./testContent";
-import { captureSelectionHighlight, useRunnerAnnotations } from "./annotations";
+import {
+  captureSelectionHighlight,
+  type Highlight,
+  type HighlightColor,
+} from "./annotations";
+import { useTeacherItemAnnotations } from "./teacherAnnotations";
+import { HighlighterBar, highlighterCursor } from "./HighlighterBar";
+import { SelectionPopover } from "./SelectionPopover";
 import {
   listReviewCourses,
   getAnswerBreakdown,
@@ -106,8 +116,14 @@ export function TestReviewPage(): JSX.Element {
   const [breakdown, setBreakdown] = useState<BreakdownRow[]>([]);
   const [breakdownLoading, setBreakdownLoading] = useState(false);
 
-  // highlights, saved per (teacher device, test)
-  const annot = useRunnerAnnotations(slug);
+  // Annotation suite — highlights + underlines + per-question notes, saved to
+  // the DB per (teacher, course, test) so the SAME test reviewed with two
+  // classes keeps two separate annotation sets. Falls back to device-local
+  // storage until a class is selected.
+  const annot = useTeacherItemAnnotations(courseId, "test", slug);
+  // Armed highlighter color (null = off; the select-then-pick popover still works).
+  const [hlColor, setHlColor] = useState<HighlightColor | null>(null);
+  const [notesOpen, setNotesOpen] = useState(false);
 
   useBreadcrumbLabel(slug, title || undefined);
 
@@ -204,14 +220,30 @@ export function TestReviewPage(): JSX.Element {
 
   const exit = () => navigate(testOverviewPath(slug));
 
-  const addHighlight = () => {
-    if (!question) return;
-    const hl = captureSelectionHighlight();
-    if (hl) {
-      annot.addHighlight(question.id, hl);
+  // Paint the current selection (color fill or underline) — shared by the
+  // armed-color pointerup path and the selection popover.
+  const questionId = question?.id ?? null;
+  const paintSelection = useCallback(
+    (color: HighlightColor, deco?: "underline"): void => {
+      if (!questionId) return;
+      const base = captureSelectionHighlight(color);
+      if (!base) return;
+      const hl: Highlight = deco ? { ...base, deco } : base;
+      annot.addHighlight(questionId, hl);
       window.getSelection()?.removeAllRanges();
-    }
-  };
+    },
+    [questionId, annot],
+  );
+
+  // While a color is armed, releasing a selection paints immediately
+  // (pointerup covers mouse + pen + touch; handle-adjusted touch selections
+  // go through the popover instead).
+  useEffect(() => {
+    if (hlColor == null) return;
+    const onUp = () => paintSelection(hlColor);
+    document.addEventListener("pointerup", onUp);
+    return () => document.removeEventListener("pointerup", onUp);
+  }, [hlColor, paintSelection]);
 
   // --- per-question stats for the section overview list + heatmap ---
   // Includes the most-common INCORRECT answer (the distractor the class fell
@@ -365,29 +397,43 @@ export function TestReviewPage(): JSX.Element {
               </span>
             )}
 
+            {/* Annotation suite: arm a color and drag, or just select text and
+                pick from the popover. Underline lives in the popover. */}
+            <HighlighterBar
+              active={hlColor}
+              onPick={(c) => setHlColor((prev) => (prev === c ? null : c))}
+              onClear={() => question && annot.clearHighlights(question.id)}
+              count={hlCount}
+            />
             <button
               type="button"
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={addHighlight}
-              title="Select text in the passage or question, then highlight it"
-              className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-slate-600 hover:bg-amber-50 hover:text-amber-700 dark:text-slate-300 dark:hover:bg-amber-950/30 dark:hover:text-amber-300"
+              onClick={() => setNotesOpen((v) => !v)}
+              aria-pressed={notesOpen}
+              className={[
+                "flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition",
+                notesOpen
+                  ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300"
+                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800",
+              ].join(" ")}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="m9 11-6 6v3h3l6-6M22 6 18 2l-7 7 4 4 7-7Z" />
+                <path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
               </svg>
-              Highlight
+              Notes{question && annot.get(question.id).note.trim() ? " •" : ""}
             </button>
-            {question && (
-              <button
-                type="button"
-                onClick={() => annot.clearHighlights(question.id)}
-                aria-hidden={hlCount === 0}
-                tabIndex={hlCount === 0 ? -1 : 0}
-                className={`rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-200/60 dark:text-slate-400 dark:hover:bg-slate-800 ${hlCount > 0 ? "" : "invisible pointer-events-none"}`}
-              >
-                Clear ({hlCount})
-              </button>
-            )}
+            {/* Where annotations land — per-class in the DB, or this device only. */}
+            <span
+              className="hidden text-[11px] text-slate-400 dark:text-slate-500 lg:inline"
+              title={
+                annot.scope === "course"
+                  ? "Highlights and notes are saved for this class only — reviewing this test with another class shows that class's own notes."
+                  : "No class selected — highlights and notes stay on this device."
+              }
+            >
+              {annot.scope === "course"
+                ? `Saved · ${selectedCourse?.title ?? "this class"}`
+                : "This device only"}
+            </span>
 
             {/* Manual layout override: force the passage + question to stack
                 even when there's room to split (Reading & Writing only). */}
@@ -666,7 +712,26 @@ export function TestReviewPage(): JSX.Element {
         )}
 
         {/* the question */}
-        <main className="min-h-0 flex-1">
+        <main
+          className="min-h-0 flex-1"
+          style={hlColor ? { cursor: highlighterCursor(hlColor) } : undefined}
+        >
+          {/* Per-question teacher note — saved with the highlights (per class). */}
+          {question && notesOpen && (
+            <div className="border-b border-slate-200 px-5 py-2 dark:border-slate-800">
+              <textarea
+                value={annot.get(question.id).note}
+                onChange={(e) => annot.setNote(question.id, e.target.value)}
+                rows={2}
+                placeholder={
+                  annot.scope === "course"
+                    ? "Teaching note for this question (saved for this class)…"
+                    : "Teaching note for this question (this device only)…"
+                }
+                className="w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+              />
+            </div>
+          )}
           {loading ? (
             <div className="mx-auto max-w-2xl space-y-4 px-6 py-8" aria-busy="true" aria-label="Loading review">
               <Skeleton className="h-6 w-40 rounded" />
@@ -704,6 +769,10 @@ export function TestReviewPage(): JSX.Element {
             />
           )}
         </main>
+
+        {/* Select-then-pick palette (colors + underline) over any settled
+            text selection — the touch path and the discoverable path. */}
+        <SelectionPopover enabled includeUnderline onPick={paintSelection} />
       </div>
 
       {heatmapOpen && (

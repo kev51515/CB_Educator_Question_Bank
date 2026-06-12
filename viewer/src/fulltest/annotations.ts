@@ -56,6 +56,11 @@ export interface Highlight {
   start: number;
   end: number;
   color: HighlightColor;
+  /**
+   * "underline" renders as a colored underline instead of a translucent fill
+   * (teacher review tool). Absent = classic fill highlight.
+   */
+  deco?: "underline";
 }
 
 /** Coerce a possibly-colorless (legacy) highlight to a valid color. */
@@ -70,9 +75,10 @@ export interface QAnnotation {
   note: string;
 }
 
-type AnnotationStore = Record<string, QAnnotation>;
+export type AnnotationStore = Record<string, QAnnotation>;
 
-const EMPTY: QAnnotation = { highlights: [], note: "" };
+export const EMPTY_ANNOTATION: QAnnotation = { highlights: [], note: "" };
+const EMPTY = EMPTY_ANNOTATION;
 
 // --- pure range helpers ------------------------------------------------------
 
@@ -196,6 +202,70 @@ export function currentSelectionText(): string {
   return window.getSelection()?.toString().trim().slice(0, 120) ?? "";
 }
 
+// --- pure store operations ----------------------------------------------------
+// Shared by useRunnerAnnotations (localStorage) and the DB-backed teacher hook
+// (teacherAnnotations.ts) so highlight merge semantics can never drift between
+// the two. Each returns the SAME reference when nothing changed.
+
+/** Add `hl`, trimming overlaps (newest wins) and merging same-(color,deco) spans. */
+export function storeAddHighlight(
+  prev: AnnotationStore,
+  qid: string,
+  hl: Highlight,
+): AnnotationStore {
+  const cur = prev[qid] ?? EMPTY;
+  // 1. Newest mark wins on overlap: subtract the new span from every existing
+  //    highlight in the SAME field (any color/deco), splitting them.
+  const trimmed: Highlight[] = cur.highlights.flatMap((h) =>
+    h.field !== hl.field
+      ? [h]
+      : subtractRange({ start: h.start, end: h.end }, { start: hl.start, end: hl.end }).map(
+          (r): Highlight => ({ ...h, start: r.start, end: r.end }),
+        ),
+  );
+  // 2. Merge the new range with same-field, same-(color,deco) ranges only.
+  const sameKind = trimmed.filter(
+    (h) => h.field === hl.field && h.color === hl.color && h.deco === hl.deco,
+  );
+  const otherKind = trimmed.filter(
+    (h) => !(h.field === hl.field && h.color === hl.color && h.deco === hl.deco),
+  );
+  const merged = mergeRanges([...sameKind, hl]).map(
+    (r): Highlight => ({ ...hl, start: r.start, end: r.end }),
+  );
+  return { ...prev, [qid]: { ...cur, highlights: [...otherKind, ...merged] } };
+}
+
+export function storeRemoveHighlightAt(
+  prev: AnnotationStore,
+  qid: string,
+  field: AnnotField,
+  offset: number,
+): AnnotationStore {
+  const cur = prev[qid];
+  if (!cur) return prev;
+  const next = cur.highlights.filter(
+    (h) => !(h.field === field && offset >= h.start && offset < h.end),
+  );
+  if (next.length === cur.highlights.length) return prev;
+  return { ...prev, [qid]: { ...cur, highlights: next } };
+}
+
+export function storeClearHighlights(prev: AnnotationStore, qid: string): AnnotationStore {
+  const cur = prev[qid];
+  if (!cur || cur.highlights.length === 0) return prev;
+  return { ...prev, [qid]: { ...cur, highlights: [] } };
+}
+
+export function storeSetNote(
+  prev: AnnotationStore,
+  qid: string,
+  note: string,
+): AnnotationStore {
+  const cur = prev[qid] ?? EMPTY;
+  return { ...prev, [qid]: { ...cur, note } };
+}
+
 // --- hook --------------------------------------------------------------------
 
 export interface UseRunnerAnnotations {
@@ -222,61 +292,28 @@ export function useRunnerAnnotations(slug: string): UseRunnerAnnotations {
 
   const addHighlight = useCallback(
     (qid: string, hl: Highlight): void => {
-      setStore((prev) => {
-        const cur = prev[qid] ?? EMPTY;
-        // 1. Newest color wins on overlap: subtract the new span from every
-        //    existing highlight in the SAME field (any color), splitting them.
-        const trimmed: Highlight[] = cur.highlights.flatMap((h) =>
-          h.field !== hl.field
-            ? [h]
-            : subtractRange({ start: h.start, end: h.end }, { start: hl.start, end: hl.end }).map(
-                (r): Highlight => ({ field: h.field, start: r.start, end: r.end, color: h.color }),
-              ),
-        );
-        // 2. Merge the new range with same-field, same-color ranges only.
-        const sameColor = trimmed.filter((h) => h.field === hl.field && h.color === hl.color);
-        const otherColor = trimmed.filter((h) => !(h.field === hl.field && h.color === hl.color));
-        const merged = mergeRanges([...sameColor, hl]).map(
-          (r): Highlight => ({ field: hl.field, start: r.start, end: r.end, color: hl.color }),
-        );
-        return { ...prev, [qid]: { ...cur, highlights: [...otherColor, ...merged] } };
-      });
+      setStore((prev) => storeAddHighlight(prev, qid, hl));
     },
     [setStore],
   );
 
   const removeHighlightAt = useCallback(
     (qid: string, field: AnnotField, offset: number): void => {
-      setStore((prev) => {
-        const cur = prev[qid];
-        if (!cur) return prev;
-        const next = cur.highlights.filter(
-          (h) => !(h.field === field && offset >= h.start && offset < h.end),
-        );
-        if (next.length === cur.highlights.length) return prev;
-        return { ...prev, [qid]: { ...cur, highlights: next } };
-      });
+      setStore((prev) => storeRemoveHighlightAt(prev, qid, field, offset));
     },
     [setStore],
   );
 
   const clearHighlights = useCallback(
     (qid: string): void => {
-      setStore((prev) => {
-        const cur = prev[qid];
-        if (!cur || cur.highlights.length === 0) return prev;
-        return { ...prev, [qid]: { ...cur, highlights: [] } };
-      });
+      setStore((prev) => storeClearHighlights(prev, qid));
     },
     [setStore],
   );
 
   const setNote = useCallback(
     (qid: string, note: string): void => {
-      setStore((prev) => {
-        const cur = prev[qid] ?? EMPTY;
-        return { ...prev, [qid]: { ...cur, note } };
-      });
+      setStore((prev) => storeSetNote(prev, qid, note));
     },
     [setStore],
   );

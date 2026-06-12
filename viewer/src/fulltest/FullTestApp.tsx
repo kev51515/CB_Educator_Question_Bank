@@ -33,6 +33,7 @@ import {
   type HighlightColor,
 } from "./annotations";
 import { HighlighterBar, highlighterCursor } from "./HighlighterBar";
+import { SelectionPopover } from "./SelectionPopover";
 import { ResultView } from "./ResultView";
 import {
   clearCachedAnswers,
@@ -587,31 +588,43 @@ function FullTestRunner() {
     qIdRef.current = questions[index]?.id ?? null;
   }, [moduleMeta, questions, index]);
 
-  // Highlighter: while a color is active, a mouseup that leaves a text
-  // selection inside a passage/stem field paints it in that color. Click-to-
-  // remove on an existing mark is handled in passageRender. Best-effort.
-  useEffect(() => {
-    if (phase !== "module" || hlColor == null) return;
-    const onUp = () => {
+  // Paint the current selection in `color` — shared by the armed-color
+  // pointerup path and the selection popover. No-op when the selection isn't
+  // capturable (collapsed, spans fields, inside a table/math segment).
+  const paintSelection = useCallback(
+    (color: HighlightColor): void => {
       const qid = qIdRef.current;
       if (!qid) return;
-      const hl = captureSelectionHighlight(hlColor);
-      if (hl) {
-        const text = currentSelectionText();
-        addHighlightRef.current(qid, hl);
-        window.getSelection()?.removeAllRanges();
-        if (runId && proctorOn) {
-          void logAction(runId, "highlight_add", {
-            question: currentQuestionRef.current ?? undefined,
-            module: currentModuleRef.current ?? undefined,
-            meta: { field: hl.field, start: hl.start, end: hl.end, color: hl.color, text },
-          });
-        }
+      const hl = captureSelectionHighlight(color);
+      if (!hl) return;
+      const text = currentSelectionText();
+      addHighlightRef.current(qid, hl);
+      window.getSelection()?.removeAllRanges();
+      if (runId && proctorOn) {
+        void logAction(runId, "highlight_add", {
+          question: currentQuestionRef.current ?? undefined,
+          module: currentModuleRef.current ?? undefined,
+          meta: { field: hl.field, start: hl.start, end: hl.end, color: hl.color, text },
+        });
       }
-    };
-    document.addEventListener("mouseup", onUp);
-    return () => document.removeEventListener("mouseup", onUp);
-  }, [phase, hlColor, runId, proctorOn]);
+    },
+    [runId, proctorOn],
+  );
+
+  // Highlighter: while a color is armed, releasing a text selection inside a
+  // passage/stem field paints it in that color. `pointerup` (not `mouseup`)
+  // so pen + touch fire too — "highlighting doesn't work" on iPads traced to
+  // the old mouse-only listener. Touch selections adjusted via the native
+  // drag handles are covered by the SelectionPopover below (selectionchange-
+  // driven), which also handles the no-color-armed case: select text → a
+  // floating palette appears → tap a color. Click-to-remove on an existing
+  // mark is handled in passageRender. Best-effort.
+  useEffect(() => {
+    if (phase !== "module" || hlColor == null) return;
+    const onUp = () => paintSelection(hlColor);
+    document.addEventListener("pointerup", onUp);
+    return () => document.removeEventListener("pointerup", onUp);
+  }, [phase, hlColor, paintSelection]);
 
   // Dwell stopwatch — flush the previous question's active time and start the
   // new one on every navigation; flush when leaving the module phase entirely.
@@ -689,10 +702,13 @@ function FullTestRunner() {
         void logProctorEvent(runId, "contextmenu_blocked", ctx());
       }
     };
-    // selectstart is blocked silently in strict mode (no log — too noisy).
-    const onSelectStart = (e: Event) => {
-      if (strict) e.preventDefault();
-    };
+    // Text SELECTION stays allowed even in strict mode — highlighting needs it
+    // (students on lockdown tests reported "highlighting doesn't work", and
+    // this blocker was why). Exfiltration is still covered: copy/cut/paste and
+    // the context menu are blocked above, so selected text can't leave the
+    // page. Kept as a no-op listener so the add/remove pairs below stay
+    // symmetric.
+    const onSelectStart = () => {};
     const onFsChange = () => {
       // Only meaningful when we're enforcing lockdown on a capable device.
       if (!strict || !supportsFullscreen) return;
@@ -1626,6 +1642,11 @@ function FullTestRunner() {
           />
         </div>
       )}
+
+      {/* Select-then-pick palette: appears over any settled text selection in
+          an annotatable field. The discoverable path (and the only touch path)
+          to highlighting — the armed-color drag remains the power-user path. */}
+      <SelectionPopover enabled={phase === "module"} onPick={paintSelection} />
 
       {/* ── Body: fills the viewport; only the panes scroll → no layout shift ── */}
       <main
