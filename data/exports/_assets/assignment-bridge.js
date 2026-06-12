@@ -52,6 +52,12 @@
 
   var iframeSubmitAttempted = false;
 
+  // The server-side attempt uuid (from start_qbank_attempt). Distinct from
+  // CLIENT_ATTEMPT_ID, which is the client dedup key. The parent (React runner)
+  // calls start with its authenticated client and threads the uuid via URL; we
+  // fall back to calling start ourselves if it's absent.
+  var ATTEMPT_UUID = params.get('attempt_uuid') || null;
+
   function findIframeSupabase() {
     // persistence.js historically exposes its Supabase client a few different
     // ways depending on build. Probe each, fall back to null.
@@ -204,6 +210,117 @@
     setTimeout(tryInstall, 100);
   }
   tryInstall();
+
+  // ---- Live monitoring (0214/0217): start an in-progress attempt + heartbeat
+  //      so the teacher Monitor sees this student's current question + idle, the
+  //      same as full tests. All best-effort; failures never affect the test.
+  function currentQuestionNumber() {
+    try {
+      var cards = document.querySelectorAll('.card[data-qid]');
+      for (var i = 0; i < cards.length; i++) {
+        if (cards[i].classList && cards[i].classList.contains('is-current')) return i + 1;
+      }
+    } catch (_) {}
+    return null;
+  }
+
+  function heartbeat() {
+    if (!ATTEMPT_UUID) return;
+    var sb = findIframeSupabase();
+    if (!sb) return;
+    try {
+      sb.rpc('assignment_heartbeat', {
+        p_attempt_id: ATTEMPT_UUID,
+        p_question: currentQuestionNumber(),
+      });
+    } catch (_) {}
+  }
+
+  var startTries = 0;
+  function startAttempt() {
+    // Parent already started it and gave us the uuid — just begin heartbeating.
+    if (ATTEMPT_UUID) {
+      if (global.AssignmentBridge) global.AssignmentBridge.attemptUuid = ATTEMPT_UUID;
+      heartbeat();
+      return;
+    }
+    var sb = findIframeSupabase();
+    if (!sb) {
+      // persistence.js / the supabase client may load slightly after us.
+      startTries++;
+      if (startTries <= 80) setTimeout(startAttempt, 150);
+      return;
+    }
+    try {
+      var p = sb.rpc('start_qbank_attempt', {
+        p_assignment_id: ASSIGNMENT_ID,
+        p_client_attempt_id: CLIENT_ATTEMPT_ID,
+      });
+      if (p && typeof p.then === 'function') {
+        p.then(function (res) {
+          if (res && res.data) {
+            ATTEMPT_UUID = res.data;
+            if (global.AssignmentBridge) global.AssignmentBridge.attemptUuid = ATTEMPT_UUID;
+            heartbeat();
+          }
+        }, function () {});
+      }
+    } catch (_) {}
+  }
+  startAttempt();
+  try {
+    setInterval(heartbeat, 12000);
+    document.addEventListener('click', function () { setTimeout(heartbeat, 50); }, true);
+  } catch (_) {}
+
+  // ---- Withhold gate (0209/0213): when the teacher withholds results, blank
+  //      the static runner's results panel (score + pacing + per-question chart)
+  //      with a friendly "not released yet" message. The durable record is
+  //      already gated server-side; this hides the immediate in-iframe reveal.
+  function installWithholdGate() {
+    function blank(panel) {
+      try {
+        panel.innerHTML =
+          '<header class="bluebook-results__header">' +
+          '<h2 class="bluebook-results__title">Results not released yet</h2>' +
+          '<div class="bluebook-results__eyebrow u-ui">Submitted</div></header>' +
+          '<p style="padding:16px 4px;color:#475569;font-size:14px;line-height:1.5;">' +
+          'Your answers are submitted. Your teacher hasn’t released results for ' +
+          'this assignment yet — check back once they do.</p>';
+      } catch (_) {}
+    }
+    function sweep() {
+      try {
+        var p = document.querySelector('.bluebook-results');
+        if (p && !p.getAttribute('data-withheld')) {
+          p.setAttribute('data-withheld', '1');
+          blank(p);
+        }
+      } catch (_) {}
+    }
+    try {
+      sweep();
+      var obs = new MutationObserver(sweep);
+      obs.observe(document.body, { childList: true, subtree: true });
+    } catch (_) {}
+  }
+
+  // Ask the server whether this assignment withholds results, then arm the gate.
+  (function armWithholdGate() {
+    var sb = findIframeSupabase();
+    if (!sb) {
+      setTimeout(armWithholdGate, 200);
+      return;
+    }
+    try {
+      var q = sb.from('assignments').select('withhold_results').eq('id', ASSIGNMENT_ID).maybeSingle();
+      if (q && typeof q.then === 'function') {
+        q.then(function (res) {
+          if (res && res.data && res.data.withhold_results) installWithholdGate();
+        }, function () {});
+      }
+    } catch (_) {}
+  })();
 
   // Expose a debugging handle.
   global.AssignmentBridge = {

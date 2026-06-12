@@ -183,12 +183,28 @@ export function QBankAssignmentRunner({
       });
       return;
     }
+    // Start a server-side in-progress attempt so the teacher Monitor sees this
+    // student live (0217), and thread its uuid to the iframe for heartbeats.
+    // Best-effort: if it fails the iframe still runs (the bridge falls back to
+    // starting one itself, and submit creates the row regardless).
+    let attemptUuid: string | null = null;
+    try {
+      const { data } = await supabase.rpc("start_qbank_attempt", {
+        p_assignment_id: assignment.id,
+        p_client_attempt_id: clientAttemptIdRef.current,
+      });
+      if (typeof data === "string") attemptUuid = data;
+    } catch {
+      /* non-fatal — see note above */
+    }
+
     const url = new URL(`/exports/${path}`, window.location.origin);
     url.searchParams.set("mode", "test");
     url.searchParams.set("assignment_id", assignment.id);
     url.searchParams.set("client_attempt_id", clientAttemptIdRef.current);
     // Back-compat: legacy bridge builds read `attempt_id`.
     url.searchParams.set("attempt_id", clientAttemptIdRef.current);
+    if (attemptUuid) url.searchParams.set("attempt_uuid", attemptUuid);
     setStage({
       kind: "ready",
       iframeSrc: url.pathname + url.search,
