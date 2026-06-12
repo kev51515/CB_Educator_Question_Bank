@@ -251,15 +251,16 @@ export function AssignmentDetailPage() {
     setActionBusy(true);
     setActionError(null);
     try {
-      const { error: delError } = await supabase
-        .from("assignments")
-        .delete()
-        .eq("id", assignment.id);
+      // Soft delete (0202): Trash with 90-day recovery — attempts survive
+      // and come back on restore. Navigate back up to the assignments list.
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "assignment",
+        p_id: assignment.id,
+      });
       if (delError) {
         setActionError(delError.message);
         return;
       }
-      // Cascade removes attempts. Navigate back up to the assignments list.
       navigate(classAssignmentsPath(cls.short_code));
     } catch (err: unknown) {
       setActionError(getErrorMessage(err, "Failed to delete assignment."));

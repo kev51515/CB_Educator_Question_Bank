@@ -11,10 +11,9 @@
  *   - mints 1-hour signed Storage URLs for kind='file' rows
  *   - subscribes to postgres_changes so a second tab sees inserts/updates
  *
- * Delete behavior: for kind='file' rows we also remove the orphan Storage
- * object after the DB row is gone. Best-effort — if the storage delete fails
- * (network, RLS regression) we surface a warning but don't roll back the DB
- * delete because the row is already gone and the user has moved on.
+ * Delete behavior (0202): soft delete into the Trash — recoverable for 90
+ * days from Admin → Trash. Storage objects are kept while trashed so a
+ * restore brings the file back; the purge job drops the row after 90 days.
  *
  * Edit is in-place: title + description only. We don't expose re-upload (the
  * spec calls for delete + re-add) or kind switching (file ↔ link); those are
@@ -44,7 +43,6 @@ import { getErrorMessage } from "./materialsHelpers";
 import { MaterialCard } from "./MaterialCard";
 import { EditMaterialModal } from "./EditMaterialModal";
 
-const STORAGE_BUCKET = "course-materials";
 
 interface ConfirmDeleteState {
   material: CourseMaterial;
@@ -252,36 +250,33 @@ export function CourseMaterials() {
   ): Promise<void> => {
     setActionBusy(true);
     try {
-      const { error: delError } = await supabase
-        .from("course_materials")
-        .delete()
-        .eq("id", material.id);
+      // Soft delete (0202): Trash with 90-day recovery. The storage object
+      // is KEPT — it's needed if the material is restored; the purge job
+      // drops the row after 90 days (blob orphan accepted, see 0202 header).
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "material",
+        p_id: material.id,
+      });
       if (delError) {
         toast.error("Couldn't delete material", delError.message);
         return;
       }
-
-      // Best-effort orphan cleanup: the DB row is already gone (RLS cascade
-      // would also clean up if Storage had ON DELETE wired, but it doesn't).
-      // If the Storage delete fails we surface a soft warning toast but
-      // treat the overall delete as successful — the row is invisible to
-      // students either way because the SELECT policy gates on the metadata
-      // row.
-      if (material.kind === "file" && material.file_path) {
-        const { error: storageError } = await supabase.storage
-          .from(STORAGE_BUCKET)
-          .remove([material.file_path]);
-        if (storageError) {
-          toast.warning(
-            "Material deleted",
-            `Storage cleanup may need a retry: ${storageError.message}`,
-          );
-        } else {
-          toast.success("Material deleted", material.title);
-        }
-      } else {
-        toast.success("Material deleted", material.title);
-      }
+      toast.success("Moved to Trash", `${material.title} — recoverable for 90 days.`, {
+        action: {
+          label: "Undo",
+          onAction: () => {
+            void supabase
+              .rpc("restore_content", { p_kind: "material", p_id: material.id })
+              .then(({ error }) => {
+                if (error) toast.error("Couldn't restore", error.message);
+                else {
+                  toast.success("Material restored", material.title);
+                  void refresh();
+                }
+              });
+          },
+        },
+      });
 
       setConfirmDelete(null);
       void refresh();
@@ -334,45 +329,33 @@ export function CourseMaterials() {
     }
     setBulkBusy(true);
 
-    // Capture file paths BEFORE the DB delete so we can clean up storage
-    // AFTERWARDS — if the DB delete fails we leave storage untouched (no
-    // orphaned-row scenario). Matches the safer ordering used by the
-    // single-row onConfirmDelete path.
-    const filePaths = materials
-      .filter((m) => ids.includes(m.id) && m.kind === "file" && m.file_path)
-      .map((m) => m.file_path as string);
-
-    const { error: delError } = await supabase
-      .from("course_materials")
-      .delete()
-      .in("id", ids);
-    if (delError) {
-      setBulkBusy(false);
-      setBulkDeleteOpen(false);
-      toast.error("Couldn't delete materials", delError.message);
-      return;
-    }
-
-    // DB delete succeeded — now best-effort remove the storage objects.
-    // Ignore failures here: a dangling storage object is preferable to an
-    // orphaned row pointing at a vanished file.
-    if (filePaths.length > 0) {
-      try {
-        await supabase.storage.from(STORAGE_BUCKET).remove(filePaths);
-      } catch {
-        // ignored — see comment above
-      }
+    // Soft delete (0202): each material moves to the Trash. Storage objects
+    // are KEPT so a restore brings the file back intact.
+    let failed = 0;
+    for (const id of ids) {
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "material",
+        p_id: id,
+      });
+      if (delError) failed += 1;
     }
 
     setBulkBusy(false);
     setBulkDeleteOpen(false);
-    toast.success(
-      "Materials deleted",
-      `${ids.length} material${ids.length === 1 ? "" : "s"} deleted.`,
-    );
+    if (failed > 0) {
+      toast.error(
+        "Some materials couldn't be moved to Trash",
+        `${failed} of ${ids.length} failed — refresh and try again.`,
+      );
+    } else {
+      toast.success(
+        "Materials moved to Trash",
+        `${ids.length} material${ids.length === 1 ? "" : "s"} — recoverable for 90 days.`,
+      );
+    }
     exitSelectMode();
     void refresh();
-  }, [exitSelectMode, materials, refresh, selectedIds, toast]);
+  }, [exitSelectMode, refresh, selectedIds, toast]);
 
   // Sorted-once view so move-up/down indices match the rendered order.
   const ordered = [...materials].sort((a, b) => a.position - b.position);
@@ -598,7 +581,7 @@ export function CourseMaterials() {
       {bulkDeleteOpen && (
         <ConfirmDialog
           title={`Delete ${selectedIds.size} material${selectedIds.size === 1 ? "" : "s"}?`}
-          body={`Delete ${selectedIds.size} material${selectedIds.size === 1 ? "" : "s"}? Uploaded files will be removed from storage. This cannot be undone.`}
+          body={`Move ${selectedIds.size} material${selectedIds.size === 1 ? "" : "s"} to the Trash? Recoverable for 90 days from Admin → Trash.`}
           confirmLabel="Delete materials"
           destructive
           busy={bulkBusy}
@@ -620,11 +603,9 @@ export function CourseMaterials() {
                 </span>{" "}
                 will no longer be visible to students.
               </p>
-              {confirmDelete.material.kind === "file" && (
-                <p className="text-rose-700 dark:text-rose-300">
-                  The uploaded file will be removed from storage.
-                </p>
-              )}
+              <p className="text-slate-500 dark:text-slate-400">
+                Recoverable for 90 days from Admin → Trash.
+              </p>
             </div>
           }
           confirmLabel="Delete material"

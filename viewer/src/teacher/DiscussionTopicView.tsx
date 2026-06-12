@@ -352,15 +352,16 @@ export function DiscussionTopicView() {
     if (!topic) return;
     setActionBusy(true);
     try {
-      const { error: delError } = await supabase
-        .from("discussion_topics")
-        .delete()
-        .eq("id", topic.id);
+      // Soft delete (0202): Trash with 90-day recovery (replies survive).
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "topic",
+        p_id: topic.id,
+      });
       if (delError) {
         toast.error("Couldn't delete topic", delError.message);
         return;
       }
-      toast.success("Topic deleted");
+      toast.success("Moved to Trash", "Recoverable for 90 days from Admin → Trash.");
       navigate(courseDiscussionsPath(cls.short_code));
     } catch (err: unknown) {
       const msg = getErrorMessage(err, "Failed to delete topic.");

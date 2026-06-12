@@ -1,15 +1,17 @@
 /**
  * AdminTrashPage — /educator/account/admin/trash
  * ===============================================
- * The recovery surface for soft-deleted courses and users (migration 0198).
- * Deleting anywhere in the app moves the row here instead of destroying it;
- * a daily purge job hard-deletes anything older than 90 days. This page lists
- * both kinds with time-remaining and a one-click Restore.
+ * The recovery surface for everything soft-deleted (migrations 0198 + 0202):
+ * courses, users, assignments, modules, module items, materials,
+ * announcements, and discussion topics. Deleting anywhere in the app moves
+ * the row here instead of destroying it; a daily purge job hard-deletes
+ * anything older than 90 days.
  *
- * Reads are direct table queries under the admin RLS policies ("courses:
- * admin reads all" + "profiles: staff reads all" — both unfiltered by
- * deleted_at on purpose). Restores go through the restore_course /
- * restore_user RPCs so they're audited.
+ * Data: the admin-only `list_trash()` RPC (one fetch, all kinds — required
+ * because 0202 filters trashed content out of EVERY direct query, staff
+ * included). Restores go through restore_course / restore_user /
+ * restore_content so they're audited and re-wire side effects (e.g. a
+ * restored assignment brings its Modules links back).
  */
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
@@ -19,18 +21,65 @@ import { SkeletonRows } from "@/components/Skeleton";
 
 const PURGE_DAYS = 90;
 
-interface TrashedCourse {
-  id: string;
-  name: string;
-  deleted_at: string;
-  teacher: { display_name: string | null } | null;
-}
+/** Kinds in display order, with their section headers + restore wiring. */
+const KIND_META: ReadonlyArray<{
+  kind: string;
+  header: string;
+  restore: (id: string) => Promise<{ error: { message: string } | null }>;
+}> = [
+  {
+    kind: "course",
+    header: "Courses",
+    restore: async (id) => supabase.rpc("restore_course", { p_course_id: id }),
+  },
+  {
+    kind: "user",
+    header: "Users",
+    restore: async (id) => supabase.rpc("restore_user", { p_user_id: id }),
+  },
+  {
+    kind: "assignment",
+    header: "Assignments",
+    restore: async (id) =>
+      supabase.rpc("restore_content", { p_kind: "assignment", p_id: id }),
+  },
+  {
+    kind: "module",
+    header: "Modules",
+    restore: async (id) =>
+      supabase.rpc("restore_content", { p_kind: "module", p_id: id }),
+  },
+  {
+    kind: "module_item",
+    header: "Module items",
+    restore: async (id) =>
+      supabase.rpc("restore_content", { p_kind: "module_item", p_id: id }),
+  },
+  {
+    kind: "material",
+    header: "Materials",
+    restore: async (id) =>
+      supabase.rpc("restore_content", { p_kind: "material", p_id: id }),
+  },
+  {
+    kind: "announcement",
+    header: "Announcements",
+    restore: async (id) =>
+      supabase.rpc("restore_content", { p_kind: "announcement", p_id: id }),
+  },
+  {
+    kind: "topic",
+    header: "Discussions",
+    restore: async (id) =>
+      supabase.rpc("restore_content", { p_kind: "topic", p_id: id }),
+  },
+];
 
-interface TrashedUser {
+interface TrashRow {
+  kind: string;
   id: string;
-  email: string;
-  display_name: string | null;
-  role: string;
+  label: string;
+  context: string | null;
   deleted_at: string;
 }
 
@@ -59,77 +108,43 @@ function DaysLeftBadge({ deletedAt }: { deletedAt: string }) {
 
 export function AdminTrashPage(): JSX.Element {
   const toast = useToast();
-  const [courses, setCourses] = useState<TrashedCourse[] | null>(null);
-  const [users, setUsers] = useState<TrashedUser[] | null>(null);
+  const [rows, setRows] = useState<TrashRow[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
 
   const refresh = useCallback(async (): Promise<void> => {
     setError(null);
-    const [c, u] = await Promise.all([
-      supabase
-        .from("courses")
-        .select("id, name, deleted_at, teacher:profiles!courses_teacher_id_fkey(display_name)")
-        .not("deleted_at", "is", null)
-        .order("deleted_at", { ascending: false }),
-      supabase
-        .from("profiles")
-        .select("id, email, display_name, role, deleted_at")
-        .not("deleted_at", "is", null)
-        .order("deleted_at", { ascending: false }),
-    ]);
-    if (c.error || u.error) {
-      setError(c.error?.message ?? u.error?.message ?? "Couldn't load the trash.");
+    const { data, error: rpcError } = await supabase.rpc("list_trash");
+    if (rpcError) {
+      setError(rpcError.message);
       return;
     }
-    setCourses((c.data ?? []) as unknown as TrashedCourse[]);
-    setUsers((u.data ?? []) as unknown as TrashedUser[]);
+    setRows((data ?? []) as TrashRow[]);
   }, []);
 
   useEffect(() => {
     void refresh();
   }, [refresh]);
 
-  const restore = async (
-    kind: "course" | "user",
-    id: string,
-    label: string,
-  ): Promise<void> => {
-    setBusyId(id);
+  const restore = async (row: TrashRow): Promise<void> => {
+    const meta = KIND_META.find((k) => k.kind === row.kind);
+    if (!meta) return;
+    setBusyId(row.id);
     try {
-      const { error: rpcError } = await supabase.rpc(
-        kind === "course" ? "restore_course" : "restore_user",
-        kind === "course" ? { p_course_id: id } : { p_user_id: id },
-      );
+      const { error: rpcError } = await meta.restore(row.id);
       if (rpcError) {
-        toast.error(`Couldn't restore ${kind}`, rpcError.message);
+        toast.error("Couldn't restore", rpcError.message);
         return;
       }
-      toast.success(`${kind === "course" ? "Course" : "User"} restored`, label);
+      toast.success("Restored", row.label);
       void refresh();
     } finally {
       setBusyId(null);
     }
   };
 
-  const restoreBtn = (
-    kind: "course" | "user",
-    id: string,
-    label: string,
-  ): JSX.Element => (
-    <button
-      type="button"
-      onClick={() => void restore(kind, id, label)}
-      disabled={busyId === id}
-      title={`Put this ${kind} back exactly as it was`}
-      className="rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-indigo-700 disabled:opacity-50"
-    >
-      {busyId === id ? "Restoring…" : "Restore"}
-    </button>
-  );
-
-  const loading = courses === null || users === null;
-  const empty = !loading && courses.length === 0 && users.length === 0;
+  const loading = rows === null;
+  const empty = !loading && rows.length === 0;
 
   return (
     <div className="space-y-6">
@@ -138,8 +153,10 @@ export function AdminTrashPage(): JSX.Element {
           Trash
         </h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Deleted courses and users are kept here for {PURGE_DAYS} days, then
-          permanently removed. Restoring puts everything back exactly as it was.
+          Everything deleted in the app — courses, users, assignments, modules,
+          materials, announcements, discussions — is kept here for {PURGE_DAYS}{" "}
+          days, then permanently removed. Restoring puts it back exactly as it
+          was.
         </p>
       </header>
 
@@ -162,68 +179,51 @@ export function AdminTrashPage(): JSX.Element {
       ) : empty ? (
         <EmptyState
           title="Trash is empty"
-          body="Anything you delete — courses, students, educators — lands here first and stays recoverable for 90 days."
+          body="Anything you delete lands here first and stays recoverable for 90 days."
         />
       ) : (
-        <>
-          {courses.length > 0 && (
-            <section className="space-y-2">
+        KIND_META.map(({ kind, header }) => {
+          const group = rows.filter((r) => r.kind === kind);
+          if (group.length === 0) return null;
+          return (
+            <section key={kind} className="space-y-2">
               <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
-                Courses ({courses.length})
+                {header} ({group.length})
               </h2>
               <ul className="divide-y divide-slate-100 overflow-hidden rounded-xl ring-1 ring-slate-200 dark:divide-slate-800 dark:ring-slate-800">
-                {courses.map((c) => (
+                {group.map((r) => (
                   <li
-                    key={c.id}
+                    key={r.id}
                     className="flex items-center justify-between gap-3 bg-white px-4 py-3 dark:bg-slate-900"
                   >
                     <div className="min-w-0">
                       <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
-                        {c.name}
+                        {r.label}
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
-                        {c.teacher?.display_name ?? "—"}
-                      </p>
+                      {r.context && (
+                        <p className="truncate text-xs text-slate-500 dark:text-slate-400">
+                          {r.context}
+                        </p>
+                      )}
                     </div>
                     <div className="flex shrink-0 items-center gap-2">
-                      <DaysLeftBadge deletedAt={c.deleted_at} />
-                      {restoreBtn("course", c.id, c.name)}
+                      <DaysLeftBadge deletedAt={r.deleted_at} />
+                      <button
+                        type="button"
+                        onClick={() => void restore(r)}
+                        disabled={busyId === r.id}
+                        title="Put this back exactly as it was"
+                        className="rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-indigo-700 disabled:opacity-50"
+                      >
+                        {busyId === r.id ? "Restoring…" : "Restore"}
+                      </button>
                     </div>
                   </li>
                 ))}
               </ul>
             </section>
-          )}
-
-          {users.length > 0 && (
-            <section className="space-y-2">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
-                Users ({users.length})
-              </h2>
-              <ul className="divide-y divide-slate-100 overflow-hidden rounded-xl ring-1 ring-slate-200 dark:divide-slate-800 dark:ring-slate-800">
-                {users.map((u) => (
-                  <li
-                    key={u.id}
-                    className="flex items-center justify-between gap-3 bg-white px-4 py-3 dark:bg-slate-900"
-                  >
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
-                        {u.display_name ?? u.email}
-                      </p>
-                      <p className="truncate text-xs text-slate-500 dark:text-slate-400">
-                        {u.email} · {u.role} · sign-in blocked while in trash
-                      </p>
-                    </div>
-                    <div className="flex shrink-0 items-center gap-2">
-                      <DaysLeftBadge deletedAt={u.deleted_at} />
-                      {restoreBtn("user", u.id, u.display_name ?? u.email)}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-        </>
+          );
+        })
       )}
     </div>
   );

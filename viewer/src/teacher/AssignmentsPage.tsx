@@ -242,20 +242,30 @@ export function AssignmentsPage({
       return;
     }
     setBulkBusy(true);
-    const { error: delError } = await supabase
-      .from("assignments")
-      .delete()
-      .in("id", ids);
+    // Soft delete (0202): each assignment moves to the Trash (90-day
+    // recovery; its Modules links are hidden with it). Sequential loop —
+    // bulk sizes here are small.
+    let failed = 0;
+    for (const id of ids) {
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "assignment",
+        p_id: id,
+      });
+      if (delError) failed += 1;
+    }
     setBulkBusy(false);
     setBulkDeleteOpen(false);
-    if (delError) {
-      toast.error("Couldn't delete assignments", delError.message);
-      return;
+    if (failed > 0) {
+      toast.error(
+        "Some assignments couldn't be moved to Trash",
+        `${failed} of ${ids.length} failed — refresh and try again.`,
+      );
+    } else {
+      toast.success(
+        "Assignments moved to Trash",
+        `${ids.length} assignment${ids.length === 1 ? "" : "s"} — recoverable for 90 days.`,
+      );
     }
-    toast.success(
-      "Assignments deleted",
-      `${ids.length} assignment${ids.length === 1 ? "" : "s"} deleted.`,
-    );
     exitSelectMode();
     void refresh();
   }, [exitSelectMode, refresh, selectedIds, toast]);
@@ -263,16 +273,32 @@ export function AssignmentsPage({
   const onDelete = async (assignment: Assignment) => {
     setActionBusy(true);
     try {
-      const { error: delError } = await supabase
-        .from("assignments")
-        .delete()
-        .eq("id", assignment.id);
+      // Soft delete (0202): Trash with 90-day recovery; Modules links hidden.
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "assignment",
+        p_id: assignment.id,
+      });
       if (delError) {
         toast.error("Couldn't delete assignment", delError.message);
         return;
       }
       setConfirmDelete(null);
-      toast.success("Assignment deleted", assignment.title);
+      toast.success("Moved to Trash", `${assignment.title} — recoverable for 90 days.`, {
+        action: {
+          label: "Undo",
+          onAction: () => {
+            void supabase
+              .rpc("restore_content", { p_kind: "assignment", p_id: assignment.id })
+              .then(({ error }) => {
+                if (error) toast.error("Couldn't restore", error.message);
+                else {
+                  toast.success("Assignment restored", assignment.title);
+                  void refresh();
+                }
+              });
+          },
+        },
+      });
       void refresh();
     } catch (err: unknown) {
       toast.error(

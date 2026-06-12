@@ -514,17 +514,34 @@ export function ModulesPage(): JSX.Element {
 
   const onConfirmDeleteModule = useCallback(async (): Promise<void> => {
     if (!deletingModule) return;
-    const { error: delError } = await supabase
-      .from("course_modules")
-      .delete()
-      .eq("id", deletingModule.id);
+    // Soft delete (0202): Trash with 90-day recovery; items hide with it.
+    const moduleId = deletingModule.id;
+    const { error: delError } = await supabase.rpc("trash_content", {
+      p_kind: "module",
+      p_id: moduleId,
+    });
     if (delError) {
       toast.error("Couldn't delete module", delError.message);
       return;
     }
     const deletedName = deletingModule.name;
     setDeletingModule(null);
-    toast.success("Module deleted", deletedName);
+    toast.success("Moved to Trash", `${deletedName} — recoverable for 90 days.`, {
+      action: {
+        label: "Undo",
+        onAction: () => {
+          void supabase
+            .rpc("restore_content", { p_kind: "module", p_id: moduleId })
+            .then(({ error }) => {
+              if (error) toast.error("Couldn't restore", error.message);
+              else {
+                toast.success("Module restored", deletedName);
+                void refresh();
+              }
+            });
+        },
+      },
+    });
     await refresh();
   }, [deletingModule, refresh, toast]);
 
@@ -974,20 +991,28 @@ export function ModulesPage(): JSX.Element {
       return;
     }
     setBulkBusy(true);
-    const { error: delError } = await supabase
-      .from("course_modules")
-      .delete()
-      .in("id", ids);
+    // Soft delete (0202): each module moves to the Trash (90-day recovery).
+    let failed = 0;
+    for (const id of ids) {
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "module",
+        p_id: id,
+      });
+      if (delError) failed += 1;
+    }
     setBulkBusy(false);
     setBulkDeleteOpen(false);
-    if (delError) {
-      toast.error("Couldn't delete modules", delError.message);
-      return;
+    if (failed > 0) {
+      toast.error(
+        "Some modules couldn't be moved to Trash",
+        `${failed} of ${ids.length} failed — refresh and try again.`,
+      );
+    } else {
+      toast.success(
+        "Modules moved to Trash",
+        `${ids.length} module${ids.length === 1 ? "" : "s"} — recoverable for 90 days.`,
+      );
     }
-    toast.success(
-      "Modules deleted",
-      `${ids.length} module${ids.length === 1 ? "" : "s"} removed.`,
-    );
     exitSelectMode();
     await refresh();
   }, [exitSelectMode, refresh, selectedModuleIds, toast]);

@@ -195,16 +195,32 @@ export function CourseAnnouncements() {
   const onDelete = async (announcement: Announcement) => {
     setActionBusy(true);
     try {
-      const { error: delError } = await supabase
-        .from("course_announcements")
-        .delete()
-        .eq("id", announcement.id);
+      // Soft delete (0202): Trash with 90-day recovery.
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "announcement",
+        p_id: announcement.id,
+      });
       if (delError) {
         toast.error("Couldn't delete announcement", delError.message);
         return;
       }
       setConfirmDelete(null);
-      toast.success("Announcement deleted", announcement.title);
+      toast.success("Moved to Trash", `${announcement.title} — recoverable for 90 days.`, {
+        action: {
+          label: "Undo",
+          onAction: () => {
+            void supabase
+              .rpc("restore_content", { p_kind: "announcement", p_id: announcement.id })
+              .then(({ error }) => {
+                if (error) toast.error("Couldn't restore", error.message);
+                else {
+                  toast.success("Announcement restored", announcement.title);
+                  void refresh();
+                }
+              });
+          },
+        },
+      });
       void refresh();
     } catch (err: unknown) {
       toast.error(

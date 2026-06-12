@@ -420,15 +420,31 @@ const ModuleCard = memo(function ModuleCard({
 
   const onDeleteItem = useCallback(
     async (item: ModuleItem): Promise<void> => {
-      const { error } = await supabase
-        .from("module_items")
-        .delete()
-        .eq("id", item.id);
+      // Soft delete (0202): Trash with 90-day recovery.
+      const { error } = await supabase.rpc("trash_content", {
+        p_kind: "module_item",
+        p_id: item.id,
+      });
       if (error) {
         toast.error("Couldn't delete item", error.message);
         return;
       }
-      toast.success("Item deleted", item.title);
+      toast.success("Moved to Trash", `${item.title} — recoverable for 90 days.`, {
+        action: {
+          label: "Undo",
+          onAction: () => {
+            void supabase
+              .rpc("restore_content", { p_kind: "module_item", p_id: item.id })
+              .then(({ error: restoreErr }) => {
+                if (restoreErr) toast.error("Couldn't restore", restoreErr.message);
+                else {
+                  toast.success("Item restored", item.title);
+                  void onRefresh();
+                }
+              });
+          },
+        },
+      });
       await onRefresh();
     },
     [onRefresh, toast],

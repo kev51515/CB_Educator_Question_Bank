@@ -238,15 +238,32 @@ export function CourseDiscussions() {
     if (!confirmDeleteTopic) return;
     setDeleteBusy(true);
     try {
-      const { error: delError } = await supabase
-        .from("discussion_topics")
-        .delete()
-        .eq("id", confirmDeleteTopic.id);
+      // Soft delete (0202): Trash with 90-day recovery (replies survive).
+      const topicId = confirmDeleteTopic.id;
+      const { error: delError } = await supabase.rpc("trash_content", {
+        p_kind: "topic",
+        p_id: topicId,
+      });
       if (delError) {
         toast.error("Couldn't delete topic", delError.message);
         return;
       }
-      toast.success("Topic deleted");
+      toast.success("Moved to Trash", "Recoverable for 90 days.", {
+        action: {
+          label: "Undo",
+          onAction: () => {
+            void supabase
+              .rpc("restore_content", { p_kind: "topic", p_id: topicId })
+              .then(({ error }) => {
+                if (error) toast.error("Couldn't restore", error.message);
+                else {
+                  toast.success("Topic restored");
+                  void refresh();
+                }
+              });
+          },
+        },
+      });
       setConfirmDeleteTopic(null);
       void refresh();
     } catch (err: unknown) {
