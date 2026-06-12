@@ -1581,29 +1581,22 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
         return (
           <div
             className={
-              // Recessed "drawer" that reads as INSIDE the parent module:
-              // pulled up to tuck under the parent card (-mt-2 + square top,
-              // no top border) so it's clearly attached, not a floating
-              // sibling; inset on both sides (ml-6 mr-3) so it's visibly
-              // narrower than the parent; a stronger tint + inset shadow make
-              // it look carved into the parent. No left accent stripe (reads
-              // as AI chrome). Active asChild drop target → indigo border.
-              "relative ml-6 mr-3 -mt-2 px-3 pt-5 pb-3 space-y-3 rounded-b-2xl rounded-t-none border border-t-0 transition-colors " +
-              "shadow-[inset_0_2px_5px_-2px_rgba(15,23,42,0.12)] " +
-              // A draft parent washes its whole submodule drawer an even
-              // darker grey (recessed below the card) so the unpublished
-              // section reads as one solid block.
-              (effectiveDraft
-                ? "bg-slate-400/45 dark:bg-slate-900/60 "
-                : "bg-slate-100/80 dark:bg-slate-800/40 ") +
+              // Children read as nested via INDENT + a quiet left guide line —
+              // the Notion/Linear pattern this file's own elbow comment cites.
+              // No filled panel / inset shadow at rest: a shaded box competes
+              // with the (already-carded) child rows for attention and reads as
+              // a loud floating block rather than clean nesting. The filled,
+              // bordered treatment is reserved for the active asChild drop
+              // target so the nest destination is unmistakable while dragging.
+              "relative ml-5 mt-1.5 pl-4 pt-1.5 pb-1 space-y-3 transition-colors " +
               (isNestDropTarget
-                ? "border-indigo-400 dark:border-indigo-700 "
-                : "border-slate-200 dark:border-slate-700 ")
+                ? "rounded-xl border border-indigo-400 dark:border-indigo-700 bg-indigo-50/50 dark:bg-indigo-950/25 "
+                : "border-l-2 border-slate-200/80 dark:border-slate-700/70 ")
             }
             aria-label="Submodules"
           >
             {/* Quiet eyebrow so the nesting is labelled, not just implied. */}
-            <div className="pointer-events-none -mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+            <div className="pointer-events-none text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
               Submodules
             </div>
             {/* asChild insertion bar + ghost preview lives INSIDE the
