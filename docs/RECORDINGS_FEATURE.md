@@ -134,6 +134,61 @@ All three call Gemini with structured-JSON output (same key as transcription).
 Secrets to set (owner action): `GEMINI_API_KEY` (Google AI Studio, paid tier);
 optional `GEMINI_MODEL` (default `gemini-2.5-flash`). One key powers transcription, notes, AND quiz — no Anthropic key needed.
 
+## Publish design (Phase 3b)
+
+**Isolated parts BUILT + staged (not deployed)** as of 2026-06-12:
+`0218_authored_attempts.sql` (file, not pushed) — `authored_questions.assignment_id`
+snapshot column + `get_authored_questions` (answer-stripped reader) +
+`submit_authored_attempt` (server-graded, idempotent); and dormant
+`AuthoredQuizRunner.tsx` (built, not wired/routed). `tsc -b` clean.
+**STILL DEFERRED** (the shared-assignment collision surface): the
+`assignments_kind_consistency` ALTER to allow `'authored_set'`,
+`publish_authored_quiz`, the `QuizDraftPanel` Publish wiring, and the
+one-line `AssignmentRunner` branch — to be done once the parallel assignment
+rework settles.
+
+How a reviewed draft quiz becomes a **student-takeable assignment**. Chosen
+shape: a new lightweight assignment kind that reuses the stable shared tables
+(`assignments`, `assignment_attempts`, `module_items`, memberships) and a
+dedicated runner — so it stays OUT of the full-test/qbank machinery the
+parallel session is actively rewriting.
+
+**Data**
+- New `assignments.kind = 'authored_set'`. Requires altering the
+  `assignments_kind_consistency` CHECK (0045) — the one shared-constraint
+  collision point with the parallel assignment work; the ALTER is targeted
+  (adds a third allowed kind; `authored_set` carries neither `source_id` nor
+  `qbank_set_uid`, and keeps `source_recording_id`).
+- Add `authored_questions.assignment_id` (nullable FK). **Publish snapshots**:
+  copies the recording's current draft rows into new rows with
+  `assignment_id` set + `status='published'`. Drafts stay editable for a later
+  re-publish; a live quiz never changes under a student mid-flight.
+
+**RPCs (SECURITY DEFINER, stable error codes, mirror `submit_qbank_attempt`)**
+- `publish_authored_quiz(p_recording_id, p_course_id, p_title, p_module_id?)`
+  — owner + teacher-of-course gated; snapshots questions, inserts the
+  `assignments` row (+ optional `module_items` link), returns assignment id.
+- `get_authored_questions(p_assignment_id)` — enrolled-student reader that
+  returns stem + choices but **NOT `correct_answer`** (the table is owner-only
+  RLS, so students can't read it directly; this is the gated, answer-stripped
+  view).
+- `submit_authored_attempt(p_assignment_id, p_client_attempt_id, p_answers)`
+  — **server-side grades** against `authored_questions.correct_answer` (client
+  never sends a score), idempotent on client_attempt_id, writes
+  `assignment_attempts`. Mirrors the qbank submit's validation.
+
+**Client**
+- `QuizDraftPanel` Publish button → pick a course (Combobox of the educator's
+  courses) + optional module → `publish_authored_quiz`.
+- New `AuthoredQuizRunner.tsx`; one additive branch in `AssignmentRunner`
+  (`kind === 'authored_set'`). Published quizzes then appear in the normal
+  course Assignments / Modules surfaces like any assignment.
+
+**Why deferred / build-timing**: altering the shared kind CHECK + touching
+`AssignmentRunner` / `useStudentAssignments` while the parallel session churns
+migrations 0210–0217 risks real conflicts. Safest to build once their
+assignment rework settles, or in explicit coordination.
+
 ## Client — `viewer/src/recordings/`
 
 - **RecordingsListPage** — per owner (optionally filtered by course); skeleton +
