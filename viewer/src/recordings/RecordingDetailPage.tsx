@@ -8,13 +8,14 @@
  *    speaker renaming (across Parts), and inline correction of any utterance.
  *  - Copy notes / copy transcript / download .md from the header.
  */
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
-import { KebabMenu, Skeleton, useToast } from "@/components";
+import { Combobox, KebabMenu, ResponsiveModal, Skeleton, useToast } from "@/components";
 import { useProfile } from "@/lib/profile";
 import { useDomain } from "@/lib/DomainProvider";
-import { ROUTES } from "@/lib/routes";
+import { ROUTES, courseAssignmentOverviewPath } from "@/lib/routes";
+import { useTeacherClasses } from "@/teacher/useTeacherClasses";
 import { RecorderPanel } from "./RecorderPanel";
 import { QuizDraftPanel } from "./QuizDraftPanel";
 import { Waveform } from "./Waveform";
@@ -25,6 +26,7 @@ import {
   renameSpeaker,
   reopenRecording,
   retryPart,
+  setRecordingCourse,
   updateNotes,
   updatePartTranscript,
   useRecordingDetail,
@@ -204,7 +206,7 @@ function PartBlock({
         <div className="flex items-center gap-2">
           {partStatusLabel(part) && (
             <span className="text-xs text-slate-500 dark:text-slate-400">
-              {pending && <span className="mr-1 inline-block animate-pulse">●</span>}
+              {pending && <span aria-hidden="true" className="mr-1 inline-block animate-pulse">●</span>}
               {partStatusLabel(part)}
             </span>
           )}
@@ -273,6 +275,7 @@ function SpeakerChip({ name, onRename }: { name: string; onRename: (to: string) 
           if (e.key === "Enter") (e.target as HTMLInputElement).blur();
           if (e.key === "Escape") setEditing(false);
         }}
+        aria-label="Speaker name"
         className="w-28 rounded-full border border-indigo-300 px-2 py-0.5 text-xs dark:border-indigo-700 dark:bg-slate-800"
       />
     );
@@ -286,6 +289,7 @@ function SpeakerChip({ name, onRename }: { name: string; onRename: (to: string) 
       }}
       className="rounded-full border border-slate-200 px-2 py-0.5 text-xs text-slate-600 hover:border-indigo-300 hover:text-indigo-700 dark:border-slate-700 dark:text-slate-300"
       title="Rename this speaker everywhere"
+      aria-label={`Rename speaker ${speakerDisplay(name)}`}
     >
       {speakerDisplay(name)}
     </button>
@@ -353,11 +357,13 @@ function TranscriptSection({
         type="button"
         onClick={() => setOpen(!open)}
         className="flex w-full items-center justify-between gap-2 px-5 py-3"
+        aria-expanded={showBody}
+        aria-label={showBody ? "Collapse full transcript" : "Expand full transcript"}
       >
         <span className="text-sm font-semibold uppercase tracking-wide text-slate-500">
           Full transcript
         </span>
-        <span className={`text-slate-400 transition-transform ${showBody ? "rotate-90" : ""}`}>▸</span>
+        <span aria-hidden="true" className={`text-slate-400 transition-transform ${showBody ? "rotate-90" : ""}`}>▸</span>
       </button>
       {showBody && (
         <div className="px-5 pb-5">
@@ -366,6 +372,7 @@ function TranscriptSection({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search the transcript…"
+            aria-label="Search the transcript"
             className="mb-3 w-full rounded-md border border-slate-300 px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-slate-800"
           />
           {isOwner && speakers.length > 0 && (
@@ -405,8 +412,9 @@ function TimeChip({ partIndex, startMs, onJump }: { partIndex: number; startMs: 
       onClick={() => onJump(partIndex, startMs)}
       className="ml-2 inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-300"
       title="Jump to this moment"
+      aria-label={`Jump to Part ${partIndex} at ${fmtTs(startMs)}`}
     >
-      ▶ Part {partIndex} · {fmtTs(startMs)}
+      <span aria-hidden="true">▶</span> Part {partIndex} · {fmtTs(startMs)}
     </button>
   );
 }
@@ -578,6 +586,185 @@ function NotesView({
   );
 }
 
+/**
+ * MoveToCourseModal — owner-only: associate this recording with one of the
+ * educator's courses (or remove the association). Mirrors QuizDraftPanel's
+ * PublishModal: courses load via useTeacherClasses + useProfile, archived
+ * filtered out, picked through a Combobox.
+ */
+function MoveToCourseModal({
+  open,
+  recordingId,
+  currentCourseId,
+  onClose,
+  onMoved,
+}: {
+  open: boolean;
+  recordingId: string;
+  currentCourseId: string | null;
+  onClose: () => void;
+  onMoved: () => void;
+}) {
+  const toast = useToast();
+  const { profile } = useProfile();
+  const { classes, loading: classesLoading } = useTeacherClasses(
+    open ? profile?.id ?? null : null,
+  );
+  const [selectedCourseId, setSelectedCourseId] = useState<string>("");
+  const [busy, setBusy] = useState(false);
+
+  const eligibleCourses = useMemo(() => classes.filter((c) => !c.archived), [classes]);
+  const courseOptions = useMemo(
+    () => eligibleCourses.map((c) => ({ value: c.id, label: c.name })),
+    [eligibleCourses],
+  );
+
+  // Reflect the current association whenever the modal opens.
+  useEffect(() => {
+    if (!open) return;
+    setSelectedCourseId(currentCourseId ?? "");
+  }, [open, currentCourseId]);
+
+  async function move(courseId: string | null): Promise<void> {
+    setBusy(true);
+    try {
+      await setRecordingCourse(recordingId, courseId);
+      onMoved();
+      if (courseId) {
+        const name = eligibleCourses.find((c) => c.id === courseId)?.name ?? "your course";
+        toast.success("Recording moved", `Now in ${name}.`);
+      } else {
+        toast.success("Removed from course.");
+      }
+      onClose();
+    } catch (err) {
+      toast.error("Couldn't update course", (err as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function onSubmit(e: React.FormEvent): Promise<void> {
+    e.preventDefault();
+    if (!selectedCourseId) {
+      toast.error("Pick a course, or use Remove from course.");
+      return;
+    }
+    await move(selectedCourseId);
+  }
+
+  const formId = "move-recording-course-form";
+  const footer = (
+    <div className="flex items-center gap-2">
+      {currentCourseId && (
+        <button
+          type="button"
+          onClick={() => void move(null)}
+          disabled={busy}
+          className="rounded-lg px-4 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50 disabled:opacity-60 dark:text-red-400 dark:hover:bg-red-900/20"
+        >
+          Remove from course
+        </button>
+      )}
+      <button
+        type="button"
+        onClick={onClose}
+        className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        form={formId}
+        disabled={busy || eligibleCourses.length === 0}
+        className="flex-1 rounded-lg bg-indigo-600 py-2.5 font-medium text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {busy ? "Saving…" : "Move to course"}
+      </button>
+    </div>
+  );
+
+  return (
+    <ResponsiveModal
+      open={open}
+      onClose={onClose}
+      title="Move to a course"
+      subtitle="Associate this recording with one of your courses."
+      size="lg"
+      footer={footer}
+    >
+      <form id={formId} onSubmit={(e) => void onSubmit(e)} className="space-y-4">
+        <label className="block">
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Course</span>
+          <div className="mt-1">
+            <Combobox
+              value={selectedCourseId || null}
+              onChange={setSelectedCourseId}
+              options={courseOptions}
+              ariaLabel="Course"
+              searchPlaceholder="Filter courses…"
+              emptyText="No courses match your filter"
+              disabled={classesLoading || eligibleCourses.length === 0}
+              placeholder={
+                classesLoading
+                  ? "Loading courses…"
+                  : eligibleCourses.length === 0
+                    ? "No active courses — create one first"
+                    : "Select a course…"
+              }
+            />
+          </div>
+        </label>
+      </form>
+    </ResponsiveModal>
+  );
+}
+
+/** The name of the course this recording is associated with, if any. */
+function useCourseName(courseId: string | null): string | null {
+  const [name, setName] = useState<string | null>(null);
+  useEffect(() => {
+    if (!courseId) {
+      setName(null);
+      return;
+    }
+    let alive = true;
+    void supabase
+      .from("courses")
+      .select("name")
+      .eq("id", courseId)
+      .maybeSingle()
+      .then(({ data }) => {
+        if (alive) setName((data as { name: string } | null)?.name ?? null);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [courseId]);
+  return name;
+}
+
+type PublishedQuiz = { id: string; title: string; course_id: string | null };
+
+/** Quizzes published from this recording (assignments.source_recording_id). */
+function usePublishedQuizzes(recordingId: string): PublishedQuiz[] {
+  const [quizzes, setQuizzes] = useState<PublishedQuiz[]>([]);
+  useEffect(() => {
+    let alive = true;
+    void supabase
+      .from("assignments")
+      .select("id,title,course_id")
+      .eq("source_recording_id", recordingId)
+      .then(({ data }) => {
+        if (alive && data) setQuizzes(data as PublishedQuiz[]);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [recordingId]);
+  return quizzes;
+}
+
 export function RecordingDetailPage() {
   const { recordingId = "" } = useParams();
   const { detail, loading, error, refresh } = useRecordingDetail(recordingId);
@@ -589,6 +776,9 @@ export function RecordingDetailPage() {
   const [titleDraft, setTitleDraft] = useState("");
   const [generating, setGenerating] = useState(false);
   const [transcriptOpen, setTranscriptOpen] = useState(false);
+  const [moveOpen, setMoveOpen] = useState(false);
+  const publishedQuizzes = usePublishedQuizzes(recordingId);
+  const courseName = useCourseName(detail?.recording.course_id ?? null);
 
   const audioRegistry = useRef<Map<number, HTMLAudioElement>>(new Map());
   const register = useCallback<RegisterAudio>((partIndex, el) => {
@@ -727,15 +917,25 @@ export function RecordingDetailPage() {
             {relativeTime(recording.created_at)} · {recording.subject_type === "session" ? "Session" : "Voice note"} ·{" "}
             {parts.length} part{parts.length === 1 ? "" : "s"}
             {parts.length > 0 && ` · ${transcribedCount}/${parts.length} transcribed`}
+            {recording.course_id && courseName && ` · in ${courseName}`}
           </p>
         </div>
         {isOwner && (
-          <button
-            onClick={() => void handleDelete()}
-            className="rounded-md border border-red-200 px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:border-red-900/50 dark:hover:bg-red-900/20"
-          >
-            Delete
-          </button>
+          <div className="flex shrink-0 items-center gap-2">
+            <button
+              onClick={() => setMoveOpen(true)}
+              className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
+            >
+              {recording.course_id ? "Change course" : "Move to course"}
+            </button>
+            <button
+              onClick={() => void handleDelete()}
+              className="rounded-md border border-red-200 px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:border-red-900/50 dark:hover:bg-red-900/20"
+              aria-label="Delete recording"
+            >
+              Delete
+            </button>
+          </div>
         )}
       </div>
 
@@ -808,6 +1008,31 @@ export function RecordingDetailPage() {
         </div>
       )}
 
+      {publishedQuizzes.length > 0 && (
+        <div className="mb-6 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm dark:border-slate-700 dark:bg-slate-800/40">
+          <span className="font-medium text-slate-600 dark:text-slate-300">
+            Published as a quiz
+          </span>
+          <ul className="mt-1.5 space-y-1">
+            {publishedQuizzes.map((q) => (
+              <li key={q.id} className="flex items-center gap-1">
+                <span className="text-slate-400">•</span>
+                {q.course_id ? (
+                  <Link
+                    to={courseAssignmentOverviewPath(q.course_id, q.id)}
+                    className="text-indigo-600 hover:underline dark:text-indigo-400"
+                  >
+                    {q.title}
+                  </Link>
+                ) : (
+                  <span className="text-slate-700 dark:text-slate-200">{q.title}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {notes && (
         <div className="mb-6">
           <NotesView
@@ -868,6 +1093,16 @@ export function RecordingDetailPage() {
                 }
               : undefined
           }
+        />
+      )}
+
+      {isOwner && (
+        <MoveToCourseModal
+          open={moveOpen}
+          recordingId={recording.id}
+          currentCourseId={recording.course_id}
+          onClose={() => setMoveOpen(false)}
+          onMoved={() => void refresh()}
         />
       )}
     </div>

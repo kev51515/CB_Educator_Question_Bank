@@ -3,9 +3,10 @@
  * modal. Search, status filter, relative time + duration, and per-row kebab
  * (rename inline / delete). Auto-refreshes while anything is still processing.
  */
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
+  Combobox,
   EmptyState,
   FileDropzone,
   KebabMenu,
@@ -15,12 +16,15 @@ import {
 } from "@/components";
 import { useDomain } from "@/lib/DomainProvider";
 import { educatorLabel } from "@/lib/domain";
+import { useProfile } from "@/lib/profile";
 import { recordingPath } from "@/lib/routes";
+import { useTeacherClasses } from "@/teacher/useTeacherClasses";
 import {
   createRecording,
   deleteRecording,
   endRecording,
   renameRecording,
+  setRecordingCourse,
   uploadAndTranscribePart,
   useRecordingsList,
 } from "./useRecordings";
@@ -43,20 +47,140 @@ function StatusPill({ status }: { status: RecordingStatus }) {
 
 type Filter = "all" | "ready" | "processing";
 
+/**
+ * Load the educator's own (non-archived) courses as Combobox options — same
+ * pattern as QuizDraftPanel's PublishModal. `enabled` gates the fetch so the
+ * picker only loads when a modal that needs it is open.
+ */
+function useCourseOptions(enabled: boolean) {
+  const { profile } = useProfile();
+  const { classes, loading } = useTeacherClasses(
+    enabled ? profile?.id ?? null : null,
+  );
+  const options = useMemo(
+    () =>
+      classes
+        .filter((c) => !c.archived)
+        .map((c) => ({ value: c.id, label: c.name })),
+    [classes],
+  );
+  return { options, loading };
+}
+
+/** Small modal to link an existing recording to a course (or remove it). */
+function MoveToCourseModal({
+  r,
+  open,
+  onClose,
+  onMoved,
+}: {
+  r: Recording;
+  open: boolean;
+  onClose: () => void;
+  onMoved: () => void;
+}) {
+  const toast = useToast();
+  const { options, loading } = useCourseOptions(open);
+  const [courseId, setCourseId] = useState<string>(r.course_id ?? "");
+  const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    if (open) setCourseId(r.course_id ?? "");
+  }, [open, r.course_id]);
+
+  async function move(target: string | null) {
+    setBusy(true);
+    try {
+      await setRecordingCourse(r.id, target);
+      toast.success(
+        target
+          ? `Moved to ${options.find((o) => o.value === target)?.label ?? "course"}.`
+          : "Removed from course.",
+      );
+      onMoved();
+      onClose();
+    } catch (e) {
+      toast.error((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const footer = (
+    <div className="flex items-center gap-2">
+      <button
+        type="button"
+        onClick={onClose}
+        disabled={busy}
+        className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100 disabled:opacity-50 dark:text-slate-300 dark:hover:bg-slate-800"
+      >
+        Cancel
+      </button>
+      {r.course_id && (
+        <button
+          type="button"
+          onClick={() => void move(null)}
+          disabled={busy}
+          className="rounded-lg px-4 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50 disabled:opacity-50 dark:hover:bg-red-900/20"
+        >
+          Remove from course
+        </button>
+      )}
+      <button
+        type="button"
+        onClick={() => void move(courseId || null)}
+        disabled={busy || !courseId || courseId === (r.course_id ?? "")}
+        className="flex-1 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-60"
+      >
+        {busy ? "Moving…" : "Move"}
+      </button>
+    </div>
+  );
+
+  return (
+    <ResponsiveModal open={open} onClose={onClose} title="Move to course" footer={footer}>
+      <label className="block">
+        <span className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
+          Course
+        </span>
+        <Combobox
+          value={courseId || null}
+          onChange={setCourseId}
+          options={options}
+          ariaLabel="Course"
+          searchPlaceholder="Filter courses…"
+          emptyText="No courses match your filter"
+          disabled={loading || options.length === 0}
+          placeholder={
+            loading
+              ? "Loading courses…"
+              : options.length === 0
+                ? "No active courses"
+                : "Select a course…"
+          }
+        />
+      </label>
+    </ResponsiveModal>
+  );
+}
+
 function RecordingRow({
   r,
   onOpen,
   onRenamed,
   onDeleted,
+  onMoved,
 }: {
   r: Recording;
   onOpen: () => void;
   onRenamed: () => void;
   onDeleted: () => void;
+  onMoved: () => void;
 }) {
   const toast = useToast();
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(r.title);
+  const [moveOpen, setMoveOpen] = useState(false);
 
   async function save() {
     setEditing(false);
@@ -109,8 +233,15 @@ function RecordingRow({
       <KebabMenu
         options={[
           { label: "Rename", onSelect: () => { setDraft(r.title); setEditing(true); } },
+          { label: "Move to course…", onSelect: () => setMoveOpen(true) },
           { label: "Delete", destructive: true, onSelect: () => void remove() },
         ]}
+      />
+      <MoveToCourseModal
+        r={r}
+        open={moveOpen}
+        onClose={() => setMoveOpen(false)}
+        onMoved={onMoved}
       />
     </li>
   );
@@ -127,7 +258,10 @@ export function RecordingsListPage() {
   const [subject, setSubject] = useState<RecordingSubject>("self");
   const [consent, setConsent] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
+  const [courseId, setCourseId] = useState<string>("");
   const [submitting, setSubmitting] = useState(false);
+
+  const { options: courseOptions, loading: coursesLoading } = useCourseOptions(open);
 
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
@@ -150,6 +284,7 @@ export function RecordingsListPage() {
     setSubject("self");
     setConsent(false);
     setFiles([]);
+    setCourseId("");
   }
 
   async function handleCreate() {
@@ -164,6 +299,7 @@ export function RecordingsListPage() {
         domain,
         subject_type: subject,
         consent_obtained: consentOk,
+        course_id: courseId || null,
       });
       if (files[0]) {
         await uploadAndTranscribePart(rec, 1, files[0]);
@@ -247,6 +383,7 @@ export function RecordingsListPage() {
               onOpen={() => navigate(recordingPath(r.id))}
               onRenamed={() => void refresh()}
               onDeleted={() => void refresh()}
+              onMoved={() => void refresh()}
             />
           ))}
         </ul>
@@ -333,6 +470,29 @@ export function RecordingsListPage() {
               Leave empty to record live on the next screen.
             </p>
           </div>
+
+          <label className="block">
+            <span className="mb-1 block text-sm font-medium">Course (optional)</span>
+            <Combobox
+              value={courseId || null}
+              onChange={setCourseId}
+              options={courseOptions}
+              ariaLabel="Course"
+              searchPlaceholder="Filter courses…"
+              emptyText="No courses match your filter"
+              disabled={coursesLoading || courseOptions.length === 0}
+              placeholder={
+                coursesLoading
+                  ? "Loading courses…"
+                  : courseOptions.length === 0
+                    ? "No active courses"
+                    : "Link to a course…"
+              }
+            />
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              Show this recording on a course's Recordings tab.
+            </p>
+          </label>
         </div>
       </ResponsiveModal>
     </div>

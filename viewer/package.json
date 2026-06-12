@@ -20,6 +20,7 @@
     "smoke:features": "node --env-file-if-exists=../.env scripts/smoke-features.mjs",
     "smoke:modules": "node --env-file-if-exists=../.env scripts/smoke-modules.mjs",
     "smoke:qbank": "node --env-file-if-exists=../.env scripts/smoke-qbank.mjs",
+    "smoke:recordings": "node --env-file-if-exists=../.env scripts/smoke-recordings.mjs",
     "smoke:cascade": "node --env-file-if-exists=../.env scripts/smoke-cascade.mjs",
     "smoke:grading": "node --env-file-if-exists=../.env scripts/smoke-grading.mjs",
     "smoke:review": "node --env-file-if-exists=../.env scripts/smoke-review.mjs",

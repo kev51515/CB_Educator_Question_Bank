@@ -22,6 +22,14 @@ interface RunnerQuestion {
   choices: Record<string, string>;
 }
 
+interface ResultEntry {
+  given?: string | null;
+  correct?: string | null;
+  is_correct?: boolean;
+}
+
+type ResultDetail = Record<string, ResultEntry>;
+
 interface AuthoredQuizRunnerProps {
   assignmentId: string;
   title?: string;
@@ -34,7 +42,13 @@ type Stage =
   | { kind: "loading" }
   | { kind: "error"; message: string }
   | { kind: "taking" }
-  | { kind: "done"; score: number; correct: number; total: number };
+  | {
+      kind: "done";
+      score: number;
+      correct: number;
+      total: number;
+      detail: ResultDetail;
+    };
 
 export function AuthoredQuizRunner({
   assignmentId,
@@ -77,10 +91,10 @@ export function AuthoredQuizRunner({
         p_answers: answers,
       });
       if (error) throw error;
-      // Re-read the graded attempt for the score.
+      // Re-read the graded attempt for the score + per-question result.
       const { data: attempt } = await supabase
         .from("assignment_attempts")
-        .select("score_percent, correct_count, total_questions")
+        .select("score_percent, correct_count, total_questions, result_detail")
         .eq("id", data as string)
         .single();
       setStage({
@@ -88,6 +102,7 @@ export function AuthoredQuizRunner({
         score: Number(attempt?.score_percent ?? 0),
         correct: Number(attempt?.correct_count ?? 0),
         total: Number(attempt?.total_questions ?? questions.length),
+        detail: (attempt?.result_detail ?? {}) as ResultDetail,
       });
     } catch (e) {
       toast.error(`Couldn't submit: ${(e as Error).message}`);
@@ -117,20 +132,100 @@ export function AuthoredQuizRunner({
     );
   }
   if (stage.kind === "done") {
+    const { detail } = stage;
     return (
-      <div className="mx-auto max-w-2xl px-4 py-10 text-center">
-        <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
-          {stage.score}%
-        </h1>
-        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          {stage.correct} of {stage.total} correct
-        </p>
-        <button
-          onClick={onExit}
-          className="mt-6 rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
-        >
-          Done
-        </button>
+      <div className="mx-auto max-w-2xl px-4 py-10">
+        <div className="text-center">
+          <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
+            {stage.score}%
+          </h1>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            {stage.correct} of {stage.total} correct
+          </p>
+        </div>
+
+        <h2 className="mt-8 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          Review
+        </h2>
+        <ol className="space-y-4">
+          {questions.map((q, i) => {
+            const entry = detail[q.id] ?? {};
+            const given = entry.given ?? null;
+            const correct = entry.correct ?? null;
+            const isCorrect = entry.is_correct === true;
+            return (
+              <li
+                key={q.id}
+                className="rounded-lg border border-slate-200 p-4 dark:border-slate-700"
+              >
+                <div className="flex items-start gap-2">
+                  {isCorrect ? (
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.704 5.29a1 1 0 0 1 .006 1.414l-7.5 7.6a1 1 0 0 1-1.42.006l-3.5-3.5a1 1 0 0 1 1.414-1.414l2.787 2.787 6.79-6.882a1 1 0 0 1 1.414-.006Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      className="mt-0.5 h-5 w-5 shrink-0 text-rose-500"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                  <p className="font-medium text-slate-900 dark:text-slate-100">
+                    <span className="mr-2 text-slate-400">{i + 1}.</span>
+                    {q.stem}
+                  </p>
+                </div>
+                <div className="mt-3 space-y-1.5 pl-7 text-sm">
+                  <p
+                    className={
+                      isCorrect
+                        ? "text-emerald-700 dark:text-emerald-400"
+                        : "text-rose-700 dark:text-rose-400"
+                    }
+                  >
+                    <span className="font-medium">Your answer:</span>{" "}
+                    {given
+                      ? `${given}. ${q.choices?.[given] ?? ""}`
+                      : "No answer"}
+                  </p>
+                  {!isCorrect && (
+                    <p className="text-emerald-700 dark:text-emerald-400">
+                      <span className="font-medium">Correct answer:</span>{" "}
+                      {correct
+                        ? `${correct}. ${q.choices?.[correct] ?? ""}`
+                        : "—"}
+                    </p>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+
+        <div className="mt-8 text-center">
+          <button
+            onClick={onExit}
+            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+          >
+            Done
+          </button>
+        </div>
       </div>
     );
   }

@@ -258,6 +258,18 @@ export async function renameRecording(id: string, title: string): Promise<void> 
   if (error) throw error;
 }
 
+/** Link a recording to a course (so it shows on that course's Recordings tab), or unlink with null. */
+export async function setRecordingCourse(
+  recordingId: string,
+  courseId: string | null,
+): Promise<void> {
+  const { error } = await supabase
+    .from("recordings")
+    .update({ course_id: courseId })
+    .eq("id", recordingId);
+  if (error) throw error;
+}
+
 export async function deleteRecording(id: string): Promise<void> {
   // DB cascade removes parts + notes; storage objects are cleaned up best-effort.
   const { data: parts } = await supabase
