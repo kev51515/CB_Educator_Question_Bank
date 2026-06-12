@@ -33,6 +33,10 @@ import {
   useStudentCommands,
   writeStudentRecentCommandIds,
 } from "@/lib/studentCommands";
+import {
+  StudentPendingProvider,
+  useStudentPending,
+} from "@/student/useStudentPending";
 
 /**
  * Per-user localStorage key prefix for the Linear-style desktop sidebar
@@ -98,7 +102,8 @@ function RailIcon({ children }: RailIconProps) {
 
 function railLinkClass({ isActive }: { isActive: boolean }): string {
   return [
-    "flex items-center gap-3 px-3 py-3 min-h-[44px] rounded-lg text-sm font-medium transition-colors w-full",
+    // `relative` anchors the collapsed-rail pending dot (CoursesRailBadge).
+    "relative flex items-center gap-3 px-3 py-3 min-h-[44px] rounded-lg text-sm font-medium transition-colors w-full",
     isActive
       ? "bg-accent-50 text-accent-700 dark:bg-accent-950/60 dark:text-accent-200 ring-1 ring-accent-200 dark:ring-accent-900"
       : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800",
@@ -150,6 +155,42 @@ function isStudentCoursesActive(pathname: string): boolean {
   return (
     pathname === ROUTES.STUDENT_COURSES ||
     pathname.startsWith(`${ROUTES.STUDENT_COURSES}/`)
+  );
+}
+
+/**
+ * Pending-items badge for the Courses rail entry. Expanded rail shows a
+ * count pill; collapsed rail (icon-only) shows a corner dot. Renders nothing
+ * when there's nothing pending — silence > nag.
+ */
+function CoursesRailBadge({ collapsed }: { collapsed: boolean }) {
+  const { totalPending } = useStudentPending();
+  if (totalPending === 0) return null;
+  if (collapsed) {
+    return (
+      <span
+        className="hidden lg:block absolute top-2 right-2 h-2 w-2 rounded-full bg-rose-500"
+        aria-hidden="true"
+      />
+    );
+  }
+  return (
+    <span className="ml-auto inline-flex items-center justify-center min-w-[20px] h-5 rounded-full bg-rose-500 px-1.5 text-[11px] font-semibold leading-none text-white tabular-nums">
+      <span className="sr-only">Pending items: </span>
+      {totalPending > 99 ? "99+" : totalPending}
+    </span>
+  );
+}
+
+/** Corner dot for the mobile Courses tab — count would be too loud at 11px. */
+function CoursesTabDot() {
+  const { totalPending } = useStudentPending();
+  if (totalPending === 0) return null;
+  return (
+    <span
+      className="absolute -top-0.5 -right-1.5 h-2 w-2 rounded-full bg-rose-500"
+      aria-hidden="true"
+    />
   );
 }
 
@@ -261,7 +302,7 @@ export function StudentShell() {
   }, [toggleCollapsed]);
 
   return (
-    <>
+    <StudentPendingProvider>
       <AccountUpgradeBanner upgradeAnonymousAccount={upgradeAnonymousAccount} />
       {/* Desktop (lg+): two-column shell with the collapsible left rail.
           Phone/tablet (< lg): no rail; the StudentMobileTabBar below
@@ -349,6 +390,7 @@ export function StudentShell() {
               </svg>
             </RailIcon>
             <span className={collapsed ? "lg:hidden" : undefined}>Courses</span>
+            <CoursesRailBadge collapsed={collapsed} />
           </NavLink>
 
           <NavLink
@@ -493,7 +535,7 @@ export function StudentShell() {
         userRole={profile?.role ?? null}
       />
       <StudentMobileTabBar homePath={homePath} />
-    </>
+    </StudentPendingProvider>
   );
 }
 
@@ -640,7 +682,10 @@ function StudentMobileTabBar({ homePath }: { homePath: string }) {
                 : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200")
             }
           >
-            {tab.icon}
+            <span className="relative">
+              {tab.icon}
+              {tab.label === "Courses" && <CoursesTabDot />}
+            </span>
             <span className="text-[11px] font-medium tracking-tight">
               {tab.label}
             </span>

@@ -3,6 +3,16 @@
  */
 export { JoinClassModal } from "./JoinClassModal";
 export { MyClassesPanel } from "./MyClassesPanel";
+export { UpcomingDatesPanel } from "./UpcomingDatesPanel";
+export {
+  StudentPendingProvider,
+  useStudentPending,
+  coursePendingTotal,
+} from "./useStudentPending";
+export type {
+  CoursePendingCounts,
+  StudentPendingValue,
+} from "./useStudentPending";
 export { useStudentClasses } from "./useStudentClasses";
 export { AssignmentsPanel } from "./AssignmentsPanel";
 export { useStudentAssignments } from "./useStudentAssignments";

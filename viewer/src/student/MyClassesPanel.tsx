@@ -16,6 +16,7 @@ import { SkeletonRows } from "@/components/Skeleton";
 import { Combobox } from "@/components";
 import { studentCoursePath } from "@/lib/routes";
 import { JoinClassModal } from "./JoinClassModal";
+import { coursePendingTotal, useStudentPending } from "./useStudentPending";
 
 type SortKey = "recent" | "oldest" | "name";
 
@@ -92,10 +93,24 @@ interface MyClassesPanelProps {
    * doesn't need to know how the panel fetches — just nudge the counter.
    */
   refreshToken?: number;
+  /**
+   * "list" (default) — the compact rows used on /student/courses.
+   * "grid" — full-width course cards for the Home page, where courses lead
+   * the fold; includes a "+ Join a course" tile so the action lives in the
+   * grid itself.
+   */
+  variant?: "list" | "grid";
+  /**
+   * Fired after a successful join via the panel's own modal — lets the Home
+   * page refresh sibling panels (a new course usually brings assignments).
+   */
+  onJoined?: () => void;
 }
 
 interface ClassRowProps {
   cls: StudentClass;
+  /** Pending/new item count for this course (0 hides the pill). */
+  pending: number;
   onOpen: () => void;
 }
 
@@ -110,14 +125,29 @@ function courseMonogram(name: string): string {
     .join("");
 }
 
-function ClassRow({ cls, onOpen }: ClassRowProps) {
+/** Rose "N new" pill shared by the list rows and grid cards. */
+function PendingPill({ count }: { count: number }) {
+  if (count === 0) return null;
+  return (
+    <span className="inline-flex items-center gap-1 rounded-full bg-rose-50 dark:bg-rose-950/50 px-2 py-0.5 text-[11px] font-semibold text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900 tabular-nums whitespace-nowrap">
+      <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+      {count > 99 ? "99+" : count} new
+    </span>
+  );
+}
+
+function ClassRow({ cls, pending, onOpen }: ClassRowProps) {
   return (
     <li className="rounded-lg bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 flex items-stretch justify-between gap-1 overflow-hidden">
       <button
         type="button"
         onClick={onOpen}
         className="flex-1 min-w-0 min-h-[40px] flex items-center gap-3 text-left px-3.5 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/60 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-inset"
-        aria-label={`Open course ${cls.name}`}
+        aria-label={
+          pending > 0
+            ? `Open course ${cls.name}, ${pending} new item${pending === 1 ? "" : "s"}`
+            : `Open course ${cls.name}`
+        }
       >
         {/* Crest-disc monogram (course identity, mockup's .crest-disc). */}
         <span
@@ -138,11 +168,16 @@ function ClassRow({ cls, onOpen }: ClassRowProps) {
         </span>
       </button>
       {/* Read-only status. Students can't leave a course themselves — the
-          teacher manages enrolment from the roster. */}
+          teacher manages enrolment from the roster. A pending pill replaces
+          the static "Enrolled" label when there's something new inside. */}
       <div className="flex items-center shrink-0 gap-2 px-3.5">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
-          Enrolled
-        </span>
+        {pending > 0 ? (
+          <PendingPill count={pending} />
+        ) : (
+          <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+            Enrolled
+          </span>
+        )}
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -156,8 +191,78 @@ function ClassRow({ cls, onOpen }: ClassRowProps) {
   );
 }
 
-export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
+/**
+ * Grid card for the Home "My courses" section. Monogram top-left, pending
+ * pill top-right, then name + teacher. Whole card is the tap target.
+ */
+function ClassCard({ cls, pending, onOpen }: ClassRowProps) {
+  return (
+    <li className="min-w-0">
+      <button
+        type="button"
+        onClick={onOpen}
+        className="w-full h-full min-h-[112px] flex flex-col rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 shadow-card p-4 text-left hover:bg-white dark:hover:bg-slate-900 hover:ring-slate-300 dark:hover:ring-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 motion-safe:transition"
+        aria-label={
+          pending > 0
+            ? `Open course ${cls.name}, ${pending} new item${pending === 1 ? "" : "s"}`
+            : `Open course ${cls.name}`
+        }
+      >
+        <div className="flex items-start justify-between gap-2">
+          <span
+            aria-hidden="true"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-800 font-display text-sm font-medium text-accent-700 dark:text-accent-300"
+          >
+            {courseMonogram(cls.name)}
+          </span>
+          <PendingPill count={pending} />
+        </div>
+        <span className="mt-3 block text-sm font-semibold text-slate-900 dark:text-slate-100 line-clamp-2">
+          {cls.name}
+        </span>
+        {cls.teacher_display_name && (
+          <span className="mt-0.5 block text-xs text-slate-500 dark:text-slate-400 truncate">
+            {cls.teacher_display_name}
+          </span>
+        )}
+      </button>
+    </li>
+  );
+}
+
+/** Dashed "+ Join a course" tile rendered at the end of the Home grid. */
+function JoinCourseTile({ onJoin }: { onJoin: () => void }) {
+  return (
+    <li className="min-w-0">
+      <button
+        type="button"
+        onClick={onJoin}
+        className="w-full h-full min-h-[112px] flex flex-col items-center justify-center gap-2 rounded-2xl bg-slate-50/60 dark:bg-slate-900/30 ring-1 ring-dashed ring-slate-300 dark:ring-slate-700 p-4 text-sm font-medium text-accent-700 dark:text-accent-300 hover:bg-white dark:hover:bg-slate-900 hover:ring-slate-400 dark:hover:ring-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 motion-safe:transition"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+        >
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+        Join a course
+      </button>
+    </li>
+  );
+}
+
+export function MyClassesPanel({
+  refreshToken,
+  variant = "list",
+  onJoined,
+}: MyClassesPanelProps) {
   const { classes, loading, error, refresh } = useStudentClasses();
+  const { byCourse } = useStudentPending();
   const [userId, setUserId] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>("recent");
   const [showJoinModal, setShowJoinModal] = useState(false);
@@ -200,6 +305,63 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
 
   const sortedClasses = useMemo(() => sortClasses(classes, sort), [classes, sort]);
 
+  const pendingFor = (courseId: string): number => {
+    const counts = byCourse[courseId];
+    return counts ? coursePendingTotal(counts) : 0;
+  };
+
+  if (variant === "grid") {
+    return (
+      <>
+        <section aria-labelledby="my-classes-title">
+          <header className="mb-3 flex items-center justify-between gap-3">
+            <h2
+              id="my-classes-title"
+              className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400"
+            >
+              My courses
+            </h2>
+            {!loading && !error && classes.length > 0 && (
+              <SortDropdown sort={sort} onChange={setSort} />
+            )}
+          </header>
+
+          {loading ? (
+            <SkeletonRows count={2} />
+          ) : error ? (
+            <p role="alert" className="text-sm text-rose-600 dark:text-rose-400">
+              {error}
+            </p>
+          ) : classes.length === 0 ? (
+            <EmptyClassesState onJoin={() => setShowJoinModal(true)} />
+          ) : (
+            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {sortedClasses.map((cls) => (
+                <ClassCard
+                  key={cls.id}
+                  cls={cls}
+                  pending={pendingFor(cls.id)}
+                  onOpen={() => navigate(studentCoursePath(cls.short_code ?? cls.id))}
+                />
+              ))}
+              <JoinCourseTile onJoin={() => setShowJoinModal(true)} />
+            </ul>
+          )}
+        </section>
+
+        <JoinClassModal
+          open={showJoinModal}
+          onClose={() => setShowJoinModal(false)}
+          onJoined={() => {
+            setShowJoinModal(false);
+            void refresh();
+            onJoined?.();
+          }}
+        />
+      </>
+    );
+  }
+
   return (
     <>
       <section
@@ -239,6 +401,7 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
               <ClassRow
                 key={cls.id}
                 cls={cls}
+                pending={pendingFor(cls.id)}
                 onOpen={() => navigate(studentCoursePath(cls.short_code ?? cls.id))}
               />
             ))}
@@ -252,6 +415,7 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
         onJoined={() => {
           setShowJoinModal(false);
           void refresh();
+          onJoined?.();
         }}
       />
     </>

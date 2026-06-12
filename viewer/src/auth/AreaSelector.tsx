@@ -4,8 +4,10 @@
  * Post sign-in landing page for students. In the controlled-access model
  * (2026-06) there are no free-roam "area" cards — a student's workload is the
  * assignments + course modules their teacher gives them. This page stacks, top
- * to bottom: Assignments, released full-test results, recent feedback, a
- * read-only skill-mastery panel, course announcements, and "My courses".
+ * to bottom: "My courses" (full-width grid with per-course pending pills —
+ * courses must be the first thing a student sees), Assignments + Upcoming
+ * dates side by side, released full-test results, recent feedback, a
+ * read-only skill-mastery panel, and course announcements.
  * Picking an assignment navigates to the corresponding route — the router
  * mounts the right surface.
  *
@@ -47,10 +49,10 @@ import { StudentTestResultsPanel } from "@/student/StudentTestResultsPanel";
 import {
   AssignmentsPanel,
   CourseAnnouncementsList,
-  JoinClassModal,
   MyClassesPanel,
   RecentFeedbackWidget,
   SkillHeatmap,
+  UpcomingDatesPanel,
 } from "@/student";
 import type {
   StudentAssignment,
@@ -75,7 +77,6 @@ export function AreaSelector() {
   // an email slug while the avatar pill showed the real name.)
   const studentName = profile?.display_name ?? session?.name ?? "";
 
-  const [joinOpen, setJoinOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
   const closeHelp = useCallback(() => setHelpOpen(false), []);
 
@@ -109,10 +110,8 @@ export function AreaSelector() {
     }
     if (target) navigate(studentCoursePath(target), { replace: true });
   }, [navigate]);
-  // Why a counter: bumping this prompts MyClassesPanel / AssignmentsPanel
-  // to refetch after a successful join, without us having to thread a
-  // callback through props.
-  const [classesRefreshToken, setClassesRefreshToken] = useState(0);
+  // Why a counter: bumping this prompts AssignmentsPanel to refetch after a
+  // successful join (the courses grid refreshes itself via its own modal).
   const [assignmentsRefreshToken, setAssignmentsRefreshToken] = useState(0);
 
   const handleStart = (assignment: StudentAssignment) => {
@@ -169,21 +168,34 @@ export function AreaSelector() {
           <div className="ivy-rule" aria-hidden="true" />
         </header>
 
-        {/* Two-column on desktop: the workload stack stays in the main (left)
-            column with Assignments leading the fold, while "My courses" lives
-            in a right rail pinned to the top. On mobile the grid collapses to a
-            single column (main first, courses after) so Assignments still lead
-            the fold there. */}
-        <div className="mt-2 grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
-          <div className="space-y-6">
-            {/* Assignments lead the fold — in the controlled-access model this
-                (plus each course's modules) is the student's entire workload.
-                No free question bank / free mock test / all-tests browser. */}
+        {/* Courses lead the fold (full-width grid, per-course "new" pills,
+            and a "+ Join a course" tile) — the user's call: on a student's
+            Home the first thing they see must be their courses. Below it,
+            To-do and Upcoming dates share a row on desktop; the rest of the
+            workload stack follows full-width. */}
+        <div className="mt-2 space-y-8">
+          <MyClassesPanel
+            variant="grid"
+            onJoined={() => {
+              // A newly joined course usually brings new assignments too.
+              setAssignmentsRefreshToken((t) => t + 1);
+            }}
+          />
+
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+            {/* The student's actionable workload — in the controlled-access
+                model this (plus each course's modules) is everything. */}
             <AssignmentsPanel
               refreshToken={assignmentsRefreshToken}
               onStart={handleStart}
               onReview={handleReview}
             />
+            {/* Dated deadlines for the next two weeks; links to the full
+                calendar. Calendar-sync companion to the courses-first grid. */}
+            <UpcomingDatesPanel />
+          </div>
+
+          <div className="space-y-6">
             {/* Full-length test results — released by the teacher (hidden until
                 then). Renders nothing when the student has no submitted tests. */}
             <StudentTestResultsPanel />
@@ -205,36 +217,12 @@ export function AreaSelector() {
             </section>
             <CourseAnnouncementsList />
           </div>
-
-          {/* Right rail — "My courses" pinned to the top of the column. */}
-          <aside className="space-y-3 lg:sticky lg:top-6">
-            <MyClassesPanel refreshToken={classesRefreshToken} />
-            <div className="flex justify-center sm:justify-end">
-              <button
-                type="button"
-                onClick={() => setJoinOpen(true)}
-                className="inline-flex items-center min-h-[44px] rounded-lg bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-2 text-sm font-medium text-accent-700 dark:text-accent-300 hover:bg-white dark:hover:bg-slate-900 transition"
-              >
-                Join a course
-              </button>
-            </div>
-          </aside>
         </div>
 
         <p className="mt-10 text-center text-xs text-slate-500 dark:text-slate-400">
           Signed in as <span className="font-medium">{studentName}</span>
         </p>
       </div>
-
-      <JoinClassModal
-        open={joinOpen}
-        onClose={() => setJoinOpen(false)}
-        onJoined={() => {
-          setClassesRefreshToken((t) => t + 1);
-          // A newly joined course may surface new assignments too.
-          setAssignmentsRefreshToken((t) => t + 1);
-        }}
-      />
 
       {/* Global keyboard-shortcut help overlay (`?` to open). */}
       <ShortcutHelpOverlay open={helpOpen} onClose={closeHelp} />

@@ -30,6 +30,7 @@ import {
   MonthView,
   ShortcutsPopover,
 } from "./components";
+import { SubscribeCalendarModal } from "./SubscribeCalendarModal";
 import {
   addDays,
   endOfMonth,
@@ -67,6 +68,7 @@ export function CalendarPage() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [shortcutsOpen, setShortcutsOpen] = useState<boolean>(false);
+  const [subscribeOpen, setSubscribeOpen] = useState<boolean>(false);
 
   // "Today" is meaningful only when we're not already viewing today's month.
   // List view always shows the next 30 days, so the concept doesn't apply
@@ -266,7 +268,30 @@ export function CalendarPage() {
         <h1 className="page-title text-2xl font-semibold text-slate-900 dark:text-slate-100">
           Calendar
         </h1>
-        <div className="ml-auto relative">
+        {/* Personal-calendar subscription (students only — staff have richer
+            external tooling needs; revisit if they ask). */}
+        {isStudent && (
+          <button
+            type="button"
+            onClick={() => setSubscribeOpen(true)}
+            className="ml-auto rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 text-sm min-h-[40px] px-3 py-1 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 inline-flex items-center gap-1.5"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <span className="hidden sm:inline">Subscribe</span>
+          </button>
+        )}
+        <div className={isStudent ? "relative" : "ml-auto relative"}>
           <button
             type="button"
             onClick={() => setShortcutsOpen((v) => !v)}
@@ -359,6 +384,11 @@ export function CalendarPage() {
       {!loading && !error && view === "list" && (
         <ListView events={visibleEvents} onEventClick={handleEventClick} />
       )}
+
+      <SubscribeCalendarModal
+        open={subscribeOpen}
+        onClose={() => setSubscribeOpen(false)}
+      />
     </div>
   );
 }

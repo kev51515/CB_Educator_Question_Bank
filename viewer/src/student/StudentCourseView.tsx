@@ -32,6 +32,7 @@ import { ROUTES } from "@/lib/routes";
 import { useProfile } from "@/lib/profile";
 import { domainOf, studentLabel } from "@/lib/domain";
 import { useDomain } from "@/lib/DomainProvider";
+import { useStudentPending } from "./useStudentPending";
 import { StudentCounselingProfileCard } from "./counseling/StudentCounselingProfileCard";
 import { StudentCollegeListCard } from "./counseling/StudentCollegeListCard";
 import { StudentCounselingTasksCard } from "./counseling/StudentCounselingTasksCard";
@@ -207,6 +208,16 @@ export function StudentCourseView(): JSX.Element {
       cancelled = true;
     };
   }, [short]);
+
+  // Opening the course clears its "new since last seen" badges (sidebar
+  // Courses count, per-course pills). Pending WORK (unstarted assignments)
+  // is not seen-gated and stays until submitted.
+  const { markCourseSeen } = useStudentPending();
+  useEffect(() => {
+    const courseId = course?.id;
+    if (!courseId) return;
+    void markCourseSeen(courseId);
+  }, [course?.id, markCourseSeen]);
 
   // Quick-stats fetch — runs once we know the course id. Each stat is
   // independent so a single failure degrades to "—" rather than blanking
