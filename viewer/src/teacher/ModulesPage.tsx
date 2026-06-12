@@ -160,34 +160,38 @@ export function ModulesPage(): JSX.Element {
     [collapsed],
   );
 
-  // Journey toggle (staff only) — read-only class-aggregate mastery grid
-  // (docs/JOURNEY_VIEW.md). Persisted per course.
+  // Journey | List views (staff only). Journey — the read-only
+  // class-aggregate mastery grid (docs/JOURNEY_VIEW.md) — is the PRIMARY
+  // view; List is the existing module editor. Persisted per course.
   const journeyKey = `staff.modulesView:${classId ?? ""}`;
   const [journeyMode, setJourneyMode] = useState<boolean>(() => {
     try {
-      return window.localStorage.getItem(journeyKey) === "journey";
+      return window.localStorage.getItem(journeyKey) !== "list";
     } catch {
-      return false;
+      return true;
     }
   });
   useEffect(() => {
     try {
-      setJourneyMode(window.localStorage.getItem(journeyKey) === "journey");
+      setJourneyMode(window.localStorage.getItem(journeyKey) !== "list");
     } catch {
-      setJourneyMode(false);
+      setJourneyMode(true);
     }
   }, [journeyKey]);
-  const toggleJourney = useCallback((): void => {
-    setJourneyMode((prev) => {
-      const next = !prev;
+  const setModulesView = useCallback(
+    (mode: "journey" | "list"): void => {
+      setJourneyMode(mode === "journey");
       try {
-        window.localStorage.setItem(journeyKey, next ? "journey" : "list");
+        window.localStorage.setItem(journeyKey, mode);
       } catch {
         // ignore (private mode / quota)
       }
-      return next;
-    });
-  }, [journeyKey]);
+    },
+    [journeyKey],
+  );
+  // The aggregate journey is a STAFF lens — students on this surface always
+  // get the regular list (their own journey lives on StudentCourseView).
+  const journeyActive = !isStudent && journeyMode;
 
   // Inline-create replaces the old "Add module" modal. When non-null an
   // input row renders above the modules list with the cursor focused inside;
@@ -1086,38 +1090,35 @@ export function ModulesPage(): JSX.Element {
 
         <div className="flex flex-wrap items-center gap-2">
           {!isStudent && modules.length > 0 && (
-            <button
-              type="button"
-              onClick={toggleJourney}
-              aria-pressed={journeyMode}
-              title="Class-aggregate mastery view of published modules"
-              className={
-                journeyMode
-                  ? "inline-flex items-center gap-1.5 rounded-full min-h-[40px] md:min-h-[32px] px-3.5 text-xs font-medium transition-colors text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-400 dark:ring-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-950/60"
-                  : pillNeutral
-              }
+            <div
+              className="inline-flex items-center rounded-full bg-indigo-600/[0.08] dark:bg-indigo-400/10 p-0.5"
+              role="tablist"
+              aria-label="Modules view"
             >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden
-                className="h-3.5 w-3.5 flex-none"
-              >
-                <rect x="3" y="3" width="7" height="7" rx="1.5" />
-                <rect x="14" y="3" width="7" height="7" rx="1.5" />
-                <rect x="3" y="14" width="7" height="7" rx="1.5" />
-                <rect x="14" y="14" width="7" height="7" rx="1.5" />
-              </svg>
-              Journey
-            </button>
+              {(["journey", "list"] as const).map((mode) => (
+                <button
+                  key={mode}
+                  type="button"
+                  role="tab"
+                  aria-selected={journeyActive === (mode === "journey")}
+                  title={
+                    mode === "journey"
+                      ? "Class-aggregate mastery view of published modules"
+                      : "Edit modules and items"
+                  }
+                  onClick={() => setModulesView(mode)}
+                  className={`min-h-[40px] md:min-h-[32px] rounded-full px-4 text-xs font-semibold motion-safe:transition-colors ${
+                    journeyActive === (mode === "journey")
+                      ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm ring-1 ring-slate-200 dark:ring-slate-700"
+                      : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                  }`}
+                >
+                  {mode === "journey" ? "Journey" : "List"}
+                </button>
+              ))}
+            </div>
           )}
-          {!journeyMode && modules.length > 0 && (
+          {!journeyActive && modules.length > 0 && (
             <button
               type="button"
               onClick={() => {
@@ -1147,7 +1148,7 @@ export function ModulesPage(): JSX.Element {
               {allCollapsed ? "Expand all" : "Collapse all"}
             </button>
           )}
-          {canEdit && !journeyMode && modules.length > 0 && (
+          {canEdit && !journeyActive && modules.length > 0 && (
             <button
               type="button"
               onClick={() => {
@@ -1172,7 +1173,7 @@ export function ModulesPage(): JSX.Element {
               Publish all
             </button>
           )}
-          {canEdit && !journeyMode && modules.length > 0 && (
+          {canEdit && !journeyActive && modules.length > 0 && (
             selectMode ? (
               <button
                 type="button"
@@ -1191,7 +1192,7 @@ export function ModulesPage(): JSX.Element {
               </button>
             )
           )}
-          {canEdit && !journeyMode && (
+          {canEdit && !journeyActive && (
             <button
               type="button"
               onClick={() => setInlineCreatingModule({ busy: false })}
@@ -1253,7 +1254,7 @@ export function ModulesPage(): JSX.Element {
         {reorderAnnouncement}
       </div>
 
-      {journeyMode && classId ? (
+      {journeyActive && classId ? (
         <TeacherJourneyPanel courseId={classId} modules={modules} />
       ) : (
         <>

@@ -135,22 +135,23 @@ try {
     await ctx.close();
   }
 
+  // NOTE: the student-side journey is temporarily disabled
+  // (STUDENT_JOURNEY_ENABLED=false in StudentCourseView) — the student shot
+  // currently shows the plain list. When re-enabled, journey is the default
+  // and a List tab appears; re-add the toggle shots then.
   const studentSession = await signIn(`jrny-s-${TAG}@gmail.com`);
   const coursePath = `/student/courses/${course.short_code}`;
-  await shot(studentSession, coursePath, "student-journey-ivy.png");
-  await shot(studentSession, coursePath, "student-journey-ivy-dark.png", { dark: true });
-  await shot(studentSession, coursePath, "student-list-ivy.png", {
+  await shot(studentSession, coursePath, "student-course-ivy.png");
+
+  // Educator Modules: Journey is the PRIMARY view (default); List is the
+  // existing editor behind the segmented control.
+  const teacherSession = await signIn(`jrny-t-${TAG}@gmail.com`);
+  const modsPath = `/educator/courses/${course.short_code}/modules`;
+  await shot(teacherSession, modsPath, "educator-journey-ivy.png");
+  await shot(teacherSession, modsPath, "educator-list-ivy.png", {
     before: async (page) => {
       await page.getByRole("tab", { name: "List" }).click();
-      await page.waitForTimeout(800);
-    },
-  });
-
-  const teacherSession = await signIn(`jrny-t-${TAG}@gmail.com`);
-  await shot(teacherSession, `/educator/courses/${course.short_code}/modules`, "educator-journey-ivy.png", {
-    before: async (page) => {
-      await page.getByRole("button", { name: "Journey" }).click();
-      await page.waitForTimeout(1500);
+      await page.waitForTimeout(1200);
     },
   });
 

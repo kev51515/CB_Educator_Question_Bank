@@ -38,7 +38,7 @@ classic themes, light and dark.
 | Gold tier ("sealed") | best **effective score ≥ 80%** (uses `assignment_best_attempts.effective_score`, so teacher overrides count) |
 | Completion | submitted = done; below-80 shows a "retake for the seal" nudge — retaking is the motivator |
 | Mechanics in v1 | **mastery points + levels** — yes. Streaks/leaderboards — no (deferred, maybe never) |
-| Placement | **student default** view on the course page (toggle back to List, persisted); **educator toggle** on Modules showing class-aggregate cells |
+| Placement | **student default** view on the course page (toggle back to List, persisted); educator Modules has a **Journey \| List segmented control with Journey as the PRIMARY/default view** (Kevin, 2026-06-12: "within the module page, it should have 2 views, Journey (primary) and List") |
 
 ## v1 design
 
@@ -89,12 +89,20 @@ server-side (RPC/view) — revisit then.
   `student.courseView:<courseId>`. HUD (points + level bar) + grid. Cell
   click navigates exactly like the list rows (assignment take path, student
   test runner with `?m=` preserved).
-- **Educator** (`ModulesPage`): "Journey" pill toggles a read-only
-  class-aggregate grid (persisted `staff.modulesView:<courseId>`). Cell color
+- **Educator** (`ModulesPage`): Journey | List segmented control, **Journey
+  default** (persisted `staff.modulesView:<courseId>`; List = the existing
+  module editor — toolbar editing pills only show in List). Cell color
   = state of the **class average** effective score among submitted; tooltip =
   `n/N submitted · k sealed · avg x%`. Assignment cells open the assignment;
   test cells open `/educator/tests/:slug`. Only published modules/items are
-  shown (it's the student lens).
+  shown (it's the student lens). Students who hit this surface always get
+  the list (`journeyActive = !isStudent && journeyMode`).
+
+> **Status note (2026-06-12):** the STUDENT-side journey is temporarily
+> flagged off (`STUDENT_JOURNEY_ENABLED = false` in `StudentCourseView.tsx`)
+> while the rest of the course experience is being tested — students see the
+> List only and the toggle is hidden. Flip the flag to restore; saved
+> per-course prefs survive. The educator journey is live.
 
 ### Code map
 
