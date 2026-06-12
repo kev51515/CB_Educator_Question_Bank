@@ -1,5 +1,42 @@
 # Session Recap
 
+## Recordings — audio → transcript → AI notes → quiz (2026-06-12) — SHIPPED (backend live; publish deferred)
+
+New owner-facing **Recordings** surface (`/educator/recordings`) for all three
+educator domains (teacher / counselor / coach). Record in spurts or upload audio
+→ speaker-labelled transcript → AI "Fathom" notes → draft quiz. **Everything
+runs on ONE Google/Gemini key** (transcription + notes + quiz) — no AssemblyAI,
+no Anthropic (`ANTHROPIC_API_KEY` isn't even set on the project). Full spec:
+[`RECORDINGS_FEATURE.md`](./RECORDINGS_FEATURE.md). Commits 905d041d (Phases
+0–3), cd3864a8 (publish isolated parts), 08ea7257 (UX wave).
+
+- **Capture (Phase 1)** — `RecorderPanel` is **Part-based** ("spurt" model):
+  Record / Pause / **Stop Part** / **End**. Each Stop Part uploads + transcribes
+  that Part independently; End stitches all Parts with visible **Part 1 / Part 2**
+  dividers. Upload = a one-Part recording. iOS/Safari codec detection + upload
+  fallback. `transcribe-part` edge fn calls **Gemini** synchronously in the
+  background (`EdgeRuntime.waitUntil`) — no webhook.
+- **Notes (Phase 2)** — `summarize-recording` + `_shared/summarize.ts` (Gemini
+  structured JSON) auto-generate TL;DR / topics / action items / highlights when
+  a recording finalizes; jump-to-timestamp chips seek the audio.
+- **Quiz draft (Phase 3)** — `generate-quiz-from-recording` (Gemini, **SAT-style
+  or general** per recording) → `authored_questions` (the LMS's first
+  teacher-authored question store) → `QuizDraftPanel` review/edit.
+- **DB** — migrations **0208** (recordings/recording_parts/recording_notes +
+  private owner-only bucket + metadata-only audit + `assignments.source_recording_id`)
+  and **0216** (`authored_questions`); both live + validated end-to-end on prod.
+- **UX wave** — detail page Fathom layout (collapsible/searchable transcript,
+  **speaker rename**, **inline correction**, copy/download .md); list search +
+  filter + kebab + auto-refresh; recorder **mic level meter**.
+- **Deferred — publish a quiz into a takeable assignment.** Isolated half built
+  + committed (migration **0218** staged: `assignment_id` snapshot col +
+  `get_authored_questions` answer-stripped reader + server-graded
+  `submit_authored_attempt`; dormant `AuthoredQuizRunner`). The shared half
+  (alter `assignments_kind_consistency` for `kind='authored_set'`,
+  `publish_authored_quiz`, Publish wiring, `AssignmentRunner` branch) waits for
+  the parallel assignment rework (0209–0217) to settle. **Phase 5 (future):
+  Google Meet in a Module.**
+
 ## Test annotations — student highlight fix + teacher review suite (2026-06-12) — SHIPPED
 
 Two things in one pass: **fixed student highlighting** (students reported it didn't

@@ -191,18 +191,31 @@ assignment rework settles, or in explicit coordination.
 
 ## Client — `viewer/src/recordings/`
 
-- **RecordingsListPage** — per owner (optionally filtered by course); skeleton +
-  empty-state CTA per the UX bar.
-- **RecorderPanel** — MediaRecorder; Record / Pause / Stop-Part / End controls;
-  live Part list with per-Part transcribe status; consent gate for `session`.
-- **RecordingDetailPage** — Fathom notes (TL;DR, Topics with jump-to-timestamp
-  audio seek, Action items, Highlights) + **Full Transcript** toggle showing
-  speaker labels and Part dividers.
-- **Generate-assignment flow** *(Phase 3)* — draft → review/edit in an authored-
-  question editor → publish through existing assignment plumbing.
+- **RecordingsListPage** — owner's recordings with **search**, status filter
+  (all/ready/processing), relative time + duration + subject, per-row **kebab**
+  (rename inline / delete), and **auto-refresh while anything is processing**.
+  Skeleton + empty-state CTA. "New recording" modal (`ResponsiveModal`): title,
+  subject self/session + consent gate, or `FileDropzone` upload (= one-Part rec).
+- **RecorderPanel** — MediaRecorder; Record / Pause / Stop-Part / End; live
+  **mic level meter** + per-Part timer; consent already gated at creation.
+- **RecordingDetailPage** — **Fathom layout**: notes-first (TL;DR / Topics /
+  Action items / Highlights with **jump-to-timestamp** chips that expand the
+  transcript + seek the audio), then a **collapsible, searchable Full
+  Transcript** (collapses once notes exist). Owner can **rename speakers**
+  (across Parts) and **inline-correct** any utterance. Header actions: **Copy
+  notes**, **Copy transcript**, **Download .md**, Generate/Regenerate notes,
+  Delete. Per-Part audio playback + status.
+- **QuizDraftPanel** — generate (SAT-style/general toggle) → review/edit each
+  question (stem/choices/correct/rationale) → delete/regenerate. Publish button
+  present but disabled (Phase 3b deferred).
+- **AuthoredQuizRunner** *(dormant)* — built student MCQ runner, not yet wired.
+- **format.ts** — pure helpers: `relativeTime`, `formatDuration`, `fmtTs`,
+  `speakerDisplay`, `transcriptToText`, `recordingToMarkdown`, `downloadText`.
 
-Reuse: `useToast`, `Skeleton`, `SmartDatePicker`, `KebabMenu`, `ResponsiveModal`,
-`Combobox`, role vocab from `lib/domain.ts`.
+Reuse: `useToast`, `Skeleton`/`SkeletonRows`, `FileDropzone`, `KebabMenu`,
+`ResponsiveModal`, `EmptyState`, role vocab from `lib/domain.ts`. Transcript /
+speaker edits persist to `recording_parts.transcript` via `updatePartTranscript`
+/ `renameSpeaker` (owner RLS; validated round-trip on prod).
 
 ## Known risks
 
