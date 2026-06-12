@@ -9,6 +9,8 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import type { FtModule } from "./types";
 
+export type FtTimeMode = "unlimited" | "strict";
+
 export interface FullTestSelection {
   fullTestSlug: string;
   setFullTestSlug: (slug: string) => void;
@@ -16,6 +18,9 @@ export interface FullTestSelection {
   ftDeployed: Set<number>;
   ftOpensAt: string | null;
   setFtOpensAt: (v: string | null) => void;
+  /** Timer behavior when a student leaves (0211): pause vs keep running. */
+  ftTimeMode: FtTimeMode;
+  setFtTimeMode: (v: FtTimeMode) => void;
   ftDeployedSorted: number[];
   ftContiguous: boolean;
   ftIsSubset: boolean;
@@ -37,6 +42,9 @@ export function useFullTestSelection(itemType: string): FullTestSelection {
   // One "Available from" open date for the whole occurrence (NULL = open now),
   // written via set_module_open_date after the link is inserted.
   const [ftOpensAt, setFtOpensAt] = useState<string | null>(null);
+  // Timer mode when the student saves-and-leaves (0211). Default 'unlimited'
+  // (pause while away); 'strict' keeps the clock running to the deadline.
+  const [ftTimeMode, setFtTimeMode] = useState<FtTimeMode>("unlimited");
 
   // Load the chosen test's modules so the teacher can pick a subset. Defaults
   // every module selected (= full test, no windows written).
@@ -121,6 +129,8 @@ export function useFullTestSelection(itemType: string): FullTestSelection {
     ftDeployed,
     ftOpensAt,
     setFtOpensAt,
+    ftTimeMode,
+    setFtTimeMode,
     ftDeployedSorted,
     ftContiguous,
     ftIsSubset,

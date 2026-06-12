@@ -421,10 +421,17 @@ export function InlineAddItemRow({
       // plain /test/<slug> link.
       const first = ft.ftDeployedSorted[0];
       const last = ft.ftDeployedSorted[ft.ftDeployedSorted.length - 1];
-      const url =
+      // Strict TIME mode (0211) adds `tm=strict` to the link so the run keeps its
+      // clock running while away; appended with `&` after a range or as the sole
+      // `?` query on a full test.
+      const base =
         ft.ftIsSubset && first != null
           ? `${testRunPath(ft.fullTestSlug)}?m=${first}-${last}`
           : testRunPath(ft.fullTestSlug);
+      const url =
+        ft.ftTimeMode === "strict"
+          ? `${base}${base.includes("?") ? "&" : "?"}tm=strict`
+          : base;
       setBusy(true);
       try {
         const insertErr = await insertFullTestLink(supabase, {

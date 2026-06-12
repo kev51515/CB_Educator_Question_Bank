@@ -33,6 +33,8 @@ export function FullTestSection({
     ftDeployed,
     ftOpensAt,
     setFtOpensAt,
+    ftTimeMode,
+    setFtTimeMode,
     ftContiguous,
     toggleFtModule,
     setFtBySection,
@@ -209,6 +211,40 @@ export function FullTestSection({
             onChange={setFtOpensAt}
             allowClear
           />
+        </div>
+      )}
+
+      {/* Timer behavior when a student leaves mid-test (0211). */}
+      {fullTestSlug && (
+        <div className="space-y-1.5">
+          <span className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            If the student leaves
+          </span>
+          <div className="flex gap-1.5">
+            <button
+              type="button"
+              onClick={() => setFtTimeMode("unlimited")}
+              aria-pressed={ftTimeMode === "unlimited"}
+              disabled={busy}
+              className={chipClass(ftTimeMode === "unlimited")}
+            >
+              Pause the timer
+            </button>
+            <button
+              type="button"
+              onClick={() => setFtTimeMode("strict")}
+              aria-pressed={ftTimeMode === "strict"}
+              disabled={busy}
+              className={chipClass(ftTimeMode === "strict")}
+            >
+              Keep the clock running
+            </button>
+          </div>
+          <p className="text-[11px] text-slate-400 dark:text-slate-500">
+            {ftTimeMode === "strict"
+              ? "Strict timing — the clock keeps counting while they're away and the test auto-submits at the deadline (real-exam style)."
+              : "Relaxed — the timer pauses while they're away so they can resume later (good for homework / practice)."}
+          </p>
         </div>
       )}
     </div>

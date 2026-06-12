@@ -34,28 +34,41 @@ interface EditTestModulesModalProps {
   onSaved: () => void;
 }
 
-/** Parse the test slug + current `?m=<first>-<last>` range from a link URL. */
-function parseLink(url: string | null): { slug: string; range: [number, number] | null } {
+type TimeMode = "unlimited" | "strict";
+
+/** Parse the test slug + current `?m=<first>-<last>` range + `&tm=` mode. */
+function parseLink(url: string | null): {
+  slug: string;
+  range: [number, number] | null;
+  timeMode: TimeMode;
+} {
   const u = url ?? "";
-  // url is `/test/<slug>` or `/test/<slug>?m=<first>-<last>`. `.slice(6)` drops
-  // the leading "/test/" prefix, then split off any path tail + query string.
+  // url is `/test/<slug>` or `/test/<slug>?m=<first>-<last>[&tm=strict]`.
+  // `.slice(6)` drops the leading "/test/" prefix, then split off path + query.
   const slug = u.slice(6).split("/")[0].split("?")[0];
   const m = u.match(/[?&]m=(\d+)-(\d+)/);
   const range: [number, number] | null = m
     ? [Number.parseInt(m[1], 10), Number.parseInt(m[2], 10)]
     : null;
-  return { slug, range };
+  const timeMode: TimeMode = /[?&]tm=strict/.test(u) ? "strict" : "unlimited";
+  return { slug, range, timeMode };
 }
 
 export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditTestModulesModalProps) {
   const toast = useToast();
 
-  const { slug, range } = useMemo(() => parseLink(item.url), [item.url]);
+  const { slug, range, timeMode: initialTimeMode } = useMemo(
+    () => parseLink(item.url),
+    [item.url],
+  );
 
   const [modules, setModules] = useState<FtModule[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [deployed, setDeployed] = useState<Set<number>>(new Set());
   const [saving, setSaving] = useState(false);
+  // Timer behavior when a student saves-and-leaves (0211): 'unlimited' pauses
+  // the clock while away; 'strict' keeps it running and ends at the deadline.
+  const [timeMode, setTimeMode] = useState<TimeMode>(initialTimeMode);
   // One "Available from" open date for the whole occurrence (NULL = open now).
   // Seeded from the current occurrence's first in-range position's opens_at.
   const [opensAt, setOpensAt] = useState<string | null>(null);
@@ -204,11 +217,14 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
     const last = deployedSorted[deployedSorted.length - 1];
     // A strict subset encodes the range in the link URL as `?m=<first>-<last>`
     // so it launches its own run with its own report (0156). A full selection
-    // uses the plain /test/<slug> link.
-    const newUrl =
+    // uses the plain /test/<slug> link. Strict TIME mode (0211) adds `tm=strict`
+    // — appended with `&` after a range, or as the sole `?` query on a full test.
+    const base =
       isSubset && first != null
         ? `${testRunPath(slug)}?m=${first}-${last}`
         : testRunPath(slug);
+    const newUrl =
+      timeMode === "strict" ? `${base}${base.includes("?") ? "&" : "?"}tm=strict` : base;
     setSaving(true);
     try {
       const { error } = await supabase
@@ -249,6 +265,7 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
     slug,
     courseId,
     opensAt,
+    timeMode,
     item.id,
     item.title,
     onSaved,
@@ -382,6 +399,38 @@ export function EditTestModulesModal({ item, courseId, onClose, onSaved }: EditT
                 allowClear
               />
             </div>
+
+            {/* Timer behavior when a student leaves mid-test (0211). */}
+            <fieldset className="space-y-1.5">
+              <legend className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                If the student leaves
+              </legend>
+              <div className="flex gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setTimeMode("unlimited")}
+                  aria-pressed={timeMode === "unlimited"}
+                  disabled={saving}
+                  className={chipClass(timeMode === "unlimited")}
+                >
+                  Pause the timer
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setTimeMode("strict")}
+                  aria-pressed={timeMode === "strict"}
+                  disabled={saving}
+                  className={chipClass(timeMode === "strict")}
+                >
+                  Keep the clock running
+                </button>
+              </div>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                {timeMode === "strict"
+                  ? "Strict timing — like a real exam, the clock keeps counting while they're away and the test auto-submits at the deadline."
+                  : "Relaxed — the timer pauses while they're away so they can pick up where they left off (good for homework / practice)."}
+              </p>
+            </fieldset>
 
             {submittedCount > 0 && (
               <p className="rounded-lg bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-[11px] text-amber-700 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-800">
