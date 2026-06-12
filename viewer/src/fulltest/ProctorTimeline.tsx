@@ -123,6 +123,11 @@ function describe(ev: ProctorEvent): string {
   else if (ev.module != null) parts.push(`Module ${ev.module}`);
   const dur = fmtDuration(ev.durationSeconds);
   if (dur) parts.push(dur);
+  // Copy/cut: include a short snippet of what was copied in the tooltip.
+  if ((ev.type === "copy" || ev.type === "copy_blocked") && ev.meta?.text) {
+    const t = ev.meta.text.replace(/\s+/g, " ").trim();
+    parts.push(`“${t.length > 80 ? `${t.slice(0, 80)}…` : t}”`);
+  }
   return parts.join(" · ");
 }
 
@@ -713,27 +718,41 @@ export default function ProctorTimeline({
           return (
             <li
               key={i}
-              className="flex items-center gap-2.5 px-3 py-1.5 text-xs bg-white dark:bg-slate-900"
+              className="flex items-start gap-2.5 px-3 py-1.5 text-xs bg-white dark:bg-slate-900"
             >
               <span
                 aria-hidden
-                className="w-3 flex-none text-center leading-none"
+                className="mt-0.5 w-3 flex-none text-center leading-none"
                 style={{ color: p.style.fill }}
               >
                 {p.style.glyph}
               </span>
-              <span className="min-w-0 flex-1 truncate font-medium text-slate-700 dark:text-slate-200">
-                {p.style.label}
-                {p.ev.question != null && (
-                  <span className="ml-1 font-normal text-slate-400 dark:text-slate-500">
-                    Q{p.ev.question}
-                  </span>
+              <div className="min-w-0 flex-1">
+                <span className="font-medium text-slate-700 dark:text-slate-200">
+                  {p.style.label}
+                  {p.ev.question != null && (
+                    <span className="ml-1 font-normal text-slate-400 dark:text-slate-500">
+                      Q{p.ev.question}
+                    </span>
+                  )}
+                </span>
+                {/* Exactly what the student copied (0211) — captured selection,
+                    capped 2000 chars. Shown for both copy + copy_blocked. */}
+                {(p.ev.type === "copy" || p.ev.type === "copy_blocked") && p.ev.meta?.text && (
+                  <p className="mt-1 break-words rounded bg-slate-50 px-1.5 py-1 font-mono text-[11px] leading-snug text-slate-600 ring-1 ring-slate-200 dark:bg-slate-800/60 dark:text-slate-300 dark:ring-slate-700">
+                    “{p.ev.meta.text}”
+                    {p.ev.meta.chars != null && p.ev.meta.chars > p.ev.meta.text.length && (
+                      <span className="ml-1 not-italic text-slate-400 dark:text-slate-500">
+                        (+{p.ev.meta.chars - p.ev.meta.text.length} more characters)
+                      </span>
+                    )}
+                  </p>
                 )}
-              </span>
+              </div>
               {dur && (
-                <span className="flex-none tabular-nums text-amber-600 dark:text-amber-400">{dur}</span>
+                <span className="mt-0.5 flex-none tabular-nums text-amber-600 dark:text-amber-400">{dur}</span>
               )}
-              <span className="flex-none tabular-nums text-slate-400 dark:text-slate-500">
+              <span className="mt-0.5 flex-none tabular-nums text-slate-400 dark:text-slate-500">
                 {fmtElapsed(p.elapsedMs)}
               </span>
             </li>

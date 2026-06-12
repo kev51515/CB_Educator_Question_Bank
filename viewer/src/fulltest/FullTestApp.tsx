@@ -46,6 +46,7 @@ import {
   loadCachedAnswers,
   saveCachedAnswers,
   saveProgress,
+  selfPause,
   startTest,
   submitModule,
   TestApiError,
@@ -298,6 +299,12 @@ function FullTestRunner() {
     ((start as { proctoring_level?: ProctoringLevel } | null)?.proctoring_level) ?? "off";
   const proctorOn = proctoringLevel !== "off";
   const strict = proctoringLevel === "strict";
+  // Timer mode (0211), orthogonal to the proctoring level. 'strict' = the
+  // section clock keeps running while the student is away and the test ends at
+  // the deadline with or without them; 'unlimited' (default) = the clock pauses
+  // while away (homework/practice). Drives the Save & exit warning + auto-pause.
+  const timeMode = start?.time_mode ?? "unlimited";
+  const strictTime = timeMode === "strict";
   // Fullscreen is enforced in strict mode and — while FORCE_FULLSCREEN_ON_TESTS
   // is on — on soft proctored tests too. This gates ONLY the fullscreen
   // request + exit lockout; copy/paste/contextmenu blocking stays strict-only.
@@ -360,7 +367,8 @@ function FullTestRunner() {
         // A subset link is `/test/<slug>?m=<first>-<last>` — scope the run to
         // that module range so it's an independent attempt (0156). No ?m = the
         // full test / metered run.
-        const mParam = new URLSearchParams(location.search || embeddedQuery).get("m");
+        const qs = new URLSearchParams(location.search || embeddedQuery);
+        const mParam = qs.get("m");
         let mFirst: number | null = null;
         let mLast: number | null = null;
         if (mParam && /^\d+-\d+$/.test(mParam)) {
@@ -370,7 +378,11 @@ function FullTestRunner() {
             mLast = l;
           }
         }
-        const s = await startTest(slug, mFirst, mLast);
+        // `&tm=strict` marks a strict-time occurrence (clock keeps running while
+        // away). Anything else (incl. absent) = 'unlimited' (clock pauses). The
+        // mode is only honored at run creation; a resume keeps the run's mode.
+        const tmParam = qs.get("tm") === "strict" ? "strict" : "unlimited";
+        const s = await startTest(slug, mFirst, mLast, tmParam);
         if (!alive) return;
         setStart(s);
         // Don't fetch the result here — the "result" phase render decides what
@@ -685,21 +697,30 @@ function FullTestRunner() {
       module: currentModuleRef.current ?? undefined,
       question: currentQuestionRef.current ?? undefined,
     });
+    // Capture WHAT was copied (the educator asked to see exactly what students
+    // copy). Read the live selection BEFORE preventDefault; cap the stored text
+    // so a giant selection can't bloat the event row. Stored in the event meta
+    // and surfaced on the teacher proctor timeline.
+    const copyMeta = () => {
+      const text = (window.getSelection()?.toString() ?? "").trim();
+      if (!text) return ctx();
+      return { ...ctx(), meta: { text: text.slice(0, 2000), chars: text.length } };
+    };
     const onCopy = (e: Event) => {
       if (strict) {
         e.preventDefault();
-        void logProctorEvent(runId, "copy_blocked", ctx());
+        void logProctorEvent(runId, "copy_blocked", copyMeta());
       } else {
-        void logProctorEvent(runId, "copy", ctx());
+        void logProctorEvent(runId, "copy", copyMeta());
       }
     };
     const onCut = (e: Event) => {
       // cut is a copy + delete; in strict mode block it as a copy attempt.
       if (strict) {
         e.preventDefault();
-        void logProctorEvent(runId, "copy_blocked", ctx());
+        void logProctorEvent(runId, "copy_blocked", copyMeta());
       } else {
-        void logProctorEvent(runId, "copy", ctx());
+        void logProctorEvent(runId, "copy", copyMeta());
       }
     };
     const onPaste = (e: Event) => {
@@ -926,6 +947,10 @@ function FullTestRunner() {
           module: currentModuleRef.current ?? undefined,
           question: currentQuestionRef.current ?? undefined,
         };
+        // Unlimited mode: freeze the section clock while away. The server stamps
+        // self_paused_at; on return we lift it and it shifts the module start
+        // forward by the away interval, so no time is lost. (No-op for strict.)
+        if (timeMode === "unlimited") void selfPause(runId, true);
         return;
       }
       const hiddenAt = hiddenAtRef.current;
@@ -934,6 +959,8 @@ function FullTestRunner() {
       const hiddenMs = Date.now() - hiddenAt;
       // Integrity: a real "left the tab" (≥2s) → log an 'away' event with the
       // duration away + the position the student left from (proctorOn gates it).
+      // Logged for BOTH modes — the educator still wants to know they left, even
+      // when the clock paused.
       if (proctorOn && hiddenMs >= 2000) {
         void logProctorEvent(runId, "away", {
           durationSeconds: Math.round(hiddenMs / 1000),
@@ -941,7 +968,16 @@ function FullTestRunner() {
           question: awayCtxRef.current.question,
         });
       }
-      if (hiddenMs > 5000) void resyncClock();
+      if (timeMode === "unlimited") {
+        // Lift the away-pause FIRST (server shifts the module start forward),
+        // THEN resync so the recomputed deadline reflects the preserved time.
+        void (async () => {
+          await selfPause(runId, false);
+          await resyncClock();
+        })();
+      } else if (hiddenMs > 5000) {
+        void resyncClock();
+      }
     };
 
     // bfcache restore (back/forward, mobile app-switch resume): the page was
@@ -959,7 +995,7 @@ function FullTestRunner() {
       document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("pageshow", onPageShow);
     };
-  }, [phase, runId, moduleMeta, toast, proctorOn]);
+  }, [phase, runId, moduleMeta, toast, proctorOn, timeMode]);
 
   // P2: debounced server-side draft autosave. Each answer change resets a
   // 2.5s timer; on idle we persist the active module's drafts so a device
@@ -1000,6 +1036,22 @@ function FullTestRunner() {
   }, [runId, moduleMeta, answers, eliminated, marked, questions, annot]);
   const saveDraftRef = useRef(saveDraftNow);
   saveDraftRef.current = saveDraftNow;
+
+  // Leave-the-page guard (the only browser-available deterrent — no web API can
+  // block an OS-level Alt/Cmd-Tab). On a close / refresh / hard navigation
+  // mid-module: flush the draft, freeze the clock for an unlimited run, and ask
+  // the browser to show its native "Leave site?" confirmation.
+  useEffect(() => {
+    if (phase !== "module" || !runId) return;
+    const onBeforeUnload = (e: BeforeUnloadEvent) => {
+      saveDraftRef.current();
+      if (timeMode === "unlimited") void selfPause(runId, true);
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", onBeforeUnload);
+    return () => window.removeEventListener("beforeunload", onBeforeUnload);
+  }, [phase, runId, timeMode]);
 
   // Mirror the latest answers so the action journal can read the PRIOR value of
   // a question without logging inside the setState updater (which would
@@ -1057,9 +1109,17 @@ function FullTestRunner() {
   const beginModule = useCallback(
     (position: number) => {
       enterFullscreen();
-      void loadModule(position);
+      // Unlimited resume-after-close: a hide fired when the student left, so the
+      // run may still be self-paused. Lift it FIRST (shifts the module start
+      // forward by the away time) so get_test_module returns the preserved
+      // remaining, not a clock that kept ticking while the tab was closed.
+      if (runId && timeMode === "unlimited") {
+        void selfPause(runId, false).then(() => loadModule(position));
+      } else {
+        void loadModule(position);
+      }
     },
-    [enterFullscreen, loadModule],
+    [enterFullscreen, loadModule, runId, timeMode],
   );
 
   const setAnswer = useCallback(
@@ -1328,6 +1388,21 @@ function FullTestRunner() {
           Each module is timed and submitted on its own; you can't return to a
           previous module once you move on — just like the real Digital SAT.
         </p>
+        <p
+          className={`mt-3 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium ${
+            strictTime
+              ? "bg-rose-50 text-rose-700 ring-1 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
+              : "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900"
+          }`}
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+          </svg>
+          {strictTime
+            ? "Strict timing — the clock keeps running if you leave, and the test ends at the deadline."
+            : "If you need to step away, the timer pauses until you come back."}
+        </p>
         <ol className="mt-5 space-y-2">
           {start.modules.map((m) => {
             const included = inScope(m);
@@ -1521,7 +1596,11 @@ function FullTestRunner() {
             type="button"
             onClick={() => setConfirmExit(true)}
             className="inline-flex items-center gap-1.5 min-h-[44px] rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
-            title="Save your progress and leave — the section timer keeps running"
+            title={
+              strictTime
+                ? "Save your progress and leave — the section timer keeps running and the test ends at the deadline"
+                : "Save your progress and leave — the timer pauses while you're away"
+            }
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
@@ -1857,21 +1936,45 @@ function FullTestRunner() {
 
       {confirmExit && (
         <ConfirmDialog
-          title="Leave the test?"
+          title={strictTime ? "Leave during a timed test?" : "Leave the test?"}
           body={
-            <p>
-              Your answers are saved — you can come back and pick up where you
-              left off.{" "}
-              <span className="font-semibold text-slate-900 dark:text-slate-100">
-                The section timer keeps running while you're away.
-              </span>
-            </p>
+            strictTime ? (
+              <p>
+                This is a{" "}
+                <span className="font-semibold text-slate-900 dark:text-slate-100">
+                  strictly timed
+                </span>{" "}
+                test. Your answers are saved, but{" "}
+                <span className="font-semibold text-rose-700 dark:text-rose-300">
+                  the section timer will NOT stop
+                </span>{" "}
+                while you're away — just like a real exam, it keeps counting down
+                and the test ends at the deadline whether or not you're here. Type{" "}
+                <span className="font-semibold">confirm</span> to leave anyway.
+              </p>
+            ) : (
+              <p>
+                Your answers are saved and{" "}
+                <span className="font-semibold text-slate-900 dark:text-slate-100">
+                  the timer pauses while you're away
+                </span>{" "}
+                — you can come back and pick up right where you left off.
+              </p>
+            )
           }
+          // Strict-time: require a typed confirmation so a student can't lose the
+          // test to an accidental click. Unlimited: a plain Save & exit.
+          confirmPhrase={strictTime ? "confirm" : undefined}
           confirmLabel="Save &amp; exit"
+          destructive={strictTime}
           dismissible={!strict}
           onConfirm={() => {
             setConfirmExit(false);
             saveDraftNow(); // flush the current module's draft before leaving
+            // Unlimited: freeze the clock now so the time away isn't charged
+            // (the visibility-hide also fires, but explicit is safer on a real
+            // navigation). Strict: deliberately do NOT pause — the clock runs.
+            if (runId && !strictTime) void selfPause(runId, true);
             navigate(ROUTES.HOME);
           }}
           onCancel={() => setConfirmExit(false)}

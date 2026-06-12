@@ -321,9 +321,13 @@ function fmtClock(sec: number | null): string {
  *  did the student rush or run over time? Hidden when no timing was recorded. */
 function TimingCard({ result }: { result: TestResult }) {
   const timing = result.module_timing ?? {};
+  // Scope to the run's assigned module range (a `?m=` single-module occurrence)
+  // so a 1-of-4 assignment's review only ever shows the module it covered.
+  const lo = result.first_position ?? Number.MIN_SAFE_INTEGER;
+  const hi = result.last_position ?? Number.MAX_SAFE_INTEGER;
   const positions = Object.keys(timing)
     .map(Number)
-    .filter((n) => !Number.isNaN(n))
+    .filter((n) => !Number.isNaN(n) && n >= lo && n <= hi)
     .sort((a, b) => a - b);
   if (positions.length === 0) return null;
 

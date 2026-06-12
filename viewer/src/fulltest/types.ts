@@ -11,6 +11,14 @@ export type Section = "reading-writing" | "math";
 export type QType = "mcq" | "grid";
 export type Letter = "A" | "B" | "C" | "D";
 
+/**
+ * How the section timer behaves when the student leaves the test (0211):
+ *   • 'unlimited' (default) — the clock PAUSES while away (homework / practice).
+ *   • 'strict' — the clock keeps running on wall-clock and the test ends at the
+ *     deadline with or without the student (real-exam fidelity).
+ */
+export type TimeMode = "unlimited" | "strict";
+
 export interface ModuleMeta {
   position: number;
   section: Section;
@@ -36,6 +44,8 @@ export interface StartTestResult {
   first_position?: number;
   /** Highest released module position for this course's metered assignment (0143). */
   last_position?: number;
+  /** Timer behavior on save-and-leave for this run (0211); default 'unlimited'. */
+  time_mode?: TimeMode;
   test: {
     slug: string;
     title: string;
@@ -130,6 +140,11 @@ export interface TestResult {
   section_scores: Record<string, { correct: number; total: number }> | null;
   /** Per-module timing keyed by position ("1".."4"). */
   module_timing?: Record<string, ModuleTiming>;
+  /** The run's assigned module range (a `?m=` subset occurrence); null = full test. */
+  first_position?: number | null;
+  last_position?: number | null;
+  /** Timer mode the run was taken under (0211). */
+  time_mode?: TimeMode;
   questions: ResultQuestion[];
 }
 

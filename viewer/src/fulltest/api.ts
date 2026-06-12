@@ -59,17 +59,37 @@ export async function startTest(
   slug: string,
   first?: number | null,
   last?: number | null,
+  timeMode?: "unlimited" | "strict" | null,
 ): Promise<StartTestResult> {
   // first/last scope the run to a module subset (a `?m=<first>-<last>` link),
   // so the same test assigned for different modules launches independent runs
   // (0156). Omitted = the full test / metered single run (unchanged behavior).
+  // timeMode (`&tm=` on the occurrence link, 0211) is frozen onto the run at
+  // creation: 'strict' = clock keeps running while away; 'unlimited' (default)
+  // = clock pauses. Ignored on resume (the existing run keeps its mode).
   const { data, error } = await supabase.rpc("start_test", {
     p_slug: slug,
     p_first: first ?? null,
     p_last: last ?? null,
+    p_time_mode: timeMode ?? "unlimited",
   });
   if (error) throw mapError(error);
   return data as StartTestResult;
+}
+
+/**
+ * Student self-pause for an 'unlimited' run (0211): freeze the section clock
+ * while the student is away (tab hidden / saved-and-left), unfreeze on return —
+ * the server shifts the module start forward by the away interval so no time is
+ * lost. No-op server-side for a 'strict' run or a run the caller doesn't own.
+ * Best-effort: never throws (fired from visibility handlers).
+ */
+export async function selfPause(runId: string, paused: boolean): Promise<void> {
+  try {
+    await supabase.rpc("test_self_pause", { p_run_id: runId, p_paused: paused });
+  } catch {
+    /* non-fatal — pausing is a convenience, never a blocker */
+  }
 }
 
 export async function getModule(
@@ -228,8 +248,11 @@ export interface ActionMeta {
   end?: number | null;
   offset?: number | null;
   color?: string | null;
-  /** highlight_add (selected text) / note_edit (note text, capped) */
+  /** highlight_add (selected text) / note_edit (note text, capped) /
+   *  copy + copy_blocked (the captured selection that was copied, capped 2000) */
   text?: string | null;
+  /** copy + copy_blocked: full length of the copied selection before truncation. */
+  chars?: number | null;
 }
 
 /** One row of a run's proctoring timeline (from `get_test_run_timeline`). */
@@ -250,7 +273,7 @@ export interface ProctorEvent {
 export async function logProctorEvent(
   runId: string,
   type: ProctorEventType,
-  opts: { durationSeconds?: number; module?: number; question?: number } = {},
+  opts: { durationSeconds?: number; module?: number; question?: number; meta?: ActionMeta } = {},
 ): Promise<void> {
   try {
     await supabase.rpc("test_log_proctor_event", {
@@ -259,6 +282,9 @@ export async function logProctorEvent(
       p_duration_seconds: opts.durationSeconds ?? null,
       p_module: opts.module ?? null,
       p_question: opts.question ?? null,
+      // The captured copy/cut selection text (0211) so the educator can see
+      // exactly what was copied; null for non-copy events.
+      p_meta: opts.meta ?? null,
     });
   } catch {
     /* non-fatal — proctoring telemetry is observational only */
