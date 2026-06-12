@@ -520,9 +520,13 @@ function Prompt({
           <input
             id={`grid-${question.id}`}
             type="text"
-            inputMode="text"
+            // `inputMode="none"` suppresses the on-screen keyboard on touch
+            // devices (iPad), which is what dropped the runner out of fullscreen
+            // when a student tapped this field. Desktop physical-keyboard typing
+            // is unaffected. Touch students use the on-screen keypad below.
+            inputMode="none"
             autoComplete="off"
-            disabled={disabled}
+            readOnly={disabled}
             value={value ?? ""}
             onChange={(e) => {
               const v = e.target.value;
@@ -531,9 +535,15 @@ function Prompt({
             placeholder="e.g. 7, 3/5, or 4.75"
             className="w-48 rounded-lg border-2 border-slate-300 bg-white px-3.5 py-2.5 text-lg text-slate-900 shadow-sm focus:border-runner-600 focus:outline-none focus:ring-4 focus:ring-runner-500/15 disabled:opacity-90 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
           />
+          {!disabled && (
+            <GridKeypad
+              value={value ?? ""}
+              onChange={(v) => onChange(v.trim() === "" ? null : v)}
+            />
+          )}
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            Student-produced response. Enter a number; fractions (3/5) and
-            decimals (4.75) are accepted. Negative values are allowed.
+            Student-produced response. Tap the keypad (or type) — fractions (3/5)
+            and decimals (4.75) are accepted. Negative values are allowed.
           </p>
           {correctAnswer != null && (
             <p className="inline-flex items-center gap-1.5 rounded-md bg-emerald-50 px-2.5 py-1 text-sm font-medium text-emerald-800 ring-1 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900">
@@ -542,6 +552,95 @@ function Prompt({
           )}
         </div>
       )}
+    </div>
+  );
+}
+
+/**
+ * On-screen number pad for grid-in (SPR) answers. Lets a touch student (iPad)
+ * enter their answer WITHOUT focusing the native field — which would summon the
+ * OS keyboard and drop the proctored runner out of fullscreen. Plain <button>s,
+ * so no keyboard, no fullscreen exit. Mirrors Bluebook's SPR rules: up to 6
+ * characters, a single decimal OR slash, and a leading minus only.
+ */
+function GridKeypad({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  const MAX = 6;
+  const press = (key: string): void => {
+    if (key === "clear") {
+      onChange("");
+      return;
+    }
+    if (key === "back") {
+      onChange(value.slice(0, -1));
+      return;
+    }
+    if (value.length >= MAX) return;
+    if (key === "-") {
+      // Negative sign only as the first character.
+      if (value.length === 0) onChange("-");
+      return;
+    }
+    if (key === ".") {
+      // One decimal point, and not in a fraction.
+      if (value.includes(".") || value.includes("/")) return;
+      onChange(value + ".");
+      return;
+    }
+    if (key === "/") {
+      // One fraction slash, not at the very start, and not with a decimal.
+      if (value.includes("/") || value.includes(".") || value.replace("-", "").length === 0) return;
+      onChange(value + "/");
+      return;
+    }
+    onChange(value + key); // a digit 0–9
+  };
+
+  const Key = ({ k, label, span = 1, wide = false }: { k: string; label: React.ReactNode; span?: number; wide?: boolean }) => (
+    <button
+      type="button"
+      // Keep the field's focus/caret where it is — don't steal focus on tap.
+      onMouseDown={(e) => e.preventDefault()}
+      onClick={() => press(k)}
+      aria-label={typeof label === "string" ? label : k}
+      className={[
+        "flex min-h-[44px] items-center justify-center rounded-lg border text-lg font-semibold transition select-none",
+        "border-slate-300 bg-white text-slate-800 hover:bg-slate-50 active:bg-slate-100",
+        "dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800",
+        wide ? "text-sm font-medium text-slate-500 dark:text-slate-400" : "",
+      ].join(" ")}
+      style={span > 1 ? { gridColumn: `span ${span} / span ${span}` } : undefined}
+    >
+      {label}
+    </button>
+  );
+
+  return (
+    <div
+      className="grid w-48 grid-cols-4 gap-1.5 select-none"
+      role="group"
+      aria-label="Answer keypad"
+    >
+      <Key k="7" label="7" />
+      <Key k="8" label="8" />
+      <Key k="9" label="9" />
+      <Key k="back" label="⌫" />
+      <Key k="4" label="4" />
+      <Key k="5" label="5" />
+      <Key k="6" label="6" />
+      <Key k="/" label="/" />
+      <Key k="1" label="1" />
+      <Key k="2" label="2" />
+      <Key k="3" label="3" />
+      <Key k="." label="." />
+      <Key k="-" label="–" />
+      <Key k="0" label="0" />
+      <Key k="clear" label="Clear" span={2} wide />
     </div>
   );
 }

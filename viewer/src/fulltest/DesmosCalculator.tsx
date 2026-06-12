@@ -26,16 +26,22 @@ const DESMOS_KEY =
   "dcb31709b452b1cf9dc26972add0fda6";
 const SCRIPT_SRC = `https://www.desmos.com/api/v1.11/calculator.js?apiKey=${DESMOS_KEY}`;
 
-// Panel size — 2× the original 440×520 default, clamped to the viewport so it
-// never overflows on smaller screens. Opens centered.
-const CALC_W = 880;
-const CALC_H = 1040;
+// Adaptive panel size: a comfortable FRACTION of the actual viewport, clamped to
+// sane min/max so the calculator is never tiny and never swallows the screen.
+// Read live so it adapts to the device + window (a fixed 880×1040 default was
+// dominating laptops and filling iPads). Opens centered.
 const MARGIN = 16;
+function clampRange(min: number, v: number, max: number): number {
+  return Math.max(min, Math.min(v, max));
+}
 function panelSize(): { w: number; h: number } {
-  if (typeof window === "undefined") return { w: CALC_W, h: CALC_H };
+  if (typeof window === "undefined") return { w: 480, h: 600 };
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
   return {
-    w: Math.min(CALC_W, window.innerWidth - MARGIN),
-    h: Math.min(CALC_H, window.innerHeight - MARGIN),
+    // ~half the width (so it sits beside the question), ~three-quarters tall.
+    w: Math.round(Math.min(clampRange(340, vw * 0.5, 640), vw - MARGIN)),
+    h: Math.round(Math.min(clampRange(440, vh * 0.72, 780), vh - MARGIN)),
   };
 }
 
