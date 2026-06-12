@@ -64,6 +64,11 @@ sort to the top with a *⚑ Needs review* badge) and full in the post-test revie
 In `strict` mode the runner requests fullscreen on the module-start gesture, shows
 a blocking "Return to full screen to continue" overlay on exit (re-prompt on
 click), and `preventDefault`s copy/cut/paste/contextmenu (logged as `*_blocked`).
+**Text selection is NOT blocked** (even in strict): the highlighter needs it, and
+blocking `selectstart` was what made "highlighting doesn't work" on lockdown tests
+(fixed 2026-06-12). Exfiltration stays covered — copy/cut/paste/contextmenu are
+blocked, so selected text can't leave the page; `selectstart` is now a no-op
+listener kept only so the add/remove listener pairs stay symmetric.
 **iPhone has no element fullscreen** → strict mode *fails open*: enforcement is
 skipped, telemetry still records, and the student sees an honest notice. The
 timer never auto-pauses (leaving must not be rewarded); proctor pause/add-time/

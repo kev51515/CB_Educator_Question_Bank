@@ -1,5 +1,75 @@
 # Session Recap
 
+## Test annotations — student highlight fix + teacher review suite (2026-06-12) — SHIPPED
+
+Two things in one pass: **fixed student highlighting** (students reported it didn't
+work) and **added a teacher annotation suite** to the test Review surface, saved
+per (teacher, course, item). Migrations **`0204`/`0205`** live on prod + merged.
+
+- **Student highlighting — three real failure modes, all fixed** (`FullTestApp.tsx`,
+  the student runner):
+  1. Select-then-nothing: painting required arming a color in the toolbar first —
+     undiscoverable. New **`SelectionPopover`** (selectionchange-driven, 350 ms
+     settle) floats a color palette over any settled selection: select → tap a
+     color. This is also the only working **touch** path.
+  2. Capture listened on `mouseup` only → no pen/touch. Now **`pointerup`**.
+  3. **Strict proctoring blocked `selectstart`** entirely, killing highlighting on
+     lockdown tests. Selection is allowed again; copy/cut/paste/contextmenu still
+     blocked so content can't leave the page. (See [`PROCTORING.md`](./PROCTORING.md).)
+- **Teacher review suite** (`/educator/tests/:slug/review`, `TestReviewPage`):
+  multi-color highlights, an **underline** tool (`Highlight.deco="underline"`),
+  per-question **teaching notes**, click-to-remove, Clear. Saved to
+  **`teacher_item_annotations`** (one jsonb row per `(teacher, course, item_kind,
+  item_key)`) via `useTeacherItemAnnotations` — the **same test linked from two
+  courses keeps separate annotation sets**, and rows are author-only (private even
+  from admins, like `teacher_student_notes` 0062). Device-local fallback until a
+  class is selected; a toolbar label says where it's saving ("Saved · <class>" vs
+  "This device only"). `0205` widened the INSERT policy to own-course **OR** admin
+  so an admin reviewing the other teacher's class can actually save.
+- **Scope — what got annotations and what didn't (by design):**
+  - **Student runner** — highlight + notes (saved to the attempt). *Fixed.*
+  - **Teacher Review** — full suite, per-course DB save. *New.*
+  - **Teacher Preview** (`/educator/tests/:slug/run` → `TestPreviewRunner`, a
+    separate free-roam viewer) — **intentionally no annotation tools**; it's a
+    solo "what does this test look like" surface with no class context. Untouched.
+  - **Test Overview** (`/educator/tests/:slug`) — Preview / Review / Assign /
+    Monitor / Release untouched.
+- **Shared core:** highlight merge/store ops extracted to pure functions in
+  `annotations.ts` (`storeAddHighlight` etc.) so the localStorage hook and the
+  DB-backed teacher hook can never drift. Render path (`passageRender.tsx`) gained
+  the underline deco.
+- **Gotcha logged:** supabase-js query builders are **lazy** — a bare
+  `void supabase.from(...).upsert(...)` never sends; must `.then()`/await. Cost a
+  debug cycle when the first DB save silently no-op'd.
+- **Verified:** `tsc` clean; RLS psql probe (author-only isolation); browser e2e
+  `_verify-annotations.mjs` 6/6 (popover, paint, underline, DB save, cross-course
+  isolation in DB + UI); Preview surface browser-verified 8/8 intact; full smoke
+  302/302.
+
+## Student Home — courses-first + pending badges + calendar sync (2026-06-12) — SHIPPED
+
+Per owner ask: on student Home the **courses must be the first thing seen**, plus
+a "you have something new" signal and calendar sync. Migration **`0201`** live.
+
+- **Courses lead the fold** (`AreaSelector`): `MyClassesPanel` gained a `variant="grid"`
+  — full-width course cards with per-course "N new" pills + a "+ Join a course"
+  tile — rendered first; To-do + new **`UpcomingDatesPanel`** share the next row.
+- **Pending signal** (`0201`): `student_course_seen` (per-(student,course) last-seen,
+  DB-backed so badges survive across devices) + `mark_course_seen` + one
+  `get_student_pending_counts()` RPC → per-course `{new_announcements, new_items,
+  unstarted_assignments, due_soon, new_grades}`. Baseline = `GREATEST(last_seen,
+  joined_at)` so joining doesn't light up history; **unstarted work isn't
+  seen-gated** (clears by submitting, not by looking). `StudentPendingProvider` in
+  `StudentShell` feeds the sidebar Courses badge, the mobile tab dot, and the
+  course pills. Per-course total **excludes** `due_soon` (subset of unstarted —
+  would double-count).
+- **Calendar sync:** Upcoming-dates strip links to `/student/calendar`; private
+  **ICS feed** (`calendar_feed_tokens` + `calendar-ics` edge fn, `--no-verify-jwt`,
+  404 on bad/missing token) with a Subscribe modal so due dates land in personal
+  Google/Apple calendars.
+- **Verified:** `tsc` clean; psql probe (counts → mark seen → zeroed; token
+  stable); ICS 404s without token, valid VCALENDAR with; full smoke 302/302.
+
 ## Journey view — Khan-style mastery grid (2026-06-12) — SHIPPED
 
 Gamified Journey rendering of course modules. Decision record + full spec:

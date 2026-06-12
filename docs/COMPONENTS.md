@@ -125,7 +125,13 @@ For the underlying design language (color, typography, spacing), see
 - **QuestionFlags** (`components/QuestionFlags.tsx`) — Confusing / great /
   too-easy markers.
 - **Annotations** (`components/Annotations.tsx`) — Text highlights (4 colors,
-  defined as `.annotation-<color>` in `index.css`).
+  defined as `.annotation-<color>` in `index.css`). **Legacy question-bank
+  highlighter** (HTML-string `applyAnnotations`, `sat:annotations` localStorage).
+  NOT the full-test runner system — that's `fulltest/annotations.ts` (range-based
+  `Highlight {field,start,end,color,deco?}`, `SelectionPopover`, `HighlighterBar`)
+  shared by the student runner + teacher Review, with the teacher side saved
+  per-course in `teacher_item_annotations` via `useTeacherItemAnnotations`. Don't
+  conflate the two.
 - **ChoiceAnalysis** (`components/ChoiceAnalysis.tsx`) — Per-choice "why pick
   this" notes.
 - **DraggablePrintList** (`components/DraggablePrintList.tsx`) — HTML5
