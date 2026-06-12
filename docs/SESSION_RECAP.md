@@ -1,5 +1,33 @@
 # Session Recap
 
+## Journey view — Khan-style mastery grid (2026-06-12) — SHIPPED
+
+Gamified Journey rendering of course modules. Decision record + full spec:
+[`JOURNEY_VIEW.md`](./JOURNEY_VIEW.md); explored 3 directions in
+`design-explorations/journey/` (Ivy expedition map / Duolingo path / Khan grid) —
+**Khan grid chosen**; the other two judged over-designed as mocked, revisit only
+with a fresh design pass.
+
+- **Mechanics:** gold "Sealed" tier at best effective score ≥80% (overrides count);
+  Proficient 60–79; Attempted <60 ("retake to upgrade" — best-attempt-only means
+  retakes only upgrade); mastery points (Question Set 100 / Practice Test 200,
+  ×100%/75%/50% by tier) + course-scoped levels (Novice→Valedictorian). All
+  **derived client-side** from `assignment_best_attempts` — zero migration, nothing
+  stored. Full-test link cells are done/not-done only (scores release-gated, 0075).
+- **Student** (`StudentCourseView`): Journey is the **default** for class courses,
+  with a Journey|List segmented toggle persisted at `student.courseView:<courseId>`.
+  HUD (points + level bar) + legend + grid; cells navigate like the list rows.
+- **Educator** (`ModulesPage`): "Journey" header pill (persisted
+  `staff.modulesView:<courseId>`) swaps the editor for a read-only class-aggregate
+  grid — cell color = class-avg state, tooltip `n/N submitted · k sealed · avg %`;
+  test cells open the per-test overview. Editing pills hide while active.
+- **Code:** new `viewer/src/journey/` domain folder (mastery.ts, buildJourney.ts,
+  JourneyGrid, JourneyHud, TeacherJourneyPanel) + `.journey-seal` recipe in
+  index.css (global — gold is the mechanic, not theming).
+- **Verified:** `_shot-journey.mjs` harness (disposable teacher+student, 3-module
+  course incl. locked week + up-next + full-test link) — student journey, List
+  regression, educator aggregate all screenshot-verified; tsc + vite build clean.
+
 ## Pickleball coaching — two course types, full coaching suite (2026-06-11) — DEPLOYED
 
 New **pickleball coaching** vertical layered onto the LMS as two `course_type` values

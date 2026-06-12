@@ -747,6 +747,17 @@ body {
 }
 .theme-ivy.dark .ceremonial { color: #d9b45b; }
 
+/* Journey mastery seal — the >=80% gold tier (docs/JOURNEY_VIEW.md). Gold is
+   the product mechanic here, not theming, so this is global to BOTH themes;
+   only the border tone shifts slightly in dark mode for contrast. */
+.journey-seal {
+  background: linear-gradient(135deg, #d9b45b, #b9892c 70%);
+  border-color: #94701f !important;
+}
+.dark .journey-seal {
+  border-color: #d9b45b !important;
+}
+
 /* Perceptible warm card elevation (classic shadow-card untouched). */
 .theme-ivy .shadow-card {
   box-shadow: 0 1px 2px rgba(27, 42, 74, 0.05), 0 3px 10px rgba(27, 42, 74, 0.06);

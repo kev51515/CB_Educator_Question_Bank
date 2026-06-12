@@ -28,7 +28,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
-import { ROUTES } from "@/lib/routes";
+import { ROUTES, assignmentTakePath, studentTestRunPath } from "@/lib/routes";
+import { buildJourney, type JourneyCell } from "@/journey/buildJourney";
+import { JourneyGrid, JourneyLegend } from "@/journey/JourneyGrid";
+import { JourneyHud } from "@/journey/JourneyHud";
+import { useToast } from "@/components/Toast";
 import { useProfile } from "@/lib/profile";
 import { domainOf, studentLabel } from "@/lib/domain";
 import { useDomain } from "@/lib/DomainProvider";
@@ -67,6 +71,11 @@ import { StatCard } from "./StatCard";
 
 const collapseKey = (courseId: string): string =>
   `student.courseModules.collapsed:${courseId}`;
+
+/** Journey | List preference, persisted per (user-agnostic) course. */
+const viewKey = (courseId: string): string => `student.courseView:${courseId}`;
+
+type CourseViewMode = "journey" | "list";
 
 /**
  * `:short` is normally a 6-char course short_code, but several flows deep-link
@@ -128,6 +137,14 @@ export function StudentCourseView(): JSX.Element {
   );
   // Collapsed module ids (persisted per course).
   const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
+  // Journey (default for class courses) vs the timeline list — persisted.
+  const [viewMode, setViewMode] = useState<CourseViewMode>("journey");
+  // Slugs of full-length tests I've submitted. Done/not-done only — scores
+  // are release-gated by design (0075), see docs/JOURNEY_VIEW.md.
+  const [doneTestSlugs, setDoneTestSlugs] = useState<Set<string>>(
+    () => new Set(),
+  );
+  const toast = useToast();
 
   // Guard against stale-response races when `short` changes mid-flight.
   const tokenRef = useRef(0);
@@ -391,6 +408,103 @@ export function StudentCourseView(): JSX.Element {
     }
   }, [course?.id]);
 
+  // Restore the Journey | List preference (journey is the default).
+  useEffect(() => {
+    const courseId = course?.id;
+    if (!courseId) return;
+    try {
+      const raw = window.localStorage.getItem(viewKey(courseId));
+      setViewMode(raw === "list" ? "list" : "journey");
+    } catch {
+      setViewMode("journey");
+    }
+  }, [course?.id]);
+
+  // My submitted full-test runs → done states for journey test cells.
+  // Degrades silently: a failure just renders those cells as not-done.
+  useEffect(() => {
+    const courseId = course?.id;
+    if (!courseId) return;
+    let alive = true;
+    void (async () => {
+      try {
+        const { data, error } = await supabase.rpc("list_my_test_runs");
+        if (!alive || error) return;
+        const slugs = new Set<string>();
+        for (const r of (data ?? []) as Array<{ test_slug: string | null }>) {
+          if (r.test_slug) slugs.add(r.test_slug);
+        }
+        setDoneTestSlugs(slugs);
+      } catch {
+        // non-fatal
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [course?.id]);
+
+  const isClassCourse = !course?.course_type || course.course_type === "class";
+
+  const journey = useMemo(
+    () =>
+      buildJourney(
+        modules.map((m) => ({
+          id: m.id,
+          name: m.name,
+          published: m.published,
+          opens_at: m.opens_at,
+          items: m.module_items,
+        })),
+        {
+          assignment: (refId) => {
+            const meta = assignmentMeta.get(refId);
+            if (!meta) return undefined;
+            return {
+              kind: meta.kind,
+              dueAt: meta.due_at,
+              score: meta.bestScore,
+              submitted: meta.submitted,
+            };
+          },
+          fullTestDone: (slug) => doneTestSlugs.has(slug),
+        },
+      ),
+    [modules, assignmentMeta, doneTestSlugs],
+  );
+
+  const setView = (mode: CourseViewMode): void => {
+    setViewMode(mode);
+    if (course?.id) {
+      try {
+        window.localStorage.setItem(viewKey(course.id), mode);
+      } catch {
+        // ignore (private mode / quota)
+      }
+    }
+  };
+
+  // Journey cells navigate exactly like the list rows (ModuleItemRowView).
+  const openJourneyCell = (cell: JourneyCell): void => {
+    if (cell.refId) {
+      navigate(assignmentTakePath(cell.refId));
+      return;
+    }
+    if (cell.kind === "fulltest" && cell.testSlug) {
+      // Preserve a `?m=<first>-<last>` module-subset query if present.
+      const afterPrefix = (cell.url ?? "").replace(/^\/test\//, "");
+      const qIndex = afterPrefix.indexOf("?");
+      const testQuery = qIndex >= 0 ? afterPrefix.slice(qIndex) : "";
+      navigate(`${studentTestRunPath(cell.testSlug)}${testQuery}`);
+      return;
+    }
+    if (cell.url) {
+      window.open(cell.url, "_blank", "noopener,noreferrer");
+      return;
+    }
+    toast.info(`${cell.title} — viewer coming soon`);
+  };
+
   const toggleCollapse = (moduleId: string): void => {
     setCollapsed((prev) => {
       const next = new Set(prev);
@@ -626,6 +740,45 @@ export function StudentCourseView(): JSX.Element {
               )
             ) : (
               <div className="space-y-4">
+                {isClassCourse && (
+                  <div
+                    className="inline-flex items-center rounded-full bg-indigo-600/[0.08] dark:bg-indigo-400/10 p-0.5"
+                    role="tablist"
+                    aria-label="Course view"
+                  >
+                    {(["journey", "list"] as const).map((mode) => (
+                      <button
+                        key={mode}
+                        type="button"
+                        role="tab"
+                        aria-selected={viewMode === mode}
+                        onClick={() => setView(mode)}
+                        className={`min-h-[36px] rounded-full px-4 text-xs font-semibold motion-safe:transition-colors ${
+                          viewMode === mode
+                            ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm ring-1 ring-slate-200 dark:ring-slate-700"
+                            : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                        }`}
+                      >
+                        {mode === "journey" ? "Journey" : "List"}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {isClassCourse && viewMode === "journey" ? (
+                  <>
+                    <JourneyHud
+                      earned={journey.earned}
+                      possible={journey.possible}
+                    />
+                    <JourneyLegend />
+                    <JourneyGrid
+                      units={journey.units}
+                      onOpenCell={openJourneyCell}
+                    />
+                  </>
+                ) : (
+                <>
                 {modules.map((m) => {
                   const locked = isLocked(m.opens_at);
                   const items: ModuleItemRow[] = m.module_items.filter(
@@ -757,6 +910,8 @@ export function StudentCourseView(): JSX.Element {
                     </section>
                   );
                 })}
+                </>
+                )}
               </div>
             )}
           </>

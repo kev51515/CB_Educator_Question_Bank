@@ -49,6 +49,7 @@ import {
   ModuleNodeView,
 } from "@/teacher/modules-page";
 import { EditModuleModal } from "./EditModuleModal";
+import { TeacherJourneyPanel } from "@/journey/TeacherJourneyPanel";
 import { useToast } from "@/components/Toast";
 import { EmptyState } from "@/components/EmptyState";
 import { SkeletonRows } from "@/components/Skeleton";
@@ -158,6 +159,35 @@ export function ModulesPage(): JSX.Element {
     (moduleId: string): boolean => !(collapsed[moduleId] ?? false),
     [collapsed],
   );
+
+  // Journey toggle (staff only) — read-only class-aggregate mastery grid
+  // (docs/JOURNEY_VIEW.md). Persisted per course.
+  const journeyKey = `staff.modulesView:${classId ?? ""}`;
+  const [journeyMode, setJourneyMode] = useState<boolean>(() => {
+    try {
+      return window.localStorage.getItem(journeyKey) === "journey";
+    } catch {
+      return false;
+    }
+  });
+  useEffect(() => {
+    try {
+      setJourneyMode(window.localStorage.getItem(journeyKey) === "journey");
+    } catch {
+      setJourneyMode(false);
+    }
+  }, [journeyKey]);
+  const toggleJourney = useCallback((): void => {
+    setJourneyMode((prev) => {
+      const next = !prev;
+      try {
+        window.localStorage.setItem(journeyKey, next ? "journey" : "list");
+      } catch {
+        // ignore (private mode / quota)
+      }
+      return next;
+    });
+  }, [journeyKey]);
 
   // Inline-create replaces the old "Add module" modal. When non-null an
   // input row renders above the modules list with the cursor focused inside;
@@ -1048,7 +1078,39 @@ export function ModulesPage(): JSX.Element {
         </h2>
 
         <div className="flex flex-wrap items-center gap-2">
-          {modules.length > 0 && (
+          {!isStudent && modules.length > 0 && (
+            <button
+              type="button"
+              onClick={toggleJourney}
+              aria-pressed={journeyMode}
+              title="Class-aggregate mastery view of published modules"
+              className={
+                journeyMode
+                  ? "inline-flex items-center gap-1.5 rounded-full min-h-[40px] md:min-h-[32px] px-3.5 text-xs font-medium transition-colors text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-400 dark:ring-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-950/60"
+                  : pillNeutral
+              }
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+                className="h-3.5 w-3.5 flex-none"
+              >
+                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+              </svg>
+              Journey
+            </button>
+          )}
+          {!journeyMode && modules.length > 0 && (
             <button
               type="button"
               onClick={() => {
@@ -1078,7 +1140,7 @@ export function ModulesPage(): JSX.Element {
               {allCollapsed ? "Expand all" : "Collapse all"}
             </button>
           )}
-          {canEdit && modules.length > 0 && (
+          {canEdit && !journeyMode && modules.length > 0 && (
             <button
               type="button"
               onClick={() => {
@@ -1103,7 +1165,7 @@ export function ModulesPage(): JSX.Element {
               Publish all
             </button>
           )}
-          {canEdit && modules.length > 0 && (
+          {canEdit && !journeyMode && modules.length > 0 && (
             selectMode ? (
               <button
                 type="button"
@@ -1122,7 +1184,7 @@ export function ModulesPage(): JSX.Element {
               </button>
             )
           )}
-          {canEdit && (
+          {canEdit && !journeyMode && (
             <button
               type="button"
               onClick={() => setInlineCreatingModule({ busy: false })}
@@ -1184,6 +1246,10 @@ export function ModulesPage(): JSX.Element {
         {reorderAnnouncement}
       </div>
 
+      {journeyMode && classId ? (
+        <TeacherJourneyPanel courseId={classId} modules={modules} />
+      ) : (
+        <>
       {inlineCreatingModule && (
         <InlineCreateModuleRow
           busy={inlineCreatingModule.busy}
@@ -1343,6 +1409,8 @@ export function ModulesPage(): JSX.Element {
             </div>
           )}
         </div>
+      )}
+        </>
       )}
 
       {canEdit && selectMode && selectedModuleIds.size > 0 && (
