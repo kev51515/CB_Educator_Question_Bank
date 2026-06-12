@@ -120,10 +120,24 @@ export function StudentAttemptReview({
     }
   }, [userId]);
 
+  // Withhold gate (0210): when a teacher withholds results and hasn't released
+  // this attempt, the student sees a friendly locked state instead of the key.
+  const [locked, setLocked] = useState(false);
+
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
     void (async () => {
+      const { data: isLocked } = await supabase.rpc("assignment_results_locked", {
+        p_attempt_id: attemptId,
+      });
+      if (cancelled) return;
+      if (isLocked === true) {
+        setLocked(true);
+        setLoading(false);
+        return;
+      }
+      setLocked(false);
       const { data: fetched, error: fetchError } = await fetchAttemptReview(
         attemptId,
       );
@@ -165,6 +179,35 @@ export function StudentAttemptReview({
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 text-sm text-slate-500 dark:text-slate-400">
         Loading your attempt…
+      </div>
+    );
+  }
+
+  if (locked) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 px-4">
+        <div className="max-w-md w-full rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-4 text-center">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950/40">
+            <svg viewBox="0 0 24 24" className="h-6 w-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+              <rect x="5" y="11" width="14" height="9" rx="2" />
+              <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+            </svg>
+          </div>
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+            Results not released yet
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400">
+            Your answers are submitted. Your teacher hasn't released results for
+            this assignment yet — check back once they do.
+          </p>
+          <button
+            type="button"
+            onClick={onExit}
+            className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2"
+          >
+            Back
+          </button>
+        </div>
       </div>
     );
   }

@@ -98,6 +98,10 @@ export const ROUTES = {
   QUESTION_BANK: "/educator/question-bank",
   QBANK_LOG: "/educator/qbank-submissions",
 
+  // Recordings — audio → transcript → AI notes → quiz (all educator domains).
+  RECORDINGS: "/educator/recordings",
+  RECORDING: "/educator/recordings/:recordingId",
+
   // Educator — top-level
   DASHBOARD: "/educator/dashboard",
   CALENDAR: "/educator/calendar",
@@ -110,6 +114,10 @@ export const ROUTES = {
   COURSE_MODULE: "/educator/courses/:courseId/modules/:moduleId",
   COURSE_ASSIGNMENTS: "/educator/courses/:courseId/assignments",
   COURSE_ASSIGNMENT: "/educator/courses/:courseId/assignments/:assignmentId",
+  // Cohort Overview + live Monitor + results-release for one assignment —
+  // the assignment analogue of the full-test /educator/tests/:slug overview.
+  COURSE_ASSIGNMENT_OVERVIEW:
+    "/educator/courses/:courseId/assignments/:assignmentId/overview",
   COURSE_ASSIGNMENT_ATTEMPT:
     "/educator/courses/:courseId/assignments/:assignmentId/attempts/:attemptId",
   COURSE_PEOPLE: "/educator/courses/:courseId/people",
@@ -220,6 +228,10 @@ export function testReviewPath(slug: string): string {
   return buildPath(ROUTES.TEST_REVIEW, { slug });
 }
 
+export function recordingPath(recordingId: string): string {
+  return buildPath(ROUTES.RECORDING, { recordingId });
+}
+
 export function testReplayPath(slug: string, runId: string): string {
   return buildPath(ROUTES.TEST_REPLAY, { slug, runId });
 }
@@ -253,6 +265,13 @@ export function courseAssignmentPath(
   assignmentId: string,
 ): string {
   return buildPath(ROUTES.COURSE_ASSIGNMENT, { courseId, assignmentId });
+}
+
+export function courseAssignmentOverviewPath(
+  courseId: string,
+  assignmentId: string,
+): string {
+  return buildPath(ROUTES.COURSE_ASSIGNMENT_OVERVIEW, { courseId, assignmentId });
 }
 
 export function courseAssignmentAttemptPath(

@@ -48,6 +48,7 @@ import { CourseOverview } from "./CourseOverview";
 import { ClassRoster } from "./ClassRoster";
 import { ClassAssignmentsTab } from "./ClassAssignmentsTab";
 import { AssignmentDetailPage } from "./AssignmentDetailPage";
+import { AssignmentOverviewPage } from "./AssignmentOverviewPage";
 import { AttemptDetailPage } from "./AttemptDetailPage";
 import { CourseAnnouncements } from "./CourseAnnouncements";
 import { CourseMaterials } from "./CourseMaterials";
@@ -605,6 +606,10 @@ export function ClassLayout() {
             <Route
               path="assignments/:assignmentId"
               element={<AssignmentDetailPage />}
+            />
+            <Route
+              path="assignments/:assignmentId/overview"
+              element={<AssignmentOverviewPage />}
             />
             <Route
               path="assignments/:assignmentId/attempts/:attemptId"

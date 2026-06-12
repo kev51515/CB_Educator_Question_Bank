@@ -71,13 +71,22 @@ export function AssignmentRow({
           <span>{formatTimeLimit(assignment.time_limit_minutes)}</span>
           <span aria-hidden>·</span>
           <span className={dueColor}>{formatDue(assignment.due_at)}</span>
-          {isCompleted && attempt?.score_percent !== null && attempt && (
+          {isCompleted && assignment.results_pending ? (
             <>
               <span aria-hidden>·</span>
-              <span className="font-medium text-emerald-700 dark:text-emerald-400">
-                {Math.round(attempt.score_percent ?? 0)}%
+              <span className="font-medium text-amber-700 dark:text-amber-400">
+                Results pending
               </span>
             </>
+          ) : (
+            isCompleted && attempt?.score_percent !== null && attempt && (
+              <>
+                <span aria-hidden>·</span>
+                <span className="font-medium text-emerald-700 dark:text-emerald-400">
+                  {Math.round(attempt.score_percent ?? 0)}%
+                </span>
+              </>
+            )
           )}
         </div>
       </div>

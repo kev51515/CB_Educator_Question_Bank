@@ -29,6 +29,8 @@ export interface StudentAssignmentAttempt {
   graded_at?: string | null;
   /** Teacher-authored feedback (markdown/HTML); empty string treated as null. */
   feedback_text?: string | null;
+  /** Set when the teacher releases this attempt's results (0209). */
+  results_released_at?: string | null;
 }
 
 export interface StudentAssignment {
@@ -46,6 +48,12 @@ export interface StudentAssignment {
   created_at: string;
   /** Null until the student starts the assignment. */
   my_attempt: StudentAssignmentAttempt | null;
+  /**
+   * True when the teacher withholds results (0209) and this student's submitted
+   * attempt hasn't been released — surfaces show "Results pending" + suppress
+   * the score. The answer key itself is gated server-side (0210).
+   */
+  results_pending: boolean;
 }
 
 export interface UseStudentAssignments {
@@ -68,6 +76,7 @@ interface AssignmentRow {
   opens_at: string;
   created_at: string;
   archived: boolean;
+  withhold_results: boolean;
   courses: { name: string } | null;
   assignment_attempts: {
     id: string;
@@ -79,6 +88,7 @@ interface AssignmentRow {
     score_override: number | null;
     graded_at: string | null;
     feedback_text: string | null;
+    results_released_at: string | null;
   }[];
 }
 
@@ -112,7 +122,7 @@ export function useStudentAssignments(): UseStudentAssignments {
         .select(
           // Embedded course for name + embedded attempts (RLS scopes attempts
           // to student_id = auth.uid(), so we get at most one row).
-          "id, short_code, course_id, title, description, source_id, question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, created_at, archived, courses:courses!assignments_course_id_fkey(name, short_code), assignment_attempts(id, started_at, submitted_at, score_percent, correct_count, total_questions, score_override, graded_at, feedback_text)",
+          "id, short_code, course_id, title, description, source_id, question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, created_at, archived, withhold_results, courses:courses!assignments_course_id_fkey(name, short_code), assignment_attempts(id, started_at, submitted_at, score_percent, correct_count, total_questions, score_override, graded_at, feedback_text, results_released_at)",
         )
         .eq("archived", false)
         .order("due_at", { ascending: true, nullsFirst: false })
@@ -173,8 +183,13 @@ export function useStudentAssignments(): UseStudentAssignments {
                   attempt.feedback_text && attempt.feedback_text.trim().length > 0
                     ? attempt.feedback_text
                     : null,
+                results_released_at: attempt.results_released_at,
               }
             : null,
+          results_pending:
+            row.withhold_results === true &&
+            attempt?.submitted_at != null &&
+            attempt.results_released_at == null,
         };
       });
       setAssignments(mapped);

@@ -173,6 +173,7 @@ interface AssignmentRow {
   due_at: string | null;
   opens_at: string;
   created_at: string;
+  withhold_results: boolean | null;
   courses: { name: string } | null;
   assignment_attempts: {
     id: string;
@@ -181,6 +182,7 @@ interface AssignmentRow {
     score_percent: number | null;
     correct_count: number | null;
     total_questions: number | null;
+    results_released_at: string | null;
   }[];
 }
 
@@ -223,6 +225,10 @@ function rowToAssignment(row: AssignmentRow): StudentAssignment {
     opens_at: row.opens_at,
     created_at: row.created_at,
     my_attempt: myAttempt,
+    results_pending:
+      row.withhold_results === true &&
+      attempt?.submitted_at != null &&
+      attempt.results_released_at == null,
   };
 }
 
@@ -250,7 +256,7 @@ export function AssignmentTakeRoute({ studentId }: AssignmentTakeRouteProps) {
         const { data, error: queryError } = await supabase
           .from("assignments")
           .select(
-            "id, course_id, title, description, source_id, question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, created_at, archived, courses:courses!assignments_course_id_fkey(name), assignment_attempts(id, started_at, submitted_at, score_percent, correct_count, total_questions)",
+            "id, course_id, title, description, source_id, question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, created_at, archived, withhold_results, courses:courses!assignments_course_id_fkey(name), assignment_attempts(id, started_at, submitted_at, score_percent, correct_count, total_questions, results_released_at)",
           )
           .eq("id", assignmentId)
           .maybeSingle();
