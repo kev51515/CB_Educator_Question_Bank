@@ -12,4 +12,5 @@ export * from "./fetch";
 export * from "./filterAdapter";
 export * from "./filterRegistry";
 export * from "./filters";
+export * from "./qbankSetUid";
 export * from "./sets";

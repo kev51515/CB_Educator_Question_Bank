@@ -136,6 +136,29 @@ The legacy `/mock-test` route (free-practice mode, not assignment-scoped)
 is the one exception that may still appear as "Mock Test" in a CommandPalette
 entry for free practice — flag in PR review if extending.
 
+### Question Set identity — `qbank_set_uid` (single source of truth)
+
+A `'qbank_set'` assignment is linked to a static question-set export by a
+`qbank_set_uid` string. That uid is **computed once** from a catalog entry
+when the teacher assigns the set (writer) and **resolved back** to a catalog
+entry when the student runner loads it (reader). Both sides MUST use the same
+encoder. There is exactly one: **`viewer/src/lib/qbankSetUid.ts`**
+(`qbankSetUid()` / `qbankSetUidMatches()`).
+
+- Canonical form: `skill::reading-and-writing::medium::command-of-evidence::2`
+  (lowercased `axis::section::difficulty::topic::setId`, spaces→`-`).
+- **Never re-implement this encoder inline.** It used to exist as two copies —
+  the teacher writer joined with `::`, the student resolver with `-` — and
+  they drifted, so *every* Question Set silently failed to resolve (students
+  saw a broken/empty set). `teacher/useQuestionBankCatalog.ts:catalogEntryUid`
+  and `student/QBankAssignmentRunner.tsx` both delegate to the lib now.
+- The catalog round-trip is guarded by `npm run check:qbank-uid`
+  (`viewer/scripts/check-qbank-uid.mjs`) — run it after regenerating
+  `public/exports/catalog.json`. It must read 0 failures.
+- Note: Command of Evidence sets legitimately include **quantitative**
+  (graph/data) questions. Those are correct Reading/Writing content even
+  though they look math-y — don't "fix" them as miscategorized.
+
 ---
 
 ## Canvas-aligned navigation

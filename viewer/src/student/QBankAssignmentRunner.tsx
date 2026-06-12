@@ -27,6 +27,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { assignmentReviewPath } from "@/lib/routes";
+import { qbankSetUidMatches } from "@/lib/qbankSetUid";
 import { useToast } from "@/components";
 import {
   listStagedSubmissions,
@@ -85,17 +86,6 @@ type Stage =
   | { kind: "error"; message: string }
   | { kind: "ready"; iframeSrc: string };
 
-/**
- * Derive a stable lookup key from a catalog entry. Mirrors Lane B's encoding.
- */
-function catalogKey(entry: CatalogEntry): string {
-  const topicSlug = entry.topic
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-  return `${entry.axis}-${entry.section}-${entry.difficulty}-${topicSlug}-${entry.setId}`;
-}
-
 let catalogPromise: Promise<CatalogJson> | null = null;
 function loadCatalog(): Promise<CatalogJson> {
   if (catalogPromise) return catalogPromise;
@@ -116,9 +106,8 @@ async function resolveQuestionsHtml(
 ): Promise<string | null> {
   try {
     const catalog = await loadCatalog();
-    const lower = qbankSetUid.toLowerCase();
     for (const entry of catalog.entries) {
-      if (catalogKey(entry) === lower) return entry.questionsHtml;
+      if (qbankSetUidMatches(entry, qbankSetUid)) return entry.questionsHtml;
     }
     return null;
   } catch {

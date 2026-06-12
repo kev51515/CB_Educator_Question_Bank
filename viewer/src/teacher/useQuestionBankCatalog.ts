@@ -18,6 +18,7 @@
  * subset.
  */
 import { useEffect, useState } from "react";
+import { qbankSetUid } from "@/lib/qbankSetUid";
 
 export type CatalogAxis = "skill" | "domain" | "mixed";
 export type CatalogSection = "math" | "reading-and-writing";
@@ -92,14 +93,14 @@ async function loadCatalog(): Promise<CatalogEntry[]> {
 }
 
 /**
- * Derive a globally-stable identifier for a catalog entry. The raw `setId`
- * (e.g. "1", "2") is only unique within (axis, section, difficulty, topic),
- * so we compose a fuller key to use as the assignment's `qbank_set_uid`.
+ * Derive the assignment's `qbank_set_uid` for a catalog entry.
+ *
+ * Delegates to the single canonical encoder in `@/lib/qbankSetUid` so the
+ * teacher (writer) and the student runner (resolver) can never drift apart.
+ * Kept as a thin re-export for existing call sites.
  */
 export function catalogEntryUid(entry: CatalogEntry): string {
-  return [entry.axis, entry.section, entry.difficulty, entry.topic, entry.setId]
-    .map((part) => part.toString().toLowerCase().replace(/\s+/g, "-"))
-    .join("::");
+  return qbankSetUid(entry);
 }
 
 export function useQuestionBankCatalog(): UseQuestionBankCatalog {
