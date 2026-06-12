@@ -87,6 +87,7 @@ import {
   CoachProgramsPanel,
 } from "@/teacher/pickleball";
 import { ChatPanel } from "@/components/pickleball/ChatPanel";
+import { CourseRecordingsTab } from "@/recordings";
 
 interface RegeneratedClassRow {
   id: string;
@@ -114,6 +115,12 @@ function buildTabGroups(
     id: "materials",
     label: "Materials",
     items: [tab("materials", "Materials")],
+  };
+  // Recordings are cross-domain — shown for every course type.
+  const recordings: CourseTabGroup = {
+    id: "recordings",
+    label: "Recordings",
+    items: [tab("recordings", "Recordings")],
   };
   const settings: CourseTabGroup = {
     id: "settings",
@@ -151,6 +158,7 @@ function buildTabGroups(
         ],
       },
       materials,
+      recordings,
       settings,
     ];
   }
@@ -182,6 +190,7 @@ function buildTabGroups(
         ],
       },
       materials,
+      recordings,
       settings,
     ];
   }
@@ -211,6 +220,7 @@ function buildTabGroups(
         ],
       },
       materials,
+      recordings,
       settings,
     ];
   }
@@ -242,6 +252,7 @@ function buildTabGroups(
       ],
     },
     materials,
+    recordings,
     settings,
   ];
 }
@@ -617,6 +628,7 @@ export function ClassLayout() {
             />
             <Route path="announcements" element={<CourseAnnouncements />} />
             <Route path="materials" element={<CourseMaterials />} />
+            <Route path="recordings" element={<CourseRecordingsTab />} />
             <Route path="discussions" element={<CourseDiscussions />} />
             <Route
               path="discussions/:topicId"

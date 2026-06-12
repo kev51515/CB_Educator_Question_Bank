@@ -110,6 +110,30 @@ export function RecorderPanel({
     return () => recorderRef.current?.dispose();
   }, []);
 
+  // Space toggles Pause/Resume while a Part is active (recording or paused).
+  // Ignored while typing in an input/textarea so it doesn't hijack the spacebar.
+  useEffect(() => {
+    if (phase !== "recording" && phase !== "paused") return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.code !== "Space" && e.key !== " ") return;
+      const t = e.target as HTMLElement | null;
+      const tag = t?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || t?.isContentEditable) return;
+      e.preventDefault();
+      const rec = recorderRef.current;
+      if (!rec) return;
+      if (phase === "recording") {
+        rec.pause();
+        setPhase("paused");
+      } else {
+        rec.resume();
+        setPhase("recording");
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [phase]);
+
   function getRecorder(): PartRecorder {
     if (!recorderRef.current) recorderRef.current = new PartRecorder();
     return recorderRef.current;
@@ -274,6 +298,13 @@ export function RecorderPanel({
           End session
         </button>
       </div>
+
+      {active && (
+        <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
+          <kbd className="rounded border border-slate-300 px-1 font-sans dark:border-slate-600">Space</kbd>{" "}
+          = pause/resume
+        </p>
+      )}
 
       <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
         Record in short bursts — each <strong>Stop part</strong> transcribes on

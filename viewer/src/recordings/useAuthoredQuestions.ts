@@ -44,6 +44,27 @@ export async function deleteAuthoredQuestion(id: string): Promise<void> {
   if (error) throw error;
 }
 
+/**
+ * Publish a recording's drafted quiz into a student-takeable assignment
+ * (kind='authored_set') via the publish_authored_quiz RPC (migration 0219).
+ * Returns the new assignment id. Throws on error.
+ */
+export async function publishQuiz(
+  recordingId: string,
+  courseId: string,
+  title: string,
+  moduleId?: string,
+): Promise<string> {
+  const { data, error } = await supabase.rpc("publish_authored_quiz", {
+    p_recording_id: recordingId,
+    p_course_id: courseId,
+    p_title: title,
+    p_module_id: moduleId ?? null,
+  });
+  if (error) throw error;
+  return data as string;
+}
+
 export interface UseAuthoredQuestions {
   questions: AuthoredQuestion[];
   loading: boolean;

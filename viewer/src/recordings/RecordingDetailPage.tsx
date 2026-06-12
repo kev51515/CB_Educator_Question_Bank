@@ -17,6 +17,7 @@ import { useDomain } from "@/lib/DomainProvider";
 import { ROUTES } from "@/lib/routes";
 import { RecorderPanel } from "./RecorderPanel";
 import { QuizDraftPanel } from "./QuizDraftPanel";
+import { Waveform } from "./Waveform";
 import {
   deletePart,
   deleteRecording,
@@ -79,9 +80,7 @@ function PartAudio({
     };
   }, [path]);
   if (!url) return null;
-  return (
-    <audio controls preload="none" src={url} ref={(el) => register(partIndex, el)} className="mt-2 w-full" />
-  );
+  return <Waveform src={url} register={(el) => register(partIndex, el)} />;
 }
 
 function partStatusLabel(p: RecordingPart): string {

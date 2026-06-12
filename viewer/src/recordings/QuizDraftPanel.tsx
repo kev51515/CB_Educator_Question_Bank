@@ -2,14 +2,19 @@
  * QuizDraftPanel — generate a quiz from the recording (SAT-style or general),
  * then review/edit the drafted questions before publishing.
  *
- * Publishing into a student-takeable assignment is the one deferred step (it
- * couples to the assignment/runner system); the Publish button explains that.
+ * Publishing into a student-takeable assignment (kind='authored_set') runs
+ * through the publish_authored_quiz RPC (migration 0219): the educator picks a
+ * course + title, and the drafted questions are snapshotted into a new graded
+ * assignment via the PublishModal below.
  */
-import { useState } from "react";
-import { useToast } from "@/components";
+import { useEffect, useMemo, useState } from "react";
+import { Combobox, ResponsiveModal, useToast } from "@/components";
+import { useProfile } from "@/lib/profile";
+import { useTeacherClasses } from "@/teacher/useTeacherClasses";
 import {
   deleteAuthoredQuestion,
   generateQuiz,
+  publishQuiz,
   updateAuthoredQuestion,
   useAuthoredQuestions,
 } from "./useAuthoredQuestions";
@@ -111,11 +116,161 @@ function QuestionEditor({
   );
 }
 
+/**
+ * PublishModal — pick a course + title, then publish the drafted questions into
+ * a student-takeable authored_set assignment. Loads the educator's own courses
+ * the same way AddSetToCourseModal does (useTeacherClasses, archived filtered).
+ */
+function PublishModal({
+  open,
+  recordingId,
+  defaultTitle,
+  onClose,
+}: {
+  open: boolean;
+  recordingId: string;
+  defaultTitle: string;
+  onClose: () => void;
+}) {
+  const toast = useToast();
+  const { profile } = useProfile();
+  const { classes, loading: classesLoading } = useTeacherClasses(
+    open ? profile?.id ?? null : null,
+  );
+
+  const [selectedCourseId, setSelectedCourseId] = useState<string>("");
+  const [title, setTitle] = useState<string>(defaultTitle);
+  const [busy, setBusy] = useState<boolean>(false);
+
+  const eligibleCourses = useMemo(
+    () => classes.filter((c) => !c.archived),
+    [classes],
+  );
+  const courseOptions = useMemo(
+    () => eligibleCourses.map((c) => ({ value: c.id, label: c.name })),
+    [eligibleCourses],
+  );
+
+  // Reset whenever the modal opens.
+  useEffect(() => {
+    if (!open) return;
+    setTitle(defaultTitle);
+    setSelectedCourseId("");
+  }, [open, defaultTitle]);
+
+  // Pre-select the only eligible course to save a click.
+  useEffect(() => {
+    if (!open || selectedCourseId) return;
+    if (eligibleCourses.length === 1) {
+      setSelectedCourseId(eligibleCourses[0].id);
+    }
+  }, [open, eligibleCourses, selectedCourseId]);
+
+  async function onSubmit(e: React.FormEvent): Promise<void> {
+    e.preventDefault();
+    const trimmed = title.trim();
+    if (!trimmed) {
+      toast.error("Please enter a title for this quiz.");
+      return;
+    }
+    if (!selectedCourseId) {
+      toast.error("Please pick a course to publish into.");
+      return;
+    }
+    setBusy(true);
+    try {
+      await publishQuiz(recordingId, selectedCourseId, trimmed);
+      const courseName =
+        eligibleCourses.find((c) => c.id === selectedCourseId)?.name ??
+        "your course";
+      toast.success("Quiz published", `Added to ${courseName}.`);
+      onClose();
+    } catch (err) {
+      toast.error("Couldn't publish quiz", (err as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const formId = "publish-authored-quiz-form";
+  const footer = (
+    <div className="flex items-center gap-2">
+      <button
+        type="button"
+        onClick={onClose}
+        className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        form={formId}
+        disabled={busy || eligibleCourses.length === 0}
+        className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors"
+      >
+        {busy ? "Publishing…" : "Publish to course"}
+      </button>
+    </div>
+  );
+
+  return (
+    <ResponsiveModal
+      open={open}
+      onClose={onClose}
+      title="Publish quiz to a course"
+      subtitle="Your students will be able to take this as a graded assignment."
+      size="lg"
+      footer={footer}
+    >
+      <form id={formId} onSubmit={(e) => void onSubmit(e)} className="space-y-4">
+        <label className="block">
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+            Course
+          </span>
+          <div className="mt-1">
+            <Combobox
+              value={selectedCourseId || null}
+              onChange={setSelectedCourseId}
+              options={courseOptions}
+              ariaLabel="Course"
+              searchPlaceholder="Filter courses…"
+              emptyText="No courses match your filter"
+              disabled={classesLoading || eligibleCourses.length === 0}
+              placeholder={
+                classesLoading
+                  ? "Loading courses…"
+                  : eligibleCourses.length === 0
+                    ? "No active courses — create one first"
+                    : "Select a course…"
+              }
+            />
+          </div>
+        </label>
+
+        <label className="block">
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+            Title
+          </span>
+          <input
+            data-autofocus
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            maxLength={200}
+            className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </label>
+      </form>
+    </ResponsiveModal>
+  );
+}
+
 export function QuizDraftPanel({ recordingId }: { recordingId: string }) {
   const { questions, loading, refresh } = useAuthoredQuestions(recordingId);
   const toast = useToast();
   const [style, setStyle] = useState<QuizStyle>("sat");
   const [generating, setGenerating] = useState(false);
+  const [publishOpen, setPublishOpen] = useState(false);
 
   async function handleGenerate() {
     setGenerating(true);
@@ -180,15 +335,21 @@ export function QuizDraftPanel({ recordingId }: { recordingId: string }) {
             </p>
             <button
               type="button"
-              disabled
-              title="Publishing to a student assignment is coming next."
-              className="cursor-not-allowed rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-400 dark:border-slate-700"
+              onClick={() => setPublishOpen(true)}
+              className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700"
             >
-              Publish to course… (soon)
+              Publish to course…
             </button>
           </div>
         </>
       )}
+
+      <PublishModal
+        open={publishOpen}
+        recordingId={recordingId}
+        defaultTitle="Recording quiz"
+        onClose={() => setPublishOpen(false)}
+      />
     </div>
   );
 }

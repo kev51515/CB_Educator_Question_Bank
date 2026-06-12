@@ -174,6 +174,9 @@ interface AssignmentRow {
   opens_at: string;
   created_at: string;
   withhold_results: boolean | null;
+  kind: string | null;
+  qbank_set_uid: string | null;
+  qbank_set_label: string | null;
   courses: { name: string } | null;
   assignment_attempts: {
     id: string;
@@ -229,7 +232,14 @@ function rowToAssignment(row: AssignmentRow): StudentAssignment {
       row.withhold_results === true &&
       attempt?.submitted_at != null &&
       attempt.results_released_at == null,
-  };
+    // Pass the assignment kind (+ qbank fields) through so AssignmentRunner can
+    // dispatch to the right runner (qbank_set / authored_set). These aren't on
+    // the StudentAssignment type — the runner reads them via a loose cast — so
+    // we attach them post-construction.
+    kind: row.kind,
+    qbank_set_uid: row.qbank_set_uid,
+    qbank_set_label: row.qbank_set_label,
+  } as StudentAssignment;
 }
 
 /**
@@ -256,7 +266,7 @@ export function AssignmentTakeRoute({ studentId }: AssignmentTakeRouteProps) {
         const { data, error: queryError } = await supabase
           .from("assignments")
           .select(
-            "id, course_id, title, description, source_id, question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, created_at, archived, withhold_results, courses:courses!assignments_course_id_fkey(name), assignment_attempts(id, started_at, submitted_at, score_percent, correct_count, total_questions, results_released_at)",
+            "id, course_id, title, description, source_id, question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, created_at, archived, withhold_results, kind, qbank_set_uid, qbank_set_label, courses:courses!assignments_course_id_fkey(name), assignment_attempts(id, started_at, submitted_at, score_percent, correct_count, total_questions, results_released_at)",
           )
           .eq("id", assignmentId)
           .maybeSingle();

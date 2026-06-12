@@ -38,6 +38,7 @@ import { supabase } from "@/lib/supabase";
 import { Skeleton, useToast } from "@/components";
 import type { StudentAssignment } from "./useStudentAssignments";
 import { QBankAssignmentRunner } from "./QBankAssignmentRunner";
+import { AuthoredQuizRunner } from "@/recordings";
 
 /**
  * Migration 0042 adds `kind` ('mocktest' | 'qbank_set'). Until
@@ -158,6 +159,18 @@ export function AssignmentRunner(props: AssignmentRunnerProps) {
   if (kindFields.kind === "qbank_set") {
     return (
       <QBankAssignmentRunner assignment={kindFields} onExit={props.onExit} />
+    );
+  }
+  // authored_set: a quiz published from a recording (migration 0219). The
+  // AuthoredQuizRunner owns its own lifecycle (reads via get_authored_questions,
+  // submits via submit_authored_attempt) — no start_assignment_attempt bootstrap.
+  if (kindFields.kind === "authored_set") {
+    return (
+      <AuthoredQuizRunner
+        assignmentId={props.assignment.id}
+        title={props.assignment.title}
+        onExit={props.onExit}
+      />
     );
   }
   return <MockTestAssignmentRunner {...props} />;

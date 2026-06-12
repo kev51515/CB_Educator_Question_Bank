@@ -127,6 +127,7 @@ export const ROUTES = {
   COURSE_STUDENT_PROFILE: "/educator/courses/:courseId/people/:studentId",
   COURSE_ANNOUNCEMENTS: "/educator/courses/:courseId/announcements",
   COURSE_MATERIALS: "/educator/courses/:courseId/materials",
+  COURSE_RECORDINGS: "/educator/courses/:courseId/recordings",
   COURSE_GRADES: "/educator/courses/:courseId/grades",
   COURSE_PORTFOLIO: "/educator/courses/:courseId/portfolio",
   // Counseling caseload dashboard (counseling courses only — see 0135).
@@ -230,6 +231,10 @@ export function testReviewPath(slug: string): string {
 
 export function recordingPath(recordingId: string): string {
   return buildPath(ROUTES.RECORDING, { recordingId });
+}
+
+export function courseRecordingsPath(courseId: string): string {
+  return buildPath(ROUTES.COURSE_RECORDINGS, { courseId });
 }
 
 export function testReplayPath(slug: string, runId: string): string {
