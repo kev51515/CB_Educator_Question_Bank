@@ -654,12 +654,49 @@ function MockTestAssignmentRunner({
     // from the snapshot we just persisted via start_assignment_attempt).
     questions: stage.questions,
   };
+  return <AssignmentMockTestRunner ctx={ctx} onExit={onExit} studentId={studentId} />;
+}
+
+/**
+ * Mounts MockTestApp in assignment mode and posts a live heartbeat
+ * (assignment_heartbeat, 0214) so the teacher Monitor sees the student's current
+ * question + idle time — mirroring the full-test runner. Its own component so the
+ * heartbeat hooks sit above no conditional return.
+ */
+function AssignmentMockTestRunner({
+  ctx,
+  onExit,
+  studentId,
+}: {
+  ctx: MockTestAssignmentContext;
+  onExit: () => void;
+  studentId: string;
+}): JSX.Element {
+  const attemptId = ctx.attemptId;
+  const postHeartbeat = useCallback(
+    (question?: number) => {
+      void supabase.rpc("assignment_heartbeat", {
+        p_attempt_id: attemptId,
+        p_question: question ?? null,
+      });
+    },
+    [attemptId],
+  );
+  useEffect(() => {
+    postHeartbeat(); // initial "alive" ping
+    const id = window.setInterval(() => {
+      if (document.visibilityState === "visible") postHeartbeat();
+    }, 15_000);
+    return () => window.clearInterval(id);
+  }, [postHeartbeat]);
+
   return (
     <MockTestApp
       onExit={onExit}
       userId={studentId}
       assignment={ctx}
       initialMode="assignment"
+      onProgress={postHeartbeat}
     />
   );
 }

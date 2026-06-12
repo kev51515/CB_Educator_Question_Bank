@@ -20,6 +20,10 @@ export interface RosterRow {
   results_released_at: string | null;
   has_in_progress: boolean;
   started_at: string | null;
+  /** Live position (1-based) of the in-progress attempt; null for qbank/idle. */
+  current_question: number | null;
+  /** Last heartbeat from the in-progress attempt (0214). */
+  last_seen_at: string | null;
 }
 
 export interface CohortStats {

@@ -84,6 +84,12 @@ interface MockTestAppProps {
   resumedAnswers?: Record<string, Letter | null>;
   resumedFlagged?: ReadonlySet<string>;
   resumedCurrentIndex?: number;
+  /**
+   * Assignment-mode live progress: fires with the 1-based question NUMBER the
+   * student is currently on (on mount + every navigation). AssignmentRunner uses
+   * it to post a heartbeat so the teacher Monitor shows live position.
+   */
+  onProgress?: (questionNumber: number) => void;
 }
 
 type Phase = "setup" | "loading" | "running" | "submitted";
@@ -230,6 +236,7 @@ export function MockTestApp({
   resumedAnswers,
   resumedFlagged,
   resumedCurrentIndex,
+  onProgress,
 }: MockTestAppProps) {
   // Why a ref-derived flag: assignment mode skips setup entirely and writes
   // to the DB on submit. Free mode keeps the original localStorage flow.
@@ -391,6 +398,14 @@ export function MockTestApp({
       writePersistedRunning(userId, running);
     }
   }, [phase, running, userId, isAssignment, assignment]);
+
+  // Assignment-mode live progress → heartbeat. Fires on mount + every nav.
+  const currentQuestionNumber =
+    running && phase === "running" ? running.currentIndex + 1 : null;
+  useEffect(() => {
+    if (!isAssignment || !onProgress || currentQuestionNumber == null) return;
+    onProgress(currentQuestionNumber);
+  }, [isAssignment, onProgress, currentQuestionNumber]);
 
   const handleAnswer = useCallback((questionId: string, letter: Letter) => {
     setRunning((prev) => {

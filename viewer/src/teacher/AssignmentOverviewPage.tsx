@@ -341,9 +341,14 @@ export function AssignmentOverviewPage(): JSX.Element {
                     </td>
                     <td className="px-4 py-2.5">
                       <StatusPill state={state} />
-                      {state === "in_progress" && r.started_at && (
+                      {state === "in_progress" && (
                         <span className="ml-2 text-xs tabular-nums text-slate-400">
-                          {relTime(r.started_at)} elapsed
+                          {r.current_question != null && <>on Q{r.current_question} · </>}
+                          {r.last_seen_at
+                            ? `seen ${relTime(r.last_seen_at)} ago`
+                            : r.started_at
+                              ? `${relTime(r.started_at)} elapsed`
+                              : ""}
                         </span>
                       )}
                     </td>
