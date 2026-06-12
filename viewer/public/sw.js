@@ -6,7 +6,7 @@
 // stale assets across deploys — a contributor to "Failed to fetch dynamically
 // imported module" crashes. See ErrorBoundary.tsx for the client-side recovery
 // half of this fix.)
-const CACHE_NAME = 'sat-bank-v2';
+const CACHE_NAME = 'sat-bank-v3';
 // NB: deliberately do NOT precache '/' or '/index.html'. Caching the app shell
 // risks pinning an index.html that references chunk hashes a newer deploy has
 // already removed. The HTML shell is always fetched network-first (it falls

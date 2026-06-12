@@ -106,8 +106,26 @@ async function resolveQuestionsHtml(
 ): Promise<string | null> {
   try {
     const catalog = await loadCatalog();
+    // The uid is axis::section::difficulty::topic::setId. Exported files live at
+    // `by-skill/<section>/<difficulty>/<slug>_questions.html`. We REQUIRE the
+    // matched entry's file to sit under the uid's own section + difficulty, so a
+    // loose/colliding match can never serve a different subject's set (this is
+    // the guard that stops an R&W "Inferences" assignment ever loading a Math
+    // file — the reported bug). If nothing matches strictly we return null and
+    // the caller shows an error rather than the wrong subject's questions.
+    const parts = qbankSetUid.toLowerCase().split("::");
+    const section = parts[1];
+    const difficulty = parts[2];
+    const expectedDir =
+      section && difficulty ? `by-skill/${section}/${difficulty}/` : null;
     for (const entry of catalog.entries) {
-      if (qbankSetUidMatches(entry, qbankSetUid)) return entry.questionsHtml;
+      if (!qbankSetUidMatches(entry, qbankSetUid)) continue;
+      const html = entry.questionsHtml ?? "";
+      if (!expectedDir || html.toLowerCase().includes(expectedDir)) {
+        return html;
+      }
+      // matched the uid but the file is in the wrong section/difficulty — skip,
+      // do NOT return it.
     }
     return null;
   } catch {
