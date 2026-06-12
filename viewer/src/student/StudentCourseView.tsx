@@ -78,6 +78,15 @@ const viewKey = (courseId: string): string => `student.courseView:${courseId}`;
 type CourseViewMode = "journey" | "list";
 
 /**
+ * TEMPORARY (2026-06): the student-facing Journey view is disabled while we
+ * test the rest of the course experience — students see the List view only,
+ * and the Journey|List toggle is hidden. Flip back to `true` to restore it.
+ * (Saved `student.courseView:*` prefs are ignored while this is false, so
+ * re-enabling brings everyone's prior choice back untouched.)
+ */
+const STUDENT_JOURNEY_ENABLED: boolean = false;
+
+/**
  * `:short` is normally a 6-char course short_code, but several flows deep-link
  * by raw course UUID instead — most importantly the managed-seat claim, which
  * redirects to `studentCoursePath(course_id)` (a UUID) after a student claims
@@ -740,7 +749,7 @@ export function StudentCourseView(): JSX.Element {
               )
             ) : (
               <div className="space-y-4">
-                {isClassCourse && (
+                {isClassCourse && STUDENT_JOURNEY_ENABLED && (
                   <div
                     className="inline-flex items-center rounded-full bg-indigo-600/[0.08] dark:bg-indigo-400/10 p-0.5"
                     role="tablist"
@@ -765,7 +774,7 @@ export function StudentCourseView(): JSX.Element {
                   </div>
                 )}
 
-                {isClassCourse && viewMode === "journey" ? (
+                {isClassCourse && STUDENT_JOURNEY_ENABLED && viewMode === "journey" ? (
                   <>
                     <JourneyHud
                       earned={journey.earned}

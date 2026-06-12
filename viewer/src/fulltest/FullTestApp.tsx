@@ -169,6 +169,16 @@ function elimToPayload(
 // thrash. See onFsChange.
 const FS_EXIT_DEBOUNCE_MS = 1000;
 
+/**
+ * Anti-cheat (2026-06): require fullscreen on EVERY proctored test (soft +
+ * strict), not just strict — so a student can't quietly tab away to look
+ * something up without tripping the fullscreen-exit lockout + telemetry.
+ * "off" tests stay un-proctored. iPhone/iPod (no element fullscreen) still
+ * fail open silently for soft, exactly as before. Flip to `false` to restore
+ * the prior "fullscreen only in strict mode" behaviour.
+ */
+const FORCE_FULLSCREEN_ON_TESTS = true;
+
 export function FullTestApp() {
   const isPreview = useRef(
     typeof window !== "undefined" &&
@@ -288,6 +298,10 @@ function FullTestRunner() {
     ((start as { proctoring_level?: ProctoringLevel } | null)?.proctoring_level) ?? "off";
   const proctorOn = proctoringLevel !== "off";
   const strict = proctoringLevel === "strict";
+  // Fullscreen is enforced in strict mode and — while FORCE_FULLSCREEN_ON_TESTS
+  // is on — on soft proctored tests too. This gates ONLY the fullscreen
+  // request + exit lockout; copy/paste/contextmenu blocking stays strict-only.
+  const enforceFullscreen = strict || (FORCE_FULLSCREEN_ON_TESTS && proctorOn);
 
   // Dwell stopwatch helpers (stable via refs; read fresh runId/proctorOn/module).
   // dwellTick folds elapsed-since-resume into the active accumulator.
@@ -710,8 +724,8 @@ function FullTestRunner() {
     // symmetric.
     const onSelectStart = () => {};
     const onFsChange = () => {
-      // Only meaningful when we're enforcing lockdown on a capable device.
-      if (!strict || !supportsFullscreen) return;
+      // Only meaningful when we're enforcing fullscreen on a capable device.
+      if (!enforceFullscreen || !supportsFullscreen) return;
       if (!document.fullscreenElement) {
         // Exited fullscreen. Defer the overlay + log behind a short timer: a
         // bounce that re-enters within the window is swallowed (no overlay, no
@@ -765,7 +779,7 @@ function FullTestRunner() {
         fsExitTimerRef.current = null;
       }
     };
-  }, [phase, runId, proctorOn, strict, supportsFullscreen]);
+  }, [phase, runId, proctorOn, strict, enforceFullscreen, supportsFullscreen]);
 
   // FOCUS-LOSS telemetry (the second-monitor signal). A window 'blur' without a
   // matching visibilitychange→hidden means the student clicked another window
@@ -1030,13 +1044,13 @@ function FullTestRunner() {
   // promise (already fullscreen, denied) is swallowed; the fullscreenchange
   // listener is the source of truth for the lockout overlay.
   const enterFullscreen = useCallback(() => {
-    if (!strict || !supportsFullscreen) return;
+    if (!enforceFullscreen || !supportsFullscreen) return;
     try {
       void document.documentElement.requestFullscreen?.().catch(() => {});
     } catch {
       /* non-fatal — telemetry still records the exit */
     }
-  }, [strict, supportsFullscreen]);
+  }, [enforceFullscreen, supportsFullscreen]);
 
   // Wrap a module-entry handler so strict mode enters fullscreen on the same
   // click that loads the module (keeps the call inside the user gesture).
