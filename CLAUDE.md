@@ -105,9 +105,15 @@ existing primitives.
 **Exception — surface-coupled components**: a component that's only meaningful
 inside one surface (Dashboard's `NeedsAttentionPanel`, the student-side
 `ScoreArcSparkline`, the teacher-side `AssignmentCard`, etc.) lives in that
-surface's domain folder (`dashboard/`, `student/`, `teacher/`) and is
-imported directly from the consumer. Don't promote it to `components/`
+surface's domain folder (`dashboard/`, `student/`, `teacher/`, `journey/`)
+and is imported directly from the consumer. Don't promote it to `components/`
 unless a second surface needs it. The barrel is for cross-cutting primitives.
+
+`viewer/src/journey/` is the gamified Journey view (Khan-style mastery grid:
+gold seal at effective score ≥80%, derived mastery points + levels — nothing
+stored). Spec + decision record: `docs/JOURNEY_VIEW.md`. Educator Modules has
+Journey|List with Journey primary; the student-side journey is behind
+`STUDENT_JOURNEY_ENABLED` in `StudentCourseView.tsx` (temp. off).
 
 ### Modal contract (every `role="dialog"`)
 

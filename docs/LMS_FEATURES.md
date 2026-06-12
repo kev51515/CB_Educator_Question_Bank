@@ -178,6 +178,7 @@ See `docs/PROCTORING.md` for the full stack + SEB integration plan. Shipped in c
 | Notes (teacher-authored markdown) | ○ Not built | S; `kind='note'` in materials |
 | Video / media embeds | ○ Not built | S; YouTube / Vimeo iframe in pages |
 | Modules / lesson sequences | ✓ Built | `0011_modules.sql` defines `modules` + `module_items`; surfaced in teacher course shell |
+| Journey view (gamified mastery grid) | ✓ Built | Khan-style grid over modules: gold seal ≥80%, derived mastery points + levels; educator Modules Journey\|List (Journey primary), student default (temp. flagged off). `viewer/src/journey/` + [JOURNEY_VIEW.md](./JOURNEY_VIEW.md) |
 | Resource library (cross-class) | ○ Not built | M; teacher-scoped library + "Add to class" |
 | Rich-text editor | ○ Not built | M; pick lightweight (TipTap or markdown textarea) — no library is in `package.json` today |
 
@@ -252,7 +253,7 @@ See `docs/PROCTORING.md` for the full stack + SEB integration plan. Shipped in c
 | Skill mastery progression over time | ✓ Built | `0024_mastery_predictions.sql` view feeds `SkillHeatmap.tsx` |
 | Item analysis (per question, per class) | ◐ Partial | Per-attempt only; no class-aggregate |
 | Full SAT-day simulation | ○ Not built | L; adaptive Module 2 + scaled scoring + section timing |
-| Test-day timing patterns (per-question pacing) | ○ Not built | M; persist per-question time, report distribution |
+| Test-day timing patterns (per-question pacing) | ✓ Built | `0187` `get_test_pacing_cohort` (per-question fast/slow quartile band + class avg) feeds `PacingPanel`/`PacingChart` on the student report |
 | Vocabulary builder (SAT word lists) | ○ Not built | M; `vocab_lists`, `vocab_items`, SRS queue (could reuse `SpacedRepetition.tsx`) |
 | Reading speed tracker | ○ Not built | M; passage-length / time logger |
 | Essay scorer | ✗ Out of scope | SAT essay was retired; reconsider only if it returns |
