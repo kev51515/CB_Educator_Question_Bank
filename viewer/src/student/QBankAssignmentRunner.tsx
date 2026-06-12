@@ -27,7 +27,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { assignmentReviewPath } from "@/lib/routes";
-import { resolveQbankQuestionsHtml } from "@/lib/qbankCatalog";
+import { buildQbankIframeSrc } from "@/lib/qbankCatalog";
 import { useToast } from "@/components";
 import {
   listStagedSubmissions,
@@ -103,73 +103,16 @@ export function QBankAssignmentRunner({
 
   const bootstrap = useCallback(async (): Promise<void> => {
     setStage({ kind: "loading" });
-
-    // AUTHORITATIVE path first (0220): the teacher's catalog knew the exact
-    // questions file at creation and we stored it on the row. Reading that one
-    // value is deterministic — no fragile client re-resolution of the uid
-    // against the static catalog (which has loaded the wrong subject's file).
-    // We still fall back to uid resolution for legacy rows not yet backfilled.
-    let path: string | null = null;
-    let uid = assignment.qbank_set_uid ?? "";
-    try {
-      const { data } = await supabase
-        .from("assignments")
-        .select("qbank_questions_html, qbank_set_uid")
-        .eq("id", assignment.id)
-        .maybeSingle();
-      if (data) {
-        if (typeof data.qbank_questions_html === "string" && data.qbank_questions_html) {
-          path = data.qbank_questions_html.replace(/^\/+/, "");
-        }
-        if (typeof data.qbank_set_uid === "string" && data.qbank_set_uid) uid = data.qbank_set_uid;
-      }
-    } catch {
-      /* fall through to uid resolution */
-    }
-
-    if (!path && !uid) {
-      setStage({
-        kind: "error",
-        message:
-          "This assignment isn't linked to a question-bank set. Ask your teacher to re-save it.",
-      });
-      return;
-    }
-    if (!path) path = await resolveQbankQuestionsHtml(uid);
-    if (!path) {
-      setStage({
-        kind: "error",
-        message:
-          "Couldn't find the question set for this assignment in the catalog.",
-      });
-      return;
-    }
-    // Start a server-side in-progress attempt so the teacher Monitor sees this
-    // student live (0217), and thread its uuid to the iframe for heartbeats.
-    // Best-effort: if it fails the iframe still runs (the bridge falls back to
-    // starting one itself, and submit creates the row regardless).
-    let attemptUuid: string | null = null;
-    try {
-      const { data } = await supabase.rpc("start_qbank_attempt", {
-        p_assignment_id: assignment.id,
-        p_client_attempt_id: clientAttemptIdRef.current,
-      });
-      if (typeof data === "string") attemptUuid = data;
-    } catch {
-      /* non-fatal — see note above */
-    }
-
-    const url = new URL(`/exports/${path}`, window.location.origin);
-    url.searchParams.set("mode", "test");
-    url.searchParams.set("assignment_id", assignment.id);
-    url.searchParams.set("client_attempt_id", clientAttemptIdRef.current);
-    // Back-compat: legacy bridge builds read `attempt_id`.
-    url.searchParams.set("attempt_id", clientAttemptIdRef.current);
-    if (attemptUuid) url.searchParams.set("attempt_uuid", attemptUuid);
-    setStage({
-      kind: "ready",
-      iframeSrc: url.pathname + url.search,
+    const res = await buildQbankIframeSrc({
+      assignmentId: assignment.id,
+      qbankSetUid: assignment.qbank_set_uid ?? "",
+      clientAttemptId: clientAttemptIdRef.current,
     });
+    setStage(
+      res.ok
+        ? { kind: "ready", iframeSrc: res.iframeSrc }
+        : { kind: "error", message: res.message },
+    );
   }, [assignment]);
 
   useEffect(() => {
