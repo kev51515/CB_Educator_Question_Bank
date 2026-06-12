@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C3 · Continuous ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7; --line:#E9E6DE; --line2:#D3CFC2;
+    --ink:#1B2A4A; --ink2:#44516B; --ink3:#6E7A95;
+    --navy:#24407E; --navy-tint:rgba(36,64,126,.07);
+    --gold:#B9892C; --gold-deep:#94701F; --gold-bright:#D9B45B; --gold-chip:#F7EFD9;
+    --green:#2E6B4F;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font:14px/1.5 Onest,system-ui,sans-serif;background:var(--paper);color:var(--ink);
+       max-width:680px;margin:0 auto;padding:36px 20px 60px}
+  .note{font-size:12px;color:var(--ink3);margin-bottom:20px;max-width:64ch}
+
+  .ledger{background:#fff;border:1px solid var(--line);border-radius:16px;
+          box-shadow:0 1px 2px rgba(27,42,74,.05),0 3px 10px rgba(27,42,74,.06);overflow:hidden}
+  .stage{position:relative;padding:18px 20px 18px 76px}
+  .stage+.stage{border-top:1px solid #f1efe8}
+  .stage.cur{background:rgba(36,64,126,.045)}
+  .stage.locked{opacity:.55}
+
+  /* inner rail */
+  .stage::before{content:"";position:absolute;left:39px;top:0;bottom:0;width:2px;
+                 background:repeating-linear-gradient(180deg,var(--line2) 0 4px,transparent 4px 10px)}
+  .stage.first::before{top:26px}
+  .stage.last::before{bottom:auto;height:26px}
+  .stage.done::before{background:var(--navy)}
+
+  .medal{position:absolute;left:24px;top:18px;width:32px;height:32px;border-radius:50%;background:#fff;z-index:1;
+         border:1.5px solid var(--line2);display:flex;align-items:center;justify-content:center;
+         font:700 12px Onest;color:var(--ink3)}
+  .medal.done{border-color:var(--green);color:var(--green);background:#F2F7F4}
+  .medal.cur{border:2px solid var(--navy);color:var(--navy);box-shadow:0 0 0 4px var(--navy-tint)}
+  .medal svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .medal.summit{border-radius:9px;background:var(--gold-chip);border-color:var(--gold);color:var(--gold-deep)}
+
+  .head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .head h3{font-size:15px;font-weight:600}
+  .upnext{font:700 10px Onest;letter-spacing:.07em;text-transform:uppercase;color:var(--navy)}
+  .meta{margin-left:auto;font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
+  .cells{display:flex;gap:8px;margin-top:11px}
+  .cell{width:30px;height:30px;border-radius:7px;border:2px solid var(--line2);background:#fff;
+        display:flex;align-items:center;justify-content:center;color:#fff}
+  .cell svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .cell.seal{background:linear-gradient(135deg,#D9B45B,#B9892C 70%);border-color:var(--gold-deep)}
+  .cell.prof{background:var(--navy);border-color:var(--navy)}
+  .cell.att{background:#cfd8ef;border-color:#b5c3e6;color:#3a4f86}
+  .lockline{font-size:11.5px;color:var(--ink3);margin-top:8px;display:flex;align-items:center;gap:6px;font-weight:600}
+  .lockline svg{width:13px;height:13px;stroke:var(--ink3);fill:none;stroke-width:2}
+
+  .stage.summitrow{background:linear-gradient(150deg,#16233f,#24407E 85%);color:#fff}
+  .stage.summitrow::before{display:none}
+  .stage.summitrow h3{color:#fff;font-family:Newsreader,serif;font-size:17px}
+  .stage.summitrow .d{font-size:12px;color:rgba(255,255,255,.78);margin-top:3px}
+  .stage.summitrow .d b{color:var(--gold-bright)}
+  .stage.summitrow .meta{color:rgba(255,255,255,.7)}
+  .count{position:absolute;right:20px;top:50%;transform:translateY(-50%);text-align:center}
+  .count .n{font-family:Newsreader,serif;font-size:25px;font-weight:600;line-height:1}
+  .count small{display:block;font:600 8.5px Onest;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:2px}
+</style>
+</head>
+<body>
+<p class="note"><b>C3 · Continuous ledger.</b> The quietest treatment: ONE card, with the rail and medallions
+running <i>inside</i> its left margin — completed legs of the rail turn solid navy. No floating cards, no
+gaps; the current stage is the familiar tinted band; the summit is the card's final navy row. Reads like a
+single document (most "Ivy Ledger" of the three) and wastes the least vertical space.</p>
+
+<div class="ledger">
+  <div class="stage first done">
+    <span class="medal done"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+    <div class="head"><h3>Week 1 — Foundations</h3><span class="meta">3/3 · 300/400 pts · 1 seal</span></div>
+    <div class="cells">
+      <span class="cell seal"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+      <span class="cell att"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+      <span class="cell prof"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.7-4.6 4.2 1.3 6L12 16.6 6.5 19.5l1.3-6L3.2 9.3l6.1-.7L12 3Z"/></svg></span>
+      <span class="cell"></span>
+    </div>
+  </div>
+
+  <div class="stage cur">
+    <span class="medal cur">2</span>
+    <div class="head"><h3>Week 2 — Algebra</h3><span class="upnext">· Up next</span><span class="meta">1/3 · 100/300 pts</span></div>
+    <div class="cells">
+      <span class="cell seal"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+      <span class="cell" style="border-color:var(--navy);box-shadow:0 0 0 3px var(--navy-tint)"></span>
+      <span class="cell"></span>
+    </div>
+  </div>
+
+  <div class="stage locked">
+    <span class="medal">3</span>
+    <div class="head"><h3>Week 3 — Geometry</h3><span class="meta">0/1</span></div>
+    <div class="lockline"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Unlocks Monday, June 16</div>
+  </div>
+
+  <div class="stage last summitrow">
+    <span class="medal summit"><svg viewBox="0 0 24 24"><path d="M4 21V4 M4 4h12l-2.5 4L16 12H4"/></svg></span>
+    <div class="head"><h3>Summit — Digital SAT, June</h3></div>
+    <p class="d">4 modules · 134 min · <b>the real rehearsal</b></p>
+    <div class="count"><span class="n">24</span><small>days</small></div>
+  </div>
+</div>
+</body>
+</html>

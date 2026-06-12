@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D2 · Class journey heatmap — refined</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7; --line:#E9E6DE; --line2:#D3CFC2;
+    --ink:#1B2A4A; --ink2:#44516B; --ink3:#6E7A95;
+    --navy:#24407E; --navy-tint:rgba(36,64,126,.07);
+    --gold:#B9892C; --gold-deep:#94701F; --gold-chip:#F7EFD9;
+    --rose:#B4533E;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font:14px/1.5 Onest,system-ui,sans-serif;background:var(--paper);color:var(--ink);
+       max-width:820px;margin:0 auto;padding:36px 20px 60px}
+  .note{font-size:12px;color:var(--ink3);margin-bottom:18px;max-width:70ch}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;
+        box-shadow:0 1px 2px rgba(27,42,74,.05),0 3px 10px rgba(27,42,74,.06)}
+  .bar{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+  .bar h3{font-family:Newsreader,serif;font-weight:600;font-size:18px}
+  .bar .m{font-size:11.5px;color:var(--ink3)}
+  .sort{margin-left:auto;display:inline-flex;background:rgba(36,64,126,.07);border-radius:99px;padding:2px}
+  .sort button{border:none;border-radius:99px;background:none;font:600 11px Onest;color:var(--ink3);padding:4px 11px;cursor:pointer}
+  .sort .on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(27,42,74,.12)}
+
+  table{border-collapse:separate;border-spacing:0;width:100%}
+  th{font:600 9.5px Onest;letter-spacing:.04em;text-transform:uppercase;color:var(--ink3);padding:4px 5px;text-align:center}
+  th.grp{color:var(--navy);border-bottom:1px solid var(--line);font-size:9px;padding-bottom:3px}
+  th.col{height:96px;vertical-align:bottom}
+  th.col span{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;display:inline-block;max-height:92px;overflow:hidden}
+  td{padding:3px 5px;font-size:12.5px;vertical-align:middle;text-align:center}
+  td.name{white-space:nowrap;font-weight:600;text-align:left;padding-right:10px}
+  .av{display:inline-flex;width:20px;height:20px;border-radius:50%;background:var(--navy-tint);color:var(--navy);
+      align-items:center;justify-content:center;font:700 9px Onest;margin-right:7px;vertical-align:-5px}
+
+  /* class summary row: stacked mini-bar per checkpoint */
+  tr.classrow td{border-bottom:1.5px solid var(--line);padding-bottom:7px}
+  tr.classrow td.name{color:var(--navy)}
+  .mini{display:inline-flex;width:22px;height:34px;border-radius:5px;overflow:hidden;flex-direction:column-reverse;
+        border:1px solid var(--line);vertical-align:middle}
+  .mini i{display:block;width:100%}
+  .mini .g{background:linear-gradient(135deg,#D9B45B,#B9892C)}
+  .mini .p{background:var(--navy)}
+  .mini .a{background:#cfd8ef}
+  .mini .z{background:#FAF8F2}
+  .pct{display:block;font:600 9px Onest;color:var(--ink3);margin-top:3px;font-variant-numeric:tabular-nums}
+  .pct.warn{color:var(--rose);font-weight:700}
+  .warnflag{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--rose);margin-left:2px;vertical-align:6px}
+
+  tr.body td{border-top:1px solid #f5f3ec}
+  .c{width:20px;height:20px;border-radius:5px;border:1.5px solid var(--line2);background:#fff;display:inline-block;vertical-align:middle}
+  .c.seal{background:linear-gradient(135deg,#D9B45B,#B9892C 70%);border-color:var(--gold-deep)}
+  .c.prof{background:var(--navy);border-color:var(--navy)}
+  .c.att{background:#cfd8ef;border-color:#b5c3e6}
+  .c.zero{background:#fdf1ee;border-color:#ecc8bd}
+  td.pts{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+  td.pts b{color:var(--gold-deep)}
+  tr.low td.name{color:var(--rose)}
+  tr.low .nudge{font:600 10.5px Onest;color:var(--navy);cursor:pointer;white-space:nowrap}
+  .legend{display:flex;gap:14px;margin-top:12px;font-size:11px;color:var(--ink2);flex-wrap:wrap}
+  .legend .c{width:13px;height:13px;vertical-align:-2px;margin-right:4px}
+</style>
+</head>
+<body>
+<p class="note"><b>D2 · Class journey heatmap — refined for at-a-glance reading.</b> Two changes from v2-D:
+(1) a pinned <b>Class row</b> on top — each checkpoint gets a stacked mini-bar (gold/navy/pale/cream from
+bottom) + its sealed-% — so the class's journey reads in ONE row without scanning students; weak checkpoints
+get a red % + dot (Reading drill 17%, Quadratics 33%). (2) sort control (points / name / needs-attention)
+and an inline <i>Nudge</i> on flagged rows. Student rows below are the drill-down when the class row shows
+a stripe worth investigating.</p>
+
+<div class="card">
+  <div class="bar">
+    <h3>Class journey</h3><span class="m">12 students · 7 checkpoints</span>
+    <span class="sort"><button class="on">Needs attention</button><button>Points</button><button>Name</button></span>
+  </div>
+  <table>
+    <thead>
+      <tr><th></th><th class="grp" colspan="3">Week 1</th><th class="grp" colspan="3">Week 2</th><th class="grp">W3</th><th></th></tr>
+      <tr>
+        <th></th>
+        <th class="col"><span>Vocab Quiz 1</span></th>
+        <th class="col"><span>Reading drill</span></th>
+        <th class="col"><span>Linear eq. PT</span></th>
+        <th class="col"><span>Systems of eq.</span></th>
+        <th class="col"><span>Quadratics</span></th>
+        <th class="col"><span>Function notation</span></th>
+        <th class="col"><span>Angles</span></th>
+        <th style="text-align:right">Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="classrow">
+        <td class="name">Class</td>
+        <td><span class="mini"><i class="g" style="height:58%"></i><i class="p" style="height:25%"></i><i class="a" style="height:9%"></i><i class="z" style="height:8%"></i></span><span class="pct">58%</span></td>
+        <td><span class="mini"><i class="g" style="height:17%"></i><i class="p" style="height:25%"></i><i class="a" style="height:33%"></i><i class="z" style="height:25%"></i></span><span class="pct warn">17%<span class="warnflag"></span></span></td>
+        <td><span class="mini"><i class="g" style="height:42%"></i><i class="p" style="height:33%"></i><i class="a" style="height:8%"></i><i class="z" style="height:17%"></i></span><span class="pct">42%</span></td>
+        <td><span class="mini"><i class="g" style="height:50%"></i><i class="p" style="height:17%"></i><i class="a" style="height:16%"></i><i class="z" style="height:17%"></i></span><span class="pct">50%</span></td>
+        <td><span class="mini"><i class="g" style="height:33%"></i><i class="p" style="height:17%"></i><i class="a" style="height:8%"></i><i class="z" style="height:42%"></i></span><span class="pct warn">33%<span class="warnflag"></span></span></td>
+        <td><span class="mini"><i class="z" style="height:100%"></i></span><span class="pct">—</span></td>
+        <td><span class="mini"><i class="z" style="height:100%"></i></span><span class="pct">—</span></td>
+        <td class="pts"><b>avg 354</b></td>
+      </tr>
+      <tr class="body low"><td class="name"><span class="av">DK</span>Dana Kim</td>
+        <td><span class="c zero"></span></td><td><span class="c zero"></span></td><td><span class="c zero"></span></td>
+        <td><span class="c zero"></span></td><td><span class="c zero"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts">0 · <span class="nudge">Nudge →</span></td></tr>
+      <tr class="body low"><td class="name"><span class="av">MP</span>Marco Pérez</td>
+        <td><span class="c att"></span></td><td><span class="c zero"></span></td><td><span class="c zero"></span></td>
+        <td><span class="c zero"></span></td><td><span class="c zero"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts">50 · <span class="nudge">Nudge →</span></td></tr>
+      <tr class="body"><td class="name"><span class="av">YL</span>Yuna Lee</td>
+        <td><span class="c prof"></span></td><td><span class="c att"></span></td><td><span class="c att"></span></td>
+        <td><span class="c att"></span></td><td><span class="c zero"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts">300</td></tr>
+      <tr class="body"><td class="name"><span class="av">RM</span>Ravi Mehta</td>
+        <td><span class="c seal"></span></td><td><span class="c att"></span></td><td><span class="c prof"></span></td>
+        <td><span class="c prof"></span></td><td><span class="c att"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts">425</td></tr>
+      <tr class="body"><td class="name"><span class="av">JW</span>Jenny Wu</td>
+        <td><span class="c seal"></span></td><td><span class="c prof"></span></td><td><span class="c seal"></span></td>
+        <td><span class="c seal"></span></td><td><span class="c prof"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts"><b>525</b></td></tr>
+      <tr class="body"><td class="name"><span class="av">AS</span>Aiden Sun</td>
+        <td><span class="c seal"></span></td><td><span class="c seal"></span></td><td><span class="c prof"></span></td>
+        <td><span class="c seal"></span></td><td><span class="c seal"></span></td><td><span class="c"></span></td><td><span class="c"></span></td>
+        <td class="pts"><b>550</b></td></tr>
+    </tbody>
+  </table>
+  <div class="legend">
+    <span><span class="c seal"></span>Sealed</span>
+    <span><span class="c prof"></span>Proficient</span>
+    <span><span class="c att"></span>Attempted</span>
+    <span><span class="c zero"></span>Not started</span>
+    <span><span class="c"></span>Unreleased / locked</span>
+  </div>
+</div>
+</body>
+</html>
