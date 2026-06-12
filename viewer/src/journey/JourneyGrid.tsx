@@ -10,6 +10,13 @@
  * global .journey-seal gold), so it reads native in ivy AND classic, light
  * and dark — per the decision record, Khan's structure, our skin.
  */
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import type { JourneyCell, JourneyUnit } from "./buildJourney";
 import { MASTERY_LABEL, type MasteryState } from "./mastery";
 
@@ -18,6 +25,28 @@ interface JourneyGridProps {
   onOpenCell?: (cell: JourneyCell) => void;
   /** Educator class-aggregate mode — adjusts tooltip + meta copy. */
   aggregate?: boolean;
+  /**
+   * Anchored cell-detail popover (decision 1A/2A, docs/JOURNEY_VIEW.md).
+   * When provided, clicking a trackable (non-resource) cell opens the
+   * rendered content anchored under the cell instead of navigating;
+   * resource cells keep direct navigation. Esc / click-away closes.
+   */
+  popover?: (cell: JourneyCell, close: () => void) => ReactNode;
+  /**
+   * Per-cell opt-out: return false to skip the popover and navigate
+   * directly (e.g. educator full-test cells → per-test overview).
+   */
+  hasPopover?: (cell: JourneyCell) => boolean;
+  /** Cell ids that just crossed the seal threshold — plays the gold stamp. */
+  justSealed?: Set<string>;
+}
+
+const POPOVER_WIDTH = 312;
+
+interface OpenPopover {
+  cellId: string;
+  left: number;
+  top: number;
 }
 
 /** Fill classes per mastery state (border supplied by the base class). */
@@ -132,15 +161,75 @@ export function JourneyGrid({
   units,
   onOpenCell,
   aggregate = false,
+  popover,
+  hasPopover,
+  justSealed,
 }: JourneyGridProps): JSX.Element {
+  // Anchored popover state. Position is computed from the clicked button's
+  // offset within its (position:relative) section, clamped to the section
+  // width so the card never overflows the grid.
+  const [open, setOpen] = useState<OpenPopover | null>(null);
+  const popoverRef = useRef<HTMLDivElement | null>(null);
+  const close = useCallback((): void => setOpen(null), []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") close();
+    };
+    const onPointer = (e: PointerEvent): void => {
+      const node = popoverRef.current;
+      if (node && e.target instanceof Node && !node.contains(e.target)) {
+        close();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
+  }, [open, close]);
+
+  const onCellClick = (
+    cell: JourneyCell,
+    e: React.MouseEvent<HTMLButtonElement>,
+  ): void => {
+    // Resource cells (or no/opted-out popover) keep direct navigation.
+    if (!popover || cell.kind === "resource" || hasPopover?.(cell) === false) {
+      onOpenCell?.(cell);
+      return;
+    }
+    if (open?.cellId === cell.id) {
+      close();
+      return;
+    }
+    const btn = e.currentTarget;
+    const section = btn.closest("section");
+    const maxLeft = Math.max(
+      8,
+      (section?.clientWidth ?? POPOVER_WIDTH + 48) - POPOVER_WIDTH - 20,
+    );
+    setOpen({
+      cellId: cell.id,
+      left: Math.min(btn.offsetLeft, maxLeft),
+      top: btn.offsetTop + btn.offsetHeight + 10,
+    });
+  };
+
   return (
-    <div className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-card overflow-hidden">
+    // NB: no overflow-hidden here — the anchored popover extends past its
+    // section. First/last sections round their own corners so the upNext
+    // band background still respects the card radius.
+    <div className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-card">
       {units.map((u, i) => (
         <section
           key={u.id}
           aria-label={u.name}
-          className={`px-5 py-4 ${i > 0 ? "border-t border-slate-100 dark:border-slate-800" : ""} ${
+          className={`relative px-5 py-4 ${i > 0 ? "border-t border-slate-100 dark:border-slate-800" : ""} ${
             u.upNext ? "bg-indigo-50/60 dark:bg-indigo-950/30" : ""
+          } ${i === 0 ? "rounded-t-2xl" : ""} ${
+            i === units.length - 1 ? "rounded-b-2xl" : ""
           }`}
         >
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -196,10 +285,11 @@ export function JourneyGrid({
                   <button
                     key={cell.id}
                     type="button"
-                    disabled={isLocked || (!onOpenCell && true)}
+                    disabled={isLocked || (!onOpenCell && !popover)}
                     title={tip}
                     aria-label={tip}
-                    onClick={() => onOpenCell?.(cell)}
+                    aria-expanded={popover ? open?.cellId === cell.id : undefined}
+                    onClick={(e) => onCellClick(cell, e)}
                     className={`relative inline-flex h-10 w-10 md:h-8 md:w-8 items-center justify-center rounded-md border-2 motion-safe:transition-transform ${
                       STATE_CLASS[cell.state]
                     } ${
@@ -210,7 +300,7 @@ export function JourneyGrid({
                       cell.current
                         ? "ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-slate-900"
                         : ""
-                    }`}
+                    } ${justSealed?.has(cell.id) ? "journey-stamp" : ""}`}
                   >
                     <CellGlyph cell={cell} />
                   </button>
@@ -218,6 +308,24 @@ export function JourneyGrid({
               })}
             </div>
           )}
+
+          {popover &&
+            open &&
+            (() => {
+              const cell = u.cells.find((c) => c.id === open.cellId);
+              if (!cell) return null;
+              return (
+                <div
+                  ref={popoverRef}
+                  role="dialog"
+                  aria-label={cell.title}
+                  style={{ left: open.left, top: open.top, width: POPOVER_WIDTH }}
+                  className="absolute z-20 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-600 shadow-xl p-4 motion-safe:animate-[journey-pop_.18s_ease-out]"
+                >
+                  {popover(cell, close)}
+                </div>
+              );
+            })()}
         </section>
       ))}
     </div>

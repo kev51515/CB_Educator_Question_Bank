@@ -111,6 +111,8 @@ export interface AssignmentMeta {
   bestScore: number | null;
   /** True once I have a submitted attempt. */
   submitted: boolean;
+  /** id of that best attempt — powers the journey popover's Review link. */
+  bestAttemptId?: string | null;
 }
 
 /** UI label for an assignment kind (vocabulary canon — see CLAUDE.md). */

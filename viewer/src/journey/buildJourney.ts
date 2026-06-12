@@ -39,6 +39,11 @@ export interface JourneyAssignmentInfo {
   /** Best (or class-average) effective score 0–100, null if unscored. */
   score: number | null;
   submitted: boolean;
+  /** Student-side detail for the cell popover. */
+  questionCount?: number | null;
+  timeLimitMinutes?: number | null;
+  /** id of the best attempt — powers the popover's "Review attempt". */
+  attemptId?: string | null;
   /** Teacher aggregate detail — absent on the student side. */
   aggregate?: { submitted: number; total: number; sealed: number };
 }
@@ -61,6 +66,8 @@ export interface JourneyCell {
   /** Slug for full-test link cells. */
   testSlug: string | null;
   aggregate?: { submitted: number; total: number; sealed: number };
+  /** The raw lookup result, for popover detail. */
+  info?: JourneyAssignmentInfo;
 }
 
 export interface JourneyUnit {
@@ -135,6 +142,7 @@ export function buildJourney(
           dueAt: info?.dueAt ?? null,
           testSlug: null,
           aggregate: info?.aggregate,
+          info,
         });
         continue;
       }

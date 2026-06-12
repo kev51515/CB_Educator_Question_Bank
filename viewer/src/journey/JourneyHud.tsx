@@ -10,9 +10,15 @@ import { levelFor } from "./mastery";
 interface JourneyHudProps {
   earned: number;
   possible: number;
+  /** Freshly earned points since last visit — rises in beside the bar. */
+  delta?: number;
 }
 
-export function JourneyHud({ earned, possible }: JourneyHudProps): JSX.Element {
+export function JourneyHud({
+  earned,
+  possible,
+  delta = 0,
+}: JourneyHudProps): JSX.Element {
   const lvl = levelFor(earned);
   return (
     <div className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-card px-5 py-4 flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -55,6 +61,11 @@ export function JourneyHud({ earned, possible }: JourneyHudProps): JSX.Element {
           />
         </div>
       </div>
+      {delta > 0 && (
+        <span className="journey-rise text-xs font-bold text-amber-700 dark:text-amber-400 tabular-nums">
+          +{delta.toLocaleString()} pts
+        </span>
+      )}
     </div>
   );
 }

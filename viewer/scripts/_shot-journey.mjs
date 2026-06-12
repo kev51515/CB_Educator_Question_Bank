@@ -119,35 +119,95 @@ try {
 
   browser = await chromium.launch();
 
-  async function shot(session, path, file, { theme = "ivy", dark = false, before } = {}) {
+  async function shot(session, path, file, { theme = "ivy", dark = false, before, preview = false, fullPage = true } = {}) {
     const ctx = await browser.newContext({ viewport: { width: 1380, height: 1500 }, colorScheme: dark ? "dark" : "light" });
     const page = await ctx.newPage();
-    await page.addInitScript(([k, sess, th, dk]) => {
+    await page.addInitScript(([k, sess, th, dk, pv]) => {
       localStorage.setItem(k, JSON.stringify(sess));
       localStorage.setItem("ui.theme", th);
       localStorage.setItem("sat:dark-mode", dk ? "true" : "false");
-    }, [storageKey, session, theme, dark]);
+      // journey.preview unlocks the student journey while the build flag is off
+      if (pv) localStorage.setItem("journey.preview", "1");
+    }, [storageKey, session, theme, dark, preview]);
     await page.goto(`${APP}${path}`, { waitUntil: "networkidle" });
     await page.waitForTimeout(2500);
     if (before) await before(page);
-    await page.screenshot({ path: `${OUT}/${file}`, fullPage: true });
+    await page.screenshot({ path: `${OUT}/${file}`, fullPage });
     console.log("shot", file);
     await ctx.close();
   }
 
-  // NOTE: the student-side journey is temporarily disabled
-  // (STUDENT_JOURNEY_ENABLED=false in StudentCourseView) — the student shot
-  // currently shows the plain list. When re-enabled, journey is the default
-  // and a List tab appears; re-add the toggle shots then.
+  // Student journey (via the journey.preview escape hatch while the build
+  // flag is off): grid default, then the 1A cell-detail popover on the
+  // attempted (72-style) cell, then the 3A seal moment on a reload after a
+  // new >=80% attempt lands.
   const studentSession = await signIn(`jrny-s-${TAG}@gmail.com`);
   const coursePath = `/student/courses/${course.short_code}`;
-  await shot(studentSession, coursePath, "student-course-ivy.png");
 
-  // Educator Modules: Journey is the PRIMARY view (default); List is the
-  // existing editor behind the segmented control.
+  // One PERSISTENT context for the student journey flow: the seal-moment
+  // diff compares against the localStorage snapshot from the prior visit,
+  // so the first load records and the reload (after a new >=80% attempt
+  // lands) celebrates. Fresh contexts would never have a snapshot.
+  {
+    const ctx = await browser.newContext({ viewport: { width: 1380, height: 1500 } });
+    const page = await ctx.newPage();
+    await page.addInitScript(([k, sess]) => {
+      localStorage.setItem(k, JSON.stringify(sess));
+      localStorage.setItem("ui.theme", "ivy");
+      localStorage.setItem("journey.preview", "1");
+    }, [storageKey, studentSession]);
+    await page.goto(`${APP}${coursePath}`, { waitUntil: "networkidle" });
+    await page.waitForTimeout(3000);
+    // First visit: must show NO celebration (snapshot just records).
+    await page.screenshot({ path: `${OUT}/student-journey-ivy.png`, fullPage: true });
+    console.log("shot student-journey-ivy.png");
+
+    // 1A cell-detail popover on the attempted cell.
+    await page.locator('button[title*="Reading drill"]').first().click();
+    await page.waitForTimeout(700);
+    await page.screenshot({ path: `${OUT}/student-cell-popover.png` });
+    console.log("shot student-cell-popover.png");
+    await page.keyboard.press("Escape");
+
+    // New sealed attempt on the up-next quiz → reload → stamp + toast + delta.
+    await one(service.from("assignment_attempts").insert({
+      assignment_id: a5.id, student_id: studentId, submitted_at: new Date().toISOString(),
+      score_percent: 86, correct_count: 9, total_questions: 10,
+    }), "seal attempt");
+    await page.reload({ waitUntil: "networkidle" });
+    await page.waitForTimeout(2200);
+    await page.screenshot({ path: `${OUT}/student-seal-moment.png` });
+    console.log("shot student-seal-moment.png");
+    await ctx.close();
+  }
+
+  // List regression (no preview flag → flag off → plain list).
+  await shot(studentSession, coursePath, "student-course-list.png");
+
+  // Educator Modules: Journey primary; 2A triage popover on a cell click.
   const teacherSession = await signIn(`jrny-t-${TAG}@gmail.com`);
   const modsPath = `/educator/courses/${course.short_code}/modules`;
   await shot(teacherSession, modsPath, "educator-journey-ivy.png");
+  // Triage popover on the LOW-score cell (Reading drill, 55%) so the
+  // needs-attention list + Nudge render; click Nudge and verify the DM.
+  await shot(teacherSession, modsPath, "educator-triage-popover.png", {
+    fullPage: false,
+    before: async (page) => {
+      await page.locator('button[title*="Reading drill"]').first().click();
+      await page.waitForTimeout(900);
+      await page.screenshot({ path: `${OUT}/educator-triage-before-nudge.png` });
+      await page.getByRole("button", { name: /Nudge 1 student/ }).click();
+      await page.waitForTimeout(2500); // open_thread_with + insert + toast
+    },
+  });
+  {
+    const { data: msgs, error: mErr } = await service
+      .from("messages")
+      .select("body")
+      .ilike("body", "%Reading drill%");
+    if (mErr || !msgs?.length) throw new Error("nudge DM not found in messages");
+    console.log("nudge DM verified:", JSON.stringify(msgs[0].body));
+  }
   await shot(teacherSession, modsPath, "educator-list-ivy.png", {
     before: async (page) => {
       await page.getByRole("tab", { name: "List" }).click();

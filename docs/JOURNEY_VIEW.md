@@ -114,6 +114,27 @@ server-side (RPC/view) — revisit then.
 - `.journey-seal` recipe in `viewer/src/index.css` (gold is the product
   mechanic, not theming — global, both themes)
 
+## v1.1 — interactions (decided + shipped 2026-06-12)
+
+Three interaction moments were mocked two-ways each
+(`design-explorations/journey/interactions/compare.html`) and Kevin picked
+the recommended direction for all three:
+
+| Screen | Decision | Shipped as |
+|---|---|---|
+| Cell detail (student) | **1A anchored popover** (over side-peek / direct-nav) | `JourneyCellPopover` — state chip, score, points, due, distance-to-seal bar (gold tick at 80%), Review attempt / Retake-for-the-seal / Start. Full-test cells keep direct nav (runner owns resume state). |
+| Educator drill-down | **2A triage popover** (over inline roster band) | `TeacherCellTriage` — distribution bar (sealed/proficient/attempted/not-started), needs-attention list (cap 4: lowest scores, then not-started), **Nudge n students** sends one DM each via `open_thread_with` + `messages` insert. Full roster detail stays Gradebook's job. |
+| Seal moment | **3A quiet ledger** (over ceremonial overlay) | Cell stamps gold (`.journey-stamp` press-in + ring), HUD shows rising `+N pts` (`.journey-rise`), standard Toast confirms; level-ups toast too. Diff vs a per-course localStorage snapshot (`journey.snapshot:<courseId>`), gated on meta-loaded-for-current-ids (a plain boolean raced and false-fired). All motion under `prefers-reduced-motion: no-preference`. |
+
+Popover shell lives in `JourneyGrid` (`popover` render prop + `hasPopover`
+opt-out; Esc/click-away; anchored + clamped within the section; grid wrapper
+must NOT be `overflow-hidden` — it clipped the popover, sections round their
+own corners instead).
+
+**QA escape hatch:** `localStorage["journey.preview"]="1"` enables the
+student journey while `STUDENT_JOURNEY_ENABLED` is off — used by
+`_shot-journey.mjs`, handy for staff preview on a real account.
+
 ## Deferred / later
 
 - Full-test seal tier + points (needs a non-release-gated "submitted score
