@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Journey interactions — pick a direction per screen</title>
+<style>
+  body { font: 14px/1.5 -apple-system, sans-serif; background: #fbfaf7; color: #1b2a4a; margin: 40px auto; max-width: 1280px; padding: 0 24px; }
+  h1 { font-size: 22px; }
+  h2 { font-size: 16px; margin-top: 40px; border-top: 1px solid #e9e6de; padding-top: 24px; }
+  p.note { color: #44516b; max-width: 92ch; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; align-items: start; }
+  figure { margin: 0; }
+  figcaption { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  figcaption small { display: block; font-weight: 400; color: #6e7a95; margin-top: 2px; }
+  img { width: 100%; border: 1px solid #e9e6de; border-radius: 12px; box-shadow: 0 1px 4px rgba(27,42,74,.10); }
+  .links { margin-top: 4px; font-size: 12px; }
+  .links a { color: #24407e; }
+  .rec { display:inline-block; background:#f7efd9; color:#94701f; border-radius:99px; padding:1px 9px; font-size:11px; font-weight:700; margin-left:6px; }
+</style>
+</head>
+<body>
+<h1>Journey interactions — three screens, two directions each</h1>
+<p class="note">All in the shipped Ivy tokens — these are production-direction comps, not theme explorations.
+Open the live links for motion (the celebration ones especially — statics undersell them).
+Directions are independent: you can pick A for one screen and B for another.</p>
+
+<h2>1 · Cell detail (student) — what clicking a cell shows before navigating</h2>
+<div class="row">
+  <figure>
+    <figcaption>1A · Anchored popover <span class="rec">recommended</span>
+      <small>Small card at the cell: state, score, distance-to-seal bar with the gold 80% tick, points, due,
+      Review / Retake. Fast, stays in flow, also replaces the hover tooltip. Cheapest to build.</small>
+    </figcaption>
+    <img src="shot-cell-popover-a.png" alt="Anchored popover">
+    <p class="links"><a href="cell-popover-a.html">open live →</a></p>
+  </figure>
+  <figure>
+    <figcaption>1B · Side peek panel
+      <small>Sticky panel beside the grid with full attempt history (every try, best marked gold). Richer;
+      good for comparing cells side by side; more layout work + a mobile bottom-sheet variant needed.</small>
+    </figcaption>
+    <img src="shot-cell-popover-b.png" alt="Side peek">
+    <p class="links"><a href="cell-popover-b.html">open live →</a></p>
+  </figure>
+</div>
+
+<h2>2 · Educator drill-down — clicking an aggregate cell</h2>
+<div class="row">
+  <figure>
+    <figcaption>2A · Popover with distribution + needs-attention <span class="rec">recommended</span>
+      <small>Mastery distribution bar (sealed/proficient/attempted/not-started), the 2–4 students needing
+      attention, and a one-click "Nudge n students" (prefilled DM). Triage-first.</small>
+    </figcaption>
+    <img src="shot-educator-drilldown-a.png" alt="Distribution popover">
+    <p class="links"><a href="educator-drilldown-a.html">open live →</a></p>
+  </figure>
+  <figure>
+    <figcaption>2B · Expanding roster band
+      <small>Full per-student table expands inside the unit row — every student, state, best, attempts,
+      view-attempt links. Complete; better on a projector; heavier, and duplicates some of Gradebook.</small>
+    </figcaption>
+    <img src="shot-educator-drilldown-b.png" alt="Roster band">
+    <p class="links"><a href="educator-drilldown-b.html">open live →</a></p>
+  </figure>
+</div>
+
+<h2>3 · The seal moment — what happens when a student crosses 80%</h2>
+<div class="row">
+  <figure>
+    <figcaption>3A · Quiet ledger (toast + stamp) <span class="rec">recommended</span>
+      <small>No overlay: the cell stamps gold with one expanding ring, the HUD bar fills with a rising
+      "+100 pts", the standard Toast confirms. Environmental reward, zero interruption. Reuses Toast.</small>
+    </figcaption>
+    <img src="shot-celebrate-a.png" alt="Quiet ledger celebration">
+    <p class="links"><a href="celebrate-a.html">open live →</a></p>
+  </figure>
+  <figure>
+    <figcaption>3B · Ceremonial overlay
+      <small>Navy backdrop, wax seal stamps in with one 8-ray gold flash (no confetti physics), ceremonial
+      score, level bar fills, Continue. A real dopamine hit — once per item, auto-dismiss 6s.</small>
+    </figcaption>
+    <img src="shot-celebrate-b.png" alt="Ceremonial overlay">
+    <p class="links"><a href="celebrate-b.html">open live →</a></p>
+  </figure>
+</div>
+</body>
+</html>

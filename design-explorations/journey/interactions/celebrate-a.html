@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seal moment — A · Quiet ledger (toast + stamp)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7; --line:#E9E6DE; --line2:#D3CFC2;
+    --ink:#1B2A4A; --ink2:#44516B; --ink3:#6E7A95;
+    --navy:#24407E; --navy-tint:rgba(36,64,126,.07);
+    --gold:#B9892C; --gold-deep:#94701F; --gold-bright:#D9B45B; --gold-chip:#F7EFD9;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font:14px/1.5 Onest,system-ui,sans-serif;background:var(--paper);color:var(--ink);
+       max-width:760px;margin:0 auto;padding:36px 20px 120px;position:relative;min-height:96vh}
+  .note{font-size:12px;color:var(--ink3);margin-bottom:18px;max-width:66ch}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;
+        box-shadow:0 1px 2px rgba(27,42,74,.05),0 3px 10px rgba(27,42,74,.06)}
+
+  /* HUD with shimmering fill */
+  .hud{display:flex;align-items:center;gap:18px;padding:16px 20px}
+  .pts{font-family:Newsreader,serif;font-size:24px;font-weight:600;color:var(--gold-deep);font-variant-numeric:tabular-nums}
+  .pts small{display:block;font:600 9.5px Onest;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;margin-top:-2px}
+  .lvl{flex:1}
+  .lvl .label{display:flex;justify-content:space-between;font:600 10.5px Onest;margin-bottom:5px}
+  .lvl .label b{color:var(--navy)} .lvl .label span:last-child{color:var(--ink3);font-weight:500}
+  .bar{height:6px;border-radius:99px;background:#F5F3EC;border:1px solid var(--line);overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:99px;background:var(--navy);
+         width:46%;animation:fill 1.3s .5s ease-out forwards}
+  @keyframes fill{to{width:71%}}
+  .delta{font:700 11px Onest;color:var(--gold-deep);opacity:0;animation:rise 1s .6s ease-out forwards}
+  @keyframes rise{0%{opacity:0;transform:translateY(6px)}25%{opacity:1}100%{opacity:1;transform:none}}
+
+  .unit{padding:18px 22px;border-top:1px solid #f1efe8}
+  .unit h3{font-size:15px;font-weight:600}
+  .cells{display:flex;gap:8px;margin-top:14px}
+  .cell{width:32px;height:32px;border-radius:7px;border:2px solid var(--line2);background:#fff;
+        display:flex;align-items:center;justify-content:center;color:#fff}
+  .cell svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .cell.prof{background:var(--navy);border-color:var(--navy)}
+
+  /* the stamp — cell flips to gold with a press-in motion */
+  .cell.stamp{background:linear-gradient(135deg,#D9B45B,#B9892C 70%);border-color:var(--gold-deep);
+              animation:stamp .55s .4s cubic-bezier(.2,1.6,.4,1) backwards}
+  @keyframes stamp{0%{transform:scale(1.9);opacity:0}55%{transform:scale(.92);opacity:1}100%{transform:scale(1)}}
+  .ring{position:absolute;inset:-6px;border-radius:11px;border:2px solid var(--gold-bright);opacity:0;
+        animation:ringout 1s .55s ease-out}
+  @keyframes ringout{0%{opacity:.8;transform:scale(.8)}100%{opacity:0;transform:scale(1.5)}}
+  .cellwrap{position:relative}
+
+  /* toast, bottom-right — the standard Toast with the gold seal glyph */
+  .toast{position:fixed;right:22px;bottom:22px;width:330px;background:#fff;border:1px solid var(--line2);
+         border-left:3px solid var(--gold);border-radius:13px;box-shadow:0 10px 32px rgba(27,42,74,.16);
+         padding:13px 15px;display:flex;gap:12px;align-items:flex-start;animation:toastin .35s .9s ease-out backwards}
+  @keyframes toastin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .seal-ic{width:34px;height:34px;border-radius:50%;flex:none;position:relative;
+           background:radial-gradient(circle at 35% 30%, #E8C97E, var(--gold) 70%, var(--gold-deep));
+           display:flex;align-items:center;justify-content:center}
+  .seal-ic::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px dashed rgba(255,255,255,.55)}
+  .seal-ic svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .toast .t{font-weight:700;font-size:13px}
+  .toast .b{font-size:12px;color:var(--ink2);margin-top:1px}
+  .toast .b b{color:var(--gold-deep)}
+  .toast .act{font:600 12px Onest;color:var(--navy);margin-top:7px;cursor:pointer;display:inline-block}
+</style>
+</head>
+<body>
+<p class="note"><b>A · Quiet ledger.</b> No overlay, no confetti. Three things happen at once when the score
+lands ≥80%: the journey cell <i>stamps</i> gold (press-in motion + one expanding ring), the HUD bar fills with
+the new points (with a small <b>+100 pts</b> rising beside it), and the standard Toast confirms with the wax-seal
+glyph. The student is never interrupted; the reward is environmental. Same pipeline announces level-ups
+("Level 4 · Scholar reached").</p>
+
+<div class="card">
+  <div class="hud">
+    <div><div class="pts">1,350</div><small class="pts" style="font-size:0"> </small><small style="font:600 9.5px Onest;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase">Mastery pts</small></div>
+    <div class="lvl">
+      <div class="label"><span><b>Level 4</b> · Scholar</span><span>150 to Level 5</span></div>
+      <div class="bar"><i></i></div>
+    </div>
+    <span class="delta">+100 pts</span>
+  </div>
+  <div class="unit">
+    <h3>Week 2 — Algebra</h3>
+    <div class="cells">
+      <span class="cellwrap"><span class="cell stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span><span class="ring"></span></span>
+      <span class="cell prof"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+      <span class="cell"></span>
+    </div>
+  </div>
+</div>
+
+<div class="toast" role="status">
+  <span class="seal-ic"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>
+  <div>
+    <div class="t">Sealed — Quadratics Quiz</div>
+    <div class="b">86% · <b>+100 mastery pts</b> · 150 to Level 5</div>
+    <span class="act">View journey →</span>
+  </div>
+</div>
+</body>
+</html>
