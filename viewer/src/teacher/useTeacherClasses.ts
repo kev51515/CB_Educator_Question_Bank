@@ -8,8 +8,19 @@
  * change (INSERT / UPDATE / DELETE). Cheap and sufficient — we're not
  * trying to do delta merges, just stay current.
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
+
+/**
+ * Monotonic counter giving every `useTeacherClasses` instance a unique realtime
+ * channel topic. Two consumers mounted at once with the same teacherId (e.g. the
+ * Question Bank page + its "Add to course" modal) would otherwise both call
+ * `supabase.channel('teacher-classes:<id>')` — supabase-js then hands back the
+ * already-subscribed channel, and the second `.on(...)` after `.subscribe()`
+ * throws "cannot add postgres_changes callbacks ... after subscribe()", crashing
+ * the surface. A per-instance suffix keeps topics distinct.
+ */
+let channelInstanceSeq = 0;
 
 /**
  * A normal teaching Class, a college/career Counseling course (0133), or one of
@@ -109,6 +120,11 @@ export function useTeacherClasses(teacherId: string | null): UseTeacherClasses {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Stable, unique suffix for this hook instance's realtime channel topic so
+  // two simultaneous consumers never collide (see channelInstanceSeq note).
+  const instanceIdRef = useRef<number | null>(null);
+  if (instanceIdRef.current === null) instanceIdRef.current = ++channelInstanceSeq;
+
   const refresh = useCallback(async (): Promise<void> => {
     if (!teacherId) {
       setClasses([]);
@@ -169,7 +185,7 @@ export function useTeacherClasses(teacherId: string | null): UseTeacherClasses {
   useEffect(() => {
     if (!teacherId) return;
     const channel = supabase
-      .channel(`teacher-classes:${teacherId}`)
+      .channel(`teacher-classes:${teacherId}:${instanceIdRef.current}`)
       .on(
         // The channel-payload generics in supabase-js are awkward to type
         // explicitly here without dragging in deep imports. The handler
