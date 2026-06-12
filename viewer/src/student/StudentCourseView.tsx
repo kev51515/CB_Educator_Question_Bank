@@ -35,7 +35,8 @@ import {
   studentTestRunPath,
 } from "@/lib/routes";
 import { buildJourney, type JourneyCell } from "@/journey/buildJourney";
-import { JourneyGrid, JourneyLegend } from "@/journey/JourneyGrid";
+import { JourneyLegend } from "@/journey/JourneyGrid";
+import { JourneySpine } from "@/journey/JourneySpine";
 import { JourneyHud } from "@/journey/JourneyHud";
 import { JourneyCellPopover } from "@/journey/JourneyCellPopover";
 import { levelFor } from "@/journey/mastery";
@@ -889,8 +890,8 @@ export function StudentCourseView(): JSX.Element {
                       delta={pointsDelta}
                     />
                     <JourneyLegend />
-                    <JourneyGrid
-                      units={journey.units}
+                    <JourneySpine
+                      journey={journey}
                       onOpenCell={openJourneyCell}
                       justSealed={justSealed}
                       // Decision 1A: trackable cells open the anchored detail

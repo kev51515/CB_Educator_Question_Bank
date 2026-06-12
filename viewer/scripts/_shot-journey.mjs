@@ -208,6 +208,14 @@ try {
     if (mErr || !msgs?.length) throw new Error("nudge DM not found in messages");
     console.log("nudge DM verified:", JSON.stringify(msgs[0].body));
   }
+  // D2 class heatmap (Students tab inside the educator Journey).
+  await shot(teacherSession, modsPath, "educator-students-heatmap.png", {
+    fullPage: false,
+    before: async (page) => {
+      await page.getByRole("tab", { name: "Students" }).click();
+      await page.waitForTimeout(1200);
+    },
+  });
   await shot(teacherSession, modsPath, "educator-list-ivy.png", {
     before: async (page) => {
       await page.getByRole("tab", { name: "List" }).click();

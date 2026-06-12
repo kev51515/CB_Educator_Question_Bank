@@ -135,6 +135,36 @@ own corners instead).
 student journey while `STUDENT_JOURNEY_ENABLED` is off — used by
 `_shot-journey.mjs`, handy for staff preview on a real account.
 
+## v2 — layout round (decided + shipped 2026-06-12)
+
+Second exploration round (`design-explorations/journey/v2/` then refined in
+`v3/`). Kevin skipped A (named chips) and B (summit header) for now, asked
+for polished versions of C and a more at-a-glance D. From the v3 round he
+picked **C1 (ledger spine)** and **D2 (class heatmap)**:
+
+- **C1 · Ledger spine** (`JourneySpine`, student layout): unit cards hung on
+  a progress-thermometer rail (solid behind, dotted ahead) with medallions
+  (green check = complete, navy ring = current with completion ring, gray
+  number = ahead), seal-count chips in unit headers, and the course's final
+  full-length test **promoted to a navy summit card** at the trail's end
+  (module-subset `?m=` test links keep their week placement; a unit whose
+  only cell was the summit is dropped; unit tallies + upNext recomputed
+  after promotion). Cell behavior (popover/stamp/tooltips) shared with the
+  flat grid via the extracted `UnitCells`. No test-day countdown — there is
+  no `course.test_date` field yet (deferred; don't fabricate from due dates).
+- **D2 · Class journey heatmap** (`TeacherClassHeatmap`): a **Class grid |
+  Students** toggle inside the educator Journey (persisted
+  `staff.journeyTab:<courseId>`). The at-a-glance read is the pinned
+  **Class row**: per checkpoint a stacked mini-bar + sealed-%, red-flagged
+  under 40%. Student rows: state cell per checkpoint (click → that
+  student's best attempt via `courseAssignmentAttemptPath`), derived
+  mastery points, needs-attention/points/name sort, row-level **Nudge**
+  (generic DM). Full-test columns are excluded (per-student full-test data
+  is release-gated and belongs to the per-test overview).
+
+The educator "Class grid" tab keeps the flat aggregate JourneyGrid + 2A
+triage popovers. The student flat grid is fully replaced by the spine.
+
 ## Deferred / later
 
 - Full-test seal tier + points (needs a non-release-gated "submitted score

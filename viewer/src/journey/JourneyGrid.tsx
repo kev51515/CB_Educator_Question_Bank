@@ -50,7 +50,7 @@ interface OpenPopover {
 }
 
 /** Fill classes per mastery state (border supplied by the base class). */
-const STATE_CLASS: Record<MasteryState, string> = {
+export const STATE_CLASS: Record<MasteryState, string> = {
   sealed: "journey-seal text-white",
   proficient:
     "bg-indigo-600 border-indigo-600 dark:bg-indigo-500 dark:border-indigo-500 text-white",
@@ -112,7 +112,7 @@ function cellTooltip(cell: JourneyCell, aggregate: boolean): string {
   return parts.join(" · ");
 }
 
-function formatUnlockDate(iso: string | null): string {
+export function formatUnlockDate(iso: string | null): string {
   if (!iso) return "";
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return "";
@@ -157,18 +157,30 @@ export function JourneyLegend(): JSX.Element {
   );
 }
 
-export function JourneyGrid({
-  units,
+/**
+ * One unit's interactive cells row + its anchored popover. Owns the popover
+ * state so both layouts (flat grid + ledger spine) share identical behavior.
+ * Renders a position:relative wrapper; the popover anchors within it.
+ */
+export interface UnitCellsProps {
+  cells: JourneyCell[];
+  onOpenCell?: (cell: JourneyCell) => void;
+  aggregate?: boolean;
+  popover?: (cell: JourneyCell, close: () => void) => ReactNode;
+  hasPopover?: (cell: JourneyCell) => boolean;
+  justSealed?: Set<string>;
+}
+
+export function UnitCells({
+  cells,
   onOpenCell,
   aggregate = false,
   popover,
   hasPopover,
   justSealed,
-}: JourneyGridProps): JSX.Element {
-  // Anchored popover state. Position is computed from the clicked button's
-  // offset within its (position:relative) section, clamped to the section
-  // width so the card never overflows the grid.
+}: UnitCellsProps): JSX.Element {
   const [open, setOpen] = useState<OpenPopover | null>(null);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const close = useCallback((): void => setOpen(null), []);
 
@@ -205,10 +217,10 @@ export function JourneyGrid({
       return;
     }
     const btn = e.currentTarget;
-    const section = btn.closest("section");
+    const wrap = wrapRef.current;
     const maxLeft = Math.max(
       8,
-      (section?.clientWidth ?? POPOVER_WIDTH + 48) - POPOVER_WIDTH - 20,
+      (wrap?.clientWidth ?? POPOVER_WIDTH + 48) - POPOVER_WIDTH - 20,
     );
     setOpen({
       cellId: cell.id,
@@ -217,6 +229,66 @@ export function JourneyGrid({
     });
   };
 
+  return (
+    <div ref={wrapRef} className="relative mt-3 flex flex-wrap gap-2">
+      {cells.map((cell) => {
+        const tip = cellTooltip(cell, aggregate);
+        const isLocked = cell.state === "locked";
+        return (
+          <button
+            key={cell.id}
+            type="button"
+            disabled={isLocked || (!onOpenCell && !popover)}
+            title={tip}
+            aria-label={tip}
+            aria-expanded={popover ? open?.cellId === cell.id : undefined}
+            onClick={(e) => onCellClick(cell, e)}
+            className={`relative inline-flex h-10 w-10 md:h-8 md:w-8 items-center justify-center rounded-md border-2 motion-safe:transition-transform ${
+              STATE_CLASS[cell.state]
+            } ${
+              isLocked
+                ? "cursor-not-allowed"
+                : "hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
+            } ${
+              cell.current
+                ? "ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-slate-900"
+                : ""
+            } ${justSealed?.has(cell.id) ? "journey-stamp" : ""}`}
+          >
+            <CellGlyph cell={cell} />
+          </button>
+        );
+      })}
+
+      {popover &&
+        open &&
+        (() => {
+          const cell = cells.find((c) => c.id === open.cellId);
+          if (!cell) return null;
+          return (
+            <div
+              ref={popoverRef}
+              role="dialog"
+              aria-label={cell.title}
+              style={{ left: open.left, top: open.top, width: POPOVER_WIDTH }}
+              className="absolute z-20 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-600 shadow-xl p-4 motion-safe:animate-[journey-pop_.18s_ease-out]"
+            >
+              {popover(cell, close)}
+            </div>
+          );
+        })()}
+    </div>
+  );
+}
+
+export function JourneyGrid({
+  units,
+  onOpenCell,
+  aggregate = false,
+  popover,
+  hasPopover,
+  justSealed,
+}: JourneyGridProps): JSX.Element {
   return (
     // NB: no overflow-hidden here — the anchored popover extends past its
     // section. First/last sections round their own corners so the upNext
@@ -277,55 +349,15 @@ export function JourneyGrid({
               Content coming soon.
             </p>
           ) : (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {u.cells.map((cell) => {
-                const tip = cellTooltip(cell, aggregate);
-                const isLocked = cell.state === "locked";
-                return (
-                  <button
-                    key={cell.id}
-                    type="button"
-                    disabled={isLocked || (!onOpenCell && !popover)}
-                    title={tip}
-                    aria-label={tip}
-                    aria-expanded={popover ? open?.cellId === cell.id : undefined}
-                    onClick={(e) => onCellClick(cell, e)}
-                    className={`relative inline-flex h-10 w-10 md:h-8 md:w-8 items-center justify-center rounded-md border-2 motion-safe:transition-transform ${
-                      STATE_CLASS[cell.state]
-                    } ${
-                      isLocked
-                        ? "cursor-not-allowed"
-                        : "hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
-                    } ${
-                      cell.current
-                        ? "ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-slate-900"
-                        : ""
-                    } ${justSealed?.has(cell.id) ? "journey-stamp" : ""}`}
-                  >
-                    <CellGlyph cell={cell} />
-                  </button>
-                );
-              })}
-            </div>
+            <UnitCells
+              cells={u.cells}
+              onOpenCell={onOpenCell}
+              aggregate={aggregate}
+              popover={popover}
+              hasPopover={hasPopover}
+              justSealed={justSealed}
+            />
           )}
-
-          {popover &&
-            open &&
-            (() => {
-              const cell = u.cells.find((c) => c.id === open.cellId);
-              if (!cell) return null;
-              return (
-                <div
-                  ref={popoverRef}
-                  role="dialog"
-                  aria-label={cell.title}
-                  style={{ left: open.left, top: open.top, width: POPOVER_WIDTH }}
-                  className="absolute z-20 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-600 shadow-xl p-4 motion-safe:animate-[journey-pop_.18s_ease-out]"
-                >
-                  {popover(cell, close)}
-                </div>
-              );
-            })()}
         </section>
       ))}
     </div>

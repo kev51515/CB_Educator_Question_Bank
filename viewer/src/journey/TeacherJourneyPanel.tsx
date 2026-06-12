@@ -14,7 +14,11 @@ import { supabase } from "@/lib/supabase";
 import { SkeletonRows } from "@/components/Skeleton";
 import { useToast } from "@/components/Toast";
 import { useProfile } from "@/lib/profile";
-import { courseAssignmentPath, testOverviewPath } from "@/lib/routes";
+import {
+  courseAssignmentAttemptPath,
+  courseAssignmentPath,
+  testOverviewPath,
+} from "@/lib/routes";
 import type { CourseModule } from "@/teacher/useCourseModules";
 import {
   buildJourney,
@@ -27,6 +31,12 @@ import {
   type TriageDetail,
   type TriageStudent,
 } from "./TeacherCellTriage";
+import {
+  TeacherClassHeatmap,
+  type HeatmapColumn,
+  type HeatmapEntry,
+  type HeatmapStudent,
+} from "./TeacherClassHeatmap";
 import { PROFICIENT_THRESHOLD, SEAL_THRESHOLD } from "./mastery";
 
 interface TeacherJourneyPanelProps {
@@ -37,6 +47,7 @@ interface TeacherJourneyPanelProps {
 interface BestAttemptRow {
   assignment_id: string;
   student_id: string;
+  attempt_id: string | null;
   effective_score: number | string | null;
   submitted_at: string | null;
 }
@@ -59,6 +70,30 @@ export function TeacherJourneyPanel({
   const [triage, setTriage] = useState<Map<string, TriageDetail>>(
     () => new Map(),
   );
+  // Per-student matrix for the D2 heatmap: refId -> studentId -> entry.
+  const [matrixEntries, setMatrixEntries] = useState<
+    Map<string, Map<string, HeatmapEntry>>
+  >(() => new Map());
+  const [roster, setRoster] = useState<HeatmapStudent[]>([]);
+  // Class (aggregate grid) | Students (heatmap matrix) — persisted.
+  const tabKey = `staff.journeyTab:${courseId}`;
+  const [tab, setTab] = useState<"class" | "students">(() => {
+    try {
+      return window.localStorage.getItem(tabKey) === "students"
+        ? "students"
+        : "class";
+    } catch {
+      return "class";
+    }
+  });
+  const pickTab = (next: "class" | "students"): void => {
+    setTab(next);
+    try {
+      window.localStorage.setItem(tabKey, next);
+    } catch {
+      // ignore
+    }
+  };
 
   const assignmentIds = useMemo(() => {
     const ids = new Set<string>();
@@ -91,7 +126,9 @@ export function TeacherJourneyPanel({
         assignmentIds.length > 0
           ? supabase
               .from("assignment_best_attempts")
-              .select("assignment_id, student_id, effective_score, submitted_at")
+              .select(
+                "assignment_id, student_id, attempt_id, effective_score, submitted_at",
+              )
               .in("assignment_id", assignmentIds)
           : Promise.resolve({ data: [], error: null }),
       ]);
@@ -124,20 +161,29 @@ export function TeacherJourneyPanel({
         string,
         Map<string, number | null> // student_id -> best score (null = unscored)
       >();
+      const entryMap = new Map<string, Map<string, HeatmapEntry>>();
       if (!bRes.error) {
         for (const r of (bRes.data ?? []) as BestAttemptRow[]) {
           if (r.submitted_at === null) continue;
           const score =
             r.effective_score === null ? null : Number(r.effective_score);
+          const normalized =
+            score !== null && Number.isFinite(score) ? score : null;
           let m = byAssignment.get(r.assignment_id);
           if (!m) {
             m = new Map();
             byAssignment.set(r.assignment_id, m);
           }
-          m.set(
-            r.student_id,
-            score !== null && Number.isFinite(score) ? score : null,
-          );
+          m.set(r.student_id, normalized);
+          let em = entryMap.get(r.assignment_id);
+          if (!em) {
+            em = new Map();
+            entryMap.set(r.assignment_id, em);
+          }
+          em.set(r.student_id, {
+            score: normalized,
+            attemptId: r.attempt_id,
+          });
         }
       }
 
@@ -202,6 +248,13 @@ export function TeacherJourneyPanel({
       if (!alive) return;
       setInfo(map);
       setTriage(triageMap);
+      setMatrixEntries(entryMap);
+      setRoster(
+        studentIds.map((sid) => ({
+          id: sid,
+          name: names.get(sid) ?? "Student",
+        })),
+      );
       setLoading(false);
     })();
     return () => {
@@ -280,6 +333,46 @@ export function TeacherJourneyPanel({
     return sent;
   };
 
+  // D2 heatmap columns = trackable assignment cells in journey order.
+  const heatmapColumns: HeatmapColumn[] = useMemo(() => {
+    const cols: HeatmapColumn[] = [];
+    for (const u of journey.units) {
+      for (const c of u.cells) {
+        if (c.refId && (c.kind === "set" || c.kind === "test")) {
+          cols.push({
+            refId: c.refId,
+            title: c.title,
+            unitName: u.name,
+            kind: c.kind === "test" ? "mocktest" : "qbank_set",
+          });
+        }
+      }
+    }
+    return cols;
+  }, [journey]);
+
+  // Row-level nudge (heatmap): one general DM, not assignment-specific.
+  const nudgeStudent = async (student: HeatmapStudent): Promise<void> => {
+    const authorId = profile?.id;
+    if (!authorId) return;
+    try {
+      const { data: threadId, error: tErr } = await supabase.rpc(
+        "open_thread_with",
+        { p_other_user_id: student.id },
+      );
+      if (tErr || typeof threadId !== "string") throw tErr ?? new Error("no thread");
+      const { error: mErr } = await supabase.from("messages").insert({
+        thread_id: threadId,
+        author_id: authorId,
+        body: "Reminder: you have unfinished checkpoints waiting in your course journey — jump back in! You've got this.",
+      });
+      if (mErr) throw mErr;
+      toast.success("Nudge sent", `${student.name} got a DM.`);
+    } catch {
+      toast.error("Couldn't send the nudge", "Try again from the Inbox.");
+    }
+  };
+
   if (loading) {
     return <SkeletonRows count={3} rowClassName="h-20" />;
   }
@@ -300,37 +393,83 @@ export function TeacherJourneyPanel({
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+      <div className="flex flex-wrap items-center gap-3">
+        {/* Class (aggregate grid) | Students (D2 heatmap) */}
+        <div
+          className="inline-flex items-center rounded-full bg-indigo-600/[0.08] dark:bg-indigo-400/10 p-0.5"
+          role="tablist"
+          aria-label="Journey lens"
+        >
+          {(
+            [
+              ["class", "Class grid"],
+              ["students", "Students"],
+            ] as const
+          ).map(([mode, label]) => (
+            <button
+              key={mode}
+              type="button"
+              role="tab"
+              aria-selected={tab === mode}
+              onClick={() => pickTab(mode)}
+              className={`min-h-[32px] rounded-full px-3.5 text-xs font-semibold motion-safe:transition-colors ${
+                tab === mode
+                  ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm ring-1 ring-slate-200 dark:ring-slate-700"
+                  : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
         <JourneyLegend />
-        <p className="text-[11px] text-slate-500 dark:text-slate-400">
-          Class view · cells show the class average across{" "}
-          <span className="tabular-nums font-medium">{enrolled}</span>{" "}
-          {enrolled === 1 ? "student" : "students"} · hover a cell for detail
-        </p>
+        {tab === "class" && (
+          <p className="ml-auto text-[11px] text-slate-500 dark:text-slate-400">
+            Cells show the class average across{" "}
+            <span className="tabular-nums font-medium">{enrolled}</span>{" "}
+            {enrolled === 1 ? "student" : "students"} · click a cell to triage
+          </p>
+        )}
       </div>
-      <JourneyGrid
-        units={journey.units}
-        onOpenCell={openCell}
-        aggregate
-        // Full tests have no per-student best-attempt data here — the
-        // per-test overview owns that. Navigate directly instead.
-        hasPopover={(cell) => !!cell.refId && triage.has(cell.refId)}
-        popover={(cell, close) => {
-          const detail = cell.refId ? triage.get(cell.refId) : undefined;
-          if (!detail) return null;
-          return (
-            <TeacherCellTriage
-              cell={cell}
-              detail={detail}
-              onOpenAssignment={() => {
-                close();
-                openCell(cell);
-              }}
-              onNudge={(students) => nudge(cell, students)}
-            />
-          );
-        }}
-      />
+
+      {tab === "students" ? (
+        <TeacherClassHeatmap
+          columns={heatmapColumns}
+          students={roster}
+          entries={matrixEntries}
+          triage={triage}
+          onOpenAttempt={(refId, attemptId) =>
+            navigate(courseAssignmentAttemptPath(courseId, refId, attemptId))
+          }
+          onNudgeStudent={(s) => {
+            void nudgeStudent(s);
+          }}
+        />
+      ) : (
+        <JourneyGrid
+          units={journey.units}
+          onOpenCell={openCell}
+          aggregate
+          // Full tests have no per-student best-attempt data here — the
+          // per-test overview owns that. Navigate directly instead.
+          hasPopover={(cell) => !!cell.refId && triage.has(cell.refId)}
+          popover={(cell, close) => {
+            const detail = cell.refId ? triage.get(cell.refId) : undefined;
+            if (!detail) return null;
+            return (
+              <TeacherCellTriage
+                cell={cell}
+                detail={detail}
+                onOpenAssignment={() => {
+                  close();
+                  openCell(cell);
+                }}
+                onNudge={(students) => nudge(cell, students)}
+              />
+            );
+          }}
+        />
+      )}
     </div>
   );
 }
