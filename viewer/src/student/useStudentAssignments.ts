@@ -186,12 +186,51 @@ export function useStudentAssignments(): UseStudentAssignments {
                 results_released_at: attempt.results_released_at,
               }
             : null,
+          // A visible-but-pending case (e.g. withhold flipped after release was
+          // cleared). Gated *submitted* rows are hidden by RLS (0213) and are
+          // re-surfaced from my_gated_assignments below.
           results_pending:
             row.withhold_results === true &&
             attempt?.submitted_at != null &&
             attempt.results_released_at == null,
         };
       });
+
+      // 0213: a student can't read their own withheld+unreleased submitted
+      // attempt, so the embed above misses it and the row would look
+      // "not started". my_gated_assignments() returns just the id/attempt/
+      // submitted_at (NO score) so we can show "Results pending" + a Review
+      // link to the locked screen without exposing any score.
+      const { data: gated } = await supabase.rpc("my_gated_assignments");
+      if (Array.isArray(gated) && gated.length > 0) {
+        const gatedById = new Map(
+          (gated as { assignment_id: string; attempt_id: string; submitted_at: string | null }[]).map(
+            (g) => [g.assignment_id, g],
+          ),
+        );
+        for (const a of mapped) {
+          const g = gatedById.get(a.id);
+          if (!g) continue;
+          a.results_pending = true;
+          // Only synthesize when we don't already hold a (visible) submitted
+          // attempt — i.e. the real one is hidden by the gate.
+          if (!a.my_attempt || a.my_attempt.submitted_at == null) {
+            a.my_attempt = {
+              id: g.attempt_id,
+              started_at: g.submitted_at ?? new Date().toISOString(),
+              submitted_at: g.submitted_at,
+              score_percent: null,
+              correct_count: null,
+              total_questions: null,
+              score_override: null,
+              graded_at: null,
+              feedback_text: null,
+              results_released_at: null,
+            };
+          }
+        }
+      }
+
       setAssignments(mapped);
     } catch (err: unknown) {
       setAssignments([]);
