@@ -213,6 +213,14 @@ function formatRelativeTime(iso: string | null): string {
 
 export interface ModuleNodeViewProps {
   node: ModuleNode;
+  /**
+   * True when an ANCESTOR module is draft — propagates the darker-grey draft
+   * wash down the whole subtree so an unpublished section reads as one inert
+   * block (a draft parent's submodules are greyed too, even if individually
+   * published, since students can't see the subtree anyway). Root call omits
+   * it (defaults false).
+   */
+  inheritedDraft?: boolean;
   depth: number;
   siblings: readonly ModuleNode[];
   siblingIndex: number;
@@ -285,6 +293,11 @@ export interface ModuleNodeViewProps {
 
 interface ModuleHeaderProps {
   node: ModuleNode;
+  /**
+   * This module is draft, OR an ancestor is — the whole draft subtree gets a
+   * darker-grey wash so an unpublished section reads as one inert block.
+   */
+  effectiveDraft: boolean;
   depth: number;
   siblings: readonly ModuleNode[];
   siblingIndex: number;
@@ -344,6 +357,7 @@ interface ModuleHeaderProps {
 
 const ModuleCard = memo(function ModuleCard({
   node: module,
+  effectiveDraft,
   depth,
   siblings,
   siblingIndex,
@@ -624,12 +638,16 @@ const ModuleCard = memo(function ModuleCard({
       )}
       <div
         ref={moduleContainerRef}
-        className={`rounded-2xl bg-white dark:bg-slate-900 ring-1 shadow-card overflow-visible transition-colors ${
+        className={`rounded-2xl ring-1 shadow-card overflow-visible transition-colors ${
           isNestTargetParent
-            ? "ring-2 ring-indigo-500 bg-indigo-50/40 dark:bg-indigo-950/30"
+            ? "bg-indigo-50/40 dark:bg-indigo-950/30 ring-2 ring-indigo-500"
             : recentlyMovedId === module.id
-              ? "ring-2 ring-indigo-500 animate-pulse"
-              : "ring-slate-200 dark:ring-slate-800"
+              ? `ring-2 ring-indigo-500 animate-pulse ${effectiveDraft ? "bg-slate-300 dark:bg-slate-800" : "bg-white dark:bg-slate-900"}`
+              : effectiveDraft
+                ? // Draft (or inside a draft ancestor): a much darker grey wash
+                  // over the whole card so an unpublished section is obvious.
+                  "bg-slate-300 dark:bg-slate-800/90 ring-slate-400/70 dark:ring-slate-600"
+                : "bg-white dark:bg-slate-900 ring-slate-200 dark:ring-slate-800"
         } ${isDragging ? "opacity-40" : ""}`}
         // NOTE: the drag SOURCE (draggable + onDragStart/onDragEnd) lives on the
         // grip button below, NOT this container — so touching the card body
@@ -810,13 +828,9 @@ const ModuleCard = memo(function ModuleCard({
           </svg>
         </button>
 
-        {/* Draft modules grey their title so publish state scans instantly
-            (matches the per-item draft dimming below). */}
-        <div
-          className={`flex-1 min-w-0 flex items-center gap-2 ${
-            module.published ? "" : "opacity-[0.55]"
-          }`}
-        >
+        {/* Draft state is now carried by the darker-grey card wash + the amber
+            Draft pill, so the title stays full-opacity and readable. */}
+        <div className="flex-1 min-w-0 flex items-center gap-2">
           {canEdit ? (
             <InlineRename
               value={module.name}
@@ -1488,10 +1502,14 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
   // lines aren't.
   const elbowClass = "";
 
+  // This module is "draft" for styling if it's unpublished OR an ancestor is.
+  const effectiveDraft = !node.published || !!props.inheritedDraft;
+
   return (
     <div className={elbowClass}>
       <ModuleCard
         node={node}
+        effectiveDraft={effectiveDraft}
         depth={depth}
         siblings={siblings}
         siblingIndex={siblingIndex}
@@ -1571,7 +1589,13 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
               // it look carved into the parent. No left accent stripe (reads
               // as AI chrome). Active asChild drop target → indigo border.
               "relative ml-6 mr-3 -mt-2 px-3 pt-5 pb-3 space-y-3 rounded-b-2xl rounded-t-none border border-t-0 transition-colors " +
-              "bg-slate-100/80 dark:bg-slate-800/40 shadow-[inset_0_2px_5px_-2px_rgba(15,23,42,0.12)] " +
+              "shadow-[inset_0_2px_5px_-2px_rgba(15,23,42,0.12)] " +
+              // A draft parent washes its whole submodule drawer an even
+              // darker grey (recessed below the card) so the unpublished
+              // section reads as one solid block.
+              (effectiveDraft
+                ? "bg-slate-400/45 dark:bg-slate-900/60 "
+                : "bg-slate-100/80 dark:bg-slate-800/40 ") +
               (isNestDropTarget
                 ? "border-indigo-400 dark:border-indigo-700 "
                 : "border-slate-200 dark:border-slate-700 ")
@@ -1601,6 +1625,7 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
                   key={child.id}
                   {...props}
                   node={child}
+                  inheritedDraft={effectiveDraft}
                   depth={depth + 1}
                   siblings={node.children}
                   siblingIndex={idx}

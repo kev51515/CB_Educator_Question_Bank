@@ -69,16 +69,26 @@ import { PracticeTestSection } from "./practicetest-ui";
 import { useQuestionSetSelection } from "./questionset-hooks";
 import { QuestionSetSection } from "./questionset-ui";
 
+/** Today's date as "M/D" (no leading zeros) — matches the teacher's module
+ *  naming convention ("6/12", "6/12 HW") so a new module is usable with zero
+ *  typing: Enter to accept, or just start typing to rename. */
+function todayLabel(): string {
+  const d = new Date();
+  return `${d.getMonth() + 1}/${d.getDate()}`;
+}
+
 export function InlineCreateModuleRow({
   busy,
   onCommit,
   onCancel,
 }: InlineCreateModuleRowProps) {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(todayLabel);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    inputRef.current?.focus();
+    // select() focuses AND highlights the prefilled date so the user can press
+    // Enter to accept it or start typing to replace it.
+    inputRef.current?.select();
   }, []);
 
   const submit = async (): Promise<void> => {

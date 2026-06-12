@@ -769,10 +769,11 @@ export function ModulesPage(): JSX.Element {
     [classId, childrenByParent, refresh, toast],
   );
 
-  // Inline-create handler used by the InlineCreateModuleRow at the top of
-  // the list. Defaults the new module to draft + no lock date — the user
-  // can flip publish via the one-click badge, set the lock date via the
-  // kebab. This is the Linear/Notion pattern: cheapest possible create.
+  // Inline-create handler used by the InlineCreateModuleRow below the list
+  // (new modules append at the bottom via maxModulePosition+1). Defaults the
+  // new module to draft + no lock date — the user can flip publish via the
+  // one-click badge, set the lock date via the kebab. Linear/Notion pattern:
+  // cheapest possible create.
   const commitInlineCreateModule = useCallback(
     async (name: string): Promise<boolean> => {
       if (!classId) return false;
@@ -1256,14 +1257,6 @@ export function ModulesPage(): JSX.Element {
         <TeacherJourneyPanel courseId={classId} modules={modules} />
       ) : (
         <>
-      {inlineCreatingModule && (
-        <InlineCreateModuleRow
-          busy={inlineCreatingModule.busy}
-          onCommit={(name) => commitInlineCreateModule(name)}
-          onCancel={() => setInlineCreatingModule(null)}
-        />
-      )}
-
       {modules.length === 0 && !inlineCreatingModule ? (
         <EmptyState
           title="No modules yet"
@@ -1415,6 +1408,15 @@ export function ModulesPage(): JSX.Element {
             </div>
           )}
         </div>
+      )}
+      {/* New modules append at the bottom, so the create row lives BELOW the
+          list — prefilled with today's date + focused, ready to rename. */}
+      {inlineCreatingModule && (
+        <InlineCreateModuleRow
+          busy={inlineCreatingModule.busy}
+          onCommit={(name) => commitInlineCreateModule(name)}
+          onCancel={() => setInlineCreatingModule(null)}
+        />
       )}
         </>
       )}
