@@ -156,6 +156,10 @@ export function AddSetToCourseModal({
           source_id: null,
           kind: "qbank_set",
           qbank_set_uid: uid,
+          // Authoritative questions-file path (0220) so the runner never has to
+          // re-resolve the uid against the catalog. The teacher's catalog entry
+          // knows it exactly here.
+          qbank_questions_html: entry.questionsHtml,
           qbank_set_label: entry.label,
           question_count: entry.questionCount,
           // Time limit is intrinsic to the question set — heuristic until

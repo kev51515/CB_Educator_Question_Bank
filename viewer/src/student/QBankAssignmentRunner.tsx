@@ -165,8 +165,31 @@ export function QBankAssignmentRunner({
 
   const bootstrap = useCallback(async (): Promise<void> => {
     setStage({ kind: "loading" });
-    const uid = assignment.qbank_set_uid ?? "";
-    if (!uid) {
+
+    // AUTHORITATIVE path first (0220): the teacher's catalog knew the exact
+    // questions file at creation and we stored it on the row. Reading that one
+    // value is deterministic — no fragile client re-resolution of the uid
+    // against the static catalog (which has loaded the wrong subject's file).
+    // We still fall back to uid resolution for legacy rows not yet backfilled.
+    let path: string | null = null;
+    let uid = assignment.qbank_set_uid ?? "";
+    try {
+      const { data } = await supabase
+        .from("assignments")
+        .select("qbank_questions_html, qbank_set_uid")
+        .eq("id", assignment.id)
+        .maybeSingle();
+      if (data) {
+        if (typeof data.qbank_questions_html === "string" && data.qbank_questions_html) {
+          path = data.qbank_questions_html.replace(/^\/+/, "");
+        }
+        if (typeof data.qbank_set_uid === "string" && data.qbank_set_uid) uid = data.qbank_set_uid;
+      }
+    } catch {
+      /* fall through to uid resolution */
+    }
+
+    if (!path && !uid) {
       setStage({
         kind: "error",
         message:
@@ -174,7 +197,7 @@ export function QBankAssignmentRunner({
       });
       return;
     }
-    const path = await resolveQuestionsHtml(uid);
+    if (!path) path = await resolveQuestionsHtml(uid);
     if (!path) {
       setStage({
         kind: "error",

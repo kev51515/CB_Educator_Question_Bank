@@ -150,6 +150,9 @@ export async function createQuestionSetItem(
       kind: "qbank_set",
       source_id: null,
       qbank_set_uid: args.uid,
+      // Authoritative questions-file path (0220) — runner reads this instead of
+      // re-resolving the uid against the catalog.
+      qbank_questions_html: args.entry.questionsHtml,
       qbank_set_label: args.entry.label,
       question_count: args.entry.questionCount,
       time_limit_minutes: args.computedTimeLimit,
