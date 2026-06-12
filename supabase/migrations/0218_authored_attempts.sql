@@ -40,7 +40,7 @@ CREATE INDEX IF NOT EXISTS authored_questions_assignment_idx
 --   no rationale) to an enrolled student / teacher / admin.
 -- ─────────────────────────────────────────────────────────────────────────────
 CREATE OR REPLACE FUNCTION public.get_authored_questions(p_assignment_id uuid)
-RETURNS TABLE (id uuid, position integer, stem text, choices jsonb)
+RETURNS TABLE (id uuid, "position" integer, stem text, choices jsonb)
 LANGUAGE plpgsql
 STABLE
 SECURITY DEFINER
