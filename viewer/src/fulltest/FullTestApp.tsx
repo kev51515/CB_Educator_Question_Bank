@@ -382,7 +382,12 @@ function FullTestRunner() {
         // away). Anything else (incl. absent) = 'unlimited' (clock pauses). The
         // mode is only honored at run creation; a resume keeps the run's mode.
         const tmParam = qs.get("tm") === "strict" ? "strict" : "unlimited";
-        const s = await startTest(slug, mFirst, mLast, tmParam);
+        // `&item=<module_items.id>` = the assignment-occurrence identity
+        // (0215). Loose uuid check only — the server re-validates against the
+        // actual link row before honoring it.
+        const itemParam = qs.get("item");
+        const itemId = itemParam && /^[0-9a-f-]{36}$/i.test(itemParam) ? itemParam : null;
+        const s = await startTest(slug, mFirst, mLast, tmParam, itemId);
         if (!alive) return;
         setStart(s);
         // Don't fetch the result here — the "result" phase render decides what

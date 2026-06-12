@@ -29,14 +29,15 @@ import { HIGHLIGHT_FILL, coerceColor, type AnnotField, type Highlight } from "./
 // mark logic. The `looksLikeMath` guard keeps "$50"-style currency as text.
 
 interface MathSegment {
-  type: "text" | "inline" | "display" | "underline";
+  type: "text" | "inline" | "display" | "underline" | "italic";
   content: string;
   /** Absolute offset of this segment's source span within the parent string. */
   srcStart: number;
 }
 
-/** Length of the opening `<u>` marker — the underline content starts here. */
+/** Length of the opening `<u>` / `<i>` marker — the content starts here. */
 const U_OPEN = 3;
+const I_OPEN = 3;
 
 /**
  * Math content is delimited deliberately (`$…$`) in our data, so a span is math
@@ -68,17 +69,29 @@ function parseMathSegments(input: string): MathSegment[] {
     }
   };
   while (i < input.length) {
-    // Underline: author markup `<u>…</u>`. Like math, the segment owns its full
-    // source span (so offsets after it still map), but unlike math the inner
-    // text stays highlightable — renderText re-marks it at srcStart + `<u>`.
-    if (input[i] === "<" && input.slice(i, i + U_OPEN).toLowerCase() === "<u>") {
-      const close = input.toLowerCase().indexOf("</u>", i + U_OPEN);
-      if (close !== -1) {
-        flush(i);
-        segs.push({ type: "underline", content: input.slice(i + U_OPEN, close), srcStart: i });
-        i = close + 4; // past "</u>"
-        textStart = i;
-        continue;
+    // Underline / italic: author markup `<u>…</u>` / `<i>…</i>`. Both own their
+    // full source span (so offsets after them still map) but inner text stays
+    // highlightable — renderText re-marks it at srcStart + tag-open-length.
+    if (input[i] === "<") {
+      const tag3 = input.slice(i, i + U_OPEN).toLowerCase();
+      if (tag3 === "<u>") {
+        const close = input.toLowerCase().indexOf("</u>", i + U_OPEN);
+        if (close !== -1) {
+          flush(i);
+          segs.push({ type: "underline", content: input.slice(i + U_OPEN, close), srcStart: i });
+          i = close + 4;
+          textStart = i;
+          continue;
+        }
+      } else if (tag3 === "<i>") {
+        const close = input.toLowerCase().indexOf("</i>", i + I_OPEN);
+        if (close !== -1) {
+          flush(i);
+          segs.push({ type: "italic", content: input.slice(i + I_OPEN, close), srcStart: i });
+          i = close + 4;
+          textStart = i;
+          continue;
+        }
       }
       i += 1;
       continue;
@@ -202,6 +215,8 @@ interface TableBlock {
   type: "table";
   hasHeader: boolean;
   rows: string[][];
+  /** Table-level note (e.g. "Rows may not add up to 100 due to rounding.") */
+  footnote?: string;
 }
 type PassageBlock = TextBlock | TableBlock;
 
@@ -211,8 +226,19 @@ const isMarkerLine = (line: string): boolean => /^\s*table:\s*$/i.test(line);
 const isNumericCell = (cell: string): boolean =>
   cell.trim() !== "" && /^[-+]?[\d.,%/$()\s]+$/.test(cell.trim());
 
-const splitRow = (line: string): string[] =>
-  line.split("|").map((c) => c.trim());
+/** Split a pipe-delimited row and strip leading/trailing empty cells (from `|…|` borders). */
+const splitRow = (line: string): string[] => {
+  const cells = line.split("|").map((c) => c.trim());
+  let s = 0;
+  let e = cells.length;
+  while (s < e && cells[s] === "") s++;
+  while (e > s && cells[e - 1] === "") e--;
+  return cells.slice(s, e);
+};
+
+/** Markdown `| --- | --- |` separator row — formatting artifact, not data. */
+const isSeparatorRow = (row: string[]): boolean =>
+  row.length > 0 && row.every((c) => /^:?-+:?$/.test(c));
 
 /**
  * Some passages encode a small table on ONE line, rows joined by ";" and cells
@@ -232,8 +258,10 @@ function parseInlineTable(line: string): string[][] | null {
   return segs.map(splitRow);
 }
 
-function buildTableBlock(rows: string[][]): TableBlock {
-  const cols = Math.max(...rows.map((r) => r.length));
+function buildTableBlock(rawRows: string[][]): TableBlock {
+  // Drop markdown separator rows (| --- | --- |).
+  const rows = rawRows.filter((r) => !isSeparatorRow(r));
+  const cols = rows.length ? Math.max(...rows.map((r) => r.length)) : 0;
   const norm = rows.map((r) => {
     const next = [...r];
     while (next.length < cols) next.push("");
@@ -297,7 +325,20 @@ export function parsePassageBlocks(passage: string): PassageBlock[] {
         rowLines.push(lines[j]);
         j += 1;
       }
-      blocks.push(buildTableBlock(rowLines.map(splitRow)));
+      // A non-piped, non-empty line immediately after the last data row, followed
+      // by a blank line (or end-of-passage), is a table-level note, not prose.
+      let tableFootnote: string | undefined;
+      if (
+        j < lines.length &&
+        lines[j].trim() !== "" &&
+        !isTableLine(lines[j]) &&
+        (j + 1 >= lines.length || lines[j + 1].trim() === "")
+      ) {
+        tableFootnote = lines[j].trim();
+        j += 1;
+      }
+      const tbl = buildTableBlock(rowLines.map(splitRow));
+      blocks.push(tableFootnote ? { ...tbl, footnote: tableFootnote } : tbl);
       i = j;
       cursor = lineStart[i] ?? passage.length;
       continue;
@@ -372,6 +413,20 @@ export function renderText(
               onRemove,
             )}
           </u>
+        ) : seg.type === "italic" ? (
+          <i
+            key={idx}
+            className="italic"
+            data-annot-offset={baseOffset + seg.srcStart + I_OPEN}
+          >
+            {renderMarks(
+              seg.content,
+              baseOffset + seg.srcStart + I_OPEN,
+              field,
+              ranges,
+              onRemove,
+            )}
+          </i>
         ) : (
           <MathSpan key={idx} latex={seg.content} display={seg.type === "display"} />
         ),
@@ -396,6 +451,10 @@ export function RichInline({ text }: { text: string }): JSX.Element {
           <u key={idx} className="underline decoration-1 underline-offset-2">
             {seg.content}
           </u>
+        ) : seg.type === "italic" ? (
+          <i key={idx} className="italic">
+            {seg.content}
+          </i>
         ) : (
           <MathSpan key={idx} latex={seg.content} display={seg.type === "display"} />
         ),
@@ -405,7 +464,7 @@ export function RichInline({ text }: { text: string }): JSX.Element {
 }
 
 function PassageTable({ block }: { block: TableBlock }): JSX.Element {
-  const { rows, hasHeader } = block;
+  const { rows, hasHeader, footnote } = block;
   const body = hasHeader ? rows.slice(1) : rows;
   const cols = rows[0]?.length ?? 0;
   // Per-column alignment: right-align a column when its body cells are numeric.
@@ -434,7 +493,7 @@ function PassageTable({ block }: { block: TableBlock }): JSX.Element {
                     alignRight[c] ? "text-right" : "text-left",
                   ].join(" ")}
                 >
-                  {cell}
+                  <RichInline text={cell} />
                 </th>
               ))}
             </tr>
@@ -455,13 +514,61 @@ function PassageTable({ block }: { block: TableBlock }): JSX.Element {
                     c === 0 && !alignRight[c] ? "font-medium" : "",
                   ].join(" ")}
                 >
-                  {cell}
+                  <RichInline text={cell} />
                 </td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
+      {footnote && (
+        <p className="mt-1 text-[13px] italic text-slate-500 dark:text-slate-400">{footnote}</p>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Renders a text block that contains `•` bullet lines with proper hanging-indent
+ * styling. Non-bullet lines render as regular pre-wrap prose. Each line tracks
+ * its own absolute offset so highlights still map correctly.
+ */
+function BulletBlock({
+  block,
+  field,
+  ranges,
+  onRemove,
+}: {
+  block: TextBlock;
+  field: AnnotField;
+  ranges: Highlight[];
+  onRemove?: (field: AnnotField, offset: number) => void;
+}): JSX.Element {
+  const lines = block.text.split("\n");
+  let offset = block.start;
+  return (
+    <div>
+      {lines.map((line, i) => {
+        const lineOffset = offset;
+        offset += line.length + 1; // +1 for the '\n' separator
+        if (!line) return <div key={i} style={{ lineHeight: "inherit" }} />;
+        if (line.startsWith("•")) {
+          return (
+            <div
+              key={i}
+              className="whitespace-pre-wrap"
+              style={{ paddingLeft: "1.5rem", textIndent: "-1.5rem" }}
+            >
+              {renderText(line, lineOffset, field, ranges, onRemove)}
+            </div>
+          );
+        }
+        return (
+          <div key={i} className="whitespace-pre-wrap">
+            {renderText(line, lineOffset, field, ranges, onRemove)}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -494,6 +601,14 @@ export function PassageBody({
       {blocks.map((block, idx) =>
         block.type === "table" ? (
           <PassageTable key={idx} block={block} />
+        ) : block.text.includes("•") ? (
+          <BulletBlock
+            key={idx}
+            block={block}
+            field="passage"
+            ranges={ranges}
+            onRemove={onRemoveHighlight}
+          />
         ) : (
           <div key={idx} className="whitespace-pre-wrap">
             {renderText(block.text, block.start, "passage", ranges, onRemoveHighlight)}

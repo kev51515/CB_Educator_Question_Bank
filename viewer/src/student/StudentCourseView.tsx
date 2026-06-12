@@ -28,10 +28,17 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components/Skeleton";
-import { ROUTES, assignmentTakePath, studentTestRunPath } from "@/lib/routes";
+import {
+  ROUTES,
+  assignmentReviewPath,
+  assignmentTakePath,
+  studentTestRunPath,
+} from "@/lib/routes";
 import { buildJourney, type JourneyCell } from "@/journey/buildJourney";
 import { JourneyGrid, JourneyLegend } from "@/journey/JourneyGrid";
 import { JourneyHud } from "@/journey/JourneyHud";
+import { JourneyCellPopover } from "@/journey/JourneyCellPopover";
+import { levelFor } from "@/journey/mastery";
 import { useToast } from "@/components/Toast";
 import { useProfile } from "@/lib/profile";
 import { domainOf, studentLabel } from "@/lib/domain";
@@ -87,6 +94,20 @@ type CourseViewMode = "journey" | "list";
 const STUDENT_JOURNEY_ENABLED: boolean = false;
 
 /**
+ * Runtime check: the build flag above, OR the `journey.preview=1`
+ * localStorage escape hatch so staff/QA can preview the student journey
+ * on a real account while the flag is off.
+ */
+function studentJourneyEnabled(): boolean {
+  if (STUDENT_JOURNEY_ENABLED) return true;
+  try {
+    return window.localStorage.getItem("journey.preview") === "1";
+  } catch {
+    return false;
+  }
+}
+
+/**
  * `:short` is normally a 6-char course short_code, but several flows deep-link
  * by raw course UUID instead — most importantly the managed-seat claim, which
  * redirects to `studentCoursePath(course_id)` (a UUID) after a student claims
@@ -121,6 +142,8 @@ export function StudentCourseView(): JSX.Element {
   const navigate = useNavigate();
   const short = (params.short ?? "").toUpperCase();
   const { profile } = useProfile();
+  // Stable for the lifetime of the mount (flag + localStorage escape hatch).
+  const [journeyEnabled] = useState(studentJourneyEnabled);
 
   const [course, setCourse] = useState<CourseRow | null>(null);
 
@@ -144,6 +167,12 @@ export function StudentCourseView(): JSX.Element {
   const [assignmentMeta, setAssignmentMeta] = useState<Map<string, AssignmentMeta>>(
     () => new Map(),
   );
+  // Key (sorted id list) of the assignment set whose meta has genuinely
+  // finished loading. The seal-moment diff only runs when this matches the
+  // CURRENT id set — a plain boolean raced: in the commit where modules
+  // first arrive, a stale `true` from the empty-ids pass let the diff
+  // record a zero-point snapshot and then falsely "celebrate" real data.
+  const [metaLoadedFor, setMetaLoadedFor] = useState<string | null>(null);
   // Collapsed module ids (persisted per course).
   const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
   // Journey (default for class courses) vs the timeline list — persisted.
@@ -347,10 +376,13 @@ export function StudentCourseView(): JSX.Element {
   // Enrich assignment items with kind / due / my completion. Degrades silently:
   // a failure just means rows render without badges, not a broken view.
   useEffect(() => {
+    const idsKey = [...assignmentIds].sort().join(",");
     if (assignmentIds.length === 0) {
       setAssignmentMeta(new Map());
+      setMetaLoadedFor(idsKey);
       return;
     }
+    setMetaLoadedFor(null);
     const token = ++metaTokenRef.current;
     void (async () => {
       const [aRes, bRes] = await Promise.all([
@@ -360,21 +392,26 @@ export function StudentCourseView(): JSX.Element {
           .in("id", assignmentIds),
         supabase
           .from("assignment_best_attempts")
-          .select("assignment_id, effective_score, submitted_at")
+          .select("assignment_id, attempt_id, effective_score, submitted_at")
           .in("assignment_id", assignmentIds),
       ]);
       if (metaTokenRef.current !== token) return;
 
-      const best = new Map<string, { score: number | null; submitted: boolean }>();
+      const best = new Map<
+        string,
+        { score: number | null; submitted: boolean; attemptId: string | null }
+      >();
       if (!bRes.error) {
         for (const r of (bRes.data ?? []) as Array<{
           assignment_id: string;
+          attempt_id: string | null;
           effective_score: number | string | null;
           submitted_at: string | null;
         }>) {
           best.set(r.assignment_id, {
             score: toNumber(r.effective_score),
             submitted: r.submitted_at != null,
+            attemptId: r.attempt_id,
           });
         }
       }
@@ -397,11 +434,15 @@ export function StudentCourseView(): JSX.Element {
             timeLimitMinutes: a.time_limit_minutes,
             bestScore: b?.score ?? null,
             submitted: b?.submitted ?? false,
+            bestAttemptId: b?.attemptId ?? null,
           });
         }
       }
       if (metaTokenRef.current !== token) return;
       setAssignmentMeta(map);
+      // Only mark loaded when the attempt data actually arrived — the seal
+      // diff must never run against a silently-failed (empty) best map.
+      if (!aRes.error && !bRes.error) setMetaLoadedFor(idsKey);
     })();
   }, [assignmentIds]);
 
@@ -474,6 +515,9 @@ export function StudentCourseView(): JSX.Element {
               dueAt: meta.due_at,
               score: meta.bestScore,
               submitted: meta.submitted,
+              questionCount: meta.questionCount,
+              timeLimitMinutes: meta.timeLimitMinutes,
+              attemptId: meta.bestAttemptId ?? null,
             };
           },
           fullTestDone: (slug) => doneTestSlugs.has(slug),
@@ -481,6 +525,69 @@ export function StudentCourseView(): JSX.Element {
       ),
     [modules, assignmentMeta, doneTestSlugs],
   );
+
+  // ── Quiet-ledger seal moment (decision 3A, docs/JOURNEY_VIEW.md) ─────────
+  // Diff the sealed set + points against a per-course localStorage snapshot;
+  // newly sealed cells play the gold stamp, the HUD shows the points delta,
+  // and crossing a level fires a toast. Only diffs once meta has actually
+  // loaded (a failed fetch must not read as "everything un-sealed"), and
+  // only when a prior snapshot exists (first visit just records).
+  const [justSealed, setJustSealed] = useState<Set<string>>(() => new Set());
+  const [pointsDelta, setPointsDelta] = useState(0);
+  useEffect(() => {
+    if (!journeyEnabled) return;
+    const courseId = course?.id;
+    if (!courseId || loading) return;
+    // Meta must have completed for exactly the id set currently on screen.
+    const idsKey = [...assignmentIds].sort().join(",");
+    if (metaLoadedFor !== idsKey) return;
+    const sealedRefs = journey.units
+      .flatMap((u) => u.cells)
+      .filter((c) => c.state === "sealed" && c.refId)
+      .map((c) => c.refId as string);
+    const key = `journey.snapshot:${courseId}`;
+    try {
+      const raw = window.localStorage.getItem(key);
+      if (raw) {
+        const prev = JSON.parse(raw) as { sealed: string[]; points: number };
+        const prevSealed = new Set(prev.sealed ?? []);
+        const fresh = sealedRefs.filter((id) => !prevSealed.has(id));
+        if (fresh.length > 0) {
+          const cells = journey.units
+            .flatMap((u) => u.cells)
+            .filter((c) => c.refId && fresh.includes(c.refId));
+          setJustSealed(new Set(cells.map((c) => c.id)));
+          const first = cells[0];
+          toast.success(
+            fresh.length === 1
+              ? `Seal earned — ${first?.title ?? "nice work"}`
+              : `${fresh.length} seals earned`,
+            fresh.length === 1 && first?.score !== null && first
+              ? `${Math.round(first.score)}% · +${first.earned} mastery pts`
+              : `+${cells.reduce((n, c) => n + c.earned, 0)} mastery pts`,
+          );
+        }
+        const delta = journey.earned - (prev.points ?? 0);
+        if (delta > 0) setPointsDelta(delta);
+        const prevLevel = levelFor(prev.points ?? 0);
+        const curLevel = levelFor(journey.earned);
+        if (curLevel.level > prevLevel.level) {
+          toast.success(
+            `Level ${curLevel.level} — ${curLevel.name}`,
+            "Your mastery level just went up.",
+          );
+        }
+      }
+      window.localStorage.setItem(
+        key,
+        JSON.stringify({ sealed: sealedRefs, points: journey.earned }),
+      );
+    } catch {
+      // localStorage unavailable — celebration is best-effort only
+    }
+    // journey identity changes with its inputs; diff exactly once per load.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [course?.id, metaLoadedFor, loading, journey]);
 
   const setView = (mode: CourseViewMode): void => {
     setViewMode(mode);
@@ -749,7 +856,7 @@ export function StudentCourseView(): JSX.Element {
               )
             ) : (
               <div className="space-y-4">
-                {isClassCourse && STUDENT_JOURNEY_ENABLED && (
+                {isClassCourse && journeyEnabled && (
                   <div
                     className="inline-flex items-center rounded-full bg-indigo-600/[0.08] dark:bg-indigo-400/10 p-0.5"
                     role="tablist"
@@ -774,16 +881,44 @@ export function StudentCourseView(): JSX.Element {
                   </div>
                 )}
 
-                {isClassCourse && STUDENT_JOURNEY_ENABLED && viewMode === "journey" ? (
+                {isClassCourse && journeyEnabled && viewMode === "journey" ? (
                   <>
                     <JourneyHud
                       earned={journey.earned}
                       possible={journey.possible}
+                      delta={pointsDelta}
                     />
                     <JourneyLegend />
                     <JourneyGrid
                       units={journey.units}
                       onOpenCell={openJourneyCell}
+                      justSealed={justSealed}
+                      // Decision 1A: trackable cells open the anchored detail
+                      // popover; full tests keep direct nav (the runner owns
+                      // resume/score states the popover can't know).
+                      hasPopover={(cell) => cell.kind !== "fulltest"}
+                      popover={(cell, close) => (
+                        <JourneyCellPopover
+                          cell={cell}
+                          onOpen={() => {
+                            close();
+                            openJourneyCell(cell);
+                          }}
+                          onReview={
+                            cell.refId && cell.info?.attemptId
+                              ? () => {
+                                  close();
+                                  navigate(
+                                    assignmentReviewPath(
+                                      cell.refId as string,
+                                      cell.info?.attemptId as string,
+                                    ),
+                                  );
+                                }
+                              : undefined
+                          }
+                        />
+                      )}
                     />
                   </>
                 ) : (
