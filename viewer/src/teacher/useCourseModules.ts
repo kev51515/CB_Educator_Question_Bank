@@ -29,6 +29,12 @@ export interface ModuleItem {
   url: string | null;
   indent: number;
   published: boolean;
+  /**
+   * Due date for assignment-backed items (Assignment / Practice Test /
+   * Question Set), resolved from the linked `assignments.due_at` via the soft
+   * FK `item_ref_id`. Null for headers, links, and undated assignments.
+   */
+  due_at: string | null;
 }
 
 export interface CourseModule {
@@ -157,6 +163,19 @@ export function useCourseModules(classId: string | null): UseCourseModules {
         return;
       }
 
+      // Resolve assignment due dates for assignment-backed items. `item_ref_id`
+      // is a SOFT FK (header/link rows hold NULL), so PostgREST can't embed it
+      // — a small second query keyed by course is cheaper than per-item lookups
+      // and keeps the nested module select simple.
+      const dueByAssignment = new Map<string, string | null>();
+      const { data: asnData } = await supabase
+        .from("assignments")
+        .select("id, due_at")
+        .eq("course_id", classId);
+      for (const a of (asnData ?? []) as { id: string; due_at: string | null }[]) {
+        dueByAssignment.set(a.id, a.due_at);
+      }
+
       const rows = (data ?? []) as unknown as CourseModuleRow[];
       const mapped: CourseModule[] = rows
         .map((row) => {
@@ -172,6 +191,9 @@ export function useCourseModules(classId: string | null): UseCourseModules {
               url: item.url,
               indent: item.indent,
               published: item.published,
+              due_at: item.item_ref_id
+                ? (dueByAssignment.get(item.item_ref_id) ?? null)
+                : null,
             }))
             .sort((a, b) => a.position - b.position);
 

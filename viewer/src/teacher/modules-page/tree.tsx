@@ -153,6 +153,27 @@ function LockIcon(): JSX.Element {
   );
 }
 
+/** Small clock glyph for the due-date label on item rows. */
+function ClockIcon(): JSX.Element {
+  return (
+    <svg
+      width="11"
+      height="11"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className="h-2.5 w-2.5 flex-none"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </svg>
+  );
+}
+
 /**
  * Relative-time label for lock/open timestamps (AssignmentDetailPage's
  * formatRelativeDue pattern, generalised to look both forward AND back since a
@@ -1054,15 +1075,16 @@ const ModuleCard = memo(function ModuleCard({
                   e.stopPropagation();
                   void onCommitItemDrop(cur);
                 }}
-                className={`flex items-center gap-2 px-3 py-2.5 hover:bg-indigo-50/50 dark:hover:bg-indigo-950/20 transition-opacity ${
+                className={`group/item flex items-center gap-2 px-3 py-2.5 transition-colors ${
                   isItemDragging ? "opacity-50" : ""
                 } ${
-                  // Draft rows read greyed-out so publish state is scannable
-                  // at a glance (students can't see these). Hover restores
-                  // full opacity so editing them never feels disabled.
+                  // Draft rows read clearly greyed so publish state is scannable
+                  // at a glance (students can't see these): a grey wash on the
+                  // whole row + the icon/title/meta dimmed below — while the
+                  // amber Draft pill stays full-strength as the status signal.
                   !item.published && !isItemDragging
-                    ? "opacity-[0.55] hover:opacity-100 focus-within:opacity-100"
-                    : ""
+                    ? "bg-slate-100 dark:bg-slate-800/60 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/20"
+                    : "hover:bg-indigo-50/50 dark:hover:bg-indigo-950/20"
                 } ${
                   recentlyMovedId === item.id
                     ? "ring-2 ring-indigo-500 animate-pulse rounded-lg"
@@ -1094,12 +1116,28 @@ const ModuleCard = memo(function ModuleCard({
                     <DragHandle className="text-slate-400" />
                   </button>
                 )}
-                {isFullTestLink ? (
-                  <FullTestIcon />
-                ) : (
-                  <ItemTypeIcon type={item.item_type} />
-                )}
-                <div className="flex-1 min-w-0 flex flex-col">
+                {/* Draft dim: fade the icon + title/meta (NOT the status pill or
+                    controls), restoring on hover so editing never feels disabled. */}
+                <span
+                  className={`flex-none transition-opacity ${
+                    !item.published && !isItemDragging
+                      ? "opacity-50 group-hover/item:opacity-100"
+                      : ""
+                  }`}
+                >
+                  {isFullTestLink ? (
+                    <FullTestIcon />
+                  ) : (
+                    <ItemTypeIcon type={item.item_type} />
+                  )}
+                </span>
+                <div
+                  className={`flex-1 min-w-0 flex flex-col transition-opacity ${
+                    !item.published && !isItemDragging
+                      ? "opacity-50 group-hover/item:opacity-100"
+                      : ""
+                  }`}
+                >
                   {canEdit && renamingItemId === item.id ? (
                     // Kebab "Rename" flips ANY item into an inline editor — even
                     // a full-test link, whose title otherwise renders as a <Link>
@@ -1175,8 +1213,29 @@ const ModuleCard = memo(function ModuleCard({
                     </span>
                   )}
                   {item.item_type !== "header" && (
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                      {isFullTestLink ? "Practice Test" : ITEM_KIND_LABEL[item.item_type]}
+                    <span className="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                      <span>
+                        {isFullTestLink ? "Practice Test" : ITEM_KIND_LABEL[item.item_type]}
+                      </span>
+                      {item.due_at && (() => {
+                        const overdue = new Date(item.due_at).getTime() < Date.now();
+                        return (
+                          <span
+                            title={`Due ${new Date(item.due_at).toLocaleString()}`}
+                            className={`inline-flex items-center gap-1 normal-case tracking-normal font-medium ${
+                              overdue
+                                ? "text-rose-600 dark:text-rose-400"
+                                : "text-slate-500 dark:text-slate-400"
+                            }`}
+                          >
+                            <span aria-hidden className="text-slate-300 dark:text-slate-600">
+                              ·
+                            </span>
+                            <ClockIcon />
+                            Due {formatRelativeTime(item.due_at)}
+                          </span>
+                        );
+                      })()}
                     </span>
                   )}
                 </div>
@@ -1504,21 +1563,25 @@ export function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
         return (
           <div
             className={
-              // Tinted inset block: children visually sit INSIDE the parent
-              // module. Indented from the left (so the parent's drag handle/
-              // expander still align with its row); the tint + full border +
-              // containment make it clear the rows belong to the parent above
-              // — no left accent stripe (reads as AI-generated chrome). When
-              // this container is an active asChild drop target the border
-              // pops to indigo; otherwise slate (passive structure).
-              "relative ml-6 mt-3 p-3 space-y-3 rounded-2xl border transition-colors " +
-              "bg-slate-50/70 dark:bg-slate-900/40 " +
+              // Recessed "drawer" that reads as INSIDE the parent module:
+              // pulled up to tuck under the parent card (-mt-2 + square top,
+              // no top border) so it's clearly attached, not a floating
+              // sibling; inset on both sides (ml-6 mr-3) so it's visibly
+              // narrower than the parent; a stronger tint + inset shadow make
+              // it look carved into the parent. No left accent stripe (reads
+              // as AI chrome). Active asChild drop target → indigo border.
+              "relative ml-6 mr-3 -mt-2 px-3 pt-5 pb-3 space-y-3 rounded-b-2xl rounded-t-none border border-t-0 transition-colors " +
+              "bg-slate-100/80 dark:bg-slate-800/40 shadow-[inset_0_2px_5px_-2px_rgba(15,23,42,0.12)] " +
               (isNestDropTarget
                 ? "border-indigo-400 dark:border-indigo-700 "
-                : "border-slate-200 dark:border-slate-800 ")
+                : "border-slate-200 dark:border-slate-700 ")
             }
             aria-label="Submodules"
           >
+            {/* Quiet eyebrow so the nesting is labelled, not just implied. */}
+            <div className="pointer-events-none -mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400 dark:text-slate-500">
+              Submodules
+            </div>
             {/* asChild insertion bar + ghost preview lives INSIDE the
                 children container so it visually appears as a child slot.
                 Rendered FIRST so it shows as the soon-to-be first child. */}
