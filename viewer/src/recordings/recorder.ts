@@ -62,6 +62,11 @@ export class PartRecorder {
     this.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   }
 
+  /** The live mic stream (for a level meter), or null before capture starts. */
+  getStream(): MediaStream | null {
+    return this.stream;
+  }
+
   isActive(): boolean {
     return this.rec != null && this.rec.state !== "inactive";
   }

@@ -1,13 +1,12 @@
 /**
- * RecordingDetailPage — the per-recording surface.
+ * RecordingDetailPage — Fathom-style: notes-first, with a collapsible,
+ * searchable, editable Full Transcript underneath.
  *
- *  - While `status === 'recording'` and the viewer owns it, hosts the
- *    RecorderPanel to capture more Parts.
- *  - Always shows the Parts in order, each with its transcription status and,
- *    once transcribed, its speaker-labelled transcript. Parts are visually
- *    divided (Part 1 / Part 2 …) so an intentional break is obvious.
- *  - Renders the AI "Fathom" notes above the transcript once generated, with
- *    jump-to-timestamp chips that scroll to a Part and seek its audio.
+ *  - While `status === 'recording'` and the viewer owns it, hosts RecorderPanel.
+ *  - AI "Fathom" notes render prominently with jump-to-timestamp chips.
+ *  - Full Transcript collapses by default once notes exist; supports search,
+ *    speaker renaming (across Parts), and inline correction of any utterance.
+ *  - Copy notes / copy transcript / download .md from the header.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -21,16 +20,36 @@ import { QuizDraftPanel } from "./QuizDraftPanel";
 import {
   deleteRecording,
   renameRecording,
+  renameSpeaker,
+  updatePartTranscript,
   useRecordingDetail,
 } from "./useRecordings";
-import type { RecordingNotes, RecordingPart } from "./types";
+import {
+  downloadText,
+  fmtTs,
+  recordingToMarkdown,
+  relativeTime,
+  slugifyTitle,
+  speakerDisplay,
+  transcriptToText,
+} from "./format";
+import type { RecordingNotes, RecordingPart, Utterance } from "./types";
 
 type RegisterAudio = (partIndex: number, el: HTMLAudioElement | null) => void;
 type JumpTo = (partIndex: number, startMs: number) => void;
 
-function fmtTs(ms: number): string {
-  const s = Math.max(0, Math.round(ms / 1000));
-  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+/** Wrap case-insensitive matches of `q` in <mark>. */
+function highlight(text: string, q: string) {
+  if (!q) return text;
+  const i = text.toLowerCase().indexOf(q.toLowerCase());
+  if (i < 0) return text;
+  return (
+    <>
+      {text.slice(0, i)}
+      <mark className="rounded bg-amber-200 px-0.5 dark:bg-amber-500/40">{text.slice(i, i + q.length)}</mark>
+      {text.slice(i + q.length)}
+    </>
+  );
 }
 
 function PartAudio({
@@ -57,13 +76,7 @@ function PartAudio({
   }, [path]);
   if (!url) return null;
   return (
-    <audio
-      controls
-      preload="none"
-      src={url}
-      ref={(el) => register(partIndex, el)}
-      className="mt-2 w-full"
-    />
+    <audio controls preload="none" src={url} ref={(el) => register(partIndex, el)} className="mt-2 w-full" />
   );
 }
 
@@ -82,19 +95,86 @@ function partStatusLabel(p: RecordingPart): string {
   }
 }
 
+/** One editable utterance line. */
+function UtteranceRow({
+  u,
+  editable,
+  query,
+  onSave,
+}: {
+  u: Utterance;
+  editable: boolean;
+  query: string;
+  onSave: (text: string) => void;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(u.text);
+  if (editing) {
+    return (
+      <div className="flex gap-2">
+        <span className="mt-1 shrink-0 text-xs font-medium text-slate-500">{speakerDisplay(u.speaker)}</span>
+        <textarea
+          autoFocus
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          onBlur={() => {
+            setEditing(false);
+            if (draft !== u.text) onSave(draft);
+          }}
+          rows={2}
+          className="w-full resize-y rounded-md border border-slate-300 px-2 py-1 text-sm dark:border-slate-600 dark:bg-slate-800"
+        />
+      </div>
+    );
+  }
+  return (
+    <p className="text-sm leading-relaxed text-slate-800 dark:text-slate-200">
+      <span className="mr-2 font-medium text-slate-500 dark:text-slate-400">{speakerDisplay(u.speaker)}:</span>
+      <span
+        className={editable ? "cursor-text rounded hover:bg-slate-100 dark:hover:bg-slate-800" : ""}
+        onClick={() => editable && setEditing(true)}
+        title={editable ? "Click to correct" : undefined}
+      >
+        {highlight(u.text, query)}
+      </span>
+    </p>
+  );
+}
+
 function PartBlock({
   part,
   register,
+  editable,
+  query,
+  onSaved,
 }: {
   part: RecordingPart;
   register: RegisterAudio;
+  editable: boolean;
+  query: string;
+  onSaved: () => void;
 }) {
   const pending = part.status !== "transcribed" && part.status !== "failed";
+  const toast = useToast();
+  const utterances = part.transcript ?? [];
+  const visible = query
+    ? utterances.filter((u) => u.text.toLowerCase().includes(query.toLowerCase()))
+    : utterances;
+
+  async function saveUtterance(idx: number, text: string) {
+    const next = utterances.map((u, i) => (i === idx ? { ...u, text } : u));
+    try {
+      await updatePartTranscript(part.id, next);
+      onSaved();
+    } catch (e) {
+      toast.error(`Couldn't save: ${(e as Error).message}`);
+    }
+  }
+
+  if (query && visible.length === 0) return null;
+
   return (
-    <section
-      id={`part-${part.part_index}`}
-      className="scroll-mt-20 border-t border-slate-200 pt-4 dark:border-slate-700"
-    >
+    <section id={`part-${part.part_index}`} className="scroll-mt-20 border-t border-slate-200 pt-4 dark:border-slate-700">
       <div className="mb-2 flex items-center justify-between gap-2">
         <h3 className="text-sm font-semibold uppercase tracking-wide text-indigo-800 dark:text-indigo-300">
           Part {part.part_index}
@@ -106,40 +186,148 @@ function PartBlock({
           </span>
         )}
       </div>
-
-      {part.transcript && part.transcript.length > 0 ? (
+      {utterances.length > 0 ? (
         <div className="space-y-2">
-          {part.transcript.map((u, i) => (
-            <p key={i} className="text-sm leading-relaxed text-slate-800 dark:text-slate-200">
-              <span className="mr-2 font-medium text-slate-500 dark:text-slate-400">
-                Speaker {u.speaker}:
-              </span>
-              {u.text}
-            </p>
-          ))}
+          {visible.map((u) => {
+            const idx = utterances.indexOf(u);
+            return (
+              <UtteranceRow
+                key={idx}
+                u={u}
+                editable={editable}
+                query={query}
+                onSave={(text) => void saveUtterance(idx, text)}
+              />
+            );
+          })}
         </div>
       ) : pending ? (
         <Skeleton className="h-16 w-full" />
       ) : (
         <p className="text-sm italic text-slate-400">No transcript.</p>
       )}
-
-      {part.audio_path && (
-        <PartAudio partIndex={part.part_index} path={part.audio_path} register={register} />
-      )}
+      {part.audio_path && <PartAudio partIndex={part.part_index} path={part.audio_path} register={register} />}
     </section>
   );
 }
 
-function TimeChip({
-  partIndex,
-  startMs,
-  onJump,
+/** Speaker rename chip. */
+function SpeakerChip({ name, onRename }: { name: string; onRename: (to: string) => void }) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(name);
+  if (editing) {
+    return (
+      <input
+        autoFocus
+        value={draft}
+        onChange={(e) => setDraft(e.target.value)}
+        onBlur={() => {
+          setEditing(false);
+          onRename(draft);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") (e.target as HTMLInputElement).blur();
+          if (e.key === "Escape") setEditing(false);
+        }}
+        className="w-28 rounded-full border border-indigo-300 px-2 py-0.5 text-xs dark:border-indigo-700 dark:bg-slate-800"
+      />
+    );
+  }
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        setDraft(name);
+        setEditing(true);
+      }}
+      className="rounded-full border border-slate-200 px-2 py-0.5 text-xs text-slate-600 hover:border-indigo-300 hover:text-indigo-700 dark:border-slate-700 dark:text-slate-300"
+      title="Rename this speaker everywhere"
+    >
+      {speakerDisplay(name)}
+    </button>
+  );
+}
+
+function TranscriptSection({
+  parts,
+  register,
+  isOwner,
+  open,
+  setOpen,
+  refresh,
 }: {
-  partIndex: number;
-  startMs: number;
-  onJump: JumpTo;
+  parts: RecordingPart[];
+  register: RegisterAudio;
+  isOwner: boolean;
+  open: boolean;
+  setOpen: (v: boolean) => void;
+  refresh: () => void;
 }) {
+  const [query, setQuery] = useState("");
+  const toast = useToast();
+  const speakers = Array.from(
+    new Set(parts.flatMap((p) => (p.transcript ?? []).map((u) => u.speaker))),
+  ).sort();
+
+  async function handleRename(from: string, to: string) {
+    try {
+      await renameSpeaker(parts, from, to);
+      refresh();
+    } catch (e) {
+      toast.error(`Couldn't rename: ${(e as Error).message}`);
+    }
+  }
+
+  const showBody = open || !!query;
+
+  return (
+    <div className="rounded-xl border border-slate-200 dark:border-slate-700">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between gap-2 px-5 py-3"
+      >
+        <span className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+          Full transcript
+        </span>
+        <span className={`text-slate-400 transition-transform ${showBody ? "rotate-90" : ""}`}>▸</span>
+      </button>
+      {showBody && (
+        <div className="px-5 pb-5">
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search the transcript…"
+            className="mb-3 w-full rounded-md border border-slate-300 px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-slate-800"
+          />
+          {isOwner && speakers.length > 0 && (
+            <div className="mb-3 flex flex-wrap items-center gap-2">
+              <span className="text-xs text-slate-400">Speakers:</span>
+              {speakers.map((s) => (
+                <SpeakerChip key={s} name={s} onRename={(to) => void handleRename(s, to)} />
+              ))}
+            </div>
+          )}
+          <div className="space-y-4">
+            {parts.map((p) => (
+              <PartBlock
+                key={p.id}
+                part={p}
+                register={register}
+                editable={isOwner}
+                query={query}
+                onSaved={refresh}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function TimeChip({ partIndex, startMs, onJump }: { partIndex: number; startMs: number; onJump: JumpTo }) {
   if (!partIndex) return null;
   return (
     <button
@@ -170,9 +358,7 @@ function NotesView({ notes, onJump }: { notes: RecordingNotes; onJump: JumpTo })
               <li key={i}>
                 <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
                   {t.title}
-                  {t.part_index != null && (
-                    <TimeChip partIndex={t.part_index} startMs={t.start_ms ?? 0} onJump={onJump} />
-                  )}
+                  {t.part_index != null && <TimeChip partIndex={t.part_index} startMs={t.start_ms ?? 0} onJump={onJump} />}
                 </div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">{t.summary}</div>
               </li>
@@ -197,9 +383,7 @@ function NotesView({ notes, onJump }: { notes: RecordingNotes; onJump: JumpTo })
             {notes.highlights.map((h, i) => (
               <li key={i} className="border-l-2 border-indigo-300 pl-3 text-sm italic text-slate-700 dark:text-slate-300">
                 "{h.quote}"
-                {h.part_index != null && (
-                  <TimeChip partIndex={h.part_index} startMs={h.start_ms ?? 0} onJump={onJump} />
-                )}
+                {h.part_index != null && <TimeChip partIndex={h.part_index} startMs={h.start_ms ?? 0} onJump={onJump} />}
               </li>
             ))}
           </ul>
@@ -219,25 +403,26 @@ export function RecordingDetailPage() {
   const [editingTitle, setEditingTitle] = useState(false);
   const [titleDraft, setTitleDraft] = useState("");
   const [generating, setGenerating] = useState(false);
+  const [transcriptOpen, setTranscriptOpen] = useState(false);
 
-  // Registry of each Part's <audio> element so notes chips can seek them.
   const audioRegistry = useRef<Map<number, HTMLAudioElement>>(new Map());
   const register = useCallback<RegisterAudio>((partIndex, el) => {
     if (el) audioRegistry.current.set(partIndex, el);
     else audioRegistry.current.delete(partIndex);
   }, []);
   const jumpTo = useCallback<JumpTo>((partIndex, startMs) => {
-    document
-      .getElementById(`part-${partIndex}`)
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
-    const el = audioRegistry.current.get(partIndex);
-    if (el) {
-      el.currentTime = Math.max(0, startMs / 1000);
-      void el.play().catch(() => {});
-    }
+    setTranscriptOpen(true);
+    // Let the transcript expand before scrolling/seeking.
+    setTimeout(() => {
+      document.getElementById(`part-${partIndex}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      const el = audioRegistry.current.get(partIndex);
+      if (el) {
+        el.currentTime = Math.max(0, startMs / 1000);
+        void el.play().catch(() => {});
+      }
+    }, 60);
   }, []);
 
-  // Theme by the recording's domain while viewing it.
   useEffect(() => {
     if (detail) previewDomain(detail.recording.domain);
     return () => previewDomain(null);
@@ -257,9 +442,7 @@ export function RecordingDetailPage() {
   if (error || !detail) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-6">
-        <button onClick={() => navigate(ROUTES.RECORDINGS)} className="mb-4 text-sm text-indigo-600">
-          ← Recordings
-        </button>
+        <button onClick={() => navigate(ROUTES.RECORDINGS)} className="mb-4 text-sm text-indigo-600">← Recordings</button>
         <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700">
           {error ?? "Recording not found."}
         </div>
@@ -270,7 +453,8 @@ export function RecordingDetailPage() {
   const { recording, parts, notes } = detail;
   const isOwner = profile?.id === recording.owner_id;
   const transcribedCount = parts.filter((p) => p.status === "transcribed").length;
-  const canGenerate = isOwner && recording.status === "ready" && transcribedCount > 0;
+  const hasTranscript = transcribedCount > 0;
+  const canGenerate = isOwner && recording.status === "ready" && hasTranscript;
 
   async function saveTitle() {
     setEditingTitle(false);
@@ -310,13 +494,22 @@ export function RecordingDetailPage() {
     }
   }
 
+  async function copy(text: string, what: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast.success(`${what} copied.`);
+    } catch {
+      toast.error("Couldn't copy to clipboard.");
+    }
+  }
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-6">
       <button onClick={() => navigate(ROUTES.RECORDINGS)} className="mb-4 text-sm text-indigo-600 hover:underline">
         ← Recordings
       </button>
 
-      <div className="mb-5 flex items-start justify-between gap-3">
+      <div className="mb-2 flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           {editingTitle && isOwner ? (
             <input
@@ -344,13 +537,24 @@ export function RecordingDetailPage() {
             </h1>
           )}
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            {new Date(recording.created_at).toLocaleString()} ·{" "}
-            {recording.subject_type === "session" ? "Session" : "Voice note"} ·{" "}
+            {relativeTime(recording.created_at)} · {recording.subject_type === "session" ? "Session" : "Voice note"} ·{" "}
             {parts.length} part{parts.length === 1 ? "" : "s"}
             {parts.length > 0 && ` · ${transcribedCount}/${parts.length} transcribed`}
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        {isOwner && (
+          <button
+            onClick={() => void handleDelete()}
+            className="rounded-md border border-red-200 px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:border-red-900/50 dark:hover:bg-red-900/20"
+          >
+            Delete
+          </button>
+        )}
+      </div>
+
+      {/* Action bar */}
+      {hasTranscript && (
+        <div className="mb-5 flex flex-wrap gap-2">
           {canGenerate && (
             <button
               onClick={() => void generateNotes()}
@@ -360,16 +564,28 @@ export function RecordingDetailPage() {
               {generating ? "Generating…" : notes ? "Regenerate notes" : "Generate notes"}
             </button>
           )}
-          {isOwner && (
+          {notes && (
             <button
-              onClick={() => void handleDelete()}
-              className="rounded-md border border-red-200 px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:border-red-900/50 dark:hover:bg-red-900/20"
+              onClick={() => void copy(recordingToMarkdown(recording, notes, parts), "Notes")}
+              className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
             >
-              Delete
+              Copy notes
             </button>
           )}
+          <button
+            onClick={() => void copy(transcriptToText(parts), "Transcript")}
+            className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
+          >
+            Copy transcript
+          </button>
+          <button
+            onClick={() => downloadText(`${slugifyTitle(recording.title)}.md`, recordingToMarkdown(recording, notes, parts))}
+            className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
+          >
+            Download .md
+          </button>
         </div>
-      </div>
+      )}
 
       {recording.status === "recording" && isOwner && (
         <div className="mb-6">
@@ -400,17 +616,22 @@ export function RecordingDetailPage() {
         </div>
       )}
 
-      <div className="space-y-4">
-        {parts.length === 0 ? (
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            {recording.status === "recording"
-              ? "No parts yet — press Record above to capture your first part."
-              : "This recording has no parts."}
-          </p>
-        ) : (
-          parts.map((p) => <PartBlock key={p.id} part={p} register={register} />)
-        )}
-      </div>
+      {parts.length === 0 ? (
+        <p className="text-sm text-slate-500 dark:text-slate-400">
+          {recording.status === "recording"
+            ? "No parts yet — press Record above to capture your first part."
+            : "This recording has no parts."}
+        </p>
+      ) : (
+        <TranscriptSection
+          parts={parts}
+          register={register}
+          isOwner={isOwner}
+          open={transcriptOpen || !notes}
+          setOpen={setTranscriptOpen}
+          refresh={() => void refresh()}
+        />
+      )}
     </div>
   );
 }

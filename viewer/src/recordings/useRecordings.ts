@@ -13,6 +13,7 @@ import type {
   RecordingNotes,
   RecordingPart,
   RecordingSubject,
+  Utterance,
 } from "./types";
 import { type PartResult, uploadExtFor } from "./recorder";
 
@@ -151,6 +152,38 @@ export async function endRecording(
   if (error) throw error;
 }
 
+/** Overwrite a Part's transcript utterances (inline correction / speaker rename). */
+export async function updatePartTranscript(
+  partId: string,
+  utterances: Utterance[],
+): Promise<void> {
+  const { error } = await supabase
+    .from("recording_parts")
+    .update({ transcript: utterances })
+    .eq("id", partId);
+  if (error) throw error;
+}
+
+/**
+ * Rename a speaker across every Part (e.g. "A" → "Teacher"). Rewrites the
+ * `speaker` field on matching utterances and persists each changed Part.
+ */
+export async function renameSpeaker(
+  parts: RecordingPart[],
+  from: string,
+  to: string,
+): Promise<void> {
+  const trimmed = to.trim();
+  if (!trimmed || trimmed === from) return;
+  for (const p of parts) {
+    if (!p.transcript?.some((u) => u.speaker === from)) continue;
+    const next = p.transcript.map((u) =>
+      u.speaker === from ? { ...u, speaker: trimmed } : u,
+    );
+    await updatePartTranscript(p.id, next);
+  }
+}
+
 export async function renameRecording(id: string, title: string): Promise<void> {
   const { error } = await supabase
     .from("recordings")
@@ -209,6 +242,17 @@ export function useRecordingsList(): UseRecordingsList {
       aliveRef.current = false;
     };
   }, [load]);
+
+  // Poll while anything is still capturing/transcribing so the list's status
+  // pills + counts update without a manual refresh.
+  useEffect(() => {
+    const busy = recordings.some(
+      (r) => r.status === "recording" || r.status === "processing",
+    );
+    if (!busy) return;
+    const t = setInterval(() => void load(), 5000);
+    return () => clearInterval(t);
+  }, [recordings, load]);
 
   return { recordings, loading, error, refresh: load };
 }
