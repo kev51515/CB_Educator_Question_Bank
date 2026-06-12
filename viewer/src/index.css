@@ -780,6 +780,12 @@ body {
     from { opacity: 0; transform: translateY(5px) scale(0.98); }
     to { opacity: 1; transform: none; }
   }
+  /* Upward-flipped variant — must END at the inline translateY(-100%) so
+     the card doesn't jump when the animation's fill releases. */
+  @keyframes journey-pop-up {
+    from { opacity: 0; transform: translateY(calc(-100% - 5px)) scale(0.98); }
+    to { opacity: 1; transform: translateY(-100%); }
+  }
   @keyframes journey-rise {
     0% { opacity: 0; transform: translateY(6px); }
     25% { opacity: 1; }

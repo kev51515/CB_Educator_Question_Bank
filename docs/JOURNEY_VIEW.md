@@ -126,10 +126,16 @@ the recommended direction for all three:
 | Educator drill-down | **2A triage popover** (over inline roster band) | `TeacherCellTriage` — distribution bar (sealed/proficient/attempted/not-started), needs-attention list (cap 4: lowest scores, then not-started), **Nudge n students** sends one DM each via `open_thread_with` + `messages` insert. Full roster detail stays Gradebook's job. |
 | Seal moment | **3A quiet ledger** (over ceremonial overlay) | Cell stamps gold (`.journey-stamp` press-in + ring), HUD shows rising `+N pts` (`.journey-rise`), standard Toast confirms; level-ups toast too. Diff vs a per-course localStorage snapshot (`journey.snapshot:<courseId>`), gated on meta-loaded-for-current-ids (a plain boolean raced and false-fired). All motion under `prefers-reduced-motion: no-preference`. |
 
-Popover shell lives in `JourneyGrid` (`popover` render prop + `hasPopover`
-opt-out; Esc/click-away; anchored + clamped within the section; grid wrapper
-must NOT be `overflow-hidden` — it clipped the popover, sections round their
-own corners instead).
+Popover shell lives in `JourneyGrid`'s `UnitCells` (`popover` render prop +
+`hasPopover` opt-out; Esc/click-away; anchored + clamped within the section;
+grid wrapper must NOT be `overflow-hidden` — it clipped the popover, sections
+round their own corners instead). Positioning polish (2026-06-12, probe
+`_verify-journey-popover.mjs`): **vertical flip** per the KebabMenu
+convention — near the viewport bottom the card anchors ABOVE the cell via
+`translateY(-100%)` (height-independent; needs the `journey-pop-up` keyframe
+variant ending at that transform, else the entry animation snaps) — and the
+width clamps to the cells container on phones (min 220px), asserted to
+produce no horizontal page scroll at 390px.
 
 **QA escape hatch:** `localStorage["journey.preview"]="1"` enables the
 student journey while `STUDENT_JOURNEY_ENABLED` is off — used by

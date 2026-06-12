@@ -42,11 +42,16 @@ interface JourneyGridProps {
 }
 
 const POPOVER_WIDTH = 312;
+/** Estimated popover height for the flip-up heuristic (worst case ~290px). */
+const POPOVER_EST_HEIGHT = 300;
 
 interface OpenPopover {
   cellId: string;
   left: number;
   top: number;
+  /** Open upward (anchored above the cell) when near the viewport bottom. */
+  above: boolean;
+  width: number;
 }
 
 /** Fill classes per mastery state (border supplied by the base class). */
@@ -218,14 +223,24 @@ export function UnitCells({
     }
     const btn = e.currentTarget;
     const wrap = wrapRef.current;
-    const maxLeft = Math.max(
-      8,
-      (wrap?.clientWidth ?? POPOVER_WIDTH + 48) - POPOVER_WIDTH - 20,
-    );
+    // Width: never exceed the cells container (phones are narrower than
+    // the desktop 312px card).
+    const wrapWidth = wrap?.clientWidth ?? POPOVER_WIDTH + 48;
+    const width = Math.min(POPOVER_WIDTH, Math.max(220, wrapWidth - 8));
+    const maxLeft = Math.max(0, wrapWidth - width - 4);
+    // Vertical flip (KebabMenu convention): if the card would overflow the
+    // viewport bottom AND there's room above, anchor it above the cell.
+    const rect = btn.getBoundingClientRect();
+    const viewportH = window.innerHeight || 800;
+    const above =
+      rect.bottom + POPOVER_EST_HEIGHT > viewportH &&
+      rect.top > POPOVER_EST_HEIGHT;
     setOpen({
       cellId: cell.id,
       left: Math.min(btn.offsetLeft, maxLeft),
-      top: btn.offsetTop + btn.offsetHeight + 10,
+      top: above ? btn.offsetTop - 10 : btn.offsetTop + btn.offsetHeight + 10,
+      above,
+      width,
     });
   };
 
@@ -270,8 +285,19 @@ export function UnitCells({
               ref={popoverRef}
               role="dialog"
               aria-label={cell.title}
-              style={{ left: open.left, top: open.top, width: POPOVER_WIDTH }}
-              className="absolute z-20 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-600 shadow-xl p-4 motion-safe:animate-[journey-pop_.18s_ease-out]"
+              style={{
+                left: open.left,
+                top: open.top,
+                width: open.width,
+                // Height-independent upward anchoring: the card's bottom
+                // edge sits 10px above the cell regardless of content.
+                transform: open.above ? "translateY(-100%)" : undefined,
+              }}
+              className={`absolute z-20 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-600 shadow-xl p-4 ${
+                open.above
+                  ? "motion-safe:animate-[journey-pop-up_.18s_ease-out]"
+                  : "motion-safe:animate-[journey-pop_.18s_ease-out]"
+              }`}
             >
               {popover(cell, close)}
             </div>
