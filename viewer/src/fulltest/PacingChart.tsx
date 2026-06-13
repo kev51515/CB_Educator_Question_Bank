@@ -56,11 +56,22 @@ const PLOT = {
   y1: VH - PAD.bottom,
 } as const;
 
+// Reference cohort curves are deliberately LIGHT — they're context, not the
+// headline. The student's own series (YOU_LIGHT, bold accent) owns the spotlight;
+// saturated emerald/rose here used to out-shout the very line they frame.
 const COLOR = {
-  fast: "#10b981", // emerald-500
-  slow: "#f43f5e", // rose-500
-  avg: "#94a3b8", // slate-400
+  fast: "#6ee7b7", // emerald-300
+  slow: "#fda4af", // rose-300
+  avg: "#cbd5e1", // slate-300
   grid: "currentColor",
+} as const;
+
+// The student's own outlier dots need a touch more saturation than the faint
+// reference curves to stay legible as a per-question status — but still quieter
+// than the old -500s.
+const DOT = {
+  fast: "#34d399", // emerald-400
+  slow: "#fb7185", // rose-400
 } as const;
 
 /** The student's own series follows the LIVE domain accent (navy under ivy,
@@ -186,8 +197,8 @@ export function PacingChart({
   /** Student dot tint relative to the two bands. */
   const dotColor = (p: PacingPoint): string => {
     if (showBands && p.yours != null) {
-      if (p.slow != null && p.yours > p.slow) return COLOR.slow;
-      if (p.fast != null && p.yours < p.fast) return COLOR.fast;
+      if (p.slow != null && p.yours > p.slow) return DOT.slow;
+      if (p.fast != null && p.yours < p.fast) return DOT.fast;
     }
     return YOU_LIGHT;
   };
@@ -283,13 +294,13 @@ export function PacingChart({
           />
         ))}
 
-        {/* slow-25% curve */}
+        {/* slow-25% curve — quiet reference */}
         {slowSeg.map((seg, i) => (
-          <path key={`slow-${i}`} d={toPath(seg)} fill="none" stroke={COLOR.slow} strokeWidth={2} strokeOpacity={0.7} strokeLinecap="round" strokeLinejoin="round" />
+          <path key={`slow-${i}`} d={toPath(seg)} fill="none" stroke={COLOR.slow} strokeWidth={1.5} strokeOpacity={0.9} strokeLinecap="round" strokeLinejoin="round" />
         ))}
-        {/* fast-25% curve */}
+        {/* fast-25% curve — quiet reference */}
         {fastSeg.map((seg, i) => (
-          <path key={`fast-${i}`} d={toPath(seg)} fill="none" stroke={COLOR.fast} strokeWidth={2} strokeOpacity={0.8} strokeLinecap="round" strokeLinejoin="round" />
+          <path key={`fast-${i}`} d={toPath(seg)} fill="none" stroke={COLOR.fast} strokeWidth={1.5} strokeOpacity={0.9} strokeLinecap="round" strokeLinejoin="round" />
         ))}
 
         {/* student curve (bold, on top) */}
