@@ -209,6 +209,8 @@ export function InlineAddItemRow({
   const [noteTone, setNoteTone] = useState<"info" | "tip" | "warning">("info");
   // Page (Learn group): markdown lesson body (Video/File reuse `url`).
   const [pageBody, setPageBody] = useState("");
+  // Vocab (Learn group): one card per line as `front : back`.
+  const [vocabCards, setVocabCards] = useState("");
   // Plan group: Goal (target/metric) + Countdown (date).
   const [goalTarget, setGoalTarget] = useState("");
   const [goalMetric, setGoalMetric] = useState("");
@@ -274,6 +276,7 @@ export function InlineAddItemRow({
     setNoteBody("");
     setNoteTone("info");
     setPageBody("");
+    setVocabCards("");
     setGoalTarget("");
     setGoalMetric("");
     setCountdownDate("");
@@ -571,6 +574,47 @@ export function InlineAddItemRow({
         return;
       }
       toast.success("Page added", heading || undefined);
+      if (keepOpen) {
+        resetPerItemFields();
+        onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
+    if (itemType === "vocab") {
+      const cards = vocabCards
+        .split("\n")
+        .map((line) => {
+          const idx = line.indexOf(":");
+          if (idx === -1) return null;
+          const front = line.slice(0, idx).trim();
+          const back = line.slice(idx + 1).trim();
+          if (!front || !back) return null;
+          return { front, back };
+        })
+        .filter((c): c is { front: string; back: string } => c !== null);
+      if (cards.length === 0) {
+        toast.warning("Add at least one 'term : definition' card");
+        return;
+      }
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "vocab",
+        item_ref_id: null,
+        title: title.trim() || "Vocabulary",
+        url: null,
+        config: { cards },
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add deck", insertErr);
+        return;
+      }
+      toast.success("Deck added");
       if (keepOpen) {
         resetPerItemFields();
         onCommittedKeepOpen();
@@ -921,6 +965,13 @@ export function InlineAddItemRow({
         <path d="m10 9 5 3-5 3Z" />
       </>
     ),
+    vocab: (
+      <>
+        <rect x="3" y="5" width="14" height="14" rx="2" />
+        <path d="M7 5V3h12a2 2 0 0 1 2 2v12h-2" />
+        <path d="M6.5 9H13M6.5 12H11" />
+      </>
+    ),
     file: (
       <path d="M21.44 11.05 12.25 20.24a4 4 0 0 1-5.66-5.66l8.49-8.49a2.5 2.5 0 0 1 3.54 3.54l-8.49 8.49a1 1 0 0 1-1.41-1.41l7.78-7.78" />
     ),
@@ -974,6 +1025,7 @@ export function InlineAddItemRow({
     practice_test: "Clone a practice test from your library into this course.",
     page: "A rich-text lesson page rendered inline for students.",
     video: "Embed a YouTube, Vimeo, or Loom video inline.",
+    vocab: "A flashcard deck with spaced repetition — one card per line as 'term : definition'.",
     file: "Link a file (PDF, slides…) for students to open or download.",
     header: "A bold divider row that groups the items below it.",
     note: "A callout with a short message — info, a tip, or a warning. No click-through.",
@@ -1021,6 +1073,7 @@ export function InlineAddItemRow({
       { type: "page", label: "Page" },
       { type: "video", label: "Video" },
       { type: "file", label: "File" },
+      { type: "vocab", label: "Vocabulary" },
     ],
     assess: [
       { type: "assignment", label: "Assignment" },
@@ -1070,6 +1123,7 @@ export function InlineAddItemRow({
       case "question_set": return "Add Question Set";
       case "page": return "Add Page";
       case "video": return "Add Video";
+      case "vocab": return "Add Deck";
       case "file": return "Add File";
       case "header": return "Add Header";
       case "note": return "Add Note";
@@ -1229,6 +1283,28 @@ export function InlineAddItemRow({
             placeholder="Lesson content — plain text or simple markdown (**bold**, *italic*, blank line = new paragraph)."
             disabled={busy}
             rows={4}
+            className="w-full resize-y rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+        </div>
+      )}
+
+      {itemType === "vocab" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Deck title — e.g. 'Unit 3 vocab'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <textarea
+            value={vocabCards}
+            onChange={(e) => setVocabCards(e.target.value)}
+            placeholder={"One card per line:\nubiquitous : present everywhere\nmitigate : make less severe"}
+            disabled={busy}
+            rows={5}
             className="w-full resize-y rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
           />
         </div>

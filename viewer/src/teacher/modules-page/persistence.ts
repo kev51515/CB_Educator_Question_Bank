@@ -53,6 +53,7 @@ export type InlineAddType =
   | "countdown"
   | "live_session"
   | "survey"
+  | "vocab"
   | "header"
   | "note"
   | "divider"
@@ -75,6 +76,7 @@ export const INLINE_ADD_GROUP_OF: Record<InlineAddType, InlineAddGroup> = {
   page: "learn",
   video: "learn",
   file: "learn",
+  vocab: "learn",
   assignment: "assess",
   practice_test: "assess",
   question_set: "assess",

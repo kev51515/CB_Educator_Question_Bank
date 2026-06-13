@@ -78,6 +78,13 @@ function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element 
       </>
     ),
     divider: <path d="M4 12h16" />,
+    vocab: (
+      <>
+        <rect x="3" y="5" width="14" height="14" rx="2" />
+        <path d="M7 5V3h12a2 2 0 0 1 2 2v12h-2" />
+        <path d="M6.5 9H13M6.5 12H11" />
+      </>
+    ),
     video: (
       <>
         <rect x="2.5" y="5" width="19" height="14" rx="2" />
@@ -177,6 +184,7 @@ const ITEM_KIND_LABEL: Record<ModuleItem["item_type"], string> = {
   countdown: "Countdown",
   live_session: "Live Session",
   survey: "Survey",
+  vocab: "Vocabulary",
 };
 
 /** Small line-SVG padlock, matching ItemTypeIcon's stroke style. */

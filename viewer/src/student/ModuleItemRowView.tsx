@@ -5,6 +5,7 @@ import { FullTestIcon, ItemIcon } from "./ItemIcon";
 import { PageBlock, VideoBlock, FileBlock } from "./ModuleContentBlocks";
 import { GoalBlock, CountdownBlock, LiveSessionBlock } from "./ModuleEngageBlocks";
 import { SurveyBlock } from "./SurveyBlock";
+import { VocabDeck } from "./VocabDeck";
 import {
   type AssignmentMeta,
   type ModuleItemRow,
@@ -193,6 +194,15 @@ export function ModuleItemRowView({ item, locked, meta, pending = false }: Modul
     return (
       <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
         <SurveyBlock itemId={item.id} title={item.title} config={cfg} />
+      </div>
+    );
+  }
+
+  if (item.item_type === "vocab") {
+    const cfg = (item.config ?? {}) as { cards?: Array<{ front: string; back: string }> };
+    return (
+      <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
+        <VocabDeck itemId={item.id} title={item.title} config={cfg} />
       </div>
     );
   }

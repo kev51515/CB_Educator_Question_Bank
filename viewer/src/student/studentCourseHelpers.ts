@@ -81,7 +81,8 @@ export interface ModuleItemRow {
     | "goal"
     | "countdown"
     | "live_session"
-    | "survey";
+    | "survey"
+    | "vocab";
   item_ref_id: string | null;
   title: string;
   url: string | null;
