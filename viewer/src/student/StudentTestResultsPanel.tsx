@@ -137,7 +137,7 @@ export function StudentTestResultsPanel() {
             </button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            <ResultView result={viewing.result} testTitle={viewing.row.test_title} />
+            <ResultView result={viewing.result} testTitle={viewing.row.test_title} embedded />
           </div>
         </div>
       )}

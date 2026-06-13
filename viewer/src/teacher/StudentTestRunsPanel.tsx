@@ -301,7 +301,7 @@ export function StudentTestRunsPanel({ studentId }: StudentTestRunsPanelProps) {
             </button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            <ResultView result={reviewing.result} testTitle={reviewing.row.test_title} />
+            <ResultView result={reviewing.result} testTitle={reviewing.row.test_title} embedded />
           </div>
         </div>
       )}

@@ -329,7 +329,7 @@ export function TestCompletionModal({ slug, title, onClose }: TestCompletionModa
             </button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            <ResultView result={reviewing.result} testTitle={title} />
+            <ResultView result={reviewing.result} testTitle={title} embedded />
           </div>
         </div>
       )}

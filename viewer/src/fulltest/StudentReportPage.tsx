@@ -78,7 +78,7 @@ export function StudentReportPage(): JSX.Element {
           <Skeleton className="h-64 w-full rounded-2xl" />
         </div>
       ) : (
-        <ResultView result={result} testTitle={title} />
+        <ResultView result={result} testTitle={title} embedded />
       )}
     </div>
   );

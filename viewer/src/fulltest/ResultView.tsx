@@ -19,7 +19,19 @@ const SCALED_NOTE =
   "Estimated from your raw section scores on a representative Digital SAT curve. " +
   "The real exam is section-adaptive and uses a per-form table, so treat this as a practice estimate, not an official score.";
 
-export function ResultView({ result, testTitle }: { result: TestResult; testTitle: string }) {
+export function ResultView({
+  result,
+  testTitle,
+  embedded = false,
+}: {
+  result: TestResult;
+  testTitle: string;
+  /** Rendered inside existing page/modal chrome (staff report preview, review
+   *  modals) rather than as the student's full-screen takeover. Drops the
+   *  `min-h-screen` + page background so it doesn't paint a grey "window inside
+   *  the window". Default false keeps the full-screen student result intact. */
+  embedded?: boolean;
+}) {
   const navigate = useNavigate();
   const pct = result.total > 0 ? Math.round((result.score / result.total) * 100) : 0;
   const scaled = scaledFromSectionScores(result.section_scores);
@@ -60,7 +72,13 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
   const hasEstimate = scaled.total !== null || singleSection !== null;
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-10 dark:bg-slate-950">
+    <div
+      className={
+        embedded
+          ? "px-4 py-6"
+          : "min-h-screen bg-slate-50 px-4 py-10 dark:bg-slate-950"
+      }
+    >
       <div className="mx-auto max-w-3xl">
         <header className="result-hero rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 p-7 text-white shadow-lg">
           <div className="flex items-center justify-between">

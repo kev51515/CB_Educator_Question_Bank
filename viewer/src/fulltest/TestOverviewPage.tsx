@@ -1200,7 +1200,7 @@ export function TestOverviewPage(): JSX.Element {
                 loading={timelineLoading}
               />
             </section>
-            <ResultView result={reviewing.result} testTitle={title} />
+            <ResultView result={reviewing.result} testTitle={title} embedded />
           </div>
         </div>
       )}
