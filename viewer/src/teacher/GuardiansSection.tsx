@@ -7,6 +7,13 @@
  * they receive the student's notifications. Backed by the RPCs in migration
  * 0155 (create_guardian_for_student / list_guardians_for_student /
  * unlink_guardian) — all teacher-gated server-side.
+ *
+ * A parent of siblings is ONE guardian linked to several students (the
+ * many-to-many guardian_students). Use "Link existing parent" (0241
+ * link_guardian_to_student, by login code) to attach an already-created parent
+ * to this student instead of minting a duplicate account; each guardian row
+ * shows the other students it covers ("Also follows", 0241
+ * guardian_other_students).
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
@@ -25,16 +32,42 @@ interface CreatedCreds {
   password: string;
 }
 
+interface OtherStudent {
+  student_id: string;
+  display_name: string | null;
+}
+
 export function GuardiansSection({ studentId }: { studentId: string }) {
   const toast = useToast();
   const [rows, setRows] = useState<GuardianRow[]>([]);
+  const [siblings, setSiblings] = useState<Record<string, OtherStudent[]>>({});
   const [loading, setLoading] = useState(true);
   const [adding, setAdding] = useState(false);
+  const [linking, setLinking] = useState(false);
+  const [linkCode, setLinkCode] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [lastCreated, setLastCreated] = useState<CreatedCreds | null>(null);
   const alive = useRef(true);
+
+  // For each guardian, the OTHER students they cover that this teacher can see.
+  const loadSiblings = useCallback(
+    async (guardianRows: GuardianRow[]) => {
+      const entries = await Promise.all(
+        guardianRows.map(async (g) => {
+          const { data } = await supabase.rpc("guardian_other_students", {
+            p_guardian_id: g.guardian_id,
+            p_student_id: studentId,
+          });
+          return [g.guardian_id, (data as OtherStudent[]) ?? []] as const;
+        }),
+      );
+      if (!alive.current) return;
+      setSiblings(Object.fromEntries(entries));
+    },
+    [studentId],
+  );
 
   const refresh = useCallback(async () => {
     const { data, error } = await supabase.rpc("list_guardians_for_student", {
@@ -45,10 +78,12 @@ export function GuardiansSection({ studentId }: { studentId: string }) {
       toast.error("Couldn't load guardians", error.message);
       setRows([]);
     } else {
-      setRows((data as GuardianRow[]) ?? []);
+      const list = (data as GuardianRow[]) ?? [];
+      setRows(list);
+      void loadSiblings(list);
     }
     setLoading(false);
-  }, [studentId, toast]);
+  }, [studentId, toast, loadSiblings]);
 
   useEffect(() => {
     alive.current = true;
@@ -93,6 +128,43 @@ export function GuardiansSection({ studentId }: { studentId: string }) {
     void refresh();
   }
 
+  async function linkExisting(e: React.FormEvent) {
+    e.preventDefault();
+    const code = linkCode.trim().toUpperCase();
+    if (code.length < 4) {
+      toast.error("Enter the parent's login code.");
+      return;
+    }
+    setBusy(true);
+    const { data, error } = await supabase.rpc("link_guardian_to_student", {
+      p_login_code: code,
+      p_student_id: studentId,
+    });
+    setBusy(false);
+    if (error) {
+      const msg =
+        error.message === "guardian_not_found"
+          ? "No parent account has that login code."
+          : error.message === "not_authorized"
+            ? "You can only link parents to your own students."
+            : error.message;
+      toast.error("Couldn't link parent", msg);
+      return;
+    }
+    const result = (Array.isArray(data) ? data[0] : data) as
+      | { display_name: string | null; already_linked: boolean }
+      | undefined;
+    const who = result?.display_name ?? "Parent";
+    if (result?.already_linked) {
+      toast.info("Already linked", `${who} already follows this student.`);
+    } else {
+      toast.success("Parent linked", `${who} now also follows this student.`);
+    }
+    setLinkCode("");
+    setLinking(false);
+    void refresh();
+  }
+
   async function unlink(guardianId: string, label: string) {
     const { error } = await supabase.rpc("unlink_guardian", {
       p_guardian_id: guardianId,
@@ -112,17 +184,29 @@ export function GuardiansSection({ studentId }: { studentId: string }) {
         <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
           Guardians
         </h2>
-        {!adding && (
-          <button
-            type="button"
-            onClick={() => {
-              setAdding(true);
-              setLastCreated(null);
-            }}
-            className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-1.5 min-h-[36px]"
-          >
-            + Guardian
-          </button>
+        {!adding && !linking && (
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setLinking(true);
+                setLastCreated(null);
+              }}
+              className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-1.5 text-slate-700 dark:text-slate-200 min-h-[36px]"
+            >
+              Link existing
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setAdding(true);
+                setLastCreated(null);
+              }}
+              className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-1.5 min-h-[36px]"
+            >
+              + Guardian
+            </button>
+          </div>
         )}
       </div>
 
@@ -183,6 +267,43 @@ export function GuardiansSection({ studentId }: { studentId: string }) {
         </form>
       )}
 
+      {linking && (
+        <form onSubmit={linkExisting} className="space-y-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 p-3">
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Already created this parent for a sibling? Enter their login code to
+            link them to this student too — no duplicate account.
+          </p>
+          <input
+            type="text"
+            value={linkCode}
+            onChange={(e) => setLinkCode(e.target.value.toUpperCase())}
+            placeholder="Parent login code (e.g. ABCDEF)"
+            maxLength={6}
+            autoCapitalize="characters"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <div className="flex items-center justify-end gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setLinking(false);
+                setLinkCode("");
+              }}
+              className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm px-3 py-1.5 text-slate-700 dark:text-slate-200 min-h-[36px]"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={busy}
+              className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-3 py-1.5 min-h-[36px]"
+            >
+              {busy ? "Linking…" : "Link parent"}
+            </button>
+          </div>
+        </form>
+      )}
+
       {loading ? (
         <div className="h-10 rounded-lg bg-slate-100 dark:bg-slate-800 animate-pulse" aria-busy="true" />
       ) : rows.length === 0 ? (
@@ -204,6 +325,14 @@ export function GuardiansSection({ studentId }: { studentId: string }) {
                     Login code <span className="font-mono">{g.login_code}</span>
                   </p>
                 )}
+                {siblings[g.guardian_id]?.length ? (
+                  <p className="text-xs text-slate-400 dark:text-slate-500">
+                    Also follows{" "}
+                    {siblings[g.guardian_id]
+                      .map((s) => s.display_name ?? "a student")
+                      .join(", ")}
+                  </p>
+                ) : null}
               </div>
               <button
                 type="button"
