@@ -168,12 +168,13 @@ with a fresh design pass.
   HUD (points + level bar) + legend + grid; cells navigate like the list rows.
   *Temporarily flagged off* (`STUDENT_JOURNEY_ENABLED=false`) while the course
   experience is under test — flip the flag to restore.
-- **Educator** (`ModulesPage`): Journey | List segmented control with **Journey
-  as the primary/default view** (persisted `staff.modulesView:<courseId>`; List =
-  the existing module editor — editing pills only show in List). Read-only
-  class-aggregate grid — cell color = class-avg state, tooltip `n/N submitted ·
-  k sealed · avg %`; test cells open the per-test overview. Students hitting
-  this surface always get the list.
+- **Educator** (`ModulesPage`): List | Journey segmented control — **LIST is
+  the default** (Journey was briefly default on 2026-06-12; Kevin reversed it
+  2026-06-13, pref key bumped to `staff.modulesView2:` so stale values don't
+  mask the flip). Journey = read-only class-aggregate grid — cell color =
+  class-avg state, tooltip `n/N submitted · k sealed · avg %`; test cells
+  open the per-test overview; editing pills only show in List. Students
+  hitting this surface always get the list.
 - **Code:** new `viewer/src/journey/` domain folder (mastery.ts, buildJourney.ts,
   JourneyGrid, JourneyHud, TeacherJourneyPanel) + `.journey-seal` recipe in
   index.css (global — gold is the mechanic, not theming).

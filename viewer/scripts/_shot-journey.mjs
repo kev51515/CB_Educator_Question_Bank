@@ -184,15 +184,24 @@ try {
   // List regression (no preview flag → flag off → plain list).
   await shot(studentSession, coursePath, "student-course-list.png");
 
-  // Educator Modules: Journey primary; 2A triage popover on a cell click.
+  // Educator Modules: LIST is the default (2026-06-13 flip); Journey is
+  // opt-in behind the segmented control.
   const teacherSession = await signIn(`jrny-t-${TAG}@gmail.com`);
   const modsPath = `/educator/courses/${course.short_code}/modules`;
-  await shot(teacherSession, modsPath, "educator-journey-ivy.png");
+  const intoJourney = async (page) => {
+    await page.getByRole("tab", { name: "Journey" }).click();
+    await page.waitForTimeout(1500);
+  };
+  await shot(teacherSession, modsPath, "educator-default-list.png");
+  await shot(teacherSession, modsPath, "educator-journey-ivy.png", {
+    before: intoJourney,
+  });
   // Triage popover on the LOW-score cell (Reading drill, 55%) so the
   // needs-attention list + Nudge render; click Nudge and verify the DM.
   await shot(teacherSession, modsPath, "educator-triage-popover.png", {
     fullPage: false,
     before: async (page) => {
+      await intoJourney(page);
       await page.locator('button[title*="Reading drill"]').first().click();
       await page.waitForTimeout(900);
       await page.screenshot({ path: `${OUT}/educator-triage-before-nudge.png` });
@@ -212,13 +221,8 @@ try {
   await shot(teacherSession, modsPath, "educator-students-heatmap.png", {
     fullPage: false,
     before: async (page) => {
+      await intoJourney(page);
       await page.getByRole("tab", { name: "Students" }).click();
-      await page.waitForTimeout(1200);
-    },
-  });
-  await shot(teacherSession, modsPath, "educator-list-ivy.png", {
-    before: async (page) => {
-      await page.getByRole("tab", { name: "List" }).click();
       await page.waitForTimeout(1200);
     },
   });

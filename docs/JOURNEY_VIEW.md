@@ -38,7 +38,7 @@ classic themes, light and dark.
 | Gold tier ("sealed") | best **effective score ≥ 80%** (uses `assignment_best_attempts.effective_score`, so teacher overrides count) |
 | Completion | submitted = done; below-80 shows a "retake for the seal" nudge — retaking is the motivator |
 | Mechanics in v1 | **mastery points + levels** — yes. Streaks/leaderboards — no (deferred, maybe never) |
-| Placement | **student default** view on the course page (toggle back to List, persisted); educator Modules has a **Journey \| List segmented control with Journey as the PRIMARY/default view** (Kevin, 2026-06-12: "within the module page, it should have 2 views, Journey (primary) and List") |
+| Placement | **student default** view on the course page (toggle back to List, persisted); educator Modules has a **List \| Journey segmented control with LIST as the default** — Journey was briefly the educator default (2026-06-12) but Kevin reversed it 2026-06-13 ("I still want to see list mode primarily"). The pref key was bumped to `staff.modulesView2:` so stale stored values from the Journey-default day don't mask the flip. |
 
 ## v1 design
 

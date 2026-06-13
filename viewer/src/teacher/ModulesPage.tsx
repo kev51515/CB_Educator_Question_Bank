@@ -160,22 +160,26 @@ export function ModulesPage(): JSX.Element {
     [collapsed],
   );
 
-  // Journey | List views (staff only). Journey — the read-only
-  // class-aggregate mastery grid (docs/JOURNEY_VIEW.md) — is the PRIMARY
-  // view; List is the existing module editor. Persisted per course.
-  const journeyKey = `staff.modulesView:${classId ?? ""}`;
+  // List | Journey views (staff only). LIST — the module editor — is the
+  // PRIMARY/default view (Kevin, 2026-06-13: "I still want to see list mode
+  // primarily"); Journey is the read-only class-aggregate mastery grid
+  // (docs/JOURNEY_VIEW.md), opt-in. Persisted per course.
+  // v2 key: the v1 key's stored "journey" values date from when Journey was
+  // the default — keeping them would make this default-flip invisible on
+  // any course already visited. Fresh key = everyone lands on List once.
+  const journeyKey = `staff.modulesView2:${classId ?? ""}`;
   const [journeyMode, setJourneyMode] = useState<boolean>(() => {
     try {
-      return window.localStorage.getItem(journeyKey) !== "list";
+      return window.localStorage.getItem(journeyKey) === "journey";
     } catch {
-      return true;
+      return false;
     }
   });
   useEffect(() => {
     try {
-      setJourneyMode(window.localStorage.getItem(journeyKey) !== "list");
+      setJourneyMode(window.localStorage.getItem(journeyKey) === "journey");
     } catch {
-      setJourneyMode(true);
+      setJourneyMode(false);
     }
   }, [journeyKey]);
   const setModulesView = useCallback(
@@ -1105,7 +1109,7 @@ export function ModulesPage(): JSX.Element {
               role="tablist"
               aria-label="Modules view"
             >
-              {(["journey", "list"] as const).map((mode) => (
+              {(["list", "journey"] as const).map((mode) => (
                 <button
                   key={mode}
                   type="button"
