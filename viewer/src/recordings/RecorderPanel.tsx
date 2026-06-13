@@ -7,7 +7,12 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { useToast } from "@/components";
-import { PartRecorder, isRecordingSupported } from "./recorder";
+import {
+  PartRecorder,
+  isMeetingCaptureSupported,
+  isRecordingSupported,
+  type CaptureMode,
+} from "./recorder";
 import { endRecording, uploadAndTranscribePart } from "./useRecordings";
 import type { Recording } from "./types";
 
@@ -96,7 +101,11 @@ export function RecorderPanel({
   const [phase, setPhase] = useState<Phase>("idle");
   const [elapsed, setElapsed] = useState(0);
   const [busy, setBusy] = useState(false);
+  const [mode, setMode] = useState<CaptureMode>("mic");
   const supported = isRecordingSupported();
+  const meetingSupported = isMeetingCaptureSupported();
+  // The capture source is locked once the first Part has been captured.
+  const sourceLocked = nextIndexRef.current > 1;
 
   // Tick the current-part timer while actively recording.
   useEffect(() => {
@@ -141,7 +150,9 @@ export function RecorderPanel({
 
   async function startPart() {
     try {
-      await getRecorder().startPart();
+      const rec = getRecorder();
+      rec.setMode(mode); // no-op once the stream exists (mode is locked after part 1)
+      await rec.startPart();
       setElapsed(0);
       setPhase("recording");
     } catch (e) {
@@ -246,6 +257,36 @@ export function RecorderPanel({
       {recording_ && (
         <div className="mt-3">
           <LevelMeter active={recording_} getStream={() => recorderRef.current?.getStream() ?? null} />
+        </div>
+      )}
+
+      {/* Capture source — chosen before the first Part, then locked. */}
+      {!active && !sourceLocked && (
+        <div className="mt-3">
+          <div className="inline-flex overflow-hidden rounded-md border border-slate-200 text-xs dark:border-slate-700">
+            <button
+              type="button"
+              onClick={() => setMode("mic")}
+              className={`px-3 py-1.5 font-medium ${mode === "mic" ? "bg-indigo-600 text-white" : "text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"}`}
+            >
+              Microphone
+            </button>
+            <button
+              type="button"
+              onClick={() => meetingSupported && setMode("meeting")}
+              disabled={!meetingSupported}
+              title={meetingSupported ? "" : "Tab-audio capture needs Chrome or Edge"}
+              className={`px-3 py-1.5 font-medium disabled:opacity-40 ${mode === "meeting" ? "bg-indigo-600 text-white" : "text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"}`}
+            >
+              Meeting (tab + mic)
+            </button>
+          </div>
+          {mode === "meeting" && (
+            <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
+              You'll be asked to share a tab — pick your <strong>Google Meet / Zoom</strong> tab and tick
+              <strong> "Also share tab audio"</strong>. We record everyone's audio + your mic.
+            </p>
+          )}
         </div>
       )}
 

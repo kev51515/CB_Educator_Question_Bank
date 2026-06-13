@@ -43,23 +43,78 @@ export interface PartResult {
   ext: string;
 }
 
+export type CaptureMode = "mic" | "meeting";
+
+/** True if this browser can capture tab/screen audio (Chrome/Edge; not Safari/FF). */
+export function isMeetingCaptureSupported(): boolean {
+  return (
+    typeof navigator !== "undefined" &&
+    !!navigator.mediaDevices?.getDisplayMedia &&
+    typeof window.AudioContext !== "undefined"
+  );
+}
+
 export class PartRecorder {
-  private stream: MediaStream | null = null;
+  private stream: MediaStream | null = null; // what MediaRecorder records
   private rec: MediaRecorder | null = null;
   private chunks: Blob[] = [];
   private picked = pickMime();
   private partStartedAt = 0;
   private pausedMs = 0;
   private pausedAt = 0;
+  private mode: CaptureMode = "mic";
+  // Meeting-mode plumbing we must tear down.
+  private audioCtx: AudioContext | null = null;
+  private sources: MediaStream[] = []; // raw display + mic streams to stop
+
+  /** Set BEFORE the first part starts (mic vs tab-audio+mic meeting capture). */
+  setMode(mode: CaptureMode): void {
+    this.mode = mode;
+  }
 
   fileExt(): string {
     return this.picked.ext;
   }
 
-  /** Acquire the mic once; reused across Parts until disposed. */
+  /**
+   * Acquire the capture stream once; reused across Parts until disposed.
+   * - mic:     just getUserMedia.
+   * - meeting: getDisplayMedia (a shared TAB's audio — e.g. a Google Meet) +
+   *   getUserMedia (the educator's mic), mixed into one track via Web Audio so
+   *   MediaRecorder captures both sides of the call.
+   */
   async ensureStream(): Promise<void> {
     if (this.stream) return;
-    this.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    if (this.mode === "mic") {
+      this.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      return;
+    }
+    // meeting capture
+    const display = await navigator.mediaDevices.getDisplayMedia({
+      video: true, // Chrome requires a video constraint to show the tab picker
+      audio: true,
+    });
+    this.sources.push(display);
+    const tabAudio = display.getAudioTracks();
+    // We only want audio — drop the video track immediately.
+    for (const t of display.getVideoTracks()) t.stop();
+    if (tabAudio.length === 0) {
+      this.dispose();
+      throw new Error(
+        'No tab audio captured — when sharing, pick the meeting tab and tick "Also share tab audio".',
+      );
+    }
+    const mic = await navigator.mediaDevices.getUserMedia({ audio: true });
+    this.sources.push(mic);
+
+    const Ctx =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    this.audioCtx = new Ctx();
+    const dest = this.audioCtx.createMediaStreamDestination();
+    this.audioCtx.createMediaStreamSource(new MediaStream(tabAudio)).connect(dest);
+    this.audioCtx.createMediaStreamSource(mic).connect(dest);
+    this.stream = dest.stream;
   }
 
   /** The live mic stream (for a level meter), or null before capture starts. */
@@ -141,6 +196,16 @@ export class PartRecorder {
     if (this.stream) {
       for (const t of this.stream.getTracks()) t.stop();
       this.stream = null;
+    }
+    // Meeting-mode teardown: stop the raw display + mic streams and close the
+    // mixing AudioContext.
+    for (const s of this.sources) {
+      for (const t of s.getTracks()) t.stop();
+    }
+    this.sources = [];
+    if (this.audioCtx) {
+      void this.audioCtx.close();
+      this.audioCtx = null;
     }
   }
 }
