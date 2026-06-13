@@ -29,6 +29,7 @@ import {
   useRecordingsList,
 } from "./useRecordings";
 import { formatDuration, relativeTime } from "./format";
+import { GoogleCalendarCard } from "./GoogleCalendarCard";
 import type { Recording, RecordingStatus, RecordingSubject } from "./types";
 
 const MAX_AUDIO = 200 * 1024 * 1024; // 200 MB
@@ -332,6 +333,8 @@ export function RecordingsListPage() {
           + New recording
         </button>
       </div>
+
+      <GoogleCalendarCard />
 
       {recordings.length > 0 && (
         <div className="mb-4 flex flex-wrap items-center gap-2">
