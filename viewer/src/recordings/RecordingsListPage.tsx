@@ -3,7 +3,7 @@
  * modal. Search, status filter, relative time + duration, and per-row kebab
  * (rename inline / delete). Auto-refreshes while anything is still processing.
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Combobox,
@@ -302,26 +302,35 @@ function fmtEta(seconds: number | null): string {
 }
 
 /** Upload progress bar shown in the New-recording modal during a file upload. */
-function UploadProgressBar({ p }: { p: UploadProgress }) {
+function UploadProgressBar({ p, onCancel }: { p: UploadProgress; onCancel: () => void }) {
   const pct = Math.round(p.pct * 100);
   return (
-    <div className="w-full">
-      <div className="mb-1 flex items-center justify-between text-xs text-slate-600 dark:text-slate-300">
-        <span>
-          Uploading… {pct}% · {fmtMB(p.loaded)} / {fmtMB(p.total)}
-        </span>
-        <span className="tabular-nums text-slate-400">{fmtEta(p.etaSeconds)}</span>
+    <div className="flex w-full items-end gap-3">
+      <div className="min-w-0 flex-1">
+        <div className="mb-1 flex items-center justify-between text-xs text-slate-600 dark:text-slate-300">
+          <span>
+            Uploading… {pct}% · {fmtMB(p.loaded)} / {fmtMB(p.total)}
+          </span>
+          <span className="tabular-nums text-slate-400">{fmtEta(p.etaSeconds)}</span>
+        </div>
+        <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+          <div
+            className="h-full rounded-full bg-indigo-500 transition-[width] duration-200"
+            style={{ width: `${Math.max(2, pct)}%` }}
+            role="progressbar"
+            aria-valuenow={pct}
+            aria-valuemin={0}
+            aria-valuemax={100}
+          />
+        </div>
       </div>
-      <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
-        <div
-          className="h-full rounded-full bg-indigo-500 transition-[width] duration-200"
-          style={{ width: `${Math.max(2, pct)}%` }}
-          role="progressbar"
-          aria-valuenow={pct}
-          aria-valuemin={0}
-          aria-valuemax={100}
-        />
-      </div>
+      <button
+        type="button"
+        onClick={onCancel}
+        className="shrink-0 rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-rose-50 hover:text-rose-700 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-rose-900/20"
+      >
+        Cancel
+      </button>
     </div>
   );
 }
@@ -340,6 +349,7 @@ export function RecordingsListPage() {
   const [courseId, setCourseId] = useState<string>("");
   const [submitting, setSubmitting] = useState(false);
   const [uploadProg, setUploadProg] = useState<UploadProgress | null>(null);
+  const uploadAbortRef = useRef<AbortController | null>(null);
 
   const { options: courseOptions, loading: coursesLoading } = useCourseOptions(open);
 
@@ -386,8 +396,11 @@ export function RecordingsListPage() {
     }
     setSubmitting(true);
     setUploadProg(null);
+    let rec: Awaited<ReturnType<typeof createRecording>> | null = null;
+    const controller = new AbortController();
+    uploadAbortRef.current = controller;
     try {
-      const rec = await createRecording({
+      rec = await createRecording({
         title: title || "Untitled recording",
         domain,
         subject_type: subject,
@@ -395,15 +408,22 @@ export function RecordingsListPage() {
         course_id: courseId || null,
       });
       if (files[0]) {
-        await uploadAndTranscribePart(rec, 1, files[0], setUploadProg);
+        await uploadAndTranscribePart(rec, 1, files[0], setUploadProg, controller.signal);
         await endRecording(rec.id, 0, true);
       }
       setOpen(false);
       resetForm();
       navigate(recordingPath(rec.id));
     } catch (e) {
-      toast.error(`Couldn't create the recording: ${(e as Error).message}`);
+      // Cancelled by the user: clean up the empty recording we just created.
+      if ((e as Error).name === "AbortError") {
+        if (rec) await deleteRecording(rec.id).catch(() => {});
+        toast.info("Upload cancelled");
+      } else {
+        toast.error(`Couldn't create the recording: ${(e as Error).message}`);
+      }
     } finally {
+      uploadAbortRef.current = null;
       setSubmitting(false);
       setUploadProg(null);
     }
@@ -507,7 +527,7 @@ export function RecordingsListPage() {
         title="New recording"
         footer={
           uploadProg ? (
-            <UploadProgressBar p={uploadProg} />
+            <UploadProgressBar p={uploadProg} onCancel={() => uploadAbortRef.current?.abort()} />
           ) : (
             <div className="flex justify-end gap-2">
               <button

@@ -113,10 +113,22 @@ function LiveWaveform({
   return <canvas ref={canvasRef} className="h-14 w-full" aria-hidden />;
 }
 
-/** A captured-this-session part chip with its transcription status. */
+/** A captured-this-session part chip showing its CLEAR stage, with a spinner
+ *  while it's still working (each part uploads + transcribes on its own). */
 function PartChip({ part }: { part: RecordingPart }) {
   const done = part.status === "transcribed";
   const failed = part.status === "failed";
+  const active = !done && !failed;
+  const stage =
+    part.status === "uploading"
+      ? "uploading"
+      : part.status === "queued"
+        ? "processing"
+        : part.status === "transcribing"
+          ? "transcribing"
+          : done
+            ? "done"
+            : "failed";
   return (
     <span
       className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${
@@ -124,12 +136,17 @@ function PartChip({ part }: { part: RecordingPart }) {
           ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"
           : failed
             ? "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300"
-            : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+            : "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300"
       }`}
-      title={part.status}
+      title={part.error ?? part.status}
     >
-      Part {part.part_index}
-      {done ? " ✓" : failed ? " ✗" : <span className="animate-pulse"> …</span>}
+      {active && (
+        <svg className="h-3 w-3 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+          <path className="opacity-90" fill="currentColor" d="M4 12a8 8 0 0 1 8-8V0C5.4 0 0 5.4 0 12h4z" />
+        </svg>
+      )}
+      Part {part.part_index} · {stage}
     </span>
   );
 }

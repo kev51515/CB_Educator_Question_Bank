@@ -91,19 +91,52 @@ function PartAudio({
   return <Waveform src={url} register={(el) => register(partIndex, el)} />;
 }
 
-function partStatusLabel(p: RecordingPart): string {
-  switch (p.status) {
-    case "uploading":
-      return "Uploading…";
-    case "queued":
-      return "Queued for transcription…";
-    case "transcribing":
-      return "Transcribing…";
-    case "failed":
-      return p.error ? `Failed: ${p.error}` : "Failed";
-    case "transcribed":
-      return "";
+function Spinner() {
+  return (
+    <svg className="h-3 w-3 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+      <path className="opacity-90" fill="currentColor" d="M4 12a8 8 0 0 1 8-8V0C5.4 0 0 5.4 0 12h4z" />
+    </svg>
+  );
+}
+
+/**
+ * Clear, color-coded stage badge for one Part. The three in-progress stages
+ * (Uploading → Processing → Transcribing) animate a spinner so it's obvious the
+ * Part is moving on its own — transcription starts the moment a Part uploads,
+ * no need to wait for the session to end.
+ */
+function PartStatusBadge({ part }: { part: RecordingPart }) {
+  const s = part.status;
+  const base = "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium";
+  if (s === "transcribed") {
+    return (
+      <span className={`${base} bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300`}>
+        Transcribed
+      </span>
+    );
   }
+  if (s === "failed") {
+    return (
+      <span
+        className={`${base} bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300`}
+        title={part.error ?? undefined}
+      >
+        Failed
+      </span>
+    );
+  }
+  const label = s === "uploading" ? "Uploading…" : s === "queued" ? "Processing…" : "Transcribing…";
+  const cls =
+    s === "uploading"
+      ? "bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300"
+      : "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300";
+  return (
+    <span className={`${base} ${cls}`}>
+      <Spinner />
+      {label}
+    </span>
+  );
 }
 
 /** One editable utterance line. */
@@ -210,10 +243,10 @@ function PartBlock({
           Part {part.part_index}
         </h3>
         <div className="flex items-center gap-2">
-          {partStatusLabel(part) && (
-            <span className="text-xs text-slate-500 dark:text-slate-400">
-              {pending && <span aria-hidden="true" className="mr-1 inline-block animate-pulse">●</span>}
-              {partStatusLabel(part)}
+          <PartStatusBadge part={part} />
+          {part.status === "failed" && part.error && (
+            <span className="max-w-[16rem] truncate text-xs text-rose-600 dark:text-rose-400" title={part.error}>
+              {part.error}
             </span>
           )}
           {part.status === "failed" && editable && (
@@ -223,6 +256,16 @@ function PartBlock({
               className="rounded border border-indigo-200 px-2 py-0.5 text-xs font-medium text-indigo-700 hover:bg-indigo-50 dark:border-indigo-900/50 dark:text-indigo-300"
             >
               Retry
+            </button>
+          )}
+          {pending && editable && (
+            <button
+              type="button"
+              onClick={onDelete}
+              className="rounded border border-slate-200 px-2 py-0.5 text-xs font-medium text-slate-600 hover:bg-rose-50 hover:text-rose-700 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-rose-900/20"
+              title="Stop and remove this part"
+            >
+              Stop
             </button>
           )}
           {editable && (

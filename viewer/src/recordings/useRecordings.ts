@@ -78,8 +78,13 @@ function uploadObjectWithProgress(
   blob: Blob,
   token: string,
   onProgress: (p: UploadProgress) => void,
+  signal?: AbortSignal,
 ): Promise<void> {
   return new Promise((resolve, reject) => {
+    if (signal?.aborted) {
+      reject(new DOMException("upload aborted", "AbortError"));
+      return;
+    }
     const encoded = path.split("/").map(encodeURIComponent).join("/");
     const xhr = new XMLHttpRequest();
     xhr.open("POST", `${SUPABASE_URL}/storage/v1/object/recordings/${encoded}`, true);
@@ -87,6 +92,11 @@ function uploadObjectWithProgress(
     xhr.setRequestHeader("apikey", SUPABASE_ANON_KEY);
     xhr.setRequestHeader("x-upsert", "true");
     if (blob.type) xhr.setRequestHeader("content-type", blob.type);
+
+    // Let the caller cancel an in-flight upload (human error, wrong file, …).
+    const onAbort = () => xhr.abort();
+    signal?.addEventListener("abort", onAbort);
+    const cleanup = () => signal?.removeEventListener("abort", onAbort);
 
     const started = Date.now();
     xhr.upload.onprogress = (e) => {
@@ -97,11 +107,18 @@ function uploadObjectWithProgress(
       onProgress({ loaded: e.loaded, total: e.total, pct: e.total ? e.loaded / e.total : 0, etaSeconds });
     };
     xhr.onload = () => {
+      cleanup();
       if (xhr.status >= 200 && xhr.status < 300) resolve();
       else reject(new Error(`upload failed (${xhr.status}): ${xhr.responseText?.slice(0, 200)}`));
     };
-    xhr.onerror = () => reject(new Error("upload network error"));
-    xhr.onabort = () => reject(new Error("upload aborted"));
+    xhr.onerror = () => {
+      cleanup();
+      reject(new Error("upload network error"));
+    };
+    xhr.onabort = () => {
+      cleanup();
+      reject(new DOMException("upload aborted", "AbortError"));
+    };
     xhr.send(blob);
   });
 }
@@ -119,6 +136,7 @@ export async function uploadAndTranscribePart(
   partIndex: number,
   source: PartResult | File,
   onProgress?: (p: UploadProgress) => void,
+  signal?: AbortSignal,
 ): Promise<RecordingPart> {
   const ext = "ext" in source ? source.ext : uploadExtFor(source);
   const blob = "blob" in source ? source.blob : source;
@@ -148,7 +166,7 @@ export async function uploadAndTranscribePart(
       const token = session?.access_token;
       if (!token) throw new Error("not_authenticated");
       onProgress({ loaded: 0, total: blob.size, pct: 0, etaSeconds: null });
-      await uploadObjectWithProgress(path, blob, token, onProgress);
+      await uploadObjectWithProgress(path, blob, token, onProgress, signal);
     } else {
       const { error: upErr } = await supabase.storage
         .from("recordings")
