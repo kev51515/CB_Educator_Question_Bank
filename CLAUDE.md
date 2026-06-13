@@ -93,6 +93,17 @@ In `viewer/src/components/`:
 - **`useFocusTrap`** (`viewer/src/hooks/useFocusTrap.ts`) — wired on **37+** dialogs as of Wave 21. Supports `[data-autofocus]` to override the default first-focus target. Skip on `CommandPalette` (custom trap) and non-modal floating panels.
 - **`ScoreArcSparkline`** — pure inline SVG; multi-attempt scaled-score trajectory for student surfaces
 - **`NeedsAttentionPanel`** (`viewer/src/dashboard/`) — cross-course triage for staff Dashboard
+- **`ModuleContentBlocks`** (`viewer/src/student/`) — renders Page/Video/File content in modules
+- **`ModuleEngageBlocks`** (`viewer/src/student/`) — renders Goal/Countdown/LiveSession in modules
+- **`SurveyBlock`** (`viewer/src/student/`) — survey display + response collection
+- **`VocabDeck`** (`viewer/src/student/`) — flashcard deck with SRS state
+- **`SkillDrillRoute`** (`viewer/src/student/`) — per-student skill-drill assignment runner
+- **`StudyCoachPanel`** (`viewer/src/student/`) — AI Study Coach hints + weak-skill nudges
+- **`ScoreTrajectoryCard`** (`viewer/src/student/`) — predicted score vs actual trajectory chart
+- **`ItemAnalysisView`** (`viewer/src/teacher/`) — per-choice pick rates on AssignmentOverviewPage
+- **`AttendanceTab`** (`viewer/src/teacher/`) — teacher attendance tracking per student
+- **`SessionBalanceCard`** (`viewer/src/student/`) — student session package balance display
+- **`AtRiskRow`** (`viewer/src/dashboard/`) — at-risk student triage with DM routing
 - (existing) `Highlight`, `BatchOpsBar`, `MobileTabBar`, lots of question-bank components
 
 In `viewer/src/notifications/`:
@@ -168,6 +179,10 @@ encoder. There is exactly one: **`viewer/src/lib/qbankSetUid.ts`**
   (graph/data) questions. Those are correct Reading/Writing content even
   though they look math-y — don't "fix" them as miscategorized.
 
+### Module item types (14 types, 4 sub-tab groups)
+
+**Schema:** Inline payloads ride `module_items.config jsonb NOT NULL DEFAULT '{}'`; reuse existing `url` column for Video/File/Link. **Wiring recipe:** Update 8 files when adding a new type: `tree.tsx` (ItemTypeIcon + ITEM_KIND_LABEL), `ModuleItemRowView.tsx`, `useCourseModules.ts`, `studentCourseHelpers.ts`, `StudentCourseView.tsx`, per-type render component, inline-add picker, per-type form. Full taxonomy + phasing: `docs/PLAN_MODULE_ITEM_TYPES.md` (Phase 1–4; Phase 1 shipped with Structure types; Phase 2–4 render layers wired). Skill Drill = per-student generated assignment (`kind='skill_drill'`, auto-populated from weak skills, reuses qbank runner).
+
 ---
 
 ## Canvas-aligned navigation
@@ -193,6 +208,7 @@ role home, so stale links degrade gracefully rather than 404.
 | `/educator/courses/:id/materials` | file/link library |
 | `/educator/courses/:id/grades` | gradebook |
 | `/educator/courses/:id/portfolio` | college-app portfolio (template + items + submissions + feedback) |
+| `/educator/courses/:id/attendance` | teacher attendance tracking and session packages |
 | `/educator/courses/:id/settings` | rename / archive / regen code / delete |
 | `/educator/question-bank` | question bank + Full-Test catalog tab |
 | `/educator/tests/:slug` | **per-test overview** — info, cohort stats, per-student data + Preview / Assign to course / Monitor / release (teachers land here from a test's Modules link; students get the runner). `/educator/tests/:slug/review` = answer key. |
@@ -208,6 +224,7 @@ role home, so stale links degrade gracefully rather than 404.
 | `/student` (and `/student/:code`) | student home / area selector; `:code` is the teacher-assigned login code, display-only |
 | `/student/courses/:short` | student per-course view |
 | `/student/assignment/:id/take` · `…/review/:attemptId` | assignment runner + review |
+| `/student/skill-drill/:itemId` | skill drill runner (per-student weak-skills set) |
 | `/student/my-feedback` | feedback history |
 | `/student/inbox` · `/student/account/settings` | DMs · profile |
 | `/student/practice` · `/student/mock-test` | locked under controlled access — redirect home |

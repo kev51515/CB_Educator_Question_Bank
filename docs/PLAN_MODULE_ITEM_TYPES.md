@@ -50,14 +50,22 @@ Renderers to touch for every new type:
 
 ## Phasing (each phase ships green + pushed)
 
-- **Phase 1 (foundation + Structure):** `config` column + item_type widen; grouped
-  sub-tab picker; **Note/Callout** + **Divider** (the Header-family types). Tabs
-  shown: Assess, Structure.
-- **Phase 2 (Learn content):** Page, Video, File. Adds the Learn tab.
-- **Phase 3 (Engage):** Goal, Discussion, Live Session (→ Calendar), Survey
-  (+ response table). Adds the Engage tab.
-- **Phase 4 (Premium):** Vocabulary (deck + SRS), Skill Drill (per-student
-  generator + new assignment kind). The differentiators.
+(Authoritative migration→feature mapping is `docs/MIGRATIONS.md`; numbers below match it.)
 
-Phase 1 lands the architecture (config jsonb, sub-tab band, dual-renderer
-pattern) so 2–4 are additive.
+- **Phase 1 (foundation + Structure) — SHIPPED (0226).** `config jsonb` column + item_type widen; grouped
+  sub-tab picker; **Note/Callout** + **Divider** (the Header-family types). Render in
+  `tree.tsx` + `ModuleItemRowView.tsx`.
+- **Phase 2 (Learn content) — SHIPPED (0227).** Page, Video, File. Adds the Learn tab.
+  Render: `ModuleContentBlocks.tsx`.
+- **Phase 3 (Plan + Engage) — SHIPPED (0233 Goal/Countdown/Live Session, 0234 Survey).** Adds the Plan + Engage tabs.
+  Render: `ModuleEngageBlocks.tsx` (Goal/Countdown/LiveSession), `SurveyBlock.tsx` + `SurveyResultsButton.tsx`
+  (Survey has its own `module_item_survey_responses` table + submit/results RPCs). **Discussion deferred** (no student discussion surface yet).
+- **Phase 4 (Premium) — SHIPPED.** Vocabulary (0236 — deck in config + `vocab_review_state` Leitner SRS; `VocabDeck.tsx`).
+  Skill Drill (0237 plumbing + 0238 enable — per-student HIDDEN qbank_set assignment via `ensure_skill_drill_assignment`,
+  selection client-side via `useSkillDrillSet`; `SkillDrillRoute.tsx` reuses the qbank runner).
+
+Cross-cutting: module-item **DnD cross-module fix** = 0229 (separate from the type work).
+
+Phase 1 landed the architecture (config jsonb, sub-tab band, dual-renderer
+pattern) so 2–4 were additive. **Deferred follow-ups:** Discussion item type (needs a student
+discussion surface); teacher per-student score-trend RPC (for At-Risk v2); skill-drill topic↔skill mapping table if vocabularies diverge.

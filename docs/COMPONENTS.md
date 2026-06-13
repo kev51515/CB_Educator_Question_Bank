@@ -97,6 +97,18 @@ For the underlying design language (color, typography, spacing), see
   filter views.
 - **FilterShortcuts** (`components/FilterShortcuts.tsx`) — Keyboard shortcuts
   bound to common filter combinations.
+- **ModuleContentBlocks** — Renders Page/Video/File content blocks in student modules.
+- **ModuleEngageBlocks** — Renders Goal/Countdown/LiveSession interactive blocks in student modules.
+- **SurveyBlock** — Survey display + response collection for module surveys.
+- **VocabDeck** — Flashcard deck with spaced-repetition state for vocabulary practice.
+- **SkillDrillRoute** — Per-student skill drill assignment runner (reuses QBank runner).
+- **StudyCoachPanel** — AI Study Coach hints + weak-skill nudges on student dashboard.
+- **ScoreTrajectoryCard** — Chart showing predicted vs. actual SAT score trajectory.
+- **ItemAnalysisView** — Per-choice pick-rate analytics tab on AssignmentOverviewPage.
+- **AttendanceTab** — Teacher attendance tracking and session package management per student.
+- **SessionBalanceCard** — Student view of session package balance and remaining capacity.
+- **AtRiskRow** — At-risk student triage display with direct-message routing on dashboard.
+
 - **SidebarShared / SidebarDomainTree / SidebarSearchBox / SidebarSetToggle /
   SidebarStatusFilter** (`components/Sidebar*.tsx`) — Sidebar sub-components
   used by `SidebarV2`.

@@ -1,5 +1,18 @@
 # Session Recap
 
+## Premium module item types + brainstorm features #1/2/4/5/6 + DnD fix (2026-06-14) — SHIPPED
+
+Unified picker redesign (grouped sub-tabs: Learn · Assess · Engage · Plan · Structure) now exposes 14 item types vs. the original 6. **Phase 1 shipped** (migrations 0229, 0233, 0234, 0236, 0237, 0238): Structure types (Note/Divider), module item DnD cross-module fix, and student red-dot tracking. **Phase 2–4** (Learn, Engage, Premium) render layers wired: `ModuleContentBlocks`, `ModuleEngageBlocks`, `SurveyBlock`, `VocabDeck`, `SkillDrillRoute`. Inline config payloads ride `module_items.config jsonb`. See `docs/PLAN_MODULE_ITEM_TYPES.md` for the taxonomy; `0237`/`0238` auto-generate per-student Skill Drills (reusing weak-skills + qbank runner).
+
+**Brainstorm features #1–6 shipped incrementally** (0240, 0241, 0245, 0246):
+- **#1 Score Trajectory + Target-Gap** (0240, `student/ScoreTrajectoryCard.tsx`): charts predicted 1400/1500 score vs actual trajectory.
+- **#2 AI Study Coach** (0241, `study-coach` edge fn + `student/StudyCoachPanel.tsx`): per-student hints + weak-skill nudges.
+- **#4 Cohort Distractor Analytics** (0245, `teacher/ItemAnalysisView.tsx` tab on AssignmentOverviewPage): shows per-choice pick rates.
+- **#5 At-Risk Triage v2** (`dashboard/AtRiskRow.tsx`, atRisk lane in useNeedsAttention, shared `inbox/sendDirectMessage.ts`).
+- **#6 Attendance + Session Packages** (0246, `teacher/AttendanceTab.tsx` + `student/SessionBalanceCard.tsx`).
+
+**Guardian Digest (#3)** shipped in parallel session (0239/0242/0243/0244).
+
 ## Full-test content-fidelity QA + pipeline hardening — all 16 tests (2026-06-13) — SHIPPED
 
 Audited every full test against its source PDF and fixed the silent corruption

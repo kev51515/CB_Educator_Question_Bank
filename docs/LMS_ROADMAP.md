@@ -38,6 +38,8 @@ parent magic-link (M24 — needs design input), code-quality refactors,
 B6 server-side per-question persistence. See `docs/SESSION_RECAP.md`
 Wave 21 section.
 
+**Wave 21H–J (Jun 2026)** continued autonomous high-leverage follow-through: Premium module item types (14 types, 4 sub-tab groups; 0229–0246; `ModuleContentBlocks`, `ModuleEngageBlocks`, `VocabDeck`, `SkillDrillRoute`), Student red-dot new/unopened tracking, Brainstorm features #1/2/4/5/6 (Score Trajectory, AI Study Coach, Cohort Distractor Analytics, At-Risk Triage v2, Attendance + Session Packages). Skill Drill = per-student hidden assignment (auto-gen'd from weak skills); Survey + Vocabulary schema wired; Discussion deferred. Full-test content-fidelity QA fixed OCR corruption across all 16 tests + hardened seeding. CB OG figures re-cropped to spec; tables/bullets/italics rendering shipped. See `docs/SESSION_RECAP.md` Wave 21H–J section.
+
 **Wave 21B (Jun 2026)** continued the autonomous follow-through and
 closed the M6/M127 loop end-to-end. Round 4 shipped the gradebook + score
 hero migration to use `effective_score` everywhere (with "Adjusted by
@@ -91,16 +93,17 @@ SEB hard-lockdown design (Phase 3, §5).
 | People (Roster) | Built + bulk import |
 | Course join codes / invitations | Built |
 | Assignments | Built (wired, snapshot, multi-attempt, late penalty) |
-| Quizzes / Tests | Built (bound to assignments) |
-| Modules (sequenced learning units) | Built (mig 0011) |
-| Announcements | Built (mig 0015) |
-| Discussions | Built (mig 0025 + 0030) |
-| Pages (rich-text course content) | Built (materials kind='note', KaTeX) |
-| Files / Materials | Built (mig 0016 + Storage) |
-| Grades / Gradebook | Built |
-| Calendar | Built |
-| Inbox / Messaging | Built (mig 0026) |
-| In-app notifications | Built (mig 0029) |
+| Quizzes / Tests | Built (bound to assignments; full-test proctoring soft/strict, 0108–0109) |
+| Modules (sequenced learning units) | Built (mig 0011; 14 item types: Page/Video/File/Vocabulary/Assignment/Practice Test/Question Set/Full-Test/Skill Drill/Live Session/Survey/Goal/Countdown/Header/Note/Divider/Link; 0229–0246) |
+| Announcements | Built (mig 0015; publish_at scheduled; 0054) |
+| Discussions | Built (mig 0025 + 0030; item-links in Modules pending) |
+| Pages (rich-text course content) | Built (materials kind='note', KaTeX; Module Page type) |
+| Files / Materials | Built (mig 0016 + Storage; Module File type) |
+| Grades / Gradebook | Built (grading persistence 0056; effective_score 0057–0059) |
+| Calendar | Built (Live Session + Goal types publish to Calendar) |
+| Inbox / Messaging | Built (mig 0026; At-Risk Triage v2 with DMs) |
+| In-app notifications | Built (mig 0029; grade-complete 0059, scheduled publish 0058) |
+| Attendance Tracking | Built (teacher + student views; 0246) |
 | Rubrics | Out of scope¹ |
 | Outcomes (standards alignment) | Built (skill mastery, mig 0024) |
 | SpeedGrader (manual grading UI) | Out of scope¹ |
