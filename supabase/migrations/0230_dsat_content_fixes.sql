@@ -1,5 +1,5 @@
 -- =============================================================================
--- Migration: 0227_dsat_content_fixes.sql
+-- Migration: 0230_dsat_content_fixes.sql
 -- Purpose:   Content-fidelity fixes for the six DSAT full tests, found by the
 --            2026-06-13 vision-QA pass (subagents read every question page of
 --            the scanned source PDFs vs the live DB). These tests were seeded
