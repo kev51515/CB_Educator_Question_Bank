@@ -28,6 +28,7 @@ import {
   uploadAndTranscribePart,
   useRecordingSearch,
   useRecordingsList,
+  type UploadProgress,
 } from "./useRecordings";
 import { fmtTs, formatDuration, relativeTime } from "./format";
 import { GoogleCalendarCard } from "./GoogleCalendarCard";
@@ -289,6 +290,42 @@ function SearchHitRow({ hit, onOpen }: { hit: RecordingSearchHit; onOpen: () => 
   );
 }
 
+function fmtMB(bytes: number): string {
+  return `${(bytes / 1024 / 1024).toFixed(bytes < 100 * 1024 * 1024 ? 1 : 0)} MB`;
+}
+function fmtEta(seconds: number | null): string {
+  if (seconds == null) return "estimating…";
+  if (seconds < 60) return `~${seconds}s left`;
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `~${m}m ${s.toString().padStart(2, "0")}s left`;
+}
+
+/** Upload progress bar shown in the New-recording modal during a file upload. */
+function UploadProgressBar({ p }: { p: UploadProgress }) {
+  const pct = Math.round(p.pct * 100);
+  return (
+    <div className="w-full">
+      <div className="mb-1 flex items-center justify-between text-xs text-slate-600 dark:text-slate-300">
+        <span>
+          Uploading… {pct}% · {fmtMB(p.loaded)} / {fmtMB(p.total)}
+        </span>
+        <span className="tabular-nums text-slate-400">{fmtEta(p.etaSeconds)}</span>
+      </div>
+      <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+        <div
+          className="h-full rounded-full bg-indigo-500 transition-[width] duration-200"
+          style={{ width: `${Math.max(2, pct)}%` }}
+          role="progressbar"
+          aria-valuenow={pct}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        />
+      </div>
+    </div>
+  );
+}
+
 export function RecordingsListPage() {
   const { recordings, loading, error, refresh } = useRecordingsList();
   const { domain } = useDomain();
@@ -302,6 +339,7 @@ export function RecordingsListPage() {
   const [files, setFiles] = useState<File[]>([]);
   const [courseId, setCourseId] = useState<string>("");
   const [submitting, setSubmitting] = useState(false);
+  const [uploadProg, setUploadProg] = useState<UploadProgress | null>(null);
 
   const { options: courseOptions, loading: coursesLoading } = useCourseOptions(open);
 
@@ -347,6 +385,7 @@ export function RecordingsListPage() {
       return;
     }
     setSubmitting(true);
+    setUploadProg(null);
     try {
       const rec = await createRecording({
         title: title || "Untitled recording",
@@ -356,7 +395,7 @@ export function RecordingsListPage() {
         course_id: courseId || null,
       });
       if (files[0]) {
-        await uploadAndTranscribePart(rec, 1, files[0]);
+        await uploadAndTranscribePart(rec, 1, files[0], setUploadProg);
         await endRecording(rec.id, 0, true);
       }
       setOpen(false);
@@ -366,6 +405,7 @@ export function RecordingsListPage() {
       toast.error(`Couldn't create the recording: ${(e as Error).message}`);
     } finally {
       setSubmitting(false);
+      setUploadProg(null);
     }
   }
 
@@ -466,24 +506,28 @@ export function RecordingsListPage() {
         onClose={() => !submitting && setOpen(false)}
         title="New recording"
         footer={
-          <div className="flex justify-end gap-2">
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              disabled={submitting}
-              className="rounded-md border border-slate-200 px-4 py-2 text-sm font-medium hover:bg-slate-50 disabled:opacity-50 dark:border-slate-700 dark:hover:bg-slate-800"
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              onClick={() => void handleCreate()}
-              disabled={submitting || !consentOk}
-              className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
-            >
-              {submitting ? "Creating…" : files[0] ? "Create & upload" : "Start recording"}
-            </button>
-          </div>
+          uploadProg ? (
+            <UploadProgressBar p={uploadProg} />
+          ) : (
+            <div className="flex justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                disabled={submitting}
+                className="rounded-md border border-slate-200 px-4 py-2 text-sm font-medium hover:bg-slate-50 disabled:opacity-50 dark:border-slate-700 dark:hover:bg-slate-800"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => void handleCreate()}
+                disabled={submitting || !consentOk}
+                className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
+              >
+                {submitting ? "Creating…" : files[0] ? "Create & upload" : "Start recording"}
+              </button>
+            </div>
+          )
         }
       >
         <div className="space-y-4">

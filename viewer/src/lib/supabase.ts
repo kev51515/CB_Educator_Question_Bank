@@ -19,3 +19,9 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 export const supabase: SupabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+
+// Exposed for the few places that need to hit the Storage REST endpoint
+// directly (e.g. an XHR upload with progress events — supabase-js's
+// fetch-based .upload() can't report upload progress).
+export const SUPABASE_URL = supabaseUrl;
+export const SUPABASE_ANON_KEY = supabaseAnonKey;

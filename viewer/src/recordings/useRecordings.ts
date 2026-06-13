@@ -5,7 +5,7 @@
  * CLAUDE.md (see Wave 21J).
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase, SUPABASE_URL, SUPABASE_ANON_KEY } from "@/lib/supabase";
 import type { Domain } from "@/lib/domain";
 import type {
   Recording,
@@ -58,15 +58,67 @@ export async function createRecording(
   return data as Recording;
 }
 
+/** Progress for a Part upload: bytes sent / total + a smoothed ETA in seconds. */
+export interface UploadProgress {
+  loaded: number;
+  total: number;
+  pct: number; // 0..1
+  etaSeconds: number | null; // null until we have a rate estimate
+}
+
+/**
+ * Upload a Blob to the private recordings bucket via the Storage REST endpoint
+ * using XHR, so we get real `upload.onprogress` events (supabase-js's
+ * fetch-based .upload() reports nothing). Used for the file-upload path where
+ * the object can be hundreds of MB; the live recorder's small Parts keep using
+ * the plain client upload.
+ */
+function uploadObjectWithProgress(
+  path: string,
+  blob: Blob,
+  token: string,
+  onProgress: (p: UploadProgress) => void,
+): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const encoded = path.split("/").map(encodeURIComponent).join("/");
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", `${SUPABASE_URL}/storage/v1/object/recordings/${encoded}`, true);
+    xhr.setRequestHeader("authorization", `Bearer ${token}`);
+    xhr.setRequestHeader("apikey", SUPABASE_ANON_KEY);
+    xhr.setRequestHeader("x-upsert", "true");
+    if (blob.type) xhr.setRequestHeader("content-type", blob.type);
+
+    const started = Date.now();
+    xhr.upload.onprogress = (e) => {
+      if (!e.lengthComputable) return;
+      const elapsed = (Date.now() - started) / 1000;
+      const rate = elapsed > 0 ? e.loaded / elapsed : 0; // bytes/sec
+      const etaSeconds = rate > 0 ? Math.round((e.total - e.loaded) / rate) : null;
+      onProgress({ loaded: e.loaded, total: e.total, pct: e.total ? e.loaded / e.total : 0, etaSeconds });
+    };
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) resolve();
+      else reject(new Error(`upload failed (${xhr.status}): ${xhr.responseText?.slice(0, 200)}`));
+    };
+    xhr.onerror = () => reject(new Error("upload network error"));
+    xhr.onabort = () => reject(new Error("upload aborted"));
+    xhr.send(blob);
+  });
+}
+
 /**
  * Upload one finished Part's audio to the private bucket, create its
  * `recording_parts` row, then kick off transcription. The bucket path begins
  * with the owner id so object RLS passes (see migration 0208).
+ *
+ * Pass `onProgress` to upload via XHR with byte-level progress (used for large
+ * file uploads); omit it and the plain client upload is used (live recorder).
  */
 export async function uploadAndTranscribePart(
   recording: Recording,
   partIndex: number,
   source: PartResult | File,
+  onProgress?: (p: UploadProgress) => void,
 ): Promise<RecordingPart> {
   const ext = "ext" in source ? source.ext : uploadExtFor(source);
   const blob = "blob" in source ? source.blob : source;
@@ -88,19 +140,31 @@ export async function uploadAndTranscribePart(
     .single();
   if (insErr) throw insErr;
 
-  // 2) upload the audio object
-  const { error: upErr } = await supabase.storage
-    .from("recordings")
-    .upload(path, blob, {
-      contentType: blob.type || "audio/webm",
-      upsert: true,
-    });
-  if (upErr) {
+  // 2) upload the audio object. With onProgress we use an XHR upload (byte
+  //    progress + ETA) for large files; otherwise the plain client upload.
+  try {
+    if (onProgress) {
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token;
+      if (!token) throw new Error("not_authenticated");
+      onProgress({ loaded: 0, total: blob.size, pct: 0, etaSeconds: null });
+      await uploadObjectWithProgress(path, blob, token, onProgress);
+    } else {
+      const { error: upErr } = await supabase.storage
+        .from("recordings")
+        .upload(path, blob, {
+          contentType: blob.type || "audio/webm",
+          upsert: true,
+        });
+      if (upErr) throw upErr;
+    }
+  } catch (e) {
+    const msg = (e as Error).message;
     await supabase
       .from("recording_parts")
-      .update({ status: "failed", error: upErr.message })
+      .update({ status: "failed", error: msg })
       .eq("id", (partRow as RecordingPart).id);
-    throw upErr;
+    throw e;
   }
 
   // 3) mark queued, then ask the edge function to submit it to AssemblyAI.
