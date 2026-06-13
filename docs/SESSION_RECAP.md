@@ -1,5 +1,44 @@
 # Session Recap
 
+## CB OG figures + table rendering — exact replication of the CB PDF (2026-06-13) — SHIPPED
+
+Two fixes toward exact replication of College Board PDF formatting in the
+full-test runner, both shipped to prod (CF Pages).
+
+**1. Table / bullet / italic rendering (`viewer/src/fulltest/passageRender.tsx`,
+commit a5a74174).** This file's improvements had been sitting **uncommitted**
+in the working tree — students saw raw pipe characters instead of tables. Now
+committed and live:
+- **Tables** — pipe-delimited rows (≥2 consecutive) render as real `<table>`s.
+  Strips leading/trailing empty border-cells from `|…|` math tables, drops
+  markdown `| --- |` separator rows, right-aligns numeric columns, and renders
+  each cell through `RichInline` so `$math$` inside cells (e.g. cb-og-5 m3-q5's
+  `| $x$ | $f(x)$ |`) renders via KaTeX. Table-level footnotes ("Rows may not
+  add up to 100 due to rounding.") render as small italic notes.
+- **Bullet lists** — `•` blocks split per line with CSS hanging indent so wrapped
+  lines align under the text, not the bullet.
+- **Italics** — `<i>…</i>` markup renders as `<em>`, offset-preserving so the
+  highlight model still maps.
+
+**2. CB OG figures re-cropped from source PDFs with margin (94/95, commit
+2d369012).** The original crops (migration 0189) were too tight — content
+touched or clipped the edge (e.g. cb-og-10 m2-q11's white-tailed-deer bar). Now
+re-cropped with a clean breathing-room margin via `.work/cb-og/recrop.py`:
+- Located each figure by **searching** the source PDF (the raw JSON `page` field
+  is the *printed* page number; PDF page = printed + ~2 front-matter offset —
+  trusting it directly is what put the math reference sheet on m3-q2 in an
+  earlier naive attempt). Rendered pages at **200 DPI** (the figures' native
+  resolution) so each stored crop is a pixel-exact sub-image → `cv2.matchTemplate`
+  NCC=1.00/IoU=1.00, gated so a wrong-region match is impossible.
+- **Gutter-aware expansion** grows each side through *connected* clipped content
+  (un-clipping bars/frames/labels) but stops in the whitespace gutter before
+  *external* content (question-number badge, grey header strip, stem text). One
+  figure (cb-og-2 m1-q14) didn't meet the gate and safely kept its correct
+  original. Per-test `figures-manifest.json` records the trace.
+
+Pipeline gotchas recorded in the `cb-og-import-pipeline` memory. `.work/` (incl.
+`recrop.py`, the 200-DPI renders, manifests) is gitignored — only the PNGs ship.
+
 ## Recordings — audio → transcript → AI notes → quiz (2026-06-12) — SHIPPED (backend live; publish deferred)
 
 New owner-facing **Recordings** surface (`/educator/recordings`) for all three
