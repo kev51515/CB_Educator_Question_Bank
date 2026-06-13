@@ -7,26 +7,34 @@
  *
  *   - 6-dot vertical grip icon trigger (40x40px tap target on mobile, 28x28 on
  *     desktop) with the accessible label "More actions".
- *   - Anchored bottom-right by default; flips to bottom-left if the menu
- *     would overflow the right viewport edge (cards flush with page edges).
+ *   - Rendered in a PORTAL with fixed positioning, anchored to the trigger, so
+ *     an `overflow-hidden`/`overflow-auto` ancestor (e.g. a rounded list) can
+ *     never clip it. Flips left/up when it would overflow the viewport edge.
  *   - Max-width-aware (`min-w-[11rem] max-w-[18rem]`) so a single wide label
  *     can't push the menu off-screen; long labels truncate with ellipsis and
  *     expose the full string via `title` on hover.
  *   - Disabled items render in muted slate and no-op on click; pair with the
  *     `hint` field to surface the reason (tooltip).
  *   - Destructive items render in rose-600.
- *   - Closes on outside click + Escape; opens/closes on trigger click.
+ *   - Closes on outside click, Escape, and on scroll/resize (so the fixed-
+ *     positioned menu can't drift away from its trigger).
  *
  * A11y (M27):
  *   - Trigger exposes `aria-haspopup="menu"` + `aria-expanded`.
  *   - Menu container is `role="menu"`; items are `role="menuitem"`.
  *   - Roving tabindex on items: ArrowDown/Up cycles focus, Home/End jump to
  *     first/last, Esc closes + restores focus to trigger, Enter/Space invokes.
- *
- * Consumers supply an options array; this component owns all the open-state,
- * outside-click, escape-to-close and overflow-flip logic.
  */
-import { useEffect, useMemo, useRef, useState, type JSX, type KeyboardEvent as ReactKeyboardEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type JSX,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
+import { createPortal } from "react-dom";
 
 export interface KebabMenuOption {
   label: string;
@@ -38,24 +46,16 @@ export interface KebabMenuOption {
   onSelect: () => void;
 }
 
-/**
- * Tiny presentational kebab menu. Closes on outside click + Escape.
- *
- * Positioning: anchored to the bottom-right of the trigger by default
- * (most kebabs live at the right edge of a row). After mount we measure
- * viewport position and flip to bottom-left if the menu would overflow the
- * window on the right edge. Closes on outside click + Escape.
- */
+interface Coords {
+  top: number;
+  left: number;
+}
+
 export function KebabMenu({ options }: { options: readonly KebabMenuOption[] }): JSX.Element {
   const [open, setOpen] = useState(false);
-  // `null` until we've measured; rendered invisibly on first paint, then
-  // re-positioned and revealed. Avoids a one-frame flicker on the wrong side.
-  const [side, setSide] = useState<"right" | "left" | null>(null);
-  // Vertical flip: open up if menu would overflow the bottom of the viewport
-  // (e.g. last row on the page). `null` mirrors the invisible-first-paint
-  // pattern used by horizontal `side`.
-  const [vside, setVside] = useState<"down" | "up" | null>(null);
-  const rootRef = useRef<HTMLDivElement | null>(null);
+  // Fixed-position coords for the portaled menu. `null` until measured —
+  // rendered invisibly on first paint, then positioned + revealed (no flicker).
+  const [coords, setCoords] = useState<Coords | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -67,65 +67,82 @@ export function KebabMenu({ options }: { options: readonly KebabMenuOption[] }):
     return options.findIndex((o) => !o.disabled);
   }, [options]);
 
+  // Position the menu (fixed, viewport coords) anchored to the trigger, flipping
+  // left/up if it would overflow the right/bottom edge.
+  const reposition = useCallback((): void => {
+    const trigger = triggerRef.current;
+    const menu = menuRef.current;
+    if (!trigger || !menu) return;
+    const t = trigger.getBoundingClientRect();
+    const mw = menu.offsetWidth;
+    const mh = menu.offsetHeight;
+    const gap = 4;
+    const margin = 8;
+
+    // Horizontal: right-align to the trigger by default; clamp into viewport.
+    let left = t.right - mw;
+    if (left < margin) left = Math.min(t.left, window.innerWidth - mw - margin);
+    if (left < margin) left = margin;
+
+    // Vertical: below by default; flip above if it would overflow the bottom.
+    let top = t.bottom + gap;
+    if (top + mh > window.innerHeight - margin) {
+      const above = t.top - mh - gap;
+      top = above >= margin ? above : Math.max(margin, window.innerHeight - mh - margin);
+    }
+    setCoords({ top, left });
+  }, []);
+
   useEffect(() => {
     if (!open) {
-      setSide(null);
-      setVside(null);
+      setCoords(null);
       setActiveIndex(-1);
       return;
     }
     const onDocClick = (e: MouseEvent): void => {
-      if (!rootRef.current) return;
-      if (!rootRef.current.contains(e.target as Node)) setOpen(false);
+      const target = e.target as Node;
+      if (triggerRef.current?.contains(target)) return;
+      if (menuRef.current?.contains(target)) return;
+      setOpen(false);
     };
     const onKey = (e: KeyboardEvent): void => {
       if (e.key === "Escape") {
         setOpen(false);
-        // Restore focus to trigger.
         triggerRef.current?.focus();
       }
     };
+    // A fixed-positioned menu would drift from its trigger on scroll/resize —
+    // close instead of chasing it (matches common menu behaviour).
+    const onScrollOrResize = (): void => setOpen(false);
     document.addEventListener("mousedown", onDocClick);
     document.addEventListener("keydown", onKey);
+    window.addEventListener("scroll", onScrollOrResize, true);
+    window.addEventListener("resize", onScrollOrResize);
     return () => {
       document.removeEventListener("mousedown", onDocClick);
       document.removeEventListener("keydown", onKey);
+      window.removeEventListener("scroll", onScrollOrResize, true);
+      window.removeEventListener("resize", onScrollOrResize);
     };
   }, [open]);
 
-  // Measure after layout: if the right edge of the menu would overflow the
-  // viewport (e.g. kebab sits in a card flush with the page edge), flip to
-  // left-anchored. Runs once per open via a layout-effect-style timeout.
+  // Measure + position after the menu mounts.
   useEffect(() => {
-    if (!open || !menuRef.current) return;
-    const rect = menuRef.current.getBoundingClientRect();
-    if (rect.right > window.innerWidth - 8) {
-      setSide("left");
-    } else {
-      setSide("right");
-    }
-    if (rect.bottom > window.innerHeight - 8) {
-      setVside("up");
-    } else {
-      setVside("down");
-    }
-  }, [open]);
+    if (!open) return;
+    reposition();
+  }, [open, reposition]);
 
   // Focus the first enabled item once positioning is settled.
   useEffect(() => {
-    if (!open) return;
-    if (side === null || vside === null) return;
-    if (firstEnabledIndex < 0) return;
+    if (!open || coords === null || firstEnabledIndex < 0) return;
     setActiveIndex(firstEnabledIndex);
-    const el = itemRefs.current[firstEnabledIndex];
-    el?.focus();
-  }, [open, side, vside, firstEnabledIndex]);
+    itemRefs.current[firstEnabledIndex]?.focus();
+  }, [open, coords, firstEnabledIndex]);
 
   // Move focus when activeIndex changes (after the initial set).
   useEffect(() => {
     if (!open || activeIndex < 0) return;
-    const el = itemRefs.current[activeIndex];
-    el?.focus();
+    itemRefs.current[activeIndex]?.focus();
   }, [open, activeIndex]);
 
   const nextEnabled = (start: number, dir: 1 | -1): number => {
@@ -168,7 +185,6 @@ export function KebabMenu({ options }: { options: readonly KebabMenuOption[] }):
       const i = firstOrLastEnabled("last");
       if (i >= 0) setActiveIndex(i);
     } else if (e.key === "Tab") {
-      // Tab closes the menu and lets focus move naturally.
       setOpen(false);
     }
   };
@@ -182,7 +198,7 @@ export function KebabMenu({ options }: { options: readonly KebabMenuOption[] }):
   };
 
   return (
-    <div className="relative" ref={rootRef}>
+    <>
       <button
         ref={triggerRef}
         type="button"
@@ -191,7 +207,6 @@ export function KebabMenu({ options }: { options: readonly KebabMenuOption[] }):
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         onKeyDown={(e) => {
-          // Allow ArrowDown/ArrowUp/Enter/Space to open + focus first item.
           if (!open && (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "Enter" || e.key === " ")) {
             e.preventDefault();
             setOpen(true);
@@ -205,47 +220,46 @@ export function KebabMenu({ options }: { options: readonly KebabMenuOption[] }):
           <circle cx={13} cy={8} r={1.5} fill="currentColor" />
         </svg>
       </button>
-      {open && (
-        <div
-          ref={menuRef}
-          role="menu"
-          onKeyDown={onMenuKeyDown}
-          // Max-width-aware: comfortable for normal labels, capped so a wide
-          // edge case can't push beyond the viewport. Items truncate with
-          // ellipsis if their label exceeds; the `title` attribute exposes
-          // the full string on hover.
-          className={`absolute z-50 min-w-[11rem] max-w-[18rem] rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg py-1 text-sm ${
-            side === "left" ? "left-0" : "right-0"
-          } ${vside === "up" ? "bottom-full mb-1" : "top-full mt-1"} ${side === null || vside === null ? "invisible" : ""}`}
-        >
-          {options.map((opt, i) => (
-            <button
-              key={opt.label}
-              ref={(el) => {
-                itemRefs.current[i] = el;
-              }}
-              type="button"
-              role="menuitem"
-              tabIndex={i === activeIndex ? 0 : -1}
-              title={opt.hint ?? opt.label}
-              disabled={opt.disabled}
-              onMouseEnter={() => {
-                if (!opt.disabled) setActiveIndex(i);
-              }}
-              onClick={() => invoke(i)}
-              className={`block w-full text-left px-3 py-2.5 md:py-1.5 truncate focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500 ${
-                opt.disabled
-                  ? "text-slate-400 dark:text-slate-600 cursor-not-allowed"
-                  : opt.destructive
-                    ? "text-rose-600 dark:text-rose-400 hover:bg-slate-100 dark:hover:bg-slate-800"
-                    : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
-              }`}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
+      {open &&
+        createPortal(
+          <div
+            ref={menuRef}
+            role="menu"
+            onKeyDown={onMenuKeyDown}
+            style={{ position: "fixed", top: coords?.top ?? -9999, left: coords?.left ?? -9999 }}
+            className={`z-[100] min-w-[11rem] max-w-[18rem] rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-700 shadow-lg py-1 text-sm ${
+              coords === null ? "invisible" : ""
+            }`}
+          >
+            {options.map((opt, i) => (
+              <button
+                key={opt.label}
+                ref={(el) => {
+                  itemRefs.current[i] = el;
+                }}
+                type="button"
+                role="menuitem"
+                tabIndex={i === activeIndex ? 0 : -1}
+                title={opt.hint}
+                disabled={opt.disabled}
+                onMouseEnter={() => {
+                  if (!opt.disabled) setActiveIndex(i);
+                }}
+                onClick={() => invoke(i)}
+                className={`block w-full text-left px-3 py-2.5 md:py-1.5 truncate focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500 ${
+                  opt.disabled
+                    ? "text-slate-400 dark:text-slate-600 cursor-not-allowed"
+                    : opt.destructive
+                      ? "text-rose-600 dark:text-rose-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                      : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>,
+          document.body,
+        )}
+    </>
   );
 }

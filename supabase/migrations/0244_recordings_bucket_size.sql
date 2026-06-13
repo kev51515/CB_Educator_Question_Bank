@@ -13,8 +13,11 @@
 -- Forward-only. Idempotent.
 -- =============================================================================
 
+-- 1000 MB. NOTE: the effective cap is min(this, the PROJECT global storage
+-- limit), so the project's global "Upload file size limit" (Dashboard →
+-- Settings → Storage) must also be ≥ this for large uploads to land.
 UPDATE storage.buckets
-   SET file_size_limit = 524288000  -- 500 MB
+   SET file_size_limit = 1048576000  -- 1000 MB
  WHERE id = 'recordings';
 
 -- =============================================================================
