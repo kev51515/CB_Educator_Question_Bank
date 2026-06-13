@@ -77,6 +77,7 @@ import {
 import { ModuleItemRowView } from "./ModuleItemRowView";
 import { StatCard } from "./StatCard";
 import { ScoreTrajectoryCard } from "./ScoreTrajectoryCard";
+import { StudyCoachPanel } from "./StudyCoachPanel";
 
 const collapseKey = (courseId: string): string =>
   `student.courseModules.collapsed:${courseId}`;
@@ -844,6 +845,7 @@ export function StudentCourseView(): JSX.Element {
                   Academic (class) courses only; the card self-gates to an
                   honest locked state until the student has ≥3 released tests. */}
               {isClassCourse && <ScoreTrajectoryCard className="mt-3" />}
+              {isClassCourse && <StudyCoachPanel className="mt-3" />}
             </header>
 
             {/* Counseling workspace (student side) — only for counseling
