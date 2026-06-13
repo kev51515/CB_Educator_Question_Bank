@@ -7,9 +7,10 @@
  * row → the recording detail page. New recordings are created from the global
  * Recordings surface, so the empty state's CTA points there.
  */
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { EmptyState, SkeletonRows } from "@/components";
 import { ROUTES, recordingPath } from "@/lib/routes";
+import { useClassContext } from "@/teacher/classLayoutContext";
 import { useCourseRecordings } from "./useCourseRecordings";
 import { formatDuration, relativeTime } from "./format";
 import type { Recording, RecordingStatus } from "./types";
@@ -48,9 +49,12 @@ function RecordingRow({ r, onOpen }: { r: Recording; onOpen: () => void }) {
 }
 
 export function CourseRecordingsTab() {
-  const { courseId } = useParams<{ courseId: string }>();
+  // The URL :courseId may be a short_code; the resolved course (with its real
+  // UUID) comes from the ClassLayout context, not the raw param — recordings
+  // .course_id is a uuid column.
+  const { cls } = useClassContext();
   const navigate = useNavigate();
-  const { recordings, loading, error } = useCourseRecordings(courseId);
+  const { recordings, loading, error } = useCourseRecordings(cls.id);
 
   return (
     <div className="mx-auto max-w-4xl">
