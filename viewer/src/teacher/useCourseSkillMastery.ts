@@ -65,3 +65,51 @@ export function useCourseSkillMastery(courseId: string): CourseSkillMastery {
 
   return { loading, error, mastery, grouped, all, weakest };
 }
+
+/** One per-(student, section, domain) tally from the `course_skill_by_student` RPC (0238). */
+export interface StudentSkillRow extends SkillDomainRow {
+  student_id: string;
+  student_name: string;
+}
+
+export interface CourseSkillByStudent {
+  loading: boolean;
+  error: string | null;
+  rows: StudentSkillRow[];
+}
+
+/**
+ * useCourseSkillByStudent — per-student drill-down for the Class skills tab.
+ * Returns one row per (student, section, domain); the view filters by the
+ * clicked domain client-side. Mirrors useCourseSkillMastery's fetch + aliveRef.
+ */
+export function useCourseSkillByStudent(courseId: string): CourseSkillByStudent {
+  const [rows, setRows] = useState<StudentSkillRow[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const alive = { current: true };
+    setLoading(true);
+    setError(null);
+    void (async () => {
+      try {
+        const { data, error: err } = await supabase.rpc("course_skill_by_student", {
+          p_course_id: courseId,
+        });
+        if (!alive.current) return;
+        if (err) throw err;
+        setRows((data as StudentSkillRow[]) ?? []);
+      } catch (e) {
+        if (alive.current) setError(e instanceof Error ? e.message : "Could not load student skills.");
+      } finally {
+        if (alive.current) setLoading(false);
+      }
+    })();
+    return () => {
+      alive.current = false;
+    };
+  }, [courseId]);
+
+  return { loading, error, rows };
+}

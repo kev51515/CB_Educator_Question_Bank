@@ -54,6 +54,7 @@ import { CourseAnnouncements } from "./CourseAnnouncements";
 import { CourseMaterials } from "./CourseMaterials";
 import { CourseGradebook } from "./CourseGradebook";
 import { ClassSkillsView } from "./ClassSkillsView";
+import { DigestsPage } from "./DigestsPage";
 import { CoursePortfolio } from "./CoursePortfolio";
 import { CounselingCaseloadView } from "./counseling/CounselingCaseloadView";
 import { CourseDiscussions } from "./CourseDiscussions";
@@ -247,6 +248,7 @@ function buildTabGroups(
       label: "People",
       items: [
         tab("roster", "Roster"),
+        tab("digests", "Digests"),
         tab("announcements", "Announcements"),
         tab("discussions", "Discussions"),
       ],
@@ -613,6 +615,7 @@ export function ClassLayout() {
               }
             />
             <Route path="roster" element={<ClassRoster />} />
+            <Route path="digests" element={<DigestsPage />} />
             <Route path="assignments" element={<ClassAssignmentsTab />} />
             <Route
               path="assignments/:assignmentId"

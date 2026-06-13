@@ -145,6 +145,8 @@ export const ROUTES = {
   COURSE_RECORDINGS: "/educator/courses/:courseId/recordings",
   COURSE_GRADES: "/educator/courses/:courseId/grades",
   COURSE_PORTFOLIO: "/educator/courses/:courseId/portfolio",
+  // Parent/guardian weekly progress digests (teacher-approved → LINE; 0239).
+  COURSE_DIGESTS: "/educator/courses/:courseId/digests",
   // Counseling caseload dashboard (counseling courses only — see 0135).
   COURSE_CASELOAD: "/educator/courses/:courseId/caseload",
   COURSE_DISCUSSIONS: "/educator/courses/:courseId/discussions",
@@ -250,6 +252,10 @@ export function recordingPath(recordingId: string): string {
 
 export function courseRecordingsPath(courseId: string): string {
   return buildPath(ROUTES.COURSE_RECORDINGS, { courseId });
+}
+
+export function courseDigestsPath(courseId: string): string {
+  return buildPath(ROUTES.COURSE_DIGESTS, { courseId });
 }
 
 /** Role-agnostic read-only recording view (stored in module_items.url). */
