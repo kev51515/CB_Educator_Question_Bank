@@ -1013,7 +1013,7 @@ export function RecordingDetailPage() {
         <div className="mb-6">
           <RecorderPanel
             recording={recording}
-            existingPartCount={parts.length}
+            parts={parts}
             onPartAdded={() => void refresh()}
             onEnded={() => void refresh()}
           />

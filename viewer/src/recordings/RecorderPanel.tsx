@@ -1,11 +1,15 @@
 /**
- * RecorderPanel — the "spurt" capture controls for a recording in progress.
+ * RecorderPanel — the "spurt" capture experience for a recording in progress.
  *
  * Rendered on the recording detail page while `recording.status === 'recording'`
  * and the viewer is the owner. Each Stop Part finalizes the current Part, uploads
  * it, and kicks off its transcription independently; End closes the session.
+ *
+ * The UI is a focused capture surface: a big record control, a live animated
+ * waveform, a prominent timer, and a strip of the parts captured so far (with
+ * their transcription status) so the educator always knows where they are.
  */
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useToast } from "@/components";
 import {
   PartRecorder,
@@ -14,12 +18,12 @@ import {
   type CaptureMode,
 } from "./recorder";
 import { endRecording, uploadAndTranscribePart } from "./useRecordings";
-import type { Recording } from "./types";
+import type { Recording, RecordingPart } from "./types";
 
 interface RecorderPanelProps {
   recording: Recording;
-  /** Number of Parts already captured (drives the next part_index). */
-  existingPartCount: number;
+  /** Parts already captured this session (drives the next index + the strip). */
+  parts: RecordingPart[];
   /** Called after a Part uploads so the parent can refresh the Parts list. */
   onPartAdded: () => void;
   /** Called once the session is ended. */
@@ -34,43 +38,71 @@ function fmt(ms: number): string {
   return `${m}:${String(s % 60).padStart(2, "0")}`;
 }
 
-/** Live mic input level bar (RMS), shown while a Part is recording. */
-function LevelMeter({
+const BARS = 48;
+
+/** Live animated frequency waveform while recording (dimmed when paused). */
+function LiveWaveform({
   active,
+  paused,
   getStream,
 }: {
   active: boolean;
+  paused: boolean;
   getStream: () => MediaStream | null;
 }) {
-  const [level, setLevel] = useState(0);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const pausedRef = useRef(paused);
+  pausedRef.current = paused;
+
   useEffect(() => {
-    if (!active) {
-      setLevel(0);
-      return;
-    }
+    if (!active) return;
     const stream = getStream();
-    if (!stream) return;
+    const canvas = canvasRef.current;
+    if (!stream || !canvas) return;
     const Ctx =
       window.AudioContext ||
       (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
     const ctx = new Ctx();
     const src = ctx.createMediaStreamSource(stream);
     const analyser = ctx.createAnalyser();
-    analyser.fftSize = 512;
+    analyser.fftSize = 256;
     src.connect(analyser);
-    const buf = new Uint8Array(analyser.frequencyBinCount);
+    const bins = new Uint8Array(analyser.frequencyBinCount);
+    const smoothed = new Array(BARS).fill(0);
     let raf = 0;
-    const tick = () => {
-      analyser.getByteTimeDomainData(buf);
-      let sum = 0;
-      for (let i = 0; i < buf.length; i++) {
-        const v = (buf[i] - 128) / 128;
-        sum += v * v;
+
+    const draw = () => {
+      analyser.getByteFrequencyData(bins);
+      const dpr = window.devicePixelRatio || 1;
+      const cssW = canvas.clientWidth || 600;
+      const cssH = canvas.clientHeight || 56;
+      if (canvas.width !== Math.round(cssW * dpr) || canvas.height !== Math.round(cssH * dpr)) {
+        canvas.width = Math.round(cssW * dpr);
+        canvas.height = Math.round(cssH * dpr);
       }
-      setLevel(Math.min(1, Math.sqrt(sum / buf.length) * 3));
-      raf = requestAnimationFrame(tick);
+      const g = canvas.getContext("2d");
+      if (!g) return;
+      g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      g.clearRect(0, 0, cssW, cssH);
+      const slot = cssW / BARS;
+      const barW = Math.max(2, slot * 0.55);
+      const mid = cssH / 2;
+      const isPaused = pausedRef.current;
+      const step = Math.floor(bins.length / BARS) || 1;
+      for (let i = 0; i < BARS; i++) {
+        const v = bins[i * step] / 255; // 0..1
+        // ease toward the new value for a smooth, lively motion
+        smoothed[i] += ((isPaused ? 0.04 : v) - smoothed[i]) * 0.35;
+        const h = Math.max(2, smoothed[i] * (cssH - 6));
+        const x = i * slot + (slot - barW) / 2;
+        g.fillStyle = isPaused ? "#94a3b8" : "#6366f1"; // slate-400 / indigo-500
+        g.beginPath();
+        g.roundRect(x, mid - h / 2, barW, h, barW / 2);
+        g.fill();
+      }
+      raf = requestAnimationFrame(draw);
     };
-    tick();
+    draw();
     return () => {
       cancelAnimationFrame(raf);
       src.disconnect();
@@ -78,25 +110,39 @@ function LevelMeter({
     };
   }, [active, getStream]);
 
+  return <canvas ref={canvasRef} className="h-14 w-full" aria-hidden />;
+}
+
+/** A captured-this-session part chip with its transcription status. */
+function PartChip({ part }: { part: RecordingPart }) {
+  const done = part.status === "transcribed";
+  const failed = part.status === "failed";
   return (
-    <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
-      <div
-        className="h-full rounded-full bg-red-500 transition-[width] duration-75"
-        style={{ width: `${Math.round(level * 100)}%` }}
-      />
-    </div>
+    <span
+      className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${
+        done
+          ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"
+          : failed
+            ? "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300"
+            : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+      }`}
+      title={part.status}
+    >
+      Part {part.part_index}
+      {done ? " ✓" : failed ? " ✗" : <span className="animate-pulse"> …</span>}
+    </span>
   );
 }
 
 export function RecorderPanel({
   recording,
-  existingPartCount,
+  parts,
   onPartAdded,
   onEnded,
 }: RecorderPanelProps) {
   const toast = useToast();
   const recorderRef = useRef<PartRecorder | null>(null);
-  const nextIndexRef = useRef(existingPartCount + 1);
+  const nextIndexRef = useRef(parts.length + 1);
   const totalRef = useRef(0); // accumulated session duration (ms)
   const [phase, setPhase] = useState<Phase>("idle");
   const [elapsed, setElapsed] = useState(0);
@@ -104,23 +150,20 @@ export function RecorderPanel({
   const [mode, setMode] = useState<CaptureMode>("mic");
   const supported = isRecordingSupported();
   const meetingSupported = isMeetingCaptureSupported();
-  // The capture source is locked once the first Part has been captured.
   const sourceLocked = nextIndexRef.current > 1;
+  const nextPart = nextIndexRef.current;
 
-  // Tick the current-part timer while actively recording.
   useEffect(() => {
     if (phase !== "recording") return;
     const t = setInterval(() => setElapsed((e) => e + 250), 250);
     return () => clearInterval(t);
   }, [phase]);
 
-  // Release the mic if the panel unmounts mid-session.
   useEffect(() => {
     return () => recorderRef.current?.dispose();
   }, []);
 
-  // Space toggles Pause/Resume while a Part is active (recording or paused).
-  // Ignored while typing in an input/textarea so it doesn't hijack the spacebar.
+  // Space toggles Pause/Resume while a Part is active.
   useEffect(() => {
     if (phase !== "recording" && phase !== "paused") return;
     function onKeyDown(e: KeyboardEvent) {
@@ -148,10 +191,14 @@ export function RecorderPanel({
     return recorderRef.current;
   }
 
+  // Stable getter so the waveform's AudioContext effect isn't torn down on every
+  // timer tick (the panel re-renders every 250ms while recording).
+  const getStream = useCallback(() => recorderRef.current?.getStream() ?? null, []);
+
   async function startPart() {
     try {
       const rec = getRecorder();
-      rec.setMode(mode); // no-op once the stream exists (mode is locked after part 1)
+      rec.setMode(mode);
       await rec.startPart();
       setElapsed(0);
       setPhase("recording");
@@ -173,7 +220,6 @@ export function RecorderPanel({
     setPhase("recording");
   }
 
-  /** Stop the active Part, upload + transcribe it. Returns true on success. */
   async function finishPart(): Promise<boolean> {
     const rec = recorderRef.current;
     if (!rec || !rec.isActive()) return true;
@@ -202,11 +248,7 @@ export function RecorderPanel({
     if (!ok) return;
     try {
       const anyParts = nextIndexRef.current > 1;
-      await endRecording(
-        recording.id,
-        Math.round(totalRef.current / 1000),
-        anyParts,
-      );
+      await endRecording(recording.id, Math.round(totalRef.current / 1000), anyParts);
       recorderRef.current?.dispose();
       recorderRef.current = null;
       onEnded();
@@ -217,9 +259,8 @@ export function RecorderPanel({
 
   if (!supported) {
     return (
-      <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-800">
-        This browser can't record audio directly. Use the{" "}
-        <strong>Upload audio</strong> option to add a file instead.
+      <div className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-800 dark:border-amber-900/50 dark:bg-amber-900/20 dark:text-amber-200">
+        This browser can't record audio directly. Use the <strong>Upload audio</strong> option to add a file instead.
       </div>
     );
   }
@@ -228,129 +269,141 @@ export function RecorderPanel({
   const paused = phase === "paused";
   const active = recording_ || paused;
 
+  const btn =
+    "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50";
+  const ghost = `${btn} border border-slate-200 hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800`;
+
   return (
-    <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4">
-      <div className="flex items-center gap-3">
-        {/* Live status dot */}
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+      {/* Status bar */}
+      <div className="flex items-center gap-3 border-b border-slate-100 px-5 py-3 dark:border-slate-800">
         <span
-          className={`inline-block h-3 w-3 rounded-full ${
-            recording_ ? "animate-pulse bg-red-500" : paused ? "bg-amber-400" : "bg-gray-300"
+          className={`inline-block h-2.5 w-2.5 rounded-full ${
+            recording_ ? "animate-pulse bg-red-500" : paused ? "bg-amber-400" : "bg-slate-300 dark:bg-slate-600"
           }`}
           aria-hidden
         />
-        <div className="flex-1">
-          <div className="font-medium">
-            {recording_
-              ? `Recording Part ${nextIndexRef.current}…`
-              : paused
-                ? `Part ${nextIndexRef.current} paused`
-                : nextIndexRef.current > 1
-                  ? `Ready for Part ${nextIndexRef.current}`
-                  : "Ready to record"}
-          </div>
-          <div className="text-sm tabular-nums text-slate-500 dark:text-slate-400">
-            {active ? fmt(elapsed) : "Press Record to start a part"}
-          </div>
-        </div>
+        <span className="text-sm font-medium text-slate-700 dark:text-slate-200">
+          {recording_
+            ? `Recording Part ${nextPart}`
+            : paused
+              ? `Part ${nextPart} — paused`
+              : nextPart > 1
+                ? `Ready for Part ${nextPart}`
+                : "Ready to record"}
+        </span>
+        {active && (
+          <span className="ml-auto text-2xl font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+            {fmt(elapsed)}
+          </span>
+        )}
       </div>
 
-      {recording_ && (
-        <div className="mt-3">
-          <LevelMeter active={recording_} getStream={() => recorderRef.current?.getStream() ?? null} />
-        </div>
-      )}
-
-      {/* Capture source — chosen before the first Part, then locked. */}
-      {!active && !sourceLocked && (
-        <div className="mt-3">
-          <div className="inline-flex overflow-hidden rounded-md border border-slate-200 text-xs dark:border-slate-700">
-            <button
-              type="button"
-              onClick={() => setMode("mic")}
-              className={`px-3 py-1.5 font-medium ${mode === "mic" ? "bg-indigo-600 text-white" : "text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"}`}
-            >
-              Microphone
-            </button>
-            <button
-              type="button"
-              onClick={() => meetingSupported && setMode("meeting")}
-              disabled={!meetingSupported}
-              title={meetingSupported ? "" : "Tab-audio capture needs Chrome or Edge"}
-              className={`px-3 py-1.5 font-medium disabled:opacity-40 ${mode === "meeting" ? "bg-indigo-600 text-white" : "text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"}`}
-            >
-              Meeting (tab + mic)
-            </button>
+      <div className="px-5 py-5">
+        {/* Waveform while live, else an idle baseline */}
+        {active ? (
+          <LiveWaveform active={active} paused={paused} getStream={getStream} />
+        ) : (
+          <div className="flex h-14 items-center justify-center gap-1" aria-hidden>
+            {Array.from({ length: 28 }).map((_, i) => (
+              <span key={i} className="h-1.5 w-1 rounded-full bg-slate-200 dark:bg-slate-700" />
+            ))}
           </div>
-          {mode === "meeting" && (
-            <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
-              You'll be asked to share a tab — pick your <strong>Google Meet / Zoom</strong> tab and tick
-              <strong> "Also share tab audio"</strong>. We record everyone's audio + your mic.
-            </p>
+        )}
+
+        {/* Source selector — before the first Part only */}
+        {!active && !sourceLocked && (
+          <div className="mt-4 flex flex-col items-center gap-2">
+            <div className="inline-flex overflow-hidden rounded-lg border border-slate-200 text-xs dark:border-slate-700">
+              <button
+                type="button"
+                onClick={() => setMode("mic")}
+                className={`px-3 py-1.5 font-medium ${mode === "mic" ? "bg-indigo-600 text-white" : "text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"}`}
+              >
+                Microphone
+              </button>
+              <button
+                type="button"
+                onClick={() => meetingSupported && setMode("meeting")}
+                disabled={!meetingSupported}
+                title={meetingSupported ? "" : "Tab-audio capture needs Chrome or Edge"}
+                className={`px-3 py-1.5 font-medium disabled:opacity-40 ${mode === "meeting" ? "bg-indigo-600 text-white" : "text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"}`}
+              >
+                Meeting (tab + mic)
+              </button>
+            </div>
+            {mode === "meeting" && (
+              <p className="max-w-md text-center text-xs text-slate-500 dark:text-slate-400">
+                You'll be asked to share a tab — pick your <strong>Google Meet / Zoom</strong> tab and tick{" "}
+                <strong>"Also share tab audio"</strong>. We capture everyone's audio + your mic.
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Primary controls */}
+        <div className="mt-5 flex items-center justify-center gap-2">
+          {!active && (
+            <button
+              type="button"
+              onClick={startPart}
+              disabled={busy}
+              className={`${btn} bg-red-600 px-5 py-2.5 text-white shadow-sm hover:bg-red-700`}
+            >
+              <span className="h-3 w-3 rounded-full bg-white" />
+              {nextPart > 1 ? `Record Part ${nextPart}` : "Start recording"}
+            </button>
+          )}
+          {recording_ && (
+            <button type="button" onClick={pause} className={ghost}>
+              Pause
+            </button>
+          )}
+          {paused && (
+            <button type="button" onClick={resume} className={`${btn} bg-red-600 text-white hover:bg-red-700`}>
+              Resume
+            </button>
+          )}
+          {active && (
+            <button type="button" onClick={() => void finishPart()} disabled={busy} className={ghost}>
+              {busy ? "Saving…" : "Stop part"}
+            </button>
+          )}
+          {(active || nextPart > 1) && (
+            <button
+              type="button"
+              onClick={() => void endSession()}
+              disabled={busy}
+              className={`${btn} bg-indigo-600 text-white hover:bg-indigo-700`}
+            >
+              End session
+            </button>
           )}
         </div>
-      )}
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        {!active && (
-          <button
-            type="button"
-            onClick={startPart}
-            disabled={busy}
-            className="inline-flex items-center gap-2 rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 disabled:opacity-50"
-          >
-            <span className="h-2.5 w-2.5 rounded-full bg-white" /> Record
-            {nextIndexRef.current > 1 ? " next part" : ""}
-          </button>
-        )}
-        {recording_ && (
-          <button
-            type="button"
-            onClick={pause}
-            className="rounded-md border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800"
-          >
-            Pause
-          </button>
-        )}
-        {paused && (
-          <button
-            type="button"
-            onClick={resume}
-            className="rounded-md border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800"
-          >
-            Resume
-          </button>
-        )}
         {active && (
-          <button
-            type="button"
-            onClick={() => void finishPart()}
-            disabled={busy}
-            className="rounded-md border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50"
-          >
-            {busy ? "Saving…" : "Stop part"}
-          </button>
+          <p className="mt-3 text-center text-xs text-slate-400 dark:text-slate-500">
+            <kbd className="rounded border border-slate-300 px-1 font-sans dark:border-slate-600">Space</kbd> = pause/resume
+          </p>
         )}
-        <button
-          type="button"
-          onClick={() => void endSession()}
-          disabled={busy}
-          className="ml-auto rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
-        >
-          End session
-        </button>
+
+        {/* Captured-this-session strip */}
+        {parts.length > 0 && (
+          <div className="mt-4 flex flex-wrap items-center gap-1.5 border-t border-slate-100 pt-4 dark:border-slate-800">
+            <span className="mr-1 text-xs text-slate-400">Captured:</span>
+            {parts.map((p) => (
+              <PartChip key={p.id} part={p} />
+            ))}
+          </div>
+        )}
+
+        {parts.length === 0 && !active && (
+          <p className="mt-4 text-center text-xs text-slate-500 dark:text-slate-400">
+            Record in short bursts — each <strong>Stop part</strong> transcribes on its own, and the parts are
+            stitched in order when you end.
+          </p>
+        )}
       </div>
-
-      {active && (
-        <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
-          <kbd className="rounded border border-slate-300 px-1 font-sans dark:border-slate-600">Space</kbd>{" "}
-          = pause/resume
-        </p>
-      )}
-
-      <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
-        Record in short bursts — each <strong>Stop part</strong> transcribes on
-        its own, and parts are stitched in order (Part 1, Part 2…) when you end.
-      </p>
     </div>
   );
 }
