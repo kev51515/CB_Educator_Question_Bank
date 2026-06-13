@@ -4,6 +4,7 @@ import { assignmentTakePath, studentTestRunPath } from "@/lib/routes";
 import { FullTestIcon, ItemIcon } from "./ItemIcon";
 import { PageBlock, VideoBlock, FileBlock } from "./ModuleContentBlocks";
 import { GoalBlock, CountdownBlock, LiveSessionBlock } from "./ModuleEngageBlocks";
+import { SurveyBlock } from "./SurveyBlock";
 import {
   type AssignmentMeta,
   type ModuleItemRow,
@@ -179,6 +180,19 @@ export function ModuleItemRowView({ item, locked, meta, pending = false }: Modul
     return (
       <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
         <LiveSessionBlock title={item.title} url={item.url ?? null} config={cfg} />
+      </div>
+    );
+  }
+
+  if (item.item_type === "survey") {
+    const cfg = (item.config ?? {}) as {
+      prompt?: string;
+      kind?: "scale" | "choice" | "text";
+      options?: string[];
+    };
+    return (
+      <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
+        <SurveyBlock itemId={item.id} title={item.title} config={cfg} />
       </div>
     );
   }

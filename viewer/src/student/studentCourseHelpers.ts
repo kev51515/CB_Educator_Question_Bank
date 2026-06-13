@@ -80,7 +80,8 @@ export interface ModuleItemRow {
     | "video"
     | "goal"
     | "countdown"
-    | "live_session";
+    | "live_session"
+    | "survey";
   item_ref_id: string | null;
   title: string;
   url: string | null;

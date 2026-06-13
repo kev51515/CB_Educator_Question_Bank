@@ -35,6 +35,7 @@ import { SchedulePublishPicker } from "./editors";
 import { InlineRename } from "./editors";
 import { InlineAddItemRow } from "./inline-add";
 import { EditTestModulesModal } from "./EditTestModulesModal";
+import { SurveyResultsButton } from "./SurveyResultsButton";
 
 // -----------------------------------------------------------------------------
 // Module card
@@ -100,6 +101,12 @@ function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element 
       <>
         <rect x="2" y="6" width="13" height="12" rx="2" />
         <path d="M15 10l6-3.5v11L15 14z" />
+      </>
+    ),
+    survey: (
+      <>
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
       </>
     ),
   };
@@ -169,6 +176,7 @@ const ITEM_KIND_LABEL: Record<ModuleItem["item_type"], string> = {
   goal: "Goal",
   countdown: "Countdown",
   live_session: "Live Session",
+  survey: "Survey",
 };
 
 /** Small line-SVG padlock, matching ItemTypeIcon's stroke style. */
@@ -1396,6 +1404,18 @@ const ModuleCard = memo(function ModuleCard({
 
                 {canEdit ? (
                   <>
+                    {item.item_type === "survey" && (
+                      <SurveyResultsButton
+                        itemId={item.id}
+                        prompt={item.title}
+                        config={
+                          (item.config ?? {}) as {
+                            kind?: "scale" | "choice" | "text";
+                            options?: string[];
+                          }
+                        }
+                      />
+                    )}
                     <OptimisticPublishToggle
                       published={item.published}
                       rowKey={`item:${item.id}`}

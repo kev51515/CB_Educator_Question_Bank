@@ -52,6 +52,7 @@ export type InlineAddType =
   | "goal"
   | "countdown"
   | "live_session"
+  | "survey"
   | "header"
   | "note"
   | "divider"
@@ -81,6 +82,7 @@ export const INLINE_ADD_GROUP_OF: Record<InlineAddType, InlineAddGroup> = {
   goal: "plan",
   countdown: "plan",
   live_session: "engage",
+  survey: "engage",
   header: "structure",
   note: "structure",
   divider: "structure",

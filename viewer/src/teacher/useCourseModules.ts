@@ -23,7 +23,8 @@ export type ModuleItemType =
   | "video"
   | "goal"
   | "countdown"
-  | "live_session";
+  | "live_session"
+  | "survey";
 
 export interface ModuleItem {
   id: string;
@@ -129,6 +130,7 @@ const VALID_ITEM_TYPES: ReadonlySet<string> = new Set([
   "goal",
   "countdown",
   "live_session",
+  "survey",
 ]);
 
 function asItemType(value: string): ModuleItemType {

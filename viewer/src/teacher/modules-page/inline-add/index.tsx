@@ -216,6 +216,10 @@ export function InlineAddItemRow({
   // Engage group: Live Session (starts-at + duration; join link reuses `url`).
   const [lsStartsAt, setLsStartsAt] = useState("");
   const [lsDuration, setLsDuration] = useState("");
+  // Engage group: Survey (prompt + kind + options for "choice").
+  const [surveyPrompt, setSurveyPrompt] = useState("");
+  const [surveyKind, setSurveyKind] = useState<"scale" | "choice" | "text">("scale");
+  const [surveyOptions, setSurveyOptions] = useState("");
 
   // Full-Test picker: the full-length tests catalog + the chosen slug + module
   // selection / date state.
@@ -275,6 +279,9 @@ export function InlineAddItemRow({
     setCountdownDate("");
     setLsStartsAt("");
     setLsDuration("");
+    setSurveyPrompt("");
+    setSurveyKind("scale");
+    setSurveyOptions("");
     setUrl("");
   };
 
@@ -733,6 +740,49 @@ export function InlineAddItemRow({
       return;
     }
 
+    if (itemType === "survey") {
+      const prompt = surveyPrompt.trim();
+      if (!prompt) {
+        toast.warning("Add a survey question");
+        return;
+      }
+      const optionsArray = surveyOptions
+        .split(/[\n,]/)
+        .map((o) => o.trim())
+        .filter((o) => o.length > 0);
+      if (surveyKind === "choice" && optionsArray.length < 2) {
+        toast.warning("Add at least two options");
+        return;
+      }
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "survey",
+        item_ref_id: null,
+        title: title.trim(),
+        url: null,
+        config: {
+          prompt,
+          kind: surveyKind,
+          options: surveyKind === "choice" ? optionsArray : undefined,
+        },
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add survey", insertErr);
+        return;
+      }
+      toast.success("Survey added");
+      if (keepOpen) {
+        resetPerItemFields();
+        void onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
     if (itemType === "note") {
       const body = noteBody.trim();
       if (!body) {
@@ -901,6 +951,12 @@ export function InlineAddItemRow({
         <path d="M15 10l6-3.5v11L15 14z" />
       </>
     ),
+    survey: (
+      <>
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </>
+    ),
     link: (
       <>
         <path d="M10 13a5 5 0 0 0 7.07 0l1.93-1.93a5 5 0 0 0-7.07-7.07L11 5" />
@@ -925,6 +981,7 @@ export function InlineAddItemRow({
     goal: "A target/checkpoint card to keep students aiming.",
     countdown: "A countdown to the test date.",
     live_session: "A scheduled live class with a join link.",
+    survey: "A quick poll — scale, choice, or free text. Results roll up for you.",
     link: "An external URL — opens for students in a new tab.",
   };
 
@@ -975,7 +1032,10 @@ export function InlineAddItemRow({
           ] as Array<{ type: InlineAddType; label: string }>)
         : []),
     ],
-    engage: [{ type: "live_session", label: "Live Session" }],
+    engage: [
+      { type: "live_session", label: "Live Session" },
+      { type: "survey", label: "Survey" },
+    ],
     plan: [
       { type: "goal", label: "Goal" },
       { type: "countdown", label: "Countdown" },
@@ -1017,6 +1077,7 @@ export function InlineAddItemRow({
       case "goal": return "Add Goal";
       case "countdown": return "Add Countdown";
       case "live_session": return "Add Live Session";
+      case "survey": return "Add Survey";
       case "link": return "Add Link";
     }
   })();
@@ -1344,6 +1405,58 @@ export function InlineAddItemRow({
             disabled={busy}
             className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
           />
+        </div>
+      )}
+
+      {itemType === "survey" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Heading (optional)"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="text"
+            value={surveyPrompt}
+            onChange={(e) => setSurveyPrompt(e.target.value)}
+            placeholder="Question — e.g. 'How confident are you on geometry?'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <div className="flex items-center gap-1.5">
+            <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">Type</span>
+            {(["scale", "choice", "text"] as const).map((k) => (
+              <button
+                key={k}
+                type="button"
+                onClick={() => setSurveyKind(k)}
+                aria-pressed={surveyKind === k}
+                disabled={busy}
+                className={
+                  "rounded-full px-2.5 py-1 text-[11px] font-medium capitalize ring-1 transition-colors " +
+                  (surveyKind === k
+                    ? "bg-indigo-600 text-white ring-indigo-600"
+                    : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-slate-300 dark:ring-slate-700 hover:ring-slate-400")
+                }
+              >
+                {k}
+              </button>
+            ))}
+          </div>
+          {surveyKind === "choice" && (
+            <textarea
+              value={surveyOptions}
+              onChange={(e) => setSurveyOptions(e.target.value)}
+              placeholder="One option per line"
+              disabled={busy}
+              rows={3}
+              className="w-full resize-y rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+            />
+          )}
         </div>
       )}
 

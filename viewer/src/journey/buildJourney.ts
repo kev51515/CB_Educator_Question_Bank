@@ -28,7 +28,8 @@ export interface JourneyItemInput {
     | "video"
     | "goal"
     | "countdown"
-    | "live_session";
+    | "live_session"
+    | "survey";
   item_ref_id: string | null;
   title: string;
   url: string | null;
@@ -138,7 +139,8 @@ export function buildJourney(
         it.item_type === "note" ||
         it.item_type === "goal" ||
         it.item_type === "countdown" ||
-        it.item_type === "live_session"
+        it.item_type === "live_session" ||
+        it.item_type === "survey"
       )
         continue;
 
