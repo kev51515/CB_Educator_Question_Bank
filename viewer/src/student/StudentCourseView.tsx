@@ -183,6 +183,11 @@ export function StudentCourseView(): JSX.Element {
   const [doneTestSlugs, setDoneTestSlugs] = useState<Set<string>>(
     () => new Set(),
   );
+  // Assignment ids the student has already opened (0224) — drives the per-item
+  // "new" dot: an unsubmitted, never-opened assignment dots; opening it clears.
+  const [seenAssignmentIds, setSeenAssignmentIds] = useState<Set<string>>(
+    () => new Set(),
+  );
   const toast = useToast();
 
   // Guard against stale-response races when `short` changes mid-flight.
@@ -446,6 +451,41 @@ export function StudentCourseView(): JSX.Element {
       if (!aRes.error && !bRes.error) setMetaLoadedFor(idsKey);
     })();
   }, [assignmentIds]);
+
+  // Which of this course's assignments has the student already opened? (0224)
+  // RLS returns only the caller's own rows, so a flat select is safe. Degrades
+  // silently (no rows → everything dots until opened, the pre-0224 behavior).
+  useEffect(() => {
+    if (assignmentIds.length === 0) {
+      setSeenAssignmentIds(new Set());
+      return;
+    }
+    let cancelled = false;
+    void (async () => {
+      const { data, error } = await supabase
+        .from("student_assignment_seen")
+        .select("assignment_id")
+        .in("assignment_id", assignmentIds);
+      if (cancelled || error) return;
+      setSeenAssignmentIds(
+        new Set((data ?? []).map((r) => (r as { assignment_id: string }).assignment_id)),
+      );
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [assignmentIds]);
+
+  // Per-item "new/pending" dot set: assignment items that aren't submitted and
+  // haven't been opened yet. Matches the Courses badge's unstarted count, so
+  // the badge → course → exact item wayfinding stays consistent.
+  const pendingItemRefIds = useMemo(() => {
+    const ids = new Set<string>();
+    for (const [refId, meta] of assignmentMeta.entries()) {
+      if (meta.submitted !== true && !seenAssignmentIds.has(refId)) ids.add(refId);
+    }
+    return ids;
+  }, [assignmentMeta, seenAssignmentIds]);
 
   // Restore collapsed-module state for this course.
   useEffect(() => {
@@ -936,6 +976,13 @@ export function StudentCourseView(): JSX.Element {
                   const done = assignmentItems.filter(
                     (it) => assignmentMeta.get(it.item_ref_id ?? "")?.submitted,
                   ).length;
+                  // Any unopened/unsubmitted assignment in this group → header
+                  // dot so a collapsed group still says "something new in here".
+                  const modulePending =
+                    !locked &&
+                    assignmentItems.some((it) =>
+                      pendingItemRefIds.has(it.item_ref_id ?? ""),
+                    );
                   const isCollapsed = collapsed.has(m.id);
                   const bodyId = `mod-${m.id}-body`;
                   return (
@@ -969,6 +1016,13 @@ export function StudentCourseView(): JSX.Element {
                         <h2 className="flex-1 min-w-0 truncate text-base font-semibold text-slate-900 dark:text-slate-100">
                           {m.name}
                         </h2>
+                        {modulePending && (
+                          <span
+                            className="flex-none h-2 w-2 rounded-full bg-rose-500"
+                            aria-label="New or unopened items in this group"
+                            title="New or unopened items in this group"
+                          />
+                        )}
                         {total > 0 && (
                           <span
                             className={`flex-none inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${
@@ -1040,6 +1094,10 @@ export function StudentCourseView(): JSX.Element {
                                   <ModuleItemRowView
                                     item={it}
                                     locked={locked}
+                                    pending={
+                                      !!it.item_ref_id &&
+                                      pendingItemRefIds.has(it.item_ref_id)
+                                    }
                                     meta={
                                       it.item_ref_id
                                         ? assignmentMeta.get(it.item_ref_id)

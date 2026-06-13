@@ -18,6 +18,7 @@ import { Skeleton, SkeletonRows } from "@/components";
 import { ROUTES, assignmentReviewPath } from "@/lib/routes";
 import { AssignmentRunner } from "@/student/AssignmentRunner";
 import { StudentAttemptReview } from "@/student/StudentAttemptReview";
+import { useStudentPending } from "@/student/useStudentPending";
 import type {
   StudentAssignment,
   StudentAssignmentAttempt,
@@ -256,6 +257,14 @@ export function AssignmentTakeRoute({ studentId }: AssignmentTakeRouteProps) {
   const [assignment, setAssignment] = useState<StudentAssignment | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Opening the assignment clears its "new" dot (0224) — the dot means "go
+  // look", not "not done yet". Idempotent + enrollment-checked server-side, so
+  // firing on every open is safe; pending WORK still shows in "Assignments Due".
+  const { markAssignmentSeen } = useStudentPending();
+  useEffect(() => {
+    if (assignment?.id) void markAssignmentSeen(assignment.id, assignment.course_id);
+  }, [assignment?.id, assignment?.course_id, markAssignmentSeen]);
 
   useEffect(() => {
     let cancelled = false;

@@ -15,6 +15,9 @@ interface ModuleItemRowProps {
   locked: boolean;
   /** Assignment metadata, present for published assignment items. */
   meta?: AssignmentMeta;
+  /** Unopened + unsubmitted → show a red "new" dot guiding the student here
+   *  (0224). Clears once they open the item. */
+  pending?: boolean;
 }
 
 const DUE_TONE: Record<string, string> = {
@@ -83,7 +86,19 @@ function RowLock(): JSX.Element {
   );
 }
 
-export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): JSX.Element | null {
+/** Small red "new — open me" dot. Sits left of the title so it reads as a
+ *  marker on the row, matching the Courses badge that pointed the student here. */
+function NewDot(): JSX.Element {
+  return (
+    <span
+      className="flex-none h-2 w-2 rounded-full bg-rose-500"
+      aria-label="New — not opened yet"
+      title="New — not opened yet"
+    />
+  );
+}
+
+export function ModuleItemRowView({ item, locked, meta, pending = false }: ModuleItemRowProps): JSX.Element | null {
   const navigate = useNavigate();
   const toast = useToast();
 
@@ -122,9 +137,10 @@ export function ModuleItemRowView({ item, locked, meta }: ModuleItemRowProps): J
         onClick={() => navigate(assignmentTakePath(item.item_ref_id ?? ""))}
         className={`${rowBase} ${interactive} text-left`}
         style={{ paddingLeft: padLeft }}
-        aria-label={`${done ? "Review" : "Open"} ${label.toLowerCase()} ${item.title}`}
+        aria-label={`${pending ? "New, not opened. " : ""}${done ? "Review" : "Open"} ${label.toLowerCase()} ${item.title}`}
       >
         <ItemIcon type={item.item_type} />
+        {pending && !locked && <NewDot />}
         <span className="min-w-0 flex-1">
           <span className="block truncate font-medium">{item.title}</span>
           <span className={KIND_LABEL_CLASS}>

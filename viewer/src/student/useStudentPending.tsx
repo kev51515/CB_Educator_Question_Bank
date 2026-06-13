@@ -58,6 +58,9 @@ export interface StudentPendingValue {
   refresh: () => Promise<void>;
   /** Persist "I looked at this course" + optimistically clear its seen-gated counts. */
   markCourseSeen: (courseId: string) => Promise<void>;
+  /** Persist "I opened this assignment" → clears its pending dot (0224).
+   *  `courseId` lets us optimistically decrement that course's unstarted count. */
+  markAssignmentSeen: (assignmentId: string, courseId?: string | null) => Promise<void>;
 }
 
 const defaultValue: StudentPendingValue = {
@@ -66,6 +69,7 @@ const defaultValue: StudentPendingValue = {
   loading: false,
   refresh: async () => {},
   markCourseSeen: async () => {},
+  markAssignmentSeen: async () => {},
 };
 
 const StudentPendingContext = createContext<StudentPendingValue>(defaultValue);
@@ -154,6 +158,34 @@ export function StudentPendingProvider({ children }: StudentPendingProviderProps
     [refresh],
   );
 
+  const markAssignmentSeen = useCallback(
+    async (assignmentId: string, courseId?: string | null): Promise<void> => {
+      // Optimistically drop one off the course's unstarted count so the badge
+      // reacts the instant the student opens the assignment.
+      if (courseId) {
+        setByCourse((prev) => {
+          const current = prev[courseId];
+          if (!current || current.unstartedAssignments <= 0) return prev;
+          return {
+            ...prev,
+            [courseId]: {
+              ...current,
+              unstartedAssignments: current.unstartedAssignments - 1,
+            },
+          };
+        });
+      }
+      const { error } = await supabase.rpc("mark_assignment_seen", {
+        p_assignment_id: assignmentId,
+      });
+      // Reconcile against the server (the optimistic guess may be off if the
+      // assignment was already seen, or the migration isn't applied yet).
+      if (!error) await refresh();
+      else void refresh();
+    },
+    [refresh],
+  );
+
   const totalPending = useMemo(
     () =>
       Object.values(byCourse).reduce(
@@ -164,8 +196,8 @@ export function StudentPendingProvider({ children }: StudentPendingProviderProps
   );
 
   const value = useMemo<StudentPendingValue>(
-    () => ({ byCourse, totalPending, loading, refresh, markCourseSeen }),
-    [byCourse, totalPending, loading, refresh, markCourseSeen],
+    () => ({ byCourse, totalPending, loading, refresh, markCourseSeen, markAssignmentSeen }),
+    [byCourse, totalPending, loading, refresh, markCourseSeen, markAssignmentSeen],
   );
 
   return (
