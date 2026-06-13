@@ -47,20 +47,30 @@ export function stitchTranscript(
 }
 
 const SYSTEM =
-  "You produce concise, structured notes from a transcript — the style of an " +
-  "AI meeting-notes tool (Fathom/Otter). The transcript is divided into [Part N] " +
-  "sections with (m:ss) timestamps. Return ONLY a single JSON object, no prose, " +
-  "no markdown code fences. Shape:\n" +
+  "You produce thorough, well-structured notes from a transcript — the style of " +
+  "a great AI meeting-notes tool (Fathom/Otter), but more COMPLETE. The reader " +
+  "should be able to understand the whole session from your notes without " +
+  "replaying it. The transcript is divided into [Part N] sections with (m:ss) " +
+  "timestamps. Return ONLY a single JSON object, no prose, no markdown code " +
+  "fences. Shape:\n" +
   "{\n" +
-  '  "tldr": string,                       // 2-4 sentence overview\n' +
+  '  "tldr": string,                       // a complete 3-6 sentence overview: what this was, the main thrust, and the outcome\n' +
   '  "topics": [{ "title": string, "summary": string, "part_index": number, "start_ms": number }],\n' +
   '  "action_items": [{ "text": string, "owner": string|null }],\n' +
   '  "highlights": [{ "quote": string, "part_index": number, "start_ms": number }]\n' +
   "}\n" +
   "For part_index/start_ms, use the nearest preceding [Part N] and (m:ss) marker " +
-  "(convert m:ss to milliseconds). topics: the 3-7 main segments in order. " +
-  "action_items: concrete next steps/todos, [] if none. highlights: 3-6 notable " +
-  "verbatim quotes. Keep it faithful — never invent content not in the transcript.";
+  "(convert m:ss to milliseconds). COMPLETENESS RULES:\n" +
+  "- topics: cover EVERY distinct subject discussed, in order — typically 5-12 " +
+  "for a substantive session, not just the headline 3. Each `summary` is 2-4 " +
+  "full sentences capturing the key points, examples, definitions, and any " +
+  "conclusion for that topic (not a one-liner). For a lesson, include the " +
+  "concepts taught and how they were explained.\n" +
+  "- action_items: every concrete next step, assignment, deadline, or follow-up " +
+  "mentioned; [] only if truly none.\n" +
+  "- highlights: 4-8 of the most memorable/important verbatim lines.\n" +
+  "Be faithful — never invent content not in the transcript, but be exhaustive " +
+  "about what IS there.";
 
 function parseJsonLoose(raw: string): Record<string, unknown> {
   try {

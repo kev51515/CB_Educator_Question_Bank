@@ -34,6 +34,7 @@ import {
 import {
   downloadText,
   fmtTs,
+  printRecording,
   recordingToMarkdown,
   relativeTime,
   slugifyTitle,
@@ -776,6 +777,7 @@ export function RecordingDetailPage() {
   const [titleDraft, setTitleDraft] = useState("");
   const [generating, setGenerating] = useState(false);
   const [transcriptOpen, setTranscriptOpen] = useState(false);
+  const [showQuiz, setShowQuiz] = useState(false);
   const [moveOpen, setMoveOpen] = useState(false);
   const publishedQuizzes = usePublishedQuizzes(recordingId);
   const courseName = useCourseName(detail?.recording.course_id ?? null);
@@ -983,6 +985,12 @@ export function RecordingDetailPage() {
             Copy transcript
           </button>
           <button
+            onClick={() => printRecording(recording, notes, parts)}
+            className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
+          >
+            Print / PDF
+          </button>
+          <button
             onClick={() => downloadText(`${slugifyTitle(recording.title)}.md`, recordingToMarkdown(recording, notes, parts))}
             className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
           >
@@ -1053,11 +1061,28 @@ export function RecordingDetailPage() {
         </div>
       )}
 
-      {canGenerate && (
-        <div className="mb-6">
-          <QuizDraftPanel recordingId={recording.id} />
-        </div>
-      )}
+      {canGenerate &&
+        (showQuiz ? (
+          <div className="mb-6">
+            <QuizDraftPanel recordingId={recording.id} />
+          </div>
+        ) : (
+          <div className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-dashed border-slate-300 px-5 py-4 dark:border-slate-700">
+            <div>
+              <div className="text-sm font-medium text-slate-900 dark:text-slate-100">Make a quiz from this recording</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">
+                AI drafts questions you review and edit before publishing — generated only when you ask.
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowQuiz(true)}
+              className="shrink-0 rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+            >
+              Create a quiz
+            </button>
+          </div>
+        ))}
 
       {parts.length === 0 ? (
         <p className="text-sm text-slate-500 dark:text-slate-400">
