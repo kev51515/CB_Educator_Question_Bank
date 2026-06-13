@@ -116,6 +116,13 @@ function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element 
         <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
       </>
     ),
+    skill_drill: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="4" />
+        <path d="M13 3 9.5 11h3L11 21l8-12h-3l1-6Z" />
+      </>
+    ),
   };
   return (
     <span
@@ -185,6 +192,7 @@ const ITEM_KIND_LABEL: Record<ModuleItem["item_type"], string> = {
   live_session: "Live Session",
   survey: "Survey",
   vocab: "Vocabulary",
+  skill_drill: "Skill Drill",
 };
 
 /** Small line-SVG padlock, matching ItemTypeIcon's stroke style. */

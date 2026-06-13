@@ -36,6 +36,7 @@ const ThreadView = lazy(() =>
   import("@/inbox/ThreadView").then((m) => ({ default: m.ThreadView })),
 );
 import { MyFeedbackPage } from "@/student/MyFeedbackPage";
+import { SkillDrillRoute } from "@/student/SkillDrillRoute";
 import { StudentCourseView } from "@/student/StudentCourseView";
 import { StudentCoursesPage } from "@/student/StudentCoursesPage";
 import { SharedRecordingsPage } from "@/student/SharedRecordingsPage";
@@ -83,6 +84,10 @@ export default function StudentRoutesTree({
         path={`${ROUTES.TEST_RUN}/*`}
         element={<RedirectBareTestToStudent />}
       />
+      {/* Skill Drill — the qbank runner is a full-viewport iframe takeover, so
+          it lives OUTSIDE the shell like the test runner. */}
+      <Route path={ROUTES.STUDENT_SKILL_DRILL} element={<SkillDrillRoute />} />
+
       {/* LINE Account Link landing — full-viewport, outside the shell; it just
           mints a nonce and redirects out to LINE's accountLink dialog. */}
       <Route path={ROUTES.LINE_LINK} element={<LineLinkPage />} />

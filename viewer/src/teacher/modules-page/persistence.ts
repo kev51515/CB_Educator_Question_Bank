@@ -54,6 +54,7 @@ export type InlineAddType =
   | "live_session"
   | "survey"
   | "vocab"
+  | "skill_drill"
   | "header"
   | "note"
   | "divider"
@@ -81,6 +82,7 @@ export const INLINE_ADD_GROUP_OF: Record<InlineAddType, InlineAddGroup> = {
   practice_test: "assess",
   question_set: "assess",
   full_test: "assess",
+  skill_drill: "assess",
   goal: "plan",
   countdown: "plan",
   live_session: "engage",

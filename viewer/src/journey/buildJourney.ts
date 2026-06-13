@@ -30,7 +30,8 @@ export interface JourneyItemInput {
     | "countdown"
     | "live_session"
     | "survey"
-    | "vocab";
+    | "vocab"
+    | "skill_drill";
   item_ref_id: string | null;
   title: string;
   url: string | null;
@@ -142,7 +143,11 @@ export function buildJourney(
         it.item_type === "countdown" ||
         it.item_type === "live_session" ||
         it.item_type === "survey" ||
-        it.item_type === "vocab"
+        it.item_type === "vocab" ||
+        // skill_drill is practice, but it has no item_ref_id (the set is
+        // resolved per-student at runtime) so it can't be a scored journey cell
+        // in v1 — keep it out of the ledger.
+        it.item_type === "skill_drill"
       )
         continue;
 

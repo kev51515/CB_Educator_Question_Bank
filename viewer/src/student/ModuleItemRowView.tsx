@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import { assignmentTakePath, studentTestRunPath } from "@/lib/routes";
+import { assignmentTakePath, studentSkillDrillPath, studentTestRunPath } from "@/lib/routes";
 import { FullTestIcon, ItemIcon } from "./ItemIcon";
 import { PageBlock, VideoBlock, FileBlock } from "./ModuleContentBlocks";
 import { GoalBlock, CountdownBlock, LiveSessionBlock } from "./ModuleEngageBlocks";
@@ -204,6 +204,33 @@ export function ModuleItemRowView({ item, locked, meta, pending = false }: Modul
       <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
         <VocabDeck itemId={item.id} title={item.title} config={cfg} />
       </div>
+    );
+  }
+
+  // ---- Skill Drill (0237) — weak-skill-targeted practice, clickable row ----
+  if (item.item_type === "skill_drill") {
+    return (
+      <button
+        type="button"
+        disabled={locked}
+        onClick={() => navigate(studentSkillDrillPath(item.id))}
+        className={`${rowBase} ${interactive} text-left`}
+        style={{ paddingLeft: padLeft }}
+        aria-label={`Open skill drill ${item.title}`}
+      >
+        <ItemIcon type={item.item_type} />
+        {pending && !locked && <NewDot />}
+        <span className="min-w-0 flex-1">
+          <span className="block truncate font-medium">{item.title || "Skill Drill"}</span>
+          <span className={KIND_LABEL_CLASS}>
+            Skill Drill
+            <span className="normal-case font-medium tracking-normal text-slate-400 dark:text-slate-500">
+              {" "}· Targets your weak skills
+            </span>
+          </span>
+        </span>
+        {locked ? <RowLock /> : null}
+      </button>
     );
   }
 

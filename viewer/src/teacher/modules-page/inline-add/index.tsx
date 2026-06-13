@@ -192,7 +192,8 @@ export function InlineAddItemRow({
       !canQbank &&
       (itemType === "full_test" ||
         itemType === "question_set" ||
-        itemType === "practice_test")
+        itemType === "practice_test" ||
+        itemType === "skill_drill")
     ) {
       setItemType("assignment");
     }
@@ -222,6 +223,8 @@ export function InlineAddItemRow({
   const [surveyPrompt, setSurveyPrompt] = useState("");
   const [surveyKind, setSurveyKind] = useState<"scale" | "choice" | "text">("scale");
   const [surveyOptions, setSurveyOptions] = useState("");
+  // Assess group: Skill Drill (optional section constraint; "" = any section).
+  const [skillDrillSection, setSkillDrillSection] = useState<"" | "math" | "reading-and-writing">("");
 
   // Full-Test picker: the full-length tests catalog + the chosen slug + module
   // selection / date state.
@@ -285,6 +288,7 @@ export function InlineAddItemRow({
     setSurveyPrompt("");
     setSurveyKind("scale");
     setSurveyOptions("");
+    setSkillDrillSection("");
     setUrl("");
   };
 
@@ -425,6 +429,35 @@ export function InlineAddItemRow({
         }
       } finally {
         setBusy(false);
+      }
+      return;
+    }
+
+    if (itemType === "skill_drill") {
+      // Skill Drill has no template to pick + no assignments row — it's a single
+      // module_items row carrying an optional section filter in config. The set
+      // is resolved per-student at runtime from their weak skills.
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "skill_drill",
+        item_ref_id: null,
+        title: title.trim() || "Skill Drill",
+        url: null,
+        config: skillDrillSection ? { section: skillDrillSection } : {},
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add Skill Drill", insertErr);
+        return;
+      }
+      toast.success("Skill Drill added", title.trim() || undefined);
+      if (keepOpen) {
+        resetPerItemFields();
+        onCommittedKeepOpen();
+      } else {
+        onCommitted();
       }
       return;
     }
@@ -953,6 +986,13 @@ export function InlineAddItemRow({
         <path d="m9 14 2 2 4-4" />
       </>
     ),
+    skill_drill: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="4" />
+        <path d="M13 3 9.5 11h3L11 21l8-12h-3l1-6Z" />
+      </>
+    ),
     page: (
       <>
         <path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" />
@@ -1023,6 +1063,7 @@ export function InlineAddItemRow({
     full_test: "A full-length SAT in the locked test runner — pick which modules to deploy.",
     question_set: "A pre-built Question Bank set, auto-scored on submission.",
     practice_test: "Clone a practice test from your library into this course.",
+    skill_drill: "Auto-targets each student's weak skills — reuses the question bank.",
     page: "A rich-text lesson page rendered inline for students.",
     video: "Embed a YouTube, Vimeo, or Loom video inline.",
     vocab: "A flashcard deck with spaced repetition — one card per line as 'term : definition'.",
@@ -1082,6 +1123,11 @@ export function InlineAddItemRow({
             { type: "full_test", label: "Full-Test" },
             { type: "question_set", label: "Question Set" },
             { type: "practice_test", label: "Practice Test" },
+            // Skill Drill chip intentionally disabled until attempt-persistence
+            // is decided (submit_qbank_attempt needs a real assignment row;
+            // students can't create one). Plumbing below stays dormant. See
+            // docs/PLAN_MODULE_ITEM_TYPES.md.
+            // { type: "skill_drill", label: "Skill Drill" },
           ] as Array<{ type: InlineAddType; label: string }>)
         : []),
     ],
@@ -1121,6 +1167,7 @@ export function InlineAddItemRow({
       case "practice_test": return "Add Practice Test";
       case "full_test": return "Add Full-Test";
       case "question_set": return "Add Question Set";
+      case "skill_drill": return "Add Skill Drill";
       case "page": return "Add Page";
       case "video": return "Add Video";
       case "vocab": return "Add Deck";
@@ -1252,6 +1299,43 @@ export function InlineAddItemRow({
           setShowOverrideTitle={setShowOverrideTitle}
           titleRef={titleRef}
         />
+      )}
+
+      {itemType === "skill_drill" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title (optional — defaults to 'Skill Drill')"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <label className="block">
+            <span className="mb-1 block text-[11px] font-medium text-slate-500 dark:text-slate-400">
+              Section
+            </span>
+            <select
+              value={skillDrillSection}
+              onChange={(e) =>
+                setSkillDrillSection(
+                  e.target.value as "" | "math" | "reading-and-writing",
+                )
+              }
+              disabled={busy}
+              className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+            >
+              <option value="">Any</option>
+              <option value="math">Math</option>
+              <option value="reading-and-writing">Reading &amp; Writing</option>
+            </select>
+          </label>
+          <p className="px-1 text-[11px] text-slate-500 dark:text-slate-400">
+            Each student gets a set targeting their weakest skill
+            {skillDrillSection ? " in this section" : ""}, scored like a Question Set.
+          </p>
+        </div>
       )}
 
       {itemType === "header" && (

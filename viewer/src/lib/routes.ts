@@ -54,6 +54,10 @@ export const ROUTES = {
   MOCK_TEST_REVIEW: "/student/mock-test/history/:attemptId",
   ASSIGNMENT_TAKE: "/student/assignment/:assignmentId/take",
   ASSIGNMENT_REVIEW: "/student/assignment/:assignmentId/review/:attemptId",
+  // Skill Drill (0237) — a weak-skill-targeted practice set. The runner
+  // resolves the set client-side from the student's mastery, then reuses the
+  // qbank_set runner/grading. `:itemId` is the module_items row id.
+  STUDENT_SKILL_DRILL: "/student/skill-drill/:itemId",
   // Student courses list + per-course view (`:short` = course short_code or UUID).
   STUDENT_COURSES: "/student/courses",
   STUDENT_COURSE: "/student/courses/:short",
@@ -450,6 +454,12 @@ export function assignmentReviewPath(
   attemptId: string,
 ): string {
   return buildPath(ROUTES.ASSIGNMENT_REVIEW, { assignmentId, attemptId });
+}
+
+/** Student Skill Drill runner URL (`/student/skill-drill/:itemId`). `itemId`
+ *  is the module_items row id; the runner resolves the weak-skill set itself. */
+export function studentSkillDrillPath(itemId: string): string {
+  return buildPath(ROUTES.STUDENT_SKILL_DRILL, { itemId });
 }
 
 // --- Legacy builder aliases ------------------------------------------------
