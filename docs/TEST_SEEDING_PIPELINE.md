@@ -12,8 +12,26 @@ italics) and the six DSAT tests (incl. an answer-flipping data table).
 > single wrong digit flips the answer. None of this trips a casual read — it
 > must be caught by an explicit verification gate before go-live.
 
-Tooling lives in **`scripts/test-pipeline/`** (committed). The CB-OG instances of
-the per-test scratch (`raw/m*.json`, configs) live under `.work/cb-og/` (gitignored).
+Tooling lives in **`scripts/test-pipeline/`** (committed). Per-test scratch
+(`raw/m*.json`, `*-config.mjs`, page renders) lives under `.work/<test>/`
+(gitignored — the committed artifact is the migration SQL).
+
+| Tool | Use |
+|---|---|
+| `build-cbog.mjs <testDir> <config.mjs>` | merge `raw/m{1..4}.json` + config → idempotent seed migration (validates counts/choices/keys; accepts rich run-objects) |
+| `audit-choices.py <testDir> <pdf>` | diff seeded choices vs `pdftotext` (text-layer PDFs) |
+| `audit-passages.py <testDir> <pdf> [--math]` | diff passage/stem words vs `pdftotext` (text-layer) |
+| `fix-content.py <testDir> <pdf> --apply` | auto-fix ≥3/4-match choices + restore italics from `pdftohtml` (text-layer) |
+| `apply-italics.py <slug> [spans.json]` | wrap an explicit italic-span list (+ convert markdown `*…*`) — used for **scanned** PDFs whose italics are flattened |
+| `audit-db.py <slug> <pdf...>` | diff the **live DB** for a slug vs its PDF(s) — any test |
+
+**Prod DB connection** (the psql-based tools/gates read `SUPABASE_DB_PASSWORD`
+from the repo-root `.env`):
+```
+psql -h aws-1-ap-southeast-2.pooler.supabase.com -p 5432 \
+     -U postgres.ljdofwovsyaqydcbohhd -d postgres        # PGPASSWORD=$SUPABASE_DB_PASSWORD
+```
+`check:content` instead uses `SUPABASE_URL` + `SUPABASE_SERVICE_KEY` (supabase-js).
 
 ---
 
@@ -66,6 +84,17 @@ The build **validates**: 4 modules, expected Q counts, every MCQ has 4 non-empty
 choices, the answer key letter resolves to a choice, grids have accepted values.
 The official answer key is authoritative for `type` (single A–D ⇒ mcq, else grid).
 
+The `<config.mjs>` shape (one per test; the answers come from the official key):
+```js
+export default {
+  slug: "cb-og-1", ordinal: 7, title: "CB OG #1", shortTitle: "CB OG #1",
+  source: "sat-practice-test-1-digital.pdf", migrationName: "0164_seed_cb_og_1",
+  modules: [ { module:1, position:1, section:"reading-writing", label:"Reading and Writing — Module 1" }, … ],
+  answers: { 1:{ 1:"B", 2:"C", … }, 3:{ 6:"2520", 14:["2","-12"], … } },  // per module; grids = string/array
+  figures: {},  // "module-number" → served PNG path, filled after cropping
+};
+```
+
 ### 5. QC GATES — **mandatory before go-live**
 
 #### 5a. Text-layer PDFs (automated)
@@ -89,10 +118,28 @@ read it, compare to the live row. Dump the DB rows with:
 psql "$POOLER" -tAc "select tm.position||' | '||tq.ref||' | A='||(tq.choices->>'A')|| … from public.test_questions tq join test_modules tm … join tests t … where t.slug='<slug>' order by tm.position, tq.position"
 ```
 Parallelize with one subagent per test. **Look hardest at:** convention-question
-punctuation; **numeric/data tables** (a wrong digit flips the answer — the
-oct-asia-a Q9 table had 5 wrong cells); transition questions that must keep a
-`______` blank; italics/underlines. Verify any answer-affecting finding yourself
-before writing.
+punctuation; **numeric/data tables**; transition questions that must keep a
+`______` blank; italics/underlines.
+
+**Lessons from the 2026-06-13 DSAT pass (bake these into the agent prompts):**
+- **Verify any answer-affecting finding YOURSELF before writing.** A subagent
+  under-counted a dense numeric table (reported 3 of 5 wrong cells on the
+  oct-asia-a Q9 table, where a `$2.4B`→`$12.4B` digit flipped the ranking
+  answer). Re-render and read tables/answer-bearing cells personally.
+- **Scanned PDFs FLATTEN italics** — the slant doesn't survive the digital→scan
+  render, so the scan shows titles/binomials in plain upright type and you cannot
+  detect italics visually. Don't conclude "no italics"; instead derive them from
+  standard College Board typographic convention (italicize titles of
+  books/works/albums/films/paintings/periodicals [title proper only — "New
+  Yorker", not "New Yorker essays"], scientific binomials, ship names, foreign
+  terms; CB *quotes* short-work/poem titles, so those are NOT italic). Have the
+  subagent emit a `spans.json` of `{ref, field, text}` (text = exact DB
+  substring) and apply with `apply-italics.py <slug> spans.json` (word-boundary,
+  longest-first for nested titles, also converts any markdown `*…*`→`<i>`).
+- **Don't change answer keys** — keys have been correct across all 16 tests; the
+  defects are always in the CONTENT.
+- Don't have subagents edit the DB directly; have them REPORT, then apply via a
+  scoped, idempotent migration (step 6).
 
 #### 5c. Both — final gates
 - `cd viewer && npm run check:content` — OCR-artifact scanner over all
@@ -109,12 +156,23 @@ before writing.
   (`viewer/scripts/clickthrough-practice-test.mjs`) green.
 
 ### 6. Deploy
-`npm run db:push` for new migrations. If a seed migration is already applied and
-you corrected its content, re-run the idempotent SQL straight to prod via psql on
-the pooler (see [docs in MIGRATIONS.md] / memory `psql-direct-migration-apply`) —
-`db push` skips already-applied migrations. For content fixes to tests seeded by
-other pipelines, write a **forward corrective migration** of idempotent
-`UPDATE … replace()` statements scoped by `(slug, ref)` (e.g. `0227_dsat_content_fixes.sql`).
+`npm run db:push` for new migrations. If a seed migration is **already applied**
+and you corrected its content, re-run the idempotent SQL straight to prod via
+psql on the pooler (connection above; see also `docs/MIGRATIONS.md` / memory
+`psql-direct-migration-apply`) — `db push` skips already-applied migrations. For
+content fixes to tests seeded by other pipelines, write a **forward corrective
+migration** of idempotent `UPDATE … replace()` / `jsonb_set(...)` statements
+scoped by `(slug, ref)` (e.g. `0230_dsat_content_fixes.sql`,
+`0231_dsat_italics.sql`). Make every statement re-runnable (replace/regexp_replace
+that no-ops once applied) so a later clean `db push` is harmless.
+
+⚠️ **Migration-number collisions:** a parallel session may grab the next
+number(s) concurrently. Before naming a migration, run
+`ls supabase/migrations | grep -E '^0NNN'` and pick a number ABOVE the current
+max; after pushing, confirm `supabase migration list` shows no duplicate prefix
+(two `0NNN_*` files silently skip one on push — this bit us; we renumbered
+0227/0228 → 0230/0231). Stage only YOUR files (`git add <paths>`, never `-A`) —
+the tree is shared with the parallel session.
 
 ---
 
@@ -123,9 +181,10 @@ other pipelines, write a **forward corrective migration** of idempotent
 - [ ] PDF class identified (text-layer vs scanned) → correct QC gate chosen
 - [ ] Transcription preserves punctuation + formatting (italics/underline/sup/sub)
 - [ ] `build-cbog.mjs` validation passes
-- [ ] **Text-layer:** `audit-choices` = 0 punctuation diffs; italics restored + split-titles merged
-- [ ] **Scanned:** full vision-QA pass done; tables/convention-punctuation verified
-- [ ] `npm run check:content` = 0 real flags
+- [ ] **Text-layer:** `audit-choices` = 0 punctuation diffs; `fix-content` ran; italics restored + split-titles (`</i> [A-Z]…`) merged
+- [ ] **Scanned:** full vision-QA pass done; numeric tables + convention punctuation verified BY YOU; italics derived from CB convention + applied via `apply-italics.py`
+- [ ] `npm run check:content` = **clean 0** (any flag is now a real defect)
 - [ ] `audit-db.py` clean against the live DB
 - [ ] counts match `total_questions`; clickthrough harness green
 - [ ] answer keys spot-checked (keys are usually right — fix the CONTENT, not the key)
+- [ ] migration number above current max + no duplicate prefix; staged only your files; committed + pushed
