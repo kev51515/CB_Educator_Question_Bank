@@ -1,5 +1,41 @@
 # Session Recap
 
+## Full-test content-fidelity QA + pipeline hardening — all 16 tests (2026-06-13) — SHIPPED
+
+Audited every full test against its source PDF and fixed the silent corruption
+that OCR/vision transcription had introduced; then hardened the seeding process
+so it can't recur. All applied to prod; answer keys were correct everywhere — the
+defects were always in the CONTENT.
+
+**CB OG #1–10 (text-layer PDFs → automated audit; commit `dd47fd2c`, rebuilt
+seeds 0164–0173).** `audit-choices.py` diffs each seeded choice vs `pdftotext`
+(letter-paired). Fixed dropped/scrambled punctuation on convention items (the
+trigger: Q27's choice A had lost its `:` so a comma-splice looked correct),
+word substitutions (`imperial→impartial`, `recasts→recants`, `unified→united`,
+`micropterids→mixopterids`, …), and restored **333 italics** dropped in
+transcription (auto-detected from `pdftohtml -xml` MinionPro-It font).
+
+**6 DSAT tests (scanned image PDFs → mandatory vision-QA; migrations `0230_dsat_content_fixes`
++ `0231_dsat_italics`, commits `9a173e41`/`d2f33088`).** One subagent per test
+read every page vs the live DB. Fixed an **answer-affecting** data table
+(`dsat-2025-oct-asia-a` Q9 — 5 wrong cells; a `$2.4B→$12.4B` digit flipped the
+ranking answer, re-verified by hand), a **malformed** transition question
+(`dsat-2026-mar-asia-a` Q25 had lost its `______` blank), ~7 cosmetic OCR typos,
+and restored italics on **all 6** (scanned PDFs flatten italics, so derived from
+CB convention + applied via `apply-italics.py`).
+
+**QC made accurate (commit `21d973aa`).** `check:content` was crying wolf on
+LaTeX `\sqrt[n]`, mixed phrase/sentence choice punctuation, and quote-into-choice
+convention items; refined those three heuristics (narrowly) so it reads a **clean
+0** — any flag now is a real defect.
+
+**Process hardened + documented.** New canonical `docs/TEST_SEEDING_PIPELINE.md`
+(render → OCR/vision → rich JSON → build → seed → QC gates; the two PDF classes;
+all session lessons + a checklist) and committed tooling in `scripts/test-pipeline/`
+(audit-choices, audit-passages, audit-db, fix-content, apply-italics, build-cbog).
+JSON now carries rich run-objects; `passageRender.tsx` renders `<i>/<u>/<b>/<sup>/<sub>`.
+Details in the `cb-og-content-fidelity-fix` memory.
+
 ## CB OG figures + table rendering — exact replication of the CB PDF (2026-06-13) — SHIPPED
 
 Two fixes toward exact replication of College Board PDF formatting in the
