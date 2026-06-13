@@ -15,6 +15,12 @@ import { useEffect, useRef, useState } from "react";
 
 const BAR_COUNT = 200;
 
+function fmtClock(seconds: number): string {
+  if (!isFinite(seconds) || seconds < 0) seconds = 0;
+  const s = Math.floor(seconds);
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
 export function Waveform({
   src,
   register,
@@ -30,6 +36,13 @@ export function Waveform({
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0); // 0..1 of currentTime/duration
   const [duration, setDuration] = useState(0);
+  const [rate, setRate] = useState(1);
+
+  function cycleRate() {
+    const next = rate >= 2 ? 1 : rate >= 1.5 ? 2 : 1.5;
+    setRate(next);
+    if (audioRef.current) audioRef.current.playbackRate = next;
+  }
 
   // Decode the audio into ~200 peak bars on mount.
   useEffect(() => {
@@ -181,6 +194,20 @@ export function Waveform({
           className="h-14 flex-1 cursor-pointer rounded-md bg-slate-50 dark:bg-slate-800"
           aria-hidden
         />
+        <div className="flex shrink-0 flex-col items-end gap-1">
+          <span className="text-xs tabular-nums text-slate-500 dark:text-slate-400">
+            {fmtClock(progress * duration)} / {fmtClock(duration)}
+          </span>
+          <button
+            type="button"
+            onClick={cycleRate}
+            className="rounded border border-slate-200 px-1.5 py-0.5 text-[11px] font-medium text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+            title="Playback speed"
+            aria-label={`Playback speed ${rate}x`}
+          >
+            {rate}×
+          </button>
+        </div>
       </div>
       {/* The real audio element — kept in the DOM so external seeking via the
           registered ref works, but visually hidden behind the custom controls. */}

@@ -477,6 +477,25 @@ function RemoveBtn({ onClick }: { onClick: () => void }) {
   );
 }
 
+const SECTION_ICONS: Record<string, JSX.Element> = {
+  summary: <path d="M4 6h16M4 12h16M4 18h10" />,
+  topics: <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />,
+  actions: <path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />,
+  highlights: <path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 7.1-1.01L12 2Z" />,
+};
+
+/** A small section header with an icon — gives the notes a Fathom-like rhythm. */
+function SectionHeading({ kind, children }: { kind: keyof typeof SECTION_ICONS; children: string }) {
+  return (
+    <h2 className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-500">
+      <svg width={13} height={13} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="text-indigo-500" aria-hidden>
+        {SECTION_ICONS[kind]}
+      </svg>
+      {children}
+    </h2>
+  );
+}
+
 function NotesView({
   notes,
   onJump,
@@ -492,7 +511,7 @@ function NotesView({
     <div className="space-y-5 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
       {(notes.tldr || editable) && (
         <div>
-          <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Summary</h2>
+          <SectionHeading kind="summary">Summary</SectionHeading>
           <p className="text-sm text-slate-800 dark:text-slate-200">
             <EditableText
               value={notes.tldr ?? ""}
@@ -507,7 +526,7 @@ function NotesView({
 
       {notes.topics.length > 0 && (
         <div>
-          <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Topics</h2>
+          <SectionHeading kind="topics">Topics</SectionHeading>
           <ul className="space-y-2">
             {notes.topics.map((t, i) => (
               <li key={i} className="flex items-start gap-1">
@@ -538,7 +557,7 @@ function NotesView({
 
       {(notes.action_items.length > 0 || editable) && (
         <div>
-          <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Action items</h2>
+          <SectionHeading kind="actions">Action items</SectionHeading>
           <ul className="space-y-1 text-sm text-slate-800 dark:text-slate-200">
             {notes.action_items.map((a, i) => (
               <li key={i} className="flex items-start gap-1">
@@ -570,7 +589,7 @@ function NotesView({
 
       {notes.highlights.length > 0 && (
         <div>
-          <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Highlights</h2>
+          <SectionHeading kind="highlights">Highlights</SectionHeading>
           <ul className="space-y-1">
             {notes.highlights.map((h, i) => (
               <li key={i} className="flex items-start border-l-2 border-indigo-300 pl-3 text-sm italic text-slate-700 dark:text-slate-300">
