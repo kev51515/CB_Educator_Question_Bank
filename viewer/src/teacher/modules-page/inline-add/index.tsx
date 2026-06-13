@@ -207,6 +207,8 @@ export function InlineAddItemRow({
   // Note/Callout (Structure group): a short message + a tone.
   const [noteBody, setNoteBody] = useState("");
   const [noteTone, setNoteTone] = useState<"info" | "tip" | "warning">("info");
+  // Page (Learn group): markdown lesson body (Video/File reuse `url`).
+  const [pageBody, setPageBody] = useState("");
 
   // Full-Test picker: the full-length tests catalog + the chosen slug + module
   // selection / date state.
@@ -260,6 +262,8 @@ export function InlineAddItemRow({
     ft.setFtOpensAt(null);
     setNoteBody("");
     setNoteTone("info");
+    setPageBody("");
+    setUrl("");
   };
 
   const submit = async (keepOpen: boolean = false): Promise<void> => {
@@ -525,6 +529,99 @@ export function InlineAddItemRow({
       return;
     }
 
+    if (itemType === "page") {
+      const heading = title.trim();
+      const body = pageBody.trim();
+      if (!heading && !body) {
+        toast.warning("Add a title or some content for the page");
+        return;
+      }
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "page",
+        item_ref_id: null,
+        title: heading,
+        url: null,
+        config: { body },
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add page", insertErr);
+        return;
+      }
+      toast.success("Page added", heading || undefined);
+      if (keepOpen) {
+        resetPerItemFields();
+        onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
+    if (itemType === "video") {
+      const link = url.trim();
+      if (!link) {
+        toast.warning("Paste a video link (YouTube, Vimeo, or Loom)");
+        return;
+      }
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "video",
+        item_ref_id: null,
+        title: title.trim(),
+        url: link,
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add video", insertErr);
+        return;
+      }
+      toast.success("Video added", title.trim() || undefined);
+      if (keepOpen) {
+        resetPerItemFields();
+        onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
+    if (itemType === "file") {
+      const link = url.trim();
+      const heading = title.trim();
+      if (!link) {
+        toast.warning("Paste a file URL");
+        return;
+      }
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "file",
+        item_ref_id: null,
+        title: heading || "File",
+        url: link,
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add file", insertErr);
+        return;
+      }
+      toast.success("File added", heading || undefined);
+      if (keepOpen) {
+        resetPerItemFields();
+        onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
     if (itemType === "note") {
       const body = noteBody.trim();
       if (!body) {
@@ -651,6 +748,21 @@ export function InlineAddItemRow({
         <path d="m9 14 2 2 4-4" />
       </>
     ),
+    page: (
+      <>
+        <path d="M5 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" />
+        <path d="M14 2v5h5" />
+      </>
+    ),
+    video: (
+      <>
+        <rect x="2.5" y="5" width="19" height="14" rx="2" />
+        <path d="m10 9 5 3-5 3Z" />
+      </>
+    ),
+    file: (
+      <path d="M21.44 11.05 12.25 20.24a4 4 0 0 1-5.66-5.66l8.49-8.49a2.5 2.5 0 0 1 3.54 3.54l-8.49 8.49a1 1 0 0 1-1.41-1.41l7.78-7.78" />
+    ),
     header: <path d="M4 7h16M4 12h10M4 17h7" />,
     note: (
       <>
@@ -674,6 +786,9 @@ export function InlineAddItemRow({
     full_test: "A full-length SAT in the locked test runner — pick which modules to deploy.",
     question_set: "A pre-built Question Bank set, auto-scored on submission.",
     practice_test: "Clone a practice test from your library into this course.",
+    page: "A rich-text lesson page rendered inline for students.",
+    video: "Embed a YouTube, Vimeo, or Loom video inline.",
+    file: "Link a file (PDF, slides…) for students to open or download.",
     header: "A bold divider row that groups the items below it.",
     note: "A callout with a short message — info, a tip, or a warning. No click-through.",
     divider: "A thin rule to visually separate runs of items.",
@@ -712,7 +827,11 @@ export function InlineAddItemRow({
   // ≥1 available type render, so the bar grows as new types ship. Question-Bank
   // types are gated to allow-listed educators (canQbank).
   const groupTypes: Record<InlineAddGroup, Array<{ type: InlineAddType; label: string }>> = {
-    learn: [],
+    learn: [
+      { type: "page", label: "Page" },
+      { type: "video", label: "Video" },
+      { type: "file", label: "File" },
+    ],
     assess: [
       { type: "assignment", label: "Assignment" },
       ...(canQbank
@@ -752,6 +871,9 @@ export function InlineAddItemRow({
       case "practice_test": return "Add Practice Test";
       case "full_test": return "Add Full-Test";
       case "question_set": return "Add Question Set";
+      case "page": return "Add Page";
+      case "video": return "Add Video";
+      case "file": return "Add File";
       case "header": return "Add Header";
       case "note": return "Add Note";
       case "divider": return "Add Divider";
@@ -887,6 +1009,72 @@ export function InlineAddItemRow({
           disabled={busy}
           className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
         />
+      )}
+
+      {itemType === "page" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Page title — e.g. 'How to attack inference questions'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <textarea
+            value={pageBody}
+            onChange={(e) => setPageBody(e.target.value)}
+            placeholder="Lesson content — plain text or simple markdown (**bold**, *italic*, blank line = new paragraph)."
+            disabled={busy}
+            rows={4}
+            className="w-full resize-y rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+        </div>
+      )}
+
+      {itemType === "video" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Video title (optional)"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="url"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="YouTube / Vimeo / Loom link"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+        </div>
+      )}
+
+      {itemType === "file" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="File name — e.g. 'Week 1 notes (PDF)'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="url"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="File URL (link from Materials, Drive, etc.)"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+        </div>
       )}
 
       {itemType === "note" && (

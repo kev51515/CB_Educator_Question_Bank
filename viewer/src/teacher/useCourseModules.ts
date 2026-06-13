@@ -19,7 +19,8 @@ export type ModuleItemType =
   | "page"
   | "file"
   | "note"
-  | "divider";
+  | "divider"
+  | "video";
 
 export interface ModuleItem {
   id: string;
@@ -121,6 +122,7 @@ const VALID_ITEM_TYPES: ReadonlySet<string> = new Set([
   "file",
   "note",
   "divider",
+  "video",
 ]);
 
 function asItemType(value: string): ModuleItemType {

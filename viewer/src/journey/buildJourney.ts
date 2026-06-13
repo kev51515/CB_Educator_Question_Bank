@@ -17,7 +17,7 @@ import {
 export interface JourneyItemInput {
   id: string;
   position: number;
-  item_type: "assignment" | "header" | "link" | "page" | "file" | "note" | "divider";
+  item_type: "assignment" | "header" | "link" | "page" | "file" | "note" | "divider" | "video";
   item_ref_id: string | null;
   title: string;
   url: string | null;

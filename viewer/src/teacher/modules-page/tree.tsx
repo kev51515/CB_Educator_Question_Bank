@@ -77,6 +77,12 @@ function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element 
       </>
     ),
     divider: <path d="M4 12h16" />,
+    video: (
+      <>
+        <rect x="2.5" y="5" width="19" height="14" rx="2" />
+        <path d="m10 9 5 3-5 3Z" />
+      </>
+    ),
   };
   return (
     <span
@@ -140,6 +146,7 @@ const ITEM_KIND_LABEL: Record<ModuleItem["item_type"], string> = {
   header: "Header",
   note: "Note",
   divider: "Divider",
+  video: "Video",
 };
 
 /** Small line-SVG padlock, matching ItemTypeIcon's stroke style. */

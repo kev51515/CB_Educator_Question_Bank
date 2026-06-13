@@ -30,6 +30,12 @@ export function ItemIcon({ type }: { type: ModuleItemRow["item_type"] }): JSX.El
       <path d="M21.44 11.05 12.25 20.24a4 4 0 0 1-5.66-5.66l8.49-8.49a2.5 2.5 0 0 1 3.54 3.54l-8.49 8.49a1 1 0 0 1-1.41-1.41l7.78-7.78" />
     ),
     header: <path d="M4 7h16M4 12h10M4 17h7" />,
+    video: (
+      <>
+        <rect x="2.5" y="5" width="19" height="14" rx="2" />
+        <path d="m10 9 5 3-5 3Z" />
+      </>
+    ),
   };
   return (
     <span

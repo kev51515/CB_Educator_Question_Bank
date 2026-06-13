@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import { useToast } from "@/components/Toast";
 import { assignmentTakePath, studentTestRunPath } from "@/lib/routes";
 import { FullTestIcon, ItemIcon } from "./ItemIcon";
+import { PageBlock, VideoBlock, FileBlock } from "./ModuleContentBlocks";
 import {
   type AssignmentMeta,
   type ModuleItemRow,
@@ -100,7 +100,6 @@ function NewDot(): JSX.Element {
 
 export function ModuleItemRowView({ item, locked, meta, pending = false }: ModuleItemRowProps): JSX.Element | null {
   const navigate = useNavigate();
-  const toast = useToast();
 
   if (!item.published) return null;
 
@@ -288,23 +287,50 @@ export function ModuleItemRowView({ item, locked, meta, pending = false }: Modul
     );
   }
 
-  // ---- Page / file (viewer deferred) ---------------------------------------
+  // ---- Learn content: Page / Video / File (0227) ---------------------------
+  if (item.item_type === "page" || item.item_type === "video" || item.item_type === "file") {
+    // Locked modules show a muted placeholder row, not the content.
+    if (locked) {
+      return (
+        <div className={`${rowBase} ${interactive}`} style={{ paddingLeft: padLeft }}>
+          <ItemIcon type={item.item_type} />
+          <span className="min-w-0 flex-1">
+            <span className="block truncate font-medium">{item.title}</span>
+            <span className={KIND_LABEL_CLASS}>
+              {item.item_type === "page" ? "Page" : item.item_type === "video" ? "Video" : "File"}
+            </span>
+          </span>
+          <RowLock />
+        </div>
+      );
+    }
+    const cfg = (item.config ?? {}) as { body?: string };
+    return (
+      <div className="px-4 py-2" style={{ paddingLeft: padLeft }}>
+        {item.title ? (
+          <p className="mb-1.5 text-sm font-semibold text-slate-800 dark:text-slate-100">
+            {item.title}
+          </p>
+        ) : null}
+        {item.item_type === "page" ? (
+          <PageBlock body={cfg.body ?? ""} />
+        ) : item.item_type === "video" ? (
+          <VideoBlock url={item.url ?? ""} title={item.title} />
+        ) : (
+          <FileBlock url={item.url ?? ""} title={item.title} />
+        )}
+      </div>
+    );
+  }
+
+  // ---- Unknown type — minimal safe row -------------------------------------
   return (
-    <button
-      type="button"
-      disabled={locked}
-      onClick={() => (locked ? undefined : toast.info(`${item.title} — viewer coming soon`))}
-      className={`${rowBase} ${interactive} text-left`}
-      style={{ paddingLeft: padLeft }}
-    >
+    <div className={`${rowBase} ${interactive}`} style={{ paddingLeft: padLeft }}>
       <ItemIcon type={item.item_type} />
       <span className="min-w-0 flex-1">
         <span className="block truncate font-medium">{item.title}</span>
-        <span className={KIND_LABEL_CLASS}>
-          {item.item_type === "page" ? "Page" : "File"}
-        </span>
       </span>
       {locked && <RowLock />}
-    </button>
+    </div>
   );
 }

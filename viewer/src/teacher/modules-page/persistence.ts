@@ -46,6 +46,9 @@ export type InlineAddType =
   | "practice_test"
   | "question_set"
   | "full_test"
+  | "page"
+  | "video"
+  | "file"
   | "header"
   | "note"
   | "divider"
@@ -64,6 +67,9 @@ export const INLINE_ADD_GROUP_LABEL: Record<InlineAddGroup, string> = {
 
 /** Which group each type lives in. */
 export const INLINE_ADD_GROUP_OF: Record<InlineAddType, InlineAddGroup> = {
+  page: "learn",
+  video: "learn",
+  file: "learn",
   assignment: "assess",
   practice_test: "assess",
   question_set: "assess",

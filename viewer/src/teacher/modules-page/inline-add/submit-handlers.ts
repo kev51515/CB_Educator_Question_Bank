@@ -56,7 +56,7 @@ export async function insertModuleItem(
   row: {
     module_id: string;
     position: number;
-    item_type: "assignment" | "header" | "link" | "note" | "divider";
+    item_type: "assignment" | "header" | "link" | "note" | "divider" | "page" | "video" | "file";
     item_ref_id: string | null;
     title: string;
     url: string | null;
