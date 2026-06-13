@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { assignmentTakePath, studentTestRunPath } from "@/lib/routes";
 import { FullTestIcon, ItemIcon } from "./ItemIcon";
 import { PageBlock, VideoBlock, FileBlock } from "./ModuleContentBlocks";
+import { GoalBlock, CountdownBlock, LiveSessionBlock } from "./ModuleEngageBlocks";
 import {
   type AssignmentMeta,
   type ModuleItemRow,
@@ -150,6 +151,34 @@ export function ModuleItemRowView({ item, locked, meta, pending = false }: Modul
             <p className="whitespace-pre-wrap text-sm leading-snug">{cfg.body}</p>
           ) : null}
         </div>
+      </div>
+    );
+  }
+
+  // ---- Goal / Countdown / Live Session (Plan + Engage groups) --------------
+  if (item.item_type === "goal") {
+    const cfg = (item.config ?? {}) as { target?: string; metric?: string };
+    return (
+      <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
+        <GoalBlock title={item.title} config={cfg} />
+      </div>
+    );
+  }
+
+  if (item.item_type === "countdown") {
+    const cfg = (item.config ?? {}) as { date?: string };
+    return (
+      <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
+        <CountdownBlock title={item.title} config={cfg} />
+      </div>
+    );
+  }
+
+  if (item.item_type === "live_session") {
+    const cfg = (item.config ?? {}) as { starts_at?: string; duration_min?: number };
+    return (
+      <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
+        <LiveSessionBlock title={item.title} url={item.url ?? null} config={cfg} />
       </div>
     );
   }

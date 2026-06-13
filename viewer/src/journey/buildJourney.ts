@@ -17,7 +17,18 @@ import {
 export interface JourneyItemInput {
   id: string;
   position: number;
-  item_type: "assignment" | "header" | "link" | "page" | "file" | "note" | "divider" | "video";
+  item_type:
+    | "assignment"
+    | "header"
+    | "link"
+    | "page"
+    | "file"
+    | "note"
+    | "divider"
+    | "video"
+    | "goal"
+    | "countdown"
+    | "live_session";
   item_ref_id: string | null;
   title: string;
   url: string | null;
@@ -124,7 +135,10 @@ export function buildJourney(
         !it.published ||
         it.item_type === "header" ||
         it.item_type === "divider" ||
-        it.item_type === "note"
+        it.item_type === "note" ||
+        it.item_type === "goal" ||
+        it.item_type === "countdown" ||
+        it.item_type === "live_session"
       )
         continue;
 

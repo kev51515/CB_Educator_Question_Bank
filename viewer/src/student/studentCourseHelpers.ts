@@ -69,7 +69,18 @@ export function toNumber(value: number | string | null | undefined): number | nu
 export interface ModuleItemRow {
   id: string;
   position: number;
-  item_type: "assignment" | "header" | "link" | "page" | "file" | "note" | "divider" | "video";
+  item_type:
+    | "assignment"
+    | "header"
+    | "link"
+    | "page"
+    | "file"
+    | "note"
+    | "divider"
+    | "video"
+    | "goal"
+    | "countdown"
+    | "live_session";
   item_ref_id: string | null;
   title: string;
   url: string | null;

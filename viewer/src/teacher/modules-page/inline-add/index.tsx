@@ -209,6 +209,13 @@ export function InlineAddItemRow({
   const [noteTone, setNoteTone] = useState<"info" | "tip" | "warning">("info");
   // Page (Learn group): markdown lesson body (Video/File reuse `url`).
   const [pageBody, setPageBody] = useState("");
+  // Plan group: Goal (target/metric) + Countdown (date).
+  const [goalTarget, setGoalTarget] = useState("");
+  const [goalMetric, setGoalMetric] = useState("");
+  const [countdownDate, setCountdownDate] = useState("");
+  // Engage group: Live Session (starts-at + duration; join link reuses `url`).
+  const [lsStartsAt, setLsStartsAt] = useState("");
+  const [lsDuration, setLsDuration] = useState("");
 
   // Full-Test picker: the full-length tests catalog + the chosen slug + module
   // selection / date state.
@@ -263,6 +270,11 @@ export function InlineAddItemRow({
     setNoteBody("");
     setNoteTone("info");
     setPageBody("");
+    setGoalTarget("");
+    setGoalMetric("");
+    setCountdownDate("");
+    setLsStartsAt("");
+    setLsDuration("");
     setUrl("");
   };
 
@@ -622,6 +634,105 @@ export function InlineAddItemRow({
       return;
     }
 
+    if (itemType === "goal") {
+      const heading = title.trim();
+      if (!heading) {
+        toast.warning("Add a goal title");
+        return;
+      }
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "goal",
+        item_ref_id: null,
+        title: heading,
+        url: null,
+        config: {
+          target: goalTarget.trim() || undefined,
+          metric: goalMetric.trim() || undefined,
+        },
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add goal", insertErr);
+        return;
+      }
+      toast.success("Goal added", heading);
+      if (keepOpen) {
+        resetPerItemFields();
+        void onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
+    if (itemType === "countdown") {
+      if (!countdownDate) {
+        toast.warning("Pick a date");
+        return;
+      }
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "countdown",
+        item_ref_id: null,
+        title: title.trim(),
+        url: null,
+        config: { date: countdownDate },
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add countdown", insertErr);
+        return;
+      }
+      toast.success("Countdown added", title.trim() || undefined);
+      if (keepOpen) {
+        resetPerItemFields();
+        void onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
+    if (itemType === "live_session") {
+      const heading = title.trim();
+      if (!heading) {
+        toast.warning("Add a session title");
+        return;
+      }
+      const startsAtIso = lsStartsAt ? new Date(lsStartsAt).toISOString() : undefined;
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "live_session",
+        item_ref_id: null,
+        title: heading,
+        url: url.trim() || null,
+        config: {
+          starts_at: startsAtIso,
+          duration_min: lsDuration ? Number(lsDuration) : undefined,
+        },
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add live session", insertErr);
+        return;
+      }
+      toast.success("Live Session added", heading);
+      if (keepOpen) {
+        resetPerItemFields();
+        void onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
     if (itemType === "note") {
       const body = noteBody.trim();
       if (!body) {
@@ -771,6 +882,25 @@ export function InlineAddItemRow({
       </>
     ),
     divider: <path d="M4 12h16" />,
+    goal: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="5" />
+        <circle cx="12" cy="12" r="1.5" />
+      </>
+    ),
+    countdown: (
+      <>
+        <rect x="3" y="4.5" width="18" height="16" rx="2" />
+        <path d="M3 9h18M8 2.5v4M16 2.5v4" />
+      </>
+    ),
+    live_session: (
+      <>
+        <rect x="2" y="6" width="13" height="12" rx="2" />
+        <path d="M15 10l6-3.5v11L15 14z" />
+      </>
+    ),
     link: (
       <>
         <path d="M10 13a5 5 0 0 0 7.07 0l1.93-1.93a5 5 0 0 0-7.07-7.07L11 5" />
@@ -792,6 +922,9 @@ export function InlineAddItemRow({
     header: "A bold divider row that groups the items below it.",
     note: "A callout with a short message — info, a tip, or a warning. No click-through.",
     divider: "A thin rule to visually separate runs of items.",
+    goal: "A target/checkpoint card to keep students aiming.",
+    countdown: "A countdown to the test date.",
+    live_session: "A scheduled live class with a join link.",
     link: "An external URL — opens for students in a new tab.",
   };
 
@@ -842,7 +975,11 @@ export function InlineAddItemRow({
           ] as Array<{ type: InlineAddType; label: string }>)
         : []),
     ],
-    engage: [],
+    engage: [{ type: "live_session", label: "Live Session" }],
+    plan: [
+      { type: "goal", label: "Goal" },
+      { type: "countdown", label: "Countdown" },
+    ],
     structure: [
       { type: "header", label: "Header" },
       { type: "note", label: "Note" },
@@ -877,6 +1014,9 @@ export function InlineAddItemRow({
       case "header": return "Add Header";
       case "note": return "Add Note";
       case "divider": return "Add Divider";
+      case "goal": return "Add Goal";
+      case "countdown": return "Add Countdown";
+      case "live_session": return "Add Live Session";
       case "link": return "Add Link";
     }
   })();
@@ -1116,6 +1256,94 @@ export function InlineAddItemRow({
               </button>
             ))}
           </div>
+        </div>
+      )}
+
+      {itemType === "goal" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Goal — e.g. 'Hit a 1400'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="text"
+            value={goalTarget}
+            onChange={(e) => setGoalTarget(e.target.value)}
+            placeholder="Target — e.g. 'by mock #3'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="text"
+            value={goalMetric}
+            onChange={(e) => setGoalMetric(e.target.value)}
+            placeholder="Tag (optional) — e.g. 'Math'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+        </div>
+      )}
+
+      {itemType === "countdown" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Label — e.g. 'SAT test day'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="date"
+            value={countdownDate}
+            onChange={(e) => setCountdownDate(e.target.value)}
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+        </div>
+      )}
+
+      {itemType === "live_session" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Session title"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="datetime-local"
+            value={lsStartsAt}
+            onChange={(e) => setLsStartsAt(e.target.value)}
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="number"
+            value={lsDuration}
+            onChange={(e) => setLsDuration(e.target.value)}
+            placeholder="Duration (min)"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <input
+            type="url"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="Join link — Zoom/Meet (optional)"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
         </div>
       )}
 

@@ -83,6 +83,25 @@ function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element 
         <path d="m10 9 5 3-5 3Z" />
       </>
     ),
+    goal: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="5" />
+        <circle cx="12" cy="12" r="1.5" />
+      </>
+    ),
+    countdown: (
+      <>
+        <rect x="3" y="4.5" width="18" height="16" rx="2" />
+        <path d="M3 9h18M8 2.5v4M16 2.5v4" />
+      </>
+    ),
+    live_session: (
+      <>
+        <rect x="2" y="6" width="13" height="12" rx="2" />
+        <path d="M15 10l6-3.5v11L15 14z" />
+      </>
+    ),
   };
   return (
     <span
@@ -147,6 +166,9 @@ const ITEM_KIND_LABEL: Record<ModuleItem["item_type"], string> = {
   note: "Note",
   divider: "Divider",
   video: "Video",
+  goal: "Goal",
+  countdown: "Countdown",
+  live_session: "Live Session",
 };
 
 /** Small line-SVG padlock, matching ItemTypeIcon's stroke style. */

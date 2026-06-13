@@ -49,6 +49,9 @@ export type InlineAddType =
   | "page"
   | "video"
   | "file"
+  | "goal"
+  | "countdown"
+  | "live_session"
   | "header"
   | "note"
   | "divider"
@@ -56,12 +59,13 @@ export type InlineAddType =
 
 // Add-picker sub-tab groups (docs/PLAN_MODULE_ITEM_TYPES.md). The picker shows
 // only groups that have ≥1 available type, so groups appear as their types ship.
-export type InlineAddGroup = "learn" | "assess" | "engage" | "structure";
+export type InlineAddGroup = "learn" | "assess" | "engage" | "plan" | "structure";
 
 export const INLINE_ADD_GROUP_LABEL: Record<InlineAddGroup, string> = {
   learn: "Learn",
   assess: "Assess",
   engage: "Engage",
+  plan: "Plan",
   structure: "Structure",
 };
 
@@ -74,6 +78,9 @@ export const INLINE_ADD_GROUP_OF: Record<InlineAddType, InlineAddGroup> = {
   practice_test: "assess",
   question_set: "assess",
   full_test: "assess",
+  goal: "plan",
+  countdown: "plan",
+  live_session: "engage",
   header: "structure",
   note: "structure",
   divider: "structure",
