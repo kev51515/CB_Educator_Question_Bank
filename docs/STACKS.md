@@ -33,15 +33,20 @@ thing between a student and someone else's data.**
 
 - **Host:** Cloudflare Pages. Project root **`viewer/`**, build command
   **`npm run build`** (`tsc -b && vite build`), output dir **`dist`**.
-- **SPA rewrite:** `viewer/public/_redirects` → `/*  /index.html  200`
-  (Cloudflare Pages convention; this is why deep links survive a refresh — no
-  `vercel.json`, no `*.html` lookups).
+- **SPA rewrite:** automatic — Pages serves `index.html` for unknown paths
+  whenever the output has a root `index.html` and **no `404.html`** (don't add
+  one). The old `viewer/public/_redirects` (`/* /index.html 200`) was deleted
+  2026-06-13: Pages' parser flagged that rule as an infinite loop and had been
+  IGNORING it on every deploy; deep links always worked via the automatic
+  fallback.
 - **Deploy trigger:** Cloudflare Pages git integration (auto-deploy on push to
   `main`), or direct upload via **`wrangler pages deploy viewer/dist`**.
   Branch/PR builds get preview URLs at `*.pages.dev`.
 - **Env vars:** set the `VITE_*` vars in **Cloudflare Pages → Settings →
   Environment variables** (Production + Preview). `VITE_*` is inlined into the
-  bundle — public by design; never put a service-role key here.
+  bundle — public by design; never put a service-role key here. Also set
+  **`NODE_VERSION=22`** (build-image Node; the default 20 is EOL and warns in
+  every build log).
 - **Rollback:** Cloudflare Pages → Deployments → pick a known-good deploy →
   **Rollback to this deployment**.
 - **DNS / domain:** Cloudflare Registrar + Cloudflare DNS; custom domain attached

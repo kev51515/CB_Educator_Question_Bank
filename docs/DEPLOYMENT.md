@@ -125,9 +125,15 @@ Cloudflare Pages builds Vite directly from the repo. Setup:
    ```
    VITE_SUPABASE_URL=https://<ref>.supabase.co
    VITE_SUPABASE_ANON_KEY=<anon-key>
+   NODE_VERSION=22
    ```
 
    Scope them to **Production** and **Preview**.
+
+   `NODE_VERSION=22` pins the build image's Node (Pages defaults to Node 20,
+   which is past end-of-life — the build log warns about it and about
+   `rollup-plugin-visualizer` requiring Node ≥22). Build-time only; the
+   shipped site is static so this has zero runtime effect.
 
 5. Add a custom domain under the project's **Custom domains → Set up a custom domain**. Because DNS is on Cloudflare, the records are added automatically and HTTPS is provisioned automatically.
 
@@ -162,9 +168,11 @@ Without one of these, a non-trivial fraction of users will be stuck on the old b
 
 ### SPA fallback (deep links)
 
-React Router uses client-side routing, so the host must serve `index.html` for any unknown path. The SPA rewrite already lives in the repo at **`viewer/public/_redirects`** (`/*  /index.html  200`) — Cloudflare Pages picks it up automatically; there's nothing to configure.
+React Router uses client-side routing, so the host must serve `index.html` for any unknown path. On Cloudflare Pages this is **automatic**: when the output has a root `index.html` and no `404.html`, Pages serves the SPA shell for unknown paths — there's nothing to configure.
 
-Test after deploying: visit `https://yourdomain/courses/anything-fake` directly. You should see the app's 404 page (rendered by React Router), not the host's 404. If you see the host's 404, the `_redirects` file didn't ship.
+History note (2026-06-13): the repo used to carry `viewer/public/_redirects` with `/*  /index.html  200`, but Pages' redirect parser flags that exact rule as an infinite loop and **ignores it on every deploy** (visible as a warning in the build log). Deep links worked all along purely via the automatic fallback, so the file was deleted. Don't re-add it — and don't add a `404.html` either, or the automatic SPA fallback turns off.
+
+Test after deploying: visit `https://yourdomain/courses/anything-fake` directly. You should see the app's 404 page (rendered by React Router), not the host's 404.
 
 ### Cloudflare Workers for future server logic
 
