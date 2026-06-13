@@ -33,7 +33,11 @@ import {
   testReplayPath,
   testStudentReportPath,
 } from "@/lib/routes";
-import { getResult, getRunTimeline } from "./api";
+import {
+  getResult,
+  getRunTimeline,
+  setProctoringLevel as apiSetProctoringLevel,
+} from "./api";
 import type { ProctorEvent } from "./api";
 import { ResultView } from "./ResultView";
 import { AssignTestModal } from "./AssignTestModal";
@@ -572,29 +576,17 @@ export function TestOverviewPage(): JSX.Element {
   };
 
   // Change the test's proctoring level. Optimistic UI with rollback.
-  //
-  // NOTE: this calls `setProctoringLevel(slug, level)` which is expected to be
-  // exported from ./api by migration 0108's parallel agent. To keep the build
-  // green if that export doesn't exist yet, we resolve it dynamically and treat
-  // a missing function as a no-op (toast + rollback). When api.ts gains the
-  // export, swap this for a direct `import { setProctoringLevel } from "./api"`.
-  // TODO(0108): replace dynamic guard with a static import once api.setProctoringLevel ships.
+  // (Was a dynamic-import guard while 0108's api.setProctoringLevel was
+  // pending; the export shipped, and the dynamic form only triggered the
+  // bundler's INEFFECTIVE_DYNAMIC_IMPORT warning since ./api is statically
+  // imported everywhere else.)
   const onSetProctoring = async (next: ProctoringUiLevel): Promise<void> => {
     const prev = proctoringLevel;
     if (next === prev) return;
     setProctoringLevel(next); // optimistic
     setProctoringBusy(true);
     try {
-      const api = (await import("./api")) as unknown as {
-        setProctoringLevel?: (slug: string, level: "off" | "soft" | "strict") => Promise<unknown>;
-      };
-      if (typeof api.setProctoringLevel !== "function") {
-        // Backend not wired yet — surface honestly and roll back.
-        setProctoringLevel(prev);
-        toast.info("Proctoring level isn't available yet", "This control will work once the backend ships.");
-        return;
-      }
-      await api.setProctoringLevel(slug, PROCTORING_API_LEVEL[next]);
+      await apiSetProctoringLevel(slug, PROCTORING_API_LEVEL[next]);
       const label = PROCTORING_OPTIONS.find((o) => o.value === next)?.label ?? next;
       toast.success(`Proctoring set to ${label}`);
     } catch (e: unknown) {
