@@ -42,7 +42,19 @@ const TRANSCRIBE_PROMPT =
 function mimeForPath(path: string): string {
   const ext = path.split(".").pop()?.toLowerCase();
   switch (ext) {
+    // Uploaded meeting recordings (e.g. a downloaded Fathom export) are VIDEO
+    // containers — send video/* so Gemini reads the audio track. (audio-only
+    // mp4 is .m4a below.)
     case "mp4":
+      return "video/mp4";
+    case "mov":
+      return "video/quicktime";
+    case "m4v":
+      return "video/x-m4v";
+    case "webm":
+      // Our recorder writes audio/webm; an uploaded video.webm is rare. Gemini
+      // accepts audio/webm for both.
+      return "audio/webm";
     case "m4a":
       return "audio/mp4";
     case "mp3":
@@ -139,17 +151,29 @@ async function transcribePart(
   audioPath: string,
 ): Promise<void> {
   try {
-    const { data: blob, error: dlErr } = await service.storage
-      .from("recordings")
-      .download(audioPath);
-    if (dlErr || !blob) throw new Error(dlErr?.message ?? "download failed");
-    const bytes = new Uint8Array(await blob.arrayBuffer());
     const mimeType = mimeForPath(audioPath);
 
-    const audioPart =
-      bytes.byteLength <= INLINE_LIMIT
-        ? { inline_data: { mime_type: mimeType, data: encodeBase64(bytes) } }
-        : { file_data: { mime_type: mimeType, file_uri: await uploadToGeminiFiles(geminiKey, bytes, mimeType) } };
+    // Stream the object via a signed URL instead of buffering it. A meeting
+    // video can be hundreds of MB — `.download()` → arrayBuffer would OOM the
+    // edge function. Small files (≤18 MB) are still read inline; larger ones
+    // are piped straight to the Gemini Files API without ever holding the whole
+    // file in memory.
+    const { data: signed, error: sErr } = await service.storage
+      .from("recordings")
+      .createSignedUrl(audioPath, 600);
+    if (sErr || !signed?.signedUrl) throw new Error(sErr?.message ?? "sign failed");
+    const res = await fetch(signed.signedUrl);
+    if (!res.ok || !res.body) throw new Error(`storage fetch ${res.status}`);
+    const size = Number(res.headers.get("content-length") ?? "0");
+
+    let audioPart: Record<string, unknown>;
+    if (size > 0 && size <= INLINE_LIMIT) {
+      const bytes = new Uint8Array(await res.arrayBuffer());
+      audioPart = { inline_data: { mime_type: mimeType, data: encodeBase64(bytes) } };
+    } else {
+      const fileUri = await uploadStreamToGeminiFiles(geminiKey, res.body, size, mimeType);
+      audioPart = { file_data: { mime_type: mimeType, file_uri: fileUri } };
+    }
 
     const resp = await fetch(
       `${GEMINI_BASE}/v1beta/models/${model}:generateContent?key=${geminiKey}`,
@@ -211,18 +235,26 @@ async function transcribePart(
   }
 }
 
-/** Resumable upload to the Gemini Files API; returns the file URI once ACTIVE. */
-async function uploadToGeminiFiles(
+/**
+ * Resumable upload to the Gemini Files API, STREAMING the bytes from `stream`
+ * (the storage object's response body) straight through — never buffering the
+ * whole file. `size` is the declared total (from the storage Content-Length),
+ * which Gemini needs up-front for the resumable session. Returns the file URI
+ * once ACTIVE.
+ */
+async function uploadStreamToGeminiFiles(
   key: string,
-  bytes: Uint8Array,
+  stream: ReadableStream<Uint8Array>,
+  size: number,
   mimeType: string,
 ): Promise<string> {
+  if (!size) throw new Error("gemini files: unknown content length");
   const start = await fetch(`${GEMINI_BASE}/upload/v1beta/files?key=${key}`, {
     method: "POST",
     headers: {
       "X-Goog-Upload-Protocol": "resumable",
       "X-Goog-Upload-Command": "start",
-      "X-Goog-Upload-Header-Content-Length": String(bytes.byteLength),
+      "X-Goog-Upload-Header-Content-Length": String(size),
       "X-Goog-Upload-Header-Content-Type": mimeType,
       "content-type": "application/json",
     },
@@ -237,16 +269,19 @@ async function uploadToGeminiFiles(
       "X-Goog-Upload-Offset": "0",
       "X-Goog-Upload-Command": "upload, finalize",
     },
-    body: bytes,
-  });
+    body: stream,
+    // Required by Deno/undici to send a streaming request body.
+    duplex: "half",
+  } as RequestInit & { duplex: "half" });
   let file = (await up.json())?.file as
     | { name?: string; uri?: string; state?: string }
     | undefined;
 
-  // Poll until the file finishes processing.
+  // Poll until the file finishes processing. A large meeting video takes
+  // longer to become ACTIVE than a short audio clip, so allow ~2 minutes.
   let tries = 0;
-  while (file?.state === "PROCESSING" && tries < 20) {
-    await new Promise((r) => setTimeout(r, 1500));
+  while (file?.state === "PROCESSING" && tries < 60) {
+    await new Promise((r) => setTimeout(r, 2000));
     const f = await fetch(`${GEMINI_BASE}/v1beta/${file.name}?key=${key}`);
     file = await f.json();
     tries += 1;

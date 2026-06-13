@@ -38,7 +38,7 @@ import type {
   RecordingSubject,
 } from "./types";
 
-const MAX_AUDIO = 200 * 1024 * 1024; // 200 MB
+const MAX_AUDIO = 500 * 1024 * 1024; // 500 MB — fits a downloaded meeting video (e.g. Fathom MP4)
 
 const STATUS_META: Record<RecordingStatus, { label: string; cls: string }> = {
   recording: { label: "Recording", cls: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300" },
@@ -540,12 +540,13 @@ export function RecordingsListPage() {
             <FileDropzone
               files={files}
               onChange={setFiles}
-              accept="audio/*,video/mp4,.m4a,.mp3,.wav,.webm"
+              accept="audio/*,video/*,.mp4,.mov,.m4v,.m4a,.mp3,.wav,.webm"
               maxSize={MAX_AUDIO}
               multiple={false}
             />
             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-              Drop an audio/video file to transcribe it. Leave empty to record live on the next screen.
+              Drop an audio or video file (up to 500&nbsp;MB — e.g. a downloaded Fathom/Zoom
+              recording) to transcribe it. Leave empty to record live on the next screen.
             </p>
           </div>
 
