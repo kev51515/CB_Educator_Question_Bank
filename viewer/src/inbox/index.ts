@@ -12,3 +12,4 @@ export { useThreads } from "./useThreads";
 export type { InboxThreadSummary, InboxOtherParticipant } from "./useThreads";
 export { useThreadMessages } from "./useThreadMessages";
 export type { InboxMessage } from "./useThreadMessages";
+export { sendDirectMessage } from "./sendDirectMessage";

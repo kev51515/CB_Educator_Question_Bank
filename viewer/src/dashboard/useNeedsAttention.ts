@@ -42,6 +42,15 @@
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import {
+  buildAtRiskItem,
+  compareAtRisk,
+  LOW_SCORE_PCT,
+  WEAK_DOMAIN_PCT,
+  type AtRiskItem,
+  type AtRiskSignals,
+  type WeakestDomain,
+} from "./atRiskHelpers";
 
 const FLASH_DURATION_MS = 1200;
 
@@ -78,20 +87,26 @@ export interface NewReplyItem {
   courseName: string;
 }
 
+export type { AtRiskItem } from "./atRiskHelpers";
+
 export interface UseNeedsAttention {
   toGrade: ToGradeItem[];
   pastDue: PastDueItem[];
   replies: NewReplyItem[];
+  atRisk: AtRiskItem[];
   loadingToGrade: boolean;
   loadingPastDue: boolean;
   loadingReplies: boolean;
+  loadingAtRisk: boolean;
   errorToGrade: string | null;
   errorPastDue: string | null;
   errorReplies: string | null;
+  errorAtRisk: string | null;
   refreshAll: () => Promise<void>;
   refreshToGrade: () => Promise<void>;
   refreshPastDue: () => Promise<void>;
   refreshReplies: () => Promise<void>;
+  refreshAtRisk: () => Promise<void>;
   /** Set of attempt ids that just arrived via realtime — flash briefly. */
   recentlyAddedToGrade: Set<string>;
   /** Set of post ids that just arrived via realtime — flash briefly. */
@@ -152,6 +167,41 @@ interface PostRow {
   }>;
 }
 
+// At-risk lane internal shapes -------------------------------------------------
+
+interface AtRiskCourseRow {
+  id: string;
+  name: string;
+  archived: boolean;
+}
+
+interface MembershipRow {
+  course_id: string;
+  student_id: string;
+}
+
+interface AtRiskAssignmentRow {
+  id: string;
+  due_at: string | null;
+  course_id: string;
+}
+
+interface BestAttemptRow {
+  assignment_id: string;
+  student_id: string;
+  effective_score: number | string | null;
+  submitted_at: string | null;
+}
+
+interface SkillByStudentRow {
+  student_id: string;
+  student_name: string | null;
+  section: string;
+  domain: string;
+  correct: number;
+  total: number;
+}
+
 // ─── Helpers ──────────────────────────────────────────────────────────────
 
 function pickOne<T>(value: EmbeddedOne<T>): T | null {
@@ -208,14 +258,17 @@ export function useNeedsAttention(
   const [toGrade, setToGrade] = useState<ToGradeItem[]>([]);
   const [pastDue, setPastDue] = useState<PastDueItem[]>([]);
   const [replies, setReplies] = useState<NewReplyItem[]>([]);
+  const [atRisk, setAtRisk] = useState<AtRiskItem[]>([]);
 
   const [loadingToGrade, setLoadingToGrade] = useState<boolean>(true);
   const [loadingPastDue, setLoadingPastDue] = useState<boolean>(true);
   const [loadingReplies, setLoadingReplies] = useState<boolean>(true);
+  const [loadingAtRisk, setLoadingAtRisk] = useState<boolean>(true);
 
   const [errorToGrade, setErrorToGrade] = useState<string | null>(null);
   const [errorPastDue, setErrorPastDue] = useState<string | null>(null);
   const [errorReplies, setErrorReplies] = useState<string | null>(null);
+  const [errorAtRisk, setErrorAtRisk] = useState<string | null>(null);
 
   // Track ids that arrived via realtime so the UI can flash them briefly.
   const [recentlyAddedToGrade, setRecentlyAddedToGrade] = useState<Set<string>>(
@@ -526,9 +579,269 @@ export function useNeedsAttention(
     }
   }, [teacherId, allowedCourseIds, scheduleFlash]);
 
+  // ── Lane 4: at-risk students (why + suggested action) ────────────────────
+  // Pure client enrichment, no migration. For each non-archived course the
+  // teacher owns (within the active workspace), we join three already-
+  // teacher-readable sources per enrolled student:
+  //   - overdue: assignments past due with no submitted best-attempt
+  //   - low score: best effective score < LOW_SCORE_PCT
+  //   - weakest domain: lowest-% SAT domain (course_skill_by_student RPC),
+  //     counted only when below WEAK_DOMAIN_PCT
+  // One RPC call per course (NOT per student) keeps this cheap. Students with
+  // no firing signal are dropped. RLS does the cross-course scoping.
+  const refreshAtRisk = useCallback(async (): Promise<void> => {
+    if (!teacherId) {
+      setAtRisk([]);
+      setLoadingAtRisk(false);
+      return;
+    }
+    setLoadingAtRisk(true);
+    setErrorAtRisk(null);
+
+    try {
+      // 1. Teacher's non-archived courses, scoped to the active workspace.
+      const coursesRes = await supabase
+        .from("courses")
+        .select("id, name, archived")
+        .eq("teacher_id", teacherId)
+        .eq("archived", false)
+        .limit(40);
+      if (!aliveRef.current) return;
+      if (coursesRes.error) {
+        setErrorAtRisk(coursesRes.error.message);
+        setAtRisk([]);
+        return;
+      }
+      const courses = ((coursesRes.data ?? []) as AtRiskCourseRow[]).filter(
+        (c) => !c.archived && (!allowedCourseIds || allowedCourseIds.has(c.id)),
+      );
+      if (courses.length === 0) {
+        setAtRisk([]);
+        return;
+      }
+      const courseIds = courses.map((c) => c.id);
+      const courseNameById = new Map(courses.map((c) => [c.id, c.name]));
+
+      // 2. Rosters + assignments (parallel; both scoped by courseIds + RLS).
+      const [memberRes, assignRes] = await Promise.all([
+        supabase
+          .from("course_memberships")
+          .select("course_id, student_id")
+          .in("course_id", courseIds),
+        supabase
+          .from("assignments")
+          .select("id, due_at, course_id")
+          .in("course_id", courseIds)
+          .eq("archived", false)
+          .eq("hidden", false),
+      ]);
+      if (!aliveRef.current) return;
+      if (memberRes.error) {
+        setErrorAtRisk(memberRes.error.message);
+        setAtRisk([]);
+        return;
+      }
+      if (assignRes.error) {
+        setErrorAtRisk(assignRes.error.message);
+        setAtRisk([]);
+        return;
+      }
+      const members = (memberRes.data ?? []) as MembershipRow[];
+      const assignments = (assignRes.data ?? []) as AtRiskAssignmentRow[];
+
+      // 3. Best attempts for those assignments (effective score per student).
+      const assignmentIds = assignments.map((a) => a.id);
+      let bestRows: BestAttemptRow[] = [];
+      if (assignmentIds.length > 0) {
+        const bestRes = await supabase
+          .from("assignment_best_attempts")
+          .select("assignment_id, student_id, effective_score, submitted_at")
+          .in("assignment_id", assignmentIds);
+        if (!aliveRef.current) return;
+        if (bestRes.error) {
+          // 0057 fallback: effective_score column absent → retry plain.
+          if (isMissingColumnError(bestRes.error.message, "effective_score")) {
+            const fb = await supabase
+              .from("assignment_best_attempts")
+              .select("assignment_id, student_id, score_percent, submitted_at")
+              .in("assignment_id", assignmentIds);
+            if (!aliveRef.current) return;
+            if (!fb.error) {
+              bestRows = ((fb.data ?? []) as Array<
+                BestAttemptRow & { score_percent?: number | string | null }
+              >).map((r) => ({
+                assignment_id: r.assignment_id,
+                student_id: r.student_id,
+                effective_score: r.score_percent ?? null,
+                submitted_at: r.submitted_at,
+              }));
+            }
+          } else {
+            setErrorAtRisk(bestRes.error.message);
+            setAtRisk([]);
+            return;
+          }
+        } else {
+          bestRows = (bestRes.data ?? []) as BestAttemptRow[];
+        }
+      }
+
+      // 4. Weakest SAT domain per student — one RPC per course, reduced
+      //    client-side. Failures (e.g. RPC missing) degrade silently: the
+      //    weak-skill signal just doesn't fire.
+      const weakestByStudent = new Map<string, WeakestDomain>();
+      const skillResults = await Promise.all(
+        courseIds.map(async (cid) => {
+          try {
+            return await supabase.rpc("course_skill_by_student", {
+              p_course_id: cid,
+            });
+          } catch {
+            return { data: null, error: true as const };
+          }
+        }),
+      );
+      if (!aliveRef.current) return;
+      // Aggregate correct/total per (student, domain), then pick lowest %.
+      const tally = new Map<string, { name: string; correct: number; total: number }>();
+      for (const res of skillResults) {
+        if (!res || res.error || !res.data) continue;
+        for (const row of res.data as SkillByStudentRow[]) {
+          if (!row.total) continue;
+          const key = `${row.student_id}::${row.domain}`;
+          const existing = tally.get(key);
+          if (existing) {
+            existing.correct += row.correct;
+            existing.total += row.total;
+          } else {
+            tally.set(key, {
+              name: row.domain,
+              correct: row.correct,
+              total: row.total,
+            });
+          }
+        }
+      }
+      const lowestPctByStudent = new Map<string, number>();
+      for (const [key, v] of tally) {
+        const studentId = key.slice(0, key.indexOf("::"));
+        const pct = v.total > 0 ? (v.correct / v.total) * 100 : 100;
+        const prev = lowestPctByStudent.get(studentId);
+        if (prev === undefined || pct < prev) {
+          lowestPctByStudent.set(studentId, pct);
+          if (pct < WEAK_DOMAIN_PCT) {
+            weakestByStudent.set(studentId, { name: v.name, masteryPct: pct });
+          } else {
+            weakestByStudent.delete(studentId);
+          }
+        }
+      }
+
+      // 5. Build per-(student, course) signals.
+      // Index helpers ---------------------------------------------------------
+      const assignmentsByCourse = new Map<string, AtRiskAssignmentRow[]>();
+      for (const a of assignments) {
+        const list = assignmentsByCourse.get(a.course_id) ?? [];
+        list.push(a);
+        assignmentsByCourse.set(a.course_id, list);
+      }
+      // submitted set + low-score count per student (best attempts are global
+      // across the teacher's assignments — bucket by assignment→course).
+      const courseOfAssignment = new Map(assignments.map((a) => [a.id, a.course_id]));
+      const submittedByStudent = new Map<string, Set<string>>(); // student -> assignmentIds submitted
+      const lowScoreCountByStudentCourse = new Map<string, number>(); // `${student}::${course}` -> n
+      for (const b of bestRows) {
+        if (!b.submitted_at) continue;
+        const courseId = courseOfAssignment.get(b.assignment_id);
+        if (!courseId) continue;
+        let set = submittedByStudent.get(b.student_id);
+        if (!set) {
+          set = new Set();
+          submittedByStudent.set(b.student_id, set);
+        }
+        set.add(b.assignment_id);
+        const score = b.effective_score === null ? null : Number(b.effective_score);
+        if (score !== null && Number.isFinite(score) && score < LOW_SCORE_PCT) {
+          const k = `${b.student_id}::${courseId}`;
+          lowScoreCountByStudentCourse.set(k, (lowScoreCountByStudentCourse.get(k) ?? 0) + 1);
+        }
+      }
+      const nowMs = Date.now();
+
+      const items: AtRiskItem[] = [];
+      // Names for students come from the skill RPC where available; fall back
+      // to a single profiles lookup for any roster members the RPC didn't name.
+      const nameByStudent = new Map<string, string>();
+      for (const res of skillResults) {
+        if (!res || res.error || !res.data) continue;
+        for (const row of res.data as SkillByStudentRow[]) {
+          if (row.student_name) nameByStudent.set(row.student_id, row.student_name);
+        }
+      }
+      const unnamed = [
+        ...new Set(members.map((m) => m.student_id).filter((id) => !nameByStudent.has(id))),
+      ];
+      if (unnamed.length > 0) {
+        const profRes = await supabase
+          .from("profiles")
+          .select("id, display_name, email")
+          .in("id", unnamed);
+        if (!aliveRef.current) return;
+        for (const p of (profRes.data ?? []) as Array<{
+          id: string;
+          display_name: string | null;
+          email: string | null;
+        }>) {
+          nameByStudent.set(p.id, p.display_name ?? p.email ?? "Student");
+        }
+      }
+
+      for (const m of members) {
+        const courseAssignments = assignmentsByCourse.get(m.course_id) ?? [];
+        const submitted = submittedByStudent.get(m.student_id);
+        let overdueCount = 0;
+        for (const a of courseAssignments) {
+          if (!a.due_at) continue;
+          if (new Date(a.due_at).getTime() >= nowMs) continue; // not past due
+          if (submitted?.has(a.id)) continue; // already submitted
+          overdueCount += 1;
+        }
+        const lowScoreCount =
+          lowScoreCountByStudentCourse.get(`${m.student_id}::${m.course_id}`) ?? 0;
+        const weakestDomain = weakestByStudent.get(m.student_id) ?? null;
+
+        const signals: AtRiskSignals = {
+          studentId: m.student_id,
+          studentName: nameByStudent.get(m.student_id) ?? "Student",
+          courseId: m.course_id,
+          courseName: courseNameById.get(m.course_id) ?? "Course",
+          overdueCount,
+          lowScoreCount,
+          weakestDomain,
+        };
+        const item = buildAtRiskItem(signals);
+        if (item) items.push(item);
+      }
+
+      items.sort(compareAtRisk);
+      setAtRisk(items);
+    } catch (err: unknown) {
+      if (!aliveRef.current) return;
+      setErrorAtRisk(getErrorMessage(err));
+      setAtRisk([]);
+    } finally {
+      if (aliveRef.current) setLoadingAtRisk(false);
+    }
+  }, [teacherId, allowedCourseIds]);
+
   const refreshAll = useCallback(async (): Promise<void> => {
-    await Promise.all([refreshToGrade(), refreshPastDue(), refreshReplies()]);
-  }, [refreshToGrade, refreshPastDue, refreshReplies]);
+    await Promise.all([
+      refreshToGrade(),
+      refreshPastDue(),
+      refreshReplies(),
+      refreshAtRisk(),
+    ]);
+  }, [refreshToGrade, refreshPastDue, refreshReplies, refreshAtRisk]);
 
   // Fan-out on teacherId change. Independent so a slow section never gates
   // the others.
@@ -536,7 +849,8 @@ export function useNeedsAttention(
     void refreshToGrade();
     void refreshPastDue();
     void refreshReplies();
-  }, [refreshToGrade, refreshPastDue, refreshReplies]);
+    void refreshAtRisk();
+  }, [refreshToGrade, refreshPastDue, refreshReplies, refreshAtRisk]);
 
   // ── Realtime subscription ───────────────────────────────────────────────
   // Mirrors the useNotifications pattern: one Supabase channel per teacher,
@@ -557,6 +871,8 @@ export function useNeedsAttention(
   refreshToGradeRef.current = refreshToGrade;
   const refreshRepliesRef = useRef(refreshReplies);
   refreshRepliesRef.current = refreshReplies;
+  const refreshAtRiskRef = useRef(refreshAtRisk);
+  refreshAtRiskRef.current = refreshAtRisk;
   const refreshAllRef = useRef(refreshAll);
   refreshAllRef.current = refreshAll;
 
@@ -578,6 +894,9 @@ export function useNeedsAttention(
             // Read latest fetcher off the ref — channel stays alive
             // across refresh callback identity flips.
             void refreshToGradeRef.current();
+            // A new/changed attempt can also shift a student's overdue or
+            // low-score signals — recompute the at-risk lane on the same beat.
+            void refreshAtRiskRef.current();
           }, REALTIME_DEBOUNCE_MS);
         },
       )
@@ -617,16 +936,20 @@ export function useNeedsAttention(
     toGrade,
     pastDue,
     replies,
+    atRisk,
     loadingToGrade,
     loadingPastDue,
     loadingReplies,
+    loadingAtRisk,
     errorToGrade,
     errorPastDue,
     errorReplies,
+    errorAtRisk,
     refreshAll,
     refreshToGrade,
     refreshPastDue,
     refreshReplies,
+    refreshAtRisk,
     recentlyAddedToGrade,
     recentlyAddedReplies,
   };

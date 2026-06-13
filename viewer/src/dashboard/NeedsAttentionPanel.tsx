@@ -15,6 +15,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   useNeedsAttention,
+  type AtRiskItem,
   type NewReplyItem,
   type PastDueItem,
   type ToGradeItem,
@@ -34,8 +35,15 @@ import {
   timeAgo,
   timeUntil,
 } from "./needsAttentionHelpers";
-import { RefreshIcon, GradeIcon, PastDueIcon, RepliesIcon } from "./needsAttentionIcons";
+import {
+  RefreshIcon,
+  GradeIcon,
+  PastDueIcon,
+  RepliesIcon,
+  AtRiskIcon,
+} from "./needsAttentionIcons";
 import { AttentionRow } from "./AttentionRow";
+import { AtRiskRow } from "./AtRiskRow";
 import { Section } from "./Section";
 import { EmptySectionLine } from "./EmptySectionLine";
 import { CourseChipRow, type CourseChipEntry } from "./CourseChipRow";
@@ -64,16 +72,20 @@ export function NeedsAttentionPanel({
     toGrade,
     pastDue,
     replies,
+    atRisk,
     loadingToGrade,
     loadingPastDue,
     loadingReplies,
+    loadingAtRisk,
     errorToGrade,
     errorPastDue,
     errorReplies,
+    errorAtRisk,
     refreshAll,
     refreshToGrade,
     refreshPastDue,
     refreshReplies,
+    refreshAtRisk,
     recentlyAddedToGrade,
     recentlyAddedReplies,
   } = useNeedsAttention(teacherId, allowedCourseIds);
@@ -146,13 +158,33 @@ export function NeedsAttentionPanel({
         : replies.filter((i) => i.courseShortCode === activeCourseId),
     [replies, activeCourseId],
   );
+  // At-risk items carry courseId/Name (no short_code), so when a course chip
+  // is active we resolve its name from the chip entries and filter by that.
+  const activeCourseName = useMemo(
+    () =>
+      activeCourseId === null
+        ? null
+        : courseEntries.find((c) => c.shortCode === activeCourseId)?.name ?? null,
+    [activeCourseId, courseEntries],
+  );
+  const filteredAtRisk = useMemo(
+    () =>
+      activeCourseName === null
+        ? atRisk
+        : atRisk.filter((i) => i.courseName === activeCourseName),
+    [atRisk, activeCourseName],
+  );
 
   const totalCount =
-    filteredToGrade.length + filteredPastDue.length + filteredReplies.length;
+    filteredAtRisk.length +
+    filteredToGrade.length +
+    filteredPastDue.length +
+    filteredReplies.length;
   const unfilteredTotalCount =
-    toGrade.length + pastDue.length + replies.length;
-  const anyLoading = loadingToGrade || loadingPastDue || loadingReplies;
-  const anyError = !!(errorToGrade || errorPastDue || errorReplies);
+    atRisk.length + toGrade.length + pastDue.length + replies.length;
+  const anyLoading =
+    loadingToGrade || loadingPastDue || loadingReplies || loadingAtRisk;
+  const anyError = !!(errorToGrade || errorPastDue || errorReplies || errorAtRisk);
 
   const toggle = (key: keyof CollapseState) => () =>
     setCollapse((s) => ({ ...s, [key]: !s[key] }));
@@ -166,6 +198,10 @@ export function NeedsAttentionPanel({
     }
   }, [refreshAll]);
 
+  const atRiskShown: AtRiskItem[] = useMemo(
+    () => filteredAtRisk.slice(0, MAX_PER_SECTION),
+    [filteredAtRisk],
+  );
   const toGradeShown: ToGradeItem[] = useMemo(
     () => filteredToGrade.slice(0, MAX_PER_SECTION),
     [filteredToGrade],
@@ -254,6 +290,35 @@ export function NeedsAttentionPanel({
           onSelect={setActiveCourseId}
         />
       )}
+
+      {/* At-risk students — why + a one-click Nudge. Placed first: it's the
+          most pedagogically valuable signal (struggling students), not just
+          work waiting on the teacher. */}
+      <Section
+        icon={<AtRiskIcon />}
+        label="At-risk students"
+        count={filteredAtRisk.length}
+        collapsed={collapse.atRisk}
+        onToggle={toggle("atRisk")}
+        loading={loadingAtRisk}
+        error={errorAtRisk}
+        onRetry={() => void refreshAtRisk()}
+      >
+        {filteredAtRisk.length === 0 ? (
+          <EmptySectionLine text="No students flagged" />
+        ) : (
+          <div className="space-y-2">
+            {atRiskShown.map((item) => (
+              <AtRiskRow key={`${item.studentId}:${item.courseId}`} item={item} />
+            ))}
+            {filteredAtRisk.length > MAX_PER_SECTION && (
+              <p className="px-3 pt-1 text-xs text-indigo-700 dark:text-indigo-300">
+                + {filteredAtRisk.length - MAX_PER_SECTION} more
+              </p>
+            )}
+          </div>
+        )}
+      </Section>
 
       {/* To grade */}
       <Section

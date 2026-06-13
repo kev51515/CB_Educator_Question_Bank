@@ -7,12 +7,14 @@ export interface CollapseState {
   toGrade: boolean;
   pastDue: boolean;
   replies: boolean;
+  atRisk: boolean;
 }
 
 const DEFAULT_COLLAPSE: CollapseState = {
   toGrade: false,
   pastDue: false,
   replies: false,
+  atRisk: false,
 };
 
 export function loadCollapse(): CollapseState {
@@ -25,6 +27,7 @@ export function loadCollapse(): CollapseState {
       toGrade: typeof parsed.toGrade === "boolean" ? parsed.toGrade : false,
       pastDue: typeof parsed.pastDue === "boolean" ? parsed.pastDue : false,
       replies: typeof parsed.replies === "boolean" ? parsed.replies : false,
+      atRisk: typeof parsed.atRisk === "boolean" ? parsed.atRisk : false,
     };
   } catch {
     return DEFAULT_COLLAPSE;
