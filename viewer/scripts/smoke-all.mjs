@@ -35,6 +35,7 @@ const SUITES = [
   { name: "features",      script: "smoke-features.mjs" },
   { name: "modules",       script: "smoke-modules.mjs" },
   { name: "qbank",         script: "smoke-qbank.mjs" },
+  { name: "recordings",    script: "smoke-recordings.mjs" },
   { name: "cascade",       script: "smoke-cascade.mjs" },
   { name: "grading",       script: "smoke-grading.mjs" },
   { name: "announcements", script: "smoke-announcements.mjs" },
