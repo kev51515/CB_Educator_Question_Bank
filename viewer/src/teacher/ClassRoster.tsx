@@ -34,7 +34,7 @@ import { SeatClaimRequestsPanel } from "./SeatClaimRequestsPanel";
 import { CodeActivityPanel } from "./CodeActivityPanel";
 import { SkeletonRows } from "@/components/Skeleton";
 import { EmptyState } from "@/components/EmptyState";
-import { KebabMenu, type KebabMenuOption } from "@/components";
+import { KebabMenu, type KebabMenuOption, LoginActivityDrawer } from "@/components";
 import { useToast } from "@/components/Toast";
 import { useProfile } from "@/lib/profile";
 import { courseStudentProfilePath } from "@/lib/routes";
@@ -79,6 +79,43 @@ export function ClassRoster() {
   const [showAddStudent, setShowAddStudent] = useState(false);
   const [showPrintLogins, setShowPrintLogins] = useState(false);
   const [resetTarget, setResetTarget] = useState<RosterStudent | null>(null);
+  const [loginTarget, setLoginTarget] = useState<RosterStudent | null>(null);
+
+  // Per-student last-login snapshot (time + place) for the roster column.
+  // Read once per course from `course_login_overview` (0222); gated server-side
+  // to the course's teacher / admins. Light by design — full IP/device history
+  // + map live in the "Login activity" drawer.
+  const [lastLogin, setLastLogin] = useState<
+    Map<string, { at: string | null; place: string | null }>
+  >(new Map());
+  useEffect(() => {
+    const alive = { current: true };
+    void (async () => {
+      try {
+        const { data, error: err } = await supabase.rpc("course_login_overview", {
+          p_course_id: cls.id,
+        });
+        if (!alive.current || err || !Array.isArray(data)) return;
+        const next = new Map<string, { at: string | null; place: string | null }>();
+        for (const r of data as Array<{
+          student_id: string;
+          last_login: string | null;
+          city: string | null;
+          country: string | null;
+          country_code: string | null;
+        }>) {
+          const place = r.city || r.country || r.country_code || null;
+          next.set(r.student_id, { at: r.last_login, place });
+        }
+        setLastLogin(next);
+      } catch {
+        /* non-fatal — column just shows "—" */
+      }
+    })();
+    return () => {
+      alive.current = false;
+    };
+  }, [cls.id, roster]);
   // Search query for filtering the roster client-side. Transient — does not
   // persist across reloads (per spec).
   const [searchQuery, setSearchQuery] = useState("");
@@ -509,6 +546,9 @@ export function ClassRoster() {
                           onSort={onSort}
                         />
                       </th>
+                      <th scope="col" className="px-6 py-3 font-medium">
+                        Last login
+                      </th>
                       <th scope="col" className="px-6 py-3 font-medium text-right">
                         <span className="sr-only">Actions</span>
                       </th>
@@ -608,6 +648,28 @@ export function ClassRoster() {
                         {formatRelative(s.joined_at)}
                       </time>
                     </td>
+                    <td className="px-6 py-3 text-slate-500 dark:text-slate-400">
+                      {(() => {
+                        const ll = lastLogin.get(s.student_id);
+                        if (!ll?.at) {
+                          return <span className="text-slate-300 dark:text-slate-600">Never</span>;
+                        }
+                        return (
+                          <time
+                            dateTime={ll.at}
+                            title={formatRelativeWithAbsolute(ll.at)}
+                            className="flex flex-col gap-0.5"
+                          >
+                            <span>{formatRelative(ll.at)}</span>
+                            {ll.place && (
+                              <span className="text-xs text-slate-400 dark:text-slate-500">
+                                {ll.place}
+                              </span>
+                            )}
+                          </time>
+                        );
+                      })()}
+                    </td>
                     <td className="px-6 py-3 text-right">
                       <div className="inline-flex justify-end">
                         <KebabMenu
@@ -622,6 +684,10 @@ export function ClassRoster() {
                                       s.student_id,
                                     ),
                                   ),
+                              },
+                              {
+                                label: "Login activity",
+                                onSelect: () => setLoginTarget(s),
                               },
                               ...(s.managed
                                 ? [
@@ -769,6 +835,14 @@ export function ClassRoster() {
           onCreated={() => {
             void refresh();
           }}
+        />
+      )}
+
+      {loginTarget && (
+        <LoginActivityDrawer
+          userId={loginTarget.student_id}
+          studentName={loginTarget.display_name ?? loginTarget.email}
+          onClose={() => setLoginTarget(null)}
         />
       )}
 

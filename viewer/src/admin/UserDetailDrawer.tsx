@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Skeleton } from "@/components/Skeleton";
+import { LoginActivityPanel } from "@/components/LoginActivity";
 import { useToast } from "@/components/Toast";
 import type { ProfileRole } from "@/lib/profile";
 import { formatDate, getErrorMessage, roleBadgeClass } from "./allUsersHelpers";
@@ -180,6 +181,13 @@ export function UserDetailDrawer({
                     hint="submitted / total"
                   />
                 </div>
+              </div>
+
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+                  Login activity
+                </p>
+                <LoginActivityPanel userId={data.id} />
               </div>
 
               <div>

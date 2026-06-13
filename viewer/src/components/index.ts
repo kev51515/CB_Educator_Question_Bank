@@ -106,6 +106,7 @@ export { EmptyState } from "./EmptyState";
 export { ResponsiveModal, type ResponsiveModalProps, type ModalSize } from "./ResponsiveModal";
 export { Combobox, type ComboboxOption, type ComboboxProps } from "./Combobox";
 export { Skeleton, SkeletonRows } from "./Skeleton";
+export { LoginActivityPanel, LoginActivityDrawer, type LoginEvent } from "./LoginActivity";
 export { StarRating, type StarRatingProps } from "./StarRating";
 export { ShortcutHelpOverlay } from "./ShortcutHelpOverlay";
 export type { ShortcutHelpOverlayProps } from "./ShortcutHelpOverlay";

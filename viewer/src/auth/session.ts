@@ -21,6 +21,7 @@ import { useCallback, useEffect, useState } from "react";
 import type { AuthChangeEvent, Session as SupabaseAuthSession, User } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
 import { clearUser, identifyUser } from "@/lib/telemetry";
+import { recordLoginEvent } from "@/lib/loginTracking";
 
 export type StudentArea = "bank" | "mock";
 export type SignUpRole = "student" | "teacher";
@@ -155,6 +156,9 @@ export function useStudentSession(): UseStudentSession {
       const meta = user.user_metadata as Record<string, unknown> | null | undefined;
       const role = meta && typeof meta.role === "string" ? meta.role : "student";
       identifyUser(user.id, user.email ?? "", role);
+      // Durable login tracking (IP + device + location). Fire-and-forget,
+      // deduped per (page load, user) here and per IP/30-min server-side.
+      void recordLoginEvent(user.id);
     };
 
     supabase.auth.getSession().then(({ data }) => {
