@@ -12,6 +12,7 @@ import type {
   RecordingDetail,
   RecordingNotes,
   RecordingPart,
+  RecordingSearchHit,
   RecordingSubject,
   Utterance,
 } from "./types";
@@ -442,4 +443,43 @@ export function useRecordingDetail(recordingId: string): UseRecordingDetail {
   }, [detail, load]);
 
   return { detail, loading, error, refresh: load };
+}
+
+/**
+ * Debounced search across the caller's own recordings (title + AI notes +
+ * transcript) via the search_my_recordings RPC (migration 0232). Returns []
+ * for queries under 2 chars. Stale responses are dropped via a request-id
+ * guard so fast typing can't render an out-of-order result.
+ */
+export function useRecordingSearch(query: string) {
+  const [hits, setHits] = useState<RecordingSearchHit[]>([]);
+  const [searching, setSearching] = useState(false);
+  const reqRef = useRef(0);
+
+  useEffect(() => {
+    const term = query.trim();
+    if (term.length < 2) {
+      setHits([]);
+      setSearching(false);
+      return;
+    }
+    const reqId = ++reqRef.current;
+    setSearching(true);
+    const t = setTimeout(() => {
+      void supabase
+        .rpc("search_my_recordings", { p_query: term })
+        .then(({ data, error }) => {
+          if (reqId !== reqRef.current) return; // a newer query superseded us
+          if (error) {
+            setHits([]);
+          } else {
+            setHits((data ?? []) as RecordingSearchHit[]);
+          }
+          setSearching(false);
+        });
+    }, 220);
+    return () => clearTimeout(t);
+  }, [query]);
+
+  return { hits, searching };
 }

@@ -76,6 +76,19 @@ export interface RecordingNotes {
   generated_at: string;
 }
 
+/** One hit from search_my_recordings (migration 0232). */
+export interface RecordingSearchHit {
+  recording_id: string;
+  title: string;
+  created_at: string;
+  subject_type: RecordingSubject;
+  domain: Domain;
+  matched_in: "title" | "transcript" | "notes";
+  snippet: string | null;
+  part_index: number | null;
+  start_ms: number | null;
+}
+
 /** A recording plus its parts + notes, as the detail page consumes it. */
 export interface RecordingDetail {
   recording: Recording;

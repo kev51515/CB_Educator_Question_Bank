@@ -9,7 +9,7 @@
  *  - Copy notes / copy transcript / download .md from the header.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { Combobox, KebabMenu, ResponsiveModal, Skeleton, useToast } from "@/components";
 import { useProfile } from "@/lib/profile";
@@ -808,6 +808,21 @@ export function RecordingDetailPage() {
     if (detail) previewDomain(detail.recording.domain);
     return () => previewDomain(null);
   }, [detail, previewDomain]);
+
+  // Deep-link to a moment: ?part=<n>&t=<ms> (used by recording search hits).
+  // Fire once after the detail (and its parts) have loaded.
+  const [searchParams] = useSearchParams();
+  const deepLinkedRef = useRef(false);
+  useEffect(() => {
+    if (!detail || deepLinkedRef.current) return;
+    const partRaw = searchParams.get("part");
+    if (partRaw == null) return;
+    const part = Number(partRaw);
+    const ms = Number(searchParams.get("t") ?? "0");
+    if (!Number.isFinite(part) || part < 1) return;
+    deepLinkedRef.current = true;
+    jumpTo(part, Number.isFinite(ms) ? ms : 0);
+  }, [detail, searchParams, jumpTo]);
 
   if (loading) {
     return (

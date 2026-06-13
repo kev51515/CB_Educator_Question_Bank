@@ -26,11 +26,17 @@ import {
   renameRecording,
   setRecordingCourse,
   uploadAndTranscribePart,
+  useRecordingSearch,
   useRecordingsList,
 } from "./useRecordings";
-import { formatDuration, relativeTime } from "./format";
+import { fmtTs, formatDuration, relativeTime } from "./format";
 import { GoogleCalendarCard } from "./GoogleCalendarCard";
-import type { Recording, RecordingStatus, RecordingSubject } from "./types";
+import type {
+  Recording,
+  RecordingSearchHit,
+  RecordingStatus,
+  RecordingSubject,
+} from "./types";
 
 const MAX_AUDIO = 200 * 1024 * 1024; // 200 MB
 
@@ -248,6 +254,41 @@ function RecordingRow({
   );
 }
 
+const MATCH_BADGE: Record<RecordingSearchHit["matched_in"], string> = {
+  title: "Title",
+  transcript: "Transcript",
+  notes: "Notes",
+};
+
+/** One search hit — title, where it matched, a snippet, and a jump link. */
+function SearchHitRow({ hit, onOpen }: { hit: RecordingSearchHit; onOpen: () => void }) {
+  return (
+    <li>
+      <button
+        type="button"
+        onClick={onOpen}
+        className="block w-full px-4 py-3 text-left hover:bg-slate-50 dark:hover:bg-slate-800"
+      >
+        <div className="flex items-center gap-2">
+          <span className="truncate font-medium text-slate-900 dark:text-slate-100">{hit.title}</span>
+          <span className="shrink-0 rounded-full bg-indigo-50 px-1.5 py-0.5 text-[11px] font-medium text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
+            {MATCH_BADGE[hit.matched_in]}
+          </span>
+          {hit.part_index != null && (
+            <span className="shrink-0 text-[11px] tabular-nums text-slate-400">
+              Part {hit.part_index} · {fmtTs(hit.start_ms ?? 0)}
+            </span>
+          )}
+        </div>
+        {hit.snippet && (
+          <p className="mt-0.5 line-clamp-2 text-sm text-slate-600 dark:text-slate-300">{hit.snippet}</p>
+        )}
+        <div className="mt-0.5 text-xs text-slate-400">{relativeTime(hit.created_at)}</div>
+      </button>
+    </li>
+  );
+}
+
 export function RecordingsListPage() {
   const { recordings, loading, error, refresh } = useRecordingsList();
   const { domain } = useDomain();
@@ -266,6 +307,18 @@ export function RecordingsListPage() {
 
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
+
+  const searchMode = search.trim().length >= 2;
+  const { hits, searching } = useRecordingSearch(search);
+
+  function openHit(hit: RecordingSearchHit) {
+    const base = recordingPath(hit.recording_id);
+    const url =
+      hit.part_index != null
+        ? `${base}?part=${hit.part_index}&t=${hit.start_ms ?? 0}`
+        : base;
+    navigate(url);
+  }
 
   const who = educatorLabel(domain).toLowerCase();
   const consentOk = subject === "self" || consent;
@@ -342,25 +395,27 @@ export function RecordingsListPage() {
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search recordings…"
+            placeholder="Search title, notes, and transcripts…"
             className="min-w-[12rem] flex-1 rounded-md border border-slate-300 px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-slate-800"
           />
-          <div className="inline-flex overflow-hidden rounded-md border border-slate-200 text-xs dark:border-slate-700">
-            {(["all", "ready", "processing"] as Filter[]).map((f) => (
-              <button
-                key={f}
-                type="button"
-                onClick={() => setFilter(f)}
-                className={`px-3 py-1.5 font-medium capitalize ${
-                  filter === f
-                    ? "bg-indigo-600 text-white"
-                    : "bg-transparent text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
+          {!searchMode && (
+            <div className="inline-flex overflow-hidden rounded-md border border-slate-200 text-xs dark:border-slate-700">
+              {(["all", "ready", "processing"] as Filter[]).map((f) => (
+                <button
+                  key={f}
+                  type="button"
+                  onClick={() => setFilter(f)}
+                  className={`px-3 py-1.5 font-medium capitalize ${
+                    filter === f
+                      ? "bg-indigo-600 text-white"
+                      : "bg-transparent text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"
+                  }`}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
@@ -375,6 +430,20 @@ export function RecordingsListPage() {
           body={`Record a lesson or ${who} session, or upload an audio file — you'll get a transcript and AI notes you can turn into a quiz.`}
           cta={{ label: "+ New recording", onClick: () => setOpen(true) }}
         />
+      ) : searchMode ? (
+        searching && hits.length === 0 ? (
+          <SkeletonRows count={3} />
+        ) : hits.length === 0 ? (
+          <p className="px-1 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+            No recordings match “{search.trim()}”.
+          </p>
+        ) : (
+          <ul className="divide-y divide-slate-200 overflow-hidden rounded-lg border border-slate-200 dark:divide-slate-700 dark:border-slate-700">
+            {hits.map((hit) => (
+              <SearchHitRow key={`${hit.recording_id}-${hit.matched_in}`} hit={hit} onOpen={() => openHit(hit)} />
+            ))}
+          </ul>
+        )
       ) : visible.length === 0 ? (
         <p className="px-1 py-8 text-center text-sm text-slate-500 dark:text-slate-400">No recordings match.</p>
       ) : (
