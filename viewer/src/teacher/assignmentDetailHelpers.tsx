@@ -29,10 +29,10 @@ export const DIFFICULTY_LABELS: Record<AssignmentDifficultyMix, string> = {
  * Legacy rows default to 'mocktest'. The detail view branches on this to
  * surface the right "test data" for a Practice Test module item.
  */
-export type AssignmentKind = "mocktest" | "qbank_set";
+export type AssignmentKind = "mocktest" | "qbank_set" | "authored_set";
 
 export function isAssignmentKind(value: string | null | undefined): value is AssignmentKind {
-  return value === "mocktest" || value === "qbank_set";
+  return value === "mocktest" || value === "qbank_set" || value === "authored_set";
 }
 export function isSourceId(value: string): value is AssignmentSourceId {
   return value === "cb" || value === "sat" || value === "mixed";

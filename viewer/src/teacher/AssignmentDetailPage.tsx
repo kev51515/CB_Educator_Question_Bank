@@ -362,6 +362,13 @@ export function AssignmentDetailPage() {
                     title="Full-length SAT practice test"
                   />
                 )}
+                {assignment.kind === "authored_set" && (
+                  <HeaderPill
+                    tone="amber"
+                    label="Quiz"
+                    title="Quiz published from a recording"
+                  />
+                )}
                 {(() => {
                   const rel = formatRelativeDue(assignment.due_at);
                   if (!rel) return null;
@@ -478,6 +485,13 @@ export function AssignmentDetailPage() {
                     assignment.qbank_set_uid ??
                     "—"}
                 </dd>
+              </div>
+            ) : assignment.kind === "authored_set" ? (
+              <div>
+                <dt className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  Source
+                </dt>
+                <dd className="mt-0.5 font-medium">Recording (published quiz)</dd>
               </div>
             ) : (
               <div>

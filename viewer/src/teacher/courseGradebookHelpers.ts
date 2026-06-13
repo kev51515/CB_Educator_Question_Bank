@@ -124,6 +124,7 @@ export function cellToneClass(cell: Cell): string {
 export function kindLabel(kind: string | null | undefined): string {
   if (kind === "mocktest") return "Practice Test";
   if (kind === "qbank_set") return "Question Set";
+  if (kind === "authored_set") return "Quiz";
   return "Assignment";
 }
 
