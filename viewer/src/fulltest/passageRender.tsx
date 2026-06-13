@@ -29,15 +29,17 @@ import { HIGHLIGHT_FILL, coerceColor, type AnnotField, type Highlight } from "./
 // mark logic. The `looksLikeMath` guard keeps "$50"-style currency as text.
 
 interface MathSegment {
-  type: "text" | "inline" | "display" | "underline" | "italic";
+  type: "text" | "inline" | "display" | "underline" | "italic" | "bold" | "sup" | "sub";
   content: string;
   /** Absolute offset of this segment's source span within the parent string. */
   srcStart: number;
 }
 
-/** Length of the opening `<u>` / `<i>` marker — the content starts here. */
-const U_OPEN = 3;
-const I_OPEN = 3;
+/** Length of the opening inline-markup marker — the content starts here. */
+const U_OPEN = 3; // <u>
+const I_OPEN = 3; // <i>
+const B_OPEN = 3; // <b>
+const SUPSUB_OPEN = 5; // <sup> / <sub>
 
 /**
  * Math content is delimited deliberately (`$…$`) in our data, so a span is math
@@ -91,6 +93,32 @@ function parseMathSegments(input: string): MathSegment[] {
           i = close + 4;
           textStart = i;
           continue;
+        }
+      } else if (tag3 === "<b>") {
+        const close = input.toLowerCase().indexOf("</b>", i + B_OPEN);
+        if (close !== -1) {
+          flush(i);
+          segs.push({ type: "bold", content: input.slice(i + B_OPEN, close), srcStart: i });
+          i = close + 4;
+          textStart = i;
+          continue;
+        }
+      } else {
+        const tag5 = input.slice(i, i + SUPSUB_OPEN).toLowerCase();
+        if (tag5 === "<sup>" || tag5 === "<sub>") {
+          const closeTag = tag5 === "<sup>" ? "</sup>" : "</sub>";
+          const close = input.toLowerCase().indexOf(closeTag, i + SUPSUB_OPEN);
+          if (close !== -1) {
+            flush(i);
+            segs.push({
+              type: tag5 === "<sup>" ? "sup" : "sub",
+              content: input.slice(i + SUPSUB_OPEN, close),
+              srcStart: i,
+            });
+            i = close + closeTag.length;
+            textStart = i;
+            continue;
+          }
         }
       }
       i += 1;
@@ -427,6 +455,26 @@ export function renderText(
               onRemove,
             )}
           </i>
+        ) : seg.type === "bold" ? (
+          <b
+            key={idx}
+            className="font-semibold"
+            data-annot-offset={baseOffset + seg.srcStart + B_OPEN}
+          >
+            {renderMarks(seg.content, baseOffset + seg.srcStart + B_OPEN, field, ranges, onRemove)}
+          </b>
+        ) : seg.type === "sup" || seg.type === "sub" ? (
+          // <sup>/<sub> own their full source span; inner text stays highlightable
+          // at srcStart + tag-open-length (both are 5: `<sup>`/`<sub>`).
+          seg.type === "sup" ? (
+            <sup key={idx} data-annot-offset={baseOffset + seg.srcStart + SUPSUB_OPEN}>
+              {renderMarks(seg.content, baseOffset + seg.srcStart + SUPSUB_OPEN, field, ranges, onRemove)}
+            </sup>
+          ) : (
+            <sub key={idx} data-annot-offset={baseOffset + seg.srcStart + SUPSUB_OPEN}>
+              {renderMarks(seg.content, baseOffset + seg.srcStart + SUPSUB_OPEN, field, ranges, onRemove)}
+            </sub>
+          )
         ) : (
           <MathSpan key={idx} latex={seg.content} display={seg.type === "display"} />
         ),
@@ -455,6 +503,14 @@ export function RichInline({ text }: { text: string }): JSX.Element {
           <i key={idx} className="italic">
             {seg.content}
           </i>
+        ) : seg.type === "bold" ? (
+          <b key={idx} className="font-semibold">
+            {seg.content}
+          </b>
+        ) : seg.type === "sup" ? (
+          <sup key={idx}>{seg.content}</sup>
+        ) : seg.type === "sub" ? (
+          <sub key={idx}>{seg.content}</sub>
         ) : (
           <MathSpan key={idx} latex={seg.content} display={seg.type === "display"} />
         ),
