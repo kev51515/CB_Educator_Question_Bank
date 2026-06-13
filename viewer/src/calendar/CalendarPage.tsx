@@ -156,6 +156,7 @@ export function CalendarPage() {
             .select(
               "id, short_code, title, due_at, course_id, courses(name, short_code, course_type)",
             )
+            .eq("hidden", false)
             .not("due_at", "is", null)
             .gte("due_at", startIso)
             .lte("due_at", endIso)

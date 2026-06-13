@@ -334,7 +334,8 @@ export function useStudentProfile(
           .from("assignments")
           .select("id, title")
           .eq("course_id", courseId)
-          .eq("archived", false);
+          .eq("archived", false)
+          .eq("hidden", false);
         if (asnRes.error) {
           setAttemptsError(asnRes.error.message);
           setAttempts([]);

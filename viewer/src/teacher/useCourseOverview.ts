@@ -156,6 +156,7 @@ export function useCourseOverview(courseId: string | undefined): UseCourseOvervi
         .select("id, due_at, archived")
         .eq("course_id", courseId)
         .eq("archived", false)
+        .eq("hidden", false)
         .limit(500);
 
       // 3. Recent attempts — the last 30 days of attempt rows for this

@@ -157,6 +157,7 @@ export function CourseGradebook() {
             .select("id, short_code, title, kind, created_at, due_at")
             .eq("course_id", courseId)
             .eq("archived", false)
+            .eq("hidden", false)
             .order("created_at", { ascending: true }),
         ]);
 

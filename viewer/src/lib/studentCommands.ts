@@ -138,6 +138,7 @@ function useNextDueAssignment(authed: boolean): NextDueAssignmentRow | null {
           .select("id")
           .gt("due_at", new Date().toISOString())
           .eq("archived", false)
+          .eq("hidden", false)
           .order("due_at", { ascending: true })
           .limit(1);
         if (cancelled) return;

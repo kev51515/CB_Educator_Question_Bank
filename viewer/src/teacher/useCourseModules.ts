@@ -204,7 +204,8 @@ export function useCourseModules(classId: string | null): UseCourseModules {
       const { data: asnData } = await supabase
         .from("assignments")
         .select("id, due_at, opens_at")
-        .eq("course_id", classId);
+        .eq("course_id", classId)
+        .eq("hidden", false);
       for (const a of (asnData ?? []) as {
         id: string;
         due_at: string | null;

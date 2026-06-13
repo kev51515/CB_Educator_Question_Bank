@@ -121,6 +121,7 @@ export function TeacherJourneyPanel({
           ? supabase
               .from("assignments")
               .select("id, kind, due_at")
+              .eq("hidden", false)
               .in("id", assignmentIds)
           : Promise.resolve({ data: [], error: null }),
         assignmentIds.length > 0

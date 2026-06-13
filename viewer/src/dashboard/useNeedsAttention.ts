@@ -401,6 +401,7 @@ export function useNeedsAttention(
         )
         .lt("due_at", nowIso)
         .eq("archived", false)
+        .eq("hidden", false)
         .order("due_at", { ascending: false })
         .limit(40);
 

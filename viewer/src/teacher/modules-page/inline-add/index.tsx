@@ -1123,11 +1123,10 @@ export function InlineAddItemRow({
             { type: "full_test", label: "Full-Test" },
             { type: "question_set", label: "Question Set" },
             { type: "practice_test", label: "Practice Test" },
-            // Skill Drill chip intentionally disabled until attempt-persistence
-            // is decided (submit_qbank_attempt needs a real assignment row;
-            // students can't create one). Plumbing below stays dormant. See
-            // docs/PLAN_MODULE_ITEM_TYPES.md.
-            // { type: "skill_drill", label: "Skill Drill" },
+            // Skill Drill: auto-targets each student's weak skills. Persistence
+            // works via `ensure_skill_drill_assignment` (migration 0238), which
+            // mints a real HIDDEN per-student qbank_set assignment on demand.
+            { type: "skill_drill", label: "Skill Drill" },
           ] as Array<{ type: InlineAddType; label: string }>)
         : []),
     ],

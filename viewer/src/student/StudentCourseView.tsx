@@ -303,17 +303,22 @@ export function StudentCourseView(): JSX.Element {
         )
         .eq("course_id", courseId)
         .eq("archived", false)
+        .eq("hidden", false)
         .gt("due_at", nowIso)
         .limit(500);
 
       // 2. My average — assignment_attempts_effective filtered to this
       //    course's assignments via inner join, last 30 days, submitted.
+      //    The effective view doesn't expose `hidden`, so we filter on the
+      //    inner-joined assignments relation instead (same pattern as the
+      //    course_id filter above) to exclude hidden skill-drill assignments.
       const myAveragePromise = supabase
         .from("assignment_attempts_effective")
         .select(
-          "effective_score, submitted_at, assignments!inner(course_id)",
+          "effective_score, submitted_at, assignments!inner(course_id, hidden)",
         )
         .eq("assignments.course_id", courseId)
+        .eq("assignments.hidden", false)
         .not("submitted_at", "is", null)
         .gte("submitted_at", cutoff30)
         .limit(500);

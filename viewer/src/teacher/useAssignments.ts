@@ -106,6 +106,7 @@ export function useAssignments(classId: string | null): UseAssignments {
           "id, short_code, course_id, created_by, title, description, source_id, question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, archived, created_at, updated_at",
         )
         .eq("course_id", classId)
+        .eq("hidden", false)
         .order("created_at", { ascending: false });
 
       if (queryError) {

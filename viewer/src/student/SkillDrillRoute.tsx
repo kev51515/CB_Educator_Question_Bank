@@ -11,21 +11,23 @@
  * Flow:
  *   1. Fetch the module_item by id for its `config.section` filter + title.
  *   2. Resolve the weak-skill → catalog set via `useSkillDrillSet(section)`.
- *   3. Mount QBankAssignmentRunner against a synthesized QBankAssignment whose
- *      `kind='qbank_set'`, `qbank_set_uid=<resolved uid>`, label="Skill Drill:
- *      {topic}". The runner resolves the questions file from the uid (catalog
- *      fallback path) and the static test-runner grades the set in-iframe.
+ *   3. Call `ensure_skill_drill_assignment` (migration 0238) to create/return a
+ *      REAL hidden per-student `qbank_set` assignment for the resolved uid, then
+ *      mount QBankAssignmentRunner against a QBankAssignment whose `id` is that
+ *      real assignment id (so `submit_qbank_attempt` persists + the mastery loop
+ *      closes). The runner resolves the questions file from the uid and the
+ *      static test-runner grades the set in-iframe.
  *
- * No new tables/RPCs. See the deviation note in the implementation report: the
- * synthesized assignment id is NOT a real `assignments` row, so server-side
- * `submit_qbank_attempt` persistence is a documented follow-up; the in-iframe
- * grading + review still works for the student today.
+ * The assignment is HIDDEN (assignments.hidden = true), so it never appears in
+ * any list, count, gradebook, or calendar — see the `.eq("hidden", false)`
+ * filters across the client.
  */
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { Skeleton } from "@/components";
 import { ROUTES } from "@/lib/routes";
+import { computeDefaultQbankTimeLimit } from "@/teacher/modules-page/persistence";
 import { useSkillDrillSet } from "./useSkillDrillSet";
 import { QBankAssignmentRunner, type QBankAssignment } from "./QBankAssignmentRunner";
 
@@ -98,27 +100,79 @@ export function SkillDrillRoute() {
   const section = readSection(item?.config ?? null);
   const drill = useSkillDrillSet(section);
 
+  // Real assignment id from `ensure_skill_drill_assignment` (a hidden per-student
+  // qbank_set assignment). Resolved once the drill set is known.
+  const [assignmentId, setAssignmentId] = useState<string | null>(null);
+  const [aidLoading, setAidLoading] = useState(false);
+  const [aidError, setAidError] = useState<string | null>(null);
+
+  const drillResolved = !drill.loading && !drill.empty;
+  const drillUid = drillResolved ? drill.uid : null;
+  const drillLabel = drillResolved ? drill.label : null;
+  const drillCount = drillResolved ? drill.entry.questionCount : null;
+
+  useEffect(() => {
+    let cancelled = false;
+    if (!itemId || !drillUid || !drillLabel) {
+      setAssignmentId(null);
+      return;
+    }
+    setAidLoading(true);
+    setAidError(null);
+    void (async () => {
+      try {
+        const count = drillCount ?? 10;
+        const { data, error } = await supabase.rpc(
+          "ensure_skill_drill_assignment",
+          {
+            p_item_id: itemId,
+            p_qbank_set_uid: drillUid,
+            p_label: drillLabel,
+            p_question_count: count,
+            p_time_limit: computeDefaultQbankTimeLimit(count),
+          },
+        );
+        if (cancelled) return;
+        if (error) {
+          setAidError(error.message);
+        } else if (!data) {
+          setAidError("Could not start this drill.");
+        } else {
+          setAssignmentId(data as string);
+        }
+      } catch (err: unknown) {
+        if (!cancelled) {
+          setAidError(err instanceof Error ? err.message : "Failed to start drill.");
+        }
+      } finally {
+        if (!cancelled) setAidLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [itemId, drillUid, drillLabel, drillCount]);
+
   const goHome = (): void => {
     void navigate(ROUTES.HOME);
   };
 
-  // Synthesize the assignment the runner needs once we've resolved a set. The id
-  // is the module_item id (a stable per-occurrence key); kind/qbank fields point
-  // the runner at the resolved set. Non-grading fields are filled with safe
-  // defaults — the runner only reads id, kind, qbank_set_uid, qbank_set_label,
-  // and title.
-  const synthesized = useMemo<QBankAssignment | null>(() => {
-    if (drill.loading || drill.empty) return null;
+  // Build the assignment the runner needs, using the REAL assignment id returned
+  // by `ensure_skill_drill_assignment`. The runner reads id (for submit), kind,
+  // qbank_set_uid, qbank_set_label, and title.
+  const assignment = useMemo<QBankAssignment | null>(() => {
+    if (!drillResolved || !assignmentId) return null;
     const courseId = readCourseId(item?.course_modules ?? null);
+    const count = drill.entry.questionCount;
     return {
-      id: itemId,
+      id: assignmentId,
       course_id: courseId,
       class_name: "",
       title: drill.label,
       description: null,
       source_id: "cb",
-      question_count: drill.entry.questionCount,
-      time_limit_minutes: 0,
+      question_count: count,
+      time_limit_minutes: computeDefaultQbankTimeLimit(count),
       difficulty_mix: "any",
       due_at: null,
       opens_at: new Date().toISOString(),
@@ -129,9 +183,9 @@ export function SkillDrillRoute() {
       qbank_set_uid: drill.uid,
       qbank_set_label: drill.label,
     };
-  }, [drill, item, itemId]);
+  }, [drillResolved, assignmentId, drill, item]);
 
-  if (itemLoading || drill.loading) {
+  if (itemLoading || drill.loading || aidLoading) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950 px-4 py-10">
         <div className="mx-auto w-full max-w-2xl space-y-4">
@@ -151,8 +205,12 @@ export function SkillDrillRoute() {
     return <SkillDrillMessage title="Couldn't open this drill" body={itemError} onBack={goHome} />;
   }
 
+  if (aidError) {
+    return <SkillDrillMessage title="Couldn't open this drill" body={aidError} onBack={goHome} />;
+  }
+
   // No weak-skill set matched yet — friendly nudge, not an error.
-  if (drill.empty || !synthesized) {
+  if (drill.empty || !assignment) {
     return (
       <SkillDrillMessage
         title="No weak-skill drill available yet"
@@ -162,7 +220,7 @@ export function SkillDrillRoute() {
     );
   }
 
-  return <QBankAssignmentRunner assignment={synthesized} onExit={goHome} />;
+  return <QBankAssignmentRunner assignment={assignment} onExit={goHome} />;
 }
 
 function SkillDrillMessage({

@@ -125,6 +125,7 @@ export function useStudentAssignments(): UseStudentAssignments {
           "id, short_code, course_id, title, description, source_id, question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, created_at, archived, withhold_results, courses:courses!assignments_course_id_fkey(name, short_code), assignment_attempts(id, started_at, submitted_at, score_percent, correct_count, total_questions, score_override, graded_at, feedback_text, results_released_at)",
         )
         .eq("archived", false)
+        .eq("hidden", false)
         .order("due_at", { ascending: true, nullsFirst: false })
         .order("created_at", { ascending: false });
 

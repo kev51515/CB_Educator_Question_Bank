@@ -202,6 +202,7 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
       const assignmentsRes = await supabase
         .from("assignments")
         .select("id, course_id")
+        .eq("hidden", false)
         .in("course_id", courseIds);
 
       if (assignmentsRes.error) {
@@ -274,6 +275,7 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
         .select("course_id, due_at, archived")
         .lt("due_at", nowIso)
         .eq("archived", false)
+        .eq("hidden", false)
         .in("course_id", courseIds)
         .limit(500);
 
