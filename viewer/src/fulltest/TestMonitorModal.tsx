@@ -9,6 +9,7 @@
  * while the tab is hidden.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
 import { ResponsiveModal } from "@/components/ResponsiveModal";
@@ -107,6 +108,28 @@ function fmtTime(iso: string | null): string {
   } catch {
     return "—";
   }
+}
+
+/** A single labelled progress fact in the row's meta strip. The tiny caption
+ *  above each value is what makes the monitor self-explanatory — no proctor
+ *  should have to guess what "2 marked" means. */
+function MetaItem({
+  label,
+  title,
+  children,
+}: {
+  label: string;
+  title?: string;
+  children: ReactNode;
+}): JSX.Element {
+  return (
+    <div className="min-w-0" title={title}>
+      <dt className="text-[10px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+        {label}
+      </dt>
+      <dd className="mt-0.5 text-xs text-slate-700 dark:text-slate-200">{children}</dd>
+    </div>
+  );
 }
 
 export function TestMonitorModal({ slug, title, isAdmin = false, scopeStudentIds = null, scopeLabel = null, newMsgRuns, onSeenRun, onClose }: TestMonitorModalProps) {
@@ -284,7 +307,7 @@ export function TestMonitorModal({ slug, title, isAdmin = false, scopeStudentIds
     <ResponsiveModal
       open={true}
       onClose={onClose}
-      size="xl"
+      size="3xl"
       title={
         <span className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5" aria-hidden>
@@ -338,97 +361,108 @@ export function TestMonitorModal({ slug, title, isAdmin = false, scopeStudentIds
               const canExpand = !!r.run_id && r.state !== "not_started";
               const isOpen = expanded === r.student_id;
               const panelId = `proctor-panel-${r.student_id}`;
+              const answered = r.answered ?? 0;
+              const modQ = r.module_questions ?? 0;
+              const pct = modQ > 0 ? Math.round((answered / modQ) * 100) : 0;
+              const marked = r.marked ?? 0;
               return (
                 <li key={r.student_id} className="bg-white dark:bg-slate-900">
                   <div
-                    className={`flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 ${
+                    className={`px-4 py-3 ${
                       flaggedRow ? "bg-rose-50/60 dark:bg-rose-950/20" : ""
                     }`}
                   >
-                    {canExpand ? (
-                      <button
-                        type="button"
-                        aria-expanded={isOpen}
-                        aria-controls={panelId}
-                        onClick={() => toggleExpand(r.student_id, r.run_id)}
-                        title={isOpen ? "Hide proctoring timeline" : "Show proctoring timeline"}
-                        className="-ml-1 flex h-7 w-7 flex-none items-center justify-center rounded-md text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                      >
-                        <span
-                          aria-hidden
-                          className={`inline-block transition-transform ${isOpen ? "rotate-90" : ""}`}
+                    {/* ── Header line: who + status/attention + actions ── */}
+                    <div className="flex items-center gap-2.5">
+                      {canExpand ? (
+                        <button
+                          type="button"
+                          aria-expanded={isOpen}
+                          aria-controls={panelId}
+                          onClick={() => toggleExpand(r.student_id, r.run_id)}
+                          title={isOpen ? "Hide proctoring timeline" : "Show proctoring timeline"}
+                          className="-ml-1 flex h-7 w-7 flex-none items-center justify-center rounded-md text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
                         >
-                          ▸
-                        </span>
-                      </button>
-                    ) : (
-                      <span className="-ml-1 h-7 w-7 flex-none" aria-hidden />
-                    )}
-                    <span className="min-w-0 flex-1 truncate text-sm font-medium text-slate-900 dark:text-slate-100">
-                      {r.student_name ?? "Student"}
-                    </span>
+                          <span
+                            aria-hidden
+                            className={`inline-block transition-transform ${isOpen ? "rotate-90" : ""}`}
+                          >
+                            ▸
+                          </span>
+                        </button>
+                      ) : (
+                        <span className="-ml-1 h-7 w-7 flex-none" aria-hidden />
+                      )}
+                      <span className="min-w-0 flex-1 truncate text-sm font-semibold text-slate-900 dark:text-slate-100">
+                        {r.student_name ?? "Student"}
+                      </span>
 
-                  {r.state === "in_progress" ? (
-                    <>
-                      <span className="rounded-md bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-900">
-                        {r.module_label
-                          ? `M${r.module_position}`
-                          : `Module ${r.module_position}`}{" "}
-                        · Q{r.current_question ?? "?"}
-                      </span>
-                      <span className="text-xs tabular-nums text-slate-500 dark:text-slate-400">
-                        {r.answered ?? 0}/{r.module_questions ?? "?"} answered
-                        {(r.marked ?? 0) > 0 ? ` · ${r.marked} marked` : ""}
-                      </span>
-                      <span
-                        className={`inline-flex items-center gap-1 text-xs tabular-nums font-medium ${lowTime ? "text-rose-600 dark:text-rose-400" : "text-slate-600 dark:text-slate-300"}`}
-                      >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                          <circle cx="12" cy="12" r="9" />
-                          <path d="M12 7.5V12l3 1.8" />
-                        </svg>
-                        {fmtClock(r.seconds_remaining)}
-                      </span>
-                      {r.started_at && (
-                        <span className="text-[11px] tabular-nums text-slate-400 dark:text-slate-500">
-                          started {fmtTime(r.started_at)}
-                        </span>
+                      {/* Attention signals — only the things a proctor must react to */}
+                      {r.state === "in_progress" && (
+                        <div className="flex flex-wrap items-center justify-end gap-1.5">
+                          {idle && (
+                            <StatusPill
+                              tone="warn"
+                              label={`Idle ${idleFor}s`}
+                              title="No activity heartbeat recently"
+                            />
+                          )}
+                          {flaggedRow && (
+                            <StatusPill
+                              tone="alert"
+                              label="Needs review"
+                              title={
+                                flagReasons.length
+                                  ? flagReasons.map(flagLabel).join(" · ")
+                                  : "Flagged for review"
+                              }
+                            />
+                          )}
+                          {away > 0 && (
+                            <StatusPill
+                              tone="warn"
+                              label={`Left tab ${away}×${awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}`}
+                              title="Times the student left the test tab (total time away)"
+                            />
+                          )}
+                          {fmtIntegrity(r.integrity) && (
+                            <StatusPill
+                              tone="alert"
+                              label={fmtIntegrity(r.integrity) ?? ""}
+                              title="Integrity signals: copy / paste / left full-screen"
+                            />
+                          )}
+                          {r.paused && <StatusPill tone="paused" label="Paused" />}
+                        </div>
                       )}
-                      {idle && (
-                        <StatusPill
-                          tone="warn"
-                          label={`Idle ${idleFor}s`}
-                          title="No activity heartbeat recently"
-                        />
+
+                      {r.state === "submitted" && (
+                        <div className="flex flex-wrap items-center justify-end gap-1.5">
+                          {flaggedRow && (
+                            <StatusPill
+                              tone="alert"
+                              label="Needs review"
+                              title={
+                                flagReasons.length
+                                  ? flagReasons.map(flagLabel).join(" · ")
+                                  : "Flagged for review"
+                              }
+                            />
+                          )}
+                          <StatusPill
+                            tone="released"
+                            label={`Submitted ${fmtTime(r.submitted_at)}`}
+                          />
+                        </div>
                       )}
-                      {flaggedRow && (
-                        <StatusPill
-                          tone="alert"
-                          label="Needs review"
-                          title={
-                            flagReasons.length
-                              ? flagReasons.map(flagLabel).join(" · ")
-                              : "Flagged for review"
-                          }
-                        />
+
+                      {r.state === "not_started" && (
+                        <StatusPill tone="idle" label="Not started" />
                       )}
-                      {away > 0 && (
-                        <StatusPill
-                          tone="warn"
-                          label={`Left tab ${away}×${awaySecs > 0 ? ` · ${fmtAwaySecs(awaySecs)}` : ""}`}
-                          title="Times the student left the test tab (total time away)"
-                        />
-                      )}
-                      {fmtIntegrity(r.integrity) && (
-                        <StatusPill
-                          tone="alert"
-                          label={fmtIntegrity(r.integrity) ?? ""}
-                          title="Integrity signals"
-                        />
-                      )}
-                      {r.paused && <StatusPill tone="paused" label="Paused" />}
-                      {isAdmin && (
-                        <div className="ml-auto flex items-center gap-1.5">
+
+                      {/* Live controls (admin only, live sittings only) */}
+                      {r.state === "in_progress" && isAdmin && (
+                        <div className="flex flex-none items-center gap-1.5 pl-1">
                           {r.run_id && (
                             <RowAction
                               tone="primary"
@@ -476,28 +510,67 @@ export function TestMonitorModal({ slug, title, isAdmin = false, scopeStudentIds
                           </ActionGroup>
                         </div>
                       )}
-                    </>
-                  ) : r.state === "submitted" ? (
-                    <>
-                      {flaggedRow && (
-                        <StatusPill
-                          tone="alert"
-                          label="Needs review"
-                          title={
-                            flagReasons.length
-                              ? flagReasons.map(flagLabel).join(" · ")
-                              : "Flagged for review"
-                          }
-                        />
-                      )}
-                      <StatusPill
-                        tone="released"
-                        label={`Submitted ${fmtTime(r.submitted_at)}`}
-                      />
-                    </>
-                  ) : (
-                    <StatusPill tone="idle" label="Not started" />
-                  )}
+                    </div>
+
+                    {/* ── Meta strip: clearly-labelled progress facts (live only) ── */}
+                    {r.state === "in_progress" && (
+                      <dl className="mt-2.5 grid grid-cols-2 gap-x-6 gap-y-2.5 pl-[34px] sm:flex sm:flex-wrap sm:items-start sm:gap-x-7">
+                        <MetaItem label="On question">
+                          {r.module_label
+                            ? `Module ${r.module_position}`
+                            : `Module ${r.module_position ?? "?"}`}{" "}
+                          · Q{r.current_question ?? "?"}
+                        </MetaItem>
+
+                        <MetaItem label="Answered this section">
+                          <span className="inline-flex items-center gap-2">
+                            <span className="tabular-nums">
+                              {answered} of {modQ || "?"}
+                            </span>
+                            {modQ > 0 && (
+                              <span
+                                className="hidden h-1.5 w-16 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700 sm:inline-block"
+                                aria-hidden
+                              >
+                                <span
+                                  className="block h-full rounded-full bg-blue-500"
+                                  style={{ width: `${pct}%` }}
+                                />
+                              </span>
+                            )}
+                          </span>
+                        </MetaItem>
+
+                        <MetaItem
+                          label="Marked for review"
+                          title="Questions the student bookmarked to revisit before submitting — a normal study habit, not a warning."
+                        >
+                          {marked > 0 ? (
+                            <span className="tabular-nums">
+                              {marked} question{marked === 1 ? "" : "s"}
+                            </span>
+                          ) : (
+                            <span className="text-slate-400 dark:text-slate-500">None</span>
+                          )}
+                        </MetaItem>
+
+                        <MetaItem label="Time left this section">
+                          <span
+                            className={`inline-flex items-center gap-1 tabular-nums font-semibold ${lowTime ? "text-rose-600 dark:text-rose-400" : "text-slate-700 dark:text-slate-200"}`}
+                          >
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                              <circle cx="12" cy="12" r="9" />
+                              <path d="M12 7.5V12l3 1.8" />
+                            </svg>
+                            {fmtClock(r.seconds_remaining)}
+                          </span>
+                        </MetaItem>
+
+                        {r.started_at && (
+                          <MetaItem label="Started at">{fmtTime(r.started_at)}</MetaItem>
+                        )}
+                      </dl>
+                    )}
                   </div>
 
                   {/* Expanded: full proctoring timeline for this run (lazy). */}

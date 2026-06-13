@@ -29,13 +29,15 @@ import {
 } from "react";
 import { useFocusTrap } from "@/hooks";
 
-export type ModalSize = "sm" | "md" | "lg" | "xl";
+export type ModalSize = "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
 
 const SIZE_MAXW: Record<ModalSize, string> = {
   sm: "sm:max-w-sm",
   md: "sm:max-w-md",
   lg: "sm:max-w-lg",
   xl: "sm:max-w-2xl",
+  "2xl": "sm:max-w-4xl",
+  "3xl": "sm:max-w-5xl",
 };
 
 export interface ResponsiveModalProps {
