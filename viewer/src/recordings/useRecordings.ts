@@ -250,6 +250,48 @@ export async function renameSpeaker(
   }
 }
 
+/**
+ * Add a recording to a course module: optionally SHARE it with the course's
+ * enrolled students (a `recording_shares` row → they can read it via the
+ * 0225 RLS), and drop a module_item link to the role-agnostic /recordings/:id
+ * view. Either or both, per the teacher's choice.
+ */
+export async function addRecordingToModule(input: {
+  recordingId: string;
+  courseId: string;
+  moduleId: string;
+  title: string;
+  shareWithStudents: boolean;
+}): Promise<void> {
+  const { data: auth } = await supabase.auth.getUser();
+  if (input.shareWithStudents) {
+    const { error: shErr } = await supabase
+      .from("recording_shares")
+      .upsert(
+        { recording_id: input.recordingId, course_id: input.courseId, shared_by: auth.user?.id },
+        { onConflict: "recording_id,course_id", ignoreDuplicates: true },
+      );
+    if (shErr) throw shErr;
+  }
+  // Append the link item at the end of the module (max live position + 1).
+  const { data: rows } = await supabase
+    .from("module_items")
+    .select("position")
+    .eq("module_id", input.moduleId)
+    .order("position", { ascending: false })
+    .limit(1);
+  const nextPos = ((rows?.[0]?.position as number | undefined) ?? -1) + 1;
+  const { error: miErr } = await supabase.from("module_items").insert({
+    module_id: input.moduleId,
+    position: nextPos,
+    item_type: "link",
+    item_ref_id: null,
+    title: input.title.trim() || "Recording",
+    url: `/recordings/${input.recordingId}`,
+  });
+  if (miErr) throw miErr;
+}
+
 export async function renameRecording(id: string, title: string): Promise<void> {
   const { error } = await supabase
     .from("recordings")

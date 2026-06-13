@@ -78,6 +78,12 @@ export const ROUTES = {
   // untouched; only the runtime destination is role-aware.
   TEST_RUN: "/test/:slug",
 
+  // Role-agnostic read-only recording view (like TEST_RUN). Stored in
+  // module_items.url as a 'link' when a recording is added to a module. Renders
+  // SharedRecordingView (audio + notes + transcript) in BOTH role trees; access
+  // is gated by RLS (owner, or shared to the viewer's enrolled course).
+  RECORDING_VIEW: "/recordings/:recordingId",
+
   // Every authenticated educator (teacher + admin) surface carries the
   // `/educator` prefix.
   TESTS_ADMIN: "/educator/tests",
@@ -235,6 +241,11 @@ export function recordingPath(recordingId: string): string {
 
 export function courseRecordingsPath(courseId: string): string {
   return buildPath(ROUTES.COURSE_RECORDINGS, { courseId });
+}
+
+/** Role-agnostic read-only recording view (stored in module_items.url). */
+export function recordingViewPath(recordingId: string): string {
+  return buildPath(ROUTES.RECORDING_VIEW, { recordingId });
 }
 
 export function testReplayPath(slug: string, runId: string): string {

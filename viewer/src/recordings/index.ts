@@ -6,4 +6,5 @@ export { RecordingsListPage } from "./RecordingsListPage";
 export { RecordingDetailPage } from "./RecordingDetailPage";
 export { AuthoredQuizRunner } from "./AuthoredQuizRunner";
 export { CourseRecordingsTab } from "./CourseRecordingsTab";
+export { SharedRecordingView } from "./SharedRecordingView";
 export type * from "./types";

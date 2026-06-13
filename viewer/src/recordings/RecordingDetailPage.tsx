@@ -18,6 +18,7 @@ import { ROUTES, courseAssignmentOverviewPath } from "@/lib/routes";
 import { useTeacherClasses } from "@/teacher/useTeacherClasses";
 import { RecorderPanel } from "./RecorderPanel";
 import { QuizDraftPanel } from "./QuizDraftPanel";
+import { AddToModuleModal } from "./AddToModuleModal";
 import { Waveform } from "./Waveform";
 import {
   deletePart,
@@ -778,6 +779,7 @@ export function RecordingDetailPage() {
   const [generating, setGenerating] = useState(false);
   const [transcriptOpen, setTranscriptOpen] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [addToModuleOpen, setAddToModuleOpen] = useState(false);
   const [moveOpen, setMoveOpen] = useState(false);
   const publishedQuizzes = usePublishedQuizzes(recordingId);
   const courseName = useCourseName(detail?.recording.course_id ?? null);
@@ -924,6 +926,14 @@ export function RecordingDetailPage() {
         </div>
         {isOwner && (
           <div className="flex shrink-0 items-center gap-2">
+            {recording.status === "ready" && (
+              <button
+                onClick={() => setAddToModuleOpen(true)}
+                className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
+              >
+                Add to module
+              </button>
+            )}
             <button
               onClick={() => setMoveOpen(true)}
               className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
@@ -1128,6 +1138,15 @@ export function RecordingDetailPage() {
           currentCourseId={recording.course_id}
           onClose={() => setMoveOpen(false)}
           onMoved={() => void refresh()}
+        />
+      )}
+
+      {isOwner && (
+        <AddToModuleModal
+          open={addToModuleOpen}
+          recordingId={recording.id}
+          recordingTitle={recording.title}
+          onClose={() => setAddToModuleOpen(false)}
         />
       )}
     </div>

@@ -25,6 +25,7 @@ import {
 import { FullTestApp } from "@/fulltest";
 import { LineLinkPage } from "@/line";
 import { CalendarPage } from "@/calendar";
+import { SharedRecordingView } from "@/recordings";
 // Lazy-loaded so the Inbox's TipTap/ProseMirror (MarkdownEditor) stack lands
 // in its own chunk instead of the critical-path bundle. The parent <Suspense
 // fallback={<LoadingScreen />}> in AuthGate covers these.
@@ -104,6 +105,8 @@ export default function StudentRoutesTree({
         <Route path={ROUTES.MOCK_TEST_HISTORY} element={<Navigate to={ROUTES.HOME} replace />} />
         <Route path={ROUTES.MOCK_TEST_REVIEW} element={<Navigate to={ROUTES.HOME} replace />} />
         <Route path={ROUTES.MY_FEEDBACK} element={<MyFeedbackPage />} />
+        {/* Read-only recording shared into a course module (RLS-gated). */}
+        <Route path={ROUTES.RECORDING_VIEW} element={<SharedRecordingView />} />
         <Route
           path={ROUTES.ASSIGNMENT_TAKE}
           element={<AssignmentTakeRoute studentId={studentId} />}
