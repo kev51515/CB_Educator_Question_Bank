@@ -18,6 +18,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/components/Toast";
+import { KebabMenu } from "@/components";
+
+/** A readable random password for the "reset password" convenience. */
+function suggestPassword(): string {
+  const a = "abcdefghjkmnpqrstuvwxyz";
+  const n = "23456789";
+  let s = "";
+  for (let i = 0; i < 4; i++) s += a[Math.floor(Math.random() * a.length)];
+  for (let i = 0; i < 4; i++) s += n[Math.floor(Math.random() * n.length)];
+  return s;
+}
 
 interface GuardianRow {
   guardian_id: string;
@@ -49,6 +60,11 @@ export function GuardiansSection({ studentId }: { studentId: string }) {
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [lastCreated, setLastCreated] = useState<CreatedCreds | null>(null);
+  // Inline per-guardian edit state.
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [renameDraft, setRenameDraft] = useState("");
+  const [resettingId, setResettingId] = useState<string | null>(null);
+  const [resetPw, setResetPw] = useState("");
   const alive = useRef(true);
 
   // For each guardian, the OTHER students they cover that this teacher can see.
@@ -176,6 +192,72 @@ export function GuardiansSection({ studentId }: { studentId: string }) {
     }
     setRows((prev) => prev.filter((r) => r.guardian_id !== guardianId));
     toast.success("Guardian removed", `${label} is no longer linked.`);
+  }
+
+  async function saveRename(guardianId: string) {
+    const next = renameDraft.trim();
+    setEditingId(null);
+    const current = rows.find((r) => r.guardian_id === guardianId);
+    if (!next || next === current?.display_name) return;
+    const { error } = await supabase.rpc("update_guardian", {
+      p_guardian_id: guardianId,
+      p_display_name: next,
+    });
+    if (error) {
+      toast.error("Couldn't rename guardian", error.message);
+      return;
+    }
+    setRows((prev) =>
+      prev.map((r) => (r.guardian_id === guardianId ? { ...r, display_name: next } : r)),
+    );
+    toast.success("Guardian renamed");
+  }
+
+  async function saveResetPassword(g: GuardianRow) {
+    if (resetPw.length < 6) {
+      toast.error("Password must be at least 6 characters.");
+      return;
+    }
+    setBusy(true);
+    const { error } = await supabase.rpc("reset_guardian_password", {
+      p_guardian_id: g.guardian_id,
+      p_password: resetPw,
+    });
+    setBusy(false);
+    if (error) {
+      toast.error("Couldn't reset password", error.message);
+      return;
+    }
+    setResettingId(null);
+    setLastCreated({
+      name: g.display_name ?? "Guardian",
+      login_code: g.login_code ?? "",
+      password: resetPw,
+    });
+    setResetPw("");
+    toast.success("Password reset", "Share the new password with the parent.");
+  }
+
+  async function deleteAccount(guardianId: string, label: string) {
+    if (
+      !window.confirm(
+        `Delete ${label}'s account entirely? They'll lose access for every student they follow. This can't be undone.`,
+      )
+    )
+      return;
+    const { error } = await supabase.rpc("delete_guardian", {
+      p_guardian_id: guardianId,
+    });
+    if (error) {
+      const msg =
+        error.message === "not_authorized"
+          ? "This parent also follows another teacher's student — ask an admin to delete the account."
+          : error.message;
+      toast.error("Couldn't delete account", msg);
+      return;
+    }
+    setRows((prev) => prev.filter((r) => r.guardian_id !== guardianId));
+    toast.success("Account deleted", `${label}'s account was removed.`);
   }
 
   return (
@@ -315,32 +397,102 @@ export function GuardiansSection({ studentId }: { studentId: string }) {
       ) : (
         <ul className="divide-y divide-slate-100 dark:divide-slate-800">
           {rows.map((g) => (
-            <li key={g.guardian_id} className="flex items-center justify-between gap-3 py-2">
-              <div>
-                <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                  {g.display_name ?? "Guardian"}
-                </p>
-                {g.login_code && (
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
-                    Login code <span className="font-mono">{g.login_code}</span>
-                  </p>
-                )}
-                {siblings[g.guardian_id]?.length ? (
-                  <p className="text-xs text-slate-400 dark:text-slate-500">
-                    Also follows{" "}
-                    {siblings[g.guardian_id]
-                      .map((s) => s.display_name ?? "a student")
-                      .join(", ")}
-                  </p>
-                ) : null}
+            <li key={g.guardian_id} className="py-2">
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  {editingId === g.guardian_id ? (
+                    <input
+                      autoFocus
+                      value={renameDraft}
+                      onChange={(e) => setRenameDraft(e.target.value)}
+                      onBlur={() => void saveRename(g.guardian_id)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") void saveRename(g.guardian_id);
+                        if (e.key === "Escape") setEditingId(null);
+                      }}
+                      maxLength={100}
+                      className="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-2 py-1 text-sm font-medium text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                  ) : (
+                    <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
+                      {g.display_name ?? "Guardian"}
+                    </p>
+                  )}
+                  {g.login_code && (
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      Login code <span className="font-mono">{g.login_code}</span>
+                    </p>
+                  )}
+                  {siblings[g.guardian_id]?.length ? (
+                    <p className="text-xs text-slate-400 dark:text-slate-500">
+                      Also follows{" "}
+                      {siblings[g.guardian_id]
+                        .map((s) => s.display_name ?? "a student")
+                        .join(", ")}
+                    </p>
+                  ) : null}
+                </div>
+                <KebabMenu
+                  options={[
+                    {
+                      label: "Rename",
+                      onSelect: () => {
+                        setRenameDraft(g.display_name ?? "");
+                        setResettingId(null);
+                        setEditingId(g.guardian_id);
+                      },
+                    },
+                    {
+                      label: "Reset password",
+                      onSelect: () => {
+                        setEditingId(null);
+                        setResetPw(suggestPassword());
+                        setResettingId(g.guardian_id);
+                      },
+                    },
+                    {
+                      label: "Remove from this student",
+                      destructive: true,
+                      onSelect: () => void unlink(g.guardian_id, g.display_name ?? "Guardian"),
+                    },
+                    {
+                      label: "Delete account",
+                      destructive: true,
+                      onSelect: () => void deleteAccount(g.guardian_id, g.display_name ?? "Guardian"),
+                    },
+                  ]}
+                />
               </div>
-              <button
-                type="button"
-                onClick={() => void unlink(g.guardian_id, g.display_name ?? "Guardian")}
-                className="text-sm font-medium text-rose-600 dark:text-rose-400 hover:underline"
-              >
-                Remove
-              </button>
+
+              {resettingId === g.guardian_id && (
+                <div className="mt-2 flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 p-2">
+                  <input
+                    type="text"
+                    value={resetPw}
+                    onChange={(e) => setResetPw(e.target.value)}
+                    placeholder="New password (≥6 chars)"
+                    className="min-w-0 flex-1 rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-2 py-1.5 text-sm font-mono text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setResettingId(null);
+                      setResetPw("");
+                    }}
+                    className="rounded-md ring-1 ring-slate-300 dark:ring-slate-700 text-sm px-2.5 py-1.5 text-slate-700 dark:text-slate-200 min-h-[34px]"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    disabled={busy}
+                    onClick={() => void saveResetPassword(g)}
+                    className="rounded-md bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-3 py-1.5 min-h-[34px]"
+                  >
+                    {busy ? "Saving…" : "Save"}
+                  </button>
+                </div>
+              )}
             </li>
           ))}
         </ul>
