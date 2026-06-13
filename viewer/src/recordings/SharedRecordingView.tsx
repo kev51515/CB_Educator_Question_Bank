@@ -13,6 +13,7 @@ import { Skeleton } from "@/components";
 import { useRecordingDetail } from "./useRecordings";
 import { Waveform } from "./Waveform";
 import { fmtTs, relativeTime, speakerDisplay } from "./format";
+import { NoteSectionHeading } from "./notesUi";
 
 export function SharedRecordingView() {
   const { recordingId = "" } = useParams();
@@ -58,13 +59,13 @@ export function SharedRecordingView() {
         <div className="mb-6 space-y-5 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
           {notes.tldr && (
             <div>
-              <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Summary</h2>
+              <NoteSectionHeading kind="summary">Summary</NoteSectionHeading>
               <p className="text-sm text-slate-800 dark:text-slate-200">{notes.tldr}</p>
             </div>
           )}
           {notes.topics.length > 0 && (
             <div>
-              <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Topics</h2>
+              <NoteSectionHeading kind="topics">Topics</NoteSectionHeading>
               <ul className="space-y-2">
                 {notes.topics.map((t, i) => (
                   <li key={i}>
@@ -77,7 +78,7 @@ export function SharedRecordingView() {
           )}
           {notes.action_items.length > 0 && (
             <div>
-              <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Action items</h2>
+              <NoteSectionHeading kind="actions">Action items</NoteSectionHeading>
               <ul className="list-disc space-y-1 pl-5 text-sm text-slate-800 dark:text-slate-200">
                 {notes.action_items.map((a, i) => (
                   <li key={i}>{a.text}{a.owner ? ` — ${a.owner}` : ""}</li>
@@ -87,7 +88,7 @@ export function SharedRecordingView() {
           )}
           {notes.highlights.length > 0 && (
             <div>
-              <h2 className="mb-1 text-sm font-semibold uppercase tracking-wide text-slate-500">Highlights</h2>
+              <NoteSectionHeading kind="highlights">Highlights</NoteSectionHeading>
               <ul className="space-y-1">
                 {notes.highlights.map((h, i) => (
                   <li key={i} className="border-l-2 border-indigo-300 pl-3 text-sm italic text-slate-700 dark:text-slate-300">
