@@ -53,6 +53,8 @@ export interface ResponsiveModalProps {
   dismissible?: boolean;
   /** Hide the × button (e.g. a confirm that owns its own Cancel). Default false. */
   hideClose?: boolean;
+  /** Buttons rendered in the header, left of the × (e.g. a manual refresh). */
+  headerActions?: ReactNode;
   /** Sticky footer — typically the action buttons. */
   footer?: ReactNode;
   /** Extra classes for the panel (rarely needed). */
@@ -70,6 +72,7 @@ export function ResponsiveModal({
   size = "md",
   dismissible = true,
   hideClose = false,
+  headerActions,
   footer,
   panelClassName = "",
   children,
@@ -140,7 +143,7 @@ export function ResponsiveModal({
           <span className="h-1.5 w-10 rounded-full bg-slate-300 dark:bg-slate-700" />
         </div>
 
-        {(title != null || !hideClose) && (
+        {(title != null || !hideClose || headerActions != null) && (
           <div className="flex items-start justify-between gap-4 px-5 pb-3 pt-3 sm:border-b sm:border-slate-200 sm:pt-4 dark:sm:border-slate-800">
             <div className="min-w-0">
               {title != null && (
@@ -157,17 +160,22 @@ export function ResponsiveModal({
                 </div>
               )}
             </div>
-            {!hideClose && (
-              <button
-                type="button"
-                onClick={onClose}
-                aria-label="Close"
-                className="grid h-10 w-10 flex-none place-items-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-slate-800"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-                  <path d="M18 6 6 18M6 6l12 12" />
-                </svg>
-              </button>
+            {(headerActions != null || !hideClose) && (
+              <div className="flex flex-none items-center gap-1">
+                {headerActions}
+                {!hideClose && (
+                  <button
+                    type="button"
+                    onClick={onClose}
+                    aria-label="Close"
+                    className="grid h-10 w-10 flex-none place-items-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:hover:bg-slate-800"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
             )}
           </div>
         )}

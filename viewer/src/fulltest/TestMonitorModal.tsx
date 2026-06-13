@@ -140,6 +140,7 @@ export function TestMonitorModal({ slug, title, isAdmin = false, scopeStudentIds
   const [error, setError] = useState<string | null>(null);
   const [tick, setTick] = useState(0); // forces idle-time recompute between polls
   const [busyRun, setBusyRun] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
   // Per-student row expansion → full proctoring timeline (lazy-loaded by run_id).
   const [expanded, setExpanded] = useState<string | null>(null); // student_id
   const [timelines, setTimelines] = useState<Record<string, ProctorEvent[]>>({}); // by run_id
@@ -178,6 +179,21 @@ export function TestMonitorModal({ slug, title, isAdmin = false, scopeStudentIds
       setLoaded(true);
     }
   }, [slug]);
+
+  // Manual refresh — the poll already runs every 4s, but a proctor watching a
+  // student act often wants the next snapshot *now*, not in 4s. The spin is a
+  // brief acknowledgement; we floor it so a sub-100ms fetch still reads as "did
+  // something".
+  const manualRefresh = useCallback(async (): Promise<void> => {
+    setRefreshing(true);
+    const started = Date.now();
+    try {
+      await refresh();
+    } finally {
+      const elapsed = Date.now() - started;
+      window.setTimeout(() => setRefreshing(false), Math.max(0, 450 - elapsed));
+    }
+  }, [refresh]);
 
   const addTime = useCallback(
     async (runId: string | null, seconds: number, who: string): Promise<void> => {
@@ -308,6 +324,32 @@ export function TestMonitorModal({ slug, title, isAdmin = false, scopeStudentIds
       open={true}
       onClose={onClose}
       size="3xl"
+      headerActions={
+        <button
+          type="button"
+          onClick={() => void manualRefresh()}
+          disabled={refreshing}
+          aria-label="Refresh now"
+          title="Refresh now"
+          className="grid h-10 w-10 flex-none place-items-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-60 dark:hover:bg-slate-800"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+            className={refreshing ? "motion-safe:animate-spin" : ""}
+          >
+            <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+            <path d="M21 3v6h-6" />
+          </svg>
+        </button>
+      }
       title={
         <span className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5" aria-hidden>
