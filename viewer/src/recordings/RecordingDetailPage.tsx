@@ -948,24 +948,17 @@ export function RecordingDetailPage() {
             {recording.status === "ready" && (
               <button
                 onClick={() => setAddToModuleOpen(true)}
-                className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
+                className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700"
               >
                 Add to module
               </button>
             )}
-            <button
-              onClick={() => setMoveOpen(true)}
-              className="rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
-            >
-              {recording.course_id ? "Change course" : "Move to course"}
-            </button>
-            <button
-              onClick={() => void handleDelete()}
-              className="rounded-md border border-red-200 px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:border-red-900/50 dark:hover:bg-red-900/20"
-              aria-label="Delete recording"
-            >
-              Delete
-            </button>
+            <KebabMenu
+              options={[
+                { label: recording.course_id ? "Change course" : "Move to course", onSelect: () => setMoveOpen(true) },
+                { label: "Delete recording", destructive: true, onSelect: () => void handleDelete() },
+              ]}
+            />
           </div>
         )}
       </div>
