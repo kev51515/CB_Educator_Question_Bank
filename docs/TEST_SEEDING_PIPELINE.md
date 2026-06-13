@@ -96,9 +96,13 @@ before writing.
 
 #### 5c. Both — final gates
 - `cd viewer && npm run check:content` — OCR-artifact scanner over all
-  `test_questions`. Must read **0 real flags**. Known false positives to expect:
-  LaTeX `\sqrt[5]` (bracket heuristic), a full-sentence choice among phrases,
-  quotation marks that open in the passage and close in a choice.
+  `test_questions`. **Must read a clean 0.** The heuristics recognise the
+  legitimate patterns that used to false-positive: LaTeX inside `$…$` (nth-root
+  `\sqrt[5]{…}`), uppercase phrase/full-sentence choices that legitimately mix
+  terminal punctuation (e.g. a noun phrase beside "No additional information is
+  necessary."), "…from the notes" rhetorical items, and a quotation that opens in
+  the passage and closes inside an answer choice. So any flag now is a REAL defect
+  to fix — don't dismiss it.
 - `python3 scripts/test-pipeline/audit-db.py <slug> <pdf...>` — diff the **live
   DB** against the PDF (works for any test; use after seeding/UPDATEs).
 - Structural: `total_questions` == row count; clickthrough harness

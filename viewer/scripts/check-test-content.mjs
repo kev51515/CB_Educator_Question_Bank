@@ -22,9 +22,13 @@
  *   D bracket_artifact         — a single-lowercase-letter/digit bracket like "[a]"
  *                                (a footnote/marker leftover). NOTE: legitimate
  *                                editorial brackets ("[is]", "[P]eople") are NOT
- *                                flagged — only the single-lowercase artifact shape.
+ *                                flagged; nor is LaTeX inside `$…$` (e.g. an nth
+ *                                root `\sqrt[5]{…}`) — math is stripped first.
  *   E unbalanced_quote         — odd number of " in the passage (truncation / lost
- *                                close-quote, e.g. a cut-off sentence)
+ *                                close-quote, e.g. a cut-off sentence). EXCLUDES the
+ *                                convention item where the quotation deliberately
+ *                                opens in the passage and closes inside an answer
+ *                                choice (recognised when a choice carries a quote).
  *   F missing_blank            — a "conforms to the conventions" grammar item whose
  *                                passage has no `__` gap at all. (Rhetorical
  *                                "most logically completes" / "most logical
@@ -33,7 +37,12 @@
  *                                excluded.)
  *   G inconsistent_choice_punct— some choices end in a terminal mark and some don't
  *                                (a period before a closing quote, `."`, counts as
- *                                terminal — that is correct American style).
+ *                                terminal — that is correct American style). Only a
+ *                                defect for lowercase sentence-COMPLETION fragments;
+ *                                uppercase phrase/full-sentence choices (e.g. a noun
+ *                                phrase beside "No additional information is
+ *                                necessary.") legitimately mix punctuation, and
+ *                                "…from the notes" rhetorical items are excluded.
  *
  * Env: SUPABASE_URL, SUPABASE_SERVICE_KEY (root ../.env).
  * Exit code: 0 if clean, 1 if any issue found (so CI/scripts can gate on it).
@@ -63,7 +72,12 @@ const BLANK = /_{2,}/;
 const endsTerminal = (c) => /[.!?]["']?\s*$/.test((c || "").trim());
 const isGrammar = (stem) => /conforms to the conventions/i.test(stem || "");
 const isSynthesis = (stem) =>
-  /most logically completes|most logical transition|completes the text with the most/i.test(stem || "");
+  /most logically completes|most logical transition|completes the text with the most|uses (?:relevant )?information from the notes|effectively uses .*\bnotes\b/i.test(stem || "");
+/** Strip `$…$` / `$$…$$` math so LaTeX (e.g. \sqrt[5]{…}) isn't mistaken for an artifact. */
+const stripMath = (s) => (s || "").replace(/\$\$[^$]*\$\$|\$[^$]*\$/g, " ");
+/** A choice that begins lowercase is a true sentence-completion FRAGMENT (vs an
+ *  uppercase phrase/full-sentence choice, whose terminal punctuation varies legitimately). */
+const startsLower = (c) => /^["'(]?[a-z]/.test((c || "").trim());
 
 /** Strip the placeholder "blank" word so "after the gap" analysis isn't fooled. */
 const dropBlankWord = (s) => (s || "").replace(/\bblank\b/gi, " ").replace(/\s+/g, " ").trim();
@@ -80,12 +94,18 @@ function checkQuestion(row) {
   if (BLANK.test(field) && /\bblank\b/i.test(field))
     out.push(["placeholder_blank_word", "…" + field.slice(Math.max(0, field.search(BLANK) - 25), field.search(BLANK) + 40) + "…"]);
 
-  // D — single-lowercase-letter/digit bracket artifact like "[a]" (NOT "[is]"/"[P]")
-  const br = field.match(/\[[a-z0-9]\]/);
-  if (br) out.push(["bracket_artifact", br[0] + "  …" + field.slice(-50)]);
+  // D — single-lowercase-letter/digit bracket artifact like "[a]" (NOT "[is]"/"[P]").
+  //     Math is stripped first so a LaTeX nth-root `\sqrt[5]{…}` isn't flagged.
+  const br = stripMath(field).match(/\[[a-z0-9]\]/);
+  if (br) out.push(["bracket_artifact", br[0] + "  …" + stripMath(field).slice(-50)]);
 
-  // E — unbalanced straight double-quotes (truncation / dropped close-quote)
-  if (((field.match(/"/g) || []).length % 2) === 1) out.push(["unbalanced_quote", "…" + field.slice(-60)]);
+  // E — unbalanced straight double-quotes (truncation / dropped close-quote).
+  //     EXCEPT a Standard-English convention item where the quotation deliberately
+  //     OPENS in the passage and CLOSES inside the answer choice (so the passage
+  //     alone is odd by design) — recognised when a choice carries a closing quote.
+  const choicesHaveQuote = choiceVals.some((c) => /["“”]/.test(c));
+  if (((field.match(/"/g) || []).length % 2) === 1 && !(isGrammar(stem) && choicesHaveQuote))
+    out.push(["unbalanced_quote", "…" + field.slice(-60)]);
 
   if (BLANK.test(field)) {
     const idx = field.search(BLANK);
@@ -115,8 +135,14 @@ function checkQuestion(row) {
   const choicesAreQuotations =
     choiceVals.length > 0 && choiceVals.filter((c) => /^["']/.test(c.trim())).length >= Math.ceil(choiceVals.length / 2);
 
-  // G — inconsistent choice end-punctuation (some terminated, some not)
-  if (choiceVals.length >= 2 && !isSynthesis(stem) && !choicesAreQuotations) {
+  // G — inconsistent choice end-punctuation (some terminated, some not). Only a
+  //     real defect when the choices are lowercase sentence-COMPLETION fragments
+  //     (a spurious period on a fragment). Uppercase phrase/full-sentence choices
+  //     legitimately mix punctuation — e.g. noun-phrase options beside a full
+  //     sentence like "No additional information is necessary." — so require a
+  //     fragment majority before flagging.
+  const fragmentMajority = choiceVals.filter(startsLower).length >= Math.ceil(choiceVals.length / 2);
+  if (choiceVals.length >= 2 && !isSynthesis(stem) && !choicesAreQuotations && fragmentMajority) {
     const term = choiceVals.filter(endsTerminal).length;
     if (term > 0 && term < choiceVals.length)
       out.push(["inconsistent_choice_punct", `${term}/${choiceVals.length} choices end in a terminal mark`]);
