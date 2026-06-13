@@ -70,6 +70,13 @@ function ItemTypeIcon({ type }: { type: ModuleItem["item_type"] }): JSX.Element 
       <path d="M21.44 11.05 12.25 20.24a4 4 0 0 1-5.66-5.66l8.49-8.49a2.5 2.5 0 0 1 3.54 3.54l-8.49 8.49a1 1 0 0 1-1.41-1.41l7.78-7.78" />
     ),
     header: <path d="M4 7h16M4 12h10M4 17h7" />,
+    note: (
+      <>
+        <path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4Z" />
+        <path d="M8 8h8M8 11.5h5" />
+      </>
+    ),
+    divider: <path d="M4 12h16" />,
   };
   return (
     <span
@@ -131,6 +138,8 @@ const ITEM_KIND_LABEL: Record<ModuleItem["item_type"], string> = {
   link: "Link",
   file: "File",
   header: "Header",
+  note: "Note",
+  divider: "Divider",
 };
 
 /** Small line-SVG padlock, matching ItemTypeIcon's stroke style. */
@@ -1216,6 +1225,14 @@ const ModuleCard = memo(function ModuleCard({
                           : "text-sm font-medium text-slate-800 dark:text-slate-200"
                       }
                     />
+                  ) : item.item_type === "divider" ? (
+                    <span className="self-start text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                      Divider
+                    </span>
+                  ) : item.item_type === "note" && !item.title ? (
+                    <span className="self-start max-w-full text-sm font-medium text-slate-500 dark:text-slate-400 italic truncate">
+                      {String((item.config as { body?: string })?.body ?? "Note")}
+                    </span>
                   ) : isAssignment ? (
                     <button
                       type="button"
@@ -1270,7 +1287,7 @@ const ModuleCard = memo(function ModuleCard({
                       {item.title}
                     </span>
                   )}
-                  {item.item_type !== "header" && (
+                  {item.item_type !== "header" && item.item_type !== "divider" && (
                     <span className="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                       <span>
                         {isFullTestLink ? "Practice Test" : ITEM_KIND_LABEL[item.item_type]}

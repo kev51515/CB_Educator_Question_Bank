@@ -56,10 +56,12 @@ export async function insertModuleItem(
   row: {
     module_id: string;
     position: number;
-    item_type: "assignment" | "header" | "link";
+    item_type: "assignment" | "header" | "link" | "note" | "divider";
     item_ref_id: string | null;
     title: string;
     url: string | null;
+    /** Per-type inline payload (0225) — note body+tone, etc. */
+    config?: Record<string, unknown>;
   },
 ): Promise<string | null> {
   const { error: insertError } = await supabase.from("module_items").insert(row);

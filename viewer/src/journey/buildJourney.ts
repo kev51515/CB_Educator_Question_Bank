@@ -17,7 +17,7 @@ import {
 export interface JourneyItemInput {
   id: string;
   position: number;
-  item_type: "assignment" | "header" | "link" | "page" | "file";
+  item_type: "assignment" | "header" | "link" | "page" | "file" | "note" | "divider";
   item_ref_id: string | null;
   title: string;
   url: string | null;
@@ -118,7 +118,15 @@ export function buildJourney(
     const cells: JourneyCell[] = [];
 
     for (const it of [...m.items].sort((a, b) => a.position - b.position)) {
-      if (!it.published || it.item_type === "header") continue;
+      // Headers, dividers, and notes are structural/instructional — never
+      // journey cells (0225).
+      if (
+        !it.published ||
+        it.item_type === "header" ||
+        it.item_type === "divider" ||
+        it.item_type === "note"
+      )
+        continue;
 
       if (it.item_type === "assignment" && it.item_ref_id) {
         const info = lookups.assignment(it.item_ref_id);

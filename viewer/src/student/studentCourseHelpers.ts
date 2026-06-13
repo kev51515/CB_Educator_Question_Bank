@@ -69,12 +69,14 @@ export function toNumber(value: number | string | null | undefined): number | nu
 export interface ModuleItemRow {
   id: string;
   position: number;
-  item_type: "assignment" | "header" | "link" | "page" | "file";
+  item_type: "assignment" | "header" | "link" | "page" | "file" | "note" | "divider";
   item_ref_id: string | null;
   title: string;
   url: string | null;
   indent: number;
   published: boolean;
+  /** Per-type inline payload (0225) — note body+tone, etc. */
+  config?: Record<string, unknown> | null;
 }
 
 export interface ModuleRow {

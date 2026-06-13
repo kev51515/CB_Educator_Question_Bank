@@ -17,7 +17,9 @@ export type ModuleItemType =
   | "header"
   | "link"
   | "page"
-  | "file";
+  | "file"
+  | "note"
+  | "divider";
 
 export interface ModuleItem {
   id: string;
@@ -39,6 +41,8 @@ export interface ModuleItem {
   due_at: string | null;
   /** Start time for assignment-backed items (`assignments.opens_at`). */
   opens_at: string | null;
+  /** Per-type inline payload (0225) — e.g. note body+tone, page body. {} if unset. */
+  config: Record<string, unknown>;
 }
 
 export interface CourseModule {
@@ -91,6 +95,7 @@ interface ModuleItemRow {
   indent: number;
   published: boolean;
   publish_at: string | null;
+  config: Record<string, unknown> | null;
 }
 
 interface CourseModuleRow {
@@ -114,6 +119,8 @@ const VALID_ITEM_TYPES: ReadonlySet<string> = new Set([
   "link",
   "page",
   "file",
+  "note",
+  "divider",
 ]);
 
 function asItemType(value: string): ModuleItemType {
@@ -160,7 +167,7 @@ export function useCourseModules(classId: string | null): UseCourseModules {
             // Inline items so we don't fire one query per module. The
             // server-side order isn't guaranteed across nested rows, so we
             // sort again on the client below.
-            "items:module_items(id, module_id, position, item_type, item_ref_id, title, url, indent, published, publish_at)",
+            "items:module_items(id, module_id, position, item_type, item_ref_id, title, url, indent, published, publish_at, config)",
           ].join(", "),
         )
         .eq("course_id", classId)
@@ -214,6 +221,7 @@ export function useCourseModules(classId: string | null): UseCourseModules {
               opens_at: item.item_ref_id
                 ? (dueByAssignment.get(item.item_ref_id)?.opens_at ?? null)
                 : null,
+              config: (item.config ?? {}) as Record<string, unknown>,
             }))
             .sort((a, b) => a.position - b.position);
 

@@ -53,6 +53,9 @@ import {
   writeLastAddType,
   computeDefaultQbankTimeLimit,
   type InlineAddType,
+  type InlineAddGroup,
+  INLINE_ADD_GROUP_LABEL,
+  INLINE_ADD_GROUP_OF,
 } from "../persistence";
 import type { InlineCreateModuleRowProps, InlineAddItemRowProps } from "./types";
 import {
@@ -201,6 +204,9 @@ export function InlineAddItemRow({
   const [url, setUrl] = useState("");
   const [assignmentId, setAssignmentId] = useState("");
   const [busy, setBusy] = useState(false);
+  // Note/Callout (Structure group): a short message + a tone.
+  const [noteBody, setNoteBody] = useState("");
+  const [noteTone, setNoteTone] = useState<"info" | "tip" | "warning">("info");
 
   // Full-Test picker: the full-length tests catalog + the chosen slug + module
   // selection / date state.
@@ -252,6 +258,8 @@ export function InlineAddItemRow({
     qs.setPsQuery("");
     qs.setPsHighlightIdx(0);
     ft.setFtOpensAt(null);
+    setNoteBody("");
+    setNoteTone("info");
   };
 
   const submit = async (keepOpen: boolean = false): Promise<void> => {
@@ -517,6 +525,62 @@ export function InlineAddItemRow({
       return;
     }
 
+    if (itemType === "note") {
+      const body = noteBody.trim();
+      if (!body) {
+        toast.warning("Add a message for the note");
+        return;
+      }
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "note",
+        item_ref_id: null,
+        title: title.trim(), // optional heading above the body
+        url: null,
+        config: { body, tone: noteTone },
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add note", insertErr);
+        return;
+      }
+      toast.success("Note added");
+      if (keepOpen) {
+        resetPerItemFields();
+        onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
+    if (itemType === "divider") {
+      setBusy(true);
+      const insertErr = await insertModuleItem(supabase, {
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "divider",
+        item_ref_id: null,
+        title: "",
+        url: null,
+      });
+      setBusy(false);
+      if (insertErr) {
+        toast.error("Couldn't add divider", insertErr);
+        return;
+      }
+      toast.success("Divider added");
+      if (keepOpen) {
+        resetPerItemFields();
+        onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
     // header
     const payloadTitle = title.trim();
     if (!payloadTitle) {
@@ -588,6 +652,13 @@ export function InlineAddItemRow({
       </>
     ),
     header: <path d="M4 7h16M4 12h10M4 17h7" />,
+    note: (
+      <>
+        <path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4Z" />
+        <path d="M8 8h8M8 11.5h5" />
+      </>
+    ),
+    divider: <path d="M4 12h16" />,
     link: (
       <>
         <path d="M10 13a5 5 0 0 0 7.07 0l1.93-1.93a5 5 0 0 0-7.07-7.07L11 5" />
@@ -604,6 +675,8 @@ export function InlineAddItemRow({
     question_set: "A pre-built Question Bank set, auto-scored on submission.",
     practice_test: "Clone a practice test from your library into this course.",
     header: "A bold divider row that groups the items below it.",
+    note: "A callout with a short message — info, a tip, or a warning. No click-through.",
+    divider: "A thin rule to visually separate runs of items.",
     link: "An external URL — opens for students in a new tab.",
   };
 
@@ -635,6 +708,42 @@ export function InlineAddItemRow({
     );
   };
 
+  // Add-picker sub-tab groups (docs/PLAN_MODULE_ITEM_TYPES.md). Only groups with
+  // ≥1 available type render, so the bar grows as new types ship. Question-Bank
+  // types are gated to allow-listed educators (canQbank).
+  const groupTypes: Record<InlineAddGroup, Array<{ type: InlineAddType; label: string }>> = {
+    learn: [],
+    assess: [
+      { type: "assignment", label: "Assignment" },
+      ...(canQbank
+        ? ([
+            { type: "full_test", label: "Full-Test" },
+            { type: "question_set", label: "Question Set" },
+            { type: "practice_test", label: "Practice Test" },
+          ] as Array<{ type: InlineAddType; label: string }>)
+        : []),
+    ],
+    engage: [],
+    structure: [
+      { type: "header", label: "Header" },
+      { type: "note", label: "Note" },
+      { type: "divider", label: "Divider" },
+      { type: "link", label: "Link" },
+    ],
+  };
+  const visibleGroups = (Object.keys(groupTypes) as InlineAddGroup[]).filter(
+    (g) => groupTypes[g].length > 0,
+  );
+  const activeGroup = INLINE_ADD_GROUP_OF[itemType];
+
+  // Group sub-tab button (the band-above-the-band). Clicking jumps to the
+  // group's first type so the chip row + form swap together.
+  const groupTabClass = (active: boolean): string =>
+    "whitespace-nowrap min-h-[36px] md:min-h-[28px] inline-flex items-center rounded-md px-3 text-[12px] font-semibold transition-colors " +
+    (active
+      ? "bg-accent-600 text-white"
+      : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800");
+
   // Helper labels for context-aware submit button (2h).
   const submitLabel = (() => {
     if (busy) return "Adding…";
@@ -644,6 +753,8 @@ export function InlineAddItemRow({
       case "full_test": return "Add Full-Test";
       case "question_set": return "Add Question Set";
       case "header": return "Add Header";
+      case "note": return "Add Note";
+      case "divider": return "Add Divider";
       case "link": return "Add Link";
     }
   })();
@@ -662,22 +773,42 @@ export function InlineAddItemRow({
       }}
       className="rounded-lg ring-1 ring-indigo-300 dark:ring-indigo-700 bg-indigo-50/40 dark:bg-indigo-950/20 p-3 space-y-2"
     >
-      {/* Type chips. "TYPE" eyebrow text hidden as sr-only — visual label is
-          redundant with the chip row. Fused band (CourseTabStrip recipe):
-          chips hug content and wrap; the tint carries the grouping. */}
-      <div>
-        <span className="sr-only">Item type</span>
-        <div className="flex flex-wrap items-center gap-1 rounded-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] px-1.5 py-1.5">
-          {chip("assignment", "Assignment")}
-          {canQbank && chip("full_test", "Full-Test")}
-          {canQbank && chip("question_set", "Question Set")}
-          {canQbank && chip("practice_test", "Practice Test")}
-          {chip("header", "Header")}
-          {chip("link", "Link")}
+      {/* Two-tier picker (docs/PLAN_MODULE_ITEM_TYPES.md): a group sub-tab row
+          (Learn / Assess / Engage / Structure) over the active group's type
+          chips, so the bar stays scannable as types grow. Only non-empty groups
+          show; the chip band keeps the CourseTabStrip fused-band recipe. */}
+      <div className="space-y-1.5">
+        {visibleGroups.length > 1 && (
+          <div
+            role="tablist"
+            aria-label="Item category"
+            className="flex flex-wrap items-center gap-1"
+          >
+            {visibleGroups.map((g) => (
+              <button
+                key={g}
+                type="button"
+                role="tab"
+                aria-selected={activeGroup === g}
+                onClick={() => setItemType(groupTypes[g][0].type)}
+                className={groupTabClass(activeGroup === g)}
+              >
+                {INLINE_ADD_GROUP_LABEL[g]}
+              </button>
+            ))}
+          </div>
+        )}
+        <div>
+          <span className="sr-only">Item type</span>
+          <div className="flex flex-wrap items-center gap-1 rounded-lg bg-accent-600/[0.08] dark:bg-accent-400/[0.14] px-1.5 py-1.5">
+            {groupTypes[activeGroup].map(({ type, label }) => (
+              <span key={type}>{chip(type, label)}</span>
+            ))}
+          </div>
+          <p className="mt-1 px-1 text-[11px] text-slate-500 dark:text-slate-400">
+            {TYPE_HINT[itemType]}
+          </p>
         </div>
-        <p className="mt-1 px-1 text-[11px] text-slate-500 dark:text-slate-400">
-          {TYPE_HINT[itemType]}
-        </p>
       </div>
 
       {itemType === "assignment" && (
@@ -756,6 +887,54 @@ export function InlineAddItemRow({
           disabled={busy}
           className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
         />
+      )}
+
+      {itemType === "note" && (
+        <div className="space-y-1.5">
+          <input
+            ref={titleRef}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Heading (optional) — e.g. 'Before you start'"
+            disabled={busy}
+            className="w-full rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <textarea
+            value={noteBody}
+            onChange={(e) => setNoteBody(e.target.value)}
+            placeholder="Message — e.g. 'Bring a calculator; we start with the Math module.'"
+            disabled={busy}
+            rows={2}
+            className="w-full resize-y rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400/60"
+          />
+          <div className="flex items-center gap-1.5">
+            <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">Tone</span>
+            {(["info", "tip", "warning"] as const).map((t) => (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setNoteTone(t)}
+                aria-pressed={noteTone === t}
+                disabled={busy}
+                className={
+                  "rounded-full px-2.5 py-1 text-[11px] font-medium capitalize ring-1 transition-colors " +
+                  (noteTone === t
+                    ? "bg-indigo-600 text-white ring-indigo-600"
+                    : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-slate-300 dark:ring-slate-700 hover:ring-slate-400")
+                }
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {itemType === "divider" && (
+        <p className="px-1 py-2 text-[11px] text-slate-500 dark:text-slate-400">
+          A thin rule with no text — just adds visual separation. Press “Add Divider”.
+        </p>
       )}
 
       {itemType === "link" && (

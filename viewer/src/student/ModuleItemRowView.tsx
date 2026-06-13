@@ -124,6 +124,37 @@ export function ModuleItemRowView({ item, locked, meta, pending = false }: Modul
     );
   }
 
+  // ---- Divider (0225) — visual separator only ------------------------------
+  if (item.item_type === "divider") {
+    return (
+      <div className="px-4 py-2" style={{ paddingLeft: padLeft }}>
+        <hr className="border-t border-slate-200 dark:border-slate-700" />
+      </div>
+    );
+  }
+
+  // ---- Note / Callout (0225) — inline message, no click-through ------------
+  if (item.item_type === "note") {
+    const cfg = (item.config ?? {}) as { body?: string; tone?: string };
+    const tone = cfg.tone === "warning" ? "warning" : cfg.tone === "tip" ? "tip" : "info";
+    const toneClass =
+      tone === "warning"
+        ? "border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200"
+        : tone === "tip"
+          ? "border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-200"
+          : "border-blue-200 bg-blue-50 text-blue-900 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-200";
+    return (
+      <div className="px-4 py-1.5" style={{ paddingLeft: padLeft }}>
+        <div className={`rounded-lg border px-3 py-2 ${toneClass}`}>
+          {item.title ? <p className="text-sm font-semibold">{item.title}</p> : null}
+          {cfg.body ? (
+            <p className="whitespace-pre-wrap text-sm leading-snug">{cfg.body}</p>
+          ) : null}
+        </div>
+      </div>
+    );
+  }
+
   // ---- Assignment (Practice Test / Question Set) ---------------------------
   if (item.item_type === "assignment" && item.item_ref_id) {
     const label = kindLabel(meta?.kind);

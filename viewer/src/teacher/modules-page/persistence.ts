@@ -47,7 +47,32 @@ export type InlineAddType =
   | "question_set"
   | "full_test"
   | "header"
+  | "note"
+  | "divider"
   | "link";
+
+// Add-picker sub-tab groups (docs/PLAN_MODULE_ITEM_TYPES.md). The picker shows
+// only groups that have ≥1 available type, so groups appear as their types ship.
+export type InlineAddGroup = "learn" | "assess" | "engage" | "structure";
+
+export const INLINE_ADD_GROUP_LABEL: Record<InlineAddGroup, string> = {
+  learn: "Learn",
+  assess: "Assess",
+  engage: "Engage",
+  structure: "Structure",
+};
+
+/** Which group each type lives in. */
+export const INLINE_ADD_GROUP_OF: Record<InlineAddType, InlineAddGroup> = {
+  assignment: "assess",
+  practice_test: "assess",
+  question_set: "assess",
+  full_test: "assess",
+  header: "structure",
+  note: "structure",
+  divider: "structure",
+  link: "structure",
+};
 
 // Practice Test source filter (UI-only, used to narrow the teacher's
 // cross-course mocktest library). The Practice Test branch no longer

@@ -232,7 +232,7 @@ export function StudentCourseView(): JSX.Element {
         const { data: moduleData, error: moduleError } = await supabase
           .from("course_modules")
           .select(
-            "id, name, position, published, opens_at, module_items(id, position, item_type, item_ref_id, title, url, indent, published)",
+            "id, name, position, published, opens_at, module_items(id, position, item_type, item_ref_id, title, url, indent, published, config)",
           )
           .eq("course_id", courseRow.id)
           .eq("published", true)
