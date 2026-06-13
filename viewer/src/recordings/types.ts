@@ -76,6 +76,20 @@ export interface RecordingNotes {
   generated_at: string;
 }
 
+/** A tracked follow-up promoted from a recording action item (migration 0233). */
+export interface RecordingFollowUp {
+  id: string;
+  owner_id: string;
+  recording_id: string | null;
+  body: string;
+  assignee: string | null;
+  due_at: string | null;
+  done: boolean;
+  done_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 /** One hit from search_my_recordings (migration 0232). */
 export interface RecordingSearchHit {
   recording_id: string;

@@ -107,6 +107,8 @@ export const ROUTES = {
   // Recordings — audio → transcript → AI notes → quiz (all educator domains).
   RECORDINGS: "/educator/recordings",
   RECORDING: "/educator/recordings/:recordingId",
+  // Cross-recording follow-ups (AI action items promoted to tracked tasks).
+  FOLLOW_UPS: "/educator/follow-ups",
 
   // Educator — top-level
   DASHBOARD: "/educator/dashboard",

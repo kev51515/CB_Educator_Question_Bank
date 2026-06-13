@@ -36,7 +36,7 @@ const ThreadView = lazy(() =>
 import { QuestionBankPage } from "@/teacher/QuestionBankPage";
 import { QBankSubmissionLogPage } from "@/teacher/QBankSubmissionLogPage";
 import { StudentProfilePage } from "@/teacher/StudentProfilePage";
-import { RecordingsListPage, RecordingDetailPage, SharedRecordingView } from "@/recordings";
+import { RecordingsListPage, RecordingDetailPage, SharedRecordingView, FollowUpsPage } from "@/recordings";
 import type { AccountContext } from "./routeTreeTypes";
 
 /**
@@ -92,6 +92,7 @@ export default function StaffRoutesTree({ account }: { account: AccountContext }
         <Route path={ROUTES.QBANK_LOG} element={gate(<QBankSubmissionLogPage />)} />
         {/* Recordings — available to all educator domains (teacher/counselor/coach). */}
         <Route path={ROUTES.RECORDINGS} element={<RecordingsListPage />} />
+        <Route path={ROUTES.FOLLOW_UPS} element={<FollowUpsPage />} />
         <Route path={ROUTES.RECORDING} element={<RecordingDetailPage />} />
         {/* Role-agnostic read-only view (module-item target; owner or shared). */}
         <Route path={ROUTES.RECORDING_VIEW} element={<SharedRecordingView />} />

@@ -19,6 +19,7 @@ import { useTeacherClasses } from "@/teacher/useTeacherClasses";
 import { RecorderPanel } from "./RecorderPanel";
 import { QuizDraftPanel } from "./QuizDraftPanel";
 import { AddToModuleModal } from "./AddToModuleModal";
+import { FollowUpsPanel } from "./FollowUpsPanel";
 import { NoteSectionHeading as SectionHeading } from "./notesUi";
 import { Waveform } from "./Waveform";
 import {
@@ -1107,6 +1108,12 @@ export function RecordingDetailPage() {
               })();
             }}
           />
+        </div>
+      )}
+
+      {isOwner && notes && (
+        <div className="mb-6">
+          <FollowUpsPanel recordingId={recording.id} actionItems={notes.action_items} />
         </div>
       )}
 
