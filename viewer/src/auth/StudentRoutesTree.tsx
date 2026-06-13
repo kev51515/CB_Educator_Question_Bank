@@ -38,6 +38,7 @@ const ThreadView = lazy(() =>
 import { MyFeedbackPage } from "@/student/MyFeedbackPage";
 import { StudentCourseView } from "@/student/StudentCourseView";
 import { StudentCoursesPage } from "@/student/StudentCoursesPage";
+import { SharedRecordingsPage } from "@/student/SharedRecordingsPage";
 import type { AccountContext } from "./routeTreeTypes";
 
 /**
@@ -107,6 +108,7 @@ export default function StudentRoutesTree({
         <Route path={ROUTES.MY_FEEDBACK} element={<MyFeedbackPage />} />
         {/* Read-only recording shared into a course module (RLS-gated). */}
         <Route path={ROUTES.RECORDING_VIEW} element={<SharedRecordingView />} />
+        <Route path={ROUTES.STUDENT_RECORDINGS} element={<SharedRecordingsPage />} />
         <Route
           path={ROUTES.ASSIGNMENT_TAKE}
           element={<AssignmentTakeRoute studentId={studentId} />}

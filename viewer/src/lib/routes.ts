@@ -60,6 +60,9 @@ export const ROUTES = {
   STUDENT_COURSE_MODULES: "/student/courses/:short/modules",
   // Student calendar (role-prefixed; renders the shared CalendarPage).
   STUDENT_CALENDAR: "/student/calendar",
+  // Student "Shared with me" hub — recordings teachers shared into the
+  // student's enrolled courses (RLS-gated; rows link to RECORDING_VIEW).
+  STUDENT_RECORDINGS: "/student/recordings",
   // Student inbox + account (role-prefixed; mirror the educator equivalents).
   STUDENT_INBOX: "/student/inbox",
   STUDENT_INBOX_THREAD: "/student/inbox/:threadId",

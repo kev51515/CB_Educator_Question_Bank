@@ -14,6 +14,7 @@ import { useRecordingDetail } from "./useRecordings";
 import { Waveform } from "./Waveform";
 import { fmtTs, relativeTime, speakerDisplay } from "./format";
 import { NoteSectionHeading } from "./notesUi";
+import { StudyAidsPanel } from "./StudyAidsPanel";
 
 export function SharedRecordingView() {
   const { recordingId = "" } = useParams();
@@ -100,6 +101,10 @@ export function SharedRecordingView() {
           )}
         </div>
       )}
+
+      <div className="mb-6">
+        <StudyAidsPanel recordingId={recording.id} canGenerate={false} />
+      </div>
 
       <div className="space-y-4">
         {parts

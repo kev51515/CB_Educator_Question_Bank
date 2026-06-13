@@ -140,6 +140,7 @@ const STUDENT_RESERVED_SEGMENTS = [
   "assignment",
   "practice",
   "mock-test",
+  "recordings",
 ];
 
 function isStudentHomeActive(pathname: string): boolean {
@@ -391,6 +392,31 @@ export function StudentShell() {
             </RailIcon>
             <span className={collapsed ? "lg:hidden" : undefined}>Courses</span>
             <CoursesRailBadge collapsed={collapsed} />
+          </NavLink>
+
+          <NavLink
+            to={ROUTES.STUDENT_RECORDINGS}
+            className={railLinkClass}
+            title="Shared with me"
+          >
+            <RailIcon>
+              <svg
+                width={20}
+                height={20}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x={9} y={2} width={6} height={11} rx={3} />
+                <path d="M5 10a7 7 0 0 0 14 0M12 17v4" />
+              </svg>
+            </RailIcon>
+            <span className={collapsed ? "lg:hidden" : undefined}>
+              Recordings
+            </span>
           </NavLink>
 
           <NavLink

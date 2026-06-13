@@ -20,6 +20,8 @@ import { RecorderPanel } from "./RecorderPanel";
 import { QuizDraftPanel } from "./QuizDraftPanel";
 import { AddToModuleModal } from "./AddToModuleModal";
 import { FollowUpsPanel } from "./FollowUpsPanel";
+import { StudyAidsPanel } from "./StudyAidsPanel";
+import { SessionInsightsPanel } from "./SessionInsightsPanel";
 import { NoteSectionHeading as SectionHeading } from "./notesUi";
 import { Waveform } from "./Waveform";
 import {
@@ -1091,6 +1093,12 @@ export function RecordingDetailPage() {
         </div>
       )}
 
+      {parts.some((p) => p.transcript?.length) && (
+        <div className="mb-6">
+          <SessionInsightsPanel parts={parts} />
+        </div>
+      )}
+
       {notes && (
         <div className="mb-6">
           <NotesView
@@ -1139,6 +1147,12 @@ export function RecordingDetailPage() {
             </button>
           </div>
         ))}
+
+      {canGenerate && (
+        <div className="mb-6">
+          <StudyAidsPanel recordingId={recording.id} canGenerate={isOwner} />
+        </div>
+      )}
 
       {parts.length === 0 ? (
         <p className="text-sm text-slate-500 dark:text-slate-400">
