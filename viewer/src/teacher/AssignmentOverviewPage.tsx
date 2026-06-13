@@ -27,6 +27,9 @@ import {
   courseAssignmentAttemptPath,
 } from "@/lib/routes";
 import { useAssignmentRoster, type RosterRow } from "./useAssignmentRoster";
+import { ItemAnalysisView } from "./ItemAnalysisView";
+
+type OverviewTab = "students" | "items";
 
 interface AssignmentMeta {
   id: string;
@@ -94,6 +97,7 @@ export function AssignmentOverviewPage(): JSX.Element {
   const [busyAttempt, setBusyAttempt] = useState<string | null>(null);
   const [bulkBusy, setBulkBusy] = useState(false);
   const [withholdBusy, setWithholdBusy] = useState(false);
+  const [tab, setTab] = useState<OverviewTab>("students");
   const aliveRef = useRef(true);
 
   useEffect(() => {
@@ -249,6 +253,34 @@ export function AssignmentOverviewPage(): JSX.Element {
         </p>
       </header>
 
+      {/* Tab strip: Students ↔ Item analysis */}
+      <div className="border-b border-slate-200 dark:border-slate-800">
+        <nav className="-mb-px flex gap-4" aria-label="Assignment overview tabs">
+          {([
+            { id: "students", label: "Students" },
+            { id: "items", label: "Item analysis" },
+          ] as const).map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setTab(t.id)}
+              aria-current={tab === t.id ? "page" : undefined}
+              className={`border-b-2 px-1 py-2 text-sm font-medium transition ${
+                tab === t.id
+                  ? "border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400"
+                  : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      {tab === "items" ? (
+        <ItemAnalysisView assignmentId={meta?.id ?? ""} />
+      ) : (
+        <>
       {/* Cohort stat cards */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatCard label="Assigned" value={stats.assigned} loading={rosterLoading} />
@@ -395,6 +427,8 @@ export function AssignmentOverviewPage(): JSX.Element {
           </table>
         )}
       </section>
+        </>
+      )}
     </div>
   );
 }
