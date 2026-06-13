@@ -1413,6 +1413,27 @@ const ModuleCard = memo(function ModuleCard({
               </Fragment>
             );
           })}
+          {/* Trailing drop zone — lets an item land as the module's LAST item.
+              Without it, dropping below the final row was ambiguous (Bug 4).
+              Only shown mid-drag for a non-empty module. */}
+          {module.items.length > 0 && canEdit && draggedItemId ? (
+            <div
+              aria-hidden
+              onDragOver={(e) => {
+                if (!draggedItemId) return;
+                e.preventDefault();
+              }}
+              onDrop={(e) => {
+                if (!draggedItemId) return;
+                e.preventDefault();
+                e.stopPropagation();
+                void onItemDropOnEmptyModule(module.id, "end");
+              }}
+              className="mx-3 mb-2 mt-1 h-9 rounded-lg border-2 border-dashed border-indigo-300 dark:border-indigo-800 bg-indigo-50/30 dark:bg-indigo-950/20 flex items-center justify-center text-[11px] font-medium text-indigo-700 dark:text-indigo-300"
+            >
+              Drop here to add at the end
+            </div>
+          ) : null}
           {canEdit && (
             inlineAddingItem ? (
               <div className="px-4 py-2.5">
