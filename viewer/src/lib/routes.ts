@@ -136,6 +136,8 @@ export const ROUTES = {
   COURSE_ASSIGNMENT_ATTEMPT:
     "/educator/courses/:courseId/assignments/:assignmentId/attempts/:attemptId",
   COURSE_PEOPLE: "/educator/courses/:courseId/people",
+  // Attendance + prepaid session-package tracking (People group).
+  COURSE_ATTENDANCE: "/educator/courses/:courseId/attendance",
   // Per-student teacher view: one student's full activity inside a course
   // (attempts + discussion posts + portfolio submissions). The roster + the
   // gradebook both link here on a name click.
@@ -323,6 +325,10 @@ export function coursePeoplePath(courseId: string): string {
 
 export function courseCaseloadPath(courseId: string): string {
   return buildPath(ROUTES.COURSE_CASELOAD, { courseId });
+}
+
+export function courseAttendancePath(courseId: string): string {
+  return buildPath(ROUTES.COURSE_ATTENDANCE, { courseId });
 }
 
 /**

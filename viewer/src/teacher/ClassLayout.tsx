@@ -46,6 +46,7 @@ import { ConfirmDialog } from "./ConfirmDialog";
 import { DuplicateCourseModal } from "./DuplicateCourseModal";
 import { CourseOverview } from "./CourseOverview";
 import { ClassRoster } from "./ClassRoster";
+import { AttendanceTab } from "./AttendanceTab";
 import { ClassAssignmentsTab } from "./ClassAssignmentsTab";
 import { AssignmentDetailPage } from "./AssignmentDetailPage";
 import { AssignmentOverviewPage } from "./AssignmentOverviewPage";
@@ -216,6 +217,7 @@ function buildTabGroups(
         label: "People",
         items: [
           tab("roster", "Roster"),
+          tab("attendance", "Attendance"),
           tab("announcements", "Announcements"),
           tab("discussions", "Discussions"),
         ],
@@ -248,6 +250,7 @@ function buildTabGroups(
       label: "People",
       items: [
         tab("roster", "Roster"),
+        tab("attendance", "Attendance"),
         tab("digests", "Digests"),
         tab("announcements", "Announcements"),
         tab("discussions", "Discussions"),
@@ -615,6 +618,7 @@ export function ClassLayout() {
               }
             />
             <Route path="roster" element={<ClassRoster />} />
+            <Route path="attendance" element={<AttendanceTab />} />
             <Route path="digests" element={<DigestsPage />} />
             <Route path="assignments" element={<ClassAssignmentsTab />} />
             <Route
