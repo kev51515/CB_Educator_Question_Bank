@@ -5,6 +5,7 @@
  * CLAUDE.md (see Wave 21J).
  */
 import { useCallback, useEffect, useRef, useState } from "react";
+import * as tus from "tus-js-client";
 import { supabase, SUPABASE_URL, SUPABASE_ANON_KEY } from "@/lib/supabase";
 import type { Domain } from "@/lib/domain";
 import type {
@@ -67,60 +68,94 @@ export interface UploadProgress {
 }
 
 /**
- * Upload a Blob to the private recordings bucket via the Storage REST endpoint
- * using XHR, so we get real `upload.onprogress` events (supabase-js's
- * fetch-based .upload() reports nothing). Used for the file-upload path where
- * the object can be hundreds of MB; the live recorder's small Parts keep using
- * the plain client upload.
+ * Handle to a running resumable upload — lets the UI pause/resume/cancel a
+ * large file upload, and `done` settles when the object lands (or rejects with
+ * an AbortError on cancel).
  */
-function uploadObjectWithProgress(
+export interface UploadController {
+  done: Promise<void>;
+  pause: () => void;
+  resume: () => void;
+  cancel: () => void;
+}
+
+/**
+ * Resumable upload to the private recordings bucket via Supabase's TUS
+ * endpoint (`tus-js-client`). Gives byte-level progress + ETA, auto-retries on
+ * a flaky connection (retryDelays), and supports pause/resume/cancel. Used for
+ * the file-upload path where the object can be up to ~1 GB; the live recorder's
+ * small Parts keep using the plain client upload.
+ *
+ * Supabase requires a 6 MB chunk size for resumable uploads (except the last
+ * chunk). `abort()` pauses (keeps the server-side session); `start()` resumes
+ * from the server's offset; `abort(true)` terminates it.
+ */
+function uploadObjectResumable(
   path: string,
   blob: Blob,
   token: string,
   onProgress: (p: UploadProgress) => void,
-  signal?: AbortSignal,
-): Promise<void> {
-  return new Promise((resolve, reject) => {
-    if (signal?.aborted) {
-      reject(new DOMException("upload aborted", "AbortError"));
-      return;
-    }
-    const encoded = path.split("/").map(encodeURIComponent).join("/");
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", `${SUPABASE_URL}/storage/v1/object/recordings/${encoded}`, true);
-    xhr.setRequestHeader("authorization", `Bearer ${token}`);
-    xhr.setRequestHeader("apikey", SUPABASE_ANON_KEY);
-    xhr.setRequestHeader("x-upsert", "true");
-    if (blob.type) xhr.setRequestHeader("content-type", blob.type);
-
-    // Let the caller cancel an in-flight upload (human error, wrong file, …).
-    const onAbort = () => xhr.abort();
-    signal?.addEventListener("abort", onAbort);
-    const cleanup = () => signal?.removeEventListener("abort", onAbort);
-
-    const started = Date.now();
-    xhr.upload.onprogress = (e) => {
-      if (!e.lengthComputable) return;
-      const elapsed = (Date.now() - started) / 1000;
-      const rate = elapsed > 0 ? e.loaded / elapsed : 0; // bytes/sec
-      const etaSeconds = rate > 0 ? Math.round((e.total - e.loaded) / rate) : null;
-      onProgress({ loaded: e.loaded, total: e.total, pct: e.total ? e.loaded / e.total : 0, etaSeconds });
-    };
-    xhr.onload = () => {
-      cleanup();
-      if (xhr.status >= 200 && xhr.status < 300) resolve();
-      else reject(new Error(`upload failed (${xhr.status}): ${xhr.responseText?.slice(0, 200)}`));
-    };
-    xhr.onerror = () => {
-      cleanup();
-      reject(new Error("upload network error"));
-    };
-    xhr.onabort = () => {
-      cleanup();
-      reject(new DOMException("upload aborted", "AbortError"));
-    };
-    xhr.send(blob);
+): UploadController {
+  let resolveDone!: () => void;
+  let rejectDone!: (e: unknown) => void;
+  const done = new Promise<void>((res, rej) => {
+    resolveDone = res;
+    rejectDone = rej;
   });
+  let cancelled = false;
+  // Track active (non-paused) time so the ETA isn't skewed by a long pause.
+  let activeMs = 0;
+  let lastTick = Date.now();
+
+  const upload = new tus.Upload(blob, {
+    endpoint: `${SUPABASE_URL}/storage/v1/upload/resumable`,
+    retryDelays: [0, 3000, 5000, 10000, 20000],
+    headers: {
+      authorization: `Bearer ${token}`,
+      apikey: SUPABASE_ANON_KEY,
+      "x-upsert": "true",
+    },
+    uploadDataDuringCreation: true,
+    removeFingerprintOnSuccess: true,
+    chunkSize: 6 * 1024 * 1024, // Supabase requires exactly 6 MB chunks.
+    metadata: {
+      bucketName: "recordings",
+      objectName: path,
+      contentType: blob.type || "application/octet-stream",
+      cacheControl: "3600",
+    },
+    onError: (err) => {
+      if (!cancelled) rejectDone(err);
+    },
+    onProgress: (sent, total) => {
+      const now = Date.now();
+      activeMs += now - lastTick;
+      lastTick = now;
+      const rate = activeMs > 0 ? sent / (activeMs / 1000) : 0; // bytes/sec
+      const etaSeconds = rate > 0 ? Math.round((total - sent) / rate) : null;
+      onProgress({ loaded: sent, total, pct: total ? sent / total : 0, etaSeconds });
+    },
+    onSuccess: () => resolveDone(),
+  });
+  upload.start();
+
+  return {
+    done,
+    pause: () => {
+      void upload.abort(); // pause: keep the server session for resume
+    },
+    resume: () => {
+      lastTick = Date.now();
+      upload.start(); // resumes from the server offset
+    },
+    cancel: () => {
+      cancelled = true;
+      void upload
+        .abort(true) // terminate the server-side upload
+        .catch(() => {})
+        .finally(() => rejectDone(new DOMException("upload aborted", "AbortError")));
+    },
+  };
 }
 
 /**
@@ -128,15 +163,17 @@ function uploadObjectWithProgress(
  * `recording_parts` row, then kick off transcription. The bucket path begins
  * with the owner id so object RLS passes (see migration 0208).
  *
- * Pass `onProgress` to upload via XHR with byte-level progress (used for large
- * file uploads); omit it and the plain client upload is used (live recorder).
+ * Pass `onProgress` to upload via the resumable TUS path with byte-level
+ * progress + pause/resume/cancel (used for large file uploads); omit it and the
+ * plain client upload is used (live recorder). `onController` receives the
+ * pause/resume/cancel handle once the upload starts.
  */
 export async function uploadAndTranscribePart(
   recording: Recording,
   partIndex: number,
   source: PartResult | File,
   onProgress?: (p: UploadProgress) => void,
-  signal?: AbortSignal,
+  onController?: (c: UploadController) => void,
 ): Promise<RecordingPart> {
   const ext = "ext" in source ? source.ext : uploadExtFor(source);
   const blob = "blob" in source ? source.blob : source;
@@ -166,7 +203,9 @@ export async function uploadAndTranscribePart(
       const token = session?.access_token;
       if (!token) throw new Error("not_authenticated");
       onProgress({ loaded: 0, total: blob.size, pct: 0, etaSeconds: null });
-      await uploadObjectWithProgress(path, blob, token, onProgress, signal);
+      const ctrl = uploadObjectResumable(path, blob, token, onProgress);
+      onController?.(ctrl);
+      await ctrl.done;
     } else {
       const { error: upErr } = await supabase.storage
         .from("recordings")

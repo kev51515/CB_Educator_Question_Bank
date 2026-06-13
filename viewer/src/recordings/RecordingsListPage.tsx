@@ -29,6 +29,7 @@ import {
   useRecordingSearch,
   useRecordingsList,
   type UploadProgress,
+  type UploadController,
 } from "./useRecordings";
 import { fmtTs, formatDuration, relativeTime } from "./format";
 import { GoogleCalendarCard } from "./GoogleCalendarCard";
@@ -301,21 +302,32 @@ function fmtEta(seconds: number | null): string {
   return `~${m}m ${s.toString().padStart(2, "0")}s left`;
 }
 
-/** Upload progress bar shown in the New-recording modal during a file upload. */
-function UploadProgressBar({ p, onCancel }: { p: UploadProgress; onCancel: () => void }) {
+/** Upload progress bar shown in the New-recording modal during a file upload,
+ *  with pause/resume + cancel (resumable TUS upload). */
+function UploadProgressBar({
+  p,
+  paused,
+  onPauseToggle,
+  onCancel,
+}: {
+  p: UploadProgress;
+  paused: boolean;
+  onPauseToggle: () => void;
+  onCancel: () => void;
+}) {
   const pct = Math.round(p.pct * 100);
   return (
     <div className="flex w-full items-end gap-3">
       <div className="min-w-0 flex-1">
         <div className="mb-1 flex items-center justify-between text-xs text-slate-600 dark:text-slate-300">
           <span>
-            Uploading… {pct}% · {fmtMB(p.loaded)} / {fmtMB(p.total)}
+            {paused ? "Paused" : "Uploading…"} {pct}% · {fmtMB(p.loaded)} / {fmtMB(p.total)}
           </span>
-          <span className="tabular-nums text-slate-400">{fmtEta(p.etaSeconds)}</span>
+          <span className="tabular-nums text-slate-400">{paused ? "" : fmtEta(p.etaSeconds)}</span>
         </div>
         <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
           <div
-            className="h-full rounded-full bg-indigo-500 transition-[width] duration-200"
+            className={`h-full rounded-full transition-[width] duration-200 ${paused ? "bg-amber-400" : "bg-indigo-500"}`}
             style={{ width: `${Math.max(2, pct)}%` }}
             role="progressbar"
             aria-valuenow={pct}
@@ -324,6 +336,13 @@ function UploadProgressBar({ p, onCancel }: { p: UploadProgress; onCancel: () =>
           />
         </div>
       </div>
+      <button
+        type="button"
+        onClick={onPauseToggle}
+        className="shrink-0 rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+      >
+        {paused ? "Resume" : "Pause"}
+      </button>
       <button
         type="button"
         onClick={onCancel}
@@ -349,7 +368,8 @@ export function RecordingsListPage() {
   const [courseId, setCourseId] = useState<string>("");
   const [submitting, setSubmitting] = useState(false);
   const [uploadProg, setUploadProg] = useState<UploadProgress | null>(null);
-  const uploadAbortRef = useRef<AbortController | null>(null);
+  const [uploadPaused, setUploadPaused] = useState(false);
+  const uploadCtrlRef = useRef<UploadController | null>(null);
 
   const { options: courseOptions, loading: coursesLoading } = useCourseOptions(open);
 
@@ -396,9 +416,8 @@ export function RecordingsListPage() {
     }
     setSubmitting(true);
     setUploadProg(null);
+    setUploadPaused(false);
     let rec: Awaited<ReturnType<typeof createRecording>> | null = null;
-    const controller = new AbortController();
-    uploadAbortRef.current = controller;
     try {
       rec = await createRecording({
         title: title || "Untitled recording",
@@ -408,7 +427,9 @@ export function RecordingsListPage() {
         course_id: courseId || null,
       });
       if (files[0]) {
-        await uploadAndTranscribePart(rec, 1, files[0], setUploadProg, controller.signal);
+        await uploadAndTranscribePart(rec, 1, files[0], setUploadProg, (ctrl) => {
+          uploadCtrlRef.current = ctrl;
+        });
         await endRecording(rec.id, 0, true);
       }
       setOpen(false);
@@ -423,9 +444,10 @@ export function RecordingsListPage() {
         toast.error(`Couldn't create the recording: ${(e as Error).message}`);
       }
     } finally {
-      uploadAbortRef.current = null;
+      uploadCtrlRef.current = null;
       setSubmitting(false);
       setUploadProg(null);
+      setUploadPaused(false);
     }
   }
 
@@ -527,7 +549,22 @@ export function RecordingsListPage() {
         title="New recording"
         footer={
           uploadProg ? (
-            <UploadProgressBar p={uploadProg} onCancel={() => uploadAbortRef.current?.abort()} />
+            <UploadProgressBar
+              p={uploadProg}
+              paused={uploadPaused}
+              onPauseToggle={() => {
+                const ctrl = uploadCtrlRef.current;
+                if (!ctrl) return;
+                if (uploadPaused) {
+                  ctrl.resume();
+                  setUploadPaused(false);
+                } else {
+                  ctrl.pause();
+                  setUploadPaused(true);
+                }
+              }}
+              onCancel={() => uploadCtrlRef.current?.cancel()}
+            />
           ) : (
             <div className="flex justify-end gap-2">
               <button
