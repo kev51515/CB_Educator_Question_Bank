@@ -241,6 +241,25 @@ bracket artifacts, truncation / unbalanced quotes, missing gaps, and dropped
 open/close quotes on a choice. It exits non-zero on any flag. It must read 0
 before a seeded test is considered done (existing six are clean as of 0152).
 
+**Seeding a full test from a PDF — read `docs/TEST_SEEDING_PIPELINE.md` first.**
+That is the canonical, end-to-end process (render → OCR/vision transcription →
+rich JSON → `build-cbog.mjs` → seed → QC gates) with the fidelity safeguards that
+are now mandatory. The 2026-06-13 audit proved OCR/vision transcription silently
+corrupts content — dropped colons/apostrophes on convention questions (where
+punctuation IS the answer), word substitutions, dropped italics, and an
+answer-flipping data-table digit. `check:content` alone does NOT catch these.
+Tooling lives in **`scripts/test-pipeline/`**:
+- **Text-layer PDFs** (College Board "digital" / CB OG): `audit-choices.py` +
+  `audit-passages.py` diff the transcription vs `pdftotext`; `fix-content.py`
+  auto-fixes ≥3/4-match choices + restores italics from `pdftohtml -xml` font
+  data. `audit-choices` must read **0 punctuation diffs**.
+- **Scanned image PDFs** (the DSAT exports — no text layer): a **vision-QA pass
+  is mandatory** (render every page, read vs DB); no cheap text oracle exists.
+  Verify numeric tables + convention-question punctuation by eye.
+- **Both**: `audit-db.py <slug> <pdf...>` diffs the LIVE DB against the PDF.
+The JSON format accepts rich run-objects (`[{t,i,u,b,sup,sub}]`) so formatting
+survives; `passageRender.tsx` renders `<i>/<u>/<b>/<sup>/<sub>` + `$…$` KaTeX.
+
 Migration rules:
 - **Every trigger function that INSERTs into another table must be
   `SECURITY DEFINER` with `SET search_path = public, auth`.** RLS will block
