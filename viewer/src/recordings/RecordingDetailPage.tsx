@@ -1021,8 +1021,37 @@ export function RecordingDetailPage() {
       )}
 
       {recording.status === "processing" && (
-        <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900/50 dark:bg-amber-900/20 dark:text-amber-200">
-          Transcribing and writing notes… this updates automatically.
+        <div className="mb-6 rounded-xl border border-indigo-200 bg-indigo-50/60 p-4 dark:border-indigo-900/50 dark:bg-indigo-950/30">
+          <div className="flex items-center gap-3">
+            <svg className="h-5 w-5 shrink-0 animate-spin text-indigo-600 dark:text-indigo-400" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
+              <path className="opacity-90" fill="currentColor" d="M12 2a10 10 0 0 1 10 10h-3a7 7 0 0 0-7-7V2Z" />
+            </svg>
+            <div className="min-w-0 flex-1">
+              <div className="text-sm font-medium text-indigo-900 dark:text-indigo-200">
+                {transcribedCount < parts.length
+                  ? `Transcribing — ${transcribedCount} of ${parts.length} part${parts.length === 1 ? "" : "s"} done`
+                  : "Writing your notes…"}
+              </div>
+              <div className="text-xs text-indigo-700/70 dark:text-indigo-300/70">
+                This updates automatically — you can leave and come back.
+              </div>
+            </div>
+          </div>
+          <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-indigo-100 dark:bg-indigo-900/50">
+            <div
+              className="h-full rounded-full bg-indigo-500 transition-[width] duration-500"
+              style={{
+                width: `${
+                  parts.length === 0
+                    ? 10
+                    : transcribedCount < parts.length
+                      ? Math.max(8, Math.round((transcribedCount / parts.length) * 90))
+                      : 95
+                }%`,
+              }}
+            />
+          </div>
         </div>
       )}
 

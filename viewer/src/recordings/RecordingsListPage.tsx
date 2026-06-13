@@ -460,8 +460,14 @@ export function RecordingsListPage() {
             </label>
           )}
 
+          {/* Two paths: record live next (default) or upload an existing file. */}
+          <div className="flex items-center gap-3 pt-1">
+            <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
+            <span className="text-xs font-medium uppercase tracking-wide text-slate-400">or</span>
+            <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
+          </div>
           <div>
-            <span className="mb-1 block text-sm font-medium">Or upload a file (optional)</span>
+            <span className="mb-1 block text-sm font-medium">Already have a recording?</span>
             <FileDropzone
               files={files}
               onChange={setFiles}
@@ -470,7 +476,7 @@ export function RecordingsListPage() {
               multiple={false}
             />
             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-              Leave empty to record live on the next screen.
+              Drop an audio/video file to transcribe it. Leave empty to record live on the next screen.
             </p>
           </div>
 
